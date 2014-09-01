@@ -1,2 +1,0 @@
-The dnssec-zkt command is a wrapper around dnssec-keygen(8) to assist in
-DNSSEC zone key management.

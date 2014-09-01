@@ -1,9 +1,0 @@
-#!/bin/sh
-#
-# $OpenBSD: dnsreflector.rc,v 1.1 2014/07/16 12:36:27 jca Exp $
-
-daemon="${TRUEPREFIX}/sbin/dnsreflector -d"
-
-. /etc/rc.d/rc.subr
-
-rc_cmd $1

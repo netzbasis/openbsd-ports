@@ -1,3 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.2 2009/08/30 17:03:59 jasper Exp $
-${P5SITE}/Test/
-${P5SITE}/Test/Manifest.pm

@@ -1,5 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.9 2014/03/30 13:13:08 jasper Exp $
-lib/gedit/plugins/codeassistance.plugin
-lib/gedit/plugins/libcodeassistance.so
-share/gedit/plugins/codeassistance/
-share/gedit/plugins/codeassistance/codeassistance.css

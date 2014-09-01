@@ -1,9 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.4 2012/09/02 10:25:13 ajacoutot Exp $
-%%SHARED%%
-include/libmng.h
-include/libmng_conf.h
-include/libmng_types.h
-lib/libmng.a
-@man man/man3/libmng.3
-@man man/man5/jng.5
-@man man/man5/mng.5

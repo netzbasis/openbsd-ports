@@ -1,8 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.2 2014/06/14 23:25:42 sthen Exp $
-${P5ARCH}/
-${P5ARCH}/Flowd.pm
-${P5ARCH}/auto/
-${P5ARCH}/auto/Flowd/
-@comment ${P5ARCH}/auto/Flowd/Flowd.bs
-${P5ARCH}/auto/Flowd/Flowd.so
-@man man/man3p/Flowd.3p

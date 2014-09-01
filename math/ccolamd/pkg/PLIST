@@ -1,6 +1,0 @@
-@comment $OpenBSD: PLIST,v 1.4 2012/09/01 12:02:27 naddy Exp $
-%%SHARED%%
-include/ccolamd/
-include/ccolamd/ccolamd.h
-lib/libccolamd.a
-lib/libccolamd_p.a
