@@ -1,0 +1,11 @@
+$OpenBSD: patch-darkstat_8_in,v 1.3 2014/02/07 08:56:53 brad Exp $
+--- darkstat.8.in.orig	Sat Jan 25 21:39:41 2014
++++ darkstat.8.in	Sat Jan 25 22:29:54 2014
+@@ -126,6 +126,7 @@ Errors, warnings, and verbose messages will go to \fBs
+ daemon, priority debug) instead of \fBstderr\fR.
+ 
+ On some systems, these messages end up in \fB/var/log/debug\fR
++by default. On OpenBSD, these messages end up in \fB/var/log/daemon\fR
+ by default.
+ .\"
+ .TP

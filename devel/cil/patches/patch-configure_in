@@ -1,0 +1,20 @@
+$OpenBSD: patch-configure_in,v 1.9 2012/11/27 22:28:53 chrisz Exp $
+--- configure.in.orig	Tue Nov 27 09:16:41 2012
++++ configure.in	Tue Nov 27 09:16:59 2012
+@@ -370,9 +370,15 @@ case "$target" in
+     ;;
+ 
+   *86*openbsd*)
+-    AC_MSG_RESULT(configuring for OpenBSD/x86)
++    AC_MSG_RESULT(configuring for OpenBSD/x86)
+ 
+     ARCHOS=x86_OPENBSD
++    ;;
++
++  *powerpc*openbsd*)
++    AC_MSG_RESULT(configuring for OpenBSD/powerpc)
++
++    ARCHOS=ppc_OPENBSD
+     ;;
+ 
+   *i386*freebsd*|*amd64*freebsd*)

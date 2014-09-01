@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_dird_Makefile_in,v 1.3 2014/04/19 09:44:11 ajacoutot Exp $
+--- src/dird/Makefile.in.orig	Sat Mar 29 09:00:03 2014
++++ src/dird/Makefile.in	Fri Apr  4 22:14:17 2014
+@@ -109,9 +109,6 @@ install: all
+ 	   fi; \
+ 	   echo "${INSTALL_CONFIG} $$srcconf ${DESTDIR}${sysconfdir}/$$destconf"; \
+ 	   ${INSTALL_CONFIG} $$srcconf ${DESTDIR}${sysconfdir}/$$destconf
+-	   @if test "x${dir_group}" != "x"; then \
+-	      chgrp -f ${dir_group} ${DESTDIR}${sysconfdir}/$$destconf ; \
+-	   fi
+ 	@if  test -f ${DESTDIR}${scriptdir}/query.sql; then \
+ 	   echo "  ==> Saving existing query.sql to query.sql.old"; \
+ 	   $(MV) -f ${DESTDIR}${scriptdir}/query.sql ${DESTDIR}${scriptdir}/query.sql.old; \

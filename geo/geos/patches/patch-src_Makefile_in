@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_Makefile_in,v 1.2 2014/08/26 19:00:31 landry Exp $
+--- src/Makefile.in.orig	Sun Aug 25 17:10:43 2013
++++ src/Makefile.in	Sun Aug 24 11:06:41 2014
+@@ -342,8 +342,7 @@ lib_LTLIBRARIES = libgeos.la
+ # effort to determine this because depending programs should not be
+ # using the C++ library.
+ libgeos_la_LDFLAGS = \
+-    -release @VERSION_MAJOR@.@VERSION_MINOR@.@VERSION_PATCH@ \
+-    -no-undefined
++    -no-undefined -lstdc++ -lm
+ 
+ libgeos_la_SOURCES = \
+     inlines.cpp

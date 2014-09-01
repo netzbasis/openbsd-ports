@@ -1,0 +1,36 @@
+$OpenBSD: patch-src_torrent_poll_kqueue_cc,v 1.6 2012/07/15 10:20:07 dcoppa Exp $
+
+Fix a crash when total number of connections exceeds 1024
+(http://libtorrent.rakshasa.no/ticket/1581)
+
+The number of events is used to index an array of maxOpenSockets
+(file descriptors) elements. If there are fewer fds than maxEvents,
+this will cause a segfault.
+Limit the number of events to the number of fds with an upper limit of
+maxEvents.
+
+--- src/torrent/poll_kqueue.cc.orig	Tue Apr  5 12:25:53 2011
++++ src/torrent/poll_kqueue.cc	Fri Jul 13 10:59:11 2012
+@@ -37,6 +37,7 @@
+ #include "config.h"
+ 
+ #include <cerrno>
++#include <cassert>
+ 
+ #include <algorithm>
+ #include <unistd.h>
+@@ -111,12 +112,12 @@ PollKQueue::create(int maxOpenSockets) {
+   if (fd == -1)
+     return NULL;
+ 
+-  return new PollKQueue(fd, 1024, maxOpenSockets);
++  return new PollKQueue(fd, 16384, maxOpenSockets);
+ }
+ 
+ PollKQueue::PollKQueue(int fd, int maxEvents, int maxOpenSockets) :
+   m_fd(fd),
+-  m_maxEvents(maxEvents),
++  m_maxEvents((maxOpenSockets < maxEvents) ? maxOpenSockets : maxEvents),
+   m_waitingEvents(0),
+   m_changedEvents(0),
+   m_stdinEvent(NULL) {

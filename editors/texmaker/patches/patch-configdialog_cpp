@@ -1,0 +1,12 @@
+$OpenBSD: patch-configdialog_cpp,v 1.5 2013/11/10 12:31:45 shadchin Exp $
+--- configdialog.cpp.orig	Sat Oct 26 20:20:03 2013
++++ configdialog.cpp	Sat Nov  2 15:06:05 2013
+@@ -223,7 +223,7 @@ QDir spelldir(QCoreApplication::applicationDirPath());
+ #ifdef DEBIAN_SPELLDIR
+ QDir spelldir(PREFIX"/share/myspell/dicts");
+ #else
+-QDir spelldir(PREFIX"/share/texmaker");
++QDir spelldir(PREFIX"/share/hunspell");
+ #endif
+ #endif
+ 

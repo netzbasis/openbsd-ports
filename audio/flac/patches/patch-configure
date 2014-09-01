@@ -1,0 +1,12 @@
+$OpenBSD: patch-configure,v 1.13 2013/05/31 14:34:27 naddy Exp $
+--- configure.orig	Mon May 27 04:11:54 2013
++++ configure	Wed May 29 16:41:05 2013
+@@ -19807,7 +19807,7 @@ else
+ 	CPPFLAGS="-DNDEBUG $CPPFLAGS"
+ 	if test "x$GCC" = xyes; then
+ 		if test "x$user_cflags" = x; then
+-			CFLAGS="-O3 -funroll-loops -Wall -W -Winline"
++			CFLAGS="-Wall -W $CFLAGS"
+ 		fi
+ 	fi
+ fi

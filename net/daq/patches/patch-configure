@@ -1,0 +1,24 @@
+$OpenBSD: patch-configure,v 1.4 2014/01/30 03:22:48 lteo Exp $
+--- configure.orig	Tue Nov  5 16:10:24 2013
++++ configure	Thu Jan 23 22:05:29 2014
+@@ -12806,12 +12806,20 @@ else
+ 
+     #include <pcap.h>
+     #include <string.h>
++#if defined(__OpenBSD__)
++    #include <sys/param.h>
++#endif
+     extern char pcap_version[];
+ 
+ int
+ main ()
+ {
+ 
++#if defined(OpenBSD)
++#if OpenBSD >= 201211
++        return 0;
++#endif
++#endif
+         if (strcmp(pcap_version, "1.0.0") < 0)
+             return 1;
+ 

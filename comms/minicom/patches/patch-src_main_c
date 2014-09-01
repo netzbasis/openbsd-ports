@@ -1,0 +1,31 @@
+$OpenBSD: patch-src_main_c,v 1.5 2014/08/21 08:23:00 jasper Exp $
+--- src/main.c.orig	Thu Jun 20 11:09:06 2013
++++ src/main.c	Mon Aug 18 10:05:31 2014
+@@ -23,6 +23,9 @@
+ #include <config.h>
+ #endif
+ 
++#include <sys/types.h>
++#include <sys/ioctl.h>
++#include <termios.h>
+ #include "port.h"
+ #include "minicom.h"
+ #include "intl.h"
+@@ -332,6 +335,17 @@ nolock:
+ 
+   /* Set CLOCAL mode */
+   m_nohang(portfd);
++
++ /* maybe, just maybe, we're looking at a GPS */
++ do {
++   int nmeadisc = NMEADISC;
++   struct tstamps tstamps;
++
++   tstamps.ts_set = TIOCM_CAR;
++   tstamps.ts_clr = 0;
++   ioctl(portfd, TIOCSETD, &nmeadisc);
++   ioctl(portfd, TIOCSTSTAMP, &tstamps);
++ } while (0);
+ 
+   /* Set Hangup on Close if program crashes. (Hehe) */
+   m_hupcl(portfd, 1);

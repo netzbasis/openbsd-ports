@@ -1,0 +1,110 @@
+$OpenBSD: patch-installer_core_install_py,v 1.19 2014/03/13 22:37:27 ajacoutot Exp $
+--- installer/core_install.py.orig	Thu Mar  6 06:08:35 2014
++++ installer/core_install.py	Thu Mar 13 23:24:11 2014
+@@ -176,7 +176,7 @@ class CoreInstall(object):
+         self.endian = utils.LITTLE_ENDIAN
+         self.distro, self.distro_name, self.distro_version = DISTRO_UNKNOWN, '', DISTRO_VER_UNKNOWN
+         self.distro_version_supported = False
+-        self.install_location = '/usr'
++        self.install_location = '${PREFIX}'
+         self.hplip_present = False
+         self.have_dependencies = {}
+         self.native_cups = True
+@@ -751,7 +751,7 @@ class CoreInstall(object):
+ 
+ 
+     def check_make(self):
+-        return check_tool('make --version', 3.0)
++        return True
+ 
+ 
+     def check_libusb(self):
+@@ -760,14 +760,14 @@ class CoreInstall(object):
+             if not check_lib('libusb'):
+                 return False
+             if self.distro_name != "rhel":
+-                return len(locate_file_contains("usb.h", '/usr/include', 'usb_init'))
++                return len(locate_file_contains("usb.h", '${LOCALBASE}/include', 'usb_init'))
+             else:
+                 return True
+         else:
+             if not check_lib('libusb-1.0'):
+                 return False
+             if self.distro_name != "rhel":
+-                return len(locate_file_contains("libusb.h", '/usr/include/libusb-1.0', 'libusb_init'))
++                return len(locate_file_contains("libusb.h", '${LOCALBASE}/include/libusb-1.0', 'libusb_init'))
+             else:
+                 return True
+ 
+@@ -777,11 +777,10 @@ class CoreInstall(object):
+ 
+ 
+     def check_libcrypto(self):
+-        return check_lib("libcrypto") and check_file("crypto.h")
++        return True
+ 
+-
+     def check_libpthread(self):
+-        return check_lib("libpthread") and check_file("pthread.h")
++        return True
+ 
+ 
+     def check_libnetsnmp(self):
+@@ -833,7 +832,7 @@ class CoreInstall(object):
+ 
+ 
+     def check_sane_devel(self):
+-        return len(locate_file_contains("sane.h", '/usr/include', 'extern SANE_Status sane_init'))
++        return len(locate_file_contains("sane.h", '${LOCALBASE}/include', 'extern SANE_Status sane_init'))
+ 
+ 
+     def check_xsane(self):
+@@ -934,9 +933,8 @@ class CoreInstall(object):
+ 
+ 
+     def check_dbus(self):
+-        log.debug("Checking for dbus running and header files present (dbus-devel)...")
+-        return check_ps(['dbus-daemon'])  and \
+-            len(locate_file_contains("dbus-message.h", '/usr/include', 'dbus_message_new_signal'))
++        log.debug("Checking for dbus header files...")
++        return check_file("dbus-message.h", "${LOCALBASE}/include")
+ 
+ 
+     def check_cups_devel(self):
+@@ -954,12 +952,12 @@ class CoreInstall(object):
+ 
+ 
+     def check_cups_image(self):
+-      return check_file("raster.h", "/usr/include/cups")
++      return check_file("raster.h", "${LOCALBASE}/include/cups")
+ 
+ 
+     def check_hplip(self):
+         log.debug("Checking for HPLIP...")
+-        return locate_files('hplip.conf', '/etc/hp')
++        return locate_files('hplip.conf', '${SYSCONFDIR}/hp')
+ 
+ 
+     def check_libtool(self):
+@@ -979,9 +977,9 @@ class CoreInstall(object):
+     def check_cupsddk(self):
+         log.debug("Checking for cups-ddk...")
+         # TODO: Compute these paths some way or another...
+-        #return check_tool("/usr/lib/cups/driver/drv list") and os.path.exists("/usr/share/cupsddk/include/media.defs")
+-        return (check_file('drv', "/usr/lib/cups/driver") or check_file('drv', "/usr/lib64/cups/driver")) and \
+-            check_file('media.defs', "/usr/share/cupsddk/include")
++        #return check_tool("${LOCALBASE}/libexec/cups/driver/drv list") and os.path.exists("${LOCALBASE}/share/cupsddk/include/media.defs")
++        return (check_file('drv', "${LOCALBASE}/libexec/cups/driver") or check_file('drv', "/usr/lib64/cups/driver")) and \
++            check_file('media.defs', "${LOCALBASE}/share/cupsddk/include")
+ 
+ 
+     def check_policykit(self):
+@@ -1589,7 +1587,7 @@ class CoreInstall(object):
+     def pre_build(self,distro_ver=None):
+         cmds = []
+         if self.get_distro_ver_data('fix_ppd_symlink', False,distro_ver):
+-            cmds.append(self.passwordObj.getAuthCmd() % 'python ./installer/fix_symlink.py')
++            cmds.append(self.passwordObj.getAuthCmd() % '${MODPY_BIN} ./installer/fix_symlink.py')
+ 
+         return cmds
+ 

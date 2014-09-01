@@ -1,0 +1,12 @@
+$OpenBSD: patch-cmake_FindGDAL_cmake,v 1.4 2014/08/20 08:54:45 landry Exp $
+--- cmake/FindGDAL.cmake.orig	Fri Jun 27 14:00:08 2014
++++ cmake/FindGDAL.cmake	Mon Aug 18 15:49:46 2014
+@@ -158,7 +158,7 @@ ELSE(WIN32)
+             SET(GDAL_LIBRARY ${GDAL_LINK_DIRECTORIES}/lib${GDAL_LIB_NAME}.dylib CACHE STRING INTERNAL FORCE)
+           ENDIF (NOT GDAL_LIBRARY)
+         ELSE (APPLE)
+-          SET(GDAL_LIBRARY ${GDAL_LINK_DIRECTORIES}/lib${GDAL_LIB_NAME}.so CACHE STRING INTERNAL)
++          FIND_LIBRARY(GDAL_LIBRARY NAMES gdal PATHS ${LOCALBASE}/lib)
+         ENDIF (APPLE)
+       
+       ELSE(GDAL_CONFIG)

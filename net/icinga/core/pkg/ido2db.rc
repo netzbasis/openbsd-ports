@@ -1,0 +1,12 @@
+#!/bin/sh
+#
+# $OpenBSD: ido2db.rc,v 1.2 2012/05/27 19:39:28 sthen Exp $
+
+daemon="${TRUEPREFIX}/bin/ido2db"
+daemon_flags="-c ${SYSCONFDIR}/ido2db.cfg"
+
+. /etc/rc.d/rc.subr
+
+rc_reload=NO
+
+rc_cmd $1

@@ -1,0 +1,15 @@
+$OpenBSD: patch-configure,v 1.4 2013/04/23 18:59:53 dcoppa Exp $
+--- configure.orig	Fri Mar  1 12:10:34 2013
++++ configure	Tue Apr 23 08:54:04 2013
+@@ -3708,11 +3708,6 @@ fi
+ 
+ 
+ 
+-if test -z "$orig_CFLAGS"; then
+-  if test x$GCC = xyes; then
+-    CFLAGS="-g -O3"
+-  fi
+-fi
+ 
+ 
+ case `pwd` in

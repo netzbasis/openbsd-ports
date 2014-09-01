@@ -1,0 +1,14 @@
+#!/bin/sh
+#
+# $OpenBSD: dnscrypt_proxy.rc,v 1.2 2014/04/25 17:11:26 sthen Exp $
+
+daemon="${TRUEPREFIX}/sbin/dnscrypt-proxy -d --user=_dnscrypt-proxy"
+
+# uses OpenDNS resolvers by default
+daemon_flags="-R opendns"
+
+. /etc/rc.d/rc.subr
+
+rc_reload=NO
+
+rc_cmd $1

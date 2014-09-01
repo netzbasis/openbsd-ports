@@ -1,0 +1,73 @@
+$OpenBSD: patch-src_stored_bacula-sd_conf_in,v 1.8 2014/08/14 06:52:59 ajacoutot Exp $
+--- src/stored/bacula-sd.conf.in.orig	Tue Jul 29 18:31:22 2014
++++ src/stored/bacula-sd.conf.in	Thu Jul 31 16:12:28 2014
+@@ -124,15 +124,15 @@ Device {
+ #  Name = Autochanger
+ #  Device = Drive-1
+ #  Device = Drive-2
+-#  Changer Command = "@scriptdir@/mtx-changer %c %o %S %a %d"
+-#  Changer Device = /dev/sg0
++#  Changer Command = "@scriptdir@/chio-changer-openbsd %c %o %S %a %d"
++#  Changer Device = /dev/ch0
+ #}
+ 
+ #Device {
+ #  Name = Drive-1                      #
+ #  Drive Index = 0
+ #  Media Type = DLT-8000
+-#  Archive Device = /dev/nst0
++#  Archive Device = @TAPEDRIVE@
+ #  AutomaticMount = yes;               # when device opened, read it
+ #  AlwaysOpen = yes;
+ #  RemovableMedia = yes;
+@@ -154,7 +154,7 @@ Device {
+ #  Name = Drive-2                      #
+ #  Drive Index = 1
+ #  Media Type = DLT-8000
+-#  Archive Device = /dev/nst1
++#  Archive Device = @TAPEDRIVE@
+ #  AutomaticMount = yes;               # when device opened, read it
+ #  AlwaysOpen = yes;
+ #  RemovableMedia = yes;
+@@ -178,8 +178,8 @@ Device {
+ #  RemovableMedia = yes;
+ #  RandomAccess = no;
+ #  Maximum File Size = 3GB
+-## Changer Command = "@scriptdir@/mtx-changer %c %o %S %a %d"
+-## Changer Device = /dev/sg0
++## Changer Command = "@scriptdir@/chio-changer-openbsd %c %o %S %a %d"
++## Changer Device = /dev/ch0
+ ## AutoChanger = yes
+ #  # Enable the Alert command only if you have the mtx package loaded
+ ## Alert Command = "sh -c 'tapeinfo -f %c |grep TapeAlert|cat'"
+@@ -199,8 +199,8 @@ Device {
+ #  RemovableMedia = yes;
+ #  RandomAccess = no;
+ #  Maximum File Size = 4GB
+-## Changer Command = "@scriptdir@/mtx-changer %c %o %S %a %d"
+-## Changer Device = /dev/sg0
++## Changer Command = "@scriptdir@/chio-changer-openbsd %c %o %S %a %d"
++## Changer Device = /dev/ch0
+ ## AutoChanger = yes
+ #  # Enable the Alert command only if you have the mtx package loaded
+ ## Alert Command = "sh -c 'tapeinfo -f %c |grep TapeAlert|cat'"
+@@ -220,8 +220,8 @@ Device {
+ #  RemovableMedia = yes;
+ #  RandomAccess = no;
+ #  Maximum File Size = 5GB
+-## Changer Command = "@scriptdir@/mtx-changer %c %o %S %a %d"
+-## Changer Device = /dev/sg0
++## Changer Command = "@scriptdir@/chio-changer-openbsd %c %o %S %a %d"
++## Changer Device = /dev/ch0
+ ## AutoChanger = yes
+ #  # Enable the Alert command only if you have the mtx package loaded
+ ## Alert Command = "sh -c 'tapeinfo -f %c |grep TapeAlert|cat'"
+@@ -259,7 +259,7 @@ Device {
+ #  Name = DDS-4
+ #  Description = "DDS-4 for FreeBSD"
+ #  Media Type = DDS-4
+-#  Archive Device = /dev/nsa1
++#  Archive Device = @TAPEDRIVE@
+ #  AutomaticMount = yes;               # when device opened, read it
+ #  AlwaysOpen = yes
+ #  Offline On Unmount = no

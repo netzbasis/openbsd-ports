@@ -1,0 +1,14 @@
+$OpenBSD: patch-cfg_param_c,v 1.3 2013/11/05 15:05:04 sthen Exp $
+--- cfg_param.c.orig	Fri Oct 25 15:59:57 2013
++++ cfg_param.c	Tue Nov  5 14:58:05 2013
+@@ -47,8 +47,8 @@ struct ci_server_conf CONF = {
+ #else
+      "/var/tmp/", /*TMPDIR*/ "/var/run/c-icap/c-icap.pid", /*PIDFILE*/ "/var/run/c-icap/c-icap.ctl",   /*COMMANDS_SOCKET; */
+ #endif
+-     NULL,                      /* RUN_USER */
+-     NULL,                      /* RUN_GROUP */
++     "_c-icap",                 /* RUN_USER */
++     "_c-icap",                 /* RUN_GROUP */
+ #ifdef _WIN32
+      CONFDIR "\\c-icap.conf",   /*cfg_file */
+      CONFDIR "\\c-icap.magic",  /*magics_file */

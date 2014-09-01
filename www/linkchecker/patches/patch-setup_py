@@ -1,0 +1,48 @@
+--- setup.py.orig	Tue Jan 22 15:59:18 2013
++++ setup.py	Tue Jan 22 16:06:05 2013
+@@ -355,6 +355,7 @@ class MyInstallLib (install_lib, object):
+             else:
+                 val = getattr(cmd_obj, attr)
+             if attr == 'install_data':
++		val = sys.prefix
+                 cdir = os.path.join(val, "share", "linkchecker")
+                 data.append('config_dir = %r' % cnormpath(cdir))
+             elif attr == 'install_lib':
+@@ -650,11 +651,11 @@ data_files = [
+ ]
+ 
+ if os.name == 'posix':
+-    data_files.append(('share/man/man1', ['doc/en/linkchecker.1', 'doc/en/linkchecker-gui.1']))
+-    data_files.append(('share/man/man5', ['doc/en/linkcheckerrc.5']))
+-    data_files.append(('share/man/de/man1', ['doc/de/linkchecker.1', 'doc/de/linkchecker-gui.1']))
+-    data_files.append(('share/man/de/man5', ['doc/de/linkcheckerrc.5']))
+-    data_files.append(('share/linkchecker/examples',
++    data_files.append(('man/man1', ['doc/en/linkchecker.1', 'doc/en/linkchecker-gui.1']))
++    data_files.append(('man/man5', ['doc/en/linkcheckerrc.5']))
++#    data_files.append(('share/man/de/man1', ['doc/de/linkchecker.1', 'doc/de/linkchecker-gui.1']))
++#    data_files.append(('share/man/de/man5', ['doc/de/linkcheckerrc.5']))
++    data_files.append(('share/examples/linkchecker',
+               ['config/linkchecker-completion',
+                'doc/examples/check_blacklist.sh',
+                'doc/examples/check_for_x_errors.sh',
+@@ -898,9 +899,6 @@ o a command line, GUI and web interface
+         'py2app': MyPy2app,
+         'register': MyRegister,
+     },
+-    package_dir = {
+-        'linkcheck_dns.dns': 'third_party/dnspython/dns',
+-    },
+     packages = [
+         'linkcheck',
+         'linkcheck.bookmarks',
+@@ -913,10 +911,6 @@ o a command line, GUI and web interface
+         'linkcheck.HtmlParser',
+         'linkcheck.logger',
+         'linkcheck.network',
+-        'linkcheck_dns.dns',
+-        'linkcheck_dns.dns.rdtypes',
+-        'linkcheck_dns.dns.rdtypes.ANY',
+-        'linkcheck_dns.dns.rdtypes.IN',
+     ],
+     ext_modules = [
+         Extension('linkcheck.HtmlParser.htmlsax',

@@ -1,0 +1,11 @@
+$OpenBSD: patch-src_libs_tgfclient_CMakeLists_txt,v 1.2 2014/07/11 15:10:39 pascal Exp $
+--- src/libs/tgfclient/CMakeLists.txt.orig	Wed Jun 18 16:20:37 2014
++++ src/libs/tgfclient/CMakeLists.txt	Fri Jul 11 16:30:28 2014
+@@ -84,6 +84,7 @@ ENDIF(WIN32)
+ 
+ IF(UNIX)
+     ADD_X11_LIBRARY(tgfclient)
++    INCLUDE_DIRECTORIES(${X11_INCLUDE_DIR})
+     IF(OPTION_XRANDR)
+         ADD_XRANDR_LIBRARY(tgfclient)
+     ENDIF(OPTION_XRANDR)

@@ -1,0 +1,13 @@
+@comment $OpenBSD: PLIST,v 1.2 2014/06/14 23:24:55 sthen Exp $
+${P5ARCH}/Data/
+${P5ARCH}/Data/Dump/
+${P5ARCH}/Data/Dump/Streamer/
+${P5ARCH}/Data/Dump/Streamer.pm
+${P5ARCH}/Data/Dump/Streamer/_/
+${P5ARCH}/Data/Dump/Streamer/_/Printers.pm
+${P5ARCH}/auto/Data/
+${P5ARCH}/auto/Data/Dump/
+${P5ARCH}/auto/Data/Dump/Streamer/
+@comment ${P5ARCH}/auto/Data/Dump/Streamer/Streamer.bs
+${P5ARCH}/auto/Data/Dump/Streamer/Streamer.so
+@man man/man3p/Data::Dump::Streamer.3p

@@ -1,0 +1,12 @@
+$OpenBSD: patch-configure,v 1.15 2014/08/09 19:46:19 naddy Exp $
+--- configure.orig	Sun Jul 27 22:33:47 2014
++++ configure	Mon Jul 28 17:36:56 2014
+@@ -35613,7 +35613,7 @@ fi
+ $as_echo "$acl_cv_rpath" >&6; }
+   wl="$acl_cv_wl"
+   acl_libext="$acl_cv_libext"
+-  acl_shlibext="$acl_cv_shlibext"
++  acl_shlibext="${SHLIBEXT-$acl_cv_shlibext}"
+   acl_libname_spec="$acl_cv_libname_spec"
+   acl_library_names_spec="$acl_cv_library_names_spec"
+   acl_hardcode_libdir_flag_spec="$acl_cv_hardcode_libdir_flag_spec"

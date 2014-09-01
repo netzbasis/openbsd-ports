@@ -1,0 +1,18 @@
+$OpenBSD: patch-src_gui_c,v 1.42 2014/04/29 13:39:22 dcoppa Exp $
+
+Fix problem with remembered softvol not being loaded
+
+--- src/gui.c.orig	Tue Apr 29 14:47:07 2014
++++ src/gui.c	Tue Apr 29 14:48:09 2014
+@@ -1708,11 +1708,6 @@ gboolean set_volume(void *data)
+         if (!(softvol || audio_device.type == AUDIO_TYPE_SOFTVOL)) {
+             gm_audio_get_volume(&audio_device);
+         }
+-        if (pref_volume != -1) {
+-            audio_device.volume = (gdouble) pref_volume / 100.0;
+-            gmtk_media_player_set_volume(GMTK_MEDIA_PLAYER(media), audio_device.volume);
+-            pref_volume = -1;
+-        }
+         gm_log(verbose, G_LOG_LEVEL_DEBUG, "data is null new volume is %f", audio_device.volume);
+ #ifdef GTK2_12_ENABLED
+         gtk_scale_button_set_value(GTK_SCALE_BUTTON(vol_slider), audio_device.volume);

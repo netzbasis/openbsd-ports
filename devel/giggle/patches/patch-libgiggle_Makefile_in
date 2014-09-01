@@ -1,0 +1,12 @@
+$OpenBSD: patch-libgiggle_Makefile_in,v 1.4 2012/11/01 08:08:31 jasper Exp $
+--- libgiggle/Makefile.in.orig	Thu Nov  1 05:23:00 2012
++++ libgiggle/Makefile.in	Thu Nov  1 08:59:44 2012
+@@ -386,7 +386,7 @@ libgiggle_la_LIBADD = \
+ libgiggle_la_LDFLAGS = \
+ 	$(AM_LDFLAGS) \
+ 	-version-info $(LIBGIGGLE_ABI) \
+-	-Wl,--as-needed -Wl,--no-undefined \
++	-Wl,--as-needed \
+ 	$(NULL)
+ 
+ BUILT_SOURCES = \

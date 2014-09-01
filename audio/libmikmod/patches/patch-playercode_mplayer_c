@@ -1,0 +1,18 @@
+$OpenBSD: patch-playercode_mplayer_c,v 1.6 2013/01/13 09:10:40 sthen Exp $
+
+Avoid setting envelope cursors to negative values.
+
+--- playercode/mplayer.c.orig	Thu Jan 10 00:29:05 2013
++++ playercode/mplayer.c	Thu Jan 10 00:31:08 2013
+@@ -365,9 +365,9 @@ static SWORD StartEnvelope(ENVPR *t,UBYTE flg,UBYTE pt
+ 	}
+ 
+ 	/* Fit in the envelope, still */
+-	if (t->a >= t->pts)
++	if (t->a >= t->pts && t->pts != 0)
+ 		t->a = t->pts - 1;
+-	if (t->b >= t->pts)
++	if (t->b >= t->pts && t->pts != 0)
+ 		t->b = t->pts-1;
+ 
+ 	return t->env[t->a].val;

@@ -1,0 +1,37 @@
+$OpenBSD: patch-Build_PL,v 1.2 2013/11/03 07:52:02 ajacoutot Exp $
+--- Build.PL.orig	Wed Oct  5 02:25:49 2005
++++ Build.PL	Mon May 25 14:22:30 2009
+@@ -35,7 +36,7 @@ my %subsystems =
+ 	SDL => {
+ 		file      => {
+ 			from  => 'src/SDL.xs',
+-			to    => 'src/SDL_perl.xs',
++			to    => './SDL_perl.xs',
+ 		},
+ 		libraries => [qw( SDL SDL_image SDL_mixer SDL_net SDL_ttf SDL_gfx
+ 		                  png jpeg smpeg )],
+@@ -43,14 +44,14 @@ my %subsystems =
+ 	OpenGL => {
+ 		file      => {
+ 			from => 'src/OpenGL.xs',
+-			to   => 'src/SDL/OpenGL.xs', 
++			to   => 'SDL/OpenGL.xs', 
+ 		},
+ 		libraries => [qw( SDL GL GLU )],
+ 	},
+ 	SFont => {
+ 		file	=> {
+ 			from => 'src/SFont.xs',
+-			to   =>	'src/SDL/SFont.xs',
++			to   =>	'SDL/SFont.xs',
+ 		},
+ 		libraries => [qw( SDL SDL_image )],
+ 	},	
+@@ -123,6 +124,7 @@ my %xs = map { $subsystems{$_}{file}{from} => $subsyst
+ 	     keys %subsystems;
+ 
+ my $build   = SDL::Build->new(
++	module_name	     => 'SDL',
+ 	dist_name            => 'SDL_Perl', 
+ 	license		     => 'lgpl',
+ 	dist_version_from    => 'lib/SDL.pm',

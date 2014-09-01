@@ -1,0 +1,23 @@
+@comment $OpenBSD: PLIST,v 1.12 2013/04/18 12:21:31 naddy Exp $
+@bin bin/cjpeg
+@bin bin/djpeg
+@bin bin/jpegtran
+@bin bin/rdjpgcom
+@bin bin/wrjpgcom
+include/jconfig.h
+include/jerror.h
+include/jmorecfg.h
+include/jpeglib.h
+lib/libjpeg.a
+lib/libjpeg.la
+@lib lib/libjpeg.so.${LIBjpeg_VERSION}
+@man man/man1/cjpeg.1
+@man man/man1/djpeg.1
+@man man/man1/jpegtran.1
+@man man/man1/rdjpgcom.1
+@man man/man1/wrjpgcom.1
+share/doc/jpeg/
+share/doc/jpeg/libjpeg.txt
+share/doc/jpeg/wizard.txt
+share/examples/jpeg/
+share/examples/jpeg/example.c

@@ -1,0 +1,30 @@
+@comment $OpenBSD: PLIST,v 1.4 2013/01/30 01:08:32 sthen Exp $
+include/upnp/
+include/upnp/FreeList.h
+include/upnp/LinkedList.h
+include/upnp/ThreadPool.h
+include/upnp/TimerThread.h
+include/upnp/UpnpGlobal.h
+include/upnp/UpnpInet.h
+include/upnp/UpnpIntTypes.h
+include/upnp/UpnpStdInt.h
+include/upnp/UpnpString.h
+include/upnp/UpnpUniStd.h
+include/upnp/ithread.h
+include/upnp/ixml.h
+include/upnp/ixmldebug.h
+include/upnp/upnp.h
+include/upnp/upnpconfig.h
+include/upnp/upnpdebug.h
+include/upnp/upnptools.h
+lib/libixml.a
+lib/libixml.la
+@lib lib/libixml.so.${LIBixml_VERSION}
+lib/libthreadutil.a
+lib/libthreadutil.la
+@lib lib/libthreadutil.so.${LIBthreadutil_VERSION}
+lib/libupnp.a
+lib/libupnp.la
+@lib lib/libupnp.so.${LIBupnp_VERSION}
+lib/pkgconfig/
+lib/pkgconfig/libupnp.pc

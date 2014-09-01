@@ -1,0 +1,48 @@
+$OpenBSD: patch-Makefile,v 1.8 2014/08/23 14:33:07 kirby Exp $
+--- Makefile.orig	Fri Dec 20 04:50:37 2013
++++ Makefile	Thu Aug 14 14:06:52 2014
+@@ -4,7 +4,7 @@
+ #######################################################################
+ 
+ # Directory where qiv will be installed under.
+-PREFIX = /usr/local
++PREFIX ?= /usr/local
+ 
+ # Font to use for statusbar in fullscreen mode
+ STATUSBAR_FONT = "Monospace 9"
+@@ -30,7 +30,7 @@ GETOPT_LONG = -DHAVE_GETOPT_LONG
+ 
+ # This program will be run on the manual page after it is installed.
+ # If you don't want to compress the manpage, change it to 'true'.
+-COMPRESS_PROG = gzip -9f
++COMPRESS_PROG = true
+ 
+ # Comment this line out if your system doesn't have lcms2 installed
+ # (for minimal Color Management support)
+@@ -49,11 +49,11 @@ EXIF = -DHAVE_EXIF
+ # Do not edit below here!
+ ######################################################################
+ 
+-CC        = gcc
++CC        ?= gcc
+ #CFLAGS    = -O0 -g -Wall
+-CFLAGS    = -O2 -Wall \
+-	    -fcaller-saves -ffast-math -fno-strength-reduce \
+-	    -fthread-jumps #-march=pentium #-DSTAT_MACROS_BROKEN
++#CFLAGS    = -O2 -Wall \
++#	    -fcaller-saves -ffast-math -fno-strength-reduce \
++#	    -fthread-jumps #-march=pentium #-DSTAT_MACROS_BROKEN
+ #CFLAGS    = -O2 -Wall -fomit-frame-pointer -finline-functions \
+ #	    -fcaller-saves -ffast-math -fno-strength-reduce \
+ #	    -fthread-jumps #-march=pentium #-DSTAT_MACROS_BROKEN
+@@ -159,10 +159,6 @@ install: $(PROGRAM)
+ 	  install -d -m 0755 $(PREFIX)/share/applications; \
+ 	fi
+ 	install -m 0644 qiv.desktop $(PREFIX)/share/applications/qiv.desktop
+-	@if ./qiv -f ./intro.jpg ; \
+-	then echo "-- Test Passed --" ; \
+-	else echo "-- Test Failed --" ; \
+-	fi
+ 	@echo "\nDont forget to look into the \"qiv-command\" file and install it!\n-> cp qiv-command.example $(PREFIX)/bin/qiv-command\n\n"
+ 
+ # the end... ;-)

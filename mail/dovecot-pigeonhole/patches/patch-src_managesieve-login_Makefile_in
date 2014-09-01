@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_managesieve-login_Makefile_in,v 1.5 2013/09/30 20:32:07 brad Exp $
+--- src/managesieve-login/Makefile.in.orig	Thu Sep 26 15:03:34 2013
++++ src/managesieve-login/Makefile.in	Mon Sep 30 15:16:27 2013
+@@ -313,7 +313,7 @@ libmanagesieve_login_settings_la_CFLAGS = \
+ libs = \
+ 	$(top_builddir)/src/lib-managesieve/libmanagesieve.a
+ 
+-managesieve_login_LDADD = $(libs) $(LIBDOVECOT_LOGIN) $(LIBDOVECOT)
++managesieve_login_LDADD = $(libs) $(LIBDOVECOT_LOGIN) $(LIBDOVECOT) -Wl,-rpath,$(dovecot_pkglibdir)
+ managesieve_login_DEPENDENCIES = $(libs) $(LIBDOVECOT_LOGIN_DEPS) $(LIBDOVECOT_DEPS)
+ managesieve_login_SOURCES = \
+ 	client.c \

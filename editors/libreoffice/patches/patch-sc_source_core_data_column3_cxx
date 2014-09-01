@@ -1,0 +1,12 @@
+$OpenBSD: patch-sc_source_core_data_column3_cxx,v 1.3 2013/05/31 14:50:14 robert Exp $
+--- sc/source/core/data/column3.cxx.orig.port	Thu May  2 17:55:29 2013
++++ sc/source/core/data/column3.cxx	Sun May 12 12:52:22 2013
+@@ -19,6 +19,8 @@
+ 
+ #include <boost/scoped_ptr.hpp>
+ 
++typedef long ptrdiff_t;
++
+ #include <mdds/flat_segment_tree.hpp>
+ 
+ #include <sfx2/objsh.hxx>

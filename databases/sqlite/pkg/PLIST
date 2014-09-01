@@ -1,0 +1,8 @@
+@comment $OpenBSD: PLIST,v 1.4 2013/01/14 13:43:36 sthen Exp $
+@bin bin/sqlite
+include/sqlite.h
+lib/libsqlite.a
+lib/libsqlite.la
+lib/pkgconfig/
+lib/pkgconfig/sqlite.pc
+%%SHARED%%

@@ -1,0 +1,91 @@
+$OpenBSD: patch-configure,v 1.12 2012/07/19 15:05:30 giovanni Exp $
+--- configure.orig	Wed Jun  6 02:58:38 2012
++++ configure	Mon Jul  9 15:38:11 2012
+@@ -39,7 +39,6 @@
+ #
+ DIR_BIN=/usr/local/bin
+ DIR_SBIN=/usr/local/sbin
+-DIR_LIBDATA=/usr/local/lib/fax
+ DIR_LIB=/usr/local/lib
+ DIR_LIBEXEC=$DIR_SBIN
+ DIR_SPOOL=/var/spool/hylafax
+@@ -73,13 +72,13 @@ NLS=auto
+ OPTIMIZER="-O"
+ LIBCRYPT=
+ LIBPAM=
+-LIBTIFF="-ltiff"
+-TIFFINC=
++LIBTIFF="-L${LOCALBASE}/lib -ltiff"
++TIFFINC="-I${LOCALBASE}/include"
+ TIFFBIN=
+ LIBUTIL=
+ LIBZ=-lz
+ ZLIBINC=
+-LIBINTL=
++LIBINTL="-L${LOCALBASE}/lib -I${LOCALBASE}/include -lintl -liconv"
+ INTLINC=
+ REGEX=yes
+ LIBREGEX='-L${DEPTH}/regex -lregex'
+@@ -1559,7 +1558,7 @@ int t() { $f(); return 0; }
+ int main(){ t(); return 0; }
+ EOF
+     capture cat t.c
+-    runMake t "t:; \${CCF} t.c $libs"
++    runMake t "t:; \${CCF} t.c -I${LOCALBASE}/include -L${LOCALBASE}/lib $libs"
+ }
+ 
+ #
+@@ -1587,7 +1586,7 @@ CheckForIncludeFile()
+ 	echo "#include \"$i\""
+      done)>t.c++
+     capture cat t.c++
+-    runMake t "t:; \${C++F} \${C++FILE} -E t.c++${MAKECXXOVERRIDE}"
++    runMake t "t:; \${C++F} \${C++FILE} -E t.c++${MAKECXXOVERRIDE} -I${LOCALBASE}/include"
+ }
+ 
+ if [ "$SGI2FAX" = auto ]; then
+@@ -2568,7 +2567,6 @@ EOF
+ 				tiff_bytecount_t="uint64"
+ 				echo '#define TIFFHeader	TIFFHeaderClassic'
+ 				echo '#define TIFF_VERSION	TIFF_VERSION_CLASSIC'
+-				echo '#define NEED_TIFFDIRENTRY'
+ 				;;
+ 	    esac
+ 	fi
+@@ -3405,19 +3403,8 @@ fi
+ HAVE_JBIGTIFF="/*#define HAVE_JBIGTIFF 1*/"
+ if [ "$DISABLE_JBIG" != "yes" ]; then
+     Note "Checking JBIG-in-TIFF conversion support."
+-    $TIFFBIN/tiffcp -c g4 misc/jbig.tif misc/foo.tif > /dev/null 2>&1
+-    if [ $? = 0 ]; then
+-	$TIFFBIN/tiffcp misc/jbig.tif misc/foo.tif > /dev/null
+-	if [ -n "`$TIFFBIN/tiffinfo misc/foo.tif | grep 'Fax DCS'`" ]; then
+-	    HAVE_JBIGTIFF="#define HAVE_JBIGTIFF 1"
+-	    Note "JBIG-in-TIFF conversion support found."
+-	else
+-	    Note "JBIG-in-TIFF fax support not found."
+-	fi
+-    else
+-	Note "JBIG-in-TIFF conversion support not found."
+-    fi
+-    rm -f misc/foo.tif
++    # OpenBSD does not have JBIG-in-TIFF support
++    Note "JBIG-in-TIFF conversion support not found."
+ fi
+ 
+ Note "Done checking TIFF support."
+@@ -4681,10 +4668,10 @@ case $MANSCHEME in
+ *-0|*-0.gz|*-0.Z|*-gz|*-Z|*-z)
+     suf=`echo $MANSCHEME | $SED 's/.*-/./'`
+     A='`echo $$i | sed' B='`'		# workaround shell bugs
+-    MANCAPPNAME="$A s/\\\\.1\$\$/$suf/$B"
+-    MANCFILENAME="$A s/\\\\.4f\$\$/$suf/$B"
+-    MANSAPPNAME="$A s/\\\\.1m\$\$/$suf/$B"
+-    MANSFILENAME="$A s/\\\\.4f\$\$/$suf/$B"
++    MANCAPPNAME="$A s/\\\\.1\$$/$suf/$B"
++    MANCFILENAME="$A s/\\\\.4f\$$/$suf/$B"
++    MANSAPPNAME="$A s/\\\\.1m\$$/$suf/$B"
++    MANSFILENAME="$A s/\\\\.4f\$$/$suf/$B"
+     ;;
+ bsd-*-strip)
+     MANCAPPNAME='$$i'

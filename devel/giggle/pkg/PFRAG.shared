@@ -1,0 +1,2 @@
+@comment $OpenBSD: PFRAG.shared,v 1.4 2013/03/31 07:00:21 ajacoutot Exp $
+lib/giggle/plugins/${GNOME_VERSION}/libpersonal-details.so

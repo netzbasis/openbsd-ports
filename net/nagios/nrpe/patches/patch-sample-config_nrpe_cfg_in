@@ -1,0 +1,26 @@
+$OpenBSD: patch-sample-config_nrpe_cfg_in,v 1.2 2013/04/17 15:15:16 sthen Exp $
+
+- provide a standard check_disk that checks all volumes, apart from hda1
+not existing, it's stupid to check individual FS when they're split up
+as usual with OpenBSD.
+
+--- sample-config/nrpe.cfg.in.orig	Mon Dec 17 13:44:46 2012
++++ sample-config/nrpe.cfg.in	Wed Apr 17 15:35:57 2013
+@@ -23,7 +23,7 @@ log_facility=@log_facility@
+ # number.  The file is only written if the NRPE daemon is started by the root
+ # user and is running in standalone mode.
+ 
+-pid_file=/var/run/nrpe.pid
++pid_file=/var/run/nrpe/nrpe.pid
+ 
+ 
+ 
+@@ -218,7 +218,7 @@ connection_timeout=300
+ 
+ command[check_users]=@libexecdir@/check_users -w 5 -c 10
+ command[check_load]=@libexecdir@/check_load -w 15,10,5 -c 30,25,20
+-command[check_hda1]=@libexecdir@/check_disk -w 20% -c 10% -p /dev/hda1
++command[check_disk]=@libexecdir@/check_disk -w 20% -c 10%
+ command[check_zombie_procs]=@libexecdir@/check_procs -w 5 -c 10 -s Z
+ command[check_total_procs]=@libexecdir@/check_procs -w 150 -c 200 
+ 

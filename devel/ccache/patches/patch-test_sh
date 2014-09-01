@@ -1,0 +1,12 @@
+$OpenBSD: patch-test_sh,v 1.4 2013/01/07 14:25:58 sthen Exp $
+--- test.sh.orig	Sun Jan  6 16:57:59 2013
++++ test.sh	Mon Jan  7 14:22:38 2013
+@@ -1836,7 +1836,7 @@ fi
+ 
+ compiler_version="`$COMPILER --version 2>&1 | head -1`"
+ case $compiler_version in
+-    *gcc*|2.95*)
++    *gcc*|*GCC*|2.95*)
+         ;;
+     *)
+         echo "WARNING: Compiler $COMPILER not supported (version: $compiler_version) -- not running tests" >&2

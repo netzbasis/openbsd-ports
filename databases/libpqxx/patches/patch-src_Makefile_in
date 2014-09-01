@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_Makefile_in,v 1.4 2014/07/12 07:19:56 zhuk Exp $
+--- src/Makefile.in.orig	Fri Jul 11 16:13:06 2014
++++ src/Makefile.in	Fri Jul 11 16:13:22 2014
+@@ -291,7 +291,7 @@ libpqxx_la_SOURCES = binarystring.cxx \
+ 	tuple.cxx \
+ 	util.cxx
+ 
+-libpqxx_version = -release $(PQXX_ABI)
++#libpqxx_version = -release $(PQXX_ABI)
+ libpqxx_la_LDFLAGS = $(libpqxx_version) \
+ 	-rpath $(libdir) \
+ 	${POSTGRES_LIB}

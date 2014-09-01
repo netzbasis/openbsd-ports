@@ -1,0 +1,12 @@
+$OpenBSD: patch-runtime_autoload_tar_vim,v 1.2 2013/10/04 08:44:03 sthen Exp $
+--- runtime/autoload/tar.vim.orig	Fri Sep 20 19:13:53 2013
++++ runtime/autoload/tar.vim	Sat Sep 21 23:43:47 2013
+@@ -43,7 +43,7 @@ if !exists("g:tar_readoptions")
+  let g:tar_readoptions= "OPxf"
+ endif
+ if !exists("g:tar_cmd")
+- let g:tar_cmd= "tar"
++ let g:tar_cmd= "gtar"
+ endif
+ if !exists("g:tar_writeoptions")
+  let g:tar_writeoptions= "uf"

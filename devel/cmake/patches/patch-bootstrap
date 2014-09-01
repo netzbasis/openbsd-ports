@@ -1,0 +1,20 @@
+$OpenBSD: patch-bootstrap,v 1.4 2013/08/22 09:53:20 dcoppa Exp $
+
+Use Ninja to build CMake
+XXX: broken on arm
+
+--- bootstrap.orig	Tue Jul  2 15:41:41 2013
++++ bootstrap	Tue Aug 20 10:55:10 2013
+@@ -112,7 +112,11 @@ if ${cmake_system_mingw}; then
+   cmake_bootstrap_generator="MSYS Makefiles"
+ else
+   # Bootstrapping from a standard UNIX prompt.
+-  cmake_bootstrap_generator="Unix Makefiles"
++  if arch -s | grep ^arm >/dev/null 2>&1; then
++    cmake_bootstrap_generator="Unix Makefiles"
++  else
++    cmake_bootstrap_generator="Ninja"
++  fi
+ fi
+ 
+ # Choose tools and extensions for this platform.

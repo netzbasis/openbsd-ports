@@ -1,0 +1,2 @@
+@comment $OpenBSD: PFRAG.native,v 1.2 2013/01/04 11:07:29 chrisz Exp $
+%%dynlink%%

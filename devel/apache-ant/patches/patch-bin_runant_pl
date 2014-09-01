@@ -1,0 +1,12 @@
+$OpenBSD: patch-bin_runant_pl,v 1.4 2013/03/02 12:33:01 jasper Exp $
+--- bin/runant.pl.orig	Tue May 22 06:24:46 2012
++++ bin/runant.pl	Tue Feb 12 23:23:31 2013
+@@ -85,7 +85,7 @@ if(($^O eq "MSWin32") || ($^O eq "dos") || ($^O eq "cy
+         }
+ 
+ #build up standard classpath
+-my $localpath = "$HOME/lib/ant-launcher.jar";
++my $localpath = "_antlibs_/ant-launcher.jar";
+ #set JVM options and Ant arguments, if any
+ my @ANT_OPTS=split(" ", $ENV{ANT_OPTS});
+ my @ANT_ARGS=split(" ", $ENV{ANT_ARGS});

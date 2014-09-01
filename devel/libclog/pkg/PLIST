@@ -1,0 +1,33 @@
+@comment $OpenBSD: PLIST,v 1.9 2012/09/01 12:02:26 naddy Exp $
+%%SHARED%%
+include/clog.h
+lib/libclog.a
+lib/libclog_p.a
+@man man/man3/CABORT.3
+@man man/man3/CABORTX.3
+@man man/man3/CALERT.3
+@man man/man3/CALERTX.3
+@man man/man3/CCRIT.3
+@man man/man3/CCRITX.3
+@man man/man3/CDBG.3
+@man man/man3/CEMERG.3
+@man man/man3/CEMERGX.3
+@man man/man3/CERR.3
+@man man/man3/CERRX.3
+@man man/man3/CFATAL.3
+@man man/man3/CFATALX.3
+@man man/man3/CINFO.3
+@man man/man3/CNDBG.3
+@man man/man3/CNINFO.3
+@man man/man3/CNNOTICE.3
+@man man/man3/CNOTICE.3
+@man man/man3/CNWARN.3
+@man man/man3/CNWARNX.3
+@man man/man3/CWARN.3
+@man man/man3/CWARNX.3
+@man man/man3/clog.3
+@man man/man3/clog_init.3
+@man man/man3/clog_set_flags.3
+@man man/man3/clog_set_logfile.3
+@man man/man3/clog_set_mask.3
+@man man/man3/clog_version.3

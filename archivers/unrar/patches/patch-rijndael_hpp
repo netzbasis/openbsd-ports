@@ -1,0 +1,25 @@
+$OpenBSD: patch-rijndael_hpp,v 1.2 2013/09/06 13:28:16 naddy Exp $
+--- rijndael.hpp.orig	Fri Aug  2 15:30:12 2013
++++ rijndael.hpp	Thu Aug 29 22:58:10 2013
+@@ -16,15 +16,21 @@
+ class Rijndael
+ { 
+   private:
++#ifndef OPENSSL_AES
+     void keySched(byte key[_MAX_KEY_COLUMNS][4]);
+     void keyEncToDec();
+     void encrypt(const byte a[16], byte b[16]);
+     void decrypt(const byte a[16], byte b[16]);
+     void GenerateTables();
++#endif
+ 
++#ifdef OPENSSL_AES
++    EVP_CIPHER_CTX ctx;
++#else
+     int      m_uRounds;
+     byte     m_initVector[MAX_IV_SIZE];
+     byte     m_expandedKey[_MAX_ROUNDS+1][4][4];
++#endif
+   public:
+     Rijndael();
+     void Init(bool Encrypt,const byte *key,uint keyLen,const byte *initVector);

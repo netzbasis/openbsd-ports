@@ -1,0 +1,12 @@
+@comment $OpenBSD: PLIST,v 1.4 2013/03/23 11:33:40 benoit Exp $
+${P5SITE}/Test/
+${P5SITE}/Test/Reporter/
+${P5SITE}/Test/Reporter.pm
+${P5SITE}/Test/Reporter/Transport/
+${P5SITE}/Test/Reporter/Transport.pm
+${P5SITE}/Test/Reporter/Transport/File.pm
+${P5SITE}/Test/Reporter/Transport/Null.pm
+@man man/man3p/Test::Reporter.3p
+@man man/man3p/Test::Reporter::Transport.3p
+@man man/man3p/Test::Reporter::Transport::File.3p
+@man man/man3p/Test::Reporter::Transport::Null.3p

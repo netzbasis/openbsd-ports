@@ -1,0 +1,10 @@
+@comment $OpenBSD: PLIST,v 1.7 2014/06/14 23:23:11 sthen Exp $
+${P5ARCH}/
+${P5ARCH}/Audio/
+${P5ARCH}/Audio/CD.pm
+${P5ARCH}/auto/
+${P5ARCH}/auto/Audio/
+${P5ARCH}/auto/Audio/CD/
+@comment ${P5ARCH}/auto/Audio/CD/CD.bs
+${P5ARCH}/auto/Audio/CD/CD.so
+@man man/man3p/Audio::CD.3p

@@ -1,0 +1,85 @@
+@comment $OpenBSD: PLIST,v 1.5 2014/03/11 18:25:37 abieber Exp $
+@bin bin/task
+@bin bin/tasksh
+@man man/man1/task.1
+@man man/man1/tasksh.1
+@man man/man5/task-color.5
+@man man/man5/task-faq.5
+@man man/man5/task-sync.5
+@man man/man5/task-tutorial.5
+@man man/man5/taskrc.5
+share/taskwarrior/
+share/taskwarrior/AUTHORS
+@comment share/taskwarrior/COPYING
+@comment share/taskwarrior/ChangeLog
+@comment share/taskwarrior/INSTALL
+@comment share/taskwarrior/NEWS
+@comment share/taskwarrior/README
+share/taskwarrior/i18n/
+share/taskwarrior/i18n/tips.de-DE
+share/taskwarrior/i18n/tips.en-US
+share/taskwarrior/i18n/tips.es-ES
+share/taskwarrior/i18n/tips.fr-FR
+share/taskwarrior/i18n/tips.it-IT
+share/taskwarrior/i18n/tips.ja-JP
+share/taskwarrior/i18n/tips.sv-SE
+share/taskwarrior/rc/
+share/taskwarrior/rc/dark-16.theme
+share/taskwarrior/rc/dark-256.theme
+share/taskwarrior/rc/dark-blue-256.theme
+share/taskwarrior/rc/dark-gray-256.theme
+share/taskwarrior/rc/dark-green-256.theme
+share/taskwarrior/rc/dark-red-256.theme
+share/taskwarrior/rc/dark-violets-256.theme
+share/taskwarrior/rc/dark-yellow-green.theme
+share/taskwarrior/rc/holidays.be-BY.rc
+share/taskwarrior/rc/holidays.cs-CZ.rc
+share/taskwarrior/rc/holidays.da-DK.rc
+share/taskwarrior/rc/holidays.de-AT.rc
+share/taskwarrior/rc/holidays.de-DE.rc
+share/taskwarrior/rc/holidays.en-CA.rc
+share/taskwarrior/rc/holidays.en-GB.rc
+share/taskwarrior/rc/holidays.en-NZ.rc
+share/taskwarrior/rc/holidays.en-US.rc
+share/taskwarrior/rc/holidays.es-ES.rc
+share/taskwarrior/rc/holidays.fr-FR.rc
+share/taskwarrior/rc/holidays.it-IT.rc
+share/taskwarrior/rc/holidays.jp-JP.rc
+share/taskwarrior/rc/holidays.nb-NO.rc
+share/taskwarrior/rc/holidays.nl-NL.rc
+share/taskwarrior/rc/holidays.sv-SE.rc
+share/taskwarrior/rc/light-16.theme
+share/taskwarrior/rc/light-256.theme
+share/taskwarrior/rc/refresh
+share/taskwarrior/rc/solarized-dark-256.theme
+share/taskwarrior/rc/solarized-light-256.theme
+share/taskwarrior/scripts/
+share/taskwarrior/scripts/add-ons/
+share/taskwarrior/scripts/add-ons/export-csv.pl
+share/taskwarrior/scripts/add-ons/export-html.pl
+share/taskwarrior/scripts/add-ons/export-ical.pl
+share/taskwarrior/scripts/add-ons/export-sql.py
+share/taskwarrior/scripts/add-ons/export-tsv.pl
+share/taskwarrior/scripts/add-ons/export-xml.pl
+share/taskwarrior/scripts/add-ons/export-xml.py
+share/taskwarrior/scripts/add-ons/export-xml.rb
+share/taskwarrior/scripts/add-ons/export-yad.pl
+share/taskwarrior/scripts/add-ons/export-yaml.pl
+share/taskwarrior/scripts/add-ons/import-todo.sh.pl
+share/taskwarrior/scripts/add-ons/import-yaml.pl
+share/taskwarrior/scripts/add-ons/update-holidays.pl
+share/taskwarrior/scripts/bash/
+share/taskwarrior/scripts/bash/task.sh
+share/taskwarrior/scripts/fish/
+share/taskwarrior/scripts/fish/task.fish
+share/taskwarrior/scripts/vim/
+share/taskwarrior/scripts/vim/README
+share/taskwarrior/scripts/vim/ftdetect/
+share/taskwarrior/scripts/vim/ftdetect/task.vim
+share/taskwarrior/scripts/vim/syntax/
+share/taskwarrior/scripts/vim/syntax/taskdata.vim
+share/taskwarrior/scripts/vim/syntax/taskedit.vim
+share/taskwarrior/scripts/vim/syntax/taskrc.vim
+share/taskwarrior/scripts/zsh/
+share/taskwarrior/scripts/zsh/_task
+share/taskwarrior/task-ref.pdf

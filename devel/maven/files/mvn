@@ -1,0 +1,5 @@
+#!/bin/sh
+#
+# $OpenBSD: mvn,v 1.2 2013/03/06 13:12:47 kurt Exp $
+
+exec %%LOCALBASE%%/maven/bin/mvn "$@"

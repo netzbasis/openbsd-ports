@@ -1,0 +1,95 @@
+$OpenBSD: patch-rijndael_cpp,v 1.2 2013/09/06 13:28:16 naddy Exp $
+--- rijndael.cpp.orig	Fri Aug  2 15:30:12 2013
++++ rijndael.cpp	Thu Aug 29 22:58:10 2013
+@@ -7,6 +7,8 @@
+  ***************************************************************************/
+ #include "rar.hpp"
+ 
++#ifndef OPENSSL_AES
++
+ static byte S[256],S5[256],rcon[30];
+ static byte T1[256][4],T2[256][4],T3[256][4],T4[256][4];
+ static byte T5[256][4],T6[256][4],T7[256][4],T8[256][4];
+@@ -52,6 +54,7 @@ inline void Copy128(byte *dest,const byte *src)
+ #endif
+ }
+ 
++#endif // OPENSSL_AES
+ 
+ //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+ // API
+@@ -59,13 +62,34 @@ inline void Copy128(byte *dest,const byte *src)
+ 
+ Rijndael::Rijndael()
+ {
++#ifndef OPENSSL_AES
+   if (S[0]==0)
+     GenerateTables();
++#endif
+ }
+ 
+ 
+ void Rijndael::Init(bool Encrypt,const byte *key,uint keyLen,const byte * initVector)
+ {
++#ifdef OPENSSL_AES
++  const EVP_CIPHER *cipher;
++  switch(keyLen)
++  {
++    case 128:
++      cipher = EVP_aes_128_cbc();
++      break;
++    case 192:
++      cipher = EVP_aes_192_cbc();
++      break;
++    case 256:
++      cipher = EVP_aes_256_cbc();
++      break;
++  }
++
++  EVP_CIPHER_CTX_init(&ctx);
++  EVP_CipherInit_ex(&ctx, cipher, NULL, key, initVector, Encrypt);
++  EVP_CIPHER_CTX_set_padding(&ctx, 0);
++#else
+   uint uKeyLenInBytes;
+   switch(keyLen)
+   {
+@@ -95,6 +119,7 @@ void Rijndael::Init(bool Encrypt,const byte *key,uint 
+ 
+   if(!Encrypt)
+     keyEncToDec();
++#endif // OPENSSL_AES
+ }
+ 
+ 
+@@ -104,6 +129,11 @@ size_t Rijndael::blockDecrypt(const byte *input, size_
+   if (input == 0 || inputLen <= 0)
+     return 0;
+ 
++#ifdef OPENSSL_AES
++  int outLen;
++  EVP_CipherUpdate(&ctx, outBuffer, &outLen, input, inputLen);
++  return outLen;
++#else
+   byte block[16], iv[4][4];
+   memcpy(iv,m_initVector,16); 
+ 
+@@ -126,9 +156,11 @@ size_t Rijndael::blockDecrypt(const byte *input, size_
+   memcpy(m_initVector,iv,16);
+   
+   return 16*numBlocks;
++#endif // OPENSSL_AES
+ }
+ 
+ 
++#ifndef OPENSSL_AES
+ //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+ // ALGORITHM
+ //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+@@ -310,6 +342,7 @@ void Rijndael::GenerateTables()
+   }
+ }
+ 
++#endif // OPENSSL_AES
+ 
+ #if 0
+ static void TestRijndael();

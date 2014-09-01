@@ -1,0 +1,15 @@
+$OpenBSD: patch-libclamav_vba_extract_c,v 1.9 2014/06/17 09:12:45 sthen Exp $
+
+allow for machine arch where char is unsigned by default (e.g. arm, powerpc)
+
+--- libclamav/vba_extract.c.orig	Tue May  6 19:42:41 2014
++++ libclamav/vba_extract.c	Thu May  8 00:45:57 2014
+@@ -99,7 +99,7 @@ vba_endian_convert_32(uint32_t value, int big_endian)
+ 
+ 
+ static char *
+-get_unicode_name(const char *name, int size, int big_endian)
++get_unicode_name(const signed char *name, int size, int big_endian)
+ {
+ 	int i, increment;
+ 	char *newname, *ret;

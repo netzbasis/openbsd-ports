@@ -1,0 +1,82 @@
+$OpenBSD: patch-raddb_radiusd_conf_in,v 1.13 2014/07/17 00:20:51 sthen Exp $
+--- raddb/radiusd.conf.in.orig	Mon Apr 28 20:13:08 2014
++++ raddb/radiusd.conf.in	Wed Jul  9 00:38:52 2014
+@@ -103,7 +103,7 @@ db_dir = ${raddbdir}
+ #	make
+ #	make install
+ #
+-libdir = @libdir@
++libdir = @libdir@/freeradius 
+ 
+ #  pidfile: Where to place the PID of the RADIUS server.
+ #
+@@ -164,8 +164,8 @@ pidfile = ${run_dir}/${name}.pid
+ #  It will join all groups where "user" is a member.  This can allow
+ #  for some finer-grained access controls.
+ #
+-#user = radius
+-#group = radius
++user = _freeradius
++group = _freeradius
+ 
+ #  panic_action: Command to execute if the server dies unexpectedly.
+ #
+@@ -584,8 +584,8 @@ security {
+ #
+ #  allowed values: {no, yes}
+ #
+-proxy_requests  = yes
+-$INCLUDE proxy.conf
++proxy_requests  = no 
++#$INCLUDE ${confdir}/proxy.conf
+ 
+ 
+ # CLIENTS CONFIGURATION
+@@ -601,7 +601,7 @@ $INCLUDE proxy.conf
+ #  Anything listed in 'clients.conf' will take precedence over the
+ #  information from the old-style configuration files.
+ #
+-$INCLUDE clients.conf
++$INCLUDE ${confdir}/clients.conf
+ 
+ 
+ # THREAD POOL CONFIGURATION
+@@ -735,12 +735,12 @@ modules {
+ 	#  For all EAP related authentications.
+ 	#  Now in another file, because it is very large.
+ 	#
+-	$INCLUDE eap.conf
++	$INCLUDE ${confdir}/eap.conf
+ 
+ 	#  Include another file that has the SQL-related configuration.
+ 	#  This is another file only because it tends to be big.
+ 	#
+-#	$INCLUDE sql.conf
++#	$INCLUDE ${confdir}/sql.conf
+ 
+ 	#
+ 	#  This module is an SQL enabled version of the counter module.
+@@ -752,12 +752,12 @@ modules {
+ 	#  totally dependent on the SQL module to process Accounting
+ 	#  packets.
+ 	#
+-#	$INCLUDE sql/mysql/counter.conf
++#	$INCLUDE ${confdir}/sql/mysql/counter.conf
+ 
+ 	#
+ 	#  IP addresses managed in an SQL table.
+ 	#
+-#	$INCLUDE sqlippool.conf
++#	$INCLUDE ${confdir}/sqlippool.conf
+ }
+ 
+ # Instantiation
+@@ -831,7 +831,7 @@ instantiate {
+ #	to multiple times.
+ #
+ ######################################################################
+-$INCLUDE policy.conf
++$INCLUDE ${confdir}/policy.conf 
+ 
+ ######################################################################
+ #

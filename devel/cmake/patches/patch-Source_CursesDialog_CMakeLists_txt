@@ -1,0 +1,22 @@
+$OpenBSD: patch-Source_CursesDialog_CMakeLists_txt,v 1.4 2013/10/14 12:58:03 dcoppa Exp $
+--- Source/CursesDialog/CMakeLists.txt.orig	Mon Oct  7 17:31:00 2013
++++ Source/CursesDialog/CMakeLists.txt	Wed Oct  9 09:38:48 2013
+@@ -25,13 +25,15 @@ set( CURSES_SRCS
+               CursesDialog/ccmake
+    )
+ 
+-include_directories(${CMake_SOURCE_DIR}/Source/CursesDialog/form
+-                    ${CMake_BINARY_DIR}/Source/CursesDialog/form)
+ include_directories(${CURSES_INCLUDE_PATH})
+ 
+ 
+ add_executable(ccmake ${CURSES_SRCS} )
+ target_link_libraries(ccmake CMakeLib)
+-target_link_libraries(ccmake cmForm)
++target_link_libraries(ccmake form)
++target_link_libraries(ccmake ${CURSES_LIBRARY})
++if(CURSES_EXTRA_LIBRARY)
++  target_link_libraries(ccmake ${CURSES_EXTRA_LIBRARY})
++endif(CURSES_EXTRA_LIBRARY)
+ 
+ install(TARGETS ccmake DESTINATION bin)

@@ -1,0 +1,37 @@
+@comment $OpenBSD: PLIST,v 1.2 2014/04/28 09:48:54 bentley Exp $
+%%SHARED%%
+@bin bin/automappingconverter
+@bin bin/tiled
+@bin bin/tmxrasterizer
+@bin bin/tmxviewer
+@lib lib/libtiled.so.${LIBtiled_VERSION}
+lib/tiled/
+lib/tiled/plugins/
+@man man/man1/automappingconverter.1
+@man man/man1/tiled.1
+@man man/man1/tmxrasterizer.1
+@man man/man1/tmxviewer.1
+share/applications/tiled.desktop
+share/icons/hicolor/16x16/apps/tiled.png
+share/icons/hicolor/32x32/apps/tiled.png
+share/icons/hicolor/scalable/apps/tiled.svg
+share/tiled/
+share/tiled/translations/
+share/tiled/translations/tiled_cs.qm
+share/tiled/translations/tiled_de.qm
+share/tiled/translations/tiled_en.qm
+share/tiled/translations/tiled_es.qm
+share/tiled/translations/tiled_fr.qm
+share/tiled/translations/tiled_he.qm
+share/tiled/translations/tiled_it.qm
+share/tiled/translations/tiled_ja.qm
+share/tiled/translations/tiled_lv.qm
+share/tiled/translations/tiled_nl.qm
+share/tiled/translations/tiled_pt.qm
+share/tiled/translations/tiled_pt_BR.qm
+share/tiled/translations/tiled_ru.qm
+share/tiled/translations/tiled_zh.qm
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database
+@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor

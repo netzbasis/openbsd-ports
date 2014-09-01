@@ -1,0 +1,33 @@
+$OpenBSD: patch-configure,v 1.10 2013/11/03 07:52:01 ajacoutot Exp $
+--- configure.orig	Wed Feb  8 00:17:57 2012
++++ configure	Fri Apr 27 09:51:08 2012
+@@ -6633,6 +6633,11 @@ if test "x$apr_preload_done" != "xyes" ; then
+         ;;
+     *-openbsd*)
+ 
++  if test -z "$apr_lock_method"; then
++    test "x$silent" != "xyes" && echo "  setting apr_lock_method to \"USE_FLOCK_SERIALIZE\""
++    apr_lock_method="USE_FLOCK_SERIALIZE"
++  fi
++
+   if test "x$CPPFLAGS" = "x"; then
+     test "x$silent" != "xyes" && echo "  setting CPPFLAGS to \"-D_POSIX_THREADS\""
+     CPPFLAGS="-D_POSIX_THREADS"
+@@ -13934,7 +13939,7 @@ fi
+ LIBTOOL_DEPS="$ltmain"
+ 
+ # Always use our own libtool.
+-LIBTOOL='$(SHELL) $(apr_builddir)/libtool'
++#LIBTOOL='$(SHELL) $(apr_builddir)/libtool'
+ 
+ 
+ 
+@@ -25452,7 +25457,7 @@ for ac_spec in func:semget func:semctl define:SEM_UNDO
+ done
+ if test ".$ac_rc" = .yes; then
+     :
+-    hassysvser="1"
++    hassysvser="0"
+ else
+     :
+     hassysvser="0"

@@ -1,0 +1,13 @@
+$OpenBSD: patch-Build_PL,v 1.3 2013/03/21 01:34:46 sthen Exp $
+--- Build.PL.orig	Tue Oct  2 04:18:50 2012
++++ Build.PL	Thu Mar 21 01:30:26 2013
+@@ -199,8 +199,7 @@ EOT
+     }
+ }
+ chomp $build_prompt;
+-my $build_wx = _askyn( $build, 'wxWidgets-build',
+-                       $build_prompt, $build_wx_dflt );
++my $build_wx = 0;
+ my $wx_version;
+ $build->notes( 'build_wx' => $build_wx );
+ $build->notes( 'mk_portable' => $build->args('wxWidgets-portable') );

@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_modules_graphic_ssggraph_CMakeLists_txt,v 1.2 2014/07/11 15:10:39 pascal Exp $
+--- src/modules/graphic/ssggraph/CMakeLists.txt.orig	Fri Jul 11 16:17:00 2014
++++ src/modules/graphic/ssggraph/CMakeLists.txt	Fri Jul 11 16:17:08 2014
+@@ -44,6 +44,10 @@ IF(COMMAND CMAKE_POLICY)
+     CMAKE_POLICY(SET CMP0003 NEW)
+ ENDIF(COMMAND CMAKE_POLICY)
+ 
++IF(UNIX)
++    INCLUDE_DIRECTORIES(${X11_INCLUDE_DIR})
++ENDIF(UNIX)
++
+ IF(WIN32)
+     # DLL export stuff under Windows (to avoid .def file)
+     ADD_DEFINITIONS(-DSSGGRAPH_DLL)

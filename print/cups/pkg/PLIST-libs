@@ -1,0 +1,50 @@
+@comment $OpenBSD: PLIST-libs,v 1.6 2014/04/10 17:15:34 ajacoutot Exp $
+@conflict cups-<1.6.0
+@newgroup _cups:541
+@newuser _cups:541:541:daemon:CUPS printer spooler daemon:/nonexistent:/sbin/nologin
+bin/cups-config
+include/cups/
+include/cups/adminutil.h
+include/cups/array.h
+include/cups/backend.h
+include/cups/cgi.h
+include/cups/cups.h
+include/cups/dir.h
+include/cups/file.h
+include/cups/help-index.h
+include/cups/http.h
+include/cups/ipp.h
+include/cups/language.h
+include/cups/mime.h
+include/cups/ppd.h
+include/cups/ppdc.h
+include/cups/pwg.h
+include/cups/raster.h
+include/cups/sidechannel.h
+include/cups/transcode.h
+include/cups/versioning.h
+lib/libcups.a
+@lib lib/libcups.so.${LIBcups_VERSION}
+lib/libcupscgi.a
+@lib lib/libcupscgi.so.${LIBcupscgi_VERSION}
+lib/libcupsimage.a
+@lib lib/libcupsimage.so.${LIBcupsimage_VERSION}
+lib/libcupsmime.a
+@lib lib/libcupsmime.so.${LIBcupsmime_VERSION}
+lib/libcupsppdc.a
+@lib lib/libcupsppdc.so.${LIBcupsppdc_VERSION}
+libexec/cups/
+libexec/cups/backend/
+libexec/cups/driver/
+libexec/cups/filter/
+@man man/man1/cups-config.1
+share/cups/
+share/cups/banners/
+share/cups/data/
+share/cups/drv/
+share/cups/mime/
+share/cups/model/
+share/cups/ppdc/
+@group _cups
+@sample ${SYSCONFDIR}/cups/
+@group

@@ -1,0 +1,30 @@
+$OpenBSD: patch-sample-config_nagios_cfg_in,v 1.5 2013/11/07 10:31:38 rpe Exp $
+--- sample-config/nagios.cfg.in.orig	Wed Oct 16 01:36:42 2013
++++ sample-config/nagios.cfg.in	Fri Nov  1 17:45:15 2013
+@@ -15,7 +15,7 @@
+ # for historical purposes.  This should be the first option specified 
+ # in the config file!!!
+ 
+-log_file=@localstatedir@/nagios.log
++log_file=/var/log/nagios/nagios.log
+ 
+ 
+ 
+@@ -242,7 +242,7 @@ log_rotation_method=d
+ # This is the directory where archived (rotated) log files should be 
+ # placed (assuming you've chosen to do log rotation).
+ 
+-log_archive_path=@localstatedir@/archives
++log_archive_path=/var/log/nagios/archives
+ 
+ 
+ 
+@@ -707,7 +707,7 @@ interval_length=60
+ # by Nagios Enterprises from the update check is processed in accordance 
+ # with our privacy policy - see http://api.nagios.org for details.
+ 
+-check_for_updates=1
++check_for_updates=0
+ 
+ 
+ 

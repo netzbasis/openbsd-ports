@@ -1,0 +1,29 @@
+$OpenBSD: patch-deps_hiredis_Makefile,v 1.6 2014/07/12 09:53:57 dcoppa Exp $
+--- deps/hiredis/Makefile.orig	Mon Jun 23 16:56:18 2014
++++ deps/hiredis/Makefile	Sat Jul 12 11:06:45 2014
+@@ -25,9 +25,9 @@ export REDIS_TEST_CONFIG
+ 
+ # Fallback to gcc when $CC is not in $PATH.
+ CC:=$(shell sh -c 'type $(CC) >/dev/null 2>/dev/null && echo $(CC) || echo gcc')
+-OPTIMIZATION?=-O3
++# OPTIMIZATION?=-O3
+ WARNINGS=-Wall -W -Wstrict-prototypes -Wwrite-strings
+-DEBUG?= -g -ggdb
++# DEBUG?= -g -ggdb
+ REAL_CFLAGS=$(OPTIMIZATION) -fPIC $(CFLAGS) $(WARNINGS) $(DEBUG) $(ARCH)
+ REAL_LDFLAGS=$(LDFLAGS) $(ARCH)
+ 
+@@ -134,8 +134,12 @@ endif
+ 
+ INSTALL?= cp -a
+ 
++ifndef INSTALL_DIR
++  INSTALL_DIR= mkdir -p
++endif
++
+ install: $(DYLIBNAME) $(STLIBNAME)
+-	mkdir -p $(INSTALL_INCLUDE_PATH) $(INSTALL_LIBRARY_PATH)
++	$(INSTALL_DIR) $(INSTALL_INCLUDE_PATH) $(INSTALL_LIBRARY_PATH)
+ 	$(INSTALL) hiredis.h async.h adapters $(INSTALL_INCLUDE_PATH)
+ 	$(INSTALL) $(DYLIBNAME) $(INSTALL_LIBRARY_PATH)/$(DYLIB_MINOR_NAME)
+ 	cd $(INSTALL_LIBRARY_PATH) && ln -sf $(DYLIB_MINOR_NAME) $(DYLIB_MAJOR_NAME)

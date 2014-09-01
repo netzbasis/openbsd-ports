@@ -1,0 +1,42 @@
+@comment $OpenBSD: PLIST,v 1.8 2013/01/20 17:58:07 kili Exp $
+lib/ghc/${DISTNAME}/
+lib/ghc/${DISTNAME}/Database/
+lib/ghc/${DISTNAME}/Database/HDBC/
+lib/ghc/${DISTNAME}/Database/HDBC/Sqlite3/
+lib/ghc/${DISTNAME}/Database/HDBC/Sqlite3.hi
+lib/ghc/${DISTNAME}/Database/HDBC/Sqlite3.p_hi
+lib/ghc/${DISTNAME}/Database/HDBC/Sqlite3/Connection.hi
+lib/ghc/${DISTNAME}/Database/HDBC/Sqlite3/Connection.p_hi
+lib/ghc/${DISTNAME}/Database/HDBC/Sqlite3/ConnectionImpl.hi
+lib/ghc/${DISTNAME}/Database/HDBC/Sqlite3/ConnectionImpl.p_hi
+lib/ghc/${DISTNAME}/Database/HDBC/Sqlite3/Consts.hi
+lib/ghc/${DISTNAME}/Database/HDBC/Sqlite3/Consts.p_hi
+lib/ghc/${DISTNAME}/Database/HDBC/Sqlite3/Statement.hi
+lib/ghc/${DISTNAME}/Database/HDBC/Sqlite3/Statement.p_hi
+lib/ghc/${DISTNAME}/Database/HDBC/Sqlite3/Types.hi
+lib/ghc/${DISTNAME}/Database/HDBC/Sqlite3/Types.p_hi
+lib/ghc/${DISTNAME}/Database/HDBC/Sqlite3/Utils.hi
+lib/ghc/${DISTNAME}/Database/HDBC/Sqlite3/Utils.p_hi
+lib/ghc/${DISTNAME}/HS${DISTNAME}.o
+lib/ghc/${DISTNAME}/libHS${DISTNAME}.a
+lib/ghc/${DISTNAME}/libHS${DISTNAME}_p.a
+lib/ghc/${DISTNAME}/register.sh
+share/doc/hs-${DISTNAME}/
+share/doc/hs-${DISTNAME}/LICENSE
+share/doc/hs-${DISTNAME}/html/
+share/doc/hs-${DISTNAME}/html/Database-HDBC-Sqlite3.html
+share/doc/hs-${DISTNAME}/html/HDBC-sqlite3.haddock
+share/doc/hs-${DISTNAME}/html/doc-index.html
+share/doc/hs-${DISTNAME}/html/frames.html
+share/doc/hs-${DISTNAME}/html/haddock-util.js
+share/doc/hs-${DISTNAME}/html/hslogo-16.png
+share/doc/hs-${DISTNAME}/html/index-frames.html
+share/doc/hs-${DISTNAME}/html/index.html
+share/doc/hs-${DISTNAME}/html/mini_Database-HDBC-Sqlite3.html
+share/doc/hs-${DISTNAME}/html/minus.gif
+share/doc/hs-${DISTNAME}/html/ocean.css
+share/doc/hs-${DISTNAME}/html/plus.gif
+share/doc/hs-${DISTNAME}/html/synopsis.png
+@exec /usr/bin/env HOME=/nonexistent %D/lib/ghc/${DISTNAME}/register.sh -v0
+@unexec /usr/bin/env HOME=/nonexistent %D/lib/ghc/${DISTNAME}/unregister.sh -v0 --force
+lib/ghc/${DISTNAME}/unregister.sh

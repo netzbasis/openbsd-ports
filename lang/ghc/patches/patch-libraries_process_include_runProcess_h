@@ -1,0 +1,21 @@
+$OpenBSD: patch-libraries_process_include_runProcess_h,v 1.2 2012/09/02 19:53:46 kili Exp $
+
+vfork is for terrorists
+
+--- libraries/process/include/runProcess.h.orig	Wed Feb  1 19:11:09 2012
++++ libraries/process/include/runProcess.h	Sat Jun  9 21:41:45 2012
+@@ -25,14 +25,6 @@
+ #include <fcntl.h>
+ #endif
+ 
+-#ifdef HAVE_VFORK_H
+-#include <vfork.h>
+-#endif
+-
+-#ifdef HAVE_VFORK
+-#define fork vfork
+-#endif
+-
+ #ifdef HAVE_SIGNAL_H
+ #include <signal.h>
+ #endif

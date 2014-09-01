@@ -1,0 +1,54 @@
+$OpenBSD: patch-Makefile_in,v 1.7 2012/08/12 17:33:04 jasper Exp $
+--- Makefile.in.orig	Fri May 18 21:28:05 2012
++++ Makefile.in	Sat Jul 14 19:55:28 2012
+@@ -16,10 +16,10 @@ STATIC		:= @STATIC@
+ doc_files	:= docs INSTALL CREDITS FAQ GNUGPL HELP README TODO AGREEMENT remote.help
+ 
+ FILES_TO_INSTALL := *.tcl hotmlog.htm amsn amsn-remote amsn-remote-CLI amsn.desktop langlist
+-FILES_TO_INSTALL += $(doc_files)
++FILES_TO_INSTALL += remote.help
+ FILES_TO_INSTALL += desktop-icons lang skins utils/des utils/base64 utils/drawboard utils/framec utils/http
+ FILES_TO_INSTALL += utils/pixmapscroll utils/pixmapmenu utils/contentmanager
+-FILES_TO_INSTALL += utils/scalable-bg utils/sha1 utils/snit utils/BWidget-1.9.0 utils/dpbrowser
++FILES_TO_INSTALL += utils/scalable-bg utils/sha1 utils/snit utils/dpbrowser
+ FILES_TO_INSTALL += plugins utils/sexytile
+ FILES_TO_INSTALL += utils/log utils/uri utils/combobox utils/voipcontrols
+ FILES_TO_INSTALL += utils/md4 utils/sasl ca-certs
+@@ -88,9 +88,7 @@ HAVE_FARSTREAM  := @HAVE_FARSTREAM@
+ HAVE_FARSIGHT   := @HAVE_FARSIGHT@
+ 
+ ADDITIONAL_FLAGS = $(WARN_FLAGS) $(LFS_FLAGS) ${TCL_INC_SPEC} ${TK_INC_SPEC}
+-ifeq (@DEBUG@,no)
+-ADDITIONAL_FLAGS   += -O2
+-else
++ifeq (@DEBUG@,yes)
+ ADDITIONAL_FLAGS   += -g3 -DDEBUG
+ endif
+ ADDITIONAL_FLAGS   += -DPACKAGE='"$(PACKAGE)"'
+@@ -108,7 +106,7 @@ endif
+ # build final cflags
+ CFLAGS   := @CFLAGS@ $(ADDITIONAL_FLAGS)
+ 
+-CXXFLAGS := @CXXFLAGS@ $(ADDITIONAL_FLAGS)
++CXXFLAGS := @CFLAGS@ @CXXFLAGS@ $(ADDITIONAL_FLAGS)
+ 
+ ifeq ($(STATIC),yes)
+ CXXFLAGS += -static-libgcc -L.
+@@ -249,11 +247,13 @@ install:: $(FILES_TO_INSTALL) | install_libs
+ 	done
+ 
+ 	# This doesn't work if the libdir has quotes in it
+-	sed -i -e 's#^set lib_path ""$$#set lib_path "$(libdir)/$(PACKAGE)"#' $(DESTDIR)$(dstdir)/$(PACKAGE)/amsn
++	sed 's#^set lib_path ""$$#set lib_path "$(libdir)/$(PACKAGE)"#' $(DESTDIR)$(dstdir)/$(PACKAGE)/amsn > $(DESTDIR)$(dstdir)/$(PACKAGE)/amsn.patched
++	mv $(DESTDIR)$(dstdir)/$(PACKAGE)/amsn.patched \
++	$(DESTDIR)$(dstdir)/$(PACKAGE)/amsn && chmod +x $(DESTDIR)$(dstdir)/$(PACKAGE)/amsn
+ 
+-	ln -sf $(dstdir)/$(PACKAGE)/amsn $(DESTDIR)$(slnkdir)/amsn
+-	ln -sf $(dstdir)/$(PACKAGE)/amsn-remote $(DESTDIR)$(slnkdir)/amsn-remote
+-	ln -sf $(dstdir)/$(PACKAGE)/amsn-remote-CLI $(DESTDIR)$(slnkdir)/amsn-remote-CLI
++#	ln -sf $(dstdir)/$(PACKAGE)/amsn $(DESTDIR)$(slnkdir)/amsn
++#	ln -sf $(dstdir)/$(PACKAGE)/amsn-remote $(DESTDIR)$(slnkdir)/amsn-remote
++#	ln -sf $(dstdir)/$(PACKAGE)/amsn-remote-CLI $(DESTDIR)$(slnkdir)/amsn-remote-CLI
+ 
+ 	cp $(srcdir)/amsn.desktop $(DESTDIR)$(dstdir)/applications/
+ 

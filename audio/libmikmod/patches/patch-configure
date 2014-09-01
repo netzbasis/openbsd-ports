@@ -1,0 +1,15 @@
+$OpenBSD: patch-configure,v 1.2 2013/01/13 09:10:40 sthen Exp $
+
+sndio
+
+--- configure.orig	Thu Jan 10 00:24:22 2013
++++ configure	Thu Jan 10 00:24:28 2013
+@@ -13343,7 +13343,7 @@ done
+ 			libmikmod_driver_hp=yes
+ 		fi
+ 	;;
+-	NetBSD|OpenBSD)
++	NetBSD)
+ 		for ac_header in sys/audioio.h
+ do :
+   ac_fn_c_check_header_mongrel "$LINENO" "sys/audioio.h" "ac_cv_header_sys_audioio_h" "$ac_includes_default"

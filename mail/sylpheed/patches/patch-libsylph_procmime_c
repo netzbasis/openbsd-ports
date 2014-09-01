@@ -1,0 +1,12 @@
+$OpenBSD: patch-libsylph_procmime_c,v 1.7 2014/07/21 08:10:09 rpointel Exp $
+--- libsylph/procmime.c.orig	Thu Nov 28 07:34:13 2013
++++ libsylph/procmime.c	Fri Jul 18 09:21:17 2014
+@@ -1585,7 +1585,7 @@ static GHashTable *procmime_get_mime_type_table(void)
+ 			procmime_get_mime_type_list(SYSCONFDIR "/mime.types");
+ 		if (!mime_type_list)
+ 			mime_type_list =
+-				procmime_get_mime_type_list("/etc/mime.types");
++				procmime_get_mime_type_list("/var/www/conf/mime.types");
+ #endif
+ 		dir = g_strconcat(get_rc_dir(), G_DIR_SEPARATOR_S,
+ 				  "mime.types", NULL);

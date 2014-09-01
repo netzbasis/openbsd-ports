@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_network_ssl_qsslsocket_cpp,v 1.2 2013/10/04 13:15:41 dcoppa Exp $
+--- src/network/ssl/qsslsocket.cpp.orig	Fri Jun  7 07:17:00 2013
++++ src/network/ssl/qsslsocket.cpp	Fri Sep 27 10:13:05 2013
+@@ -2325,7 +2325,8 @@ QList<QByteArray> QSslSocketPrivate::unixRootCertDirec
+                                << "/var/ssl/certs/" // AIX
+                                << "/usr/local/ssl/certs/" // Solaris
+                                << "/etc/openssl/certs/" // BlackBerry
+-                               << "/opt/openssl/certs/"; // HP-UX
++                               << "/opt/openssl/certs/" // HP-UX
++                               << "/etc/ssl/"; // OpenBSD
+ }
+ 
+ QT_END_NAMESPACE

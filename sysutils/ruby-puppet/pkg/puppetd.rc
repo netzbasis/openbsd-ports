@@ -1,0 +1,12 @@
+#!/bin/sh
+#
+# $OpenBSD: puppetd.rc,v 1.7 2014/04/17 14:15:53 jasper Exp $
+
+daemon="${TRUEPREFIX}/bin/puppet agent"
+
+. /etc/rc.d/rc.subr
+
+pexp="${RUBY} ${daemon}${daemon_flags:+ ${daemon_flags}}$"
+rc_reload=NO
+
+rc_cmd $1

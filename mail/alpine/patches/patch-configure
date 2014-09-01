@@ -1,0 +1,19 @@
+$OpenBSD: patch-configure,v 1.7 2014/04/21 12:26:19 ajacoutot Exp $
+--- configure.orig	Thu Aug 15 06:36:22 2013
++++ configure	Thu Oct 17 10:48:41 2013
+@@ -12891,6 +12891,7 @@ $as_echo "$LIBICONV" >&6; }
+   fi
+ 
+ 
++LIBICONV="$LTLIBICONV"
+ 
+ 
+ 
+@@ -13370,6 +13371,7 @@ $as_echo "$ac_res" >&6; }
+           INCINTL=
+         fi
+ 
++LIBINTL="$LTLIBINTL"
+ 
+ 
+     if test -n "$INTL_MACOSX_LIBS"; then

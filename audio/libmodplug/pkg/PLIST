@@ -1,0 +1,11 @@
+@comment $OpenBSD: PLIST,v 1.2 2013/10/11 17:28:20 bcallah Exp $
+include/libmodplug/
+include/libmodplug/it_defs.h
+include/libmodplug/modplug.h
+include/libmodplug/sndfile.h
+include/libmodplug/stdafx.h
+lib/libmodplug.a
+lib/libmodplug.la
+@lib lib/libmodplug.so.${LIBmodplug_VERSION}
+lib/pkgconfig/
+lib/pkgconfig/libmodplug.pc

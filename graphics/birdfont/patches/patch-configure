@@ -1,0 +1,12 @@
+$OpenBSD: patch-configure,v 1.4 2014/08/17 12:08:50 bcallah Exp $
+--- configure.orig	Fri Aug 15 11:04:53 2014
++++ configure	Sun Aug 17 08:05:27 2014
+@@ -103,7 +103,7 @@ parser.add_option("-g", "--gtk", dest="gtk", help="Bui
+ (options, args) = parser.parse_args()
+ 
+ if not options.prefix:
+-	options.prefix = "/usr"
++	options.prefix = "${DESTDIR}${PREFIX}"
+ if not options.dest:
+ 	options.dest = ""
+ if not options.cc:

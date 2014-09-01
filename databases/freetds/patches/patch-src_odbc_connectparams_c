@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_odbc_connectparams_c,v 1.5 2013/09/19 17:11:20 sthen Exp $
+--- src/odbc/connectparams.c.orig	Wed Mar 28 01:44:22 2012
++++ src/odbc/connectparams.c	Tue Sep 17 14:19:27 2013
+@@ -58,7 +58,7 @@ static const char *odbc_param_names[] = {
+  * by build scripts.
+  */
+ #ifndef SYS_ODBC_INI
+-#define SYS_ODBC_INI "/etc/odbc.ini"
++#define SYS_ODBC_INI "/etc/iodbc/odbc.ini"
+ #endif
+ 
+ /**

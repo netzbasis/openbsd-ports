@@ -1,0 +1,15 @@
+@comment $OpenBSD: PLIST,v 1.6 2012/05/03 06:51:07 ajacoutot Exp $
+bin/dvdread-config
+include/dvdread/
+include/dvdread/bitreader.h
+include/dvdread/dvd_reader.h
+include/dvdread/dvd_udf.h
+include/dvdread/ifo_print.h
+include/dvdread/ifo_read.h
+include/dvdread/ifo_types.h
+include/dvdread/nav_print.h
+include/dvdread/nav_read.h
+include/dvdread/nav_types.h
+lib/libdvdread.a
+@lib lib/libdvdread.so.${LIBdvdread_VERSION}
+lib/pkgconfig/dvdread.pc

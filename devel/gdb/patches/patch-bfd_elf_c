@@ -1,0 +1,15 @@
+$OpenBSD: patch-bfd_elf_c,v 1.5 2014/08/14 07:50:24 pascal Exp $
+--- bfd/elf.c.orig	Tue Jul 29 14:37:42 2014
++++ bfd/elf.c	Tue Jul 29 20:27:50 2014
+@@ -8932,6 +8932,11 @@ elfcore_grok_openbsd_procinfo (bfd *abfd, Elf_Internal
+ static bfd_boolean
+ elfcore_grok_openbsd_note (bfd *abfd, Elf_Internal_Note *note)
+ {
++  int lwp;
++
++  if (elfcore_netbsd_get_lwpid (note, &lwp))
++    elf_tdata (abfd)->core->lwpid = lwp;
++
+   if (note->type == NT_OPENBSD_PROCINFO)
+     return elfcore_grok_openbsd_procinfo (abfd, note);
+ 

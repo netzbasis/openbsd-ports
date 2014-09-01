@@ -1,0 +1,20 @@
+$OpenBSD: patch-sentinel_conf,v 1.3 2014/06/06 11:52:49 dcoppa Exp $
+--- sentinel.conf.orig	Thu Jun  5 11:02:23 2014
++++ sentinel.conf	Fri Jun  6 13:36:48 2014
+@@ -129,7 +129,7 @@ sentinel failover-timeout mymaster 180000
+ #
+ # Example:
+ #
+-# sentinel notification-script mymaster /var/redis/notify.sh
++# sentinel notification-script mymaster ${DBDIR}/notify.sh
+ 
+ # CLIENTS RECONFIGURATION SCRIPT
+ #
+@@ -154,6 +154,6 @@ sentinel failover-timeout mymaster 180000
+ #
+ # Example:
+ #
+-# sentinel client-reconfig-script mymaster /var/redis/reconfig.sh
++# sentinel client-reconfig-script mymaster ${DBDIR}/reconfig.sh
+ 
+ 

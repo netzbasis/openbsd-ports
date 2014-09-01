@@ -1,0 +1,31 @@
+@comment $OpenBSD: PLIST-main,v 1.6 2014/04/01 14:52:09 ajacoutot Exp $
+@conflict libcanberra-<gtk-0.28p0
+@pkgpath audio/libcanberra
+include/canberra-gtk.h
+include/canberra.h
+lib/libcanberra-0.30/
+lib/libcanberra-0.30/libcanberra-multi.so
+lib/libcanberra-0.30/libcanberra-sndio.so
+lib/libcanberra.a
+lib/libcanberra.la
+@lib lib/libcanberra.so.${LIBcanberra_VERSION}
+lib/pkgconfig/libcanberra.pc
+share/doc/libcanberra/
+share/doc/libcanberra/README
+share/gtk-doc/
+share/gtk-doc/html/
+share/gtk-doc/html/libcanberra/
+share/gtk-doc/html/libcanberra/ch01.html
+share/gtk-doc/html/libcanberra/home.png
+share/gtk-doc/html/libcanberra/index.html
+share/gtk-doc/html/libcanberra/index.sgml
+share/gtk-doc/html/libcanberra/left.png
+share/gtk-doc/html/libcanberra/libcanberra-canberra-gtk.html
+share/gtk-doc/html/libcanberra/libcanberra-canberra.html
+share/gtk-doc/html/libcanberra/libcanberra.devhelp2
+share/gtk-doc/html/libcanberra/right.png
+share/gtk-doc/html/libcanberra/style.css
+share/gtk-doc/html/libcanberra/up.png
+share/vala/
+share/vala/vapi/
+share/vala/vapi/libcanberra.vapi

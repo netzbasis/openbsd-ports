@@ -1,0 +1,14 @@
+$OpenBSD: patch-data_icons_Makefile_am,v 1.2 2013/02/04 15:03:12 bcallah Exp $
+--- data/icons/Makefile.am.orig	Thu Jan 31 23:27:40 2013
++++ data/icons/Makefile.am	Thu Jan 31 23:27:54 2013
+@@ -9,8 +9,8 @@ icons_DATA = manaplus.png \
+ 	     manaplus.xpm
+ 
+ install-data-local:
+-	$(mkinstalldirs) $(DESTDIR)$(datarootdir)/pixmaps
+-	$(INSTALL) $(srcdir)/manaplus.png $(DESTDIR)$(datarootdir)/pixmaps/manaplus.png
++	$(mkinstalldirs) $(DESTDIR)$(datadir)/pixmaps
++	$(INSTALL) $(srcdir)/manaplus.png $(DESTDIR)$(datadir)/pixmaps/manaplus.png
+ 
+ uninstall-local:
+ 	rm -f $(DESTDIR)$(datarootdir)/pixmaps/manaplus.png

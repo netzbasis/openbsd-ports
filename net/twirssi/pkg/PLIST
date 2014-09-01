@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.2 2013/03/08 13:38:25 ajacoutot Exp $
+share/doc/pkg-readmes/${FULLPKGNAME}
+share/twirssi/
+share/twirssi/twirssi.pl

@@ -1,0 +1,12 @@
+$OpenBSD: patch-doc_example-config_dovecot_conf,v 1.4 2013/08/13 00:29:58 brad Exp $
+--- doc/example-config/dovecot.conf.orig	Mon Jan  7 02:50:26 2013
++++ doc/example-config/dovecot.conf	Tue Apr 23 02:03:41 2013
+@@ -30,7 +30,7 @@
+ #listen = *, ::
+ 
+ # Base directory where to store runtime data.
+-#base_dir = /var/run/dovecot/
++#base_dir = /var/dovecot/
+ 
+ # Name of this instance. In multi-instance setup doveadm and other commands
+ # can use -i <instance_name> to select which instance is used (an alternative

@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST,v 1.2 2012/09/01 12:02:26 naddy Exp $
+%%SHARED%%
+@bin bin/ropy
+include/disorder.h
+lib/libdisorder.a
+lib/libdisorder_p.a

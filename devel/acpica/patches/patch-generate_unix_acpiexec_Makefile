@@ -1,0 +1,14 @@
+$OpenBSD: patch-generate_unix_acpiexec_Makefile,v 1.6 2014/05/20 17:02:30 sthen Exp $
+--- generate/unix/acpiexec/Makefile.orig	Thu Apr 24 16:48:58 2014
++++ generate/unix/acpiexec/Makefile	Tue May 20 17:40:55 2014
+@@ -235,10 +235,6 @@ endif
+ 
+ LDFLAGS += -lpthread
+ 
+-ifneq ($(HOST),_APPLE)
+-LDFLAGS += -lrt
+-endif
+-
+ #
+ # Common Rules
+ #

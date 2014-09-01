@@ -1,0 +1,12 @@
+$OpenBSD: patch-src-preferences_c,v 1.5 2014/09/02 19:46:53 landry Exp $
+--- src/preferences.c.orig	Mon Mar  4 09:16:18 2013
++++ src/preferences.c	Tue Sep  2 21:41:21 2014
+@@ -180,7 +180,7 @@ static gboolean parse_config_file(void)
+ 				&cf_log_level),
+ 		CFG_STR("log_file", "/var/log/scmpc.log", CFGF_NONE),
+ 		CFG_STR("pid_file", "/var/run/scmpc.pid", CFGF_NONE),
+-		CFG_STR("cache_file", "/var/lib/scmpc/scmpc.cache", CFGF_NONE),
++		CFG_STR("cache_file", "/var/scmpc/scmpc.cache", CFGF_NONE),
+ 		CFG_INT("queue_length", 500, CFGF_NONE),
+ 		CFG_INT("cache_interval", 10, CFGF_NONE),
+ 		CFG_SEC("mpd", mpd_opts, CFGF_NONE),

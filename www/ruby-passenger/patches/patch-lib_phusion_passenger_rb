@@ -1,0 +1,13 @@
+$OpenBSD: patch-lib_phusion_passenger_rb,v 1.4 2014/06/24 21:45:06 jeremy Exp $
+--- lib/phusion_passenger.rb.orig	Thu May 29 05:13:25 2014
++++ lib/phusion_passenger.rb	Thu Jun  5 10:47:23 2014
+@@ -51,8 +51,7 @@ module PhusionPassenger
+ 	
+ 	# Directories in which to look for plugins.
+ 	PLUGIN_DIRS = [
+-		"/usr/share/#{GLOBAL_NAMESPACE_DIRNAME}/plugins",
+-		"/usr/local/share/#{GLOBAL_NAMESPACE_DIRNAME}/plugins",
++		"${PASSENGER_ROOT}/plugins",
+ 		"~/#{USER_NAMESPACE_DIRNAME}/plugins"
+ 	]
+ 	

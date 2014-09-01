@@ -1,0 +1,9 @@
+@comment $OpenBSD: PLIST,v 1.4 2014/08/23 14:33:07 kirby Exp $
+@bin bin/qiv
+@man man/man1/qiv.1
+@comment share/applications/
+@comment share/applications/qiv.desktop
+share/examples/qiv/
+share/examples/qiv/qiv-command.example
+@comment share/pixmaps/
+@comment share/pixmaps/qiv.png

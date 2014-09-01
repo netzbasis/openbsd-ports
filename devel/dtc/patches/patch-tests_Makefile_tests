@@ -1,0 +1,12 @@
+$OpenBSD: patch-tests_Makefile_tests,v 1.2 2013/06/21 19:58:28 brad Exp $
+--- tests/Makefile.tests.orig	Wed Jun 19 12:58:46 2013
++++ tests/Makefile.tests	Wed Jun 19 20:28:57 2013
+@@ -45,7 +45,7 @@ $(LIB_TESTS): %: $(TESTS_PREFIX)testutils.o $(LIBFDT_a
+ 
+ $(DL_LIB_TESTS): %: %.o $(TESTS_PREFIX)testutils.o $(LIBFDT_archive)
+ 	@$(VECHO) LD [libdl] $@
+-	$(LINK.c) -o $@ $^ -ldl
++	$(LINK.c) -o $@ $^
+ 
+ $(LIBTREE_TESTS): %: $(TESTS_PREFIX)testutils.o $(TESTS_PREFIX)trees.o $(LIBFDT_archive)
+ 

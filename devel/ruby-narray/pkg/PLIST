@@ -1,0 +1,9 @@
+@comment $OpenBSD: PLIST,v 1.2 2014/01/11 22:51:02 jeremy Exp $
+${GEM_LIB}/cache/${DISTNAME}.gem
+${GEM_LIB}/gems/${DISTNAME}/
+${GEM_LIB}/gems/${DISTNAME}/narray.h
+${GEM_LIB}/gems/${DISTNAME}/narray.so
+${GEM_LIB}/gems/${DISTNAME}/narray_config.h
+${GEM_LIB}/gems/${DISTNAME}/narray_ext.rb
+${GEM_LIB}/gems/${DISTNAME}/nmatrix.rb
+${GEM_LIB}/specifications/${DISTNAME}.gemspec

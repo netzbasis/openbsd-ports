@@ -1,0 +1,19 @@
+$OpenBSD: patch-config_php,v 1.7 2013/11/01 14:02:50 robert Exp $
+--- config.php.orig	Fri Nov  1 12:02:53 2013
++++ config.php	Fri Nov  1 12:03:14 2013
+@@ -66,7 +66,7 @@
+ /**********************************************************************************
+  *  Default FileStateMachine settings
+  */
+-    define('STATE_DIR', '/var/lib/z-push/');
++    define('STATE_DIR', '/var/db/z-push/');
+ 
+ 
+ /**********************************************************************************
+@@ -255,4 +255,4 @@
+ */
+     );
+ 
+-?>
+\ No newline at end of file
++?>

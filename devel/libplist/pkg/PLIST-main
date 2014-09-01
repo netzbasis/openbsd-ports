@@ -1,0 +1,22 @@
+@comment $OpenBSD: PLIST-main,v 1.2 2013/04/12 17:12:55 mglocker Exp $
+bin/plistutil
+@bin bin/plistutil-${VERSION}
+include/plist/
+include/plist/Array.h
+include/plist/Boolean.h
+include/plist/Data.h
+include/plist/Date.h
+include/plist/Dictionary.h
+include/plist/Integer.h
+include/plist/Key.h
+include/plist/Node.h
+include/plist/Real.h
+include/plist/String.h
+include/plist/Structure.h
+include/plist/Uid.h
+include/plist/plist++.h
+include/plist/plist.h
+@lib lib/libplist++.so.${LIBplist++_VERSION}
+@lib lib/libplist.so.${LIBplist_VERSION}
+lib/pkgconfig/libplist++.pc
+lib/pkgconfig/libplist.pc

@@ -1,0 +1,14 @@
+$OpenBSD: patch-plugins_converter_converter_c,v 1.2 2014/01/29 20:43:26 dcoppa Exp $
+--- plugins/converter/converter.c.orig	Wed Jan 15 09:49:47 2014
++++ plugins/converter/converter.c	Wed Jan 15 09:50:22 2014
+@@ -36,6 +36,10 @@
+ #include "../../deadbeef.h"
+ #include "../../strdupa.h"
+ 
++#if defined(__GNUC__) && defined(__STRICT_ANSI__)
++#define alloca(size)   __builtin_alloca(size)
++#endif
++
+ #ifndef __linux__
+ #define O_LARGEFILE 0
+ #endif

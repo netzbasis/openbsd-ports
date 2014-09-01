@@ -1,0 +1,15 @@
+@comment $OpenBSD: PLIST,v 1.3 2014/06/14 23:23:12 sthen Exp $
+${P5ARCH}/
+${P5ARCH}/JSON/
+${P5ARCH}/JSON/DWIW/
+${P5ARCH}/JSON/DWIW.pm
+${P5ARCH}/JSON/DWIW/Boolean.pm
+${P5ARCH}/JSON/DWIW/Changes.pm
+${P5ARCH}/auto/
+${P5ARCH}/auto/JSON/
+${P5ARCH}/auto/JSON/DWIW/
+@comment ${P5ARCH}/auto/JSON/DWIW/DWIW.bs
+${P5ARCH}/auto/JSON/DWIW/DWIW.so
+@man man/man3p/JSON::DWIW.3p
+@man man/man3p/JSON::DWIW::Boolean.3p
+@man man/man3p/JSON::DWIW::Changes.3p

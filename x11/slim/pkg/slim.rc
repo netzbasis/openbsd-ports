@@ -1,0 +1,23 @@
+#!/bin/sh
+#
+# $OpenBSD: slim.rc,v 1.5 2014/01/30 16:58:58 ajacoutot Exp $
+
+daemon="${TRUEPREFIX}/bin/slim -d"
+
+. /etc/rc.d/rc.subr
+
+rc_reload=NO
+
+# on boot: wait for ttys to be initialized
+if [ -n "${INRC}" ]; then
+rc_start() {
+	( local i=0
+	while ! pgrep -qf "^/usr/libexec/getty "; do
+		sleep 1
+		[ $((i++)) -ge 10 ] && return 1
+	done
+	${rcexec} "${daemon} ${daemon_flags}" ) &
+}
+fi
+
+rc_cmd $1

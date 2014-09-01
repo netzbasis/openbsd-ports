@@ -1,0 +1,17 @@
+$OpenBSD: patch-configure,v 1.2 2014/08/30 09:07:36 ajacoutot Exp $
+
+Do not override PTLIBDIR in the environment.
+
+--- configure.orig	Fri May  9 18:51:49 2014
++++ configure	Sat Aug 30 10:38:26 2014
+@@ -4122,7 +4122,9 @@ $as_echo "yes" >&6; }
+ 	HAS_PTLIB=1
+ fi
+   if test ${HAS_PTLIB}x = 1x; then
+-    PTLIBDIR=`${PKG_CONFIG} --variable=prefix ptlib`
++    if test "${PTLIBDIR:-unset}" = "unset" ; then
++      PTLIBDIR=`${PKG_CONFIG} --variable=prefix ptlib`
++    fi
+     PTVERSION=`${PKG_CONFIG} --modversion ptlib`
+     target_os=`${PKG_CONFIG} --variable=target_os ptlib`
+     target_cpu=`${PKG_CONFIG} --variable=target_cpu ptlib`

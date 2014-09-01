@@ -1,0 +1,84 @@
+$OpenBSD: patch-i3status_conf,v 1.12 2014/01/30 13:19:40 jasper Exp $
+
+Adjust config file to be reasonably useful on OpenBSD out of the box.
+
+--- i3status.conf.orig	Sun Jan  5 12:34:06 2014
++++ i3status.conf	Thu Jan 30 14:00:30 2014
+@@ -1,49 +1,46 @@
+ # i3status configuration file.
+ # see "man i3status" for documentation.
+ 
+-# It is important that this file is edited as UTF-8.
+-# The following line should contain a sharp s:
+-# ß
+-# If the above line is not correctly displayed, fix your editor first!
+-
+ general {
++	output_format = "i3bar"
+         colors = true
+         interval = 5
+ }
+ 
+ order += "ipv6"
+ order += "disk /"
+-order += "run_watch DHCP"
+-order += "run_watch VPN"
+-order += "wireless wlan0"
+-order += "ethernet eth0"
++order += "wireless iwn0"
++order += "ethernet em0"
+ order += "battery 0"
+ order += "load"
+ order += "tztime local"
++order += "cpu_temperature cpu0" 
++order += "cpu_temperature acpitz0"
++order += "volume master"
+ 
+-wireless wlan0 {
+-        format_up = "W: (%quality at %essid) %ip"
++cpu_temperature cpu0 {
++         format = "C: %degrees C"
++         path = "cpu0"
++}
++
++cpu_temperature acpitz0 {
++        format = "TZ: %degrees C" 
++}
++
++wireless iwn0 {
++        format_up = "W: (%signal at %essid) %ip"
+         format_down = "W: down"
+ }
+ 
+-ethernet eth0 {
+-        # if you use %speed, i3status requires root privileges
++ethernet em0 {
+         format_up = "E: %ip (%speed)"
+         format_down = "E: down"
+ }
+ 
+ battery 0 {
+-        format = "%status %percentage %remaining"
++        format = "%status %percentage \% %remaining"
+ }
+ 
+-run_watch DHCP {
+-        pidfile = "/var/run/dhclient*.pid"
+-}
+-
+-run_watch VPN {
+-        pidfile = "/var/run/vpnc/pid"
+-}
+-
+ tztime local {
+         format = "%Y-%m-%d %H:%M:%S"
+ }
+@@ -54,4 +51,8 @@ load {
+ 
+ disk "/" {
+         format = "%avail"
++}
++
++volume master {
++	format = "vol: %volume"
+ }

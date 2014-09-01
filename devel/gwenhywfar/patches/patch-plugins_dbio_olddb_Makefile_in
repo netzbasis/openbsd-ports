@@ -1,0 +1,12 @@
+$OpenBSD: patch-plugins_dbio_olddb_Makefile_in,v 1.2 2014/03/09 21:01:55 sthen Exp $
+--- plugins/dbio/olddb/Makefile.in.orig	Sun Jan 26 14:58:08 2014
++++ plugins/dbio/olddb/Makefile.in	Thu Feb 13 09:13:28 2014
+@@ -394,7 +394,7 @@ dbioplugin_DATA = olddb.xml
+ olddb_la_SOURCES = olddb.c
+ olddb_la_LIBADD = $(top_builddir)/src/libgwenhywfar.la
+ olddb_la_LDFLAGS = -no-undefined $(STRIPALL) \
+-    -module -version-info 0:1:0
++    -module -avoid-version
+ 
+ all: all-am
+ 

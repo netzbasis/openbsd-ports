@@ -1,0 +1,30 @@
+$OpenBSD: patch-config,v 1.9 2013/01/07 22:13:40 dcoppa Exp $
+--- config.orig	Tue Oct 20 22:54:35 2009
++++ config	Sun Jul  8 19:36:28 2012
+@@ -3,9 +3,9 @@
+ # Default installation prefix
+-PREFIX=/usr/local
++#PREFIX=/usr/local
+ 
+ # System's libraries directory (where binary libraries are installed)
+-LUA_LIBDIR= $(PREFIX)/lib/lua/5.1
++LUA_LIBDIR?= $(LOCALBASE)/lib/lua/5.1
+ 
+ # Lua includes directory
+-LUA_INC= $(PREFIX)/include
++LUA_INC?= $(LOCALBASE)/include
+ 
+@@ -15,9 +15,9 @@
+ 
+-LIBNAME= $T.so.$V
++LIBNAME= $T.so
+ 
+ # Compilation directives
+-WARN= -O2 -Wall -fPIC -W -Waggregate-return -Wcast-align -Wmissing-prototypes -Wnested-externs -Wshadow -Wwrite-strings -pedantic
++#WARN= -O2 -Wall -fPIC -W -Waggregate-return -Wcast-align -Wmissing-prototypes -Wnested-externs -Wshadow -Wwrite-strings -pedantic
+ INCS= -I$(LUA_INC)
+-CFLAGS= $(WARN) $(INCS)
+-CC= gcc
++CFLAGS+= -fPIC $(INCS)
++#CC= gcc
+ 

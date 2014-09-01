@@ -1,0 +1,29 @@
+$OpenBSD: patch-aksetup_helper_py,v 1.3 2013/01/25 13:56:20 dcoppa Exp $
+--- aksetup_helper.py.orig	Wed Jan 23 15:38:05 2013
++++ aksetup_helper.py	Wed Jan 23 15:39:48 2013
+@@ -1,6 +1,6 @@
+ # dealings with ez_setup ------------------------------------------------------
+-import distribute_setup
+-distribute_setup.use_setuptools()
++#import distribute_setup
++#distribute_setup.use_setuptools()
+ 
+ import setuptools
+ from setuptools import Extension
+@@ -18,7 +18,7 @@ def count_down_delay(delay):
+ 
+ 
+ 
+-if not hasattr(setuptools, "_distribute"):
++if False and not hasattr(setuptools, "_distribute"):
+     print("-------------------------------------------------------------------------")
+     print("Setuptools conflict detected.")
+     print("-------------------------------------------------------------------------")
+@@ -197,7 +197,6 @@ def hack_distutils(debug=False, fast_link=True, what_o
+                 if what_opt is None:
+                     pass
+                 else:
+-                    cflags.append("-O%s" % what_opt)
+                     cflags.append("-DNDEBUG")
+ 
+             cvars['OPT'] = str.join(' ', cflags)

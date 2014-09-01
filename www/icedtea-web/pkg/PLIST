@@ -1,0 +1,13 @@
+@comment $OpenBSD: PLIST,v 1.2 2013/10/07 18:55:48 landry Exp $
+bin/itweb-settings
+bin/javaws
+lib/mozilla/
+lib/mozilla/plugins/
+lib/mozilla/plugins/IcedTeaPlugin.so
+@man man/man1/javaws.1
+share/icedtea-web/
+share/icedtea-web/about.jar
+share/icedtea-web/about.jnlp
+share/icedtea-web/javaws_splash.png
+share/icedtea-web/netx.jar
+share/icedtea-web/plugin.jar

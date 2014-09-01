@@ -1,0 +1,25 @@
+--- configure.orig	Thu Mar  1 10:04:19 2012
++++ configure	Mon Jul  9 08:31:19 2012
+@@ -5992,11 +5992,11 @@ cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+ #ifdef __cplusplus
+ extern "C"
+ #endif
+-char iconv ();
++char libiconv ();
+ int
+ main ()
+ {
+-return iconv ();
++return libiconv ();
+   ;
+   return 0;
+ }
+@@ -7408,7 +7408,7 @@ main ()
+ {
+ const char * inbuf;
+ 			iconv_t cd;
+-			iconv ( cd, &inbuf, NULL, NULL, NULL );
++			libiconv ( cd, &inbuf, NULL, NULL, NULL );
+ 
+   ;
+   return 0;

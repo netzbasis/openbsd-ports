@@ -1,0 +1,30 @@
+$OpenBSD: patch-plugins_gtkui_Makefile_am,v 1.4 2014/02/07 22:20:13 dcoppa Exp $
+--- plugins/gtkui/Makefile.am.orig	Sun Jan 26 21:31:41 2014
++++ plugins/gtkui/Makefile.am	Fri Feb  7 21:57:31 2014
+@@ -152,7 +152,7 @@ GTKUI_SOURCES_GTK2 = $(GTKUI_SOURCES)
+ #GTKGLEXT_CFLAGS_GTK2 = -I@top_srcdir@/plugins/gtkui/gtkglext-gtk2 -I@top_srcdir@/plugins/gtkui/gtkglext-gtk2/gdk -DGTK_GL_COMPILATION -DGDK_GL_COMPILATION
+ 
+ ddb_gui_GTK2_la_SOURCES = $(GTKUI_SOURCES_GTK2)
+-ddb_gui_GTK2_la_LDFLAGS = -module
++ddb_gui_GTK2_la_LDFLAGS = -module -avoid-version
+ 
+ if STATICLINK
+ GTK_ROOT_216=@top_srcdir@/$(LIB)/gtk-2.16.0
+@@ -163,7 +163,7 @@ ddb_gui_GTK2_la_CFLAGS = -std=c99 -I$(GTK_ROOT_216)/in
+ else
+ ddb_gui_GTK2_la_LIBADD = $(LDADD) $(GTK2_DEPS_LIBS) $(SM_LIBADD) ../libparser/libparser.a  $(GTKGLEXT2_LIBS)
+ 
+-ddb_gui_GTK2_la_CFLAGS = -std=c99 $(GTK2_DEPS_CFLAGS) $(SM_CFLAGS) $(GTKGLEXT_CFLAGS_GTK2) -DDDB_WARN_DEPRECATED=1
++ddb_gui_GTK2_la_CFLAGS = -std=c99 $(GTK2_DEPS_CFLAGS) $(SM_CFLAGS) $(GTKGLEXT_CFLAGS_GTK2)
+ endif
+ 
+ endif
+@@ -254,7 +254,7 @@ if STATICLINK
+ GTK_ROOT=@top_srcdir@/$(LIB)/gtk-2.12.12/usr
+ 
+ ddb_gui_GTK2_fallback_la_SOURCES = $(GTKUI_SOURCES_GTK2)
+-ddb_gui_GTK2_fallback_la_LDFLAGS = -module
++ddb_gui_GTK2_fallback_la_LDFLAGS = -module -avoid-version
+ 
+ ddb_gui_GTK2_fallback_la_LIBADD = $(LDADD) -L$(GTK_ROOT)/lib $(GTK_ROOT)/lib/libgtk-x11-2.0.la $(GTK_ROOT)/lib/libgdk-x11-2.0.la $(GTK_ROOT)/lib/libpangoft2-1.0.la $(GTK_ROOT)/lib/libpangocairo-1.0.la $(GTK_ROOT)/lib/libgdk_pixbuf-2.0.la -lm $(GTK_ROOT)/lib/libcairo.la $(GTK_ROOT)/lib/libpango-1.0.la $(GTK_ROOT)/lib/libgobject-2.0.la $(GTK_ROOT)/lib/libgmodule-2.0.la $(GTK_ROOT)/lib/libgthread-2.0.la -lrt $(GTK_ROOT)/lib/libglib-2.0.la $(SM_LIBADD) ../libparser/libparser.a $(GTKGLEXT2_LIBS)
+ 

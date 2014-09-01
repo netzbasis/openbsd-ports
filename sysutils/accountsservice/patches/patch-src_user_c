@@ -1,0 +1,174 @@
+$OpenBSD: patch-src_user_c,v 1.27 2014/03/30 12:50:52 ajacoutot Exp $
+--- src/user.c.orig	Thu Mar 20 19:16:44 2014
++++ src/user.c	Sun Mar 30 14:47:24 2014
+@@ -123,7 +123,12 @@ account_type_from_pwent (struct passwd *pwent)
+ {
+         struct group *grp;
+         gid_t wheel;
++#ifndef __OpenBSD__
+         gid_t *groups;
++#else
++        gid_t groups[NGROUPS_MAX + 1];
++#endif
++
+         gint ngroups;
+         gint i;
+ 
+@@ -139,16 +144,28 @@ account_type_from_pwent (struct passwd *pwent)
+         }
+         wheel = grp->gr_gid;
+ 
++#ifdef __OpenBSD__
++        ngroups = sizeof(groups) / sizeof(gid_t);
++        if (getgrouplist (pwent->pw_name, pwent->pw_gid, groups, &ngroups) == -1) {
++                g_warning ("too many groups");
++                return ACCOUNT_TYPE_STANDARD;
++        }
++#else
+         ngroups = get_user_groups (pwent->pw_name, pwent->pw_gid, &groups);
++#endif
+ 
+         for (i = 0; i < ngroups; i++) {
+                 if (groups[i] == wheel) {
++#ifndef __OpenBSD__
+                         g_free (groups);
++#endif
+                         return ACCOUNT_TYPE_ADMINISTRATOR;
+                 }
+         }
+ 
++#ifndef __OpenBSD__
+         g_free (groups);
++#endif
+ 
+         return ACCOUNT_TYPE_STANDARD;
+ }
+@@ -159,6 +176,8 @@ user_update_from_pwent (User          *user,
+ {
+ #ifdef HAVE_SHADOW_H
+         struct spwd *spent;
++#else
++	struct passwd *pw;
+ #endif
+         gchar *real_name;
+         gboolean changed;
+@@ -264,7 +283,20 @@ user_update_from_pwent (User          *user,
+                 passwd = spent->sp_pwdp;
+ #endif
+ 
++#ifdef __OpenBSD__
++        pw = getpwnam (pwent->pw_name);
++        if (pw)
++                passwd = pw->pw_passwd;
++        if (g_strcmp0(passwd, "skey") == 0)
++                passwd = NULL;
++#endif
++
++
++#ifdef __OpenBSD__
++        if (passwd && passwd[0] == '*') {
++#else
+         if (passwd && passwd[0] == '!') {
++#endif
+                 locked = TRUE;
+         }
+         else {
+@@ -1553,7 +1585,11 @@ user_change_locked_authorized_cb (Daemon              
+                          "%s account of user '%s' (%d)",
+                          locked ? "locking" : "unlocking", user->user_name, user->uid);
+                 argv[0] = "/usr/sbin/usermod";
++#ifdef __OpenBSD__
++                argv[1] = locked ? "-Z" : "-U";
++#else
+                 argv[1] = locked ? "-L" : "-U";
++#endif
+                 argv[2] = "--";
+                 argv[3] = user->user_name;
+                 argv[4] = NULL;
+@@ -1624,13 +1660,23 @@ user_change_account_type_authorized_cb (Daemon        
+ {
+         AccountType account_type = GPOINTER_TO_INT (data);
+         GError *error;
++#ifndef __OpenBSD__
+         gid_t *groups;
++#else
++        gid_t groups[NGROUPS_MAX + 1];
++        struct group *obsdgrp;
++#endif
+         gint ngroups;
+         GString *str;
+         gid_t wheel;
+         struct group *grp;
+         gint i;
++#ifndef __OpenBSD__
+         const gchar *argv[6];
++#else
++        const gchar *argv[8];
++        gchar *class = "\0";
++#endif
+ 
+         if (user->account_type != account_type) {
+                 sys_log (context,
+@@ -1644,17 +1690,35 @@ user_change_account_type_authorized_cb (Daemon        
+                 }
+                 wheel = grp->gr_gid;
+ 
++#ifdef __OpenBSD__
++                ngroups = sizeof(groups) / sizeof(gid_t);
++                if (getgrouplist (user->user_name, user->gid, groups, &ngroups) == -1) {
++                        g_warning ("too many groups");
++                        account_type = ACCOUNT_TYPE_STANDARD;
++                }
++#else
+                 ngroups = get_user_groups (user->user_name, user->gid, &groups);
++#endif
+ 
+                 str = g_string_new ("");
+                 for (i = 0; i < ngroups; i++) {
+                         if (groups[i] == wheel)
+                                 continue;
++#ifdef __OpenBSD__
++                        obsdgrp = getgrgid(groups[i]);
++                        g_string_append_printf (str, "%s,", obsdgrp->gr_name);
++#else
+                         g_string_append_printf (str, "%d,", groups[i]);
++#endif
+                 }
+                 switch (account_type) {
+                 case ACCOUNT_TYPE_ADMINISTRATOR:
++#ifdef __OpenBSD__
++                        g_string_append_printf (str, "%s", "wheel");
++                        class = "staff";
++#else
+                         g_string_append_printf (str, "%d", wheel);
++#endif
+                         break;
+                 case ACCOUNT_TYPE_STANDARD:
+                 default:
+@@ -1663,14 +1727,26 @@ user_change_account_type_authorized_cb (Daemon        
+                         break;
+                 }
+ 
++#ifndef __OpenBSD__
+                 g_free (groups);
++#endif
+ 
+                 argv[0] = "/usr/sbin/usermod";
++#ifdef __OpenBSD__
++                argv[1] = "-S";
++                argv[2] = str->str;
++                argv[3] = "-L";
++                argv[4] = class;
++                argv[5] = "--";
++                argv[6] = user->user_name;
++                argv[7] = NULL;
++#else
+                 argv[1] = "-G";
+                 argv[2] = str->str;
+                 argv[3] = "--";
+                 argv[4] = user->user_name;
+                 argv[5] = NULL;
++#endif
+ 
+                 g_string_free (str, FALSE);
+ 

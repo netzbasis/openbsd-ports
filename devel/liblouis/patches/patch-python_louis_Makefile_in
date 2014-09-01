@@ -1,0 +1,12 @@
+$OpenBSD: patch-python_louis_Makefile_in,v 1.5 2014/03/21 10:51:55 ajacoutot Exp $
+--- python/louis/Makefile.in.orig	Mon Mar  3 14:27:04 2014
++++ python/louis/Makefile.in	Fri Mar 21 11:46:11 2014
+@@ -683,7 +683,7 @@ uninstall-am:
+ 
+ 
+ all:
+-	source ../../liblouis/liblouis.la ; \
++	. ../../liblouis/liblouis.la ; \
+ 	sed "s/###LIBLOUIS_SONAME###/$$dlname/" \
+ 		< $(srcdir)/__init__.py.in \
+ 		> __init__.py

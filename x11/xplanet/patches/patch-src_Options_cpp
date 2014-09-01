@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_Options_cpp,v 1.3 2013/09/25 07:58:51 sthen Exp $
+--- src/Options.cpp.orig	Sun Feb 12 18:11:29 2012
++++ src/Options.cpp	Thu Sep 19 15:21:12 2013
+@@ -107,7 +107,7 @@ Options::Options() :
+     oX_(0),
+     oY_(0),
+     oZ_(0),
+-    pango_(false),
++    pango_(true),
+     pathRelativeTo_(SUN),
+     pathRelativeToID_(-1),
+     post_command_(""),

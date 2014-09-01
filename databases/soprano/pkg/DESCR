@@ -1,0 +1,3 @@
+Soprano (formally known as QRDF) is a library which provides a nice Qt
+interface to RDF storage solutions. It has a modular structure which 
+allows to  replace the actual RDF storage implementation used. 

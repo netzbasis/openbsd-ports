@@ -1,0 +1,16 @@
+$OpenBSD: patch-install_py,v 1.3 2014/08/17 12:08:50 bcallah Exp $
+--- install.py.orig	Fri Aug 15 11:04:53 2014
++++ install.py	Sun Aug 17 08:05:27 2014
+@@ -113,10 +113,8 @@ if os.path.isfile ('build/bin/libbirdfont.so.' + versi
+ 	install ('build/bin/libbirdfont.so.' + version.SO_VERSION, libdir, 644)
+ 	link (libdir, 'libbirdfont.so.' + version.SO_VERSION, ' libbirdfont.so.' + version.SO_VERSION_MAJOR)
+ 	link (libdir, 'libbirdfont.so.' + version.SO_VERSION, ' libbirdfont.so')
+-elif os.path.isfile ('build/libbirdfont.so.' + version.SO_VERSION):
+-	install ('build/libbirdfont.so.' + version.SO_VERSION, libdir, 644)
+-	link (libdir, 'libbirdfont.so.' + version.SO_VERSION, ' libbirdfont.so.' + version.SO_VERSION_MAJOR)
+-	link (libdir, 'libbirdfont.so.' + version.SO_VERSION, ' libbirdfont.so')
++elif os.path.isfile ('build/libbirdfont.so.' + '${LIBbirdfont_VERSION}'):
++	install ('build/libbirdfont.so.' + '${LIBbirdfont_VERSION}', '/lib', 644)
+ elif os.path.isfile ('build/bin/libbirdfont.' + version.SO_VERSION + '.dylib'):
+ 	install ('build/bin/libbirdfont.' + version.SO_VERSION + '.dylib', libdir, 644)
+ 	link (libdir, 'libbirdfont.' + version.SO_VERSION + '.dylib', ' libbirdfont.dylib.' + version.SO_VERSION_MAJOR)
