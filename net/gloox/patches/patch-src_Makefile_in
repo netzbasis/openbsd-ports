@@ -1,0 +1,21 @@
+$OpenBSD: patch-src_Makefile_in,v 1.4 2013/08/16 10:05:00 sthen Exp $
+
+Do not use the hardcoded make
+
+--- src/Makefile.in.orig	Sun Jul 21 20:18:10 2013
++++ src/Makefile.in	Fri Aug 16 11:04:50 2013
+@@ -958,12 +958,12 @@ uninstall-am: uninstall-libLTLIBRARIES \
+ 
+ 
+ test:
+-	make -C tests test
++	${MAKE_PROGRAM} -C tests test
+ 
+ check: test
+ 
+ leaktest:
+-	make -C tests leaktest
++	${MAKE_PROGRAM} -C tests leaktest
+ 
+ leakcheck: leaktest
+ 

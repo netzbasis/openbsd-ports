@@ -1,0 +1,24 @@
+$OpenBSD: patch-Makefile,v 1.2 2012/05/01 04:40:03 gsoares Exp $
+--- Makefile.orig	Tue Apr  3 12:17:59 2012
++++ Makefile	Tue Apr  3 12:19:29 2012
+@@ -16,17 +16,17 @@ options:
+ 
+ .c.o:
+ 	@echo CC -c $<
+-	@${CC} -c $< ${CFLAGS}
++	${CC} -c $< ${CFLAGS}
+ 
+ ${OBJ}: config.mk draw.h
+ 
+ dmenu: dmenu.o draw.o
+ 	@echo CC -o $@
+-	@${CC} -o $@ dmenu.o draw.o ${LDFLAGS}
++	${CC} -o $@ dmenu.o draw.o ${LDFLAGS}
+ 
+ stest: stest.o
+ 	@echo CC -o $@
+-	@${CC} -o $@ stest.o ${LDFLAGS}
++	${CC} -o $@ stest.o ${LDFLAGS}
+ 
+ clean:
+ 	@echo cleaning

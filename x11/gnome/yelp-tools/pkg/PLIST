@@ -1,0 +1,18 @@
+@comment $OpenBSD: PLIST,v 1.2 2014/03/26 13:35:07 ajacoutot Exp $
+bin/yelp-build
+bin/yelp-check
+bin/yelp-new
+share/aclocal/yelp.m4
+share/yelp-tools/
+share/yelp-tools/templates/
+share/yelp-tools/templates/task.page
+share/yelp-tools/xslt/
+share/yelp-tools/xslt/comments.xsl
+share/yelp-tools/xslt/mal-epub.xsl
+share/yelp-tools/xslt/mal-files.xsl
+share/yelp-tools/xslt/mal-license.xsl
+share/yelp-tools/xslt/mal-ncx.xsl
+share/yelp-tools/xslt/mal-opf.xsl
+share/yelp-tools/xslt/mal-rng.xsl
+share/yelp-tools/xslt/mal-status.xsl
+share/yelp-tools/xslt/media.xsl

@@ -1,0 +1,12 @@
+$OpenBSD: patch-tests_binary_test,v 1.2 2013/09/22 10:33:13 stu Exp $
+--- tests/binary.test.orig	Tue Sep 17 08:14:17 2013
++++ tests/binary.test	Tue Sep 17 20:54:45 2013
+@@ -2822,7 +2822,7 @@ test binary-75.26 {binary decode uuencode} -body {
+ test binary-76.1 {binary string appending growth algorithm} unix {
+     # Create zero-length byte array first
+     set f [open /dev/null rb]
+-    chan configure $f -blocking 0
++    #chan configure $f -blocking 0; # OpenBSD won't allow this
+     set str [read $f 2]
+     close $f
+     # Append to it

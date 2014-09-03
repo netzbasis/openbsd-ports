@@ -1,0 +1,22 @@
+$OpenBSD: patch-node_gyp,v 1.2 2014/07/10 19:53:30 landry Exp $
+--- node.gyp.orig	Fri May  2 02:47:47 2014
++++ node.gyp	Thu Jul 10 15:58:13 2014
+@@ -144,6 +144,9 @@
+       ],
+ 
+       'conditions': [
++        [ 'OS=="openbsd"', {
++          'ldflags': [ '-rdynamic' ],
++        }],
+         [ 'node_use_openssl=="true"', {
+           'defines': [ 'HAVE_OPENSSL=1' ],
+           'sources': [ 'src/node_crypto.cc' ],
+@@ -271,7 +274,7 @@
+             'PLATFORM="darwin"',
+           ],
+         }],
+-        [ 'OS=="freebsd"', {
++        [ 'OS=="freebsd" or OS=="openbsd"', {
+           'libraries': [
+             '-lutil',
+             '-lkvm',

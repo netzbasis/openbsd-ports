@@ -1,0 +1,19 @@
+#!/bin/sh
+#
+# $OpenBSD: upsd.rc,v 1.2 2014/04/21 11:41:11 sthen Exp $
+
+daemon="${TRUEPREFIX}/sbin/upsd"
+
+. /etc/rc.d/rc.subr
+
+upsdrvctl="${TRUEPREFIX}/sbin/upsdrvctl"
+
+rc_pre() {
+	${upsdrvctl} start
+}
+
+rc_post() {
+	${upsdrvctl} stop
+}
+
+rc_cmd $1

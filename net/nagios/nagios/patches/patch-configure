@@ -1,0 +1,51 @@
+$OpenBSD: patch-configure,v 1.15 2013/11/07 10:31:38 rpe Exp $
+--- configure.orig	Wed Oct 16 01:36:42 2013
++++ configure	Fri Nov  1 17:47:13 2013
+@@ -1077,7 +1077,7 @@ do
+     ac_prev=sysconfdir ;;
+   -sysconfdir=* | --sysconfdir=* | --sysconfdi=* | --sysconfd=* | --sysconf=* \
+   | --syscon=* | --sysco=* | --sysc=* | --sys=* | --sy=*)
+-    sysconfdir=$ac_optarg ;;
++    sysconfdir=$ac_optarg/nagios ;;
+ 
+   -target | --target | --targe | --targ | --tar | --ta | --t)
+     ac_prev=target_alias ;;
+@@ -4633,7 +4633,7 @@ cat >>confdefs.h <<_ACEOF
+ #define DEFAULT_NAGIOS_GROUP "$nagios_grp"
+ _ACEOF
+ 
+-INSTALL_OPTS="-o $nagios_user -g $nagios_grp"
++INSTALL_OPTS=""
+ 
+ 
+ 
+@@ -4890,7 +4890,7 @@ $as_echo_n "checking for gdImagePng in -lgd (order 1).
+   $as_echo_n "(cached) " >&6
+ else
+   ac_save_LIBS="$LIBS"
+-	LIBS="-lgd -lttf -lpng -ljpeg -lz -lm $LIBS"
++	LIBS="-lgd -lfontconfig -lfreetype -lpng -ljpeg -lz -lm $LIBS"
+ 	cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+ /* end confdefs.h.  */
+ 	/* Override any gcc2 internal prototype to avoid an error.  */
+@@ -4921,7 +4921,7 @@ fi
+ $as_echo "yes" >&6; }
+ 
+ 			GDLIBFOUND=yep
+-			GDLIBS="-lgd -lttf -lpng -ljpeg -lz -lm"
++			GDLIBS="-lgd -lfontconfig -lfreetype -lpng -ljpeg -lz -lm"
+ 
+ 	else
+ 	  { $as_echo "$as_me:${as_lineno-$LINENO}: result: no" >&5
+@@ -5432,9 +5432,9 @@ $as_echo_n "checking for linker flags for loadable mod
+ 			MOD_LDFLAGS="-shared"
+ 			MOD_CFLAGS="-fPIC"
+ 		;;
+-		freebsd*)
++		freebsd* | openbsd*)
+ 			MOD_LDFLAGS="-shared"
+-			MOD_CFLAGS="-fPIC"
++			MOD_CFLAGS="-fPIC -DPIC"
+ 		;;
+ 		*)
+ 			# assume GNU linker and ELF

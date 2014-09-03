@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST,v 1.7 2013/10/11 20:39:40 naddy Exp $
+@pkgpath misc/xtar,lesstif
+@bin bin/xtar
+lib/X11/app-defaults/XTar
+lib/X11/xtar/
+lib/X11/xtar/xtar.doc
+@man man/man1/xtar.1

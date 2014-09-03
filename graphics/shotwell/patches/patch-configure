@@ -1,0 +1,18 @@
+$OpenBSD: patch-configure,v 1.7 2014/03/19 07:44:04 ajacoutot Exp $
+--- configure.orig	Tue Mar  4 23:54:12 2014
++++ configure	Wed Mar 19 07:55:28 2014
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env bash
++#!/bin/sh
+ #
+ # Copyright 2009-2014 Yorba Foundation
+ #
+@@ -58,8 +58,6 @@ EOT
+ 
+ abort() {
+     printf "%s: Invalid argument %s\n" $0 $1
+-    configure_help
+-    exit 1
+ }
+ 
+ while [ $# != 0 ]

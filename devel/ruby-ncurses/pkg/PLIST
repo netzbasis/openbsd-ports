@@ -1,0 +1,24 @@
+@comment $OpenBSD: PLIST,v 1.9 2014/01/11 22:51:02 jeremy Exp $
+${GEM_LIB}/cache/${DISTNAME}.gem
+${GEM_LIB}/gems/${DISTNAME}/
+${GEM_LIB}/gems/${DISTNAME}/COPYING
+${GEM_LIB}/gems/${DISTNAME}/Changes
+${GEM_LIB}/gems/${DISTNAME}/README
+${GEM_LIB}/gems/${DISTNAME}/THANKS
+${GEM_LIB}/gems/${DISTNAME}/TODO
+${GEM_LIB}/gems/${DISTNAME}/examples/
+${GEM_LIB}/gems/${DISTNAME}/examples/LICENSES_for_examples
+${GEM_LIB}/gems/${DISTNAME}/examples/example.rb
+${GEM_LIB}/gems/${DISTNAME}/examples/form.rb
+${GEM_LIB}/gems/${DISTNAME}/examples/form2.rb
+${GEM_LIB}/gems/${DISTNAME}/examples/hello_ncurses.rb
+${GEM_LIB}/gems/${DISTNAME}/examples/rain.rb
+${GEM_LIB}/gems/${DISTNAME}/examples/read_line.rb
+${GEM_LIB}/gems/${DISTNAME}/examples/tclock.rb
+${GEM_LIB}/gems/${DISTNAME}/examples/test_scanw.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/
+${GEM_LIB}/gems/${DISTNAME}/lib/ncurses-ruby/
+${GEM_LIB}/gems/${DISTNAME}/lib/ncurses-ruby/version.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/ncurses.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/ncurses.so
+${GEM_LIB}/specifications/${DISTNAME}.gemspec

@@ -1,0 +1,30 @@
+$OpenBSD: patch-configure,v 1.10 2014/01/21 10:06:07 jasper Exp $
+
+Fix so name.
+
+Override the arch setting to remove OpenBSD version from it,
+so ports don't have to be bumped when OpenBSD version changes.
+
+--- configure.orig	Fri Nov 22 05:24:15 2013
++++ configure	Tue Jan 21 10:02:25 2014
+@@ -16845,7 +16845,7 @@ _ACEOF
+   openbsd*) :
+ 
+ 	SOLIBS='$(LIBS)'
+-	LIBRUBY_SO='lib$(RUBY_SO_NAME).so.$(MAJOR).'`expr ${MINOR} \* 10 + ${TEENY}`
++	LIBRUBY_SO='lib$(RUBY_SO_NAME).so.'${LIBruby19_VERSION}
+ 	 ;; #(
+   solaris*) :
+ 
+@@ -17675,7 +17675,10 @@ _ACEOF
+ _ACEOF
+ 
+ else
+-    arch="${target_cpu}-${target_os}"
++    case "$target_os" in
++      openbsd*) arch="$target_cpu-openbsd" ;;
++      *) arch="${target_cpu}-${target_os}" ;;
++    esac
+     cat >>confdefs.h <<_ACEOF
+ #define RUBY_PLATFORM "${arch}"
+ _ACEOF

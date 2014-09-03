@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_screen_cc,v 1.4 2013/09/04 01:18:31 jturner Exp $
+--- src/screen.cc.orig	Tue Sep  3 14:41:56 2013
++++ src/screen.cc	Tue Sep  3 21:10:15 2013
+@@ -21,7 +21,7 @@
+ #include <algorithm>
+ #include <cctype>
+ #include <cstdlib>
+-#include <cursesw.h>
++#include <curses.h>
+ #include <dirent.h>
+ #include <iostream>
+ #include <string.h>

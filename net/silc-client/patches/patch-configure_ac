@@ -1,0 +1,103 @@
+$OpenBSD: patch-configure_ac,v 1.9 2014/07/16 16:15:32 brad Exp $
+--- configure.ac.orig	Tue May 13 02:47:22 2014
++++ configure.ac	Sat Jul 12 16:56:45 2014
+@@ -100,9 +100,6 @@ AM_CONDITIONAL(SILC_X86_64, test x$cpu_x86_64 = xtrue)
+ AM_CONDITIONAL(SILC_POWERPC, test x$cpu_ppc = xtrue)
+ AM_CONDITIONAL(SILC_IA64, test x$cpu_ia64 = xtrue)
+ 
+-# Control compiler optimizations
+-CFLAGS=`echo $CFLAGS | sed 's/-O[ 0123456789s]*//g'`
+-
+ AC_PROG_CC
+ AC_C_INLINE
+ AC_C_CONST
+@@ -485,59 +482,9 @@ fi
+ ## Compiler and compiler flag checks
+ ##
+ 
+-if test "$GCC"; then
+-  # GCC specific options
+-  if test "x$summary_debug" = "xyes"; then
+-    SILC_ADD_CFLAGS(-g)
+-  else
+-    SILC_ADD_CFLAGS(-g)
+-  fi
+-  SILC_ADD_CFLAGS(-Wall -finline-functions)
+-  SILC_ADD_CFLAGS(-Wno-pointer-sign)
+-else
+-  # Other compilers
+-  case "$target" in
+-    alpha*-dec-osf*)
+-      SILC_ADD_CFLAGS(-g3)
+-      ;;
+-    mips*-sgi-irix*)
+-      SILC_ADD_CFLAGS(-g3)
+-      ;;
+-    *)
+-      SILC_ADD_CFLAGS(-g)
+-      ;;
+-  esac
++SILC_ADD_CFLAGS(-Wall -finline-functions)
++SILC_ADD_CFLAGS(-Wno-pointer-sign)
+ 
+-  # Intel C++ Compiler needs -restrict
+-  if test "x$CC" = "xicc"; then
+-    SILC_ADD_CFLAGS(-restrict)
+-  fi
+-fi
+-
+-if test x$want_cc_optimizations = xtrue; then
+-  if test "$GCC"; then
+-    # GCC specific options
+-    if test "x$summary_debug" = "xyes"; then
+-      SILC_ADD_CFLAGS(-O)
+-    else
+-      SILC_ADD_CFLAGS(-O2)
+-    fi
+-  else
+-    # Other compilers
+-    case "$target" in
+-      alpha*-dec-osf*)
+-        SILC_ADD_CFLAGS(-O2, SILC_ADD_CFLAGS(-O))
+-        ;;
+-      mips*-sgi-irix*)
+-        SILC_ADD_CFLAGS(-O2, SILC_ADD_CFLAGS(-O))
+-        ;;
+-      *)
+-        SILC_ADD_CFLAGS(-O2, SILC_ADD_CFLAGS(-O))
+-        ;;
+-    esac
+-  fi
+-fi
+-
+ #
+ # Workaround a bug in GCC 2.x which causes memory exhaustion
+ # when compiling sha1 with optimizations on UltraSPARC.
+@@ -630,8 +577,8 @@ if test -n "$with_silc_includes" || test -n "$with_sil
+ 
+ else
+   # pkg-config check
+-  PKG_CHECK_MODULES(SILC, [silc >= 1.1], compile_libs=false, compile_libs=true)
+-  PKG_CHECK_MODULES(SILCCLIENT, [silcclient >= 1.1.1], compile_libs=false, compile_libs=true)
++  #PKG_CHECK_MODULES(SILC, [silc >= 1.1], compile_libs=false, compile_libs=true)
++  #PKG_CHECK_MODULES(SILCCLIENT, [silcclient >= 1.1.1], compile_libs=false, compile_libs=true)
+ 
+   if test x$compile_libs = xfalse; then
+     LIBSUBDIR=
+@@ -1314,7 +1261,7 @@ fi
+ 
+ SILC_ADD_CC_FLAGS(SILC_CRYPTO, -fno-regmove)
+ if test x$summary_debug = xno -a x$want_cc_optimizations = xtrue; then
+-  SILC_ADD_CC_FLAGS(SILC_CRYPTO, -fomit-frame-pointer -O3)
++  SILC_ADD_CC_FLAGS(SILC_CRYPTO, -fomit-frame-pointer)
+ fi
+ 
+ AC_SUBST(SILC_CRYPTO_CFLAGS)
+@@ -1350,7 +1297,6 @@ if test x$compile_libs = xtrue; then
+ AC_MSG_NOTICE([configuring math library])
+ 
+ if test x$want_cc_optimizations = xtrue; then
+-  SILC_ADD_CC_FLAGS(MATH, -O3, SILC_ADD_CC_FLAGS(MATH, -O2))
+   SILC_ADD_CC_FLAGS(MATH, -funroll-all-loops)
+ fi
+ if test x$enable_stack_trace != xyes; then

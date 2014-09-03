@@ -1,0 +1,17 @@
+$OpenBSD: patch-bus_Makefile_in,v 1.22 2014/04/14 18:43:24 ajacoutot Exp $
+--- bus/Makefile.in.orig	Mon Jan 20 15:10:29 2014
++++ bus/Makefile.in	Fri Jan 24 11:34:40 2014
+@@ -1526,13 +1526,6 @@ install-data-hook:
+ @HAVE_SYSTEMD_TRUE@	ln -fs ../dbus.service $(DESTDIR)$(systemdsystemunitdir)/multi-user.target.wants/dbus.service
+ 
+ @DBUS_UNIX_TRUE@install-exec-hook:
+-@DBUS_UNIX_TRUE@	if test `id -u` -eq 0; then \
+-@DBUS_UNIX_TRUE@		chown root:$(DBUS_USER) $(DESTDIR)$(libexecdir)/dbus-daemon-launch-helper$(EXEEXT); \
+-@DBUS_UNIX_TRUE@		chmod 4750 $(DESTDIR)$(libexecdir)/dbus-daemon-launch-helper$(EXEEXT); \
+-@DBUS_UNIX_TRUE@	else \
+-@DBUS_UNIX_TRUE@		echo "Not installing $(DESTDIR)$(libexecdir)/dbus-daemon-launch-helper binary setuid!"; \
+-@DBUS_UNIX_TRUE@		echo "You'll need to manually set permissions to root:$(DBUS_USER) and permissions 4750"; \
+-@DBUS_UNIX_TRUE@	fi
+ 
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.

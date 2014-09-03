@@ -1,0 +1,13 @@
+$OpenBSD: patch-src_stored_Makefile_in,v 1.4 2014/04/19 09:44:11 ajacoutot Exp $
+--- src/stored/Makefile.in.orig	Sat Mar 29 09:00:03 2014
++++ src/stored/Makefile.in	Fri Apr  4 22:13:11 2014
+@@ -189,9 +189,6 @@ install: all
+ 	fi; \
+ 	echo "${INSTALL_CONFIG} $$srcconf ${DESTDIR}${sysconfdir}/$$destconf"; \
+ 	${INSTALL_CONFIG} $$srcconf ${DESTDIR}${sysconfdir}/$$destconf
+-	@if test "x${sd_group}" != "x"; then \
+-	   chgrp -f ${sd_group} ${DESTDIR}${sysconfdir}/$$destconf; \
+-	fi
+ 	@if test -f static-bacula-sd; then \
+ 	   $(LIBTOOL_INSTALL) $(INSTALL_PROGRAM) static-bacula-sd $(DESTDIR)$(sbindir)/static-bacula-sd; \
+ 	fi

@@ -1,0 +1,23 @@
+$OpenBSD: patch-gtk_c,v 1.4 2013/11/19 16:39:26 sthen Exp $
+
+Fix 64-bit issue.
+Fix with newer glib.
+
+--- gtk.c.orig	Mon Apr 29 14:22:05 2013
++++ gtk.c	Sun Nov 17 16:44:55 2013
+@@ -21,6 +21,7 @@
+ 
+ #include <stdio.h>
+ #include <stdlib.h>
++#include <string.h>
+ #include <unistd.h>
+ #include <sys/time.h>
+ #include <sys/types.h>
+@@ -69,6 +70,7 @@ void gtk_do_init(int *argc, char ***argv) 
+   static int done = 0;
+ 
+   if(!done) {
++    g_type_init();
+     gtk_init(argc, argv);
+ 
+     done = 1;

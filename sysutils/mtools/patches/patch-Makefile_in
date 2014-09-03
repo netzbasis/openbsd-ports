@@ -1,0 +1,12 @@
+$OpenBSD: patch-Makefile_in,v 1.3 2013/11/06 15:06:53 sthen Exp $
+--- Makefile.in.orig	Sun Oct 17 16:41:09 2010
++++ Makefile.in	Wed Nov  6 14:31:40 2013
+@@ -277,7 +277,7 @@ install-links: $(DESTDIR)$(bindir)/mtools
+ install-scripts: $(DESTDIR)$(bindir)/mtools
+ 	@$(top_srcdir)/mkinstalldirs $(DESTDIR)$(bindir)
+ 	@for j in $(SCRIPTS) ; do \
+-		$(INSTALL_PROGRAM) $(srcdir)/scripts/$$j $(DESTDIR)$(bindir)/$$j ; \
++		$(BSD_INSTALL_SCRIPT) $(srcdir)/scripts/$$j $(DESTDIR)$(bindir)/$$j ; \
+ 		echo $(DESTDIR)$(bindir)/$$j ; \
+ 	done
+ 	rm -f $(DESTDIR)$(bindir)/lz

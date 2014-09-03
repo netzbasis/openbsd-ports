@@ -1,0 +1,47 @@
+@comment $OpenBSD: PLIST,v 1.13 2014/02/06 16:00:44 ajacoutot Exp $
+@comment non-volatile homedir needed for sa-learn(1), MD sets user_dir to QUARANTINEDIR
+@newgroup _mdefang:570
+@newuser _mdefang:570:_mdefang:daemon:MIMEDefang User:/var/spool/MD-Quarantine:/sbin/nologin
+@extraunexec rm -rf /var/spool/MIMEDefang/*
+@extraunexec rm -rf /var/spool/MD-Quarantine/*
+@bin bin/md-mx-ctrl
+@bin bin/mimedefang
+@bin bin/mimedefang-multiplexor
+bin/mimedefang-util
+bin/mimedefang.pl
+bin/watch-mimedefang
+bin/watch-multiple-mimedefangs.tcl
+@man man/man1/mimedefang-util.1
+@man man/man5/mimedefang-filter.5
+@man man/man7/mimedefang-notify.7
+@man man/man7/mimedefang-protocol.7
+@man man/man8/md-mx-ctrl.8
+@man man/man8/mimedefang-multiplexor.8
+@man man/man8/mimedefang.8
+@man man/man8/mimedefang.pl.8
+@man man/man8/watch-mimedefang.8
+@man man/man8/watch-multiple-mimedefangs.8
+share/doc/pkg-readmes/${FULLPKGNAME}
+share/examples/gen-ip-validator.pl
+share/examples/mimedefang/
+share/examples/mimedefang/mail/
+share/examples/mimedefang/mail/mimedefang-filter
+share/examples/mimedefang/mail/mimedefang-filter-openbsd-ports
+@sample ${SYSCONFDIR}/mail/mimedefang-filter
+@mode 0400
+@owner _mdefang
+share/examples/mimedefang/mail/mimedefang-ip-key
+@mode
+@owner
+share/examples/mimedefang/mail/sa-mimedefang.cf
+@sample ${SYSCONFDIR}/mail/sa-mimedefang.cf
+@mode 0750
+@owner _mdefang
+@group _mdefang
+@sample /var/spool/MIMEDefang/
+@sample /var/spool/MD-Quarantine/
+@mode
+@owner
+@group
+@rcscript ${RCDIR}/mimedefang
+@rcscript ${RCDIR}/mimedefang_multiplexor

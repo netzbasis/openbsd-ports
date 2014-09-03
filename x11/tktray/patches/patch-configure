@@ -1,0 +1,28 @@
+$OpenBSD: patch-configure,v 1.4 2013/08/07 19:17:07 naddy Exp $
+
+Do not overwrite CFLAGS_OPTIMIZE.
+
+--- configure.orig	Thu Jul 15 17:04:48 2010
++++ configure	Wed Aug  7 20:16:04 2013
+@@ -6401,11 +6401,11 @@ fi
+     ECHO_VERSION='`echo ${PACKAGE_VERSION}`'
+     TCL_LIB_VERSIONS_OK=ok
+     CFLAGS_DEBUG=-g
+-    CFLAGS_OPTIMIZE=-O
++    #CFLAGS_OPTIMIZE=-O
+     if test "$GCC" = yes; then :
+ 
+ 	# TEA specific:
+-	CFLAGS_OPTIMIZE=-O2
++	CFLAGS_OPTIMIZE=""
+ 	CFLAGS_WARNING="-W -Wall -Wno-unused-parameter -Wno-missing-field-initializers -ansi -pedantic"
+ 
+ else
+@@ -7517,7 +7517,6 @@ fi
+ 		# OpenBSD builds and links with -pthread, never -lpthread.
+ 		LIBS=`echo $LIBS | sed s/-lpthread//`
+ 		CFLAGS="$CFLAGS -pthread"
+-		SHLIB_CFLAGS="$SHLIB_CFLAGS -pthread"
+ 
+ fi
+ 	    # OpenBSD doesn't do version numbers with dots.

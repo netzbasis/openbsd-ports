@@ -1,0 +1,12 @@
+$OpenBSD: patch-conf_Makefile_in,v 1.6 2014/05/28 13:37:25 gonzalo Exp $
+--- conf/Makefile.in.orig	Tue May  6 01:55:10 2014
++++ conf/Makefile.in	Tue May 13 08:42:27 2014
+@@ -269,7 +269,7 @@ build_vendor = @build_vendor@
+ builddir = @builddir@
+ datadir = @datadir@
+ datarootdir = @datarootdir@
+-docdir = $(datadir)/$(PACKAGE)/doc
++docdir = $(datadir)/examples/$(PACKAGE)
+ dvidir = @dvidir@
+ exec_prefix = @exec_prefix@
+ host = @host@

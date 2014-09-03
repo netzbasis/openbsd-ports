@@ -1,0 +1,50 @@
+@comment $OpenBSD: PLIST,v 1.2 2013/04/18 17:57:07 bentley Exp $
+@bin bin/iverilog
+bin/iverilog-vpi
+@bin bin/vvp
+include/iverilog/
+include/iverilog/_pli_types.h
+lib/ivl/
+@bin lib/ivl/cadpli.vpl
+lib/ivl/include/
+@bin lib/ivl/ivl
+@bin lib/ivl/ivlpp
+@bin lib/ivl/null.tgt
+@bin lib/ivl/stub.tgt
+@bin lib/ivl/system.vpi
+@bin lib/ivl/v2005_math.vpi
+@bin lib/ivl/va_math.vpi
+@bin lib/ivl/vhdl.tgt
+lib/ivl/vvp-s.conf
+lib/ivl/vvp.conf
+@bin lib/ivl/vvp.tgt
+lib/libveriuser.a
+lib/libvpi.a
+@man man/man1/iverilog-vpi.1
+@man man/man1/iverilog.1
+@man man/man1/vvp.1
+share/doc/iverilog/
+@comment share/doc/iverilog/BUGS.txt
+share/doc/iverilog/QUICK_START.txt
+share/doc/iverilog/README.txt
+share/doc/iverilog/attributes.txt
+@comment share/doc/iverilog/cygwin.txt
+share/doc/iverilog/developer-quick-start.txt
+share/doc/iverilog/extensions.txt
+share/doc/iverilog/glossary.txt
+share/doc/iverilog/ieee1364-notes.txt
+share/doc/iverilog/ivl_target.txt
+share/doc/iverilog/ivlpp/
+share/doc/iverilog/ivlpp/ivlpp.txt
+share/doc/iverilog/lpm.txt
+@comment share/doc/iverilog/macosx.txt
+@comment share/doc/iverilog/mingw.txt
+share/doc/iverilog/netlist.txt
+share/doc/iverilog/swift.txt
+share/doc/iverilog/t-dll.txt
+share/doc/iverilog/va_math.txt
+share/doc/iverilog/vpi.txt
+share/doc/iverilog/vvp/
+share/doc/iverilog/vvp/README.txt
+share/doc/iverilog/vvp/opcodes.txt
+share/doc/iverilog/xilinx-hint.txt

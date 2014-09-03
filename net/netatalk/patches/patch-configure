@@ -1,0 +1,12 @@
+$OpenBSD: patch-configure,v 1.4 2012/08/27 06:19:48 ajacoutot Exp $
+--- configure.orig	Thu Apr 26 10:27:12 2012
++++ configure	Thu Aug 16 18:00:15 2012
+@@ -15761,7 +15761,7 @@ fi
+ 	for ac_header in rpc/rpc.h rpc/pmap_prot.h rpcsvc/rquota.h
+ do :
+   as_ac_Header=`$as_echo "ac_cv_header_$ac_header" | $as_tr_sh`
+-ac_fn_c_check_header_mongrel "$LINENO" "$ac_header" "$as_ac_Header" "$ac_includes_default"
++ac_fn_c_check_header_mongrel "$LINENO" "$ac_header" "$as_ac_Header" "#include <rpc/rpc.h>"
+ if eval test \"x\$"$as_ac_Header"\" = x"yes"; then :
+   cat >>confdefs.h <<_ACEOF
+ #define `$as_echo "HAVE_$ac_header" | $as_tr_cpp` 1

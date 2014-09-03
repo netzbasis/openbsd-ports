@@ -1,0 +1,37 @@
+$OpenBSD: patch-installer_linux_gateway_cfg,v 1.13 2014/07/03 06:14:40 robert Exp $
+--- installer/linux/gateway.cfg.orig	Fri May 23 15:03:19 2014
++++ installer/linux/gateway.cfg	Wed Jul  2 17:28:25 2014
+@@ -14,16 +14,16 @@ server_hostname = 
+ server_hostname_greeting = no
+ 
+ # drop privileges and run the process as this user
+-run_as_user = 
++run_as_user = _zarafa
+ 
+ # drop privileges and run the process as this group
+-run_as_group = 
++run_as_group = _zarafa
+ 
+-# create a pid file for stopping the service via the init.d scripts
++# write the process ID number to this file
+ pid_file = /var/run/zarafa-gateway.pid
+ 
+ # run server in this path (when not using the -F switch)
+-running_path = /
++running_path = /var/empty
+ 
+ # create memory coredumps upon crash in the running_path directory
+ coredump_enabled = no
+@@ -72,10 +72,10 @@ imap_max_fail_commands = 10
+ disable_plaintext_auth = no
+ 
+ # File with RSA key for SSL
+-ssl_private_key_file	=	/etc/zarafa/gateway/privkey.pem
++ssl_private_key_file	=	${SYSCONFDIR}/zarafa/gateway/privkey.pem
+ 
+ #File with certificate for SSL
+-ssl_certificate_file	=	/etc/zarafa/gateway/cert.pem
++ssl_certificate_file	=	${SYSCONFDIR}/zarafa/gateway/cert.pem
+ 
+ # Verify client certificate
+ ssl_verify_client	=	no

@@ -1,0 +1,144 @@
+$OpenBSD: patch-base_utils_py,v 1.15 2014/06/17 08:51:18 ajacoutot Exp $
+--- base/utils.py.orig	Tue Jun  3 08:33:10 2014
++++ base/utils.py	Tue Jun 17 09:40:41 2014
+@@ -134,11 +134,11 @@ for s in EXPECT_WORD_LIST:
+ def get_cups_systemgroup_list():
+     lis = []
+     try:
+-        fp=open('/etc/cups/cupsd.conf')
++        fp=open('${SYSCONFDIR}/cups/cupsd.conf')
+     except IOError:
+         try:
+-            if "root" != grp.getgrgid(os.stat('/etc/cups/cupsd.conf').st_gid).gr_name:
+-                return [grp.getgrgid(os.stat('/etc/cups/cupsd.conf').st_gid).gr_name]
++            if "root" != grp.getgrgid(os.stat('${SYSCONFDIR}/cups/cupsd.conf').st_gid).gr_name:
++                return [grp.getgrgid(os.stat('${SYSCONFDIR}/cups/cupsd.conf').st_gid).gr_name]
+         except OSError:
+             return lis
+ 
+@@ -575,7 +575,7 @@ class UserSettings(object): # Note: Deprecated after 2
+         if len(path):
+             self.cmd_pcard = 'hp-unload -d %DEVICE_URI%'
+         else:
+-            self.cmd_pcard = 'python %HOME%/unload.py -d %DEVICE_URI%'
++            self.cmd_pcard = '${MODPY_BIN} %HOME%/unload.py -d %DEVICE_URI%'
+ 
+         # Copy
+         path = which('hp-makecopies')
+@@ -583,7 +583,7 @@ class UserSettings(object): # Note: Deprecated after 2
+         if len(path):
+             self.cmd_copy = 'hp-makecopies -d %DEVICE_URI%'
+         else:
+-            self.cmd_copy = 'python %HOME%/makecopies.py -d %DEVICE_URI%'
++            self.cmd_copy = '${MODPY_BIN} %HOME%/makecopies.py -d %DEVICE_URI%'
+ 
+         # Fax
+         path = which('hp-sendfax')
+@@ -591,7 +591,7 @@ class UserSettings(object): # Note: Deprecated after 2
+         if len(path):
+             self.cmd_fax = 'hp-sendfax -d %FAX_URI%'
+         else:
+-            self.cmd_fax = 'python %HOME%/sendfax.py -d %FAX_URI%'
++            self.cmd_fax = '${MODPY_BIN} %HOME%/sendfax.py -d %FAX_URI%'
+ 
+         # Fax Address Book
+         path = which('hp-fab')
+@@ -599,7 +599,7 @@ class UserSettings(object): # Note: Deprecated after 2
+         if len(path):
+             self.cmd_fab = 'hp-fab'
+         else:
+-            self.cmd_fab = 'python %HOME%/fab.py'
++            self.cmd_fab = '${MODPY_BIN} %HOME%/fab.py'
+ 
+     def load(self):
+         self.loadDefaults()
+@@ -934,10 +934,9 @@ def all(S,f=lambda x:x):
+         if not f(x): return False
+     return True
+ 
+-BROWSERS = ['firefox', 'mozilla', 'konqueror', 'epiphany', 'skipstone'] # in preferred order
+-BROWSER_OPTS = {'firefox': '-new-tab', 'mozilla': '', 'konqueror': '', 'epiphany': '--new-tab', 'skipstone': ''}
++BROWSERS = ['xdg-open']
++BROWSER_OPTS = {'xdg-open' : ''}
+ 
+-
+ def find_browser():
+     if platform_avail and platform.system() == 'Darwin':
+         return "open"
+@@ -1942,38 +1941,41 @@ def downLoad_status(count, blockSize, totalSize):
+ def download_from_network(weburl, outputFile = None, useURLLIB=False):
+     result =False
+ 
+-    if weburl is "" or weburl is None:
+-        log.error("URL is empty")
+-        return result, ""
++    if platform.system() == "Linux":
++        if weburl is "" or weburl is None:
++            log.error("URL is empty")
++            return result, ""
+ 
+-    if outputFile is None:
+-        fp, outputFile = make_temp_file()
++        if outputFile is None:
++            fp, outputFile = make_temp_file()
+ 
+-    try:
+-        if useURLLIB is False:
+-            wget = which("wget")
+-            if wget:
+-                wget = os.path.join(wget, "wget")
+-                status, output = run("%s --cache=off --tries=3 --timeout=60 --output-document=%s %s" %(wget, outputFile, weburl))
+-                if status:
+-                    log.error("Failed to connect to HPLIP site. Error code = %d" %status)
+-                    return False, ""
+-            else:
+-                useURLLIB = True
++        try:
++            if useURLLIB is False:
++                wget = which("wget")
++                if wget:
++                    wget = os.path.join(wget, "wget")
++                    status, output = run("%s --cache=off --tries=3 --timeout=60 --output-document=%s %s" %(wget, outputFile, weburl))
++                    if status:
++                        log.error("Failed to connect to HPLIP site. Error code = %d" %status)
++                        return False, ""
++                else:
++                    useURLLIB = True
+ 
+-        if useURLLIB:
+-            sys.stdout.write("Download in progress...")
+-            urllib.urlretrieve(weburl, outputFile, downLoad_status)
++            if useURLLIB:
++                sys.stdout.write("Download in progress...")
++                urllib.urlretrieve(weburl, outputFile, downLoad_status)
+ 
+-    except IOError, e:
+-        log.error("I/O Error: %s" % e.strerror)
+-        return False, ""
++        except IOError, e:
++            log.error("I/O Error: %s" % e.strerror)
++            return False, ""
+ 
+-    if not os.path.exists(outputFile):
+-        log.error("Failed to download %s file."%outputFile)
+-        return False, ""
++        if not os.path.exists(outputFile):
++            log.error("Failed to download %s file."%outputFile)
++            return False, ""
+ 
+-    return True, outputFile
++        return True, outputFile
++    else:
++        return result, ""
+ 
+ 
+ 
+@@ -2074,7 +2076,7 @@ def check_user_groups(required_grps_str, avl_grps):
+         grps =re.sub(r'\s', '', str(grps))
+         exp_grp_list = grps.split(',')
+     else:
+-        exp_grp_list.append('lp')
++        exp_grp_list.append('_cups')
+ 
+     log.debug("Requied groups list =[%s]"%exp_grp_list)
+ 

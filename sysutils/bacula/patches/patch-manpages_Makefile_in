@@ -1,0 +1,23 @@
+$OpenBSD: patch-manpages_Makefile_in,v 1.5 2014/04/19 09:44:11 ajacoutot Exp $
+--- manpages/Makefile.in.orig	Wed Apr  2 18:32:30 2014
++++ manpages/Makefile.in	Tue Apr  8 16:26:01 2014
+@@ -18,17 +18,9 @@ depend:
+ 
+ install:
+ 	$(MKDIR) $(DESTDIR)/$(mandir)/man8
+-	for I in ${MAN8}; \
+-	  do ($(RMF) $$I.gz; gzip -c $$I >$$I.gz; \
+-	     $(INSTALL_DATA) $$I.gz $(DESTDIR)$(mandir)/man8/$$I.gz; \
+-	     rm -f $$I.gz); \
+-	done
++	$(INSTALL_DATA) ${MAN8} $(DESTDIR)$(mandir)/man8/
+ 	$(MKDIR) $(DESTDIR)/$(mandir)/man1
+-	for I in ${MAN1}; \
+-	  do ($(RMF) $$I.gz; gzip -c $$I >$$I.gz; \
+-	     $(INSTALL_DATA) $$I.gz $(DESTDIR)$(mandir)/man1/$$I.gz; \
+-	     rm -f $$I.gz); \
+-	done
++	$(INSTALL_DATA) ${MAN1} $(DESTDIR)$(mandir)/man1/
+ 
+ uninstall:
+ 	for I in ${MAN8}; \

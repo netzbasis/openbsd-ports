@@ -1,0 +1,21 @@
+$OpenBSD: patch-lily_ttf_cc,v 1.6 2014/05/27 20:43:50 kili Exp $
+--- lily/ttf.cc.orig	Tue May 13 10:25:46 2014
++++ lily/ttf.cc	Tue May 13 10:26:24 2014
+@@ -439,7 +439,7 @@ print_trailer (void *out,
+       if (!glyph_name[0] && ic_map.find (i) != ic_map.end ())
+         {
+           FT_ULong ucode = ic_map[i];
+-          get_unicode_name (glyph_name, ucode);
++          get_unicode_name (glyph_name, sizeof(glyph_name), ucode);
+         }
+ 
+       if (i == 0)
+@@ -448,7 +448,7 @@ print_trailer (void *out,
+         glyph_name[0] = '\0';
+ 
+       if (!glyph_name[0])
+-        get_glyph_index_name (glyph_name, i);
++        get_glyph_index_name (glyph_name, sizeof(glyph_name), i);
+ 
+       if (glyph_name[0])
+         {

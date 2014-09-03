@@ -1,0 +1,86 @@
+$OpenBSD: patch-Doc_zsh_texi,v 1.7 2014/04/17 12:12:20 jasper Exp $
+--- Doc/zsh.texi.orig	Sun Jan  5 19:22:46 2014
++++ Doc/zsh.texi	Mon Apr 14 18:10:09 2014
+@@ -7,6 +7,10 @@
+ @end iftex
+ @setfilename zsh.info
+ @settitle zsh
++@dircategory Shells
++@direntry
++* Zsh: (zsh).                  The Z shell.
++@end direntry
+ @c %**end of header
+ 
+ @ifinfo
+@@ -3924,7 +3928,7 @@ you may see in your prompt (see
+ A history expansion begins with the first character of the @t{histchars}
+ parameter, which is `@t{!}' by default, and may occur anywhere on the
+ command line; history expansions do not nest.  The `@t{!}' can be escaped
+-with `@t{\}' or can be enclosed between a pair of single quotes (@t{@value{dsq}})
++with `@t{\}' or can be enclosed between a pair of single quotes (@t{'}@t{'})
+ to suppress its special meaning.  Double quotes will @emph{not} work for
+ this.  Following this history character is an optional event designator
+ (@ref{Event Designators}) and then an optional word
+@@ -10233,7 +10237,7 @@ For example,
+ @example
+ unsetopt localtraps
+ trap - INT
+-fn() @{ setopt localtraps; trap @value{dsq} INT; sleep 3; @}
++zstyle ':completion:*' group-name @t{'}@t{'}
+ @end example
+ 
+ @noindent
+@@ -20012,7 +20016,7 @@ zstyle ':completion:*:default' list-colors $@{(s.:.)LS
+ 
+ @noindent
+ The default colors are the same as for the GNU @t{ls} command and can be
+-obtained by setting the style to an empty string (i.e. @t{@value{dsq}}).
++obtained by setting the style to an empty string (i.e. @t{'}@t{'}).
+ 
+ @kindex list-dirs-first, completion style
+ @item @t{list-dirs-first}
+@@ -20145,7 +20149,7 @@ generates no matches, case-insensitive completion:
+ 
+ @noindent
+ @example
+-zstyle ':completion:*' matcher-list @value{dsq} 'm:@{a-zA-Z@}=@{A-Za-z@}'
++zstyle ':completion:*' matcher-list @t{'}@t{'} 'm:@{a-zA-Z@}=@{A-Za-z@}'
+ @end example
+ 
+ @noindent
+@@ -20169,7 +20173,7 @@ case-insensitive completion with @t{_complete}:
+ @example
+ zstyle ':completion:*' completer _complete _prefix
+ zstyle ':completion:*:complete:*' matcher-list \ 
+-       @value{dsq} 'm:@{a-zA-Z@}=@{A-Za-z@}'
++       @t{'}@t{'} 'm:@{a-zA-Z@}=@{A-Za-z@}'
+ @end example
+ 
+ @noindent
+@@ -23701,7 +23705,7 @@ generates at least one match. E.g.:
+ 
+ @noindent
+ @example
+-compctl -M @value{dsq} 'm:@{a-zA-Z@}=@{A-Za-z@}'
++compctl -M @t{'}@t{'} 'm:@{a-zA-Z@}=@{A-Za-z@}'
+ @end example
+ 
+ @noindent
+@@ -23913,7 +23917,7 @@ use is
+ 
+ @noindent
+ @example
+-compctl -D -f + -H 0 @value{dsq}
++compctl -D -f + -H 0 @t{'}@t{'}
+ @end example
+ 
+ @noindent
+@@ -24001,7 +24005,7 @@ performed on the first word in the range.  For example
+ 
+ @noindent
+ @example
+-compctl -x 'r[-exec,;]' -l @value{dsq} -- find
++compctl -x 'r[-exec,;]' -l @t{'}@t{'} -- find
+ @end example
+ 
+ @noindent

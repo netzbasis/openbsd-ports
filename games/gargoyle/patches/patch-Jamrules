@@ -1,0 +1,36 @@
+$OpenBSD: patch-Jamrules,v 1.6 2013/08/22 20:06:49 sthen Exp $
+--- Jamrules.orig	Wed Jul 13 09:22:30 2011
++++ Jamrules	Thu Mar  7 12:14:11 2013
+@@ -135,6 +135,23 @@ switch $(OS)
+         else      { SHRLINKLIBS += $(GARGLKLIBS) ; }
+ 
+ 
++    case OPENBSD :
++        Echo "OS is OpenBSD (gtk+)" ;
++        SUFDLL  = .so.$(LIBgarglk_VERSION) ;
++        PKGCONFIG = "pkg-config freetype2 gtk+-2.0 gdk-x11-2.0 gobject-2.0" ;
++        #PKGCONFIG = "pkg-config freetype2 gtk+" ;
++        SHELLHEADER = "#!/bin/sh" ;
++        GARGLKCCFLAGS = "`$(PKGCONFIG) --cflags`" -fPIC ;
++        SHRLINKLIBS = "`$(PKGCONFIG) --libs`" -ljpeg -lpng -lz ;
++        LINKLIBS = -L$(PREFIX)/lib -L$(X11BASE)/lib -lz ;
++
++	if $(USESDL)
++	{
++	    GARGLKCCFLAGS += -I$(PREFIX)/include/SDL -I$(PREFIX)/include/ ;
++	    LINKLIBS += -pthread ;
++	    SHRLINKLIBS += -pthread -lSDL_mixer -lSDL_sound -lSDL -lsmpeg -lvorbisfile ;
++	}
++
+     case MACOSX :
+         Echo "OS is MACOSX (cocoa)" ;
+         SUFDLL = .dylib ;
+@@ -167,7 +184,7 @@ switch $(BUILD)
+ 
+     case RELEASE :
+         Echo "BUILD is RELEASE" ;
+-        OPTIM = -O2 $(CFLAGS) ;
++        OPTIM = $(CFLAGS) ;
+         LINKFLAGS = $(LDFLAGS) ;
+         SHRLINKFLAGS = $(LDFLAGS) ;
+ 

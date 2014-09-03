@@ -1,0 +1,12 @@
+$OpenBSD: patch-convlog_c,v 1.5 2012/11/21 21:42:07 rpe Exp $
+--- convlog.c.orig	Wed Nov 14 21:04:07 2012
++++ convlog.c	Wed Nov 14 21:06:25 2012
+@@ -40,7 +40,7 @@ void convlog(const char *arq, char *df, int dfrom, int
+ 	longline line;
+ 
+ 	if(arq[0] == '\0')
+-		arq="/var/log/squid/access.log";
++		arq="/var/squid/logs/access.log";
+ 
+ 	if (arq[0]=='-' && arq[1]=='\0') {
+ 		fp_in=stdin;

@@ -1,0 +1,24 @@
+$OpenBSD: patch-config_mk,v 1.7 2014/05/19 08:45:49 dcoppa Exp $
+
+zap redundant CFLAGS
+
+enable builtin EXIF support
+
+--- config.mk.orig	Thu May 15 23:43:07 2014
++++ config.mk	Mon May 19 10:36:47 2014
+@@ -16,14 +16,13 @@ desktop_dir = ${main_dir}/share/applications
+ 
+ # default CFLAGS
+ CFLAGS ?= -g -O2
+-CFLAGS += -Wall -Wextra -pedantic
+ 
+ cam ?= 0
+ curl ?= 1
+ debug ?= 0
+ help ?= 0
+ xinerama ?= 1
+-exif ?= 0
++exif ?= 1
+ 
+ ifeq (${curl},1)
+ 	CFLAGS += -DHAVE_LIBCURL

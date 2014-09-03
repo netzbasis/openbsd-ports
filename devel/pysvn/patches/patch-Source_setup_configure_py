@@ -1,0 +1,67 @@
+$OpenBSD: patch-Source_setup_configure_py,v 1.2 2013/10/10 09:56:33 stsp Exp $
+
+1) Fix broken lib auto-detection. The configure script will try to stat a
+   shared library file, but we don't know the exact filename because it depends
+   on the shared library version. So look for a .la file instead. These are
+   present for all libraries the script is looking for.
+
+2) Add missing OpenBSD-specific bits.
+
+--- Source/setup_configure.py.orig	Sun Aug 18 14:11:41 2013
++++ Source/setup_configure.py	Wed Oct  9 16:02:28 2013
+@@ -182,6 +182,9 @@ class Setup:
+             elif sys.platform.startswith('freebsd'):
+                 self.platform = 'freebsd'
+ 
++            elif sys.platform.startswith('openbsd'):
++                self.platform = 'openbsd'
++
+             elif sys.platform == 'cygwin':
+                 self.platform = 'cygwin'
+ 
+@@ -204,6 +207,10 @@ class Setup:
+             self.c_utils = FreeBsdCompilerGCC( self )
+             self.c_pysvn = FreeBsdCompilerGCC( self )
+ 
++        elif self.platform == 'openbsd':
++            self.c_utils = OpenBsdCompilerGCC( self )
++            self.c_pysvn = OpenBsdCompilerGCC( self )
++
+         elif self.platform == 'cygwin':
+             self.c_utils = CygwinCompilerGCC( self )
+             self.c_pysvn = CygwinCompilerGCC( self )
+@@ -1129,7 +1136,7 @@ class UnixCompilerGCC(CompilerGCC):
+         if self.setup.platform == 'cygwin':
+             return '%s.dll.a' % libname
+         else:
+-            return '%s.so' % libname
++            return '%s.la' % libname
+ 
+     def setupUtilities( self ):
+         self._addVar( 'CCCFLAGS',
+@@ -1213,6 +1220,25 @@ class FreeBsdCompilerGCC(UnixCompilerGCC):
+                 '-lcom_err',
+                 '-lexpat',
+                 '-lneon',
++                ] )
++        return py_ld_libs
++
++class OpenBsdCompilerGCC(UnixCompilerGCC):
++    def __init__( self, setup ):
++        UnixCompilerGCC.__init__( self, setup )
++
++    def _getLdLibs( self ):
++        py_ld_libs = [
++                '-L%(SVN_LIB)s',
++                '-Wl,--rpath',
++                '-Wl,/usr/lib:/usr/local/lib',
++                '-lsvn_client-1',
++                '-lsvn_diff-1',
++                '-lsvn_repos-1',
++                ]
++
++        py_ld_libs.extend( [
++                '-lexpat',
+                 ] )
+         return py_ld_libs
+ 

@@ -1,0 +1,4 @@
+@comment $OpenBSD: PLIST,v 1.4 2014/02/01 16:27:58 espie Exp $
+@conflict texlive_texmf-minimal-<=2012p0
+bin/detex
+@man man/man1/detex.1

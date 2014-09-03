@@ -1,0 +1,11 @@
+$OpenBSD: patch-lib_blkid_getsize_c,v 1.2 2013/06/21 22:35:51 sthen Exp $
+--- lib/blkid/getsize.c.orig	Fri Nov 30 02:40:18 2012
++++ lib/blkid/getsize.c	Wed Jun 19 14:25:04 2013
+@@ -26,6 +26,7 @@
+ #include <fcntl.h>
+ #ifdef HAVE_SYS_IOCTL_H
+ #include <sys/ioctl.h>
++#include <sys/dkio.h>
+ #endif
+ #ifdef HAVE_LINUX_FD_H
+ #include <linux/fd.h>

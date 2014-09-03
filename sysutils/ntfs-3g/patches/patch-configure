@@ -1,0 +1,12 @@
+$OpenBSD: patch-configure,v 1.2 2014/04/30 23:07:25 pirofti Exp $
+--- configure.orig	Sat Feb 15 16:07:59 2014
++++ configure	Tue Apr 29 11:29:37 2014
+@@ -11890,7 +11890,7 @@ else
+ fi
+ 
+ 		;;
+-	darwin*|netbsd*|kfreebsd*-gnu)
++	darwin*|netbsd*|kfreebsd*-gnu|openbsd*)
+ 		with_fuse="external"
+ 		;;
+ 	freebsd*)

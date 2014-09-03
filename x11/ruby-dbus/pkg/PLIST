@@ -1,0 +1,11 @@
+@comment $OpenBSD: PLIST,v 1.3 2013/11/16 08:59:15 ajacoutot Exp $
+${MODRUBY_SITEDIR}/dbus/
+${MODRUBY_SITEDIR}/dbus.rb
+${MODRUBY_SITEDIR}/dbus/auth.rb
+${MODRUBY_SITEDIR}/dbus/bus.rb
+${MODRUBY_SITEDIR}/dbus/export.rb
+${MODRUBY_SITEDIR}/dbus/introspect.rb
+${MODRUBY_SITEDIR}/dbus/marshall.rb
+${MODRUBY_SITEDIR}/dbus/matchrule.rb
+${MODRUBY_SITEDIR}/dbus/message.rb
+${MODRUBY_SITEDIR}/dbus/type.rb

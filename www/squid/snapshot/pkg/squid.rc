@@ -1,0 +1,18 @@
+#!/bin/sh
+#
+# $OpenBSD: squid.rc,v 1.2 2014/07/09 14:19:58 ajacoutot Exp $
+
+daemon="${TRUEPREFIX}/sbin/squid"
+daemon_timeout="31"
+
+. /etc/rc.d/rc.subr
+
+rc_stop() {
+	${daemon} ${daemon_flags} -k shutdown
+}
+
+rc_reload() {
+	${daemon} ${daemon_flags} -k reconfigure
+}
+
+rc_cmd $1

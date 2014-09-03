@@ -1,0 +1,181 @@
+$OpenBSD: patch-lib_codec_ffmpeg_c,v 1.4 2014/04/27 20:52:50 brad Exp $
+
+Update for newer FFmpeg API.
+
+--- lib/codec_ffmpeg.c.orig	Mon Apr  7 12:05:42 2008
++++ lib/codec_ffmpeg.c	Thu Apr 24 20:26:53 2014
+@@ -23,11 +23,7 @@
+ #include "codec_ffmpeg.h"
+ #include "iaxclient_lib.h"
+ 
+-#ifdef WIN32
+ #include "libavcodec/avcodec.h"
+-#else
+-#include <ffmpeg/avcodec.h>
+-#endif
+ 
+ struct slice_header_t
+ {
+@@ -63,7 +59,7 @@ struct decoder_ctx
+ 
+ static struct slice_set_t * g_slice_set = 0;
+ 
+-static enum CodecID map_iaxc_codec_to_avcodec(int format)
++static enum AVCodecID map_iaxc_codec_to_avcodec(int format)
+ {
+ 	switch (format)
+ 	{
+@@ -165,10 +161,14 @@ static int pass_frame_to_decoder(AVCodecContext * avct
+ {
+ 	int bytes_decoded;
+ 	int got_picture;
++	AVPacket pkt;
+ 
+-	bytes_decoded = avcodec_decode_video(avctx, picture, &got_picture,
+-			in, inlen);
++	pkt.data = in;
++	pkt.size = inlen;
+ 
++	bytes_decoded = avcodec_decode_video2(avctx, picture, &got_picture,
++			&pkt);
++
+ 	if ( bytes_decoded != inlen )
+ 	{
+ 		fprintf(stderr,
+@@ -309,10 +309,14 @@ static int decode_rtp_slice(struct iaxc_video_codec * 
+ 	{
+ 		int bytes_decoded;
+ 		int got_picture;
++		AVPacket pkt;
+ 
+-		bytes_decoded = avcodec_decode_video(d->avctx, d->picture,
+-				&got_picture, (unsigned char *)in, inlen);
++		pkt.data = (unsigned char *)in;
++		pkt.size = inlen;
+ 
++		bytes_decoded = avcodec_decode_video2(d->avctx, d->picture,
++				&got_picture, &pkt);
++
+ 		if ( bytes_decoded < 0 )
+ 		{
+ 			fprintf(stderr,
+@@ -441,6 +445,7 @@ struct iaxc_video_codec *codec_video_ffmpeg_new(int fo
+ {
+ 	struct encoder_ctx *e;
+ 	struct decoder_ctx *d;
++	AVDictionary *opts = NULL;
+ 	AVCodec *codec;
+ 	int ff_enc_id, ff_dec_id;
+ 	char *name;
+@@ -454,7 +459,6 @@ struct iaxc_video_codec *codec_video_ffmpeg_new(int fo
+ 		return NULL;
+ 	}
+ 
+-	avcodec_init();
+ 	avcodec_register_all();
+ 
+ 	c->format = format;
+@@ -475,7 +479,7 @@ struct iaxc_video_codec *codec_video_ffmpeg_new(int fo
+ 	if (!c->encstate)
+ 		goto bail;
+ 	e = c->encstate;
+-	e->avctx = avcodec_alloc_context();
++	e->avctx = avcodec_alloc_context3(NULL);
+ 	if (!e->avctx)
+ 		goto bail;
+ 	e->picture = avcodec_alloc_frame();
+@@ -496,7 +500,7 @@ struct iaxc_video_codec *codec_video_ffmpeg_new(int fo
+ 	if (!c->decstate)
+ 		goto bail;
+ 	d = c->decstate;
+-	d->avctx = avcodec_alloc_context();
++	d->avctx = avcodec_alloc_context3(NULL);
+ 	if (!d->avctx)
+ 		goto bail;
+ 	d->picture = avcodec_alloc_frame();
+@@ -524,9 +528,6 @@ struct iaxc_video_codec *codec_video_ffmpeg_new(int fo
+ 	e->avctx->pix_fmt = PIX_FMT_YUV420P;
+ 	e->avctx->has_b_frames = 0;
+ 
+-	e->avctx->mb_qmin = e->avctx->qmin = 10;
+-	e->avctx->mb_qmax = e->avctx->qmax = 10;
+-
+ 	e->avctx->lmin = 2 * FF_QP2LAMBDA;
+ 	e->avctx->lmax = 10 * FF_QP2LAMBDA;
+ 	e->avctx->global_quality = FF_QP2LAMBDA * 2;
+@@ -561,7 +562,8 @@ struct iaxc_video_codec *codec_video_ffmpeg_new(int fo
+ 			c->decode = decode_rtp_slice;
+ 			e->avctx->rtp_payload_size = fragsize;
+ 			e->avctx->flags |=
+-				CODEC_FLAG_TRUNCATED | CODEC_FLAG2_STRICT_GOP;
++				CODEC_FLAG_TRUNCATED;
++			av_dict_set(&opts, "strict_gop", "1", 0);
+ 			e->avctx->rtp_callback = encode_rtp_callback;
+ 			d->avctx->flags |= CODEC_FLAG_TRUNCATED;
+ 		}
+@@ -581,9 +583,9 @@ struct iaxc_video_codec *codec_video_ffmpeg_new(int fo
+ 			e->avctx->rtp_payload_size = fragsize;
+ 			e->avctx->flags |=
+ 				CODEC_FLAG_TRUNCATED |
+-				CODEC_FLAG_H263P_SLICE_STRUCT |
+-				CODEC_FLAG2_STRICT_GOP |
+ 				CODEC_FLAG2_LOCAL_HEADER;
++			av_dict_set(&opts, "strict_gop", "1", 0);
++			av_dict_set(&opts, "structured_slices", "1", 0);
+ 			e->avctx->rtp_callback = encode_rtp_callback;
+ 			d->avctx->flags |= CODEC_FLAG_TRUNCATED;
+ 		}
+@@ -596,10 +598,9 @@ struct iaxc_video_codec *codec_video_ffmpeg_new(int fo
+ 		e->avctx->rtp_callback = encode_rtp_callback;
+ 		e->avctx->flags |=
+ 			CODEC_FLAG_TRUNCATED |
+-			CODEC_FLAG_H263P_SLICE_STRUCT |
+-			CODEC_FLAG2_STRICT_GOP |
+ 			CODEC_FLAG2_LOCAL_HEADER;
+-
++		av_dict_set(&opts, "strict_gop", "1", 0);
++		av_dict_set(&opts, "structured_slices", "1", 0);
+ 		d->avctx->flags |= CODEC_FLAG_TRUNCATED;
+ 		break;
+ 
+@@ -625,7 +626,7 @@ struct iaxc_video_codec *codec_video_ffmpeg_new(int fo
+ 		/* e->avctx->flags2 |= CODEC_FLAG2_8X8DCT; */
+ 
+ 		/* Access Unit Delimiters */
+-		e->avctx->flags2 |= CODEC_FLAG2_AUD;
++		av_dict_set(&opts, "aud", "1", 0);
+ 
+ 		/* Allow b-frames to be used as reference */
+ 		/* e->avctx->flags2 |= CODEC_FLAG2_BPYRAMID; */
+@@ -686,7 +687,7 @@ struct iaxc_video_codec *codec_video_ffmpeg_new(int fo
+ 		goto bail;
+ 	}
+ 
+-	if (avcodec_open(e->avctx, codec))
++	if (avcodec_open2(e->avctx, codec, &opts))
+ 	{
+ 		iaxci_usermsg(IAXC_TEXT_TYPE_ERROR,
+ 			     "codec_ffmpeg: cannot open encoder %s\n", name);
+@@ -701,7 +702,7 @@ struct iaxc_video_codec *codec_video_ffmpeg_new(int fo
+ 			     ff_dec_id);
+ 		goto bail;
+ 	}
+-	if (avcodec_open(d->avctx, codec))
++	if (avcodec_open2(d->avctx, codec, NULL))
+ 	{
+ 		iaxci_usermsg(IAXC_TEXT_TYPE_ERROR,
+ 			     "codec_ffmpeg: cannot open decoder %s\n", name);
+@@ -728,12 +729,11 @@ bail:
+ int codec_video_ffmpeg_check_codec(int format)
+ {
+ 	AVCodec *codec;
+-	enum CodecID codec_id;
++	enum AVCodecID codec_id;
+ 
+ 	/* These functions are idempotent, so it is okay that we
+ 	 * may call them elsewhere at a different time.
+ 	 */
+-	avcodec_init();
+ 	avcodec_register_all();
+ 
+ 	codec_id = map_iaxc_codec_to_avcodec(format);

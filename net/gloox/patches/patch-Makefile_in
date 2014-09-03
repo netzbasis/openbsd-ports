@@ -1,0 +1,25 @@
+$OpenBSD: patch-Makefile_in,v 1.2 2013/08/16 10:05:00 sthen Exp $
+
+do not hardocde the make
+
+--- Makefile.in.orig	Sun Jul 21 20:18:16 2013
++++ Makefile.in	Fri Aug 16 11:04:50 2013
+@@ -875,15 +875,15 @@ apidox:
+ check: test
+ 
+ test:
+-	make -C src test
++	${MAKE_PROGRAM} -C src test
+ 
+ leakcheck: leaktest
+ 
+ leaktest:
+-	make -C src leaktest
++	${MAKE_PROGRAM} -C src leaktest
+ 
+ includetest:
+-	make -C src includetest
++	${MAKE_PROGRAM} -C src includetest
+ 
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.

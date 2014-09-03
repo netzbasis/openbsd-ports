@@ -1,0 +1,44 @@
+$OpenBSD: patch-plugins_node_d_amavis_in,v 1.2 2012/10/12 09:46:46 kirby Exp $
+--- plugins/node.d/amavis.in.orig	Tue Oct  2 23:46:50 2012
++++ plugins/node.d/amavis.in	Tue Oct  9 22:03:32 2012
+@@ -20,11 +20,11 @@ The configuration environment variables are available
+ 
+ =item amavislog
+ 
+-Path to logfile (Default: "/var/log/mail/mail.info")
++Path to logfile (Default: "/var/log/maillog")
+ 
+ =item logtail
+ 
+-Path to logtail command (Default: "logtail")
++Path to logtail command (Default: "/usr/local/bin/logtail")
+ 
+ =back
+ 
+@@ -41,8 +41,8 @@ the full path for the program.
+ The following shows a typical configuration:
+ 
+   [amavis]
+-     env.amavislog     /var/log/mail/mail.info
+-     env.logtail       /usr/bin/logtail
++     env.amavislog     /var/log/maillog
++     env.logtail       /usr/local/bin/logtail
+      group adm
+ 
+ =head1 INTERPRETATION
+@@ -77,12 +77,11 @@ GPLv2
+ =cut
+ 
+ mktempfile () {
+-    cmd=`echo $MUNIN_MKTEMP | sed s/\\$1/$1/`
+-    $cmd
++    @@MKTEMP@@
+ }
+ 
+-AMAVIS_LOG=${amavislog:-/var/log/mail/mail.info}
+-LOGTAIL=${logtail:-logtail}
++AMAVIS_LOG=${amavislog:-/var/log/maillog}
++LOGTAIL=${logtail:-/usr/local/bin/logtail}
+ STATEFILE=$MUNIN_PLUGSTATE/amavis.offset
+ 
+ if [ "$1" = "autoconf" ]; then

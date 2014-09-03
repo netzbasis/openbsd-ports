@@ -1,0 +1,2 @@
+@comment $OpenBSD: PFRAG.dynlink-native,v 1.2 2014/09/02 09:24:45 chrisz Exp $
+@bin lib/ocaml/findlib/findlib.cmxs

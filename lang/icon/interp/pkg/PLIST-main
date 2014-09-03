@@ -1,0 +1,10 @@
+@comment $OpenBSD: PLIST-main,v 1.2 2013/11/03 14:32:21 espie Exp $
+@conflict unicon-*
+@pkgpath lang/icon/interp
+bin/icont
+bin/iconx
+lib/icon/
+lib/icon/icont
+@man man/man1/icont.1
+@man man/man1/iconx.1
+%%SHARED%%

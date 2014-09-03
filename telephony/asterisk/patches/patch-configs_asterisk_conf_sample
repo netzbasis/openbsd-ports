@@ -1,0 +1,41 @@
+$OpenBSD: patch-configs_asterisk_conf_sample,v 1.7 2014/05/31 00:35:31 sthen Exp $
+--- configs/asterisk.conf.sample.orig	Fri Apr  4 19:46:18 2014
++++ configs/asterisk.conf.sample	Thu May 29 21:32:09 2014
+@@ -60,8 +60,8 @@ astsbindir => /usr/sbin
+ 				; not otherwise require one.
+ ;transcode_via_sln = yes	; Build transcode paths via SLINEAR, instead of
+ 				; directly.
+-;runuser = asterisk		; The user to run as.
+-;rungroup = asterisk		; The group to run as.
++runuser = _asterisk		; The user to run as.
++rungroup = _asterisk		; The group to run as.
+ ;lightbackground = yes		; If your terminal is set for a light-colored
+ 				; background.
+ ;forceblackbackground = yes     ; Force the background of the terminal to be 
+@@ -82,7 +82,8 @@ documentation_language = en_US	; Set the language you 
+ 				; gosub - Invoke the stdexten using a gosub as
+ 				;         documented in extensions.conf.sample.
+ 				; Default gosub.
+-;live_dangerously = no		; Enable the execution of 'dangerous' dialplan
++live_dangerously = no
++;live_dangerously = yes		; Enable the execution of 'dangerous' dialplan
+ 				; functions from external sources (AMI,
+ 				; etc.) These functions (such as SHELL) are
+ 				; considered dangerous because they can allow
+@@ -90,11 +91,11 @@ documentation_language = en_US	; Set the language you 
+ 				; Default yes, for backward compatability.
+ 
+ ; Changing the following lines may compromise your security.
+-;[files]
+-;astctlpermissions = 0660
+-;astctlowner = root
+-;astctlgroup = apache
+-;astctl = asterisk.ctl
++[files]
++astctlpermissions = 0660
++astctlowner = _asterisk
++astctlgroup = wheel
++astctl = asterisk.ctl
+ 
+ [compat]
+ pbx_realtime=1.6

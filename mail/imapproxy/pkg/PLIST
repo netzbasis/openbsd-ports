@@ -1,0 +1,11 @@
+@comment $OpenBSD: PLIST,v 1.4 2012/06/15 09:07:59 jasper Exp $
+@newgroup _imapproxy:592
+@newuser _imapproxy:592:_imapproxy:daemon:IMAP Proxy Account:/nonexistent:/sbin/nologin
+@bin sbin/imapproxyd
+@bin sbin/pimpstat
+share/doc/imapproxy/
+share/doc/imapproxy/README
+share/doc/imapproxy/README.ssl
+share/examples/imapproxy/
+share/examples/imapproxy/imapproxy.conf
+@sample ${SYSCONFDIR}/imapproxy.conf

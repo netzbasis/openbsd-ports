@@ -1,0 +1,31 @@
+@comment $OpenBSD: PLIST,v 1.3 2013/11/26 14:54:18 bcallah Exp $
+@bin bin/tetzle
+share/applications/tetzle.desktop
+share/icons/hicolor/128x128/apps/tetzle.png
+share/icons/hicolor/16x16/apps/tetzle.png
+share/icons/hicolor/22x22/apps/tetzle.png
+share/icons/hicolor/32x32/apps/tetzle.png
+share/icons/hicolor/48x48/apps/tetzle.png
+share/icons/hicolor/64x64/apps/tetzle.png
+share/pixmaps/
+share/pixmaps/tetzle.xpm
+share/tetzle/
+share/tetzle/translations/
+share/tetzle/translations/tetzle_cs.qm
+share/tetzle/translations/tetzle_de.qm
+share/tetzle/translations/tetzle_en.qm
+share/tetzle/translations/tetzle_eo.qm
+share/tetzle/translations/tetzle_fr.qm
+share/tetzle/translations/tetzle_he.qm
+share/tetzle/translations/tetzle_lv.qm
+share/tetzle/translations/tetzle_ms.qm
+share/tetzle/translations/tetzle_pl.qm
+share/tetzle/translations/tetzle_ro.qm
+share/tetzle/translations/tetzle_ru.qm
+share/tetzle/translations/tetzle_tr.qm
+share/tetzle/translations/tetzle_uk.qm
+share/tetzle/translations/tetzle_uk_UA.qm
+@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@exec %D/bin/update-desktop-database
+@unexec-delete %D/bin/update-desktop-database

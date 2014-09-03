@@ -1,0 +1,12 @@
+$OpenBSD: patch-cmake_FindGEOS_cmake,v 1.5 2014/08/20 08:54:45 landry Exp $
+--- cmake/FindGEOS.cmake.orig	Fri Jun 27 14:00:08 2014
++++ cmake/FindGEOS.cmake	Mon Aug 18 15:49:46 2014
+@@ -145,7 +145,7 @@ ELSE(WIN32)
+             SET(GEOS_LIBRARY ${GEOS_LINK_DIRECTORIES}/lib${GEOS_LIB_NAME}.dylib CACHE STRING INTERNAL FORCE)
+           ENDIF (NOT GEOS_LIBRARY)
+         ELSE (APPLE)
+-          SET(GEOS_LIBRARY ${GEOS_LINK_DIRECTORIES}/lib${GEOS_LIB_NAME}.so CACHE STRING INTERNAL)
++          FIND_LIBRARY(GEOS_LIBRARY NAMES geos_c PATHS ${LOCALBASE}/lib)
+         ENDIF (APPLE)
+         #MESSAGE("DBG  GEOS_LIBRARY=${GEOS_LIBRARY}")
+ 

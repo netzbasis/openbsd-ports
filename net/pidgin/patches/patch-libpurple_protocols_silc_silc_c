@@ -1,0 +1,70 @@
+$OpenBSD: patch-libpurple_protocols_silc_silc_c,v 1.9 2014/02/06 07:44:15 brad Exp $
+--- libpurple/protocols/silc/silc.c.orig	Wed Jan 22 02:39:51 2014
++++ libpurple/protocols/silc/silc.c	Sat Feb  1 02:56:15 2014
+@@ -674,30 +674,12 @@ silcpurple_close(PurpleConnection *gc)
+ 	SilcPurpleTask task;
+ #endif /* __SILC_TOOLKIT_VERSION */
+ 	GHashTable *ui_info;
+-	const char *ui_name = NULL, *ui_website = NULL;
+-	char *quit_msg;
+ 
+ 	g_return_if_fail(sg != NULL);
+ 
+-	ui_info = purple_core_get_ui_info();
+-
+-	if(ui_info) {
+-		ui_name = g_hash_table_lookup(ui_info, "name");
+-		ui_website = g_hash_table_lookup(ui_info, "website");
+-	}
+-
+-	if(!ui_name || !ui_website) {
+-		ui_name = "Pidgin";
+-		ui_website = PURPLE_WEBSITE;
+-	}
+-	quit_msg = g_strdup_printf(_("Download %s: %s"),
+-							   ui_name, ui_website);
+-
+ 	/* Send QUIT */
+ 	silc_client_command_call(sg->client, sg->conn, NULL,
+-				 "QUIT", quit_msg,
+-				 NULL);
+-	g_free(quit_msg);
++				 "QUIT", NULL);
+ 
+ 	if (sg->conn)
+ 		silc_client_close_connection(sg->client, sg->conn);
+@@ -1845,9 +1827,6 @@ static PurpleCmdRet silcpurple_cmd_quit(PurpleConversa
+ {
+ 	PurpleConnection *gc;
+ 	SilcPurple sg;
+-	GHashTable *ui_info;
+-	const char *ui_name = NULL, *ui_website = NULL;
+-	char *quit_msg;
+ 
+ 	gc = purple_conversation_get_gc(conv);
+ 
+@@ -1859,23 +1838,8 @@ static PurpleCmdRet silcpurple_cmd_quit(PurpleConversa
+ 	if (sg == NULL)
+ 		return PURPLE_CMD_RET_FAILED;
+ 
+-	ui_info = purple_core_get_ui_info();
+-
+-	if(ui_info) {
+-		ui_name = g_hash_table_lookup(ui_info, "name");
+-		ui_website = g_hash_table_lookup(ui_info, "website");
+-	}
+-
+-	if(!ui_name || !ui_website) {
+-		ui_name = "Pidgin";
+-		ui_website = PURPLE_WEBSITE;
+-	}
+-	quit_msg = g_strdup_printf(_("Download %s: %s"),
+-							   ui_name, ui_website);
+-
+ 	silc_client_command_call(sg->client, sg->conn, NULL,
+-				 "QUIT", (args && args[0]) ? args[0] : quit_msg, NULL);
+-	g_free(quit_msg);
++				 "QUIT", NULL);
+ 
+ 	return PURPLE_CMD_RET_OK;
+ }

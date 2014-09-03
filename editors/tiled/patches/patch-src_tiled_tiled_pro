@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_tiled_tiled_pro,v 1.2 2014/04/28 09:48:54 bentley Exp $
+--- src/tiled/tiled.pro.orig	Sat Jul 27 14:34:23 2013
++++ src/tiled/tiled.pro	Mon Apr 28 01:48:23 2014
+@@ -286,7 +286,7 @@ desktopfile.path = $${PREFIX}/share/applications/
+ desktopfile.files += ../../docs/tiled.desktop
+ INSTALLS += desktopfile
+ 
+-manpage.path = $${PREFIX}/share/man/man1/
++manpage.path = $${PREFIX}/man/man1/
+ manpage.files += ../../docs/tiled.1
+ INSTALLS += manpage
+ 

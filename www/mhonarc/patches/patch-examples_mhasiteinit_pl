@@ -1,0 +1,9 @@
+$OpenBSD: patch-examples_mhasiteinit_pl,v 1.4 2012/05/07 20:13:50 pascal Exp $
+--- examples/mhasiteinit.pl.orig	Mon Jan  3 07:42:39 2011
++++ examples/mhasiteinit.pl	Mon May  7 12:00:13 2012
+@@ -1,4 +1,4 @@
+-##---------------------------------------------------------------------------##
++#!/usr/bin/perl
+ ##  File:
+ ##      $Id: patch-examples_mhasiteinit_pl,v 1.4 2012/05/07 20:13:50 pascal Exp $
+ ##  Description:

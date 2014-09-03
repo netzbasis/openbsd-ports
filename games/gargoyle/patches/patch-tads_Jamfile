@@ -1,0 +1,12 @@
+$OpenBSD: patch-tads_Jamfile,v 1.4 2013/08/22 20:06:50 sthen Exp $
+--- tads/Jamfile.orig	Wed Jul 13 09:22:18 2011
++++ tads/Jamfile	Thu Mar  7 12:16:26 2013
+@@ -21,7 +21,7 @@ SubDirCcFlags
+ 
+ # HTMLMODE ?= yes ;
+ 
+-if $(OS) = LINUX || $(OS) = SOLARIS
++if $(OS) = LINUX || $(OS) = SOLARIS || $(OS) = OPENBSD
+ {
+     SubDirCcFlags
+         -DOS_USHORT_DEFINED

@@ -1,0 +1,42 @@
+$OpenBSD: patch-bin_activemq,v 1.5 2014/05/20 19:34:48 jasper Exp $
+--- bin/activemq.orig	Tue Apr  1 02:13:54 2014
++++ bin/activemq	Thu May 15 22:20:21 2014
+@@ -29,7 +29,7 @@
+ 
+ # ------------------------------------------------------------------------
+ # CONFIGURATION
+-ACTIVEMQ_CONFIGS="/etc/default/activemq $HOME/.activemqrc"
++ACTIVEMQ_CONFIGS="${SYSCONFDIR}/activemq.conf $HOME/.activemqrc"
+ 
+ # Backup invocation parameters
+ COMMANDLINE_ARGS="$@"
+@@ -38,7 +38,7 @@ EXEC_OPTION=""
+ # For using instances
+ if ( basename $0 | grep "activemq-instance-" > /dev/null);then
+    INST="`basename $0|sed 's/^activemq-instance-//;s/\.sh$//'`"
+-   ACTIVEMQ_CONFIGS="/etc/default/activemq-instance-${INST} $HOME/.activemqrc-instance-${INST}"
++   ACTIVEMQ_CONFIGS="${SYSCONFDIR}/activemq-instance-${INST}.conf $HOME/.activemqrc-instance-${INST}"
+    echo "INFO: Using alternative activemq configuration files: $ACTIVEMQ_CONFIGS"
+ fi
+ 
+@@ -595,7 +595,6 @@ invoke_stop(){
+          echo
+          echo "INFO: Regular shutdown not successful,  sending SIGKILL to process with pid '$PID'"
+          kill -KILL $PID
+-         RET="1"
+        fi
+     elif [ -f "$ACTIVEMQ_PIDFILE" ];then
+        echo "ERROR: No or outdated process id in '$ACTIVEMQ_PIDFILE'"
+@@ -653,10 +652,10 @@ Tasks provided by the sysv init script:
+                       (see next usage section)
+ 
+ Configuration of this script:
+-    The configuration of this script can be placed on /etc/default/activemq or $HOME/.activemqrc.
++    The configuration of this script can be placed on ${SYSCONFDIR}/activemq.conf or $HOME/.activemqrc.
+     To use additional configurations for running multiple instances on the same operating system
+     rename or symlink script to a name matching to activemq-instance-<INSTANCENAME>.
+-    This changes the configuration location to /etc/default/activemq-instance-<INSTANCENAME> and
++    This changes the configuration location to ${SYSCONFDIR}/activemq-instance-<INSTANCENAME>.conf and
+     \$HOME/.activemqrc-instance-<INSTANCENAME>. Configuration files in /etc have higher precedence.
+ EOF
+   exit $RET

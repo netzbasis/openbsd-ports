@@ -1,0 +1,24 @@
+$OpenBSD: patch-export_aud_aux_c,v 1.7 2014/05/05 11:51:37 brad Exp $
+
+Update for newer FFmpeg API.
+
+--- export/aud_aux.c.orig	Sat Nov 19 11:50:27 2011
++++ export/aud_aux.c	Sat Apr 26 00:57:34 2014
+@@ -346,7 +346,7 @@ static int tc_audio_init_ffmpeg(vob_t *vob, int o_code
+ 
+     //-- set parameters (bitrate, channels and sample-rate) --
+     //--------------------------------------------------------
+-    avcodec_get_context_defaults(&mpa_ctx);
++    avcodec_get_context_defaults3(&mpa_ctx, mpa_codec);
+ #if LIBAVCODEC_VERSION_MAJOR < 53
+     mpa_ctx.codec_type  = CODEC_TYPE_AUDIO;
+ #else
+@@ -359,7 +359,7 @@ static int tc_audio_init_ffmpeg(vob_t *vob, int o_code
+     //-- open codec --
+     //----------------
+     TC_LOCK_LIBAVCODEC;
+-    ret = avcodec_open(&mpa_ctx, mpa_codec);
++    ret = avcodec_open2(&mpa_ctx, mpa_codec, NULL);
+     TC_UNLOCK_LIBAVCODEC;
+     if (ret < 0) {
+         tc_warn("tc_audio_init_ffmpeg: could not open %s codec !",

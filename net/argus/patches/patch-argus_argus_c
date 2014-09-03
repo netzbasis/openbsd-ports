@@ -1,0 +1,41 @@
+$OpenBSD: patch-argus_argus_c,v 1.3 2012/07/08 19:20:58 steven Exp $
+--- argus/argus.c.orig	Fri Apr 13 21:47:27 2012
++++ argus/argus.c	Wed Jun 27 22:31:25 2012
+@@ -294,6 +294,7 @@ main (int argc, char *argv[])
+    uflag = 0;
+    pflag = 6;
+ 
++   ArgusProgramName = argv[0];
+    
+    if (strchr (argv[0], '/')) {
+ #if defined(HAVE_STRLCPY)
+@@ -302,10 +303,9 @@ main (int argc, char *argv[])
+       bzero(path, MAXPATHNAMELEN);
+       strncpy(path, argv[0], MAXPATHNAMELEN - 1);
+ #endif
+-      argv[0] = strrchr(argv[0], '/') + 1;
++      ArgusProgramName = strrchr(argv[0], '/') + 1;
+    }
+ 
+-   ArgusProgramName = argv[0];
+ 
+ #ifdef HAVE_SYSLOG
+ #ifndef LOG_PERROR
+@@ -369,7 +369,7 @@ main (int argc, char *argv[])
+    setArgusMarReportInterval (ArgusOutputTask,ARGUS_MARSTATUSTIMER);
+ 
+    if (!doconf) {
+-      snprintf (path, MAXPATHNAMELEN - 1, "/etc/argus.conf");
++      snprintf (path, MAXPATHNAMELEN - 1, SYSCONFDIR "/argus.conf");
+       if (stat (path, &statbuf) == 0) {
+          ArgusParseResourceFile (ArgusModel, path);
+       }
+@@ -603,7 +603,7 @@ main (int argc, char *argv[])
+    if ((status = pthread_attr_init(ArgusAttr)) != 0)
+       ArgusLog (LOG_ERR, "pthreads init error");
+ 
+-#if defined(_POSIX_THREAD_PRIORITY_SCHEDULING) && !defined(sun) && !defined(CYGWIN) && !defined(OpenBSD)
++#if defined(_POSIX_THREAD_PRIORITY_SCHEDULING) && (_POSIX_THREAD_PRIORITY_SCHEDULING > 0) && !defined(sun) && !defined(CYGWIN)
+    if ((pthread_attr_getschedpolicy(ArgusAttr, &thread_policy)) != 0)
+       ArgusLog (LOG_ERR, "pthreads get policy error");
+    if ((pthread_attr_getschedparam(ArgusAttr, &thread_param)) != 0)

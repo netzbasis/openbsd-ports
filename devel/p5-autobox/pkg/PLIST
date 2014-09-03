@@ -1,0 +1,11 @@
+@comment $OpenBSD: PLIST,v 1.2 2014/06/14 23:25:00 sthen Exp $
+${P5ARCH}/
+${P5ARCH}/auto/
+${P5ARCH}/auto/autobox/
+@comment ${P5ARCH}/auto/autobox/autobox.bs
+${P5ARCH}/auto/autobox/autobox.so
+${P5ARCH}/autobox/
+${P5ARCH}/autobox.pm
+${P5ARCH}/autobox.pod
+${P5ARCH}/autobox/universal.pm
+@man man/man3p/autobox.3p

@@ -1,0 +1,29 @@
+$OpenBSD: patch-configure_ac,v 1.9 2014/04/21 17:40:19 sthen Exp $
+--- configure.ac.orig	Sat Dec 14 10:14:50 2013
++++ configure.ac	Mon Apr 21 18:40:04 2014
+@@ -152,7 +152,7 @@ AM_CONDITIONAL(CYGWIN, test x"$env_cygwin" = x"yes")
+ 
+ if test "$GCC" = "yes"
+ then
+-	CFLAGS="$CFLAGS -Wno-unused-function"
++	CFLAGS="$CFLAGS -Wall"
+ 	#CFLAGS="-g -Wall -Wno-unused-function"
+ fi
+ 
+@@ -737,6 +737,7 @@ if test x"$enable_new_addrbook" = xno; then
+ 		AC_CHECK_LIB(resolv, res_query, LDAP_LIBS="$LDAP_LIBS -lresolv")
+ 		AC_CHECK_LIB(socket, bind, LDAP_LIBS="$LDAP_LIBS -lsocket")
+ 		AC_CHECK_LIB(nsl, gethostbyaddr, LDAP_LIBS="$LDAP_LIBS -lnsl")
++		AC_CHECK_LIB(sasl2, sasl_version, LDAP_LIBS="$LDAP_LIBS -lsasl2")
+ 		AC_CHECK_LIB(lber, ber_get_tag, LDAP_LIBS="$LDAP_LIBS -llber",,
+ 				 $LDAP_LIBS)
+ 
+@@ -809,7 +810,7 @@ if test x"$enable_new_addrbook" = xno; then
+ 					   AC_DEFINE(USE_JPILOT, 1, Define if you want JPilot support in addressbook.) ])
+ 		fi
+ 
+-		AC_CHECK_LIB(pisock, unpack_Address, [JPILOT_LIBS="-lpisock"], [JPILOT_LIBS="" enable_jpilot="no"])
++		AC_CHECK_LIB(pisock, unpack_Address, [JPILOT_LIBS="-lpisock -pthread"], [JPILOT_LIBS="" enable_jpilot="no"], -pthread)
+ 		if test x"$enable_jpilot" = xyes; then
+ 			AC_DEFINE(USE_JPILOT, 1, Define if you want JPilot support in addressbook.)
+ 		else

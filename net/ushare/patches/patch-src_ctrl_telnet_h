@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_ctrl_telnet_h,v 1.2 2012/11/07 14:53:59 dcoppa Exp $
+
+Add missing headers
+
+--- src/ctrl_telnet.h.orig	Tue Feb  9 13:07:37 2010
++++ src/ctrl_telnet.h	Tue Feb  9 13:08:36 2010
+@@ -25,6 +25,7 @@
+ #define CTRL_TELNET_SHARED_BUFFER_SIZE 256
+ #define CTRL_CLIENT_RECV_BUFFER_SIZE 256
+ 
++#include <sys/types.h>
+ #include <netinet/in.h>
+ 
+ /**

@@ -1,0 +1,9 @@
+@comment $OpenBSD: PLIST-chroot,v 1.4 2012/05/13 17:03:43 okan Exp $
+usr/
+usr/sbin/
+@bin bin/femail
+@mode 0555
+@sample usr/sbin/sendmail
+@mode
+@cwd ${LOCALBASE}/share/doc/pkg-readmes
+${FULLPKGNAME}

@@ -1,0 +1,26 @@
+$OpenBSD: patch-configure,v 1.6 2012/09/21 13:17:45 jasper Exp $
+--- configure.orig	Mon Jul  4 10:58:50 2011
++++ configure	Tue Jan 17 10:55:18 2012
+@@ -2645,7 +2645,7 @@ fi
+ 
+ if test "$pkgdatadir" = "undef"
+ then
+-  pkgdatadir=\${libdir}/aspell-0.60
++  pkgdatadir=\${libdir}/aspell
+ fi
+ 
+ 
+@@ -20216,10 +20123,10 @@ XGETTEXT!$XGETTEXT$ac_delim
+ XGETTEXT_015!$XGETTEXT_015$ac_delim
+ MSGMERGE!$MSGMERGE$ac_delim
+ INTL_MACOSX_LIBS!$INTL_MACOSX_LIBS$ac_delim
+-LIBICONV!$LIBICONV$ac_delim
++LIBICONV!$LTLIBICONV$ac_delim
+ LTLIBICONV!$LTLIBICONV$ac_delim
+-INTLLIBS!$INTLLIBS$ac_delim
+-LIBINTL!$LIBINTL$ac_delim
++INTLLIBS!$LTLIBINTL$ac_delim
++LIBINTL!$LTLIBINTL$ac_delim
+ LTLIBINTL!$LTLIBINTL$ac_delim
+ POSUB!$POSUB$ac_delim
+ PTHREAD_LIB!$PTHREAD_LIB$ac_delim

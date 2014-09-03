@@ -1,0 +1,27 @@
+$OpenBSD: patch-configure,v 1.7 2012/04/28 18:08:16 stu Exp $
+--- configure.orig	Fri Nov  4 13:18:42 2011
++++ configure	Wed Apr 25 15:25:37 2012
+@@ -5664,6 +5664,7 @@ TCL_OLD_VERS=8.4
+ TCL_OLD_ALT_VERS=`echo $TCL_OLD_VERS | sed 's/\.//'`
+ 
+ TCL_TCL_PLACES_D="$d \
++		$d/lib/tcl/tcl$TCL_VERS \
+ 		$d/lib64/tcl$TCL_HI_VERS \
+ 		$d/lib64/tcl$TCL_VERS \
+ 		$d/lib64/tcl$TCL_ALT_VERS \
+@@ -6266,6 +6267,7 @@ TK_OLD_VERS=8.4
+ TK_OLD_ALT_VERS=`echo $TK_OLD_VERS | sed 's/\.//'`
+ 
+ TK_TCL_PLACES_D="$d \
++		$d/lib/tcl/tk$TK_VERS \
+                 $d/lib64/tk$TK_VERS \
+                 $d/lib64/tk$TK_ALT_VERS \
+                 $d/lib64/tk$TK_VERS \
+@@ -7011,6 +7013,7 @@ TCLCL_H_PLACES="\
+                 /usr/contrib/include \
+                 /usr/include"
+ TCLCL_H_PLACES_D="$d \
++		$d/include/tclcl \
+  		$d/include"
+ TCLCL_LIB_PLACES="\
+ 		../tclcl-$TCLCL_VERS \

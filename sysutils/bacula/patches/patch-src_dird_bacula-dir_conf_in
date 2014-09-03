@@ -1,0 +1,14 @@
+$OpenBSD: patch-src_dird_bacula-dir_conf_in,v 1.10 2014/08/14 06:52:59 ajacoutot Exp $
+--- src/dird/bacula-dir.conf.in.orig	Tue Jul 29 18:31:22 2014
++++ src/dird/bacula-dir.conf.in	Thu Jul 31 16:12:28 2014
+@@ -180,8 +180,8 @@ Client {
+ #  You should change Name, Address, and Password before using
+ #
+ #Client {
+-#  Name = @basename@2-fd
+-#  Address = @hostname@2
++#  Name = client2-fd
++#  Address = client2.domain.tld
+ #  FDPort = @fd_port@
+ #  Catalog = MyCatalog
+ #  Password = "@fd_password@2"        # password for FileDaemon 2

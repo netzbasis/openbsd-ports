@@ -1,0 +1,12 @@
+$OpenBSD: patch-pidgin_Makefile_in,v 1.16 2013/03/08 01:03:09 brad Exp $
+--- pidgin/Makefile.in.orig	Mon Feb 11 04:17:23 2013
++++ pidgin/Makefile.in	Wed Feb 13 14:55:46 2013
+@@ -139,7 +139,7 @@ am__v_CC_0 = @echo "  CC    " $@;
+ AM_V_at = $(am__v_at_@AM_V@)
+ am__v_at_ = $(am__v_at_@AM_DEFAULT_V@)
+ am__v_at_0 = @
+-CCLD = $(CC)
++CCLD = $(CXX)
+ LINK = $(LIBTOOL) $(AM_V_lt) --tag=CC $(AM_LIBTOOLFLAGS) \
+ 	$(LIBTOOLFLAGS) --mode=link $(CCLD) $(AM_CFLAGS) $(CFLAGS) \
+ 	$(AM_LDFLAGS) $(LDFLAGS) -o $@

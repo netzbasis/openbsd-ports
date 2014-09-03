@@ -1,0 +1,26 @@
+$OpenBSD: patch-configure,v 1.3 2014/01/23 18:05:22 bcallah Exp $
+--- configure.orig	Thu Jan 23 01:32:39 2014
++++ configure	Thu Jan 23 01:33:54 2014
+@@ -4315,10 +4315,10 @@ $as_echo "yes" >&6; }
+ 		*BSD*)
+ 			{ $as_echo "$as_me:${as_lineno-$LINENO}: result: yes" >&5
+ $as_echo "yes" >&6; }
+-			LIBMXML="libmxml.so.1.5"
++			LIBMXML="libmxml.so.${LIBmxml_VERSION}"
+ 			DSO="\$(CC)"
+-			DSOFLAGS="$DSOFLAGS -Wl,-soname,libmxml.so.1,-R\$(libdir) -shared \$(OPTIM)"
+-			LDFLAGS="$LDFLAGS -Wl,-R\$(libdir)"
++			DSOFLAGS="$DSOFLAGS -shared"
++			LDFLAGS="$LDFLAGS"
+                         ;;
+ 
+ 		Darwin*)
+@@ -4352,7 +4352,7 @@ if test -n "$GCC"; then
+ 	CFLAGS="-Wall $CFLAGS"
+ 
+ 	if test "x$OPTIM" = x; then
+-		OPTIM="-Os -g"
++		: # OPTIM="-Os -g"
+ 	fi
+ 
+ 	if test "x$use_ansi" = xyes; then

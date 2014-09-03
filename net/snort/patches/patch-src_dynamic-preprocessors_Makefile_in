@@ -1,0 +1,23 @@
+$OpenBSD: patch-src_dynamic-preprocessors_Makefile_in,v 1.13 2014/01/30 03:23:48 lteo Exp $
+--- src/dynamic-preprocessors/Makefile.in.orig	Tue Dec 31 19:30:41 2013
++++ src/dynamic-preprocessors/Makefile.in	Thu Jan 23 23:02:17 2014
+@@ -1368,19 +1368,8 @@ clean-local:
+ 	rm -rf include build
+ 
+ install-data-local:
+-	@for f in $(exported_files); do \
+-		truefile=`echo $$f | sed -e "s/.*\///"`; \
+-		$(mkinstalldirs) $(DESTDIR)$(srcinstdir); \
+-		if test -f $(srcdir)/$$f; then p=$(srcdir)/$$f; else p=$$f; fi; \
+-		$(INSTALL_DATA) $$p $(DESTDIR)$(srcinstdir)/$$truefile; \
+-	done
+ 
+ uninstall-local:
+-	@for f in $(exported_files); do \
+-		truefile=`echo $$f | sed -e "s/.*\///"`; \
+-		$(mkinstalldirs) $(DESTDIR)$(srcinstdir); \
+-		rm -f $(DESTDIR)$(srcinstdir)/$$truefile; \
+-	done
+ 
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.

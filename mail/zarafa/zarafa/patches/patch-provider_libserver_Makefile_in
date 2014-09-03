@@ -1,0 +1,12 @@
+$OpenBSD: patch-provider_libserver_Makefile_in,v 1.5 2014/09/02 11:09:38 robert Exp $
+--- provider/libserver/Makefile.in.orig	Sun Aug 24 11:53:44 2014
++++ provider/libserver/Makefile.in	Mon Sep  1 18:00:46 2014
+@@ -410,6 +410,8 @@ libserver_la_SOURCES = \
+ 	ZarafaCmdUtil.cpp ZarafaCmdUtil.h \
+ 	ECLockManager.cpp ECLockManager.h
+ 
++libserver_la_LIBADD = -lpthread -lz ${SSL_LIBS} ${BOOST_FILESYSTEM_LIBS} ${BOOST_SYSTEM_LIBS} ${ICU_LIBS} ${KRB5_LIBS} ${MYSQL_LIBS} ${PAM_LIBS}
++
+ all: all-am
+ 
+ .SUFFIXES:

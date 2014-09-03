@@ -1,0 +1,12 @@
+$OpenBSD: patch-sample-config_cgi_cfg_in,v 1.6 2013/11/07 10:31:38 rpe Exp $
+--- sample-config/cgi.cfg.in.orig	Wed Oct 16 01:36:42 2013
++++ sample-config/cgi.cfg.in	Fri Nov  1 17:45:15 2013
+@@ -263,7 +263,7 @@ default_statuswrl_layout=4
+ # OS and distribution, so you may have to tweak this to
+ # work on your system.
+ 
+-ping_syntax=/bin/ping -n -U -c 5 $HOSTADDRESS$
++ping_syntax=/sbin/ping -n -c 5 $HOSTADDRESS$
+ 
+ 
+ 

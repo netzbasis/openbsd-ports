@@ -1,0 +1,12 @@
+$OpenBSD: patch-src_Fl_Preferences_cxx,v 1.4 2013/03/22 22:50:25 bcallah Exp $
+--- src/Fl_Preferences.cxx.orig	Mon Apr  9 08:36:23 2012
++++ src/Fl_Preferences.cxx	Fri Mar 22 17:43:11 2013
+@@ -1079,7 +1079,7 @@ Fl_Preferences::RootNode::RootNode( Fl_Preferences *pr
+ 	break;
+       } 
+     case SYSTEM:
+-      strcpy(filename, "/etc/fltk/");
++      strlcpy(filename, "${SYSCONFDIR}/fltk/", sizeof(filename));
+       break;
+   } 
+   snprintf(filename + strlen(filename), sizeof(filename) - strlen(filename),

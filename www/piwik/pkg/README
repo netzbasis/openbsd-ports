@@ -1,0 +1,18 @@
+$OpenBSD: README,v 1.2 2014/05/12 08:02:41 giovanni Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+Piwik has been installed into ${INSTDIR}
+
+You should point this to the DocumentRoot of your web-server:
+   # ln -s ../piwik /var/www/htdocs/piwik
+
+You will also need to enable gd and pdo_mysql extensions
+and proceed to complete the installation by reading the online
+documentation. Which can be found at:
+http://piwik.org/docs/installation/
+
+You can ensure you have a working install by accessing:
+http://<localhost>/piwik/

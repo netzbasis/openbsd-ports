@@ -1,0 +1,12 @@
+$OpenBSD: patch-util_Makefile_in,v 1.9 2014/06/26 00:30:16 sthen Exp $
+--- util/Makefile.in.orig	Mon Jun 23 16:16:46 2014
++++ util/Makefile.in	Tue Jun 24 15:23:16 2014
+@@ -344,7 +344,7 @@ target_alias = @target_alias@
+ top_build_prefix = @top_build_prefix@
+ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+-INCLUDES = -I.. -I$(top_srcdir)/include -I$(top_srcdir)/intl
++INCLUDES = -I.. -I$(top_srcdir)/include
+ noinst_LIBRARIES = libutil.a libcompat.a
+ libutil_a_SOURCES = logger.c fileutil.c miscutil.c strgutil.c ttyio.c \
+ 	argparse.c memory.c secmem.c errors.c iobuf.c dotlock.c http.c \
