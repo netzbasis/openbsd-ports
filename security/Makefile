@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.348 2014/08/15 12:24:46 jasper Exp $
+# $OpenBSD: Makefile,v 1.350 2014/09/10 11:29:08 rpointel Exp $
 
      SUBDIR =
      SUBDIR += ADMfzap
@@ -39,12 +39,14 @@
      SUBDIR += cyrus-sasl2,sqlite3
      SUBDIR += dante
      SUBDIR += despoof
+     SUBDIR += distorm3
      SUBDIR += dsniff
      SUBDIR += dsniff,no_x11
      SUBDIR += easy-rsa
      SUBDIR += encfs
      SUBDIR += erl-bcrypt
      SUBDIR += fcrackzip
+     SUBDIR += foremost
      SUBDIR += fragroute
      SUBDIR += fragrouter
      SUBDIR += fwbuilder
@@ -289,6 +291,7 @@
      SUBDIR += tempwatch
      SUBDIR += tinyca
      SUBDIR += towitoko
+     SUBDIR += volatility
      SUBDIR += vomit
      SUBDIR += vpnc
      SUBDIR += wpa_supplicant

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.320 2014/08/15 12:24:46 jasper Exp $
+# $OpenBSD: Makefile,v 1.322 2014/09/09 07:54:01 jasper Exp $
 
      SUBDIR =
      SUBDIR += accountsservice
@@ -86,6 +86,7 @@
      SUBDIR += libvirt
      SUBDIR += libvirt-python
      SUBDIR += logfmon
+     SUBDIR += login_duo
      SUBDIR += login_fingerprint
      SUBDIR += login_ldap
      SUBDIR += login_oath
@@ -181,6 +182,8 @@
      SUBDIR += ruby-puppet
      SUBDIR += ruby-puppet-lint
      SUBDIR += ruby-puppet-lint,ruby18
+     SUBDIR += ruby-puppet-syntax
+     SUBDIR += ruby-puppet-syntax,ruby20
      SUBDIR += ruby-shadow
      SUBDIR += ruby-shadow,ruby19
      SUBDIR += ruby-shadow,ruby20
