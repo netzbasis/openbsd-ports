@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1248 2014/09/06 11:53:05 armani Exp $
+# $OpenBSD: Makefile,v 1.1251 2014/09/16 14:23:46 jasper Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1278,6 +1278,7 @@
      SUBDIR += qjson
      SUBDIR += qt-creator
      SUBDIR += qt4-eventsview
+     SUBDIR += qt4-qtsolutions-singleinstance
      SUBDIR += quilt
      SUBDIR += quirks
      SUBDIR += radare2
@@ -1460,12 +1461,12 @@
      SUBDIR += utop
      SUBDIR += uuid
      SUBDIR += vanessa
+     SUBDIR += vim-command-t
      SUBDIR += vim-taglist
      SUBDIR += vtags
      SUBDIR += vtcl
      SUBDIR += vte
      SUBDIR += vte3
-     SUBDIR += waf
      SUBDIR += xdg-user-dirs
      SUBDIR += xdg-utils
      SUBDIR += xmake

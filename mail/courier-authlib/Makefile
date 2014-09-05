@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.46 2014/04/21 16:27:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.48 2014/09/15 15:18:16 naddy Exp $
 
 COMMENT-main=		authentication library for courier
 COMMENT-ldap=		ldap authentication module for courier-authLib
@@ -7,12 +7,14 @@ COMMENT-pgsql=		pgsql authentication module for courier-authLib
 COMMENT-userdb=		userdb authentication module for courier-authLib
 
 DISTNAME=		courier-authlib-0.66.1
-REVISION=		0
 PKGNAME-main=		${DISTNAME}
 PKGNAME-ldap=		${DISTNAME:S/lib-/lib-ldap-/}
 PKGNAME-mysql=		${DISTNAME:S/lib-/lib-mysql-/}
 PKGNAME-pgsql=		${DISTNAME:S/lib-/lib-pgsql-/}
 PKGNAME-userdb=		${DISTNAME:S/lib-/lib-userdb-/}
+
+REVISION=		0
+REVISION-mysql=		1
 
 SHARED_LIBS +=  courierauth          1.0      # .0.0
 SHARED_LIBS +=  courierauthsasl      1.0      # .0.0
@@ -94,7 +96,7 @@ LIB_DEPENDS-ldap=	${BUILD_PKGPATH} \
 WANTLIB-mysql=		crypto m ssl z courierauthcommon courierauth mysqlclient
 RUN_DEPENDS-mysql=
 LIB_DEPENDS-mysql=	${BUILD_PKGPATH} \
-			databases/mysql
+			databases/mariadb
 
 WANTLIB-pgsql=		m courierauthcommon courierauth pq crypto ssl
 RUN_DEPENDS-pgsql=

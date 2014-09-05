@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.171 2014/09/10 08:33:10 jasper Exp $
+# $OpenBSD: Quirks.pm,v 1.174 2014/09/16 14:25:17 jasper Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -310,9 +310,6 @@ my $stem_extensions = {
 	'ruby19-ruby-augeas' => 'ruby19-augeas',
 	'ruby-ruby-augeas' => 'ruby-augeas',
 	'nail' => 's-nail',
-	'mariadb-client' => 'mysql-client',
-	'mariadb-server' => 'mysql-server',
-	'mariadb-tests' => 'mysql-tests',
 	'coxpcall' => 'lua-coxpcall',
 	'lpeg' => 'lua-lpeg',
 	'ruby-facter' => 'facter',
@@ -354,6 +351,9 @@ my $stem_extensions = {
 	'kwallet' => 'kwalletmanager',
 	'p5-TAP-Parser' => 'p5-Test-Harness',
 	'qlandkarte' => 'qlandkartegt',
+	'mysql-client' => 'mariadb-client',
+	'mysql-server' => 'mariadb-server',
+	'mysql-tests' => 'mariadb-tests',
 };
 
 # reasons for obsolete packages
@@ -426,6 +426,8 @@ my $obsolete_reason = {
 	'tcpcat' => 4,
 	'ctm' => 3,
 	'papyon' => 3,
+	'bacula-web' => 1,
+	'waf' => 0,
 };
 
 # ->is_base_system($handle, $state):

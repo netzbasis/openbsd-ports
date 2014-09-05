@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2014/09/03 10:24:24 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.29 2014/09/16 09:09:46 espie Exp $
 
 SHARED_ONLY=	Yes
 
@@ -8,11 +8,12 @@ V=		2.12.9
 DISTNAME=	ptlib-${V}
 EXTRACT_SUFX=	.tar.bz2
 SUBST_VARS=	V
-REVISION=	3
+REVISION=	4
 
 SHARED_LIBS=	pt	7.0
 
 CATEGORIES=	devel telephony
+FAKE_AS_ROOT =	always-wrap
 
 HOMEPAGE=	http://www.opalvoip.org/
 
@@ -45,6 +46,7 @@ CONFIGURE_ARGS=	--enable-plugins \
 		--disable-oss \
 		--disable-pulse \
 		--disable-v8
+
 
 # XXX error: 'struct v4l2_frmsizeenum' has no member named 'discrete'
 CONFIGURE_ARGS+=--disable-v4l2
