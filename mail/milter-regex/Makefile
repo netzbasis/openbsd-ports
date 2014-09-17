@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.26 2013/03/11 11:23:51 espie Exp $
+# $OpenBSD: Makefile,v 1.28 2014/09/17 09:13:12 ajacoutot Exp $
 
 COMMENT=	sendmail milter plugin for regular expression filtering
 
 DISTNAME=	milter-regex-1.9
+REVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.benzedrine.cx/
 
@@ -13,6 +14,12 @@ MAINTAINER=	Daniel Hartmeier <dhartmei@openbsd.org>
 # BSD
 PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB=		c pthread milter
+
+LIB_DEPENDS=	mail/sendmail,-libmilter
+
+MAKE_FLAGS=	CPPFLAGS="-I${LOCALBASE}/include" \
+		CFLAGS="-Wall -Wstrict-prototypes ${CFLAGS}" \
+		LDFLAGS="-L${LOCALBASE}/lib"
 
 NO_TEST=	Yes
 

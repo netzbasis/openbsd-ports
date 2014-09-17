@@ -1,11 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2013/10/26 23:55:36 jeremy Exp $
+# $OpenBSD: Makefile,v 1.8 2014/09/17 14:28:36 sthen Exp $
 
 COMMENT =		ruby framework for Behaviour Driven Development
 DISTNAME =		rspec-1.3.2
-REVISION =		3
-SUBST_VARS =            MODRUBY_FLAVOR MODRUBY_PREFIX
-
-HOMEPAGE =		http://old.rspec.info/
+REVISION =		4
+SUBST_VARS =		MODRUBY_FLAVOR MODRUBY_PREFIX
 
 # When you have two different versions of a ruby gem installed, the
 # binaries will always select the latest version installed, even if

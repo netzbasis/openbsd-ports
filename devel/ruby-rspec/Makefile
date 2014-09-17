@@ -1,13 +1,11 @@
-# $OpenBSD: Makefile,v 1.18 2014/04/19 16:42:47 jasper Exp $
+# $OpenBSD: Makefile,v 1.20 2014/09/17 18:00:11 jasper Exp $
 
 SUBDIR =
 SUBDIR += 1,${FLAVOR}
-SUBDIR += core,${FLAVOR}
-SUBDIR += expectations,${FLAVOR}
-SUBDIR += mocks,${FLAVOR}
+SUBDIR += 2
+SUBDIR += 3
 SUBDIR += puppet,${FLAVOR}
 SUBDIR += puppetlabs_spec_helper,${FLAVOR}
-SUBDIR += rspec,${FLAVOR}
 SUBDIR += serverspec,${FLAVOR}
 SUBDIR += specinfra,${FLAVOR}
 
