@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.56 2014/04/01 18:06:32 jasper Exp $
+# $OpenBSD: Makefile,v 1.58 2014/09/23 08:39:52 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	applications integration into Nautilus
 
 GNOME_PROJECT=	nautilus-sendto
-GNOME_VERSION=	3.8.1
+GNOME_VERSION=	3.8.2
 REVISION=	0
-CATEGORIES=	mail
 
+CATEGORIES=	mail
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -19,7 +19,7 @@ WANTLIB += pthread z
 MODULES=	devel/gettext \
 		x11/gnome
 
-MODGNOME_TOOLS +=	gobject-introspection
+MODGNOME_TOOLS=	gobject-introspection
 LIB_DEPENDS=	devel/glib2
 
 FAKE_FLAGS=	schemadir=${PREFIX}/share/schemas/nautilus-sendto
