@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1251 2014/09/16 14:23:46 jasper Exp $
+# $OpenBSD: Makefile,v 1.1253 2014/09/24 06:40:44 jasper Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1169,7 +1169,6 @@
      SUBDIR += py-dateutil
      SUBDIR += py-decorator
      SUBDIR += py-decoratortools
-     SUBDIR += py-distribute,python3
      SUBDIR += py-distutils-extra
      SUBDIR += py-doit
      SUBDIR += py-dtopt
@@ -1311,7 +1310,6 @@
      SUBDIR += ruby-daemons
      SUBDIR += ruby-deep_merge
      SUBDIR += ruby-diff-lcs
-     SUBDIR += ruby-echoe
      SUBDIR += ruby-extlib
      SUBDIR += ruby-fastthread
      SUBDIR += ruby-ffi,ruby18
@@ -1364,7 +1362,7 @@
      SUBDIR += ruby-rake
      SUBDIR += ruby-rake-compiler
      SUBDIR += ruby-rake-remote_task
-     SUBDIR += ruby-rb-gsl,ruby19
+     SUBDIR += ruby-rb-gsl
      SUBDIR += ruby-rcov,ruby18
      SUBDIR += ruby-rcov,ruby19
      SUBDIR += ruby-rdoc
@@ -1376,7 +1374,6 @@
      SUBDIR += ruby-rspec
      SUBDIR += ruby-ruby2ruby
      SUBDIR += ruby-ruby_parser
-     SUBDIR += ruby-rubyforge
      SUBDIR += ruby-rubyinline
      SUBDIR += ruby-safe_yaml
      SUBDIR += ruby-sexp_processor

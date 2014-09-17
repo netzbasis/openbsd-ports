@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.66 2014/09/23 09:21:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.68 2014/09/24 09:45:00 jasper Exp $
 
 COMMENT=	Ruby library for retrieving facts from operating systems
 
@@ -27,8 +27,11 @@ PKG_ARCH=	*
 #MODRUBY_TEST=	rake rspec2
 
 pre-configure:
+	mkdir -p ${WRKDIR}/home
 	${SUBST_CMD} ${WRKSRC}/lib/facter/util/config.rb \
 		${WRKSRC}/spec/unit/util/config_spec.rb
+
+FAKE_FLAGS += HOME=${WRKDIR}/home
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/${MODRUBY_RELEXAMPLEDIR}-facter
