@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2014/09/24 09:36:15 espie Exp $
+# $OpenBSD: Makefile,v 1.10 2014/09/24 16:16:29 jeremy Exp $
 
 COMMENT=		code assistance services for GNOME
 
