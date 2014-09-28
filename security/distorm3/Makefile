@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2014/09/10 11:17:45 rpointel Exp $
+# $OpenBSD: Makefile,v 1.3 2014/09/27 16:53:53 miod Exp $
 
 COMMENT =		powerful disassembler library for x86/amd64
 
 DISTNAME =		distorm3
 PKGNAME =		${DISTNAME}-3
+REVISION=		0
 
 CATEGORIES =		security
 

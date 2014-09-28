@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2014/09/10 12:50:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2014/09/27 11:25:01 miod Exp $
 
 COMMENT =		ZRTP library
 
 DISTNAME =		libzrtp-0.20130317
-REVISION =		0
+REVISION =		1
 CATEGORIES =		telephony security
 
 HOMEPAGE =		https://github.com/traviscross/libzrtp
