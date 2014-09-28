@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.125 2014/09/28 06:52:14 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.128 2014/09/30 12:18:09 ajacoutot Exp $
 
-PORTROACH =	limitw:1,even
+PORTROACH =	limit:^2\.4
 
 COMMENT =	open source web browser engine for Gtk+
 
-V =		2.4.5
+V =		2.4.6
 DISTNAME =	webkitgtk-${V}
 PKGNAME =	webkit-${V}
 EPOCH =		1

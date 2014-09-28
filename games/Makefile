@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.299 2014/09/03 13:19:57 landry Exp $
+# $OpenBSD: Makefile,v 1.301 2014/09/30 17:46:38 abieber Exp $
 
      SUBDIR =
      SUBDIR += 0ad
@@ -131,8 +131,10 @@
      SUBDIR += londonlaw
      SUBDIR += lostpixels
      SUBDIR += love
+     SUBDIR += lwjgl
      SUBDIR += maelstrom
      SUBDIR += manaplus
+     SUBDIR += mars
      SUBDIR += meandmyshadow
      SUBDIR += megaglest
      SUBDIR += micropolis

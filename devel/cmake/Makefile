@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.105 2014/09/17 11:57:17 sthen Exp $
+# $OpenBSD: Makefile,v 1.112 2014/10/01 08:42:32 dcoppa Exp $
 
 DPB_PROPERTIES =parallel
 
@@ -7,13 +7,19 @@ DPB_PROPERTIES =parallel
 CFLAGS +=	-O1 -fno-stack-protector
 .endif
 
-HOMEPAGE =	http://www.cmake.org/
-CATEGORIES =	devel
 COMMENT =	portable build system
-DISTNAME =	cmake-3.0.2
-MASTER_SITES =	${HOMEPAGE}files/v3.0/
+
+VER =		3.0.2
+DISTNAME =	cmake-${VER}
+REVISION =	4
+
+CATEGORIES =	devel
+
+HOMEPAGE =	http://www.cmake.org/
 
 MAINTAINER =	David Coppa <dcoppa@openbsd.org>
+
+MASTER_SITES =	${HOMEPAGE}files/v${VER:R}/
 
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
@@ -22,6 +28,7 @@ WANTLIB =		archive c curl expat form m ncurses \
 			stdc++ z
 
 # XXX: CMake's built-in ELF parser is broken on arm
+# XXX: Ninja is broken on m88k
 .if ${MACHINE_ARCH} != "arm" && ${MACHINE_ARCH} != "m88k"
 BUILD_DEPENDS =		devel/ninja>=1.5.1
 .endif
@@ -68,7 +75,8 @@ pre-configure:
 		${WRKSRC}/Modules/FindTCL.cmake
 
 # XXX: CMake's built-in ELF parser is broken on arm
-.if ${MACHINE_ARCH} != "arm"
+# XXX: Ninja is broken on m88k
+.if ${MACHINE_ARCH} != "arm" && ${MACHINE_ARCH} != "m88k"
 do-build:
 	cd ${WRKBUILD} && exec ${SETENV} ${MAKE_ENV} ninja -v -j \
 		${MAKE_JOBS} ${ALL_TARGET}
