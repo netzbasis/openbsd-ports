@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.49 2014/10/01 09:46:35 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.51 2014/10/02 15:36:57 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
@@ -6,6 +6,7 @@ COMMENT=		standard GNOME themes
 
 GNOME_PROJECT=		gnome-themes-standard
 GNOME_VERSION=		3.14.0
+REVISION=		1
 
 # LGPLv2.1
 PERMIT_PACKAGE_CDROM=	Yes
@@ -31,12 +32,20 @@ MODGNOME_TOOLS=		gtk-update-icon-cache
 # we need to depend on gtk-engines2 in order for the gtk2 themes to work.
 RUN_DEPENDS +=		x11/gtk-engines2
 
+# default settings
+RUN_DEPENDS +=		fonts/cantarell-fonts \
+			x11/gnome/adwaita-icon-theme
+
 post-install:
 # set the global cursor theme (libXcursor)
 # https://bugzilla.gnome.org/show_bug.cgi?id=660353
 	${INSTALL_DATA_DIR} ${PREFIX}/share/icons/default
 	${INSTALL_DATA} ${FILESDIR}/index.theme \
 		${PREFIX}/share/icons/default
+# set the global themes (matches what's directly bundled in gtk+3)
+	${INSTALL_DATA_DIR} ${PREFIX}/share/gtk-2.0
+	${INSTALL_DATA} ${FILESDIR}/gtkrc \
+		${PREFIX}/share/gtk-2.0
 	rm ${PREFIX}/lib/gtk-2.0/2.10.0/engines/*.{a,la}
 
 .include <bsd.port.mk>
