@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2014/03/26 13:32:33 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.19 2014/10/02 19:49:19 ajacoutot Exp $
 share/icons/gnome/scalable/
 share/icons/gnome/scalable/actions/
 share/icons/gnome/scalable/actions/action-unavailable-symbolic.svg

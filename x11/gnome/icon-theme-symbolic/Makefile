@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2014/04/07 10:17:46 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.38 2014/10/02 19:49:19 ajacoutot Exp $
 
 COMMENT=	base icon theme extension for special UI contexts
 

@@ -1,4 +1,4 @@
-# $OpenBSD: kde4.port.mk,v 1.24 2014/08/10 10:13:18 espie Exp $
+# $OpenBSD: kde4.port.mk,v 1.26 2014/10/03 00:01:11 zhuk Exp $
 
 # The version of KDE SC in x11/kde4
 _MODKDE4_STABLE =	4.13.3
@@ -196,13 +196,11 @@ MODKDE4_LIB_DEPENDS +=		${MODKDE4_DEP_DIR}/workspace>=4.11,<5
 # See FindKDE4Internal.cmake from kdelibs package for details.
 .if ${CONFIGURE_STYLE:Mcmake}
 .   if ${FLAVOR:Mdebug}
-# No optimization, debug symbols included, qDebug/kDebug enabled
+# -g -O0, qDebug/kDebug enabled
 MODKDE4_CONF_ARGS +=	-DCMAKE_BUILD_TYPE:String=DebugFull
 MODKDE4_CMAKE_PREFIX =	-debugfull
-COPTS +=		-O0 -ggdb
-CXXOPTS +=		-O0 -ggdb
 .   else
-# Optimization for speed, debug symbols stripped, qDebug/kDebug disabled
+# -O2, qDebug/kDebug disabled
 MODKDE4_CONF_ARGS +=	-DCMAKE_BUILD_TYPE:String=Release
 MODKDE4_CMAKE_PREFIX =	-release
 .   endif
@@ -249,8 +247,11 @@ MODKDE4_CONF_ARGS +=	-DINCLUDE_INSTALL_DIR:Path=${MODKDE4_INCLUDE_DIR} \
 MODKDE4_CONF_ARGS +=	-DCMAKE_INCLUDE_PATH=${LOCALBASE}/${MODKDE4_INCLUDE_DIR} \
 			-DCMAKE_LIBRARY_PATH=${LOCALBASE}/${MODKDE4_LIB_DIR}
 
-# KDE 4.11 doesn't play well with NEW CMP0022
+# KDE 4.11+ doesn't play well with NEW CMP0022
 MODKDE4_CONF_ARGS +=	-DCMAKE_POLICY_DEFAULT_CMP0022=OLD
+
+# Some KDE4 internals still try to read LOCATION directly
+MODKDE4_CONF_ARGS +=	-DCMAKE_POLICY_DEFAULT_CMP0026=OLD
 .endif
 
 # FIXME
