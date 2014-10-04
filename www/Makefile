@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.680 2014/10/03 07:23:40 jasper Exp $
+# $OpenBSD: Makefile,v 1.683 2014/10/03 23:07:18 sthen Exp $
 
      SUBDIR =
      SUBDIR += ajaxterm
@@ -82,6 +82,7 @@
      SUBDIR += hs-xhtml-combinators
      SUBDIR += http_load
      SUBDIR += http_ping
+     SUBDIR += httrack
      SUBDIR += icedtea-web
      SUBDIR += igal
      SUBDIR += igal2
@@ -401,6 +402,7 @@
      SUBDIR += py-mako,python3
      SUBDIR += py-mechanize
      SUBDIR += py-meld3
+     SUBDIR += py-meld3,python3
      SUBDIR += py-nevow
      SUBDIR += py-paste
      SUBDIR += py-paste-deploy
@@ -415,7 +417,6 @@
      SUBDIR += py-routes
      SUBDIR += py-tempita
      SUBDIR += py-tornado
-     SUBDIR += py-turbogears
      SUBDIR += py-urlgrabber
      SUBDIR += py-webdav
      SUBDIR += py-weberror
