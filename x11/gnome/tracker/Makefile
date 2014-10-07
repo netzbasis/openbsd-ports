@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.175 2014/09/02 15:36:27 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.177 2014/10/06 10:58:51 ajacoutot Exp $
 
 EVO_VERSION=		3.12
 SUBST_VARS +=		EVO_VERSION
@@ -8,28 +8,28 @@ SHARED_ONLY=		Yes
 COMMENT=		powerful desktop search tool and indexer
 
 GNOME_PROJECT=		tracker
-GNOME_VERSION=		1.0.4
+GNOME_VERSION=		1.2.2
 
 # there is already audio/tracker, so this port has to live
 # as meta-tracker.
 PKGNAME=		meta-tracker-${VERSION}
 
-# NOTE: when TRACKER_VERSION changes, increment accordingly and bump:
+# NOTE: when TRACKER_API changes, increment accordingly and bump:
 # x11/gnome/documents
 # x11/gnome/grilo-plugins
 # x11/gnome/nautilus
 # x11/gnome/online-miners
 # x11/gnome/photos
 # x11/gnome/rygel
-TRACKER_VERSION=	${GNOME_VERSION:C/^([0-9]+\.[0-9]+).*/\1/}
-SUBST_VARS=		TRACKER_VERSION
+TRACKER_API=	1.0
+SUBST_VARS=		TRACKER_API
 
 SHARED_LIBS +=  tracker-common       3.0      # unknown
-SHARED_LIBS +=  tracker-control-1.0  0.0      # 0.0
 SHARED_LIBS +=  tracker-data         3.0      # unknown
-SHARED_LIBS +=  tracker-sparql-1.0   0.0      # 0.0
+SHARED_LIBS +=  tracker-sparql-1.0   0.0      # 202.0
 SHARED_LIBS +=  tracker-extract      0.0      # unknown
-SHARED_LIBS +=  tracker-miner-1.0    0.0      # 0.0
+SHARED_LIBS +=  tracker-miner-1.0    0.0      # 202.0
+SHARED_LIBS +=  tracker-control-1.0  0.0      # 202.0
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
@@ -86,10 +86,6 @@ MODPY_RUNDEP=		No
 MODPY_ADJ_FILES=	tests/tracker-writeback/01-writeback.py \
 			utils/data-generators/cc/generate
 
-# XXX libmediaart >=0.6.0; remove at next major upgrade
-CONFIGURE_STYLE=	autoconf
-AUTOCONF_VERSION=	2.69
-
 CONFIGURE_ARGS=		--disable-miner-thunderbird \
 			--disable-miner-firefox \
 			--disable-network-manager
@@ -121,8 +117,8 @@ pre-configure:
 		${WRKSRC}/src/tracker-needle/tracker-utils.vala
 
 post-install:
-	rm ${PREFIX}/lib/tracker-${TRACKER_VERSION}/extract-modules/*.{a,la}
-	rm ${PREFIX}/lib/tracker-${TRACKER_VERSION}/writeback-modules/*.{a,la}
+	rm ${PREFIX}/lib/tracker-${TRACKER_API}/extract-modules/*.{a,la}
+	rm ${PREFIX}/lib/tracker-${TRACKER_API}/writeback-modules/*.{a,la}
 #	rm ${PREFIX}/lib/evolution/${EVO_VERSION}/plugins/*.{a,la}
 
 do-test:

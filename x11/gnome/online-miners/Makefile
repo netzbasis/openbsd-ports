@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.11 2014/04/01 13:21:46 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.13 2014/10/06 10:58:51 ajacoutot Exp $
 
-TRACKER_VERSION=	1.0
+TRACKER_API=		1.0
 
 SHARED_ONLY=		Yes
 
 COMMENT=		crawls through your online content
 
 GNOME_PROJECT=		gnome-online-miners
-GNOME_VERSION=		3.12.0
-REVISION=		1
+GNOME_VERSION=		3.14.0
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -20,10 +19,10 @@ WANTLIB += kvm m nspr4 nss3 oauth p11-kit pcre plc4 plds4 pthread
 WANTLIB += rest-0.7 smime3 softokn3 soup-2.4 soup-gnome-2.4
 WANTLIB += sqlite3 ssl ssl3 uuid xml2 z zapojit-0.0 icudata
 WANTLIB += gdk_pixbuf-2.0 gfbgraph-0.2 mediaart-1.0 png
-WANTLIB += tracker-sparql-${TRACKER_VERSION}
-WANTLIB += tracker-miner-${TRACKER_VERSION}
-WANTLIB += lib/tracker-${TRACKER_VERSION}/tracker-common
-WANTLIB += lib/tracker-${TRACKER_VERSION}/tracker-data
+WANTLIB += tracker-sparql-${TRACKER_API}
+WANTLIB += tracker-miner-${TRACKER_API}
+WANTLIB += lib/tracker-${TRACKER_API}/tracker-common
+WANTLIB += lib/tracker-${TRACKER_API}/tracker-data
 
 MODULES=		devel/gettext \
 			x11/gnome \

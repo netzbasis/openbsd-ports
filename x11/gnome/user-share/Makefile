@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.17 2014/04/02 11:37:36 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.19 2014/10/06 09:53:23 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		personal file-sharing service for GNOME
 
 GNOME_PROJECT=		gnome-user-share
-GNOME_VERSION=		3.10.2
+GNOME_VERSION=		3.14.0
 
 CATEGORIES=		www sysutils
 
@@ -31,7 +31,7 @@ LIB_DEPENDS=		x11/gnome/nautilus \
 
 RUN_DEPENDS=		www/ap2-mod_dnssd
 
-MODGNOME_TOOLS += desktop-file-utils gtk-update-icon-cache
+MODGNOME_TOOLS=		desktop-file-utils gtk-update-icon-cache
 
 FAKE_FLAGS=		sysconfdir=${PREFIX}/share/examples/gnome-user-share
 
@@ -40,6 +40,9 @@ CONFIGURE_ARGS=		--with-httpd=${LOCALBASE}/sbin/httpd2 \
 
 # needs gnome-bluetooth
 CONFIGURE_ARGS +=	--disable-bluetooth
+
+# XXX help files got removed but configure checks for itstool(1) anyway
+BUILD_DEPENDS +=	textproc/itstool
 
 pre-configure:
 	perl -pi -e 's,/usr/share,${TRUEPREFIX}/share,g' \
