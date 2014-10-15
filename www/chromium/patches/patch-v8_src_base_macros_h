@@ -1,0 +1,12 @@
+$OpenBSD: patch-v8_src_base_macros_h,v 1.1 2014/10/13 06:49:19 robert Exp $
+--- v8/src/base/macros.h.orig.port	Fri Oct 10 19:44:50 2014
++++ v8/src/base/macros.h	Fri Oct 10 19:45:23 2014
+@@ -142,7 +142,7 @@ inline bool IsPowerOf2(T x) {
+ # define V8_INTPTR_C(x)   (x ## LL)
+ # define V8_PTR_PREFIX    "I64"
+ #elif V8_HOST_ARCH_64_BIT
+-# if V8_OS_MACOSX
++# if V8_OS_MACOSX || defined(__OpenBSD__)
+ #  define V8_UINT64_C(x)   (x ## ULL)
+ #  define V8_INT64_C(x)    (x ## LL)
+ # else

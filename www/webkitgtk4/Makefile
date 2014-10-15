@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2014/10/02 05:46:22 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2014/10/14 11:27:31 ajacoutot Exp $
 
 PORTROACH =		limitw:1,even
 
@@ -6,14 +6,13 @@ SHARED_ONLY =		Yes
 
 COMMENT =		GTK+ port of the WebKit rendering engine
 
-V =			2.6.0
+V =			2.6.1
 DISTNAME =		webkitgtk-${V}
 PKGNAME =		webkitgtk4-${V}
 EXTRACT_SUFX =		.tar.xz
 API =			4.0
 SUBST_VARS =		API
 DPB_PROPERTIES =	parallel
-REVISION =		0
 
 SHARED_LIBS +=  javascriptcoregtk-${API}     0.0 # 18.0
 SHARED_LIBS +=  webkit2gtk-${API}            0.0 # 37.2
@@ -77,14 +76,12 @@ LIB_DEPENDS =		devel/harfbuzz,-icu \
 			x11/gtk+2 \
 			x11/gtk+3
 
-LDFLAGS =		-L${X11BASE}/lib \
-			-Wl,--no-keep-memory
+LDFLAGS =		-L${X11BASE}/lib
 
 CONFIGURE_ARGS =	-DPORT=GTK \
 			-DCMAKE_BUILD_TYPE=Release \
 			-DCMAKE_EXE_LINKER_FLAGS="${LDFLAGS}" \
-			-DCMAKE_SHARED_LINKER_FLAGS="${LDFLAGS}" \
-			-DUSE_SYSTEM_MALLOC=ON
+			-DCMAKE_SHARED_LINKER_FLAGS="${LDFLAGS}"
 
 # sync with Source/JavaScriptCore/assembler/MacroAssembler.h
 .if ${MACHINE_ARCH} != "amd64" && ${MACHINE_ARCH} != "arm" && \
@@ -93,6 +90,10 @@ CONFIGURE_ARGS =	-DPORT=GTK \
 # #error "The MacroAssembler is not supported on this platform."
 CONFIGURE_ARGS +=	-DENABLE_JIT=OFF
 CONFIGURE_ARGS +=	-DENABLE_LLINT_C_LOOP=ON
+.endif
+
+.if ${MACHINE_ARCH} != "amd64"
+LDFLAGS +=		-Wl,--no-keep-memory
 .endif
 
 # __atomic_fetch_add_8

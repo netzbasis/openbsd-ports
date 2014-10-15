@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1259 2014/10/08 02:05:42 jeremy Exp $
+# $OpenBSD: Makefile,v 1.1262 2014/10/14 13:18:24 dcoppa Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -266,6 +266,7 @@
      SUBDIR += hs-regex-posix
      SUBDIR += hs-resourcet
      SUBDIR += hs-safe
+     SUBDIR += hs-scientific
      SUBDIR += hs-semigroupoids
      SUBDIR += hs-semigroups
      SUBDIR += hs-sendfile
@@ -350,7 +351,6 @@
      SUBDIR += libftdi
      SUBDIR += libgdata
      SUBDIR += libgee
-     SUBDIR += libgee06
      SUBDIR += libgit2
      SUBDIR += libglade2
      SUBDIR += libglademm
@@ -1161,6 +1161,7 @@
      SUBDIR += py-buildbot
      SUBDIR += py-buildslave
      SUBDIR += py-bytecodeassembler
+     SUBDIR += py-certifi
      SUBDIR += py-cffi
      SUBDIR += py-cheetah
      SUBDIR += py-clint
