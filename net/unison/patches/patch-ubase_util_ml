@@ -1,4 +1,4 @@
-$OpenBSD: patch-ubase_util_ml,v 1.3 2014/09/19 12:56:23 chrisz Exp $
+$OpenBSD: patch-ubase_util_ml,v 1.1 2014/10/17 06:22:08 chrisz Exp $
 
 The Uprintf module is broken since OCaml 4.02.
 The OCaml stdlib provides a similar function since 3.09.
