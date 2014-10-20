@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2014/01/15 02:13:58 jeremy Exp $
+# $OpenBSD: Makefile,v 1.23 2014/10/17 18:34:17 jasper Exp $
 
 COMMENT =	Ruby binding for the bcrypt() password hashing algorithm
 
@@ -20,7 +20,7 @@ MODULES =		lang/ruby
 CONFIGURE_STYLE =	ruby gem ext
 
 TEST_DEPENDS =	${FULLPKGNAME}:${BUILD_PKGPATH} \
-			devel/ruby-rake-compiler,${MODRUBY_FLAVOR}
-MODRUBY_TEST =	rake rspec2
+		devel/ruby-rake-compiler,${MODRUBY_FLAVOR}
+MODRUBY_TEST =	rake rspec3
 
 .include <bsd.port.mk>

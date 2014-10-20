@@ -1,7 +1,7 @@
-#  $OpenBSD: Makefile,v 1.2 2014/10/11 19:54:46 jeremy Exp $
+#  $OpenBSD: Makefile,v 1.4 2014/10/20 07:52:19 jasper Exp $
 
 COMMENT =		rspec runner and formatters
-DISTNAME =		rspec-core-3.1.3
+DISTNAME =		rspec-core-3.1.7
 REVISION =		0
 
 BUILD_DEPENDS =		${RUN_DEPENDS}
