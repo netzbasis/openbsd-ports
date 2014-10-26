@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.868 2014/10/16 16:07:51 chrisz Exp $
+# $OpenBSD: Makefile,v 1.870 2014/10/23 20:48:09 nigel Exp $
 
      SUBDIR =
      SUBDIR += GeoIP
@@ -249,6 +249,7 @@
      SUBDIR += netatalk
      SUBDIR += netbsd-iscsi-target
      SUBDIR += netfwd
+     SUBDIR += netinfo
      SUBDIR += netpipes
      SUBDIR += netrate
      SUBDIR += netsed
@@ -331,6 +332,7 @@
      SUBDIR += p5-Net-Frame-Layer-IPv6
      SUBDIR += p5-Net-GPSD
      SUBDIR += p5-Net-Google
+     SUBDIR += p5-Net-HTTP
      SUBDIR += p5-Net-ICQ2000
      SUBDIR += p5-Net-ICal
      SUBDIR += p5-Net-IMP
