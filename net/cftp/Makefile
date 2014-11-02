@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.7 2013/05/30 10:51:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2014/10/28 22:25:45 sthen Exp $
 
 COMMENT=	full screen FTP client
 
 DISTNAME=	cftp-0.12
-REVISION=	0
+REVISION=	2
 CATEGORIES=	net
 
-HOMEPAGE=	http://ftp.giga.or.at/pub/nih/cftp/
+HOMEPAGE=	http://nih.at/cftp/
 
-MAINTAINER=	Josh Rivel <dorqus@freek.com>
+MAINTAINER=	Josh Rivel <josh@rivels.org>
 
-# GPL
+# GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB=		c termcap

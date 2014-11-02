@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.111 2014/08/28 19:02:48 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.113 2014/10/31 23:59:41 jca Exp $
 
     SUBDIR =
     SUBDIR += a2ps
-    SUBDIR += acroread
     SUBDIR += afm
     SUBDIR += apsfilter
     SUBDIR += apvlv
-    SUBDIR += auctex
     SUBDIR += bibview
     SUBDIR += cups
     SUBDIR += cups-bjnp

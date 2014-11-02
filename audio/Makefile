@@ -1,8 +1,7 @@
-# $OpenBSD: Makefile,v 1.338 2014/10/03 07:23:40 jasper Exp $
+# $OpenBSD: Makefile,v 1.340 2014/10/29 20:56:17 naddy Exp $
 
      SUBDIR =
      SUBDIR += abcde
-     SUBDIR += ac3dec
      SUBDIR += akode
      SUBDIR += alac_decoder
      SUBDIR += amarok
@@ -15,7 +14,6 @@
      SUBDIR += audacious
      SUBDIR += audacious-plugins
      SUBDIR += audacity
-     SUBDIR += aumix
      SUBDIR += beets
      SUBDIR += bladeenc
      SUBDIR += calf

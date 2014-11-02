@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.185 2014/10/13 12:34:42 ajacoutot Exp $
+# $OpenBSD: Quirks.pm,v 1.195 2014/11/01 10:41:05 jca Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -354,6 +354,8 @@ my $stem_extensions = {
 	'mysql-server' => 'mariadb-server',
 	'mysql-tests' => 'mariadb-tests',
 	'py3-distribute' => 'py3-setuptools',
+	'symon-mon' => 'symon',
+	'symon-mux' => 'symux',
 };
 
 # reasons for obsolete packages
@@ -446,6 +448,25 @@ my $obsolete_reason = {
 	'ruby-fastthread' => 3,
 	'dellflash' => 0,
 	'libgee06' => 3,
+	'smarty' => 2,
+	'smarty-docs' => 2,
+	'wdsetup' => 0,
+	'pptp' => 0,
+	'aumix' => 0,
+	'ac3dec' => 3,
+	'flash' => 3,
+	'ruby-columnize' => 3,
+	'ruby-mini_magick' => 3,
+	'ruby-spreadsheet' => 3,
+	'ruby-minion' => 3,
+	'ruby-bunny' => 3,
+	'ruby-randexp' => 3,
+	'synaesthesia' => 0,
+        'mew' => 0,
+        'auctex' => 0,
+        'emacs-zenirc' => 3,
+        'emacs-zenirc-el' => 3,
+        'newsfetch' => 2,
 };
 
 # ->is_base_system($handle, $state):
@@ -536,6 +557,7 @@ my $cve = {
 	'www/p5-CGI-Application' => 'p5-CGI-Application-<4.50p0',
 	'www/cherokee,-ldap' => 'cherokee-ldap-<1.2.101p6',
 	'shells/bash' => 'bash-<4.3.27',
+	'www/drupal7/core' => 'drupal->=7.0,<7.32',
 };
 
 # ->check_security($path)

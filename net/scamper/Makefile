@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.15 2014/05/31 12:26:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2014/11/02 10:58:32 sthen Exp $
 
-SHARED_LIBS +=  scamperfile               0.0 # 0.0
+SHARED_LIBS +=  scamperfile               0.1 # 0.0
 
 COMMENT =	parallel internet measurement utility
 
-V =		20140530
+V =		20141101
 DISTNAME =	scamper-cvs-$V
 PKGNAME =	scamper-0.0.$V
 

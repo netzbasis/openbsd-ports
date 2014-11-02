@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.870 2014/10/23 20:48:09 nigel Exp $
+# $OpenBSD: Makefile,v 1.875 2014/11/01 20:55:50 abieber Exp $
 
      SUBDIR =
      SUBDIR += GeoIP
@@ -159,6 +159,7 @@
      SUBDIR += ircII
      SUBDIR += ircd-hybrid
      SUBDIR += ircd-ratbox
+     SUBDIR += irrtoolset
      SUBDIR += irssi
      SUBDIR += irssi,socks
      SUBDIR += irssi-icb
@@ -494,7 +495,9 @@
      SUBDIR += py-libpcap
      SUBDIR += py-medusa
      SUBDIR += py-msgpack
+     SUBDIR += py-netaddr
      SUBDIR += py-nmap
+     SUBDIR += py-oauth2
      SUBDIR += py-pcapy
      SUBDIR += py-pcs
      SUBDIR += py-snmp
@@ -521,12 +524,10 @@
      SUBDIR += rtorrent
      SUBDIR += ruby-agcaldav
      SUBDIR += ruby-amqp
-     SUBDIR += ruby-bunny
      SUBDIR += ruby-eventmachine,ruby20
      SUBDIR += ruby-eventmachine,ruby21
      SUBDIR += ruby-macaddr
      SUBDIR += ruby-mfi
-     SUBDIR += ruby-minion
      SUBDIR += ruby-msgpack,ruby20
      SUBDIR += ruby-msgpack,ruby21
      SUBDIR += ruby-net-dns
@@ -653,7 +654,6 @@
      SUBDIR += zabbix,mysql
      SUBDIR += zabbix,pgsql
      SUBDIR += zabbix,sqlite3
-     SUBDIR += zenirc
      SUBDIR += zeromq
      SUBDIR += ziproxy
      SUBDIR += znc

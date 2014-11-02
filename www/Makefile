@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.685 2014/10/23 21:13:46 nigel Exp $
+# $OpenBSD: Makefile,v 1.687 2014/11/01 23:05:41 bluhm Exp $
 
      SUBDIR =
      SUBDIR += ajaxterm
@@ -333,6 +333,7 @@
      SUBDIR += p5-WWW-Google-SiteMap
      SUBDIR += p5-WWW-IndexParser
      SUBDIR += p5-WWW-Mechanize
+     SUBDIR += p5-WWW-Mechanize-FormFiller
      SUBDIR += p5-WWW-Mechanize-GZip
      SUBDIR += p5-WWW-Mechanize-TreeBuilder
      SUBDIR += p5-WWW-Robot
@@ -397,6 +398,8 @@
      SUBDIR += py-clientform
      SUBDIR += py-django
      SUBDIR += py-flask
+     SUBDIR += py-flask-login
+     SUBDIR += py-flask-principal
      SUBDIR += py-flask-wtf
      SUBDIR += py-flup
      SUBDIR += py-formencode
@@ -425,6 +428,7 @@
      SUBDIR += py-repoze-who
      SUBDIR += py-requests
      SUBDIR += py-routes
+     SUBDIR += py-sockjs-tornado
      SUBDIR += py-tempita
      SUBDIR += py-tornado
      SUBDIR += py-urlgrabber

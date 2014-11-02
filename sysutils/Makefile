@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.328 2014/10/20 02:41:24 bcallah Exp $
+# $OpenBSD: Makefile,v 1.330 2014/10/29 12:06:22 jasper Exp $
 
      SUBDIR =
      SUBDIR += accountsservice
@@ -118,6 +118,7 @@
      SUBDIR += ns4
      SUBDIR += ntfs-3g
      SUBDIR += nut
+     SUBDIR += opam
      SUBDIR += openpoppassd
      SUBDIR += p5-Capture-Tiny
      SUBDIR += p5-File-Monitor
@@ -231,7 +232,6 @@
      SUBDIR += vifm
      SUBDIR += virt-manager
      SUBDIR += vmwh
-     SUBDIR += wdsetup
      SUBDIR += whowatch
      SUBDIR += wmapm
      SUBDIR += wmcb

@@ -1,12 +1,13 @@
-# $OpenBSD: Makefile,v 1.7 2014/10/22 09:30:38 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.9 2014/11/01 21:33:53 ajacoutot Exp $
 
 COMMENT=	Lumina Desktop Environment
 
-GITV=		1413916751
+GITV=		1414614312
 DISTNAME=	lumina-${GITV}
-PKGNAME=	lumina-0.7.0.${GITV}
+PKGNAME=	lumina-0.7.1.${GITV}
 EXTRACT_SUFX=	.tar.bz2
 WRKDIST=	${WRKDIR}/lumina
+REVISION=	0
 
 SHARED_LIBS +=  LuminaUtils               0.0 # 1.0
 
@@ -38,9 +39,6 @@ RUN_DEPENDS=	devel/desktop-file-utils \
 		x11/fluxbox \
 		x11/numlockx \
 		x11/xscreensaver
-
-# sndio(7)
-RUN_DEPENDS +=	multimedia/gstreamer-0.10/plugins-good
 
 NO_TEST=	Yes
 

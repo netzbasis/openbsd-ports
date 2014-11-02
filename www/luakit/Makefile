@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2013/06/02 17:00:16 jasper Exp $
+# $OpenBSD: Makefile,v 1.13 2014/11/01 22:20:49 abieber Exp $
 
 BROKEN-powerpc=	help2man: can't get `--help' info from ./luakit
 

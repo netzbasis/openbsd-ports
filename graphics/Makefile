@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.372 2014/10/15 13:29:04 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.377 2014/11/01 08:13:31 ratchov Exp $
 
      SUBDIR =
      SUBDIR += DevIL
@@ -48,12 +48,12 @@
      SUBDIR += enblend-enfuse
      SUBDIR += enjoympeg
      SUBDIR += evince
+     SUBDIR += evince,light
      SUBDIR += exiftran
      SUBDIR += exiv2
      SUBDIR += feh
      SUBDIR += ffmpeg
      SUBDIR += ffmpegthumbnailer
-     SUBDIR += flash
      SUBDIR += freeglut
      SUBDIR += freeimage
      SUBDIR += fswebcam
@@ -111,6 +111,7 @@
      SUBDIR += jhead
      SUBDIR += jpeg
      SUBDIR += jpeg2ps
+     SUBDIR += jpegdump
      SUBDIR += jpegpixi
      SUBDIR += k3dsurf
      SUBDIR += kimdaba
@@ -235,7 +236,6 @@
      SUBDIR += rawtherapee
      SUBDIR += ruby-color
      SUBDIR += ruby-gruff
-     SUBDIR += ruby-mini_magick
      SUBDIR += ruby-rmagick,ruby20
      SUBDIR += ruby-rmagick,ruby21
      SUBDIR += s10sh
@@ -251,7 +251,6 @@
      SUBDIR += smpeg-xmms
      SUBDIR += swfdec
      SUBDIR += sxiv
-     SUBDIR += synaesthesia
      SUBDIR += tesseract
      SUBDIR += tesseract-langs
      SUBDIR += tgif

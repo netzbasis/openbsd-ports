@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1264 2014/10/23 20:43:37 nigel Exp $
+# $OpenBSD: Makefile,v 1.1270 2014/11/01 22:59:47 bluhm Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -72,6 +72,7 @@
      SUBDIR += cppunit
      SUBDIR += cryptopp
      SUBDIR += cscope
+     SUBDIR += cudf
      SUBDIR += cunit
      SUBDIR += cutils
      SUBDIR += cvs20hg
@@ -480,14 +481,20 @@
      SUBDIR += ocaml-bitstring
      SUBDIR += ocaml-calendar
      SUBDIR += ocaml-camomile
+     SUBDIR += ocaml-cmdliner
      SUBDIR += ocaml-curses
+     SUBDIR += ocaml-dose
      SUBDIR += ocaml-extlib
+     SUBDIR += ocaml-graph
+     SUBDIR += ocaml-jsonm
      SUBDIR += ocaml-lambda-term
      SUBDIR += ocaml-lwt
      SUBDIR += ocaml-mlgmp
      SUBDIR += ocaml-net
      SUBDIR += ocaml-pcre
+     SUBDIR += ocaml-re
      SUBDIR += ocaml-react
+     SUBDIR += ocaml-uutf
      SUBDIR += ocaml-zed
      SUBDIR += ode
      SUBDIR += ois
@@ -925,6 +932,7 @@
      SUBDIR += p5-PerlIO-via-Bzip2
      SUBDIR += p5-PerlIO-via-dynamic
      SUBDIR += p5-PerlIO-via-symlink
+     SUBDIR += p5-Pod-Constant
      SUBDIR += p5-Pod-Coverage
      SUBDIR += p5-Pod-ToDemo
      SUBDIR += p5-Probe-Perl
@@ -1170,11 +1178,13 @@
      SUBDIR += py-configobj
      SUBDIR += py-country
      SUBDIR += py-coverage
+     SUBDIR += py-coveralls
      SUBDIR += py-cparser
      SUBDIR += py-dateutil
      SUBDIR += py-decorator
      SUBDIR += py-decoratortools
      SUBDIR += py-distutils-extra
+     SUBDIR += py-docopt
      SUBDIR += py-doit
      SUBDIR += py-dtopt
      SUBDIR += py-dulwich
@@ -1240,6 +1250,7 @@
      SUBDIR += py-setproctitle,python3
      SUBDIR += py-setuptools
      SUBDIR += py-setuptools,python3
+     SUBDIR += py-sh
      SUBDIR += py-silc
      SUBDIR += py-simplejson
      SUBDIR += py-singledispatch
@@ -1303,7 +1314,6 @@
      SUBDIR += ruby-clio
      SUBDIR += ruby-color-tools
      SUBDIR += ruby-colorator
-     SUBDIR += ruby-columnize
      SUBDIR += ruby-commander
      SUBDIR += ruby-cucumber
      SUBDIR += ruby-daemon_controller
@@ -1398,7 +1408,6 @@
      SUBDIR += silc-toolkit
      SUBDIR += simulavr
      SUBDIR += slib
-     SUBDIR += smarty
      SUBDIR += smpeg
      SUBDIR += smpeg2
      SUBDIR += sparsehash
