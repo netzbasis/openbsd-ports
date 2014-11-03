@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2014/10/17 12:36:33 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.43 2014/11/03 12:29:31 ajacoutot Exp $
 
 # XXX re-rolled tarball: drop at next release
 DIST_SUBDIR=		icu4c
@@ -10,7 +10,7 @@ COMMENT=		International Components for Unicode
 VERSION=		54.1
 DISTNAME=		icu4c-${VERSION:S/./_/g}-src
 PKGNAME=		icu4c-${VERSION}
-REVISION=		1
+REVISION=		2
 
 MAJ_V=			${VERSION:R}
 SO_VERSION=		8.0
@@ -50,6 +50,11 @@ WRKSRC=			${WRKDIST}/source
 MAKE_FLAGS=		SO_TARGET_VERSION=${SO_VERSION} \
 			SO_TARGET_VERSION_MAJOR=${SO_VERSION:R} \
 			PKGDATA_INVOKE_OPTS="SO_TARGET_VERSION=${SO_VERSION} SO_TARGET_VERSION_MAJOR=${SO_VERSION:R}"
+
+# icupkg segfaults during the build
+.if ${MACHINE_ARCH} == "arm"
+CFLAGS +=		-O1 -fno-stack-protector
+.endif
 
 .include <bsd.port.arch.mk>
 PKG_ARGS +=		-Dbe=0 -Dle=0
