@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.22 2014/05/07 15:42:15 kurt Exp $
+# $OpenBSD: Makefile,v 1.24 2014/11/11 08:40:38 jasper Exp $
 
 COMMENT=	software project management and comprehension tool
 
-V=		3.0.5
+V=		3.2.3
 DISTNAME=	apache-maven-$V
 PKGNAME=	${DISTNAME:S/apache-//}
 CATEGORIES=	devel
-REVISION=	1
 
 HOMEPAGE=	http://maven.apache.org/
 
@@ -29,6 +28,8 @@ NO_TEST=	Yes
 MAVEN_HOME=	${LOCALBASE}/maven
 SAMPLEDIR=	${PREFIX}/share/examples/maven
 
+SUBST_VARS+=	MAVEN_HOME
+
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/maven
 	${INSTALL_DATA_DIR} ${SAMPLEDIR}
@@ -37,16 +38,12 @@ do-install:
 		tar -C ${PREFIX}/maven -xf -
 	find ${WRKINST} -name \*.orig -or -name \*.bat -or -name \*.exe | \
 		xargs rm
+	${INSTALL_DATA_DIR} ${SAMPLEDIR}/logging/
+	${INSTALL_DATA} ${WRKSRC}/conf/logging/* ${SAMPLEDIR}/logging/
 	${INSTALL_DATA} ${WRKSRC}/conf/settings.xml ${SAMPLEDIR}/
 	ln -s ${SYSCONFDIR}/maven ${PREFIX}/maven/conf
-	@perl -pi -e 's,%%SYSCONFDIR%%,${SYSCONFDIR},' \
-		${PREFIX}/maven/bin/mvn
-	@sed -e 's,%%MAVEN_HOME%%,${MAVEN_HOME},' \
-		< ${FILESDIR}/maven.rc \
-		> ${SAMPLEDIR}/maven.rc
-	@sed -e 's,%%LOCALBASE%%,${LOCALBASE},' \
-		< ${FILESDIR}/mvn \
-		> ${WRKSRC}/bin/mvn
-	${INSTALL_SCRIPT} ${WRKSRC}/bin/mvn ${PREFIX}/bin/
+	${SUBST_CMD} ${WRKSRC}/bin/mvn
+	${SUBST_CMD} -c ${FILESDIR}/maven.rc ${SAMPLEDIR}/maven.rc
+	${SUBST_CMD} -m 755 -c ${FILESDIR}/mvn ${PREFIX}/bin/mvn
 
 .include <bsd.port.mk>

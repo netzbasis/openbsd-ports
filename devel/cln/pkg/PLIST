@@ -1,5 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2009/10/22 10:40:33 pirofti Exp $
-%%SHARED%%
+@comment $OpenBSD: PLIST,v 1.6 2014/11/11 13:28:12 pirofti Exp $
 include/cln/
 include/cln/GV.h
 include/cln/GV_complex.h
@@ -82,5 +81,5 @@ include/cln/version.h
 @info info/cln.info
 lib/libcln.a
 lib/libcln.la
-lib/pkgconfig/
+@lib lib/libcln.so.${LIBcln_VERSION}
 lib/pkgconfig/cln.pc
