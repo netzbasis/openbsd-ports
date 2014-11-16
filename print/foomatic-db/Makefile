@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.38 2014/08/21 07:43:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.40 2014/11/17 08:08:06 ajacoutot Exp $
 
 PKG_ARCH=		*
 
@@ -7,6 +7,7 @@ COMMENT=		Foomatic PPD data
 V=			20140707
 DISTNAME=		foomatic-db-4.0-${V}
 PKGNAME=		foomatic-db-4.0.${V}
+REVISION=		0
 
 CATEGORIES=		print
 
@@ -21,8 +22,9 @@ PERMIT_PACKAGE_CDROM=	Yes
 #MASTER_SITES=		http://www.openprinting.org/download/foomatic/
 MASTER_SITES=		http://pkgs.fedoraproject.org/repo/extras/foomatic-db/foomatic-db-4.0-${V}${EXTRACT_SUFX}/2ecc5e79dd2e973a6b5f4acff1921973/
 
+BUILD_DEPENDS=		print/cups,-libs
+
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS=		--disable-ppds-to-cups
 
 WRKDIST=		${WRKDIR}/foomatic-db-${V}
 
