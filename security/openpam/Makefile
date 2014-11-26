@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.4 2014/06/04 08:50:08 robert Exp $
+# $OpenBSD: Makefile,v 1.6 2014/11/25 09:41:27 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	Pluggable Authentication Module
 
-V=		20121009
+V=		20141014
 DISTNAME=	freebsd_pam-${V}
 PKGNAME=	openpam-${V}
-REVISION=	1
 
 CATEGORIES=	security
 
@@ -30,6 +29,8 @@ MAKE_ENV+=	PAM_MOD_DIR=${TRUEPREFIX}/lib/security
 
 PAM_MODULES=	deny echo exec nologin permit rootok \
 		self bsdauth group
+
+NO_TEST=	Yes
 
 pre-build:
 	cd ${WRKSRC} && ${MAKE} obj
