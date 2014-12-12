@@ -1,0 +1,2 @@
+libgnomecanvasmm provides C++ wrappers for libgnomecanvas, for use with
+gtkmm.

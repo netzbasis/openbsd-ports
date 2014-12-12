@@ -1,0 +1,71 @@
+$OpenBSD: patch-tmac_doc-common,v 1.7 2014/11/06 22:15:23 schwarze Exp $
+chunks 1-3: Tweak page headers (local change).
+chunk 4: Default value for the .Os macro (local change).
+chunk 5: Do not use an ugly double dash in the NAME line (local change).
+--- tmac/doc-common.orig	Tue Nov  4 09:38:35 2014
++++ tmac/doc-common	Wed Nov  5 23:16:57 2014
+@@ -234,12 +234,10 @@
+ .
+ .\" an alternative, more detailed scheme for naming the manual sections
+ .\"
+-.ds doc-volume-operating-system BSD
+-.nr doc-volume-operating-system-ateol 0
+ .ds doc-volume-ds-1 General Commands Manual
+ .ds doc-volume-ds-2 System Calls Manual
+ .ds doc-volume-ds-3 Library Functions Manual
+-.ds doc-volume-ds-4 Kernel Interfaces Manual
++.ds doc-volume-ds-4 Device Drivers Manual
+ .ds doc-volume-ds-5 File Formats Manual
+ .ds doc-volume-ds-6 Games Manual
+ .ds doc-volume-ds-7 Miscellaneous Information Manual
+@@ -358,19 +356,10 @@
+ .    ds doc-section \$2
+ .    ie \B\$2 \{\
+ .      if ((\$2 >= 1) & (\$2 <= 9)) \{\
+-.        ie \n[doc-volume-operating-system-ateol] \{\
+-.          ds doc-volume "\*[doc-volume-ds-\$2] \*[doc-volume-operating-system]
+-.          if \A\$3 \{\
+-.            if d doc-volume-as-\$3 \
+-.              as doc-volume "/\*[doc-volume-as-\$3]
+-.        \}\}
+-.        el \{\
+-.          ds doc-volume "\*[doc-volume-operating-system]
+-.          if \A\$3 \{\
+-.            if d doc-volume-as-\$3 \
+-.              as doc-volume "/\*[doc-volume-as-\$3]
+-.          \}
+-.          as doc-volume " \*[doc-volume-ds-\$2]
++.        ds doc-volume "\*[doc-volume-ds-\$2]
++.        if \A\$3 \{\
++.          if d doc-volume-as-\$3 \
++.            as doc-volume " (\*[doc-volume-as-\$3])
+ .    \}\}\}
+ .    el \{\
+ .      ie "\$2"unass" \
+@@ -379,7 +368,7 @@
+ .        ds doc-volume DRAFT
+ .      el .if "\$2"paper" \
+ .        ds doc-volume UNTITLED
+-.      \}\}
++.      \}
+ .      if \A\$3 \{\
+ .        if d doc-volume-ds-\$3 \
+ .          ds doc-volume "\*[doc-volume-ds-\$3]
+@@ -402,7 +391,7 @@
+ .\" NS
+ .\" NS override this in `mdoc.local', if necessary
+ .
+-.ds doc-default-operating-system BSD
++.ds doc-default-operating-system OpenBSD\~ports
+ .
+ .
+ .\" NS doc-operating-system global string
+@@ -976,7 +965,7 @@
+ .\" NS width register `Nd' set above
+ .
+ .de Nd
+-.  nop \[em] \$*
++.  nop \[en] \$*
+ ..
+ .
+ .

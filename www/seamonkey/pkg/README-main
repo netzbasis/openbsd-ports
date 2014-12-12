@@ -1,0 +1,32 @@
+$OpenBSD: README-main,v 1.5 2013/05/30 14:26:50 landry Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+To disable anti-aliasing (xft) set GDK_USE_XFT=0 in the environment.
+
+Plugins
+=======
+Seamonkey looks for plugins in ~/.mozilla/plugins and
+${LOCALBASE}/lib/mozilla/plugins.
+If the environment variable MOZ_PLUGIN_PATH is specified, this
+location will be overridden.
+
+Internationalization
+====================
+There are packages containing internationalizations for all supported
+languages. To use Seamonkey in your language, install one of the 
+seamonkey-i18n-* packages and start Seamonkey. If you are not asked for 
+confirmation of activation of the language pack, go to 
+Tools->Add-ons manager->Languages and click 'activate' on your language 
+pack. Then go to
+Edit->Preferences->Appearance and select your favorite Language/Content 
+in the 'User Interface Language' pull down menu. Restart Seamonkey.
+
+Debugging
+=========
+If you encounter crashes, you might want to build the debug FLAVOR of
+this package, and run seamonkey inside gdb, so that you can gather
+debugging logs and traces (for all threads !).
+Bug reports without that information will be ignored.

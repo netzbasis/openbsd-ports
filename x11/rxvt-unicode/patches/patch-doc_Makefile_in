@@ -1,0 +1,12 @@
+$OpenBSD: patch-doc_Makefile_in,v 1.6 2012/12/28 12:12:38 sthen Exp $
+--- doc/Makefile.in.orig	Tue Nov  6 21:54:10 2012
++++ doc/Makefile.in	Thu Dec 27 15:24:07 2012
+@@ -96,7 +96,7 @@ install: all
+ 	$(INSTALL_DATA) rxvtc.1.man $(DESTDIR)$(man1dir)/$(RXVTNAME)c.$(man1ext)
+ 	$(INSTALL_DATA) rxvtd.1.man $(DESTDIR)$(man1dir)/$(RXVTNAME)d.$(man1ext)
+ 	$(INSTALL_DATA) rxvt.7.man  $(DESTDIR)$(man7dir)/$(RXVTNAME).$(man7ext)
+-	@TIC@ $(srcdir)/etc/rxvt-unicode.terminfo
++	@TIC@ -o $(DESTDIR)$(prefix)/share/terminfo $(srcdir)/etc/rxvt-unicode.terminfo
+ 
+ distdepend: alldoc
+ 

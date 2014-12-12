@@ -1,0 +1,9 @@
+$OpenBSD: README,v 1.3 2014/10/02 08:18:56 pea Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+Proceed to complete the installation by opening install.php in your
+browser. If you are upgrading your installation, don't forget to
+remove install.php.

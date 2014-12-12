@@ -1,0 +1,17 @@
+$OpenBSD: patch-configure_ac,v 1.4 2014/10/06 10:16:42 ajacoutot Exp $
+
+Disable NetworkManager.
+
+--- configure.ac.orig	Mon Sep 22 20:08:07 2014
++++ configure.ac	Mon Oct  6 11:55:29 2014
+@@ -29,10 +29,6 @@ GDM_REQUIRED_VERSION=3.8.3
+ GEOCLUE_REQUIRED_VERSION=2.1.2
+ 
+ PKG_CHECK_MODULES(INITIAL_SETUP,
+-                  NetworkManager >= $NETWORK_MANAGER_REQUIRED_VERSION
+-                  libnm-glib >= $NETWORK_MANAGER_REQUIRED_VERSION
+-                  libnm-util >= $NETWORK_MANAGER_REQUIRED_VERSION
+-                  libnm-gtk >= $NETWORK_MANAGER_REQUIRED_VERSION
+                   polkit-gobject-1 >= $POLKIT_REQUIRED_VERSION
+                   accountsservice
+                   gnome-desktop-3.0 >= $GNOME_DESKTOP_REQUIRED_VERSION

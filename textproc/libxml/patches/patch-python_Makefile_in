@@ -1,0 +1,12 @@
+$OpenBSD: patch-python_Makefile_in,v 1.15 2014/10/17 13:24:59 jasper Exp $
+--- python/Makefile.in.orig	Thu Oct 16 09:35:14 2014
++++ python/Makefile.in	Fri Oct 17 14:25:41 2014
+@@ -881,7 +881,7 @@ info: info-recursive
+ 
+ info-am:
+ 
+-install-data-am: install-dist_docsDATA install-dist_pythonDATA \
++install-data-am: install-dist_pythonDATA \
+ 	install-pythonLTLIBRARIES
+ 
+ install-dvi: install-dvi-recursive

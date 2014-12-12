@@ -1,0 +1,29 @@
+$OpenBSD: patch-Makefile_in,v 1.5 2014/10/17 13:24:59 jasper Exp $
+--- Makefile.in.orig	Thu Oct 16 09:35:13 2014
++++ Makefile.in	Fri Oct 17 14:25:38 2014
+@@ -834,7 +834,7 @@ cmake_DATA = libxml2-config.cmake
+ # Install the tests program sources as examples 
+ #
+ BASE_DIR = $(datadir)/doc
+-DOC_MODULE = libxml2-$(VERSION)
++DOC_MODULE = libxml2
+ EXAMPLES_DIR = $(BASE_DIR)/$(DOC_MODULE)/examples
+ 
+ #
+@@ -1887,7 +1887,7 @@ testapi.c: $(srcdir)/gentest.py
+ runtests:
+ 	[ -d test   ] || $(LN_S) $(srcdir)/test   .
+ 	[ -d result ] || $(LN_S) $(srcdir)/result .
+-	$(CHECKER) ./runtest$(EXEEXT) && $(CHECKER) ./testrecurse$(EXEEXT) &&$(CHECKER) ./testapi$(EXEEXT) && $(CHECKER) ./testchar$(EXEEXT)&& $(CHECKER) ./testdict$(EXEEXT) && $(CHECKER) ./runxmlconf$(EXEEXT)
++	$(CHECKER) ./runtest$(EXEEXT) ; $(CHECKER) ./testrecurse$(EXEEXT) &&$(CHECKER) ./testapi$(EXEEXT) && $(CHECKER) ./testchar$(EXEEXT)&& $(CHECKER) ./testdict$(EXEEXT) && $(CHECKER) ./runxmlconf$(EXEEXT)
+ 	@(if [ "$(PYTHON_SUBDIR)" != "" ] ; then cd python ; \
+ 	    $(MAKE) tests ; fi)
+ 
+@@ -2387,6 +2387,7 @@ SVGtests : xmllint$(EXEEXT)
+ 	      grep "MORY ALLO" .memdump  | grep -v "MEMORY ALLOCATED : 0";\
+ 	  else \
+ 	      echo Testing $$name ; \
++	      echo "     $(CHECKER) $(top_builddir)/xmllint$(EXEEXT) --noout --relaxng $$i $$j" ; \
+ 	      $(CHECKER) $(top_builddir)/xmllint $$i > result.$$name ; \
+ 	      grep "MORY ALLO" .memdump  | grep -v "MEMORY ALLOCATED : 0";\
+ 	      diff $(srcdir)/result/SVG/$$name result.$$name ; \

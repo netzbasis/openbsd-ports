@@ -1,0 +1,7 @@
+@comment $OpenBSD: PLIST-cs,v 1.4 2013/06/22 09:31:50 espie Exp $
+@pkgpath textproc/mozilla-dicts,-${L}
+share/mozilla-dicts/
+share/mozilla-dicts/Cestina.aff
+share/mozilla-dicts/Cestina.dic
+share/mozilla-dicts/cs.aff
+share/mozilla-dicts/cs.dic

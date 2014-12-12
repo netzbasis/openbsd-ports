@@ -1,0 +1,11 @@
+$OpenBSD: patch-python_tests_Makefile_in,v 1.15 2014/10/17 13:24:59 jasper Exp $
+--- python/tests/Makefile.in.orig	Thu Oct 16 09:35:14 2014
++++ python/tests/Makefile.in	Fri Oct 17 14:25:41 2014
+@@ -409,7 +409,6 @@ PYTESTS = \
+     readererr.py\
+     relaxng.py	\
+     schema.py	\
+-    thread2.py \
+     sync.py \
+     tstLastError.py \
+     indexes.py \

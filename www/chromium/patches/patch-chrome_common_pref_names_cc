@@ -1,0 +1,12 @@
+$OpenBSD: patch-chrome_common_pref_names_cc,v 1.10 2014/11/19 21:27:32 robert Exp $
+--- chrome/common/pref_names.cc.orig.port	Wed Nov 19 06:13:08 2014
++++ chrome/common/pref_names.cc	Wed Nov 19 08:38:25 2014
+@@ -891,7 +891,7 @@ const char kAllowDeletingBrowserHistory[] = "history.d
+ // Boolean controlling whether SafeSearch is mandatory for Google Web Searches.
+ const char kForceSafeSearch[] = "settings.force_safesearch";
+ 
+-#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
++#if (defined(OS_LINUX) && !defined(OS_CHROMEOS)) || defined(OS_BSD)
+ // Linux specific preference on whether we should match the system theme.
+ const char kUsesSystemTheme[] = "extensions.theme.use_system";
+ #endif

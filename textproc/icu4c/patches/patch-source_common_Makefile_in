@@ -1,0 +1,12 @@
+$OpenBSD: patch-source_common_Makefile_in,v 1.8 2012/12/08 13:18:46 ajacoutot Exp $
+--- source/common/Makefile.in.orig	Mon Nov  5 18:14:48 2012
++++ source/common/Makefile.in	Thu Dec  6 15:36:38 2012
+@@ -64,7 +64,7 @@ endif
+ CPPFLAGS += -I$(srcdir) $(LIBCPPFLAGS) $(CPPFLAGSICUUC)
+ # we want DEFS here
+ DEFS += -DU_COMMON_IMPLEMENTATION 
+-LDFLAGS += $(LDFLAGSICUUC)
++LDFLAGS += -fPIC $(LDFLAGSICUUC)
+ 
+ # for plugin configuration
+ CPPFLAGS += "-DDEFAULT_ICU_PLUGINS=\"$(libdir)/icu\" "

@@ -1,0 +1,12 @@
+$OpenBSD: patch-content_public_common_content_switches_cc,v 1.2 2014/11/19 21:27:32 robert Exp $
+--- content/public/common/content_switches.cc.orig.port	Wed Nov 19 06:13:09 2014
++++ content/public/common/content_switches.cc	Wed Nov 19 08:38:26 2014
+@@ -924,7 +924,7 @@ const char kDisableVaapiAcceleratedVideoEncode[] =
+     "disable-vaapi-accelerated-video-encode";
+ #endif
+ 
+-#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
++#if (defined(OS_BSD) || defined(OS_LINUX)) && !defined(OS_CHROMEOS)
+ // Allows sending text-to-speech requests to speech-dispatcher, a common
+ // Linux speech service. Because it's buggy, the user must explicitly
+ // enable it so that visiting a random webpage can't cause instability.

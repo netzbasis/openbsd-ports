@@ -1,0 +1,22 @@
+# $OpenBSD: Makefile,v 1.8 2013/10/11 23:51:50 naddy Exp $
+
+COMMENT=	widget that looks just like a Mac OS 9 progress bar
+
+DISTNAME=	Tk-ProgressBar-Mac-1.2
+PKGNAME=	p5-${DISTNAME}
+REVISION=	0
+CATEGORIES=	x11 devel perl5
+
+# GPL
+PERMIT_PACKAGE_CDROM=	Yes
+
+MASTER_SITES=	${MASTER_SITE_PERL_CPAN:=Tk/}
+
+RUN_DEPENDS=	x11/p5-Tk
+BUILD_DEPENDS=	${RUN_DEPENDS}
+
+CONFIGURE_STYLE= perl
+
+NO_TEST=	Yes
+
+.include <bsd.port.mk>

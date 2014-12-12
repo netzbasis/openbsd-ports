@@ -1,0 +1,15 @@
+$OpenBSD: patch-tmac_an-old_tmac,v 1.5 2014/11/06 22:15:22 schwarze Exp $
+Tweak page headers (local change).
+--- tmac/an-old.tmac.orig	Sun Oct 12 23:00:09 2014
++++ tmac/an-old.tmac	Sun Oct 12 23:27:06 2014
+@@ -153,8 +153,8 @@
+ .    el \{ .ie '\\$2'1'  .ds an-extra3 General Commands Manual
+ .    el \{ .ie '\\$2'2'  .ds an-extra3 System Calls Manual
+ .    el \{ .ie '\\$2'3'  .ds an-extra3 Library Functions Manual
+-.    el \{ .ie '\\$2'3p' .ds an-extra3 Perl Programmers Reference Guide
+-.    el \{ .ie '\\$2'4'  .ds an-extra3 Kernel Interfaces Manual
++.    el \{ .ie '\\$2'3p' .ds an-extra3 Perl Library Manual
++.    el \{ .ie '\\$2'4'  .ds an-extra3 Device Drivers Manual
+ .    el \{ .ie '\\$2'5'  .ds an-extra3 File Formats Manual
+ .    el \{ .ie '\\$2'6'  .ds an-extra3 Games Manual
+ .    el \{ .ie '\\$2'7'  .ds an-extra3 Miscellaneous Information Manual

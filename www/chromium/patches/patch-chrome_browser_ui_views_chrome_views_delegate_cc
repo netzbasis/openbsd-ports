@@ -1,0 +1,30 @@
+$OpenBSD: patch-chrome_browser_ui_views_chrome_views_delegate_cc,v 1.4 2014/11/19 21:27:32 robert Exp $
+--- chrome/browser/ui/views/chrome_views_delegate.cc.orig.port	Wed Nov 19 06:13:08 2014
++++ chrome/browser/ui/views/chrome_views_delegate.cc	Wed Nov 19 08:38:25 2014
+@@ -45,7 +45,7 @@
+ #include "ui/views/widget/native_widget_aura.h"
+ #endif
+ 
+-#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
++#if (defined(OS_LINUX) || defined(OS_BSD)) && !defined(OS_CHROMEOS)
+ #include "ui/views/linux_ui/linux_ui.h"
+ #endif
+ 
+@@ -235,7 +235,7 @@ bool ChromeViewsDelegate::IsWindowInMetro(gfx::NativeW
+   return chrome::IsNativeViewInAsh(window);
+ }
+ 
+-#elif defined(OS_LINUX) && !defined(OS_CHROMEOS)
++#elif (defined(OS_LINUX) || defined(OS_BSD)) && !defined(OS_CHROMEOS)
+ gfx::ImageSkia* ChromeViewsDelegate::GetDefaultWindowIcon() const {
+   ui::ResourceBundle& rb = ui::ResourceBundle::GetSharedInstance();
+   return rb.GetImageSkiaNamed(IDR_PRODUCT_LOGO_64);
+@@ -374,7 +374,7 @@ void ChromeViewsDelegate::OnBeforeWidgetInit(
+ #endif
+ }
+ 
+-#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
++#if (defined(OS_LINUX) || defined(OS_BSD)) && !defined(OS_CHROMEOS)
+ bool ChromeViewsDelegate::WindowManagerProvidesTitleBar(bool maximized) {
+   // On Ubuntu Unity, the system always provides a title bar for maximized
+   // windows.

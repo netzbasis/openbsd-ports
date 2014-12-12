@@ -1,0 +1,11 @@
+#!/bin/sh
+#
+# $OpenBSD: nginx.rc,v 1.10 2014/08/26 19:43:59 robert Exp $
+
+daemon="${TRUEPREFIX}/sbin/nginx"
+
+. /etc/rc.d/rc.subr
+
+pexp="nginx:.*master.*process.*$daemon"
+
+rc_cmd $1

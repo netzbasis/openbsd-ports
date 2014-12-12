@@ -1,0 +1,23 @@
+$OpenBSD: patch-configure_ac,v 1.6 2014/05/16 16:48:58 ajacoutot Exp $
+
+https://bugzilla.gnome.org/show_bug.cgi?id=722482
+
+--- configure.ac.orig	Fri May 16 16:52:58 2014
++++ configure.ac	Fri May 16 18:26:57 2014
+@@ -616,14 +616,8 @@ dnl --------------------------------------------------
+ dnl - Check for utmp stuff
+ dnl ---------------------------------------------------------------------------
+ 
+-AC_CHECK_HEADERS(utmp.h utmpx.h libutil.h sys/param.h)
+-AC_CHECK_FUNCS([getutxent updwtmpx updwtmp])
+-AC_CHECK_LIB(util, login, [
+-		   AC_DEFINE(HAVE_LOGIN, 1, [Define if have login])
+-		       EXTRA_DAEMON_LIBS="$EXTRA_DAEMON_LIBS -lutil" ])
+-AC_CHECK_LIB(util, logout, [
+-		   AC_DEFINE(HAVE_LOGOUT, 1, [Define if have logout])
+-		       EXTRA_DAEMON_LIBS="$EXTRA_DAEMON_LIBS -lutil" ])
++AC_CHECK_HEADERS(utmp.h utmpx.h util.h sys/param.h)
++AC_CHECK_FUNCS([getutxent getttyent updwtmpx updwtmp])
+ AC_CHECK_LIB(util, logwtmp, [
+ 	  	   AC_DEFINE(HAVE_LOGWTMP, 1, [Define if have logwtmp])
+ 		       EXTRA_DAEMON_LIBS="$EXTRA_DAEMON_LIBS -lutil" ])

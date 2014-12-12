@@ -1,0 +1,12 @@
+$OpenBSD: patch-i3-nagbar_main_c,v 1.5 2014/01/22 13:48:38 dcoppa Exp $
+--- i3-nagbar/main.c.orig	Tue Jan 21 19:21:08 2014
++++ i3-nagbar/main.c	Wed Jan 22 13:19:44 2014
+@@ -167,7 +167,7 @@ static void handle_button_release(xcb_connection_t *co
+     symlink(exe_path, link_path);
+ 
+     char *terminal_cmd;
+-    sasprintf(&terminal_cmd, "i3-sensible-terminal -e %s", link_path);
++    sasprintf(&terminal_cmd, "${X11BASE}/bin/xterm -e %s", link_path);
+     printf("argv0 = %s\n", argv0);
+     printf("terminal_cmd = %s\n", terminal_cmd);
+ 

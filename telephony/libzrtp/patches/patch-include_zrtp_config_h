@@ -1,0 +1,27 @@
+$OpenBSD: patch-include_zrtp_config_h,v 1.2 2014/09/30 19:12:56 landry Exp $
+
+Recognize hppa as a big-endian platform.
+
+--- include/zrtp_config.h.orig	Sun Mar 17 12:35:45 2013
++++ include/zrtp_config.h	Tue Sep 30 13:07:54 2014
+@@ -101,6 +101,20 @@
+  */
+ #define ZRTP_BYTE_ORDER ZBO_BIG_ENDIAN
+ 
++#elif defined(__hppa__) || defined(__hppa64__)
++
++/*
++ * PA-RISC, big endian
++ */
++#define ZRTP_BYTE_ORDER ZBO_BIG_ENDIAN
++
++#elif defined(__alpha__)
++
++/*
++ * Alpha, little endian
++ */
++#define ZRTP_BYTE_ORDER ZBO_LITTLE_ENDIAN
++
+ #endif /* Automatic byte order detection */
+ 
+ #endif

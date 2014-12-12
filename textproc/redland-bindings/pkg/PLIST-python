@@ -1,0 +1,6 @@
+@comment $OpenBSD: PLIST-python,v 1.2 2014/10/02 12:33:20 jasper Exp $
+lib/python${MODPY_VERSION}/
+lib/python${MODPY_VERSION}/site-packages/
+lib/python${MODPY_VERSION}/site-packages/RDF.py
+lib/python${MODPY_VERSION}/site-packages/Redland.py
+lib/python${MODPY_VERSION}/site-packages/_Redland.so

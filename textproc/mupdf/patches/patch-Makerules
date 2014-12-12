@@ -1,0 +1,43 @@
+$OpenBSD: patch-Makerules,v 1.12 2014/06/12 14:07:19 sthen Exp $
+--- Makerules.orig	Tue Jun 10 16:09:28 2014
++++ Makerules	Thu Jun 12 14:59:25 2014
+@@ -7,6 +7,7 @@ OS := $(OS:Darwin=MACOS)
+ 
+ CFLAGS += -Wall
+ 
++ifneq "$(OS)" "OpenBSD" # don't override C optimizer flags for ports builds
+ ifeq "$(build)" "debug"
+ CFLAGS += -pipe -g -DDEBUG
+ else ifeq "$(build)" "profile"
+@@ -24,6 +25,7 @@ CFLAGS += -pipe -g -DMEMENTO -DDEBUG
+ else
+ $(error unknown build setting: '$(build)')
+ endif
++endif
+ 
+ # Windows (MINGW) build doesn't use system libraries.
+ ifeq "$(OS)" "MINGW"
+@@ -54,7 +56,7 @@ LD = xcrun ld
+ RANLIB_CMD = xcrun ranlib $@
+ 
+ # Linux uses pkg-config for system libraries.
+-else ifeq "$(OS)" "Linux"
++else
+ 
+ HAVE_X11 ?= yes
+ 
+@@ -68,12 +70,12 @@ HAVE_CURL = yes
+ SYS_CURL_CFLAGS = $(shell pkg-config --cflags libcurl)
+ SYS_CURL_LIBS = $(shell pkg-config --libs libcurl)
+ endif
+-SYS_CURL_DEPS = -lpthread -lrt
++SYS_CURL_DEPS = -lpthread
+ 
+ SYS_X11_CFLAGS = $(shell pkg-config --cflags x11 xext)
+ SYS_X11_LIBS = $(shell pkg-config --libs x11 xext)
+ 
+-SYS_FREETYPE_CFLAGS = $(shell pkg-config --cflags freetype2)
++SYS_FREETYPE_CFLAGS = $(shell pkg-config --cflags freetype2) -I${LOCALBASE}/include
+ SYS_FREETYPE_LIBS = $(shell pkg-config --libs freetype2)
+ SYS_OPENJPEG_CFLAGS = $(shell pkg-config --cflags libopenjp2)
+ SYS_OPENJPEG_LIBS = $(shell pkg-config --libs libopenjp2)

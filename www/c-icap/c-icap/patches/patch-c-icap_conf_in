@@ -1,0 +1,65 @@
+$OpenBSD: patch-c-icap_conf_in,v 1.3 2014/10/30 01:28:54 sthen Exp $
+--- c-icap.conf.in.orig	Thu Oct 23 10:20:46 2014
++++ c-icap.conf.in	Tue Oct 28 14:27:05 2014
+@@ -239,7 +239,7 @@ TemplateDefaultLanguage en
+ #	It can be used more than once to use multiple magic files.
+ # Default:
+ #	LoadMagicFile @prefix@/etc/c-icap.magic
+-LoadMagicFile @prefix@/etc/c-icap.magic
++LoadMagicFile @sysconfdir@/c-icap.magic
+ 
+ # TAG: RemoteProxyUsers
+ # Format: RemoteProxyUsers onoff
+@@ -306,7 +306,7 @@ RemoteProxyUserHeaderEncoded on
+ # Default:
+ #	No value
+ # Example:
+-#	basic_simple_db.UsersDB hash:/usr/local/c-icap/etc/c-icap-users.txt
++#	basic_simple_db.UsersDB hash:@sysconfdir@/c-icap-users.txt
+ 
+ # TAG: GroupSourceByGroup
+ # Format: GroupSourceByGroup LookupTable
+@@ -318,7 +318,7 @@ RemoteProxyUserHeaderEncoded on
+ # Default:
+ #	No set
+ # Example:
+-#	GroupSourceByGroup hash:/usr/local/c-icap/etc/c-icap-groups.txt
++#	GroupSourceByGroup hash:@sysconfdir@/c-icap-groups.txt
+ 
+ # TAG: GroupSourceByUser
+ # Format: GroupSourceByUser LookupTable
+@@ -330,7 +330,7 @@ RemoteProxyUserHeaderEncoded on
+ # Default:
+ #	No set
+ # Example:
+-#	GroupSourceByUser hash:/usr/local/c-icap/etc/c-icap-user-groups.txt
++#	GroupSourceByUser hash:@sysconfdir@/c-icap-user-groups.txt
+ 
+ # TAG: acl
+ # Format: acl name type[{param}] value1 [value2] [...]
+@@ -464,7 +464,7 @@ RemoteProxyUserHeaderEncoded on
+ #	information about the c-icap server.
+ # Default:
+ #	ServerLog @prefix@/var/log/server.log
+-ServerLog @prefix@/var/log/server.log
++ServerLog /var/log/c-icap/server.log
+ 
+ # TAG: AccessLog
+ # Format: AccessLog LogFile [LogFormat] [[!]acl1] [[!]acl2] [...]
+@@ -479,7 +479,15 @@ ServerLog @prefix@/var/log/server.log
+ #	AccessLog @prefix@/var/log/access.log
+ # Example:
+ #	AccessLog @prefix@/var/log/access.log MyFormat all
+-AccessLog @prefix@/var/log/access.log
++AccessLog /var/log/c-icap/access.log
++
++# Packager's note:
++#
++# If not rotated, these files can grow large.
++# Here are sample newsyslog.conf(5) entries to handle these files:
++#
++# /var/log/c-icap/access.log _c-icap:wheel 640 7     750  *     ZB "echo -n relog > /var/run/c-icap/c-icap.ctl"
++# /var/log/c-icap/server.log _c-icap:wheel 640 7     750  *     ZB "echo -n relog > /var/run/c-icap/c-icap.ctl"
+ 
+ # TAG: Logger
+ # Format: Logger LoggerName

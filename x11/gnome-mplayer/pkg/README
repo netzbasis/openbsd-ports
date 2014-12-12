@@ -1,0 +1,11 @@
+$OpenBSD: README,v 1.3 2012/10/31 13:22:03 dcoppa Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+To prevent errors, the "unclutter" program (from x11/unclutter) must not
+be running when using gnome-mplayer.
+
+MPlayer software volume control (softvol) is enabled by default because
+there is no volume control in mplayer's sndio(7) backend.
