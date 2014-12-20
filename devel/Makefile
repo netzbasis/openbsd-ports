@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1286 2014/12/18 06:20:50 shadchin Exp $
+# $OpenBSD: Makefile,v 1.1288 2014/12/19 20:12:00 landry Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -762,6 +762,7 @@
      SUBDIR += p5-File-Type
      SUBDIR += p5-File-chdir
      SUBDIR += p5-File-chmod
+     SUBDIR += p5-File-pushd
      SUBDIR += p5-FileHandle-Unget
      SUBDIR += p5-Filesys-Statvfs
      SUBDIR += p5-Filter-Template
@@ -1169,6 +1170,7 @@
      SUBDIR += py-argcomplete
      SUBDIR += py-argh
      SUBDIR += py-asn1
+     SUBDIR += py-asn1-modules
      SUBDIR += py-async
      SUBDIR += py-babel
      SUBDIR += py-babel,python3
