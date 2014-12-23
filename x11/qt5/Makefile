@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2014/12/11 17:50:03 zhuk Exp $
+# $OpenBSD: Makefile,v 1.9 2014/12/22 21:30:41 zhuk Exp $
 
 SHARED_ONLY =		Yes
 ONLY_FOR_ARCHS =	${GCC4_ARCHS}
@@ -23,7 +23,11 @@ PKGNAME-psql =		qt5-postgresql-${VERSION}
 PKGNAME-sqlite2 =	qt5-sqlite2-${VERSION}
 PKGNAME-tds =		qt5-tds-${VERSION}
 
+REVISION-main =		0
+
 PKG_ARCH-html =		*
+
+DPB_PROPERTIES =	parallel nojunk
 
 SHARED_LIBS =		Enginio			0.0
 SHARED_LIBS +=		Qt5Bluetooth		0.0

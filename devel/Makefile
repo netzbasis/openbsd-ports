@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1289 2014/12/21 13:53:18 benoit Exp $
+# $OpenBSD: Makefile,v 1.1291 2014/12/22 20:38:14 benoit Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -938,6 +938,7 @@
      SUBDIR += p5-PerlIO-via-Bzip2
      SUBDIR += p5-PerlIO-via-dynamic
      SUBDIR += p5-PerlIO-via-symlink
+     SUBDIR += p5-PerlIO-via-Timeout
      SUBDIR += p5-Pod-Constant
      SUBDIR += p5-Pod-Coverage
      SUBDIR += p5-Pod-ToDemo
@@ -1090,6 +1091,7 @@
      SUBDIR += p5-Time-Duration
      SUBDIR += p5-Time-Duration-Parse
      SUBDIR += p5-Time-Format
+     SUBDIR += p5-Time-Out
      SUBDIR += p5-Time-Period
      SUBDIR += p5-Time-Piece-MySQL
      SUBDIR += p5-Time-Progress
