@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1294 2014/12/26 14:52:33 benoit Exp $
+# $OpenBSD: Makefile,v 1.1296 2014/12/28 09:42:59 jasper Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -945,6 +945,7 @@
      SUBDIR += p5-Probe-Perl
      SUBDIR += p5-Proc-Background
      SUBDIR += p5-Proc-Daemon
+     SUBDIR += p5-Proc-Guard
      SUBDIR += p5-Proc-PID-File
      SUBDIR += p5-Proc-Simple
      SUBDIR += p5-Rcs
@@ -1348,7 +1349,6 @@
      SUBDIR += ruby-git
      SUBDIR += ruby-highline
      SUBDIR += ruby-hoe
-     SUBDIR += ruby-hub
      SUBDIR += ruby-i18n
      SUBDIR += ruby-indentation
      SUBDIR += ruby-isolate
