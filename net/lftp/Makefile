@@ -1,14 +1,14 @@
-# $OpenBSD: Makefile,v 1.101 2014/12/21 21:22:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.103 2015/01/08 17:07:45 sthen Exp $
 
 COMMENT=	shell-like command line ftp and sftp client
 
-DISTNAME=	lftp-4.6.0
+DISTNAME=	lftp-4.6.1
 CATEGORIES=	net
 
 HOMEPAGE=	http://lftp.yar.ru/
 
 # GPLv3+
-PERMIT_PACKAGE_CDROM=   Yes
+PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB=	c crypto curses expat idn m ereadline ssl stdc++ util z
 
@@ -25,9 +25,8 @@ CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	--with-openssl \
 		--without-gnutls \
 		--disable-shared
-# XXX hack to get rid of RAND_egd
-CONFIGURE_ENV=  CPPFLAGS="-I${LOCALBASE}/include/ereadline -I${LOCALBASE}/include \
-		-DRAND_egd\(f\)=-1" LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/ereadline -I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
 
 MODULES=	devel/gettext
 

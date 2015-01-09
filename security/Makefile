@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.358 2014/12/19 17:38:52 benoit Exp $
+# $OpenBSD: Makefile,v 1.360 2015/01/08 22:03:42 sthen Exp $
 
      SUBDIR =
      SUBDIR += ADMfzap
@@ -136,6 +136,7 @@
      SUBDIR += otpcalc
      SUBDIR += outguess
      SUBDIR += p0f
+     SUBDIR += p0f3
      SUBDIR += p11-kit
      SUBDIR += p5-Authen-Htpasswd
      SUBDIR += p5-Authen-NTLM
@@ -148,6 +149,7 @@
      SUBDIR += p5-Catalyst-Plugin-Authentication-Store-Htpasswd
      SUBDIR += p5-Catalyst-Plugin-Authorization-ACL
      SUBDIR += p5-Catalyst-Plugin-Authorization-Roles 
+     SUBDIR += p5-Chipcard-PCSC
      SUBDIR += p5-Crypt-Blowfish
      SUBDIR += p5-Crypt-Blowfish_PP
      SUBDIR += p5-Crypt-CAST5_PP
@@ -208,6 +210,7 @@
      SUBDIR += passwdqc
      SUBDIR += password-gorilla
      SUBDIR += pcsc-lite
+     SUBDIR += pcsc-tools
      SUBDIR += pdfcrack
      SUBDIR += pear-Auth
      SUBDIR += pear-Auth-HTTP
