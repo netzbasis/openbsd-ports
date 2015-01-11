@@ -1,9 +1,14 @@
-# $OpenBSD: Makefile,v 1.8 2014/07/05 10:03:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2015/01/10 13:13:16 sthen Exp $
 
 COMMENT =		network switch style shell
 
-DISTNAME =		nsh-1.0
-REVISION =		4
+DISTNAME =		nsh-1.0.20140503
+REVISION =		1
+
+GH_ACCOUNT =		yellowman
+GH_PROJECT =		nsh
+GH_COMMIT =		17aad6edd4ad4b0a7f4f281aa575490cbe68606a
+WRKDIST =		${WRKDIR}/nsh-${GH_COMMIT}
 
 CATEGORIES =		shells net
 HOMEPAGE =		http://www.nmedia.net/nsh/
@@ -13,8 +18,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += c edit termcap sqlite3
 
-MASTER_SITES =		ftp://ftp.nmedia.net/pub/nsh/
-WRKDIST =		${WRKDIR}/nsh
+#MASTER_SITES =		ftp://ftp.nmedia.net/pub/nsh/
 MAKE_FLAGS =		CC="${CC}"
 
 do-install:
@@ -24,7 +28,7 @@ do-install:
 .endfor
 	ln -s ${TRUEPREFIX}/bin/save-rw.sh ${PREFIX}/bin/save.sh
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/nsh
-.for i in MANUAL README TODO COPYRIGHT ChangeLog
+.for i in MANUAL README TODO COPYRIGHT
 	${INSTALL_DATA} ${WRKDIST}/${i} ${PREFIX}/share/doc/nsh/
 .endfor
 
