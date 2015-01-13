@@ -1,0 +1,5 @@
+@comment $OpenBSD: PLIST,v 1.2 2015/01/12 22:34:44 sthen Exp $
+firmware/iwm-3160-9
+firmware/iwm-7260-9
+firmware/iwm-7265-9
+firmware/iwm-license

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1304 2015/01/11 08:14:45 benoit Exp $
+# $OpenBSD: Makefile,v 1.1307 2015/01/12 08:55:06 benoit Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -149,6 +149,7 @@
      SUBDIR += gperf
      SUBDIR += gputils
      SUBDIR += grcs
+     SUBDIR += greg
      SUBDIR += gsettings-desktop-schemas
      SUBDIR += gsl
      SUBDIR += gtest
@@ -801,6 +802,7 @@
      SUBDIR += p5-IPC-Run3
      SUBDIR += p5-IPC-ShareLite
      SUBDIR += p5-IPC-Shareable
+     SUBDIR += p5-IPC-Signal
      SUBDIR += p5-Import-Into
      SUBDIR += p5-Inline
      SUBDIR += p5-Internals
@@ -965,6 +967,7 @@
      SUBDIR += p5-Set-Object
      SUBDIR += p5-Set-Scalar
      SUBDIR += p5-Shell-Command
+     SUBDIR += p5-Signal-Mask
      SUBDIR += p5-Slay-Makefile
      SUBDIR += p5-Slay-Makefile-Gress
      SUBDIR += p5-Slay-Maker
