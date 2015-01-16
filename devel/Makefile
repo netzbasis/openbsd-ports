@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1308 2015/01/15 12:23:26 daniel Exp $
+# $OpenBSD: Makefile,v 1.1312 2015/01/16 15:27:38 benoit Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -518,6 +518,7 @@
      SUBDIR += p5-AnyEvent
      SUBDIR += p5-AnyEvent-HTTP
      SUBDIR += p5-App-CLI
+     SUBDIR += p5-App-Cmd
      SUBDIR += p5-App-Info
      SUBDIR += p5-AppConfig
      SUBDIR += p5-AppConfig-Std
@@ -796,6 +797,7 @@
      SUBDIR += p5-IO-SessionData
      SUBDIR += p5-IO-String
      SUBDIR += p5-IO-Tee
+     SUBDIR += p5-IO-TieCombine
      SUBDIR += p5-IO-Tty
      SUBDIR += p5-IO-stringy
      SUBDIR += p5-IPC-Run
@@ -939,6 +941,7 @@
      SUBDIR += p5-Pod-Constant
      SUBDIR += p5-Pod-Coverage
      SUBDIR += p5-Pod-ToDemo
+     SUBDIR += p5-POSIX-strftime-Compiler
      SUBDIR += p5-Probe-Perl
      SUBDIR += p5-Proc-Background
      SUBDIR += p5-Proc-Daemon
@@ -959,6 +962,7 @@
      SUBDIR += p5-SVN-Simple
      SUBDIR += p5-SVN-Web
      SUBDIR += p5-Safe-Hole
+     SUBDIR += p5-Safe-Isa
      SUBDIR += p5-Safe-World
      SUBDIR += p5-Scalar-Defer
      SUBDIR += p5-Scope-Guard

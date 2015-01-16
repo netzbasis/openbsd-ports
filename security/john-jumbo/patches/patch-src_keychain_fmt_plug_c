@@ -1,11 +1,11 @@
-$OpenBSD: patch-src_keychain_fmt_plug_c,v 1.2 2014/06/04 13:52:40 sthen Exp $
---- src/keychain_fmt_plug.c.orig.port	Wed Jun  4 08:49:27 2014
-+++ src/keychain_fmt_plug.c	Wed Jun  4 11:10:28 2014
-@@ -11,6 +11,7 @@
+$OpenBSD: patch-src_keychain_fmt_plug_c,v 1.4 2015/01/16 15:40:01 sthen Exp $
+--- src/keychain_fmt_plug.c.orig	Thu Dec 18 07:59:02 2014
++++ src/keychain_fmt_plug.c	Fri Jan 16 15:08:20 2015
+@@ -17,6 +17,7 @@ john_register_one(&fmt_keychain);
  
  #include <string.h>
  #include <assert.h>
-+#include <des.h>
++#include <crypto/des.h>
  #include <errno.h>
  #include "arch.h"
  #include "misc.h"
