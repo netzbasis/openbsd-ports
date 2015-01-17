@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1312 2015/01/16 15:27:38 benoit Exp $
+# $OpenBSD: Makefile,v 1.1316 2015/01/16 19:43:59 benoit Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -634,6 +634,7 @@
      SUBDIR += p5-Data-ICal
      SUBDIR += p5-Data-ICal-TimeZone
      SUBDIR += p5-Data-Lazy
+     SUBDIR += p5-Data-Munge
      SUBDIR += p5-Data-OptList
      SUBDIR += p5-Data-Random
      SUBDIR += p5-Data-ShowTable
@@ -886,6 +887,7 @@
      SUBDIR += p5-MooseX-Types-LoadableClass
      SUBDIR += p5-MooseX-Types-Path-Class
      SUBDIR += p5-MooseX-Types-Structured
+     SUBDIR += p5-MooX-Types-MooseLike
      SUBDIR += p5-Mouse
      SUBDIR += p5-MouseX-Types
      SUBDIR += p5-Net-Server
@@ -954,6 +956,7 @@
      SUBDIR += p5-Regexp-Copy
      SUBDIR += p5-Regexp-IPv6
      SUBDIR += p5-Regexp-Shellish
+     SUBDIR += p5-Return-MultiLevel
      SUBDIR += p5-Return-Value
      SUBDIR += p5-Role-Tiny
      SUBDIR += p5-SDL
@@ -979,6 +982,7 @@
      SUBDIR += p5-Smart-Comments
      SUBDIR += p5-Sort-Key
      SUBDIR += p5-Spiffy
+     SUBDIR += p5-Stream-Buffered
      SUBDIR += p5-String-CRC32
      SUBDIR += p5-String-Format
      SUBDIR += p5-String-Scanf

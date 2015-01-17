@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.195 2015/01/08 15:01:11 pea Exp $
+# $OpenBSD: Makefile,v 1.197 2015/01/16 23:24:15 landry Exp $
 
 COMMENT-main=	PostgreSQL RDBMS (client)
 COMMENT-server=	PostgreSQL RDBMS (server)
