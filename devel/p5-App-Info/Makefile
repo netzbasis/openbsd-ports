@@ -1,13 +1,11 @@
-# $OpenBSD: Makefile,v 1.11 2014/03/23 13:57:46 jasper Exp $
+# $OpenBSD: Makefile,v 1.13 2015/01/21 14:27:55 sthen Exp $
 
 COMMENT=	interface for providing metadata about installed packages
 
 MODULES=	cpan
 DISTNAME=	App-Info-0.57
 CATEGORIES=	devel
-USE_GROFF =	Yes
-
-MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
+REVISION =	0
 
 PERMIT_PACKAGE_CDROM=   Yes
 

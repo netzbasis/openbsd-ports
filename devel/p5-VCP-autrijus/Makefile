@@ -1,16 +1,13 @@
-# $OpenBSD: Makefile,v 1.10 2013/03/11 10:50:24 espie Exp $
+# $OpenBSD: Makefile,v 1.12 2015/01/21 14:28:00 sthen Exp $
 
 COMMENT=	tool for copying resources between repositories
 
 MODULES=	cpan
 DISTNAME=	VCP-autrijus-snapshot-0.9-20050110
 PKGNAME=	p5-VCP-autrijus-0.9
-REVISION =	1
+REVISION =	2
 CATEGORIES=	devel
 CPAN_AUTHOR=	AUTRIJUS
-USE_GROFF =	Yes
-
-MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 
 PERMIT_PACKAGE_CDROM=	Yes
 

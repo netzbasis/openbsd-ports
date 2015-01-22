@@ -1,19 +1,16 @@
-# $OpenBSD: Makefile,v 1.6 2013/03/11 10:50:15 espie Exp $
+# $OpenBSD: Makefile,v 1.8 2015/01/21 14:27:57 sthen Exp $
 
 COMMENT=	Mayan Long Count calendar
 
 DISTNAME=	DateTime-Calendar-Mayan-0.0601
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	devel
-
-MAINTAINER=	Kevin Lo <kevlo@openbsd.org>
 
 # perl
 PERMIT_PACKAGE_CDROM=	Yes
 
 MODULES=	cpan
-USE_GROFF =	Yes
 RUN_DEPENDS=	devel/p5-DateTime>=0.5000
 
 CONFIGURE_STYLE=modbuild
