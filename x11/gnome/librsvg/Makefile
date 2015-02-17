@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.101 2014/12/03 11:40:32 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.103 2015/02/16 16:03:31 ajacoutot Exp $
 
-SHARED_ONLY=	Yes
+SHARED_ONLY=		Yes
 
-COMMENT=	SAX-based render library for SVG files
+COMMENT=		SAX-based render library for SVG files
 
-GNOME_PROJECT=	librsvg
-GNOME_VERSION=	2.40.6
+GNOME_PROJECT=		librsvg
+GNOME_VERSION=		2.40.7
 
-SHARED_LIBS +=  rsvg-2               38.1     # 42.4
+SHARED_LIBS +=  rsvg-2               38.2     # 42.7
 
-CATEGORIES=	devel graphics
+CATEGORIES=		devel graphics
 
 # GPLv2/LGPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -20,17 +20,17 @@ WANTLIB += gobject-2.0 graphite2 gthread-2.0 harfbuzz lzma m pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread
 WANTLIB += pthread-stubs xcb xcb-render xcb-shm xml2 z
 
-MODULES=	devel/gettext \
-		x11/gnome
+MODULES=		devel/gettext \
+			x11/gnome
 
-MODGNOME_TOOLS=	gobject-introspection vala
+MODGNOME_TOOLS=		gobject-introspection vala
 
-LIB_DEPENDS=	devel/pango \
-		graphics/gdk-pixbuf2 \
-		textproc/libxml \
-		www/libcroco
+LIB_DEPENDS=		devel/pango \
+			graphics/gdk-pixbuf2 \
+			textproc/libxml \
+			www/libcroco
 
-CONFIGURE_ARGS=	--disable-tools
+CONFIGURE_ARGS=		--disable-tools
 
 # error: -Bsymbolic requested but not supported by ld
 CONFIGURE_ARGS +=	--disable-Bsymbolic
