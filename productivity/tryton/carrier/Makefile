@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2013/05/19 10:49:10 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2015/03/15 09:23:10 ajacoutot Exp $
 
 TRYTOND_MODULE =	carrier
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2014/04/29 08:05:32 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2015/03/15 09:23:10 ajacoutot Exp $
 
 TRYTOND_MODULE =	bank
 

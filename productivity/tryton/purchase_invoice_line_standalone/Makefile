@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2013/05/19 10:49:11 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2015/03/15 09:23:11 ajacoutot Exp $
 
 TRYTOND_MODULE =	purchase_invoice_line_standalone
 

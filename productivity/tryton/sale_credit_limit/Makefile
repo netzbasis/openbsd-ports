@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2014/04/29 11:09:14 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2015/03/15 09:23:11 ajacoutot Exp $
 
 TRYTOND_MODULE =	sale_credit_limit
 

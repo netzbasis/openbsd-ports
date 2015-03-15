@@ -1,7 +1,6 @@
-# $OpenBSD: Makefile,v 1.12 2014/04/29 09:39:34 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2015/03/15 09:23:11 ajacoutot Exp $
 
 TRYTOND_MODULE =	project_revenue
-REVISION =		0
 
 RUN_DEPENDS =		productivity/tryton/project \
 			productivity/tryton/product \

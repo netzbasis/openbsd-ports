@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2014/04/29 08:05:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.15 2015/03/15 09:23:11 ajacoutot Exp $
 
 TRYTOND_MODULE =	project
 
