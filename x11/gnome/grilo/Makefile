@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2014/08/24 18:32:20 jasper Exp $
+# $OpenBSD: Makefile,v 1.31 2015/03/24 13:37:10 jasper Exp $
 
 COMMENT=	framework for making media discovery and browsing easy
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.437 2015/03/21 19:26:09 czarkoff Exp $
+# $OpenBSD: Makefile,v 1.439 2015/03/24 19:23:26 okan Exp $
 
      SUBDIR =
      SUBDIR += TclXML
@@ -112,6 +112,7 @@
      SUBDIR += meld
      SUBDIR += mgdiff
      SUBDIR += mozilla-dicts
+     SUBDIR += multimarkdown
      SUBDIR += mupdf
      SUBDIR += mxml
      SUBDIR += namazu
@@ -293,6 +294,7 @@
      SUBDIR += palm-bookmarks
      SUBDIR += par
      SUBDIR += patchutils
+     SUBDIR += pdfgrep
      SUBDIR += pdftk
      SUBDIR += pear-File
      SUBDIR += pear-File-Find

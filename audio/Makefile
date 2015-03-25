@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.347 2015/03/22 06:34:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.349 2015/03/25 06:18:57 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += abcde
@@ -173,6 +173,8 @@
      SUBDIR += p5-gnupod
      SUBDIR += p5-libvorbis
      SUBDIR += pacpl
+     SUBDIR += pavucontrol
+     SUBDIR += pavucontrol,gtk3
      SUBDIR += paulstretch
      SUBDIR += pianobar
      SUBDIR += picard
