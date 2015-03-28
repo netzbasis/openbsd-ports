@@ -1,9 +1,12 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2015/03/16 15:20:02 bcallah Exp $
+# $OpenBSD: Makefile,v 1.3 2015/03/27 08:11:29 ajacoutot Exp $
+
+BROKEN-i386 =	unreliable build, frequently hangs after compiling translations
 
 V =		1.6
 COMMENT =	open source drawing/editing program modeled after Paint.NET
 DISTNAME =	pinta-${V}
 CATEGORIES =	graphics x11
+REVISION =	0
 
 HOMEPAGE =	http://pinta-project.com/
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
@@ -23,7 +26,7 @@ BUILD_DEPENDS =	devel/mono-addins \
 
 RUN_DEPENDS =	devel/mono-addins \
 		devel/desktop-file-utils \
-		x11/gtk+2,-guic \
+		x11/gtk+3,-guic \
 		x11/mono-gtk2
 
 CONFIGURE_STYLE =	gnu

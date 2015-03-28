@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.384 2015/03/16 15:20:25 bcallah Exp $
+# $OpenBSD: Makefile,v 1.386 2015/03/26 12:09:41 sthen Exp $
 
      SUBDIR =
      SUBDIR += DevIL
@@ -125,6 +125,7 @@
      SUBDIR += libdivxdecore
      SUBDIR += libdmtx
      SUBDIR += libdvbpsi
+     SUBDIR += libepoxy
      SUBDIR += libexif
      SUBDIR += libexif-gtk
      SUBDIR += libgexiv2
@@ -228,6 +229,8 @@
      SUBDIR += py-opengl
      SUBDIR += py-pigment
      SUBDIR += py-pyx
+     SUBDIR += py-sane
+     SUBDIR += py-sane,python3
      SUBDIR += py3-cairo
      SUBDIR += pycha
      SUBDIR += qimageblitz

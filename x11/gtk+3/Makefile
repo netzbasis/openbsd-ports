@@ -1,22 +1,29 @@
-# $OpenBSD: Makefile,v 1.121 2015/03/23 13:19:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.125 2015/03/27 18:14:28 ajacoutot Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT-main=		multi-platform graphical toolkit
 COMMENT-cups=		gtk+3 CUPS print backend
 COMMENT-cloudprint=	gtk+3 Google Cloud Print backend
+COMMENT-guic=		gtk+ icon theme caching utility
 
-GNOME_VERSION=		3.14.10
 GNOME_PROJECT=		gtk+
+GNOME_VERSION=		3.16.0
 
 PKGNAME-main=		gtk+3-${GNOME_VERSION}
 PKGNAME-cups=		gtk+3-cups-${GNOME_VERSION}
 PKGNAME-cloudprint=	gtk+3-cloudprint-${GNOME_VERSION}
+PKGNAME-guic=		gtk-update-icon-cache-${GNOME_VERSION}
+
+REVISION-main=		1
+REVISION-cups=		1
+REVISION-cloudprint=	1
+REVISION-guic=		1
 
 CATEGORIES=		x11 devel
 
-SHARED_LIBS +=  gdk-3                1400.0   # 1400.9
-SHARED_LIBS +=  gtk-3                1400.0   # 1400.9
+SHARED_LIBS +=  gdk-3                1600.0   # 1600.0
+SHARED_LIBS +=  gtk-3                1600.0   # 1600.0
 SHARED_LIBS +=  gailutil-3           0.0      # 0.0
 
 HOMEPAGE=		http://www.gtk.org/
@@ -26,15 +33,10 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 # LGPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi
-WANTLIB += Xinerama Xrandr Xrender atk-1.0 atk-bridge-2.0 atspi
-WANTLIB += cairo cairo-gobject dbus-1 expat ffi fontconfig freetype
-WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
-WANTLIB += graphite2 gthread-2.0 harfbuzz m pango-1.0 pangocairo-1.0
-WANTLIB += pangoft2-1.0 pcre pixman-1 png pthread pthread-stubs
-WANTLIB += xcb xcb-render xcb-shm z
+WANTLIB += m ffi gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
+WANTLIB += pcre png pthread z
 
-MULTI_PACKAGES=		-main -cups -cloudprint
+MULTI_PACKAGES=		-main -cups -cloudprint -guic
 
 MODULES=		devel/gettext \
 			devel/dconf \
@@ -43,8 +45,8 @@ MODULES=		devel/gettext \
 LIB_DEPENDS-main=	${LIB_DEPENDS} \
 			devel/pango \
 			graphics/gdk-pixbuf2 \
-			x11/gnome/at-spi2-atk>=2.12.0
-
+			graphics/libepoxy \
+			x11/gnome/at-spi2-atk
 RUN_DEPENDS-main=	${RUN_DEPENDS} \
 			x11/hicolor-icon-theme
 
@@ -53,27 +55,46 @@ RUN_DEPENDS-main=	${RUN_DEPENDS} \
 # some apps needs the svg version of the icon (librsvg pulled in)
 RUN_DEPENDS-main +=	x11/gnome/adwaita-icon-theme
 
-WANTLIB-main += ${WANTLIB}
-WANTLIB-main += c
+WANTLIB-main += ${WANTLIB} c epoxy
+WANTLIB-main += ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi
+WANTLIB-main += Xinerama Xrandr Xrender atk-1.0 atk-bridge-2.0 atspi
+WANTLIB-main += cairo cairo-gobject dbus-1 expat fontconfig freetype
+WANTLIB-main += graphite2 gthread-2.0 harfbuzz pango-1.0 pangocairo-1.0
+WANTLIB-main += pangoft2-1.0 pixman-1 pthread-stubs xcb xcb-render xcb-shm
 
-RUN_DEPENDS-cups=	${MODGETTEXT_RUN_DEPENDS}
 LIB_DEPENDS-cups=	${LIB_DEPENDS} \
 			print/cups,-libs \
 			${BASE_PKGPATH},-main=${GNOME_VERSION}
+RUN_DEPENDS-cups=	${MODGETTEXT_RUN_DEPENDS}
 
-WANTLIB-cups += ${WANTLIB}
-WANTLIB-cups += avahi-client avahi-common cups gdk-3 gmp
+WANTLIB-cups += ${WANTLIB} epoxy
+WANTLIB-cups += ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi
+WANTLIB-cups += Xinerama Xrandr Xrender atk-1.0 atk-bridge-2.0 atspi
+WANTLIB-cups += cairo cairo-gobject dbus-1 expat fontconfig freetype
+WANTLIB-cups += graphite2 gthread-2.0 harfbuzz pango-1.0 pangocairo-1.0
+WANTLIB-cups += pangoft2-1.0 pixman-1 pthread-stubs xcb xcb-render
+WANTLIB-cups += avahi-client avahi-common cups gdk-3 gmp xcb-shm
 WANTLIB-cups += gnutls gtk-3 hogweed nettle p11-kit tasn1
 
-RUN_DEPENDS-cloudprint=	${MODGETTEXT_RUN_DEPENDS}
 LIB_DEPENDS-cloudprint=	${LIB_DEPENDS} \
 			devel/json-glib \
 			net/librest \
 			${BASE_PKGPATH},-main=${GNOME_VERSION}
+RUN_DEPENDS-cloudprint=	${MODGETTEXT_RUN_DEPENDS}
 
-WANTLIB-cloudprint += ${WANTLIB}
+WANTLIB-cloudprint += ${WANTLIB} epoxy
+WANTLIB-cloudprint += ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi
+WANTLIB-cloudprint += Xinerama Xrandr Xrender atk-1.0 atk-bridge-2.0 atspi
+WANTLIB-cloudprint += cairo cairo-gobject dbus-1 expat fontconfig freetype
+WANTLIB-cloudprint += graphite2 gthread-2.0 harfbuzz pango-1.0 pangocairo-1.0
+WANTLIB-cloudprint += pangoft2-1.0 pixman-1 pthread-stubs xcb xcb-render
 WANTLIB-cloudprint += gdk-3 gtk-3 json-glib-1.0 rest-0.7 soup-2.4 soup-gnome-2.4
-WANTLIB-cloudprint += sqlite3 xml2 lzma
+WANTLIB-cloudprint += sqlite3 xml2 lzma xcb-shm
+
+LIB_DEPENDS-guic=	graphics/gdk-pixbuf2
+RUN_DEPENDS-guic=	${MODGETTEXT_RUN_DEPENDS} \
+			x11/hicolor-icon-theme
+WANTLIB-guic += ${WANTLIB} c
 
 MODGNOME_TOOLS=		docbook gobject-introspection gtk-update-icon-cache \
 			desktop-file-utils
@@ -95,11 +116,14 @@ WANTLIB-cups +=	colordprivate colord lcms2
 CONFIGURE_ARGS +=	--disable-colord
 .endif
 
-# do not build gtk-update-icon-cache and other shared tools
-CONFIGURE_ARGS +=	--enable-gtk2-dependency
-BUILD_DEPENDS +=	x11/gtk+2,-guic
-
 FAKE_FLAGS=	sysconfdir=${PREFIX}/share/examples/gtk+3
+
+# XXX prevent a cyclic dependency (gtk+3 -> libcanberra-gtk3 -> gtk+3);
+# only used for the gtk3-widget-factory example;
+# see patch-configure_ac
+AUTOCONF_VERSION=	2.69
+CONFIGURE_STYLE=	autoconf
+CONFIGURE_ARGS +=	--disable-libcanberra
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/lib/gtk-3.0/modules
