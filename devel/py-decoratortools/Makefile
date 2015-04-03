@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.12 2013/03/11 10:50:25 espie Exp $
+# $OpenBSD: Makefile,v 1.14 2015/04/02 19:38:21 jasper Exp $
 
 COMMENT=		class and function decorators
 
-VERSION=		1.8
-DISTNAME=		DecoratorTools-${VERSION}
-PKGNAME=		py-decoratortools-${VERSION}
+MODPY_EGG_VERSION=	1.8
+DISTNAME=		DecoratorTools-${MODPY_EGG_VERSION}
+PKGNAME=		py-decoratortools-${MODPY_EGG_VERSION}
 
 CATEGORIES=		devel
 
@@ -13,12 +13,10 @@ HOMEPAGE=		http://cheeseshop.python.org/pypi/DecoratorTools
 # PSF/ZPL
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=		${MASTER_SITE_PYPI:=D/DecoratorTools/}
+MODPY_PI =		Yes
 EXTRACT_SUFX=		.zip
 
 MODULES=		lang/python
-
-SUBST_VARS=		VERSION
 
 MODPY_SETUPTOOLS=	Yes
 

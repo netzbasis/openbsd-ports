@@ -1,12 +1,13 @@
-# $OpenBSD: Makefile,v 1.12 2014/04/12 06:48:38 benoit Exp $
+# $OpenBSD: Makefile,v 1.14 2015/04/02 19:38:21 jasper Exp $
 
 COMMENT=	Python cgi/fastcgi/mod_python framework
 
-DISTNAME =	jonpy-0.11
-PKGNAME=	py-${DISTNAME}
-CATEGORIES=    	www
+MODPY_EGG_VERSION=	0.11
+DISTNAME =		jonpy-${MODPY_EGG_VERSION}
+PKGNAME=		py-${DISTNAME}
+CATEGORIES=    		www
 
-MASTER_SITES =	${MASTER_SITE_PYPI:=j/jonpy/}
+MODPY_PI =	Yes
 
 HOMEPAGE=	http://jonpy.sourceforge.net/
 
