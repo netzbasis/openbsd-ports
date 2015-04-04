@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.242 2014/12/20 14:44:58 landry Exp $
+# $OpenBSD: Makefile,v 1.245 2015/04/03 12:47:20 jasper Exp $
 
      SUBDIR =
      SUBDIR += adwaita-icon-theme
@@ -19,7 +19,8 @@
      SUBDIR += color-manager
      SUBDIR += common
      SUBDIR += contacts
-     SUBDIR += controlcenter
+     SUBDIR += control-center
+     SUBDIR += dconf-editor
      SUBDIR += desktop
      SUBDIR += devel-docs
      SUBDIR += devhelp
@@ -82,7 +83,6 @@
      SUBDIR += orca
      SUBDIR += photos
      SUBDIR += planner
-     SUBDIR += polari
      SUBDIR += power-manager
      SUBDIR += py-atspi
      SUBDIR += quadrapassel

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.349 2015/03/25 06:18:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.351 2015/04/03 16:29:04 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += abcde
@@ -42,6 +42,7 @@
      SUBDIR += faac
      SUBDIR += faad
      SUBDIR += festival
+     SUBDIR += fdk-aac
      SUBDIR += flac
      SUBDIR += flac123
      SUBDIR += flite
@@ -59,6 +60,7 @@
      SUBDIR += gqmpeg
      SUBDIR += grip
      SUBDIR += gsm
+     SUBDIR += gsound
      SUBDIR += gtkpod
      SUBDIR += herrie
      SUBDIR += hgd

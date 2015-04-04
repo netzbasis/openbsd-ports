@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.386 2015/03/26 12:09:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.388 2015/04/03 18:33:20 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += DevIL
@@ -63,6 +63,7 @@
      SUBDIR += gdk-pixbuf2
      SUBDIR += geeqie
      SUBDIR += gegl
+     SUBDIR += gegl03
      SUBDIR += geomview
      SUBDIR += gfract
      SUBDIR += gif2png
@@ -198,7 +199,6 @@
      SUBDIR += p5-Image-Imlib2
      SUBDIR += p5-Image-Info
      SUBDIR += p5-Image-MetaData-JPEG
-     SUBDIR += p5-Image-Scale
      SUBDIR += p5-Image-Size
      SUBDIR += p5-Imager
      SUBDIR += p5-Imager-QRCode

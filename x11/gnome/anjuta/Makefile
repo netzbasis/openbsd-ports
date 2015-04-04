@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.125 2015/03/31 06:43:45 jasper Exp $
+# $OpenBSD: Makefile,v 1.127 2015/04/03 15:35:44 jasper Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT=		versatile IDE for GNOME
 
 GNOME_PROJECT=		anjuta
-GNOME_VERSION=		3.14.1
-REVISION=		2
+GNOME_VERSION=		3.16.0
 
 SHARED_LIBS +=  anjuta-3             0.0      # 0.0
 
@@ -71,7 +70,6 @@ MODGNOME_TOOLS += gobject-introspection vala yelp
 
 YACC=			bison -y
 
-CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--with-symbol-db-shm=/tmp \
 			--disable-neon
 
