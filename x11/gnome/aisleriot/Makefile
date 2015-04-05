@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2015/04/02 19:43:13 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.8 2015/04/04 09:21:05 ajacoutot Exp $
 
 COMMENT =		suite of solitaire card games
 
 GNOME_PROJECT =		aisleriot
 GNOME_VERSION =		3.16.0
+REVISION =		0
 
 CATEGORIES =		games
 
@@ -41,8 +42,7 @@ BUILD_DEPENDS =		shells/bash
 
 CONFIGURE_ARGS =	--with-card-theme-formats=svg
 
-CONFIGURE_ENV=		APPDATA_VALIDATE="/usr/bin/true" \
-			CONFIG_SHELL="${LOCALBASE}/bin/bash" \
+CONFIGURE_ENV=		CONFIG_SHELL="${LOCALBASE}/bin/bash" \
 			GUILE="${LOCALBASE}/bin/guile2"
 
 .include <bsd.port.mk>

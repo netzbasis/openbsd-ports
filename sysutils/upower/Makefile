@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2015/04/03 12:08:10 landry Exp $
+# $OpenBSD: Makefile,v 1.47 2015/04/04 09:36:37 ajacoutot Exp $
 
 ONLY_FOR_ARCHS =${APM_ARCHS}
 
@@ -8,7 +8,7 @@ DISTNAME =	upower-0.99.2
 EXTRACT_SUFX =	.tar.xz
 CATEGORIES =	sysutils
 SHARED_LIBS +=  upower-glib               1.0 # 2.0
-REVISION =	3
+REVISION =	6
 
 HOMEPAGE =	http://upower.freedesktop.org/
 MASTER_SITES =	${HOMEPAGE}/releases/
@@ -41,5 +41,8 @@ MODULES =	textproc/intltool
 LIB_DEPENDS =	x11/dbus-glib
 BUILD_DEPENDS =	devel/gobject-introspection \
 		textproc/docbook-xsl
+
+# /usr/local/share/dbus-1/system-services/
+RUN_DEPENDS +=	x11/dbus,-suid
 
 .include <bsd.port.mk>

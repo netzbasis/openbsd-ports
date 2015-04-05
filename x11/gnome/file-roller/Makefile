@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.104 2015/04/03 12:31:09 jasper Exp $
+# $OpenBSD: Makefile,v 1.107 2015/04/04 13:05:34 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,6 +6,7 @@ COMMENT=	archive manager utility for GNOME
 
 GNOME_PROJECT=	file-roller
 GNOME_VERSION=	3.16.0
+REVISION=	2
 
 CATEGORIES=	archivers
 
@@ -36,9 +37,10 @@ RUN_DEPENDS=	archivers/gcpio \
 # "The Unarchiver" has not been ported to OpenBSD yet
 RUN_DEPENDS +=	archivers/unrar
 
-LIB_DEPENDS=	archivers/libarchive \
+LIB_DEPENDS=	archivers/libarchive>=3.1.2 \
 		devel/json-glib \
 		devel/libmagic \
+		devel/libnotify \
 		x11/gnome/nautilus
 
 MODGNOME_TOOLS += desktop-file-utils gtk-update-icon-cache yelp

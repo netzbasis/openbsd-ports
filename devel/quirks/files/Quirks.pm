@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.222 2015/04/03 08:32:42 jasper Exp $
+# $OpenBSD: Quirks.pm,v 1.224 2015/04/04 10:30:57 jasper Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -361,6 +361,8 @@ my $stem_extensions = {
 	'ruby-dbus' => 'ruby21-dbus',
 	'polarssl' => 'mbedtls',
 	'mscore' => 'musescore',
+# 5.8
+	'california' => 'calendar',
 };
 
 # reasons for obsolete packages
@@ -506,6 +508,7 @@ my $obsolete_reason = {
 	'rioutil' => 3,
 	'chmsee' => 0,
 	'p5-Image-Scale' => 0,
+	'appdata-tools' => 3,
 };
 
 # ->is_base_system($handle, $state):

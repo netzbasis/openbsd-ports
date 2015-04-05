@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.130 2015/04/03 16:47:34 jasper Exp $
+# $OpenBSD: Makefile,v 1.132 2015/04/04 10:19:08 ajacoutot Exp $
 
 SHARED_ONLY=	Yes
 
@@ -6,6 +6,7 @@ COMMENT=	GNOME terminal
 
 GNOME_PROJECT=	gnome-terminal
 GNOME_VERSION=	3.16.0
+REVISION=	0
 
 # GPLv3+
 PERMIT_PACKAGE_CDROM=	Yes
@@ -26,7 +27,6 @@ MODULES=	devel/dconf \
 		x11/gnome
 
 BUILD_DEPENDS=	devel/gsettings-desktop-schemas \
-		misc/appdata-tools \
 		x11/gnome/shell
 RUN_DEPENDS=	devel/gsettings-desktop-schemas
 

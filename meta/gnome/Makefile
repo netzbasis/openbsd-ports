@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.115 2015/04/03 18:14:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.118 2015/04/04 10:29:02 jasper Exp $
 
 COMMENT-main=		GNOME desktop meta-package (base installation)
 COMMENT-extras=		GNOME desktop meta-package (full installation)
@@ -9,7 +9,7 @@ PKGNAME=		gnome-${V}
 PKGNAME-main=		gnome-${V}
 PKGNAME-extras=		gnome-extras-${V}
 
-REVISION-main=		0
+REVISION-main=		3
 REVISION-extras=	0
 
 MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
@@ -34,8 +34,9 @@ RUN_DEPENDS-main +=	x11/gnome/control-center \
 RUN_DEPENDS-main +=	x11/gnome/shell-extensions
 
 # GNOME spooler is CUPS (gnome-printers-panel in gnome-control-center)
-# add gtk+3-cups so that gtkprint() can see native CUPS printers;
+# add gtk+{2,3}-cups so that gtkprint() can see native CUPS printers;
 # add gtk+3-cloudprint, gnome-online-accounts is already a dependency
+RUN_DEPENDS-main +=	x11/gtk+2,-cups
 RUN_DEPENDS-main +=	x11/gtk+3,-cups
 RUN_DEPENDS-main +=	x11/gtk+3,-cloudprint
 
@@ -60,7 +61,7 @@ RUN_DEPENDS-main +=	x11/gnome/gvfs,-goa, \
 			x11/gnome/gvfs,-smb,
 
 # "Make it fancy!"
-RUN_DEPENDS-main +=	x11/gnome/california \
+RUN_DEPENDS-main +=	x11/gnome/calendar \
 			x11/gnome/contacts \
 			x11/gnome/documents \
 			x11/gnome/eog-plugins \
