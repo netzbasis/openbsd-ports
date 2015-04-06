@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.112 2015/04/05 23:28:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.116 2015/04/06 09:34:48 ajacoutot Exp $
 
 COMMENT=		next generation GNOME shell
 
 GNOME_PROJECT=		gnome-shell
 GNOME_VERSION=		3.16.0
-REVISION=		2
+REVISION=		3
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
@@ -35,9 +35,10 @@ MODULES=		devel/dconf \
 			lang/python \
 			x11/gnome
 
+# sync with devel/spidermonkey
 MODULES +=		gcc4
-MODGCC4_ARCHS =		*
-MODGCC4_LANGS =		c c++
+MODGCC4_ARCHS=		*
+MODGCC4_LANGS=		c c++
 
 MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 
