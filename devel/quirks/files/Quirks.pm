@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.228 2015/04/15 09:40:16 ajacoutot Exp $
+# $OpenBSD: Quirks.pm,v 1.230 2015/04/21 15:42:47 jasper Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -517,6 +517,8 @@ my $obsolete_reason = {
 	'moovida-plugins-bad' => 3,
 	'moovida-plugins-good' => 3,
 	'moovida-plugins-ugly' => 3,
+	'ntop' => 2,
+	'onyx' => 3,
 };
 
 # ->is_base_system($handle, $state):

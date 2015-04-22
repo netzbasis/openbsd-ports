@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Config.pm,v 1.30 2014/12/25 15:14:14 espie Exp $
+# $OpenBSD: Config.pm,v 1.33 2015/04/21 09:53:13 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -65,14 +65,21 @@ sub parse_command_line
     "[-I pathlist] [-J p] [-j n] [-p parallel] [-P pathlist] [-h hosts]",
     "[-L logdir] [-l lockdir] [-b log] [-M threshold] [-X pathlist]",
     "[pathlist ...]");
+	for my $l (qw(j f F)) {
+		my $o = $state->{opt}{$l};
+		if (defined $o && $o !~ m/^\d+$/) {
+			$state->usage("-$l takes an integer argument, not $o");
+		}
+	}
     	$state->{chroot} = $state->opt('B');
-	if (my ($l, $p, $uid, $gid) = getpwuid $<) {
-		$state->{user} = $l;
-		$state->{uid} = $uid;
-		$state->{gid} = $gid;
-	} else {
+	$state->{base_user} = DPB::Id->from_uid($<);
+	if (!defined $state->{base_user}) {
 		$state->usage("Can't figure out who I am");
 	}
+	if ($state->defines('BUILD_USER')) {
+		$state->{build_user} = DPB::Id->new($state->defines('BUILD_USER'));
+	}
+
 	my $p;
 	($state->{ports}, $state->{portspath}, $state->{repo}, $state->{localarch},
 	    $state->{distdir}, $state->{localbase}, $state->{xenocara}, $p) =
@@ -110,9 +117,6 @@ sub parse_command_line
 		if ($state->localarch ne $state->arch) {
 			$state->usage(
 		    "Can't use -j if -A arch is not local architecture");
-		}
-		if ($state->opt('j') !~ m/^\d+$/) {
-			$state->usage("-j takes a numerical argument");
 		}
 	}
 	$state->{realports} = $state->anchor($state->{ports});
@@ -183,9 +187,6 @@ sub parse_command_line
 	}
 
 	$state->{opt}{f} //= 2;
-	if ($state->opt('f') !~ m/^\d+$/) {
-		$state->usage("-f takes a numerical argument");
-	}
 	if ($state->opt('f')) {
 		$state->{want_fetchinfo} = 1;
 	}
@@ -229,10 +230,8 @@ sub command_line_overrides
 
 	my $override_prop = DPB::HostProperties->new;
 
-	for my $k (qw(user uid gid)) {
-		if (defined $state->{$k}) {
-			$override_prop->{$k} = $state->{$k};
-		}
+	if (defined $state->{base_user}) {
+		$override_prop->{base_user} = $state->{base_user};
 	}
 	if (!$state->{subst}->empty('HISTORY_ONLY')) {
 		$state->{want_fetchinfo} = 1;
@@ -347,6 +346,35 @@ sub parse_hosts_file
 		$prop->add_overrides($override);
 		DPB::Core::Init->new($host, $prop);
 	}
+}
+
+package DPB::Id;
+
+sub from_uid
+{
+	my ($class, $u) = @_;
+	if (my ($l, undef, $uid, $gid) = getpwuid $u) {
+		bless { user => $l, uid => $uid, gid => $gid }, $class;
+	} else {
+		return undef;
+	}
+}
+
+sub new
+{
+	my ($class, $u) = @_;
+	# XXX getpwnam for local access, distant access is different
+	if (my ($l, undef, $uid, $gid) = getpwnam $u) {
+		bless { user => $l, uid => $uid, gid => $gid }, $class;
+	} else {
+		bless { user => $u}, $class;
+	}
+}
+
+sub user
+{
+	my $self = shift;
+	return $self->{user};
 }
 
 1;
