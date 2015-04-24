@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1327 2015/04/22 11:43:01 jca Exp $
+# $OpenBSD: Makefile,v 1.1329 2015/04/23 18:45:19 bluhm Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -64,7 +64,6 @@
      SUBDIR += codeworker
      SUBDIR += colordiff
      SUBDIR += commoncpp
-     SUBDIR += cook
      SUBDIR += coxpcall
      SUBDIR += cppcheck
      SUBDIR += cpphs
@@ -717,6 +716,7 @@
      SUBDIR += p5-Expect-Simple
      SUBDIR += p5-Exporter-Lite
      SUBDIR += p5-Exporter-Tidy
+     SUBDIR += p5-Exporter-Tiny
      SUBDIR += p5-ExtUtils-CChecker
      SUBDIR += p5-ExtUtils-Config
      SUBDIR += p5-ExtUtils-Depends
