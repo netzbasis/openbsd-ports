@@ -1,9 +1,7 @@
-# $OpenBSD: Makefile,v 1.29 2015/04/23 11:49:07 zhuk Exp $
+# $OpenBSD: Makefile,v 1.32 2015/04/24 16:16:39 zhuk Exp $
 
 SHARED_ONLY =		Yes
 ONLY_FOR_ARCHS =	${GCC4_ARCHS}
-IGNORE-html =		possible hidden dependency, packaging problems
-IGNORE-qch =		missing one more LD_LIBRARY_PATH
 
 VERSION =		5.4.1
 ENGINIO_VERSION =	1.1.1
@@ -26,7 +24,8 @@ PKGNAME-psql =		qt5-postgresql-${VERSION}
 PKGNAME-qch =		qt5-qch-${VERSION}
 PKGNAME-sqlite2 =	qt5-sqlite2-${VERSION}
 PKGNAME-tds =		qt5-tds-${VERSION}
-REVISION-main =		0
+REVISION-main =		3
+REVISION-examples =	0
 
 PKG_ARCH-html =		*
 PKG_ARCH-qch =		*
@@ -216,6 +215,7 @@ MAKE_ENV =		LD_LIBRARY_PATH=${WRKBUILD}/qtbase/lib \
 			RUBY=${RUBY} \
 			REAL_BUILD_ROOT=${WRKBUILD} \
 			OPENBSD_CPPFLAGS="-isystem ${WRKDIR}/gcc-include"
+#MAKE_ENV +=		CCACHE_RECACHE=1
 
 MAKE_FLAGS =		-B -j ${MAKE_JOBS} \
 			PYTHON=${MODPY_BIN} \
@@ -295,10 +295,18 @@ CONFIGURE_ENV += LDFLAGS="-Wl,--relax"
 # first, named "first".
 ALL_TARGET =		first
 FAKE_TARGET =		install
+
+# Force re-running qmake before generating documentation
+# to allow qdoc and qhelpgenerator do their work.
+.if ${BUILD_PACKAGES:M-html} || ${BUILD_PACKAGES:M-qch}
+ALL_TARGET +=		qmake_all
+.endif
+
 .if ${BUILD_PACKAGES:M-html}
 ALL_TARGET +=		html_docs
 FAKE_TARGET +=		install_html_docs
 .endif
+
 .if ${BUILD_PACKAGES:M-qch}
 ALL_TARGET +=		qch_docs
 FAKE_TARGET +=		install_qch_docs
@@ -361,20 +369,6 @@ post-extract:
 .if ${FLAVOR:Mno_tests}
 	rm -f ${WRKDIST}/qtbase/tests/tests.pro
 .endif
-
-post-configure:
-	# Fake configuration to make sure no Makefile will
-	# try to use /usr/local/lib/qt5/bin/qdoc or
-	# /usr/local/lib/qt5/bin/qhelpgenerator instead of
-	# ${WRKBUILD}/qtbase/bin/* ones.
-	mkdir -p ${WRKBUILD}/qtbase/mkspecs/modules
-	(   echo "QT_TOOL.qdoc.binary  = ${WRKBUILD}/qtbase/bin/qdoc"; \
-	    echo "QT_TOOL.qdoc.depends = core xml") \
-	    >>${WRKBUILD}/qtbase/mkspecs/modules/qt_tool_qdoc.pri
-	mkdir -p ${WRKBUILD}/qtbase/mkspecs/modules
-	(   echo "QT_TOOL.qhelpgenerator.binary  = ${WRKBUILD}/qttools/bin/qhelpgenerator"; \
-	    echo "QT_TOOL.qhelpgenerator.depends = core gui network help_private") \
-	    >>${WRKBUILD}/qtbase/mkspecs/modules/qt_tool_qhelpgenerator.pri
 
 post-install:
 	# programs
