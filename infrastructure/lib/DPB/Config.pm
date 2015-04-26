@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Config.pm,v 1.33 2015/04/21 09:53:13 espie Exp $
+# $OpenBSD: Config.pm,v 1.36 2015/04/25 14:24:03 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -80,21 +80,14 @@ sub parse_command_line
 		$state->{build_user} = DPB::Id->new($state->defines('BUILD_USER'));
 	}
 
-	my $p;
-	($state->{ports}, $state->{portspath}, $state->{repo}, $state->{localarch},
-	    $state->{distdir}, $state->{localbase}, $state->{xenocara}, $p) =
+	($state->{ports}, $state->{localarch},
+	    $state->{distdir}, $state->{xenocara}) =
 		DPB::Vars->get(DPB::Host::Localhost->getshell($state), 
 		$state->make,
-		"PORTSDIR", "PORTSDIR_PATH", "PACKAGE_REPOSITORY", 
-		"MACHINE_ARCH", "DISTDIR", "LOCALBASE", 
-		"PORTS_BUILD_XENOCARA_TOO", "SIGNING_PARAMETERS");
-    	if (!defined $state->{portspath}) {
+		"PORTSDIR", "MACHINE_ARCH", "DISTDIR", 
+		"PORTS_BUILD_XENOCARA_TOO");
+    	if (!defined $state->{ports}) {
 		$state->usage("Can't obtain vital information from the ports tree");
-	}
-	if ($p =~ m/^\s*$/) {
-		$state->{signer} = '-Dunsigned';
-	} elsif ($p =~ m/\-DSIGNER\=\S+/) {
-		$state->{signer} = $&;
 	}
 	if ($state->{xenocara} =~ m/Yes/i) {
 		$state->{xenocara} = 1;
@@ -102,10 +95,6 @@ sub parse_command_line
 		$state->{xenocara} = 0;
 	}
 	$state->{arch} //= $state->{localarch};
-	$state->{portspath} = [ map {$state->anchor($_)} split(/:/, $state->{portspath}) ];
-	$state->{realdistdir} = $state->anchor($state->{distdir});
-	$state->{logdir} = $state->{flogdir} // $ENV{LOGDIR} // '%p/logs/%a';
-	$state->{lockdir} //= $state->{flockdir} // "%L/locks";
 	if (defined $state->{opt}{F}) {
 		if (defined $state->{opt}{j} || defined $state->{opt}{f}) {
 			$state->usage("Can't use -F with -f or -j");
@@ -120,13 +109,12 @@ sub parse_command_line
 		}
 	}
 	$state->{realports} = $state->anchor($state->{ports});
+	$state->{realdistdir} = $state->anchor($state->{distdir});
 	if (defined $state->{config_files}) {
 		for my $f (@{$state->{config_files}}) {
 			$f = $state->expand_path($f);
 		}
 	}
-
-	$state->{logdir} = $state->expand_path($state->{logdir});
 
 	# keep cmdline subst values
 	my %cmdline = %{$state->{subst}};
@@ -135,6 +123,30 @@ sub parse_command_line
 	# ... as those must override the config files contents
 	while (my ($k, $v) = each %cmdline) {
 		$state->{subst}->{$k} = $v;
+	}
+	# reparse things properly now that we can chroot
+	my $p;
+	($state->{ports}, $state->{portspath}, $state->{repo}, $state->{localarch},
+	    $state->{distdir}, $state->{localbase}, $state->{xenocara}, $p) =
+		DPB::Vars->get(DPB::Host::Localhost->getshell($state), 
+		$state->make,
+		"PORTSDIR", "PORTSDIR_PATH", "PACKAGE_REPOSITORY", 
+		"MACHINE_ARCH", "DISTDIR", "LOCALBASE", 
+		"PORTS_BUILD_XENOCARA_TOO", "SIGNING_PARAMETERS");
+
+    	if (!defined $state->{portspath}) {
+		$state->usage("Can't obtain vital information from the ports tree");
+	}
+	$state->{portspath} = [ map {$state->anchor($_)} split(/:/, $state->{portspath}) ];
+	$state->{realdistdir} = $state->anchor($state->{distdir});
+	$state->{logdir} = $state->{flogdir} // $ENV{LOGDIR} // '%p/logs/%a';
+	$state->{lockdir} //= $state->{flockdir} // "%L/locks";
+	$state->{logdir} = $state->expand_path($state->{logdir});
+
+	if ($p =~ m/^\s*$/) {
+		$state->{signer} = '-Dunsigned';
+	} elsif ($p =~ m/\-DSIGNER\=\S+/) {
+		$state->{signer} = $&;
 	}
 
 	$state->{size_log} = "%f/build-stats/%a-size";
@@ -302,21 +314,22 @@ sub parse_config_files
 	if ($state->{config_files}) {
 		for my $config (@{$state->{config_files}}) {
 			$class->parse_hosts_file($config, $state, 
-			    $default_prop, $override_prop);
+			    \$default_prop, $override_prop);
 		}
 	}
-	$state->{default_prop} = $default_prop;
-	$state->{override_prop} = $override_prop;
+	my $prop = DPB::HostProperties->new($default_prop);
+	$prop->finalize_with_overrides($override_prop);
 	if (!$state->{config_files}) {
-		my $prop = DPB::HostProperties->new($state->{default_prop});
-		$prop->add_overrides($state->{override_prop});
 		DPB::Core::Init->new('localhost', $prop);
+	}
+	for my $u (qw(build_user log_user lock_user fetch_user)) {
+		$state->{$u} //= $prop->{$u};
 	}
 }
 
 sub parse_hosts_file
 {
-	my ($class, $filename, $state, $default, $override) = @_;
+	my ($class, $filename, $state, $rdefault, $override) = @_;
 	open my $fh, '<', $filename or
 		$state->fatal("Can't read host files #1: #2", $filename, $!);
 	my $cores = {};
@@ -329,7 +342,7 @@ sub parse_hosts_file
 			next;
 		}
 		# copy default properties
-		my $prop = DPB::HostProperties->new($default);
+		my $prop = DPB::HostProperties->new($$rdefault);
 		my ($host, @properties) = split(/\s+/, $_);
 		for my $arg (@properties) {
 			if ($arg =~ m/^(.*?)=(.*)$/) {
@@ -340,10 +353,10 @@ sub parse_hosts_file
 			next;
 		}
 		if ($host eq 'DEFAULT') {
-			$default = { %$prop };
+			$$rdefault = { %$prop };
 			next;
 		}
-		$prop->add_overrides($override);
+		$prop->finalize_with_overrides($override);
 		DPB::Core::Init->new($host, $prop);
 	}
 }
@@ -375,6 +388,13 @@ sub user
 {
 	my $self = shift;
 	return $self->{user};
+}
+
+sub run_as
+{
+	my ($self, $code) = @_;
+	local ($>, $)) = ($self->{uid}, $self->{gid});
+	&$code;
 }
 
 1;

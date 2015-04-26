@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Host.pm,v 1.1 2014/12/25 15:14:14 espie Exp $
+# $OpenBSD: Host.pm,v 1.3 2015/04/25 11:23:20 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -39,7 +39,7 @@ sub new
 	}
 	if (!defined $hosts->{$name}) {
 		my $h = bless {host => $name, 
-			prop => DPB::HostProperties->finalize($prop) }, $class;
+			prop => $prop }, $class;
 		# XXX have to register *before* creating the shell
 		$hosts->{$name} = $h;
 		$h->{shell} = $h->shellclass->new($h);
@@ -90,7 +90,9 @@ sub is_alive
 sub shellclass
 {
 	my $self = shift;
-	if ($self->{prop}->{chroot}) {
+	if ($self->{prop}{iamroot}) {
+		return "DPB::Shell::Local::Root";
+	} elsif ($self->{prop}{chroot}) {
 		return "DPB::Shell::Local::Chroot";
 	} else {
 		return "DPB::Shell::Local";
