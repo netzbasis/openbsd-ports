@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.232 2015/04/23 14:37:33 schwarze Exp $
+# $OpenBSD: Quirks.pm,v 1.235 2015/04/28 23:23:22 bluhm Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -365,6 +365,7 @@ my $stem_extensions = {
 	'mscore' => 'musescore',
 # 5.8
 	'california' => 'calendar',
+	'ipv6-toolkit' => 'ipv6toolkit',
 };
 
 # reasons for obsolete packages
@@ -521,6 +522,8 @@ my $obsolete_reason = {
 	'onyx' => 3,
 	'libunicode' => 5,
 	'cook' => 3,
+	'schroedinger' => 3,
+	'wordpress' => 1,
 };
 
 # ->is_base_system($handle, $state):
