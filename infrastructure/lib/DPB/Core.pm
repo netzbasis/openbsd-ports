@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Core.pm,v 1.75 2014/12/25 15:14:14 espie Exp $
+# $OpenBSD: Core.pm,v 1.78 2015/05/02 13:12:39 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -81,7 +81,11 @@ sub is_alive
 sub shell
 {
 	my $self = shift;
-	return $self->host->shell;
+	if ($self->{user}) {
+		return $self->host->shell->run_as($self->{user});
+	} else {
+		return $self->host->shell;
+	}
 }
 
 sub new
@@ -95,7 +99,11 @@ sub new
 sub clone
 {
 	my $self = shift;
-	return ref($self)->new($self->hostname, $self->prop);
+	my $c = ref($self)->new($self->hostname, $self->prop);
+	if ($self->prop->{round_robin}) {
+		$c->{user} = $self->prop->{build_user}->next_user;
+	}
+	return $c;
 }
 
 sub host
@@ -754,6 +762,14 @@ sub may_unsquiggle
 sub can_be_swallowed
 {
 	return 0;
+}
+
+sub new
+{
+	my ($class, $host, $prop) = @_;
+	my $c = $class->SUPER::new($host, $prop);
+	$c->{user} = $prop->{fetch_user};
+	return $c;
 }
 
 package DPB::Core::Clock;

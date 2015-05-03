@@ -1,4 +1,4 @@
-.\"	$OpenBSD: dolock.1,v 1.2 2010/09/09 05:40:41 jasper Exp $
+.\"	$OpenBSD: dolock.1,v 1.4 2015/05/02 16:42:55 espie Exp $
 .\"
 .\" Copyright (c) 2010 Marc Espie <espie@openbsd.org>
 .\"
@@ -14,7 +14,7 @@
 .\" ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
 .\" OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
 .\"
-.Dd $Mdocdate: September 9 2010 $
+.Dd $Mdocdate: May 2 2015 $
 .Dt DOLOCK 1
 .Os
 .Sh NAME
@@ -22,7 +22,9 @@
 .Nd lock port for concurrent builds
 .Sh SYNOPSIS
 .Nm dolock
-.Ar lockname
+.Op Fl g Ar group
+.Op Fl m Ar mode
+.Ar lockname Op comment ...
 .Sh DESCRIPTION
 .Nm
 creates a lock named
@@ -31,6 +33,13 @@ using
 .Xr open 2 .
 If the lock is already held, it will display one single wait message on
 stderr, sleep and retry until satisfaction.
+.Pp
+If necessary, creates the lock directory, using
+.Fl m Ar mode
+as a mode argument or the default if that option is not specified,
+and
+.Fl g Ar group
+as the group owner if that option is specified.
 .Pp
 This implements a locking mechanism for ports building, see
 .Sq LOCK INFRASTRUCTURE

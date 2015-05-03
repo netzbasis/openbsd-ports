@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1329 2015/04/23 18:45:19 bluhm Exp $
+# $OpenBSD: Makefile,v 1.1331 2015/05/01 15:46:03 landry Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -71,6 +71,7 @@
      SUBDIR += cppunit
      SUBDIR += cryptopp
      SUBDIR += cscope
+     SUBDIR += csmith
      SUBDIR += cudf
      SUBDIR += cunit
      SUBDIR += cutils
@@ -984,6 +985,7 @@
      SUBDIR += p5-Slay-Maker
      SUBDIR += p5-Smart-Comments
      SUBDIR += p5-Sort-Key
+     SUBDIR += p5-Sort-Naturally
      SUBDIR += p5-Spiffy
      SUBDIR += p5-Stream-Buffered
      SUBDIR += p5-String-CRC32
@@ -1019,6 +1021,7 @@
      SUBDIR += p5-Term-Screen
      SUBDIR += p5-Term-ScreenColor
      SUBDIR += p5-Term-Shell
+     SUBDIR += p5-Term-ShellUI
      SUBDIR += p5-Term-Size
      SUBDIR += p5-Test-Assertions
      SUBDIR += p5-Test-Base

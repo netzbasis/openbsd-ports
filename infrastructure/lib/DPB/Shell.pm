@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Shell.pm,v 1.5 2015/04/27 17:01:37 espie Exp $
+# $OpenBSD: Shell.pm,v 1.7 2015/05/02 15:59:06 espie Exp $
 #
 # Copyright (c) 2010-2014 Marc Espie <espie@openbsd.org>
 #
@@ -145,13 +145,14 @@ sub exec
 		my $umask = $self->prop->{umask};
 		$cmd = "umask $umask && $cmd";
 	}
+	$self->{user} //= $self->prop->{build_user};
 	if ($chroot) {
 		my @cmd2 = ("chroot");
 		if (!$self->prop->{iamroot}) {
 			unshift(@cmd2, OpenBSD::Paths->sudo, "-E");
 		}
-		if (!$self->{sudo} && defined $self->prop->{build_user}) {
-			push(@cmd2, "-u", $self->prop->{build_user}->user);
+		if (!$self->{sudo} && defined $self->{user}) {
+			push(@cmd2, "-u", $self->{user}->user);
 		}
 		$self->_run(@cmd2, $chroot, "/bin/sh", "-c", $self->quote($cmd));
 	} else {
@@ -204,8 +205,8 @@ sub exec
 	}
 	$self->{user} //= $self->prop->{build_user};
 	if (!$self->{sudo} && defined $self->{user}) {
-		setuid($self->{user}{uid});
 		setgid($self->{user}{gid});
+		setuid($self->{user}{uid});
 	}
 	if ($self->{env}) {
 		while (my ($k, $v) = each %{$self->{env}}) {

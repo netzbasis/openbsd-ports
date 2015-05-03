@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2014/12/12 05:18:30 uebayasi Exp $
+# $OpenBSD: Makefile,v 1.4 2015/04/30 13:06:10 jca Exp $
 
 ONLY_FOR_ARCHS =	amd64
 
@@ -6,6 +6,7 @@ COMMENT =		instrumentation framework for dynamic analysis tools
 CATEGORIES =		devel
 
 V =			3.10.1
+REVISION =		0
 DISTNAME =		valgrind-${V}
 EXTRACT_SUFX =		.tar.bz2
 

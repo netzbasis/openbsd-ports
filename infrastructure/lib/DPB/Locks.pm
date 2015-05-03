@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Locks.pm,v 1.30 2015/04/26 18:00:19 espie Exp $
+# $OpenBSD: Locks.pm,v 1.32 2015/05/02 09:44:40 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -17,7 +17,7 @@
 
 use strict;
 use warnings;
-use DPB::Config;
+use DPB::User;
 
 package DPB::Locks;
 our @ISA = (qw(DPB::UserProxy));
@@ -33,7 +33,7 @@ sub new
 	my $lockdir = $state->{lockdir};
 	my $o = bless {lockdir => $lockdir, 
 		dpb_pid => $$, 
-		user => $state->{lock_user},
+		user => $state->{log_user},
 		dpb_host => DPB::Core::Local->hostname}, $class;
 	$o->make_path($lockdir);
 	$o->run_as(
