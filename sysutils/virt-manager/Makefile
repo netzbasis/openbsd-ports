@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.10 2015/04/04 09:21:04 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.12 2015/05/06 21:36:33 jasper Exp $
 
 COMMENT=		GUI for managing virtual machines through libvirt
 
-DISTNAME=		virt-manager-1.1.0
-REVISION=		3
+DISTNAME=		virt-manager-1.2.0
+REVISION=		0
 CATEGORIES=		sysutils x11
 
 HOMEPAGE=		http://virt-manager.org/
@@ -16,6 +16,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 MASTER_SITES=		${HOMEPAGE}/download/sources/virt-manager/
 
 MODULES=		devel/dconf \
+			devel/gettext \
 			lang/python \
 			textproc/intltool
 
@@ -42,7 +43,8 @@ MODPY_ADJ_FILES=	virt-clone virt-convert virt-install virt-manager \
 			virt-xml
 
 pre-configure:
-	${SUBST_CMD} ${WRKSRC}/virtcli/cliconfig.py
+	${SUBST_CMD} ${WRKSRC}/virtcli/cliconfig.py \
+		${WRKSRC}/virtinst/capabilities.py
 
 do-test:
 	@${MODPY_TEST_TARGET}
