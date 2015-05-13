@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Shell.pm,v 1.9 2015/05/08 12:35:53 espie Exp $
+# $OpenBSD: Shell.pm,v 1.11 2015/05/12 19:49:54 espie Exp $
 #
 # Copyright (c) 2010-2014 Marc Espie <espie@openbsd.org>
 #
@@ -127,6 +127,9 @@ sub exec
 	if ($self->{nochroot}) {
 		undef $chroot;
 	}
+	if ($self->prop->{iamroot}) {
+		$chroot //= '/';
+	}
 	unshift @argv, 'exec' unless $self->{as_root} && !$chroot;
 	if ($self->{env}) {
 		while (my ($k, $v) = each %{$self->{env}}) {
@@ -154,7 +157,8 @@ sub exec
 		if (!$self->{as_root} && defined $self->{user}) {
 			push(@cmd2, "-u", $self->{user}->user);
 		}
-		$self->_run(@cmd2, $chroot, "/bin/sh", "-c", $self->quote($cmd));
+		$self->_run(@cmd2, $chroot, "/bin/sh", "-c", 
+		    $self->quote($cmd));
 	} else {
 		$self->_run($cmd);
 	}
@@ -197,7 +201,8 @@ sub exec
 {
 	my ($self, @argv) = @_;
 	my $chroot = $self->prop->{chroot};
-	($>, $)) = (0, 0);
+	$> = 0;
+	$) = 0;
 	if ($self->{nochroot}) {
 		undef $chroot;
 	}
