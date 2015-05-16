@@ -1,26 +1,23 @@
-# $OpenBSD: Makefile,v 1.2 2015/05/14 12:28:48 jasper Exp $
-
-ONLY_FOR_ARCHS=	amd64 i386
+# $OpenBSD: Makefile,v 1.4 2015/05/15 07:37:14 jasper Exp $
 
 COMMENT=	collect logs locally in preparation for processing elsewhere
 
-# git clone as of 19812cfa7e
-DISTNAME=	logstash-forwarder-0.3.1.1
-REVISION=	0
+GH_ACCOUNT=	elastic
+GH_PROJECT=	logstash-forwarder
+GH_TAGNAME=	v0.4.0
+DISTNAME=	${GH_PROJECT}-${GH_TAGNAME:S/v//}
 
-MASTER_SITES=	http://distfiles.nl/
-
-BUILD_DEPENDS=	lang/go
+MODULES=	lang/go
 
 NO_TEST=	Yes
 
 WANTLIB +=	c pthread
 
-pre-configure:
-	${SUBST_CMD} ${WRKSRC}/logstash-forwarder.conf.example
-
 do-build:
 	cd ${WRKSRC} && go build -o logstash-forwarder
+
+pre-configure:
+	${SUBST_CMD} ${WRKSRC}/logstash-forwarder.conf.example
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/logstash-forwarder ${PREFIX}/sbin/
