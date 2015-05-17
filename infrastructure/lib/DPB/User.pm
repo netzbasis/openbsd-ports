@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: User.pm,v 1.13 2015/05/13 15:14:13 espie Exp $
+# $OpenBSD: User.pm,v 1.15 2015/05/16 18:14:04 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -29,8 +29,10 @@ sub from_uid
 	if (my ($l, undef, $uid, $gid) = getpwuid $u) {
 		my $groups = `/usr/bin/id -G $u`;
 		chomp $groups;
-		bless { user => $l, uid => $uid, gid => $gid,
-		    groups => $groups }, $class;
+		my $group = getgrgid($gid);
+		bless { user => $l, uid => $uid, 
+		    group => $group, gid => $gid,
+		    grouplist => "$gid $groups" }, $class;
 	} else {
 		return undef;
 	}
@@ -43,8 +45,10 @@ sub new
 	if (my ($l, undef, $uid, $gid) = getpwnam $u) {
 		my $groups = `/usr/bin/id -G $u`;
 		chomp $groups;
-		bless { user => $l, uid => $uid, gid => $gid, 
-		    groups => $groups }, $class;
+		my $group = getgrgid($gid);
+		bless { user => $l, uid => $uid, 
+		    group => $group, gid => $gid,
+		    grouplist => "$gid $groups" }, $class;
 	} else {
 		bless { user => $u}, $class;
 	}
@@ -60,7 +64,7 @@ sub run_as
 {
 	my ($self, $code) = @_;
 	local $> = 0;
-	local $) = "$self->{gid} $self->{groups}";
+	local $) = $self->{grouplist};
 	$> = $self->{uid};
 	&$code;
 }
@@ -118,7 +122,7 @@ sub open
 {
 	my ($self, $mode, @parms) = @_;
 	local $> = 0;
-	local $) = "$self->{gid} $self->{groups}";
+	local $) = $self->{grouplist};
 	$> = $self->{uid};
 	if (open(my $fh, $mode, @parms)) {
 		my $flags = fcntl($fh, F_GETFL, 0);
@@ -133,7 +137,7 @@ sub opendir
 {
 	my ($self, $dirname) = @_;
 	local $> = 0;
-	local $) = "$self->{gid} $self->{groups}";
+	local $) = $self->{grouplist};
 	$> = $self->{uid};
 	if (opendir(my $fh, $dirname)) {
 		return $fh;
@@ -146,7 +150,7 @@ sub unlink
 {
 	my ($self, @links) = @_;
 	local $> = 0;
-	local $) = "$self->{gid} $self->{groups}";
+	local $) = $self->{grouplist};
 	$> = $self->{uid};
 	unlink(@links);
 }
@@ -155,28 +159,37 @@ sub rename
 {
 	my ($self, $o, $n) = @_;
 	local $> = 0;
-	local $) = "$self->{gid} $self->{groups}";
+	local $) = $self->{grouplist};
 	$> = $self->{uid};
 	rename($o, $n);
+}
+
+sub stat
+{
+	my ($self, $name) = @_;
+	local $> = 0;
+	local $) = $self->{grouplist};
+	$> = $self->{uid};
+	return stat $name;
 }
 
 package DPB::UserProxy;
 sub run_as
 {
 	my ($self, $code) = @_;
-	$self->{user}->run_as($code);
+	$self->user->run_as($code);
 }
 
 sub make_path
 {
 	my ($self, @dirs) = @_;
-	$self->{user}->make_path(@dirs);
+	$self->user->make_path(@dirs);
 }
 
 sub open
 {
 	my ($self, @parms) = @_;
-	return $self->{user}->open(@parms);
+	return $self->user->open(@parms);
 }
 
 sub file
@@ -188,19 +201,31 @@ sub file
 sub opendir
 {
 	my ($self, $dirname) = @_;
-	return $self->{user}->opendir($dirname);
+	return $self->user->opendir($dirname);
 }
 
 sub unlink
 {
 	my ($self, @links) = @_;
-	return $self->{user}->unlink(@links);
+	return $self->user->unlink(@links);
 }
 
 sub rename
 {
 	my ($self, @parms) = @_;
-	return $self->{user}->rename(@parms);
+	return $self->user->rename(@parms);
+}
+
+sub stat
+{
+	my ($self, $name) = @_;
+	return $self->user->stat($name);
+}
+
+sub user
+{
+	my $self = shift;
+	return $self->{user};
 }
 
 # since we don't want to keep too many open files, encapsulate
