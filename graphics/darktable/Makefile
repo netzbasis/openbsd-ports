@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.47 2015/05/15 13:43:40 sthen Exp $
+# $OpenBSD: Makefile,v 1.49 2015/05/18 11:04:06 sthen Exp $
 
 # requires SSE
 ONLY_FOR_ARCHS=	i386 amd64
@@ -75,6 +75,8 @@ CFLAGS+=	-D_DEBUG
 
 # error: #error "SSE instruction set not enabled"
 CFLAGS+=	-msse2
+
+CXXFLAGS=	${CFLAGS}
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
