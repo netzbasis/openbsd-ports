@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2015/01/24 11:11:15 landry Exp $
+# $OpenBSD: Makefile,v 1.17 2015/05/28 12:03:57 ajacoutot Exp $
 
 BROKEN-mips64 =		missing atomic ops
 BROKEN-mips64el =	missing atomic ops
@@ -15,6 +15,8 @@ V =			1.9.0
 DISTNAME =		ogre-$V
 PKGNAME-main =		ogre-${V}
 PKGNAME-samples =	ogre-samples-${V}
+REVISION-main =		1
+REVISION-samples =	1
 
 MULTI_PACKAGES =	-main -samples
 
@@ -55,8 +57,7 @@ MODGCC4_LANGS =		c c++
 MODGCC4_ARCHS =		*
 LIB_DEPENDS =		graphics/freeimage \
 			archivers/zziplib \
-			devel/boost \
-			lang/gcc/${MODGCC4_VERSION},-main
+			devel/boost
 LIB_DEPENDS-main =	${LIB_DEPENDS} \
 			textproc/tinyxml
 LIB_DEPENDS-samples =	${LIB_DEPENDS} \
