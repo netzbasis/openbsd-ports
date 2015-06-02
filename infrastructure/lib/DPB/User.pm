@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: User.pm,v 1.16 2015/05/18 16:35:15 espie Exp $
+# $OpenBSD: User.pm,v 1.18 2015/06/01 20:39:06 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -155,6 +155,15 @@ sub unlink
 	unlink(@links);
 }
 
+sub link
+{
+	my ($self, $a, $b) = @_;
+	local $> = 0;
+	local $) = $self->{grouplist};
+	$> = $self->{uid};
+	link($a, $b);
+}
+
 sub rename
 {
 	my ($self, $o, $n) = @_;
@@ -208,6 +217,12 @@ sub unlink
 {
 	my ($self, @links) = @_;
 	return $self->user->unlink(@links);
+}
+
+sub link
+{
+	my ($self, $a, $b) = @_;
+	return $self->user->link($a, $b);
 }
 
 sub rename
