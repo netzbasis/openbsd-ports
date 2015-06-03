@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2015/06/02 08:16:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.1.1.1 2015/06/02 11:34:15 bmercer Exp $
 
-COMMENT =		go code coverage tool
-DISTNAME =		gocover-1.4
+COMMENT =		reports suspicious constructs in go code
+DISTNAME =		govet-1.4
 CATEGORIES =		devel
 HOMEPAGE =		http://golang.org/
-REVISION =		1
+REVISION =		0
 
 MAINTAINER =		Adam Wolk <adam.wolk@tintagel.pl>
 
@@ -26,14 +26,17 @@ EXTRACT_CASES =		gotools-1.4${EXTRACT_SUFX}) mkdir -p ${WRKSRC}; \
 WRKSRC =		${WRKDIST}/src/golang.org/x/tools
 
 do-build:
-	cd ${WRKSRC}/cmd/cover && GOPATH="${WRKDIST}" go build -v
+	cd ${WRKSRC}/cmd/vet && GOPATH="${WRKDIST}" go build -v
 
-do-test:
-	cd ${WRKSRC}/cmd/cover && GOPATH="${WRKDIST}" go test -v
+# Requires http://golang.org/test/errchk which is not present
+# in lang/go or the download for this package
+NO_TEST =		yes
+#do-test:
+#	cd ${WRKSRC}/cmd/vet && GOPATH="${WRKDIST}" go test -v
 
 do-install:
 	${INSTALL_PROGRAM_DIR} ${PREFIX}/go/${GO_PKG}
-	${INSTALL_PROGRAM} -p ${WRKSRC}/cmd/cover/cover \
-		${PREFIX}/go/${GO_PKG}/cover
+	${INSTALL_PROGRAM} -p ${WRKSRC}/cmd/vet/vet \
+		${PREFIX}/go/${GO_PKG}/vet
 
 .include <bsd.port.mk>

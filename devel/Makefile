@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1343 2015/05/28 23:34:38 bmercer Exp $
+# $OpenBSD: Makefile,v 1.1345 2015/06/02 19:18:08 pea Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -149,6 +149,7 @@
      SUBDIR += goffice
      SUBDIR += goffice08
      SUBDIR += goopy
+     SUBDIR += govet
      SUBDIR += gpatch
      SUBDIR += gperf
      SUBDIR += gputils
@@ -647,6 +648,7 @@
      SUBDIR += p5-Data-Stag
      SUBDIR += p5-Data-Structure-Util
      SUBDIR += p5-Data-Types
+     SUBDIR += p5-Data-Uniqid
      SUBDIR += p5-Data-UUID
      SUBDIR += p5-Data-VString
      SUBDIR += p5-Data-Validate
