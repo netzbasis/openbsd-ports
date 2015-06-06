@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.11 2015/04/02 14:21:16 jasper Exp $
+# $OpenBSD: Makefile,v 1.13 2015/06/05 14:26:22 sthen Exp $
 
 COMMENT=		Python Imaging Library (fork)
 
-MODPY_EGG_VERSION=	2.7.0
+MODPY_EGG_VERSION=	2.8.1
 DISTNAME=		Pillow-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
 CATEGORIES=		graphics
@@ -27,12 +27,12 @@ MODULES=		lang/python \
 			x11/tk
 
 BUILD_DEPENDS=		${MODPY_TKINTER_DEPENDS}
-TEST_DEPENDS=		${FULLPKGNAME}:${BUILD_PKGPATH}
-RUN_DEPENDS=		${MODPY_RUN_DEPENDS} \
-			${MODPY_TKINTER_DEPENDS}
-# XXX can we get rid of tkinter dep for the library?
+TEST_DEPENDS=		${FULLPKGNAME}:${BUILD_PKGPATH} \
+			devel/py-nose${MODPY_FLAVOR}
+RUN_DEPENDS=		${MODPY_RUN_DEPENDS}
 
 # Enable JPEG2000 support via openjpeg?
+# Is Tk image support actually useful?
 LIB_DEPENDS=		graphics/lcms2 \
 			graphics/libwebp \
 			${MODTK_LIB_DEPENDS}
@@ -41,7 +41,7 @@ MODPY_SETUPTOOLS=	Yes
 
 MODPY_ADJ_FILES=	Scripts/*.py
 
-SUBST_VARS+=		INCL_DIR
+SUBST_VARS+=		INCL_DIR MODPY_FLAVOR
 INCL_DIR=		${MODPY_INCDIR:S/${LOCALBASE}\///}
 
 post-install:
