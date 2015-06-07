@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2015/06/05 20:34:58 stu Exp $
+# $OpenBSD: Makefile,v 1.36 2015/06/06 14:19:10 stu Exp $
 
 COMMENT =		Tool Command Language
 

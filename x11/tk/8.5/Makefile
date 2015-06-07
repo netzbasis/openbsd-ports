@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.37 2015/06/05 20:35:53 stu Exp $
+# $OpenBSD: Makefile,v 1.39 2015/06/06 14:19:23 stu Exp $
 
 COMMENT =		graphical toolkit for Tcl
 
