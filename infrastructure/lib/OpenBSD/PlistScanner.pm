@@ -1,4 +1,4 @@
-# $OpenBSD: PlistScanner.pm,v 1.5 2015/06/07 12:21:21 espie Exp $
+# $OpenBSD: PlistScanner.pm,v 1.9 2015/06/08 15:37:20 espie Exp $
 # Copyright (c) 2014 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -37,7 +37,7 @@ sub handle_plist
 		return;
 	}
 	$self->{name2path}{$plist->pkgname} = $plist->fullpkgpath;
-	$self->ui->say("#1 -> #2", $filename, $plist->pkgname) 
+	$self->say("#1 -> #2", $filename, $plist->pkgname) 
 	    if $self->ui->verbose;
 	$self->register_plist($plist);
 	$plist->forget;
@@ -164,6 +164,35 @@ sub scan
 			rmtree($dir);
 		    });
 	}
+	$self->progress->set_header("Scanning extra dependencies");
+	$self->progress->message("");
+	my $notfound = {};
+	my $todo;
+	do {
+		$todo = {};
+		for my $pkg (keys %{$self->{wanted}}) {
+			next if $self->{got}{$pkg};
+			next if $notfound->{$pkg};
+			$todo->{$pkg} = 1;
+			$self->say("Dependency not found #1", $pkg);
+		}
+		for my $pkgname (keys %$todo) {
+			my $true_package;
+			if ($self->ui->opt('S')) {
+				$true_package = $self->ui->repo->find($pkgname);
+			}
+			if (defined $true_package) {
+				my $dir = $true_package->info;
+				$true_package->close;
+				my $plist = OpenBSD::PackingList->fromfile($dir.CONTENTS);
+				File::Path::rmtree($dir);
+				$self->register_plist($plist);
+			} else {
+				$notfound->{$pkgname} = 1;
+		    	}
+		}
+	} while (keys %$todo > 0);
+	$self->progress->next;
 }
 
 sub run
@@ -180,12 +209,22 @@ sub run
 	$self->display_results;
 }
 
+sub say
+{
+	my $self = shift;
+	my $msg = $self->ui->f(@_)."\n";
+	$self->ui->_print($msg) unless $self->ui->opt('s');
+	if (defined $self->{output}) {
+		print {$self->{output}} $msg;
+	}
+}
+
 sub fullname
 {
 	my ($self, $pkgname) = @_;
 	my $path = $self->{name2path}{$pkgname};
 	if ($self->{current}{$pkgname}) {
-		return "$pkgname!($path)";
+		return "!$pkgname($path)";
 	} else {
 		return "$pkgname($path)";
 	}
@@ -197,15 +236,29 @@ sub ui
 	return $self->{ui};
 }
 
+sub handle_options
+{
+	my ($self, $extra, $usage) = @_;
+	$usage //= "[-veS] [-d plist_dir] [-o output] [-p ports_dir] [pkgname ...]";
+	$extra //= '';
+	$self->ui->handle_options($extra.'d:eo:p:sS', $usage);
+}
+
 sub new
 {
 	my ($class, $cmd) = @_;
 	my $ui = OpenBSD::AddCreateDelete::State->new('check-conflicts');
-	$ui->handle_options('d:ep:', '[-ve] [-d plist_dir] [-p ports_dir] [pkgname ...]');
-	my $make = $ENV{MAKE} || 'make';
-
-	bless {ui => $ui, make => $make, name2path => {}, current => {}}, 
-	    $class;
+	my $o = bless {ui => $ui, 
+	    make => $ENV{MAKE} || 'make', 
+	    name2path => {}, 
+	    current => {}
+	    }, $class;
+	$o->handle_options;
+	if ($ui->opt('o')) {
+		open $o->{output}, '>', $ui->opt('o')
+		    or $ui->fatal("Can't write to #1: #2", $ui->opt('o'), $!);
+	}
+	return $o;
 }
 
 1;

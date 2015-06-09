@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1346 2015/06/05 08:45:14 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.1351 2015/06/08 11:07:18 czarkoff Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -145,11 +145,10 @@
      SUBDIR += gmc4cc
      SUBDIR += gmp
      SUBDIR += gobject-introspection
-     SUBDIR += gocover
+     SUBDIR += go-tools
      SUBDIR += goffice
      SUBDIR += goffice08
      SUBDIR += goopy
-     SUBDIR += govet
      SUBDIR += gpatch
      SUBDIR += gperf
      SUBDIR += gputils
@@ -301,6 +300,7 @@
      SUBDIR += hs-vector-algorithms
      SUBDIR += hs-void
      SUBDIR += hscolour
+     SUBDIR += hub
      SUBDIR += hyena
      SUBDIR += id-utils
      SUBDIR += imake
@@ -1276,6 +1276,8 @@
      SUBDIR += py-pexpect
      SUBDIR += py-pip
      SUBDIR += py-pip,python3
+     SUBDIR += py-pretend
+     SUBDIR += py-pretend,python3
      SUBDIR += py-prioritized_methods
      SUBDIR += py-progressbar
      SUBDIR += py-protocols

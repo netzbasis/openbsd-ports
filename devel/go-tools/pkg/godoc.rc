@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $OpenBSD: godoc.rc,v 1.2 2015/03/21 19:44:36 ajacoutot Exp $
+# $OpenBSD: godoc.rc,v 1.1.1.1 2015/06/08 09:41:03 czarkoff Exp $
 
 daemon="${TRUEPREFIX}/bin/godoc"
 daemon_flags="-http=localhost:6060 -v=true"
