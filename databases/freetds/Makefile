@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.64 2015/06/12 07:04:29 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.66 2015/06/15 15:44:53 ajacoutot Exp $
 
 COMMENT=	database drivers for Sybase/Microsoft SQL Server
 
-DISTNAME=	freetds-0.95.0
+DISTNAME=	freetds-0.95.1
 
 SHARED_LIBS +=  ct                   6.0      # 4.0
 SHARED_LIBS +=  sybdb                8.0      # 5.0
@@ -43,7 +43,6 @@ TEST_IS_INTERACTIVE=Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	ac_cv_prog_DOXYGEN=
 CONFIGURE_ARGS=	${CONFIGURE_SHARED} \
-		--disable-threadsafe \
 		--enable-static \
 		--with-iodbc="${LOCALBASE}" \
 		--with-libiconv-prefix="${LOCALBASE}" \
