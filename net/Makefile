@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.906 2015/06/10 20:01:03 sthen Exp $
+# $OpenBSD: Makefile,v 1.908 2015/06/19 22:07:47 jca Exp $
 
      SUBDIR =
      SUBDIR += GeoIP

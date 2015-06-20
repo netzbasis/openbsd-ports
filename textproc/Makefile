@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.452 2015/06/12 17:35:04 bluhm Exp $
+# $OpenBSD: Makefile,v 1.454 2015/06/19 12:33:18 sthen Exp $
 
      SUBDIR =
      SUBDIR += TclXML
@@ -40,6 +40,7 @@
      SUBDIR += gdiff
      SUBDIR += glimpse
      SUBDIR += gnuvd
+     SUBDIR += go-xlsx
      SUBDIR += gonzui
      SUBDIR += gpresent
      SUBDIR += grepcidr
@@ -329,6 +330,7 @@
      SUBDIR += py-iso8601,python3
      SUBDIR += py-jaxml
      SUBDIR += py-jellyfish
+     SUBDIR += py-jellyfish,python3
      SUBDIR += py-lxml
      SUBDIR += py-nltk
      SUBDIR += py-numpydoc
@@ -433,6 +435,7 @@
      SUBDIR += wdiff
      SUBDIR += xerces
      SUBDIR += xerces-c
+     SUBDIR += xlsx2csv
      SUBDIR += xml2rfc
      SUBDIR += xmlcatmgr
      SUBDIR += xmlto
