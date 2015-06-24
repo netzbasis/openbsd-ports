@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.369 2015/06/23 02:24:29 millert Exp $
+# $OpenBSD: Makefile,v 1.371 2015/06/23 19:26:05 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += ADMsmb
@@ -245,6 +245,7 @@
      SUBDIR += py-keyczar
      SUBDIR += py-keyring
      SUBDIR += py-keyring,python3
+     SUBDIR += py-libnacl
      SUBDIR += py-openssl
      SUBDIR += py-paramiko
      SUBDIR += py-passlib
@@ -289,6 +290,7 @@
      SUBDIR += smtpscan
      SUBDIR += smurflog
      SUBDIR += snort2pf
+     SUBDIR += softhsm
      SUBDIR += spiped
      SUBDIR += ssh-askpass-fullscreen
      SUBDIR += ssh-ldap-helper

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.9 2015/06/03 11:55:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2015/06/23 10:28:48 ajacoutot Exp $
 
 COMMENT =		Python bindings for ZeroMQ
 
-MODPY_EGG_VERSION =	14.6.0
+MODPY_EGG_VERSION =	14.7.0
 DISTNAME =		pyzmq-${MODPY_EGG_VERSION}
 PKGNAME =		${DISTNAME:S/py/py-/}
 
@@ -32,7 +32,8 @@ MODPY_DISTUTILS_BUILDARGS =	--zmq=${LOCALBASE}
 TEST_IS_INTERACTIVE =	Yes
 TEST_TARGET =		test
 TEST_DEPENDS =		devel/py-nose \
-			math/py-numpy
+			math/py-numpy \
+			net/py-czmq
 
 do-test:
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} \

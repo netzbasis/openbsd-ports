@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.62 2015/06/22 13:07:39 jasper Exp $
+# $OpenBSD: Makefile,v 1.64 2015/06/23 20:52:50 jasper Exp $
 
     SUBDIR =
     SUBDIR += 16

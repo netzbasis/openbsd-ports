@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.911 2015/06/22 15:57:46 jung Exp $
+# $OpenBSD: Makefile,v 1.913 2015/06/23 19:28:39 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += GeoIP
@@ -57,6 +57,7 @@
      SUBDIR += curl
      SUBDIR += cutegram
      SUBDIR += cvsync
+     SUBDIR += czmq
      SUBDIR += daq
      SUBDIR += darkstat
      SUBDIR += dclib
@@ -500,6 +501,7 @@
      SUBDIR += py-adns
      SUBDIR += py-boto
      SUBDIR += py-curl
+     SUBDIR += py-czmq
      SUBDIR += py-dns
      SUBDIR += py-dnspython
      SUBDIR += py-dpkt
@@ -521,7 +523,7 @@
      SUBDIR += py-nmap
      SUBDIR += py-oauth2
      SUBDIR += py-pcapy
-     SUBDIR += py-pcs
+     SUBDIR += py-raet
      SUBDIR += py-snmp
      SUBDIR += py-socks
      SUBDIR += py-socks,python3

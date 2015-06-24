@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2015/06/22 13:18:26 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2015/06/23 20:51:57 jasper Exp $
 
 BROKEN-alpha=	beam/erl_process.c:6692: internal compiler error: in final_scan_insn, at final.c:2449
 BROKEN-hppa =	error: No native atomic implementation found.
@@ -7,25 +7,18 @@ BROKEN-sparc=	Requires v9|v9a|v9b; requested architecture is sparclite.
 V=		R16B03-1
 DISTNAME=	otp_src_${V}
 PKGNAME=	erlang-16b.03
-REVISION=	2
+REVISION=	3
 EPOCH=		0
+PKGSPEC=	erlang->=16v0,<17v0
 
 WANTLIB=	c crypto m ncurses pthread util
 
-CONFIGURE_ARGS=	--disable-jinterface	\
-		--disable-odbc		\
+CONFIGURE_ARGS=	--without-jinterface	\
+		--without-odbc		\
 		--enable-threads 	\
 		--enable-kernel-poll \
 		--disable-hipe \
 		--enable-smp-support
-
-USE_GMAKE=	Yes
-CONFIGURE_STYLE=autoconf no-autoheader
-CONFIGURE_ENV=	LDFLAGS="${LDFLAGS} -pthread"
-AUTOCONF_VERSION=2.59
-AUTOCONF_DIR=	${WRKSRC} ${WRKSRC}/erts
-MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC}/erts/autoconf \
-				${WRKSRC}/lib/erl_interface/src/auxdir
 
 DOC_DIR=	${PREFIX}/lib/erlang
 
@@ -89,27 +82,6 @@ XMERL_VSN	1.3.6 \
 WEBTOOL_VSN	0.8.9.2 \
 ERTS_VSN	5.10.4
 
-.for _n _v in ${ERL_VERSIONS}
-${_n}=${_v}
-${_n:S/_VSN//}=${_n:S/_VSN//:L}-${_v}
-SUBST_VARS+=${_n:S/_VSN//}
-.endfor
-
-SUBST_VARS+=SYSTEM_VSN
-
-# special cases
-EI=		erl_interface-${EI_VSN}
-COSEVENT=	cosEvent-${COSEVENT_VSN}
-COSEVENTDOMAIN=	cosEventDomain-${COSEVENTDOMAIN_VSN}
-COSFILETRANSFER=cosFileTransfer-${COSFILETRANSFER_VSN}
-COSNOTIFICATION=cosNotification-${COSNOTIFICATION_VSN}
-COSPROPERTY=	cosProperty-${COSPROPERTY_VSN}
-COSTIME=	cosTime-${COSTIME_VSN}
-COSTRANSACTIONS=cosTransactions-${COSTRANSACTIONS_VSN}
-
-post-configure:
-	@touch ${WRKSRC}/lib/odbc/SKIP
-
 post-install:
 	@ln -sf ../lib/erlang/lib/${EI}/bin/erl_call ${PREFIX}/bin/erl_call
 	tar zxf ${FULLDISTDIR}/otp_doc_man_${V}.tar.gz -C ${DOC_DIR}
@@ -118,12 +90,5 @@ post-install:
 	rm -r ${DOC_DIR}/lib/${ODBC}
 	rm -r ${DOC_DIR}/man/man7/*MIB.7
 	rm -r ${DOC_DIR}/man/man7/*TM.7
-
-# Special maintainer target, scan through vsn.mk files and build 'ERL_VERSIONS'
-# list
-gen-versions: extract
-	@find ${WRKSRC} -name 'vsn.mk' -exec awk '/_VSN +=/ { print $$1"\t"$$3 " \\" }' {} \; | grep -v 'PRE_' | grep -v 'APP_' | sed 's/DOCB_VSN/DOCBUILDER_VSN/'
-	@find ${WRKSRC} -name 'vsn.mk' -exec awk -F'=' '/_VSN=/ { print $$1"\t"$$2 " \\" }' {} \; | grep -v 'PRE_' | grep -v 'APP_'
-	@grep VSN ${WRKSRC}/erts/vsn.mk |awk '/^VSN/ { print "ERTS_VSN\t" $$3}'
 
 .include <bsd.port.mk>

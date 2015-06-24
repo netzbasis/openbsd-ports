@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: HostProperties.pm,v 1.11 2015/06/22 12:19:38 espie Exp $
+# $OpenBSD: HostProperties.pm,v 1.13 2015/06/23 09:01:56 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -120,13 +120,14 @@ sub taint
 		return;
 	}
 	my $t1 = $self->{tainted};
-	if (!defined $t1) {
+	if (!defined $t1 || $v->{forcejunk}) {
 		$self->{tainted} = $t2;
-		$self->{tainted_source} = $v;
+		$self->{tainted_source} = $v->fullpkgpath;
 		return;
 	}
 	if ($t1 ne $t2) {
-		DPB::Util->die("Retainting badly", $self, $v);
+		DPB::Util->die("Retainting badly:$t2 / $t1 ".
+		    $v->fullpkgpath." / ".$self->{tainted_source});
 	}
 }
 
