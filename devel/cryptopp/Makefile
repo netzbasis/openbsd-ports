@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2014/04/28 12:43:10 bcallah Exp $
+# $OpenBSD: Makefile,v 1.10 2015/06/24 09:41:33 dcoppa Exp $
 
 COMMENT = 	C++ library of cryptographic algorithms
 CATEGORIES = 	devel security
@@ -7,6 +7,7 @@ HOMEPAGE = 	http://www.cryptopp.com/
 MASTER_SITES = 	${HOMEPAGE}
 DISTNAME = 	cryptopp562
 PKGNAME = 	cryptopp-5.6.2
+REVISION =	1
 
 EXTRACT_SUFX = 	.zip
 WRKDIST = 	${WRKDIR}
@@ -33,6 +34,7 @@ MAKE_FLAGS +=	CXX="${CXX}" \
 		LDFLAGS="-lpthread" \
 		PREFIX=${PREFIX} \
 		LIBcryptopp_VERSION=${LIBcryptopp_VERSION}
+
 MAKE_FILE = 	${WRKDIR}/GNUmakefile
 
 TEST_FLAGS += WRKDIST=${WRKDIST}
@@ -43,5 +45,7 @@ do-install:
 	${INSTALL_DATA} ${WRKDIR}/*.h ${PREFIX}/include/cryptopp
 	${INSTALL_DATA} ${WRKDIR}/libcryptopp.{a,so.${LIBcryptopp_VERSION}} \
 		${PREFIX}/lib
+	${SUBST_DATA} ${FILESDIR}/cryptopp.pc \
+		${PREFIX}/lib/pkgconfig/cryptopp.pc
 
 .include <bsd.port.mk>

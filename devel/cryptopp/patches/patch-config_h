@@ -1,6 +1,6 @@
-$OpenBSD: patch-config_h,v 1.3 2013/03/14 11:16:02 dcoppa Exp $
+$OpenBSD: patch-config_h,v 1.5 2015/06/24 09:41:33 dcoppa Exp $
 --- config.h.orig	Wed Feb 20 15:30:54 2013
-+++ config.h	Thu Mar 14 10:42:03 2013
++++ config.h	Wed Jun 24 11:37:28 2015
 @@ -263,7 +263,7 @@ NAMESPACE_END
  
  	// SSSE3 was actually introduced in GNU as 2.17, which was released 6/23/2006, but we can't tell what version of binutils is installed.
