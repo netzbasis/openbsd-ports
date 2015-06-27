@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.718 2015/06/10 20:01:03 sthen Exp $
+# $OpenBSD: Makefile,v 1.720 2015/06/26 14:01:19 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += ajaxterm
@@ -421,6 +421,7 @@
      SUBDIR += py-itsdangerous
      SUBDIR += py-jinja2
      SUBDIR += py-jonpy
+     SUBDIR += py-jwt
      SUBDIR += py-mako
      SUBDIR += py-mako,python3
      SUBDIR += py-mechanize
@@ -535,7 +536,6 @@
      SUBDIR += trac
      SUBDIR += trac-ldapplugin
      SUBDIR += tracnav
-     SUBDIR += tt-rss
      SUBDIR += twill
      SUBDIR += uget
      SUBDIR += uriparser

@@ -1,14 +1,15 @@
-# $OpenBSD: Makefile,v 1.20 2015/05/05 17:00:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.22 2015/06/26 18:26:19 ajacoutot Exp $
 
 COMMENT=	snapshot and background plugin for Gkrellm2
 
-V=		0.4.3
+V=		0.4.4
 DISTNAME=	gkrellshoot-${V}
-REVISION=	19
 CATEGORIES=	x11
 
 HOMEPAGE=	http://gkrellshoot.sourceforge.net
 MASTER_SITES=  	${MASTER_SITE_SOURCEFORGE:=gkrellshoot/}
+
+EXTRA_WANTLIB=	gthread-2.0
 
 RUN_DEPENDS=	graphics/ImageMagick
 
