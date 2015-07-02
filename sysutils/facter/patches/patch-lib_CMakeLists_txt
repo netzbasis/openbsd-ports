@@ -1,0 +1,36 @@
+$OpenBSD: patch-lib_CMakeLists_txt,v 1.2 2015/07/01 09:57:26 jasper Exp $
+
+- From f11bebbdfbe0ebfef9f1bfd7931bdc40511db871 Mon Sep 17 00:00:00 2001
+  From: Jasper Lievisse Adriaanse <jasper@humppa.nl>
+  Date: Sat, 27 Jun 2015 09:57:48 +0200
+  Subject: [PATCH] (maint) Don't attempt to link with libdl on OpenBSD.
+- Enable basic set of facts
+
+--- lib/CMakeLists.txt.orig	Fri Jun 26 01:47:38 2015
++++ lib/CMakeLists.txt	Tue Jun 30 16:19:12 2015
+@@ -113,7 +113,11 @@ if (UNIX)
+         set(LIBFACTER_STANDARD_SOURCES ${LIBFACTER_STANDARD_SOURCES} "src/util/posix/scoped_bio.cc")
+     endif()
+ 
+-    set(POSIX_LIBRARIES pthread dl)
++    if (CMAKE_SYSTEM_NAME MATCHES "OpenBSD")
++        set(POSIX_LIBRARIES pthread)
++    else()
++        set(POSIX_LIBRARIES pthread dl)
++    endif()
+ endif()
+ 
+ if (WIN32)
+@@ -205,6 +209,12 @@ elseif ("${CMAKE_SYSTEM_NAME}" MATCHES "FreeBSD")
+         "src/facts/bsd/networking_resolver.cc"
+         "src/facts/bsd/uptime_resolver.cc"
+         "src/util/bsd/scoped_ifaddrs.cc"
++    )
++elseif ("${CMAKE_SYSTEM_NAME}" MATCHES "OpenBSD")
++    set(LIBFACTER_PLATFORM_SOURCES
++        "src/facts/bsd/collection.cc"
++        "src/facts/glib/load_average_resolver.cc"
++        "src/facts/bsd/uptime_resolver.cc"
+     )
+ elseif ("${CMAKE_SYSTEM_NAME}" MATCHES "Windows")
+     set(LIBFACTER_PLATFORM_SOURCES

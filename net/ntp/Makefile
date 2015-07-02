@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.63 2015/06/26 20:21:07 sthen Exp $
+# $OpenBSD: Makefile,v 1.65 2015/07/01 11:59:24 sthen Exp $
 
 COMMENT=	Network Time Protocol reference implementation
 
@@ -6,14 +6,15 @@ COMMENT=	Network Time Protocol reference implementation
 # to confuse with the ports system's 'pN' convention, so convert it to
 # 'pl' for local use.
 
-VERSION=	4.2.8p2
-REVISION=	0
+VERSION=	4.2.8p3
 DISTNAME=	ntp-${VERSION}
 PKGNAME=	ntp-${VERSION:S/p/pl/}
 CATEGORIES=	net
-MASTER_SITES=	http://archive.ntp.org/ntp4/ntp-4.2/
 
 HOMEPAGE=	http://www.ntp.org/
+
+MASTER_SITES=	http://www.eecis.udel.edu/~ntp/ntp_spool/ntp4/ntp-4.2/ \
+		http://archive.ntp.org/ntp4/ntp-4.2/
 
 # modified ISC
 PERMIT_PACKAGE_CDROM=	Yes
