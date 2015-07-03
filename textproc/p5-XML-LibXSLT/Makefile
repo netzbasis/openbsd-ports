@@ -1,25 +1,25 @@
-# $OpenBSD: Makefile,v 1.43 2014/06/14 23:26:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.45 2015/07/02 13:21:07 bluhm Exp $
 
-SHARED_ONLY=	Yes
+SHARED_ONLY =		Yes
 
-COMMENT=	fast XSLT module for perl
+COMMENT =		interface to the GNOME libxslt library
 
-MODULES=	cpan devel/gettext
+DISTNAME =		XML-LibXSLT-1.94
 
-DISTNAME=	XML-LibXSLT-1.68
-REVISION=	5
-CATEGORIES=	textproc
+CATEGORIES =		textproc
 
-HOMEPAGE=	http://www.axkit.org/
+MAINTAINER =		Alexander Bluhm <bluhm@openbsd.org>
 
-RUN_DEPENDS=	textproc/p5-XML-LibXML>=1.60
-BUILD_DEPENDS=	${RUN_DEPENDS}
-LIB_DEPENDS=	textproc/libxml \
-		textproc/libxslt
+# perl_5
+PERMIT_PACKAGE_CDROM =	Yes
 
-# GPL/Artistic
-PERMIT_PACKAGE_CDROM=	Yes
+WANTLIB =		c gcrypt gpg-error m util z xml2>=6 xslt>=1 exslt>=7
 
-WANTLIB=		c gcrypt gpg-error m util z xml2>=6 xslt>=1 exslt>=7
+MODULES =		cpan devel/gettext
+RUN_DEPENDS =		textproc/p5-XML-LibXML>=1.70
+LIB_DEPENDS =		textproc/libxml \
+			textproc/libxslt>1.1.27
+TEST_DEPENDS =		devel/p5-Test-Pod \
+			devel/p5-Test-TrailingSpace
 
 .include <bsd.port.mk>
