@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.552 2015/07/01 18:17:11 zhuk Exp $
+# $OpenBSD: Makefile,v 1.554 2015/07/10 18:34:27 zhuk Exp $
 
      SUBDIR =
      SUBDIR += Xaw3d
@@ -136,6 +136,8 @@
      SUBDIR += iwidgets
      SUBDIR += jwm
      SUBDIR += kde
+     SUBDIR += kde-applications
+     SUBDIR += kde-shared-data
      SUBDIR += kde4
      SUBDIR += kdirstat
      SUBDIR += keybinder
