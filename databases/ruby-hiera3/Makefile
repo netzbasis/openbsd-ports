@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2015/06/12 17:59:43 jasper Exp $
+# $OpenBSD: Makefile,v 1.1.1.1 2015/07/16 02:43:27 jasper Exp $
 
 COMMENT=		simple pluggable hierarchical database
 
-V=			2.0.0
+V=			3.0.1
 DISTNAME=		hiera-${V}
-PKGNAME=		hiera2-${V}
+PKGNAME=		hiera3-${V}
 
 CATEGORIES=		databases
 
@@ -35,7 +35,7 @@ pre-configure:
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/${MODRUBY_RELEXAMPLEDIR}-hiera
-	${INSTALL_DATA} ${FILESDIR}/hiera.yaml \
-		${PREFIX}/${MODRUBY_RELEXAMPLEDIR}-hiera
+	${SUBST_CMD} -c ${FILESDIR}/hiera.yaml \
+		${PREFIX}/${MODRUBY_RELEXAMPLEDIR}-hiera/hiera.yaml
 
 .include <bsd.port.mk>

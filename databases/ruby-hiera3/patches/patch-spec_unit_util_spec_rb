@@ -1,4 +1,4 @@
-$OpenBSD: patch-spec_unit_util_spec_rb,v 1.1.1.1 2015/06/12 17:59:43 jasper Exp $
+$OpenBSD: patch-spec_unit_util_spec_rb,v 1.1.1.1 2015/07/16 02:43:27 jasper Exp $
 
 Make this work with rspec3.
 

@@ -1,21 +1,24 @@
-# $OpenBSD: Makefile,v 1.21 2015/04/10 16:45:12 juanfra Exp $
+# $OpenBSD: Makefile,v 1.3 2015/07/16 00:34:13 ajacoutot Exp $
 
-# Racket devs use something like "6.1.90.900" for pre-release versions
+PORTROACH_COMMENT =	hide pre-release versions (e.g. 6.1.90.900)
 PORTROACH =		limit:!.*\.[0-9][0-9][0-9]-src-builtpkgs$$
 
-BROKEN-hppa =		segfault while racket compiles XFORMS (at xsrc)
-BROKEN-mips64el =	sigbus while racket compiles XFORMS (at xsrc)
-BROKEN-powerpc =	racket builds but does not pass the tests (with or without JIT)
-
 SHARED_ONLY =		Yes
-ONLY_FOR_ARCHS =	i386 amd64 hppa mips64el powerpc
+
+# Racket includes C fallback code for architectures without JIT support but
+# nobody tests regularly this code outside of amd64 (Linux/OSX). The code
+# is buggy and the devs can't fix the problems because they have not access
+# to these architectures. In addition, the C code is extremely slow compared
+# with the JIT.
+ONLY_FOR_ARCHS =	i386 amd64
 
 COMMENT =		multi-paradigm programming language
 
-V =			6.1.1
-REVISION =		0
-PKGNAME =		racket-$V
-DISTNAME =		racket-$V-src-builtpkgs
+V =			6.2
+PKGNAME =		racket-minimal-$V
+REVISION =		1
+DISTFILES =		racket-minimal-$V-src-builtpkgs${EXTRACT_SUFX} \
+			racket-openbsd-1${EXTRACT_SUFX}
 
 CATEGORIES =		lang
 HOMEPAGE =		http://racket-lang.org/
@@ -38,22 +41,13 @@ MASTER_SITES =		https://www.cs.utah.edu/plt/installers/${V}/ \
 			ftp://download.tuxfamily.org/jod/lang/racket/
 EXTRACT_SUFX =		.tgz
 
-MODULES +=		converters/libiconv
+MODULES =		converters/libiconv
 
-# http://docs.racket-lang.org/draw/libs.html
-# http://docs.racket-lang.org/gui/libs.html
-# Some deps are listed in the README, others in the doc and others
-# are called by ffi.
-LIB_DEPENDS =		databases/iodbc,-main \
-			devel/libffi>=3.0.9p2 \
-			devel/libunique
-BUILD_DEPENDS =		devel/pango \
-			graphics/jpeg
-RUN_DEPENDS =		devel/desktop-file-utils
+LIB_DEPENDS =		devel/libffi>=3.0.9p2
 
 WANTLIB += c m pthread ffi
-# Loaded using FFI
-WANTLIB += GL X11 iodbc unique-1.0
+# Loaded using FFI (just a placeholder for now)
+WANTLIB +=
 
 WRKDIST =		${WRKDIR}/racket-$V
 WRKSRC =		${WRKDIST}/src
@@ -65,41 +59,43 @@ SEPARATE_BUILD =	Yes
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS +=	--enable-libffi \
 			--enable-gracket \
-			--enable-jit \
 			--enable-foreign \
-			--enable-float \
-			--enable-docs \
 			--enable-lt=${LIBTOOL}
 # "backtrace" is expensive.
 # http://article.gmane.org/gmane.comp.lang.racket.devel/6700
+# disable "docs" to reduce the number of deps and the build time
 # "places" and "futures" require thread-local storage and atomic CAS
 # http://article.gmane.org/gmane.comp.lang.racket.user/16723
 CONFIGURE_ARGS +=	--disable-backtrace \
+			--disable-docs \
 			--disable-places \
 			--disable-futures
 
 CONFIGURE_ENV =		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
-			CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
-			LIBracket3m_MAJOR=${LIBracket3m_VERSION:R} \
-			LIBracket3m_MINOR=${LIBracket3m_VERSION:E}
+			CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include"
 
 FLAVORS =		debug
 FLAVOR ?=
 .if ${FLAVOR:Mdebug}
 CONFIGURE_ARGS +=	--disable-strip \
 			--enable-noopt
+CFLAGS += -ggdb3
 .endif
 
 post-install:
+	@perl -i -pe 's/installation-name . "snapshot"/installation-name . "$V"/g' ${WRKINST}/etc/racket/config.rktd
 	@mv ${WRKINST}/etc/racket ${PREFIX}/share/examples
+	@cp ${WRKDIR}/racket-openbsd/racket-user-bin-paths ${PREFIX}/bin
 
 # Since 5.3.4 if __SSE_MATH__ is defined (C_COMPILER_USES_SSE) and
 # MZ_TRY_EXTFLONUMS enabled, MZ_LONG_DOUBLE (extflonum) is turned on. Also
 # C_COMPILER_USES_SSE turn on MZ_USE_JIT_SSE.
 # "-msse -mfpmath=sse" required by extflonum on i386.
+# The GNU Lightning minimum requirement is SSE2.
 .if ${MACHINE_ARCH} == "i386" || ${MACHINE_ARCH} == "amd64"
-CONFIGURE_ENV +=	CFLAGS="${CFLAGS} -msse -mfpmath=sse"
-CONFIGURE_ARGS +=	--enable-extflonum
+CONFIGURE_ENV +=	CFLAGS="${CFLAGS} -msse -msse2 -mfpmath=sse"
+CONFIGURE_ARGS +=	--enable-extflonum \
+			--enable-jit
 .endif
 
 .include <bsd.port.mk>

@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2015/06/12 17:59:43 jasper Exp $
-@conflict ruby21-hiera-<2.0.0
+@comment $OpenBSD: PLIST,v 1.1.1.1 2015/07/16 02:43:27 jasper Exp $
+@conflict ruby21-hiera-<3.0.0
 ${GEM_BIN}/hiera${GEM_BIN_SUFFIX}
 ${GEM_LIB}/cache/${DISTNAME}.gem
 ${GEM_LIB}/gems/${DISTNAME}/
@@ -37,7 +37,21 @@ ${GEM_LIB}/gems/${DISTNAME}/spec/unit/config_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/unit/console_logger_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/unit/fallback_logger_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/unit/filecache_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/unit/fixtures/
+${GEM_LIB}/gems/${DISTNAME}/spec/unit/fixtures/interpolate/
+${GEM_LIB}/gems/${DISTNAME}/spec/unit/fixtures/interpolate/config/
+${GEM_LIB}/gems/${DISTNAME}/spec/unit/fixtures/interpolate/config/hiera.yaml
+${GEM_LIB}/gems/${DISTNAME}/spec/unit/fixtures/interpolate/data/
+${GEM_LIB}/gems/${DISTNAME}/spec/unit/fixtures/interpolate/data/niltest.yaml
+${GEM_LIB}/gems/${DISTNAME}/spec/unit/fixtures/interpolate/data/recursive.yaml
+${GEM_LIB}/gems/${DISTNAME}/spec/unit/fixtures/override/
+${GEM_LIB}/gems/${DISTNAME}/spec/unit/fixtures/override/config/
+${GEM_LIB}/gems/${DISTNAME}/spec/unit/fixtures/override/config/hiera.yaml
+${GEM_LIB}/gems/${DISTNAME}/spec/unit/fixtures/override/data/
+${GEM_LIB}/gems/${DISTNAME}/spec/unit/fixtures/override/data/alternate.yaml
+${GEM_LIB}/gems/${DISTNAME}/spec/unit/fixtures/override/data/common.yaml
 ${GEM_LIB}/gems/${DISTNAME}/spec/unit/hiera_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/unit/interpolate_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/unit/puppet_logger_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/unit/util_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/unit/version_spec.rb
@@ -45,5 +59,4 @@ ${GEM_LIB}/specifications/${DISTNAME}.gemspec
 ${MODRUBY_RELEXAMPLEDIR}-hiera/
 @sample ${SYSCONFDIR}/puppetlabs/code/
 ${MODRUBY_RELEXAMPLEDIR}-hiera/hiera.yaml
-@sample ${SYSCONFDIR}/puppetlabs/code/hiera.yaml
 @sample ${SYSCONFDIR}/puppetlabs/code/hieradata/
