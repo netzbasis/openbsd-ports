@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1362 2015/07/04 15:56:44 kurt Exp $
+# $OpenBSD: Makefile,v 1.1365 2015/07/16 23:01:50 jeremy Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -925,6 +925,7 @@
      SUBDIR += p5-POSIX-strftime-Compiler
      SUBDIR += p5-Package-DeprecationManager
      SUBDIR += p5-Package-Generator
+     SUBDIR += p5-Package-New
      SUBDIR += p5-Package-Stash
      SUBDIR += p5-Package-Stash-XS
      SUBDIR += p5-Package-Variant
@@ -1217,6 +1218,7 @@
      SUBDIR += py-configobj
      SUBDIR += py-country
      SUBDIR += py-coverage
+     SUBDIR += py-coverage,python3
      SUBDIR += py-coveralls
      SUBDIR += py-cparser
      SUBDIR += py-cparser,python3
@@ -1411,6 +1413,9 @@
      SUBDIR += ruby-prof,ruby20
      SUBDIR += ruby-prof,ruby21
      SUBDIR += ruby-prof,ruby22
+     SUBDIR += ruby-racc,ruby20
+     SUBDIR += ruby-racc,ruby21
+     SUBDIR += ruby-racc,ruby22
      SUBDIR += ruby-rake
      SUBDIR += ruby-rake-compiler
      SUBDIR += ruby-rake-remote_task

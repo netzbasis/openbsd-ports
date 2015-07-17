@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.9 2015/07/16 04:45:18 jasper Exp $
+# $OpenBSD: Makefile,v 1.15 2015/07/16 20:57:42 jasper Exp $
 
 COMMENT =		collect and display system facts
 
 DISTNAME =		facter-3.0.1
-REVISION =		7
+REVISION =		11
 SHARED_LIBS +=  	facter                    3.0 # 3.0
 PKGSPEC =		facter->=3.0,<4.0
 CATEGORIES =		sysutils
@@ -20,7 +20,6 @@ MODULES +=		devel/cmake \
 			gcc4
 MODGCC4_ARCHS =		*
 MODGCC4_LANGS =		c++
-MODRUBY_REV =		1.9
 
 WANTLIB += boost_chrono-mt boost_date_time-mt boost_filesystem-mt
 WANTLIB += boost_log boost_log-mt boost_log_setup-mt boost_program_options-mt
@@ -31,9 +30,10 @@ LIB_DEPENDS =		devel/boost>=1.58 \
 			devel/yaml-cpp
 
 CONFIGURE_ARGS+=	-DWITHOUT_JRUBY:Bool=Yes \
-			-DFACTER_RUBY="${LOCALBASE}/lib/libruby${MODRUBY_BINREV}.so"
+			-DFACTER_RUBY="${LOCALBASE}/lib/libruby${MODRUBY_BINREV}.so" \
+			-DRUBY_LIB_INSTALL="${PREFIX}/lib/ruby/vendor_ruby/${MODRUBY_REV}"
 
-SUBST_VARS +=		MODRUBY_BINREV
+SUBST_VARS +=		MODRUBY_BINREV MODRUBY_REV
 
 # XXX: Remove on upgrade
 # https://github.com/puppetlabs/facter/pull/1041
@@ -64,7 +64,12 @@ post-extract:
 		${WRKSRC}/lib/src/facts/openbsd/
 
 pre-configure:
-	${SUBST_CMD} ${WRKSRC}/lib/CMakeLists.txt
+	${SUBST_CMD} ${WRKSRC}/CMakeLists.txt
+
+# Install symlinked libfacter.so so Ruby can load libfacter.so as it refuses
+# to load with the version appended.
+post-install:
+	ln -s ${PREFIX}/lib/libfacter.so.* ${PREFIX}/lib/libfacter.so
 
 .include <bsd.port.mk>
 

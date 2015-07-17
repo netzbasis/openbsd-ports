@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.725 2015/07/10 17:17:42 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.727 2015/07/16 23:22:16 jasper Exp $
 
      SUBDIR =
      SUBDIR += ajaxterm
@@ -484,6 +484,9 @@
      SUBDIR += ruby-passenger,ruby20
      SUBDIR += ruby-passenger,ruby21
      SUBDIR += ruby-passenger,ruby22
+     SUBDIR += ruby-puma,ruby20
+     SUBDIR += ruby-puma,ruby21
+     SUBDIR += ruby-puma,ruby22
      SUBDIR += ruby-rack
      SUBDIR += ruby-rack-protection
      SUBDIR += ruby-rack-test
@@ -568,7 +571,6 @@
      SUBDIR += xapian-omega
      SUBDIR += xcache
      SUBDIR += xombrero
-     SUBDIR += yaws
      SUBDIR += youtube-dl
      SUBDIR += yui
      SUBDIR += zendframework
