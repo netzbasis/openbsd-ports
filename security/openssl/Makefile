@@ -1,16 +1,17 @@
-# $OpenBSD: Makefile,v 1.8 2015/07/09 14:49:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2015/07/19 00:39:01 sthen Exp $
 
 COMMENT=	TLS/SSL library and tools
 
 V=		1.0.1p
+REVISION=	1
 DISTNAME=	openssl-$V
 PKGNAME=	openssl-$V
 
-SHLIBVER=	1.1
+SHLIBVER=	2.0
 SHARED_LIBS=	crypto ${SHLIBVER} \
 		ssl ${SHLIBVER}
 
-CATEGORIES=	security net
+CATEGORIES=	security net games
 
 HOMEPAGE=	http://www.openssl.org/
 
@@ -31,8 +32,7 @@ CONFIGURE_SCRIPT=	config
 CONFIGURE_ARGS+=	--prefix=${PREFIX} \
 			--openssldir=${PREFIX}/share/eopenssl \
 	                --install_prefix=${WRKINST} \
-			no-threads \
-			no-rc5 no-krb5 no-ssl2 no-ssl3
+			no-threads no-krb5
 
 # install to unusual directory name - this port is *not* intended to be
 # picked up by configure scripts without explicitly CPPFLAGS/LDFLAGS.

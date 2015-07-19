@@ -1,13 +1,15 @@
-# $OpenBSD: Makefile,v 1.122 2015/04/09 20:12:15 sthen Exp $
+# $OpenBSD: Makefile,v 1.124 2015/07/18 20:36:56 sthen Exp $
 
 ONLY_FOR_ARCHS=	amd64 i386 powerpc sparc64
 
 COMMENT=	multi system emulator
 
 DISTNAME=	qemu-2.2.1
+REVISION=	0
 CATEGORIES=	emulators
 MASTER_SITES=	http://wiki.qemu.org/download/
 EXTRACT_SUFX=	.tar.bz2
+REVISION=	0
 
 HOMEPAGE=	http://www.qemu.org/
 
@@ -36,6 +38,8 @@ LIB_DEPENDS=	devel/dtc>=1.3.0 \
 		security/gnutls \
 		security/libssh2 \
 		x11/gtk+2
+
+RUN_DEPENDS=	security/sudo
 
 MODPY_RUNDEP=	No
 

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.69 2015/06/28 19:24:13 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.71 2015/07/19 01:16:07 ajacoutot Exp $
 
 COMMENT=	database drivers for Sybase/Microsoft SQL Server
 
-DISTNAME=	freetds-0.95.8
+DISTNAME=	freetds-0.95.18
 
 SHARED_LIBS +=  ct                   6.0      # 4.0
 SHARED_LIBS +=  sybdb                8.0      # 5.0
@@ -59,7 +59,7 @@ pre-configure:
 		AUTOCONF_VERSION=${AUTOCONF_VERSION} \
 		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
 		NOCONFIGURE=1 ./autogen.sh
-	perl -pi -e 's,/etc/odbc.ini,${SYSCONFDIR}/iodbc/odbc.ini,' \
+	sed -i 's,/etc/odbc.ini,${SYSCONFDIR}/iodbc/odbc.ini,' \
 		${WRKSRC}/src/odbc/connectparams.c
 
 .include <bsd.port.mk>

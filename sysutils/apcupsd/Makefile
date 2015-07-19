@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.27 2015/06/18 21:52:02 kirby Exp $
+# $OpenBSD: Makefile,v 1.29 2015/07/18 22:14:40 kirby Exp $
 
 COMMENT-main =		daemon for controlling APC UPSes
 COMMENT-cgi =		CGI scripts for web monitoring
 COMMENT-x11 =		gapcmon - GUI for apcupsd
 
-DISTNAME =		apcupsd-3.14.11
-REVISION-main =		3
-REVISION-x11 =		0
+DISTNAME =		apcupsd-3.14.13
 PKGNAME-main =		${DISTNAME}
 PKGNAME-cgi =		${DISTNAME:S/-/-cgi-/}
 PKGNAME-x11 =		${DISTNAME:S/-/-x11-/}
+REVISION-main = 	0
 
 CATEGORIES =		sysutils
 
@@ -21,8 +20,8 @@ MAINTAINER =		Kirill Bychkov <kirby@openbsd.org>
 PERMIT_PACKAGE_CDROM =	Yes
 
 MODULES =		devel/gettext
-LIB_DEPENDS-main =
-WANTLIB-main =		c pthread
+LIB_DEPENDS-main = 	devel/libusb-compat
+WANTLIB-main =		c pthread usb
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=apcupsd/}
 
@@ -41,8 +40,11 @@ CONFIGURE_ARGS =	--mandir=${PREFIX}/man \
 			--with-cgi-bin=${WEB_ROOT}/cgi-bin/apcupsd \
 			--with-lock-dir=/var/run \
 			--with-nisip=127.0.0.1 \
+			--enable-modbus-usb \
 			--enable-test \
 			--enable-usb
+CONFIGURE_ENV += 	LDFLAGS=-L${X11BASE}/lib \
+			SHUTDOWN=/sbin/shutdown
 
 PSEUDO_FLAVORS =	no_x11
 FLAVOR ?=

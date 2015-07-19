@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.264 2015/07/17 21:09:38 sthen Exp $
+# $OpenBSD: Quirks.pm,v 1.268 2015/07/18 23:56:03 naddy Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -567,6 +567,14 @@ my $obsolete_reason = {
 	'dbh' => 5,
 	'yaws' => 6,
 	'pidgin-facebookchat' => 6,
+	'py-sslwrapper' => 0,
+	'hs-snap' => 5,
+	'hs-snap-core' => 5,
+	'hs-snap-loader-dynamic' => 5,
+	'hs-snap-loader-static' => 5,
+	'hs-snap-server' => 5,
+	'lmbench' => 5,
+	'wterm' => 0,
 };
 
 # ->is_base_system($handle, $state):

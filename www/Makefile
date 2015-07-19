@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.727 2015/07/16 23:22:16 jasper Exp $
+# $OpenBSD: Makefile,v 1.730 2015/07/19 03:18:39 czarkoff Exp $
 
      SUBDIR =
      SUBDIR += ajaxterm
@@ -67,11 +67,6 @@
      SUBDIR += hs-html
      SUBDIR += hs-http-attoparsec
      SUBDIR += hs-http-types
-     SUBDIR += hs-snap
-     SUBDIR += hs-snap-core
-     SUBDIR += hs-snap-loader-dynamic
-     SUBDIR += hs-snap-loader-static
-     SUBDIR += hs-snap-server
      SUBDIR += hs-wai
      SUBDIR += hs-warp
      SUBDIR += hs-webkit
@@ -422,6 +417,7 @@
      SUBDIR += py-httplib2
      SUBDIR += py-itsdangerous
      SUBDIR += py-jinja2
+     SUBDIR += py-jinja2,python3
      SUBDIR += py-jonpy
      SUBDIR += py-jwt
      SUBDIR += py-mako
@@ -454,6 +450,7 @@
      SUBDIR += py-webpy
      SUBDIR += py-webtest
      SUBDIR += py-werkzeug
+     SUBDIR += py-werkzeug,python3
      SUBDIR += py-wsgiproxy
      SUBDIR += py-wtforms
      SUBDIR += py-wtools
@@ -530,6 +527,7 @@
      SUBDIR += statusnet
      SUBDIR += sthttpd
      SUBDIR += surf
+     SUBDIR += surf2
      SUBDIR += surfraw
      SUBDIR += swfdec-plugin
      SUBDIR += swiggle
