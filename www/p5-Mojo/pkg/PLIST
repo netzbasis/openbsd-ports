@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2015/04/27 19:27:47 afresh1 Exp $
+@comment $OpenBSD: PLIST,v 1.10 2015/07/19 14:23:45 ajacoutot Exp $
 @conflict p5-Mojo-*
 bin/hypnotoad
 bin/mojo

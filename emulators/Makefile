@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.74 2014/08/15 12:19:13 jasper Exp $
+# $OpenBSD: Makefile,v 1.76 2015/07/19 23:48:56 ajacoutot Exp $
 
     SUBDIR =
     SUBDIR += BasiliskII
@@ -23,12 +23,12 @@
     SUBDIR += gnusim8085
     SUBDIR += gxemul
     SUBDIR += mednafen
+    SUBDIR += mgba
     SUBDIR += mupen64plus
     SUBDIR += nestopia
     SUBDIR += openmsx
     SUBDIR += pcsxr
     SUBDIR += qemu
-    SUBDIR += redhat
     SUBDIR += sdlmame
     SUBDIR += sdlmess
     SUBDIR += simh

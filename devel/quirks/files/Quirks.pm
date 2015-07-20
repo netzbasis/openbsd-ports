@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.268 2015/07/18 23:56:03 naddy Exp $
+# $OpenBSD: Quirks.pm,v 1.271 2015/07/19 23:50:16 ajacoutot Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -575,6 +575,14 @@ my $obsolete_reason = {
 	'hs-snap-server' => 5,
 	'lmbench' => 5,
 	'wterm' => 0,
+	'hs-asn1-data' => 5,
+	'hs-attoparsec-enumerator' => 5,
+	'hs-attoparsec-iteratee' => 5,
+	'hs-heist' => 5,
+	'hs-certificate' => 5,
+	'hs-tls' => 5,
+	'opera' => 2,
+	'redhat_libc5' => 2,
 };
 
 # ->is_base_system($handle, $state):
