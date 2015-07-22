@@ -1,13 +1,11 @@
-# $OpenBSD: Makefile,v 1.11 2015/07/20 02:45:05 ajacoutot Exp $
-
-PORTROACH=	skipv:1.1.24+nmu2,1.1.24+nmu4
+# $OpenBSD: Makefile,v 1.13 2015/07/22 17:37:16 ajacoutot Exp $
 
 COMMENT=	library for handling paper characteristics
 
-V=		1.1.24
-DISTNAME=	libpaper_${V}
-PKGNAME=	libpaper-${V}
-REVISION=	0
+MAJV=		1.1.24
+MINV=		4
+DISTNAME=	libpaper_${MAJV}%2bnmu${MINV}
+PKGNAME=	libpaper-${MAJV}.${MINV}
 
 SHARED_LIBS +=  paper                0.0      # 2.2
 
@@ -24,7 +22,7 @@ WANTLIB += c
 
 MASTER_SITES=	${MASTER_SITE_DEBIAN:=main/libp/libpaper/}
 
-WRKDIST=	${WRKDIR}/libpaper-${V}
+WRKDIST=	${WRKDIR}/libpaper-${MAJV}+nmu${MINV}
 
 USE_GMAKE=	Yes
 
