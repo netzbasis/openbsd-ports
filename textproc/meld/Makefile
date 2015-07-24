@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.45 2015/04/04 09:21:04 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.47 2015/07/23 18:51:38 ajacoutot Exp $
 
 COMMENT=		graphical diff and merge tool
 
-GNOME_VERSION=		3.12.3
+GNOME_VERSION=		3.14.0
 GNOME_PROJECT=		meld
 SUBST_VARS=		GNOME_VERSION
-REVISION=		1
+REVISION=		0
 
 CATEGORIES=		textproc
 
-HOMEPAGE=		http://meld.sourceforge.net/
+HOMEPAGE=		http://meldmerge.org/
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
