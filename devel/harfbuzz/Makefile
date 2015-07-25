@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.31 2015/06/19 06:12:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.33 2015/07/24 22:41:50 ajacoutot Exp $
+
+BROKEN-hppa=		no atomic primitives
 
 COMMENT-main=		text shaping library
 COMMENT-icu=		ICU support for libharfbuzz
