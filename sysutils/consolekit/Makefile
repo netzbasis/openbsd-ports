@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.49 2015/08/15 11:12:54 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.51 2015/08/17 08:40:13 ajacoutot Exp $
 
 COMMENT=		framework for defining and tracking users, sessions & seats
 
 DISTNAME=		ConsoleKit2-${GH_TAGNAME}
 PKGNAME=		${DISTNAME:L}
+REVISION=		0
 
 GH_TAGNAME=		1.0.0
 GH_ACCOUNT=		ConsoleKit2
@@ -42,7 +43,8 @@ FAKE_FLAGS=		DBUS_SYS_DIR=${TRUEPREFIX}/share/examples/consolekit/dbus-1 \
 AUTOCONF_VERSION=	2.69
 AUTOMAKE_VERSION=	1.15
 BUILD_DEPENDS +=	${MODGNU_AUTOCONF_DEPENDS} \
-			${MODGNU_AUTOMAKE_DEPENDS}
+			${MODGNU_AUTOMAKE_DEPENDS} \
+			devel/libtool
 
 pre-configure:
 	cd ${WRKSRC} && \
