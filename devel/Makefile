@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1374 2015/08/16 19:49:25 edd Exp $
+# $OpenBSD: Makefile,v 1.1376 2015/08/20 12:58:10 edd Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1280,6 +1280,7 @@
      SUBDIR += py-notify
      SUBDIR += py-openbsd
      SUBDIR += py-optik
+     SUBDIR += py-path.py
      SUBDIR += py-parsing
      SUBDIR += py-parsing,python3
      SUBDIR += py-peak-rules
@@ -1333,6 +1334,7 @@
      SUBDIR += py-unittest2
      SUBDIR += py-urwid
      SUBDIR += py-urwid,python3
+     SUBDIR += py-vcversioner
      SUBDIR += py-virtualenv
      SUBDIR += py-wbem
      SUBDIR += py-wsgiutils
