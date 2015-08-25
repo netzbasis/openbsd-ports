@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.352 2015/08/17 09:08:09 bentley Exp $
+# $OpenBSD: Makefile,v 1.355 2015/08/25 00:22:13 jturner Exp $
 
      SUBDIR =
      SUBDIR += accountsservice
@@ -123,7 +123,6 @@
      SUBDIR += node-daemon
      SUBDIR += node-rmdir
      SUBDIR += node-syslog
-     SUBDIR += ns4
      SUBDIR += ntfs-3g
      SUBDIR += nut
      SUBDIR += opam
@@ -227,7 +226,7 @@
      SUBDIR += syslog-ng
      SUBDIR += tabled
      SUBDIR += tarsnap
-     SUBDIR += tcplist
+     SUBDIR += tarsnap-gui
      SUBDIR += tentakel
      SUBDIR += testdisk
      SUBDIR += tkdvd
