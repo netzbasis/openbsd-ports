@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.137 2015/08/20 14:24:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.140 2015/08/25 11:25:21 jca Exp $
 
 SHARED_ONLY=		Yes
 
 COMMENT-main=		GNOME Virtual File System
 COMMENT-smb=		GVFS mount module for samba
 COMMENT-goa=		GVFS volume monitor for gnome-online-account
+COMMENT-nfs=		GVFS mount module for NFS
 
 GNOME_PROJECT=		gvfs
 GNOME_VERSION=		1.24.2
@@ -12,6 +13,12 @@ GNOME_VERSION=		1.24.2
 PKGNAME-main=		${DISTNAME}
 PKGNAME-smb=		${GNOME_PROJECT}-smb-${GNOME_VERSION}
 PKGNAME-goa=		${GNOME_PROJECT}-goa-${GNOME_VERSION}
+PKGNAME-nfs=		${GNOME_PROJECT}-nfs-${GNOME_VERSION}
+
+REVISION-main=		0
+REVISION-smb=		0
+REVISION-goa=		0
+REVISION-nfs=		0
 
 # LGPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -35,13 +42,20 @@ WANTLIB-main += soup-2.4 sqlite3 gthread-2.0 xcb xcb-render
 WANTLIB-main += gcrypt gpg-error secret-1 epoxy lzo2
 
 WANTLIB-smb += ${WANTLIB}
-WANTLIB-smb += smbclient execinfo talloc tdb wbclient
+WANTLIB-smb += smbclient
 WANTLIB-smb += gcrypt gpg-error secret-1
 
 WANTLIB-goa += ${WANTLIB}
 WANTLIB-goa += goa-1.0
 
+WANTLIB-nfs += ${WANTLIB}
+WANTLIB-nfs += gcrypt gpg-error nfs secret-1
+
 MODGNOME_TOOLS=		docbook
+
+# XXX base libtool errors out since it can't find libs in local/lib/samba
+# brought in by libsmbclient
+USE_LIBTOOL=		gnu
 
 LIB_DEPENDS-main=	${LIB_DEPENDS} \
 			archivers/libarchive \
@@ -61,6 +75,12 @@ RUN_DEPENDS-goa=	${MODGETTEXT_RUN_DEPENDS} \
 LIB_DEPENDS-goa=	${LIB_DEPENDS} \
 			x11/gnome/online-accounts
 
+RUN_DEPENDS-nfs=	${MODGETTEXT_RUN_DEPENDS} \
+			${BASE_PKGPATH},-main=${GNOME_VERSION}
+LIB_DEPENDS-nfs=	${LIB_DEPENDS} \
+			devel/libnfs \
+			x11/gnome/libsecret
+
 CONFIGURE_ARGS=		--disable-libsystemd-login \
 			--disable-cdda \
 			--disable-bluray \
@@ -70,13 +90,10 @@ CONFIGURE_ARGS=		--disable-libsystemd-login \
 			--disable-udev \
 			--disable-gdu
 
-# requires libnfs
-CONFIGURE_ARGS +=	--disable-nfs
+MULTI_PACKAGES=		-main -smb -goa -nfs
 
-MULTI_PACKAGES=		-main -smb -goa
-
-PSEUDO_FLAVORS=		no_smb no_goa bootstrap
-FLAVOR?=		no_smb no_goa bootstrap
+PSEUDO_FLAVORS=		no_smb no_goa no_nfs bootstrap
+FLAVOR?=		no_smb no_goa no_nfs bootstrap
 
 .include <bsd.port.arch.mk>
 
@@ -86,6 +103,10 @@ CONFIGURE_ARGS +=	--disable-samba
 
 .if !${BUILD_PACKAGES:M-goa}
 CONFIGURE_ARGS +=	--disable-goa
+.endif
+
+.if !${BUILD_PACKAGES:M-nfs}
+CONFIGURE_ARGS +=	--disable-nfs
 .endif
 
 # test_polkitd.py, gvfs-test
