@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.286 2015/08/28 14:48:05 jeremy Exp $
+# $OpenBSD: Quirks.pm,v 1.288 2015/09/11 20:32:21 sthen Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -377,6 +377,7 @@ my $stem_extensions = {
 	'mirall' => 'owncloudclient',
 # 5.9
 	'consolekit' => 'consolekit2',
+	'tint' => 'tint2',
 };
 
 # reasons for obsolete packages
@@ -606,6 +607,7 @@ my $obsolete_reason = {
 	'wide-dhcp' => 0,
 	'cfs' => 0,
 	'rubinius' => 5,
+	'xorp' => 5,
 };
 
 # ->is_base_system($handle, $state):
