@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.4 2015/07/18 20:01:13 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.6 2015/09/13 12:37:49 sthen Exp $
 @pkgpath www/apache-httpd${FLAVOR_COMMA}
 @bin bin/ab
 bin/dbmmanage2
