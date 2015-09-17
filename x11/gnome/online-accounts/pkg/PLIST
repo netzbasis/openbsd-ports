@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.22 2015/06/10 12:48:15 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.24 2015/09/16 12:50:10 jasper Exp $
 include/goa-1.0/
 include/goa-1.0/goa/
 include/goa-1.0/goa/goa-generated.h
@@ -179,6 +179,12 @@ share/icons/hicolor/48x48/apps/im-silc.png
 share/icons/hicolor/48x48/apps/im-sip.png
 share/icons/hicolor/48x48/apps/im-yahoo.png
 share/icons/hicolor/48x48/apps/im-zephyr.png
+share/icons/hicolor/96x96/apps/goa-account-facebook.png
+share/icons/hicolor/96x96/apps/goa-account-flickr.png
+share/icons/hicolor/96x96/apps/goa-account-foursquare.png
+share/icons/hicolor/96x96/apps/goa-account-owncloud.png
+share/icons/hicolor/96x96/apps/goa-account-pocket.png
+share/icons/hicolor/96x96/apps/goa-account.png
 share/icons/hicolor/scalable/apps/im-aim.svg
 share/icons/hicolor/scalable/apps/im-ekiga.svg
 share/icons/hicolor/scalable/apps/im-gadugadu.svg
@@ -220,6 +226,7 @@ share/locale/bn_IN/LC_MESSAGES/gnome-online-accounts.mo
 share/locale/br/
 share/locale/br/LC_MESSAGES/
 share/locale/br/LC_MESSAGES/gnome-online-accounts-tpaw.mo
+share/locale/bs/LC_MESSAGES/gnome-online-accounts-tpaw.mo
 share/locale/bs/LC_MESSAGES/gnome-online-accounts.mo
 share/locale/ca/LC_MESSAGES/gnome-online-accounts-tpaw.mo
 share/locale/ca/LC_MESSAGES/gnome-online-accounts.mo
