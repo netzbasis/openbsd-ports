@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2015/09/11 19:11:11 kili Exp $
+# $OpenBSD: Makefile,v 1.23 2015/09/19 09:32:10 kili Exp $
 
 COMMENT =		CGI library for Haskell
 
