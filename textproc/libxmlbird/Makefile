@@ -1,28 +1,29 @@
-# $OpenBSD: Makefile,v 1.3 2015/08/25 13:18:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2015/09/20 12:03:54 jasper Exp $
 
 COMMENT =	XML parser written in Vala
 DISTNAME =	libxmlbird-1.0.6
-EXTRACT_SUFX =	.tar.xz
 CATEGORIES =	textproc
-REVISION =	0
+REVISION =	1
 
-SHARED_LIBS +=	xmlbird 0.0			# 1.0.5
+SHARED_LIBS +=	xmlbird 0.0			# 1.0.6
 
 HOMEPAGE =	http://birdfont.org/xmlbird.php
+
+MAINTAINER =	Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 # LGPLv3+
 PERMIT_PACKAGE_CDROM =	Yes
 
-MASTER_SITES =	http://birdfont.org/xmlbird-releases/
+MASTER_SITES =		http://birdfont.org/xmlbird-releases/
+EXTRACT_SUFX =		.tar.xz
 
-MODULES =	lang/python
+MODULES =		lang/python
 MODPY_ADJ_FILES =       configure
 
-BUILD_DEPENDS =	devel/py-doit \
-		lang/vala
+BUILD_DEPENDS =		devel/py-doit \
+			lang/vala
 
-# 'make test' will fail if not already installed.
-TEST_DEPENDS =	textproc/libxmlbird
+TEST_DEPENDS =		${BASE_PKGPATH}
 
 CONFIGURE_STYLE =	simple
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1384 2015/09/19 08:32:53 kili Exp $
+# $OpenBSD: Makefile,v 1.1394 2015/09/23 15:33:38 jca Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -175,15 +175,11 @@
      SUBDIR += hs-FindBin
      SUBDIR += hs-HUnit
      SUBDIR += hs-List
-     SUBDIR += hs-ListLike
      SUBDIR += hs-MissingH
-     SUBDIR += hs-MonadCatchIO-mtl
-     SUBDIR += hs-MonadCatchIO-transformers
      SUBDIR += hs-MonadRandom
      SUBDIR += hs-ObjectName
      SUBDIR += hs-OneTuple
      SUBDIR += hs-PSQueue
-     SUBDIR += hs-QuickAnnotate
      SUBDIR += hs-QuickCheck
      SUBDIR += hs-StateVar
      SUBDIR += hs-abstract-deque
@@ -192,7 +188,6 @@
      SUBDIR += hs-ansi-terminal
      SUBDIR += hs-ansi-wl-pprint
      SUBDIR += hs-async
-     SUBDIR += hs-atom
      SUBDIR += hs-base-unicode-symbols
      SUBDIR += hs-base16-bytestring
      SUBDIR += hs-base64-bytestring
@@ -206,31 +201,21 @@
      SUBDIR += hs-cereal
      SUBDIR += hs-cmdargs
      SUBDIR += hs-cmdlib
-     SUBDIR += hs-comonad
-     SUBDIR += hs-comonad-transformers
-     SUBDIR += hs-comonads-fd
      SUBDIR += hs-concurrent-extra
      SUBDIR += hs-conduit
      SUBDIR += hs-configurator
      SUBDIR += hs-constraints
-     SUBDIR += hs-contravariant
      SUBDIR += hs-convertible
      SUBDIR += hs-data-default
      SUBDIR += hs-data-hash
-     SUBDIR += hs-data-lens
-     SUBDIR += hs-data-lens-template
      SUBDIR += hs-dataenc
      SUBDIR += hs-directory-tree
-     SUBDIR += hs-distributive
      SUBDIR += hs-dlist
-     SUBDIR += hs-either
      SUBDIR += hs-enumerator
-     SUBDIR += hs-errors
      SUBDIR += hs-exceptions
      SUBDIR += hs-extensible-exceptions
      SUBDIR += hs-failure
      SUBDIR += hs-fgl
-     SUBDIR += hs-ghc-mtl
      SUBDIR += hs-ghc-paths
      SUBDIR += hs-gio
      SUBDIR += hs-glade
@@ -238,15 +223,12 @@
      SUBDIR += hs-hashable
      SUBDIR += hs-hashed-storage
      SUBDIR += hs-hashtables
-     SUBDIR += hs-hint
      SUBDIR += hs-hlint
      SUBDIR += hs-hood
      SUBDIR += hs-hoogle
      SUBDIR += hs-hslogger
-     SUBDIR += hs-iteratee
      SUBDIR += hs-language-c
      SUBDIR += hs-largeword
-     SUBDIR += hs-lens
      SUBDIR += hs-lifted-base
      SUBDIR += hs-logict
      SUBDIR += hs-mmap
@@ -254,7 +236,6 @@
      SUBDIR += hs-monad-control
      SUBDIR += hs-monad-par
      SUBDIR += hs-monad-par-extras
-     SUBDIR += hs-monads-tf
      SUBDIR += hs-mtl
      SUBDIR += hs-murmur-hash
      SUBDIR += hs-nats
@@ -277,7 +258,6 @@
      SUBDIR += hs-resourcet
      SUBDIR += hs-safe
      SUBDIR += hs-scientific
-     SUBDIR += hs-semigroupoids
      SUBDIR += hs-semigroups
      SUBDIR += hs-sendfile
      SUBDIR += hs-shellish
@@ -296,7 +276,6 @@
      SUBDIR += hs-transformers-base
      SUBDIR += hs-transformers-compat
      SUBDIR += hs-tuple
-     SUBDIR += hs-type-level
      SUBDIR += hs-unbounded-delays
      SUBDIR += hs-uniplate
      SUBDIR += hs-unix-compat
@@ -305,7 +284,6 @@
      SUBDIR += hs-uuid
      SUBDIR += hs-vault
      SUBDIR += hs-vector
-     SUBDIR += hs-vector-algorithms
      SUBDIR += hs-void
      SUBDIR += hscolour
      SUBDIR += hub
@@ -365,7 +343,6 @@
      SUBDIR += libgee
      SUBDIR += libgit2
      SUBDIR += libglade2
-     SUBDIR += libglademm
      SUBDIR += libgsf
      SUBDIR += libgtop2
      SUBDIR += libguess
@@ -516,7 +493,6 @@
      SUBDIR += ode
      SUBDIR += ois
      SUBDIR += omake
-     SUBDIR += opencm
      SUBDIR += openmpi
      SUBDIR += openocd
      SUBDIR += ophis
@@ -617,6 +593,7 @@
      SUBDIR += p5-Class-Std
      SUBDIR += p5-Class-Std-Fast
      SUBDIR += p5-Class-Std-Utils
+     SUBDIR += p5-Class-Tiny
      SUBDIR += p5-Class-Throwable
      SUBDIR += p5-Class-Trigger
      SUBDIR += p5-Class-Unload
@@ -1205,6 +1182,7 @@
      SUBDIR += pth
      SUBDIR += ptlib
      SUBDIR += pudb
+     SUBDIR += pudb,python3
      SUBDIR += py-Checker
      SUBDIR += py-SOAPpy
      SUBDIR += py-addons
@@ -1221,6 +1199,7 @@
      SUBDIR += py-backports-ssl-match-hostname
      SUBDIR += py-blessings
      SUBDIR += py-blinker
+     SUBDIR += py-blinker,python3
      SUBDIR += py-buildbot
      SUBDIR += py-buildslave
      SUBDIR += py-bytecodeassembler
@@ -1337,6 +1316,7 @@
      SUBDIR += py-test,python3
      SUBDIR += py-test-cov
      SUBDIR += py-testtools
+     SUBDIR += py-texscythe
      SUBDIR += py-tpg
      SUBDIR += py-turbocheetah
      SUBDIR += py-turbokid

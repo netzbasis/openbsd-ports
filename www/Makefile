@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.736 2015/09/19 08:26:35 kili Exp $
+# $OpenBSD: Makefile,v 1.740 2015/09/24 10:44:59 jca Exp $
 
      SUBDIR =
      SUBDIR += ajaxterm
@@ -63,14 +63,12 @@
      SUBDIR += havp
      SUBDIR += hiawatha
      SUBDIR += hs-cgi
-     SUBDIR += hs-clientsession
      SUBDIR += hs-html
      SUBDIR += hs-http-attoparsec
      SUBDIR += hs-http-types
      SUBDIR += hs-wai
      SUBDIR += hs-warp
      SUBDIR += hs-webkit
-     SUBDIR += hs-xhtml-combinators
      SUBDIR += http_load
      SUBDIR += http_ping
      SUBDIR += httrack
@@ -405,6 +403,7 @@
      SUBDIR += py-django
      SUBDIR += py-feedgenerator
      SUBDIR += py-flask
+     SUBDIR += py-flask,python3
      SUBDIR += py-flask-login
      SUBDIR += py-flask-principal
      SUBDIR += py-flask-wtf
@@ -416,6 +415,7 @@
      SUBDIR += py-httpie
      SUBDIR += py-httplib2
      SUBDIR += py-itsdangerous
+     SUBDIR += py-itsdangerous,python3
      SUBDIR += py-jinja2
      SUBDIR += py-jinja2,python3
      SUBDIR += py-jonpy

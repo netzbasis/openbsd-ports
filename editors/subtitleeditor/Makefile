@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2015/06/30 13:54:39 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.44 2015/09/23 09:41:18 ajacoutot Exp $
 
 SHARED_ONLY=	   	Yes
 
@@ -6,6 +6,7 @@ COMMENT=		GTK+ subtitles editor
 
 V=			0.52.1
 DISTNAME=		subtitleeditor-${V}
+REVISION=		1
 
 CATEGORIES=		graphics editors
 
@@ -37,7 +38,7 @@ BUILD_DEPENDS=		devel/iso-codes
 LIB_DEPENDS=		multimedia/gstreamer1/mm \
 			multimedia/gstreamer1/plugins-base \
 			textproc/enchant \
-			textproc/libxml++ \
+			textproc/libxml++>=2.40.0 \
 			x11/gtk3mm
 
 RUN_DEPENDS=		devel/desktop-file-utils \
@@ -49,6 +50,7 @@ RUN_DEPENDS=		devel/desktop-file-utils \
 MODULES=		devel/gettext \
 			textproc/intltool
 
+# c++11
 MODULES +=		gcc4
 MODGCC4_ARCHS=		*
 MODGCC4_LANGS=		c++
@@ -57,6 +59,7 @@ USE_GMAKE=		Yes
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
+			CXXFLAGS="-std=c++11" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=		${CONFIGURE_SHARED} \
 			--with-default-video-sink=autovideosink \

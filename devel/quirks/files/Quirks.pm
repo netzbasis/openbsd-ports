@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.292 2015/09/19 22:23:22 ajacoutot Exp $
+# $OpenBSD: Quirks.pm,v 1.306 2015/09/23 10:59:39 ajacoutot Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -378,6 +378,9 @@ my $stem_extensions = {
 # 5.9
 	'consolekit' => 'consolekit2',
 	'tint' => 'tint2',
+	'py-nmap' => 'py3-nmap',
+	'pudb' => 'py-pudb',
+	'openexr-ctl' => 'ctl',
 };
 
 # reasons for obsolete packages
@@ -609,8 +612,38 @@ my $obsolete_reason = {
 	'xorp' => 5,
 	'faac' => 6,
 	'god' => 5,
-	'jpilot' => 6,
-	'pilot-link' => 6,
+	'ivan' => 3,
+	'hs-xhtml-combinators' => 5,
+	'feldspar-compiler' => 5,
+	'feldspar-language' => 5,
+	'hs-MonadCatchIO-mtl' => 5,
+	'hs-MonadCatchIO-transformers' => 5,
+	'hs-QuickAnnotate' => 5,
+	'hs-clientsession' => 5,
+	'hs-comonad' => 5,
+	'hs-comonad-transformers' => 5,
+	'hs-comonads-fd' => 5,
+	'hs-contravariant' => 5,
+	'hs-cprng-aes' => 5,
+	'hs-data-lens' => 5,
+	'hs-data-lens-template' => 5,
+	'hs-distributive' => 5,
+	'hs-either' => 5,
+	'hs-errors' => 5,
+	'hs-ghc-mtl' => 5,
+	'hs-hint' => 5,
+	'hs-iteratee' => 5,
+	'hs-lens' => 5,
+	'hs-monads-tf' => 5,
+	'hs-semigroupoids' => 5,
+	'hs-syntactic' => 5,
+	'hs-type-level' => 5,
+	'hs-vector-algorithms' => 5,
+	'hs-ListLike' => 5,
+	'hs-atom' => 5,
+	'gstreamermm' => 3,
+	'opencm' => 3,
+	'libglademm' => 3,
 };
 
 # ->is_base_system($handle, $state):
