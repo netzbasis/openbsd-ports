@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.76 2015/09/11 07:19:12 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.78 2015/09/26 09:25:50 ajacoutot Exp $
 
 # optional dependencies
 # https://github.com/saltstack/salt/blob/develop/doc/conf.py#L42
@@ -17,6 +17,7 @@ COMMENT =		remote execution and configuration management system
 
 MODPY_EGG_VERSION =	2015.8.0
 DISTNAME =		salt-${MODPY_EGG_VERSION}
+REVISION =		1
 
 CATEGORIES =		sysutils net devel
 
@@ -35,20 +36,30 @@ BUILD_DEPENDS =		textproc/py-yaml \
 			www/py-jinja2 \
 			www/py-requests
 			
-# _requirements.txt
-RUN_DEPENDS =		net/py-msgpack \
+# requirements/base.txt
+RUN_DEPENDS =		devel/py-futures \
+			net/py-msgpack \
 			textproc/py-MarkupSafe \
 			textproc/py-yaml \
 			www/py-jinja2 \
-			www/py-requests
+			www/py-requests \
+			www/py-tornado
+
+# requirements/zeromq.txt
+RUN_DEPENDS +=		net/py-zmq \
+			security/py-crypto
+
+# requirements/raet.txt (see pkg/DESCR)
+#RUN_DEPENDS +=		devel/py-ioflo \
+#			net/py-raet
+#			security/py-libnacl
+
 
 # salt/output/progress.py
 RUN_DEPENDS +=		devel/py-progressbar
 
-# zeromq-requirements.txt: ZeroMQ transport
-RUN_DEPENDS +=		net/py-zmq \
-			security/py-M2Crypto \
-			security/py-crypto
+# salt/modules/x509.py
+RUN_DEPENDS +=		security/py-M2Crypto
 
 # for tests
 PORTHOME =		${WRKDIST}
