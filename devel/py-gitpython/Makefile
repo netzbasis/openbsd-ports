@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.3 2015/04/02 14:21:14 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2015/09/29 10:51:54 sthen Exp $
 
 COMMENT=		library used to interact with Git repositories
 
 # There's no real stable release, but this is the most used
 # version available.
-MODPY_EGG_VERSION=	0.3.2
-DISTNAME=		GitPython-${MODPY_EGG_VERSION}.RC1
+MODPY_EGG_VERSION=	0.3.2rc1
+REVISION =		1
+DISTNAME=		GitPython-0.3.2.RC1
 PKGNAME=		py-${DISTNAME:S/.RC1//}
 CATEGORIES=		devel
 

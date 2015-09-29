@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2015/05/01 21:06:44 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2015/09/29 10:52:12 sthen Exp $
 
 COMMENT=		convert profilers output into a dot(1) graph
 
@@ -6,8 +6,9 @@ GH_ACCOUNT=		jrfonseca
 GH_PROJECT=		gprof2dot
 GH_COMMIT=		6fbb81559609c12e7c64ae5dce7d102a414a7514
 
-MODPY_EGG_VERSION=	2015.02.03
-DISTNAME=		${GH_PROJECT}-${MODPY_EGG_VERSION}
+MODPY_EGG_VERSION=	2015.2.3
+REVISION =		1
+DISTNAME=		${GH_PROJECT}-2015.02.03
 
 CATEGORIES=		graphics
 

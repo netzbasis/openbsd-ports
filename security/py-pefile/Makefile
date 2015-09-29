@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2014/04/13 07:06:26 benoit Exp $
+# $OpenBSD: Makefile,v 1.5 2015/09/29 10:52:34 sthen Exp $
 
 COMMENT =		Python module to read and work with PE files
 
-MODPY_EGG_VERSION =	1.2.10-139
-DISTNAME =		pefile-${MODPY_EGG_VERSION}
-PKGNAME =		py-pefile-${MODPY_EGG_VERSION:S/-/./}
+MODPY_EGG_VERSION =	1.2.10.post139
+REVISION =		1
+DISTNAME =		pefile-1.2.10-139
+PKGNAME =		py-pefile-1.2.10.139
 
 CATEGORIES =		security
 

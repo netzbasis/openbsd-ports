@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2015/09/18 09:30:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2015/09/29 10:52:53 sthen Exp $
 
 COMMENT =		US-ASCII transliterations of Unicode text
 
-MODPY_EGG_VERSION =	0.04.18
-DISTNAME =		Unidecode-${MODPY_EGG_VERSION}
-PKGNAME = 		py-unidecode-${MODPY_EGG_VERSION}
+MODPY_EGG_VERSION =	0.4.18
+REVISION =		1
+DISTNAME =		Unidecode-0.04.18
+PKGNAME = 		py-unidecode-0.04.18
 
 CATEGORIES =		textproc
 

@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2015/04/02 14:21:15 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2015/09/29 10:51:54 sthen Exp $
 
 COMMENT =		date computations with months
 
-MODPY_EGG_VERSION =	1.0b
-DISTNAME =		MonthDelta-${MODPY_EGG_VERSION}
-PKGNAME =		py-monthdelta-${MODPY_EGG_VERSION}
+MODPY_EGG_VERSION =	1.0b0
+REVISION =		1
+DISTNAME =		MonthDelta-1.0b
+PKGNAME =		py-monthdelta-1.0b
 
 CATEGORIES =		devel
 

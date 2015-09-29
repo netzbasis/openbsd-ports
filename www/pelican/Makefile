@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2015/08/27 14:29:07 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.5 2015/09/29 10:52:54 sthen Exp $
 
 COMMENT =		static site generator written in Python
 
 MODPY_EGG_VERSION =	${GH_TAGNAME}
 DISTNAME =		pelican-${MODPY_EGG_VERSION}
+REVISION =		1
 
 GH_ACCOUNT =		getpelican
 GH_PROJECT =		pelican
@@ -28,6 +29,9 @@ RUN_DEPENDS =		devel/py-blinker \
 			textproc/py-unidecode \
 			www/py-feedgenerator \
 			www/py-jinja2
+
+# Else setuptools skips filenames containing UTF8 chars
+MAKE_ENV +=		LC_CTYPE=en_US.UTF-8
 
 TEST_DEPENDS =		${RUN_DEPENDS} \
 			devel/git \
