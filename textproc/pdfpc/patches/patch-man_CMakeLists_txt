@@ -1,0 +1,13 @@
+$OpenBSD: patch-man_CMakeLists_txt,v 1.2 2015/09/30 17:43:23 jasper Exp $
+
+https://github.com/pdfpc/pdfpc/pull/81
+
+--- man/CMakeLists.txt.orig	Mon Jun  1 04:37:51 2015
++++ man/CMakeLists.txt	Wed Sep 30 19:33:58 2015
+@@ -3,5 +3,5 @@ CONFIGURE_FILE(${CMAKE_CURRENT_SOURCE_DIR}/pdfpc.in ${
+ install(FILES
+     pdfpc.1
+ DESTINATION
+-    share/man/man1
++    ${MANDIR}
+ )
