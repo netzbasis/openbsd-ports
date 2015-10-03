@@ -1,4 +1,8 @@
-@comment $OpenBSD: PFRAG.shared,v 1.2 2015/06/21 07:40:46 czarkoff Exp $
+@comment $OpenBSD: PLIST-main,v 1.1 2015/10/02 19:32:08 czarkoff Exp $
+@pkgpath telephony/baresip/baresip
+@bin bin/baresip
+lib/baresip/
+lib/baresip/modules/
 lib/baresip/modules/account.so
 lib/baresip/modules/amr.so
 lib/baresip/modules/aubridge.so
@@ -8,6 +12,7 @@ lib/baresip/modules/avcodec.so
 lib/baresip/modules/avformat.so
 lib/baresip/modules/cons.so
 lib/baresip/modules/contact.so
+lib/baresip/modules/daala.so
 lib/baresip/modules/dtls_srtp.so
 lib/baresip/modules/fakevideo.so
 lib/baresip/modules/g711.so
@@ -25,7 +30,6 @@ lib/baresip/modules/natpmp.so
 lib/baresip/modules/opus.so
 lib/baresip/modules/plc.so
 lib/baresip/modules/presence.so
-lib/baresip/modules/selftest.so
 lib/baresip/modules/selfview.so
 lib/baresip/modules/sndfile.so
 lib/baresip/modules/sndio.so
@@ -46,3 +50,11 @@ lib/baresip/modules/vumeter.so
 lib/baresip/modules/x11.so
 lib/baresip/modules/x11grab.so
 lib/baresip/modules/zrtp.so
+share/baresip/
+share/baresip/busy.wav
+share/baresip/callwaiting.wav
+share/baresip/error.wav
+share/baresip/message.wav
+share/baresip/notfound.wav
+share/baresip/ring.wav
+share/baresip/ringback.wav
