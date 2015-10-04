@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.5 2015/08/25 13:18:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2015/10/03 20:15:26 sthen Exp $
 
-BROKEN =	unreliable build, frequently hangs after compiling translations
+BROKEN =	build error 'error CS0234: The type or namespace name Unix does not exist[...]'
 
 V =		1.6
 COMMENT =	open source drawing/editing program modeled after Paint.NET
