@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.740 2015/09/24 10:44:59 jca Exp $
+# $OpenBSD: Makefile,v 1.742 2015/10/06 16:17:15 jca Exp $
 
      SUBDIR =
      SUBDIR += ajaxterm
@@ -520,7 +520,6 @@
      SUBDIR += surf
      SUBDIR += surf2
      SUBDIR += surfraw
-     SUBDIR += swfdec-plugin
      SUBDIR += swiggle
      SUBDIR += syweb
      SUBDIR += tidyp
@@ -560,7 +559,6 @@
      SUBDIR += xcache
      SUBDIR += xombrero
      SUBDIR += youtube-dl
-     SUBDIR += yui
      SUBDIR += zendframework
 
 .include <bsd.port.subdir.mk>
