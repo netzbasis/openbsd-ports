@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.384 2015/09/21 11:05:35 kili Exp $
+# $OpenBSD: Makefile,v 1.386 2015/10/13 17:07:07 jca Exp $
 
      SUBDIR =
      SUBDIR += ADMsmb
@@ -126,6 +126,7 @@
      SUBDIR += ocaml-ssl
      SUBDIR += onesixtyone
      SUBDIR += opencdk
+     SUBDIR += opendnssec
      SUBDIR += openpam
      SUBDIR += opensc
      SUBDIR += openssl
@@ -145,7 +146,7 @@
      SUBDIR += p5-Catalyst-Plugin-Authentication-Store-DBIC
      SUBDIR += p5-Catalyst-Plugin-Authentication-Store-Htpasswd
      SUBDIR += p5-Catalyst-Plugin-Authorization-ACL
-     SUBDIR += p5-Catalyst-Plugin-Authorization-Roles 
+     SUBDIR += p5-Catalyst-Plugin-Authorization-Roles
      SUBDIR += p5-Chipcard-PCSC
      SUBDIR += p5-Crypt-Blowfish
      SUBDIR += p5-Crypt-Blowfish_PP
