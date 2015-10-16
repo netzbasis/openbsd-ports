@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.36 2015/10/13 17:12:27 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.38 2015/10/15 17:40:55 ajacoutot Exp $
 
 COMMENT=		library for storing and retrieving passwords and secrets
 
 GNOME_PROJECT=		libsecret
 GNOME_VERSION=		0.18.3
-REVISION=		1
+REVISION=		2
 
 SHARED_LIBS +=  secret-1             1.0      # 0.0
 
@@ -20,10 +20,6 @@ MODULES=		devel/gettext \
 MODGNOME_TOOLS += docbook gobject-introspection vala
 LIB_DEPENDS=		devel/glib2 \
 			security/libgcrypt
-
-# org.freedesktop.secrets
-# (XXX add "gnome-keyring-*|ksecretsservice-*" when implemented)
-RUN_DEPENDS +=		x11/gnome/keyring
 
 # unable to autolaunch a dbus-daemon without a $DISPLAY for X11
 TEST_IS_INTERACTIVE=	X11

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.37 2015/05/22 11:31:19 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.39 2015/10/15 17:40:55 ajacoutot Exp $
 
 COMMENT=	library for gnome keyring integration
 
 GNOME_PROJECT=	libgnome-keyring
 GNOME_VERSION=	3.12.0
-REVISION=	1
+REVISION=	2
 
 SHARED_LIBS +=  gnome-keyring        7.0      # 2.0
 
@@ -21,10 +21,6 @@ MODULES=	devel/gettext \
 LIB_DEPENDS=	security/libgcrypt \
 		x11/dbus \
 		devel/glib2
-
-# org.freedesktop.secrets
-# (XXX add "gnome-keyring-*|ksecretsservice-*" when implemented)
-RUN_DEPENDS +=	x11/gnome/keyring
 
 # regression tests call 'env python'
 MODULES +=		lang/python
