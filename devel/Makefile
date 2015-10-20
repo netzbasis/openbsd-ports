@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1398 2015/10/14 17:39:54 robert Exp $
+# $OpenBSD: Makefile,v 1.1402 2015/10/20 00:10:18 abieber Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -41,7 +41,6 @@
      SUBDIR += bouml
      SUBDIR += bpython
      SUBDIR += bullet
-     SUBDIR += bustle
      SUBDIR += bzr
      SUBDIR += bzr-svn
      SUBDIR += c2hs
@@ -159,7 +158,6 @@
      SUBDIR += gsl
      SUBDIR += gsoap
      SUBDIR += gtest
-     SUBDIR += gtk2hs-buildtools
      SUBDIR += gtkparasite
      SUBDIR += guilib
      SUBDIR += gwenhywfar
@@ -216,9 +214,6 @@
      SUBDIR += hs-failure
      SUBDIR += hs-fgl
      SUBDIR += hs-ghc-paths
-     SUBDIR += hs-gio
-     SUBDIR += hs-glade
-     SUBDIR += hs-glib
      SUBDIR += hs-hashable
      SUBDIR += hs-hashed-storage
      SUBDIR += hs-hashtables
@@ -242,7 +237,6 @@
      SUBDIR += hs-newtype
      SUBDIR += hs-old-locale
      SUBDIR += hs-old-time
-     SUBDIR += hs-pango
      SUBDIR += hs-parallel
      SUBDIR += hs-parsec
      SUBDIR += hs-patch-combinators
@@ -454,15 +448,6 @@
      SUBDIR += nasm
      SUBDIR += netbeans
      SUBDIR += ninja
-     SUBDIR += node-async
-     SUBDIR += node-bindings
-     SUBDIR += node-buffer-writer
-     SUBDIR += node-cloned
-     SUBDIR += node-expresso
-     SUBDIR += node-fibers
-     SUBDIR += node-generic-pool
-     SUBDIR += node-gir
-     SUBDIR += node-mnm
      SUBDIR += npth
      SUBDIR += nspr
      SUBDIR += ocaml-batteries

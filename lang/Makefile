@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.178 2015/09/21 11:05:11 kili Exp $
+# $OpenBSD: Makefile,v 1.180 2015/10/20 00:11:11 abieber Exp $
 
      SUBDIR =
      SUBDIR += STk
@@ -58,10 +58,8 @@
      SUBDIR += nbfc
      SUBDIR += newlisp
      SUBDIR += nhc98
-     SUBDIR += nimrod
+     SUBDIR += nim
      SUBDIR += node
-     SUBDIR += node-java
-     SUBDIR += node-typescript
      SUBDIR += nqp
      SUBDIR += obc
      SUBDIR += ocaml

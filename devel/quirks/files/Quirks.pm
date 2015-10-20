@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.311 2015/10/08 08:03:25 jasper Exp $
+# $OpenBSD: Quirks.pm,v 1.315 2015/10/20 01:34:36 abieber Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -381,6 +381,7 @@ my $stem_extensions = {
 	'py-nmap' => 'py3-nmap',
 	'pudb' => 'py-pudb',
 	'openexr-ctl' => 'ctl',
+	'nimrod' => 'nim',
 };
 
 # reasons for obsolete packages
@@ -392,6 +393,7 @@ my @msg = (
 	"superseded by base component", #4
 	"outdated and/or no longer required by other ports", #5
 	"no longer useful", #6
+	"removed in favor of using languages package manager", #7
 );
 
 my $obsolete_reason = {
@@ -652,6 +654,34 @@ my $obsolete_reason = {
 	'yui' => 2,
 	'yui-docs' => 2,
 	'tkrat' => 3,
+	'bustle' => 5,
+	'bluetile' => 5,
+	'hs-cairo' => 5,
+	'hs-gio' => 5,
+	'hs-glade' => 5,
+	'hs-glib' => 5,
+	'hs-gtk' => 5,
+	'hs-pango' => 5,
+	'hs-webkiet' => 5,
+	'node-pg' => 7,
+	'node-sqlite3' => 7,
+	'node-async' => 7,
+	'node-bindings' => 7,
+	'node-buffer-writer' => 7,
+	'node-cloned' => 7,
+	'node-expresso' => 7,
+	'node-fibers' => 7,
+	'node-generic-pool' => 7,
+	'node-gir' => 7,
+	'node-mnm' => 7,
+	'node-canvas' => 7,
+	'node-java' => 7,
+	'node-typescript' => 7,
+	'node-bcrypt' => 7,
+	'node-always' => 7,
+	'node-daemon' => 7,
+	'node-rmdir' => 7,
+	'node-syslog' => 7,
 };
 
 # ->is_base_system($handle, $state):
