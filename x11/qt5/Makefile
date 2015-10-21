@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.42 2015/09/04 22:08:25 sthen Exp $
+# $OpenBSD: Makefile,v 1.44 2015/10/20 21:58:27 zhuk Exp $
 
 SHARED_ONLY =		Yes
 ONLY_FOR_ARCHS =	${GCC4_ARCHS}
@@ -6,7 +6,6 @@ ONLY_FOR_ARCHS =	${GCC4_ARCHS}
 VERSION =		5.4.1
 ENGINIO_VERSION =	1.1.1
 DISTNAME =		qt-everywhere-opensource-src-${VERSION}
-REVISION-main =		0
 
 COMMENT-main =		C++ general-purpose toolkit
 COMMENT-examples =	examples for Qt5

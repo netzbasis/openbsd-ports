@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.315 2015/10/20 01:34:36 abieber Exp $
+# $OpenBSD: Quirks.pm,v 1.317 2015/10/20 21:34:29 sthen Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -382,6 +382,8 @@ my $stem_extensions = {
 	'pudb' => 'py-pudb',
 	'openexr-ctl' => 'ctl',
 	'nimrod' => 'nim',
+	'icinga2-mysql' => 'icinga2-ido-mysql',
+	'icinga2-pgsql' => 'icinga2-ido-pgsql',
 };
 
 # reasons for obsolete packages
@@ -662,7 +664,7 @@ my $obsolete_reason = {
 	'hs-glib' => 5,
 	'hs-gtk' => 5,
 	'hs-pango' => 5,
-	'hs-webkiet' => 5,
+	'hs-webkit' => 5,
 	'node-pg' => 7,
 	'node-sqlite3' => 7,
 	'node-async' => 7,
@@ -682,6 +684,7 @@ my $obsolete_reason = {
 	'node-daemon' => 7,
 	'node-rmdir' => 7,
 	'node-syslog' => 7,
+	'gtk2hs-buildtools' => 5,
 };
 
 # ->is_base_system($handle, $state):
