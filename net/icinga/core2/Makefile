@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2015/10/20 21:34:29 sthen Exp $
+# $OpenBSD: Makefile,v 1.38 2015/10/21 19:10:34 sthen Exp $
 
 BROKEN-hppa =	needs 64-bit atomic ops; __sync_add_and_fetch_4
 SHARED_ONLY =	Yes
@@ -8,7 +8,8 @@ COMMENT-mysql =	MySQL support for icinga2
 COMMENT-pgsql =	PostgreSQL support for icinga2
 
 V =		2.3.11
-REVISION =	0
+REVISION =	1
+REVISION-main =	3
 EPOCH =		0
 GH_ACCOUNT =	Icinga
 GH_PROJECT =	icinga2
@@ -30,6 +31,7 @@ MODULES =		devel/cmake
 
 BUILD_DEPENDS =		devel/bison \
 			devel/flex
+# needs flex 2.5.31+
 
 MULTI_PACKAGES =	-main -mysql -pgsql
 
@@ -49,36 +51,31 @@ LIB_DEPENDS-pgsql =	${LIB_DEPENDS} databases/postgresql
 RUN_DEPENDS-pgsql =	${BASE_PKGPATH},-main
 
 CONFIGURE_ARGS += \
-	-DCMAKE_INSTALL_MANDIR:String="${PREFIX}/man" \
-	-DCMAKE_INSTALL_SYSCONFDIR:String="${PREFIX}/share/examples" \
-	-DCMAKE_INSTALL_FULL_SYSCONFDIR:String="${WRKINST}${SYSCONFDIR}" \
-	-DCMAKE_INSTALL_LOCALSTATEDIR:String="${LOCALSTATEDIR}" \
-	-DICINGA2_COMMAND_USER:String="_icinga" \
-	-DICINGA2_COMMAND_GROUP:String="_icingacmd" \
-	-DICINGA2_USER:String="_icinga" \
-	-DICINGA2_GROUP:String="_icinga" \
-	-DICINGA2_GIT_VERSION_INFO:Boolean="OFF" \
-	-DICINGA2_PLUGINDIR:String="${LOCALBASE}/libexec/nagios"
-
-pre-configure:
-	ln -sf ${LOCALBASE}/bin/gflex ${WRKDIR}/bin/flex
+	-DCMAKE_INSTALL_MANDIR:String=${PREFIX}/man \
+	-DCMAKE_INSTALL_SYSCONFDIR:String=${PREFIX}/share/examples \
+	-DCMAKE_INSTALL_FULL_SYSCONFDIR:String=${WRKINST}${SYSCONFDIR} \
+	-DCMAKE_INSTALL_LOCALSTATEDIR:String=${LOCALSTATEDIR} \
+	-DFLEX_EXECUTABLE=${LOCALBASE}/bin/gflex \
+	-DICINGA2_USER:String=_icinga \
+	-DICINGA2_GROUP:String=_icinga \
+	-DICINGA2_GIT_VERSION_INFO:Boolean=OFF \
+	-DICINGA2_PLUGINDIR:String=${LOCALBASE}/libexec/nagios
 
 post-configure:
-	perl -pi -e 's,%SYSCONFDIR%,${SYSCONFDIR},' ${WRKBUILD}/config.h \
-	    ${WRKBUILD}/etc/icinga/icinga-classic-apache.conf
-
-pre-install:
-	mkdir -p ${PREFIX}
+	@sed -i 's,%SYSCONFDIR%,${SYSCONFDIR},' ${WRKBUILD}/config.h
 
 post-install:
-	cp -r ${WRKSRC}/tools/syntax ${PREFIX}/share/examples/icinga2/
-	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share/examples/icinga2/syntax
-	chmod -R u=rwX,g=rX,o=rX ${PREFIX}/share/examples/icinga2/syntax
+	${INSTALL_DATA_DIR} ${PREFIX}/share/nano
+	${INSTALL_DATA} ${WRKSRC}/tools/syntax/nano/*nanorc ${PREFIX}/share/nano
+.for i in ftdetect syntax
+	${INSTALL_DATA_DIR} ${PREFIX}/share/vim/vimfiles/$i
+	${INSTALL_DATA} ${WRKSRC}/tools/syntax/vim/$i/* ${PREFIX}/share/vim/vimfiles/$i
+.endfor
 
-# XXX this target isn't actually needed in order to run the tests, but they
-# are all failing for me with ld.so errors (possibly rpath-related) and
-# the -V makes it more obvious what's going on.
-do-test:
-	cd ${WRKBUILD}; ctest -V
+pre-test:
+	@if pkg_info | grep libconfig- > /dev/null; then \
+	    printf "\n*** icinga2 tests do not work if libconfig is installed ***\n\n"; \
+	    exit 1; \
+	fi
 
 .include <bsd.port.mk>
