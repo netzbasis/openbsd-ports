@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile.inc,v 1.1 2015/08/12 06:26:34 ajacoutot Exp $
+# $OpenBSD: Makefile.inc,v 1.3 2015/10/30 22:46:16 ajacoutot Exp $
 
-V=			0.8.6
+V=			0.8.7
 GH_ACCOUNT=		pcbsd
 GH_TAGNAME=		v${V}-Release
 DISTNAME=		${GH_PROJECT}-${V}
+HOMEPAGE=		http://lumina-desktop.org/
 
 CATEGORIES ?=		x11 x11/lumina
 
