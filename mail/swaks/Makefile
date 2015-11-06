@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.12 2015/04/06 12:48:51 schwarze Exp $
+# $OpenBSD: Makefile,v 1.14 2015/11/05 19:28:25 jca Exp $
 
 COMMENT=	swiss army knife SMTP transaction tester
 
 DISTNAME=	swaks-20130209.0
-REVISION =	1
+REVISION=	3
 CATEGORIES=	mail
 
 HOMEPAGE=	http://jetmore.org/john/code/swaks/
 MASTER_SITES=	http://jetmore.org/john/code/swaks/
 
-MAINTAINER=	Simon Bertrang <simon@openbsd.org>
+MAINTAINER=	Jeremie Courreges-Anglas <jca@wxcvbn.org>
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
