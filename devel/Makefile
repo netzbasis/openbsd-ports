@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1410 2015/11/15 08:24:18 rpointel Exp $
+# $OpenBSD: Makefile,v 1.1413 2015/11/16 21:07:25 edd Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1244,6 +1244,7 @@
      SUBDIR += py-html5lib
      SUBDIR += py-iniparse
      SUBDIR += py-ioflo
+     SUBDIR += py-ipython_genutils
      SUBDIR += py-isodate
      SUBDIR += py-isodate,python3
      SUBDIR += py-jsonrpclib
@@ -1281,6 +1282,7 @@
      SUBDIR += py-prioritized_methods
      SUBDIR += py-progressbar
      SUBDIR += py-protocols
+     SUBDIR += py-ptyprocess
      SUBDIR += py-py
      SUBDIR += py-py,python3
      SUBDIR += py-pyprof2calltree
@@ -1316,6 +1318,7 @@
      SUBDIR += py-testtools
      SUBDIR += py-texscythe
      SUBDIR += py-tpg
+     SUBDIR += py-traitlets
      SUBDIR += py-turbocheetah
      SUBDIR += py-turbokid
      SUBDIR += py-twisted
