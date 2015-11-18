@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.395 2015/11/14 16:14:47 sthen Exp $
+# $OpenBSD: Makefile,v 1.397 2015/11/17 12:49:25 sthen Exp $
 
      SUBDIR =
      SUBDIR += ADMsmb
@@ -85,6 +85,7 @@
      SUBDIR += kqoauth
      SUBDIR += l0phtcrack
      SUBDIR += lastpass-cli
+     SUBDIR += letsencrypt
      SUBDIR += libassuan
      SUBDIR += libfprint
      SUBDIR += libgcrypt
@@ -229,8 +230,6 @@
      SUBDIR += pwsafe,no_x11
      SUBDIR += py-M2Crypto
      SUBDIR += py-Rijndael
-     SUBDIR += py-acme
-     SUBDIR += py-acme,python3
      SUBDIR += py-bcrypt
      SUBDIR += py-bcrypt,python3
      SUBDIR += py-crack

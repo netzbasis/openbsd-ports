@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1413 2015/11/16 21:07:25 edd Exp $
+# $OpenBSD: Makefile,v 1.1416 2015/11/17 19:51:39 florian Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1273,6 +1273,8 @@
      SUBDIR += py-parsedatetime,python3
      SUBDIR += py-parsing
      SUBDIR += py-parsing,python3
+     SUBDIR += py-pbr
+     SUBDIR += py-pbr,python3
      SUBDIR += py-peak-rules
      SUBDIR += py-pexpect
      SUBDIR += py-pip
@@ -1324,6 +1326,8 @@
      SUBDIR += py-twisted
      SUBDIR += py-tz
      SUBDIR += py-tz,python3
+     SUBDIR += py-tzlocal
+     SUBDIR += py-tzlocal,python3
      SUBDIR += py-unit
      SUBDIR += py-unit,no_x11
      SUBDIR += py-unittest2
@@ -1336,6 +1340,7 @@
      SUBDIR += py-xdg
      SUBDIR += py-xdg,python3
      SUBDIR += py-xmlrunner
+     SUBDIR += py-zopecomponent
      SUBDIR += py-zopeevent
      SUBDIR += py-zopeinterface
      SUBDIR += py-zopetesting

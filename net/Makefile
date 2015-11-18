@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.935 2015/11/15 12:44:20 jca Exp $
+# $OpenBSD: Makefile,v 1.940 2015/11/17 20:58:15 florian Exp $
 
      SUBDIR =
      SUBDIR += GeoIP
@@ -505,6 +505,9 @@
      SUBDIR += py-GeoIP
      SUBDIR += py-IP
      SUBDIR += py-adns
+     SUBDIR += py-ripe.atlas.cousteau
+     SUBDIR += py-ripe.atlas.sagan
+     SUBDIR += py-ripe.atlas.tools
      SUBDIR += py-boto
      SUBDIR += py-curl
      SUBDIR += py-czmq
@@ -534,9 +537,13 @@
      SUBDIR += py-pcapy
      SUBDIR += py-raet
      SUBDIR += py-snmp
+     SUBDIR += py-socketio-client
+     SUBDIR += py-socketio-client,python3
      SUBDIR += py-socks
      SUBDIR += py-socks,python3
      SUBDIR += py-twitter
+     SUBDIR += py-websocket-client
+     SUBDIR += py-websocket-client,python3
      SUBDIR += py-xmpp
      SUBDIR += py-xmpppy
      SUBDIR += py-zmq
