@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1416 2015/11/17 19:51:39 florian Exp $
+# $OpenBSD: Makefile,v 1.1421 2015/11/18 20:38:55 sthen Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -770,6 +770,7 @@
      SUBDIR += p5-Heap
      SUBDIR += p5-Hook-LexWrap
      SUBDIR += p5-I18N-LangTags
+     SUBDIR += p5-IO-AIO
      SUBDIR += p5-IO-All
      SUBDIR += p5-IO-Capture
      SUBDIR += p5-IO-CaptureOutput
@@ -1226,7 +1227,11 @@
      SUBDIR += py-enum34
      SUBDIR += py-epsilon
      SUBDIR += py-extremes
+     SUBDIR += py-extras
+     SUBDIR += py-extras,python3
      SUBDIR += py-fpconst
+     SUBDIR += py-funcsigs
+     SUBDIR += py-funcsigs,python3
      SUBDIR += py-functools32
      SUBDIR += py-futures
      SUBDIR += py-gdata
@@ -1318,6 +1323,7 @@
      SUBDIR += py-test-cov
      SUBDIR += py-testpath
      SUBDIR += py-testtools
+     SUBDIR += py-testtools,python3
      SUBDIR += py-texscythe
      SUBDIR += py-tpg
      SUBDIR += py-traitlets
@@ -1335,6 +1341,7 @@
      SUBDIR += py-urwid,python3
      SUBDIR += py-vcversioner
      SUBDIR += py-virtualenv
+     SUBDIR += py-virtualenv,python3
      SUBDIR += py-wbem
      SUBDIR += py-wsgiutils
      SUBDIR += py-xdg
@@ -1417,6 +1424,8 @@
      SUBDIR += ruby-polyglot
      SUBDIR += ruby-prof,ruby21
      SUBDIR += ruby-prof,ruby22
+     SUBDIR += ruby-puppet_forge,ruby21
+     SUBDIR += ruby-puppet_forge,ruby22
      SUBDIR += ruby-racc,ruby21
      SUBDIR += ruby-racc,ruby22
      SUBDIR += ruby-rake
