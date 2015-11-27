@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2015/11/17 14:19:37 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2015/11/26 09:09:19 sthen Exp $
 
 COMMENT=	ACME protocol implementation
 
 DISTNAME=	acme-${MODPY_EGG_VERSION}
 PKGNAME=	${MODPY_PY_PREFIX}${DISTNAME:S/.dev/pre/}
-REVISION=	2
 
 FLAVORS=	python3
 FLAVOR?=
@@ -32,11 +31,9 @@ TEST_IS_INTERACTIVE=	Yes
 # no devel/py-mock for py3 yet
 NO_TEST=	Yes
 .else
-TEST_DEPENDS=	devel/py-nose${MODPY_FLAVOR} \
+TEST_DEPENDS=	devel/py-funcsigs${MODPY_FLAVOR} \
+		devel/py-nose${MODPY_FLAVOR} \
 		devel/py-mock${MODPY_FLAVOR}
-# py-funcsigs not imported yet
-#TEST_DEPENDS+=	devel/py-funcsigs${MODPY_FLAVOR}
-NO_TEST=	Yes
 .endif
 
 post-install:
