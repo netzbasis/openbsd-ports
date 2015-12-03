@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2015/12/01 08:16:15 jasper Exp $
+# $OpenBSD: Makefile,v 1.11 2015/12/02 18:20:27 jasper Exp $
 
 COMMENT =	Context Free Design Grammar
 
@@ -20,6 +20,8 @@ EXTRACT_SUFX =	.tgz
 
 WANTLIB =	c m png z
 
+BUILD_DEPENDS =	devel/bison
+
 LIB_DEPENDS =	graphics/png
 
 MODULES =	gcc4
@@ -29,6 +31,8 @@ MODGCC4_ARCHS =	*
 USE_GMAKE =	Yes
 
 WRKDIST =	${WRKDIR}/context-free-${VERSION}
+
+MAKE_ENV +=	CPPFLAGS="${CFLAGS}"
 
 EXAMPLEDIR =	${PREFIX}/share/examples/cfdg
 
