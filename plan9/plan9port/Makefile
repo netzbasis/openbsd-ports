@@ -1,16 +1,15 @@
-# $OpenBSD: Makefile,v 1.10 2015/12/04 04:26:33 gsoares Exp $
+# $OpenBSD: Makefile,v 1.12 2015/12/08 22:14:32 gsoares Exp $
 
 ONLY_FOR_ARCHS =	amd64 i386 powerpc
 BROKEN-powerpc =	threading issues
 
 COMMENT =		Plan 9 from user space
 
-DISTNAME =		plan9port-20151111
-REVISION =		0
+DISTNAME =		plan9port-20151208
 
 GH_ACCOUNT =		9fans
 GH_PROJECT =		plan9port
-GH_COMMIT =		6a93bd5c92bd2954314f492f10bbcac2c3416da0
+GH_COMMIT =		009b0cb5eb340b8bc3268bfaeb86abfeffdc1b1c
 
 CATEGORIES =		plan9
 
@@ -22,7 +21,7 @@ MAINTAINER =		Gleydson Soares <gsoares@openbsd.org>
 # certain fonts may NOT be redistributed separately
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB =		X11 Xext c kvm m pthread util fontconfig freetype z
+WANTLIB =		X11 Xext c m pthread util fontconfig freetype z
 
 DISTFILES =		${GH_COMMIT}.tar.gz pgw.tar.bz2:1 \
 				roget.tar.bz2:0 scat.tgz:1
