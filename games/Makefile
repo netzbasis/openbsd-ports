@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.319 2015/12/10 01:33:47 bentley Exp $
+# $OpenBSD: Makefile,v 1.321 2015/12/10 06:56:44 bentley Exp $
 
      SUBDIR =
      SUBDIR += 0ad
@@ -108,6 +108,7 @@
      SUBDIR += gnome-mastermind
      SUBDIR += gnuchess
      SUBDIR += gnugo
+     SUBDIR += gnurobbo
      SUBDIR += gnushogi
      SUBDIR += golly
      SUBDIR += gottcode
@@ -217,6 +218,7 @@
      SUBDIR += speeddreams
      SUBDIR += speyes
      SUBDIR += spider
+     SUBDIR += starfighter
      SUBDIR += starlanes
      SUBDIR += stepmania
      SUBDIR += stone-soup
@@ -229,6 +231,7 @@
      SUBDIR += supertuxkart
      SUBDIR += taisei
      SUBDIR += taxipilot
+     SUBDIR += tbftss
      SUBDIR += teeworlds
      SUBDIR += tetrinetx
      SUBDIR += tong

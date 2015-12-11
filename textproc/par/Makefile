@@ -1,20 +1,26 @@
-# $OpenBSD: Makefile,v 1.20 2015/02/16 22:57:13 naddy Exp $
+# $OpenBSD: Makefile,v 1.22 2015/12/10 12:34:55 jca Exp $
 
 COMMENT=	paragraph reflow for email
 
 VERSION=	1.52
 DISTNAME=	Par${VERSION:S/.//}
 PKGNAME=	par-${VERSION}
-REVISION =	0
+REVISION=	1
 CATEGORIES=	textproc
 
 HOMEPAGE=	http://www.nicemice.net/par/
 
+MAINTAINER=	Gregor Best <gbe@unobtanium.de>
+
 # custom
 PERMIT_PACKAGE_CDROM=	Yes
-WANTLIB=		c 
+
+WANTLIB += c
 
 MASTER_SITES=   ${HOMEPAGE}
+
+PATCHFILES=	par_1.52-i18n.3.diff.gz
+PATCH_DIST_STRIP=	-p1
 
 ALL_TARGET=
 
