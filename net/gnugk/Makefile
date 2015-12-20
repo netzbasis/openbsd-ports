@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.52 2015/12/03 07:59:13 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.54 2015/12/19 07:58:47 ajacoutot Exp $
 
 BROKEN-hppa=	libpt.so.7.0: undefined reference to __sync_fetch_and_or_4
 BROKEN-mips64=	libpt.so.7.0: undefined reference to __sync_fetch_and_or_4
@@ -7,7 +7,9 @@ SHARED_ONLY=	Yes
 
 COMMENT=	H.323 gatekeeper
 
-DISTNAME=	gnugk-4.0
+DISTNAME=	gnugk-4.0.1
+# XXX
+WRKDIST=	${WRKDIR}/gnugk-4.0
 
 CATEGORIES=	net telephony
 
@@ -19,7 +21,7 @@ MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += GeoIP SDL c crypto expat h323 kvm lber ldap ldap_r
-WANTLIB += lua5.1 m netsnmp netsnmpagent netsnmpmibs pt pthread
+WANTLIB += lua${MODLUA_VERSION} m netsnmp netsnmpagent netsnmpmibs pt pthread
 WANTLIB += sasl2 ssh ssl stdc++ z
 
 MODULES=	lang/lua
@@ -61,7 +63,7 @@ MAKE_FLAGS=	PTLIB_LIBDIR=$$(pkg-config --variable libdir ptlib) \
 		OBJDIR=.
 
 pre-configure:
-	perl -pi -e 's,-llua,-llua${MODLUA_DEFAULT_VERSION} -lm,g' ${WRKSRC}/configure
+	sed -i 's,-llua,-llua${MODLUA_DEFAULT_VERSION} -lm,g' ${WRKSRC}/configure
 
 post-build:
 	cd ${WRKSRC}/addpasswd && \
