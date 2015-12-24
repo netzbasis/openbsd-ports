@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1427 2015/12/17 19:35:09 shadchin Exp $
+# $OpenBSD: Makefile,v 1.1429 2015/12/23 20:12:32 kili Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -204,7 +204,6 @@
      SUBDIR += hs-convertible
      SUBDIR += hs-data-default
      SUBDIR += hs-data-hash
-     SUBDIR += hs-dataenc
      SUBDIR += hs-directory-tree
      SUBDIR += hs-dlist
      SUBDIR += hs-enumerator
@@ -214,7 +213,6 @@
      SUBDIR += hs-fgl
      SUBDIR += hs-ghc-paths
      SUBDIR += hs-hashable
-     SUBDIR += hs-hashed-storage
      SUBDIR += hs-hashtables
      SUBDIR += hs-hlint
      SUBDIR += hs-hood
@@ -1327,6 +1325,7 @@
      SUBDIR += py-test
      SUBDIR += py-test,python3
      SUBDIR += py-test-cov
+     SUBDIR += py-test-cov,python3
      SUBDIR += py-testpath
      SUBDIR += py-testtools
      SUBDIR += py-testtools,python3
