@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.321 2015/12/10 06:56:44 bentley Exp $
+# $OpenBSD: Makefile,v 1.323 2015/12/27 21:56:09 pascal Exp $
 
      SUBDIR =
      SUBDIR += 0ad
@@ -117,6 +117,7 @@
      SUBDIR += gti
      SUBDIR += gtkballs
      SUBDIR += hackdata
+     SUBDIR += hedgewars
      SUBDIR += heroes
      SUBDIR += hex-a-hop
      SUBDIR += hypatia
@@ -168,6 +169,7 @@
      SUBDIR += omega
      SUBDIR += oolite
      SUBDIR += openarena
+     SUBDIR += openmw
      SUBDIR += opensonic
      SUBDIR += openttd
      SUBDIR += opentyrian

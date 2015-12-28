@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1431 2015/12/26 20:50:44 shadchin Exp $
+# $OpenBSD: Makefile,v 1.1433 2015/12/27 21:20:43 kirby Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -205,6 +205,7 @@
      SUBDIR += hs-convertible
      SUBDIR += hs-data-default
      SUBDIR += hs-data-hash
+     SUBDIR += hs-dataenc
      SUBDIR += hs-directory-tree
      SUBDIR += hs-dlist
      SUBDIR += hs-enumerator
@@ -440,6 +441,7 @@
      SUBDIR += mpfr
      SUBDIR += msp430
      SUBDIR += mspdebug
+     SUBDIR += mygui
      SUBDIR += mysql++
      SUBDIR += nagelfar
      SUBDIR += naken430asm

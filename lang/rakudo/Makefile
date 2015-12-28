@@ -1,13 +1,14 @@
-# $OpenBSD: Makefile,v 1.24 2015/12/10 18:01:06 pascal Exp $
+# $OpenBSD: Makefile,v 1.26 2015/12/28 00:13:59 pascal Exp $
 
 SHARED_ONLY =		Yes
 
 COMMENT =		Rakudo Perl 6 compiler
 
-V =			2015.11
+V =			2015.12
 DISTNAME =		rakudo-$V
+REVISION =		0
 
-NQP_VERSION =		2015.11
+NQP_VERSION =		2015.12
 
 CATEGORIES =		lang perl6
 
