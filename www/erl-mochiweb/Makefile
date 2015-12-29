@@ -1,15 +1,16 @@
-# $OpenBSD: Makefile,v 1.10 2015/07/10 17:10:09 jasper Exp $
+# $OpenBSD: Makefile,v 1.12 2015/12/28 19:02:16 jasper Exp $
+
+PORTROACH=	limit:^v
 
 COMMENT=	Erlang library for building lightweight HTTP servers
 
-V=		2.10.0
+V=		2.12.2
 GH_ACCOUNT=	mochi
 GH_PROJECT=	mochiweb
 GH_TAGNAME=	v$V
-DISTNAME=	${GH_PROJECT}-$V
+DISTNAME=	${GH_PROJECT}-${GH_TAGNAME}
 PKGNAME=	erl-${DISTNAME}
 CATEGORIES=	www
-REVISION=	3
 
 # Apache2
 PERMIT_PACKAGE_CDROM=	Yes
