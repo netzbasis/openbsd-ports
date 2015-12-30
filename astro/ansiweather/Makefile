@@ -1,17 +1,17 @@
-# $OpenBSD: Makefile,v 1.4 2015/10/30 16:40:18 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2015/12/29 19:49:39 jasper Exp $
 
 COMMENT =	weather in terminal, with ANSI colors and Unicode symbols
-DISTNAME =	ansiweather-${GH_TAGNAME}
+
+GH_ACCOUNT =	fcambus
+GH_PROJECT =	ansiweather
+GH_TAGNAME =	1.06
+
 CATEGORIES =	astro
 
 MAINTAINER =	Frederic Cambus <fcambus@users.sourceforge.net>
 
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
-
-GH_ACCOUNT =	fcambus
-GH_PROJECT =	ansiweather
-GH_TAGNAME =	1.06
 
 RUN_DEPENDS =	textproc/jq
 

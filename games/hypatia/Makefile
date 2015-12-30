@@ -1,7 +1,6 @@
-# $OpenBSD: Makefile,v 1.15 2015/12/12 20:23:03 jasper Exp $
+# $OpenBSD: Makefile,v 1.17 2015/12/29 19:49:40 jasper Exp $
 
 COMMENT =	2D action adventure game engine
-DISTNAME =	hypatia-${GH_TAGNAME}
 CATEGORIES =	games x11
 SUBST_VARS +=	GH_TAGNAME
 

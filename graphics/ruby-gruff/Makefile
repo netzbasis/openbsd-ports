@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.15 2014/09/19 20:36:01 jeremy Exp $
+# $OpenBSD: Makefile,v 1.17 2015/12/29 20:27:23 jasper Exp $
 
 COMMENT=		library for making beautiful graphs
 
-DISTNAME=		gruff-0.3.7
+DISTNAME=		gruff-0.6.0
 CATEGORIES=		graphics
 
 HOMEPAGE=		https://github.com/topfunky/gruff
@@ -17,7 +17,6 @@ CONFIGURE_STYLE=	ruby gem
 BUILD_DEPENDS=		${RUN_DEPENDS}
 RUN_DEPENDS=		graphics/ruby-rmagick,${MODRUBY_FLAVOR}
 
-MODRUBY_TEST=		testrb
-MODRUBY_TEST_TARGET=	-I lib test/test_*.rb
+MODRUBY_TEST=		rake
 
 .include <bsd.port.mk>
