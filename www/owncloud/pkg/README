@@ -1,4 +1,4 @@
-$OpenBSD: README,v 1.40 2015/11/26 07:38:34 ajacoutot Exp $
+$OpenBSD: README,v 1.43 2015/12/30 08:53:07 ajacoutot Exp $
 
 +-----------------------------------------------------------------------
 | Running ${FULLPKGNAME} on OpenBSD
@@ -12,6 +12,9 @@ Official documentation is available at:
 
 Post-installation instructions
 ==============================
+
+*** It is highly recommended to use SSL on the webserver so that access is done
+*** over https instead of http!
 
 chroot(2)
 ---------
@@ -79,8 +82,9 @@ Apache2
 Apache2 configuration for ownCloud is stored under:
     ${PREFIX}/conf/modules.sample/httpd-owncloud.conf
 
-It needs to be included by adding the following to ${SYSCONFDIR}/apache2/httpd2.conf:
-    Include ${PREFIX}/conf/modules.sample/httpd-owncloud.conf
+It needs to be enabled by running the following command:
+# ln -s ../modules.sample/httpd-owncloud.conf /var/www/conf/modules
+# rcctl restart apache2
 
 PHP
 ---
@@ -132,6 +136,16 @@ in-memory data structure store.
 More information and configuration example are available at:
     https://doc.owncloud.org/server/${VR}/admin_manual/configuration_server/caching_configuration.html#id4
 
+TL;DR
+Adapt and append the following to: ${INSTDIR}/config/config.php
+
+  'memcache.local' => '\OC\Memcache\Redis',
+  'redis' => array(
+    'host' => 'localhost',
+    'port' => 6379,
+    'timeout' => 0.0,
+  ),
+
 Authentication backends
 -----------------------
 When using a non-default user authentication backend (LDAP, IMAP, ...),
@@ -160,9 +174,6 @@ The personal WebDAV share can be accessed using the following URL (e.g.
 with Nautilus, Thunar or Doplhin) and the corresponding user and
 password for the share:
     http://<hostname>/owncloud/remote.php/webdav/
-
-NOTE that it is highly recommended to use SSL on the webserver so that
-access is done over https instead of http.
 
 Synchronization
 ===============
