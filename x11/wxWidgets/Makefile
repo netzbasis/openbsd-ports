@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.50 2015/07/05 15:17:36 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.53 2016/01/02 22:19:06 jasper Exp $
 
 SHARED_ONLY =	Yes
 
@@ -9,8 +9,8 @@ V =		2.8.12
 DISTNAME =	wxWidgets-${V}
 PKGNAME-main =	wxWidgets-gtk2-${V}
 PKGNAME-media =	wxWidgets-media-${V}
-REVISION-main =	10
-REVISION-media =5
+REVISION-main =	12
+REVISION-media =7
 CATEGORIES =	x11
 MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=wxwindows/}
 
@@ -38,7 +38,8 @@ SHARED_LIBS =	wx_base			3.0	\
 
 HOMEPAGE =	http://www.wxwidgets.org/
 
-# modified LGPL
+# wxWindows (modified LGPL)
+# http://www.wxwidgets.org/about/licence/
 PERMIT_PACKAGE_CDROM =	Yes
 
 MULTI_PACKAGES = -main -media
