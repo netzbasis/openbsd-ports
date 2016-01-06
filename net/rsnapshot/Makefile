@@ -1,8 +1,11 @@
-# $OpenBSD: Makefile,v 1.15 2015/08/19 09:26:09 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.17 2016/01/05 17:14:01 ajacoutot Exp $
 
 COMMENT=		remote filesystem snapshot utility
 
-DISTNAME=		rsnapshot-1.4.1
+GH_ACCOUNT=		rsnapshot
+GH_PROJECT=		rsnapshot
+GH_TAGNAME=		1.4.2
+
 CATEGORIES=		net sysutils
 
 HOMEPAGE=		http://www.rsnapshot.org/
@@ -12,9 +15,12 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=		http://www.rsnapshot.org/downloads/
+AUTOCONF_VERSION=	2.69
+AUTOMAKE_VERSION=	1.15
 
-BUILD_DEPENDS=		net/rsync
+BUILD_DEPENDS=		${MODGNU_AUTOCONF_DEPENDS} \
+			${MODGNU_AUTOMAKE_DEPENDS} \
+			net/rsync
 
 RUN_DEPENDS=		devel/p5-Lchown \
 			net/rsync
@@ -26,8 +32,13 @@ CONFIGURE_STYLE=	gnu
 SAMPLES_DIR=		${PREFIX}/share/examples/rsnapshot
 FAKE_FLAGS=		sysconfdir=${SAMPLES_DIR}
 
+pre-configure:
+	cd ${WRKSRC} && \
+		AUTOCONF_VERSION=${AUTOCONF_VERSION} \
+		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} ./autogen.sh
+
 pre-build:
-	perl -pi -e 's,/etc/rsnapshot.conf,${SYSCONFDIR}/rsnapshot.conf,g' \
+	sed -i "s,/etc/rsnapshot.conf,${SYSCONFDIR}/rsnapshot.conf,g" \
 		${WRKSRC}/{README.md,rsnapshot-program.pl} \
 		${WRKSRC}/rsnapshot{,-diff} \
 		${WRKSRC}/utils/rsnapshotdb/rsnapshotDB.pl
