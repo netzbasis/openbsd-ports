@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.477 2016/01/04 12:20:02 shadchin Exp $
+# $OpenBSD: Makefile,v 1.480 2016/01/07 01:03:28 jeremy Exp $
 
      SUBDIR =
      SUBDIR += TclXML
@@ -38,6 +38,7 @@
      SUBDIR += elasticsearch
      SUBDIR += enchant
      SUBDIR += exempi
+     SUBDIR += extract_url
      SUBDIR += fcbanner
      SUBDIR += filepp
      SUBDIR += gdiff
@@ -335,6 +336,7 @@
      SUBDIR += py-cssutils
      SUBDIR += py-defusedxml
      SUBDIR += py-docutils
+     SUBDIR += py-docutils,python3
      SUBDIR += py-elementtidy
      SUBDIR += py-enchant
      SUBDIR += py-enchant,python3
@@ -381,15 +383,19 @@
      SUBDIR += ruby-classifier
      SUBDIR += ruby-fast-stemmer,ruby21
      SUBDIR += ruby-fast-stemmer,ruby22
+     SUBDIR += ruby-fast-stemmer,ruby23
      SUBDIR += ruby-fast_xs,ruby21
      SUBDIR += ruby-fast_xs,ruby22
+     SUBDIR += ruby-fast_xs,ruby23
      SUBDIR += ruby-gyoku
      SUBDIR += ruby-haml
      SUBDIR += ruby-hpricot,ruby21
      SUBDIR += ruby-hpricot,ruby22
+     SUBDIR += ruby-hpricot,ruby23
      SUBDIR += ruby-htmlentities
      SUBDIR += ruby-hyperestraier,ruby21
      SUBDIR += ruby-hyperestraier,ruby22
+     SUBDIR += ruby-hyperestraier,ruby23
      SUBDIR += ruby-icalendar
      SUBDIR += ruby-kramdown
      SUBDIR += ruby-liquid
@@ -398,15 +404,19 @@
      SUBDIR += ruby-mustache
      SUBDIR += ruby-nokogiri,ruby21
      SUBDIR += ruby-nokogiri,ruby22
+     SUBDIR += ruby-nokogiri,ruby23
      SUBDIR += ruby-nori
      SUBDIR += ruby-pdf-reader
      SUBDIR += ruby-pygments.rb
      SUBDIR += ruby-rdiscount,ruby21
      SUBDIR += ruby-rdiscount,ruby22
+     SUBDIR += ruby-rdiscount,ruby23
      SUBDIR += ruby-redcarpet,ruby21
      SUBDIR += ruby-redcarpet,ruby22
+     SUBDIR += ruby-redcarpet,ruby23
      SUBDIR += ruby-redcloth,ruby21
      SUBDIR += ruby-redcloth,ruby22
+     SUBDIR += ruby-redcloth,ruby23
      SUBDIR += ruby-rexical
      SUBDIR += ruby-ronn
      SUBDIR += ruby-rss

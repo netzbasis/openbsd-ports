@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.367 2015/12/11 00:44:06 jturner Exp $
+# $OpenBSD: Makefile,v 1.369 2016/01/07 01:03:28 jeremy Exp $
 
      SUBDIR =
      SUBDIR += accountsservice
@@ -8,7 +8,7 @@
      SUBDIR += apcd
      SUBDIR += apcupsd
      SUBDIR += augeas
-     SUBDIR += autossh
+     SUBDIR += awscli
      SUBDIR += backuppc
      SUBDIR += bacula
      SUBDIR += bchunk
@@ -187,12 +187,14 @@
      SUBDIR += ruby-libvirt,ruby22
      SUBDIR += ruby-posix-spawn,ruby21
      SUBDIR += ruby-posix-spawn,ruby22
+     SUBDIR += ruby-posix-spawn,ruby23
      SUBDIR += ruby-puppet
      SUBDIR += ruby-puppet-lint
      SUBDIR += ruby-puppet-syntax
      SUBDIR += ruby-r10k
      SUBDIR += ruby-shadow,ruby21
      SUBDIR += ruby-shadow,ruby22
+     SUBDIR += ruby-shadow,ruby23
      SUBDIR += ruby-vlad
      SUBDIR += runit
      SUBDIR += safecat
