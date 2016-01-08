@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1445 2016/01/07 01:03:28 jeremy Exp $
+# $OpenBSD: Makefile,v 1.1450 2016/01/07 21:05:42 kili Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -191,7 +191,6 @@
      SUBDIR += hs-base64-bytestring
      SUBDIR += hs-bimap
      SUBDIR += hs-blaze-builder
-     SUBDIR += hs-blaze-builder-conduit
      SUBDIR += hs-blaze-textual
      SUBDIR += hs-bytestring-mmap
      SUBDIR += hs-case-insensitive
@@ -232,7 +231,6 @@
      SUBDIR += hs-murmur-hash
      SUBDIR += hs-nats
      SUBDIR += hs-network
-     SUBDIR += hs-network-conduit
      SUBDIR += hs-network-uri
      SUBDIR += hs-newtype
      SUBDIR += hs-old-locale
@@ -1208,6 +1206,7 @@
      SUBDIR += py-cffi
      SUBDIR += py-cffi,python3
      SUBDIR += py-cheetah
+     SUBDIR += py-click
      SUBDIR += py-clint
      SUBDIR += py-cloudpickle
      SUBDIR += py-colorama
@@ -1303,12 +1302,15 @@
      SUBDIR += py-pbr,python3
      SUBDIR += py-peak-rules
      SUBDIR += py-pexpect
+     SUBDIR += py-pexpect,python3
      SUBDIR += py-pip
      SUBDIR += py-pip,python3
      SUBDIR += py-pretend
      SUBDIR += py-pretend,python3
      SUBDIR += py-prioritized_methods
      SUBDIR += py-progressbar
+     SUBDIR += py-prompt_toolkit
+     SUBDIR += py-prompt_toolkit,python3
      SUBDIR += py-protocols
      SUBDIR += py-ptyprocess
      SUBDIR += py-ptyprocess,python3
@@ -1370,6 +1372,8 @@
      SUBDIR += py-virtualenv
      SUBDIR += py-virtualenv,python3
      SUBDIR += py-wbem
+     SUBDIR += py-wcwidth
+     SUBDIR += py-wcwidth,python3
      SUBDIR += py-wsgiutils
      SUBDIR += py-xdg
      SUBDIR += py-xdg,python3

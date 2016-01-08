@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.369 2016/01/07 01:03:28 jeremy Exp $
+# $OpenBSD: Makefile,v 1.372 2016/01/07 14:56:19 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += accountsservice
@@ -8,6 +8,7 @@
      SUBDIR += apcd
      SUBDIR += apcupsd
      SUBDIR += augeas
+     SUBDIR += aws-shell
      SUBDIR += awscli
      SUBDIR += backuppc
      SUBDIR += bacula
@@ -50,6 +51,7 @@
      SUBDIR += dvd+rw-tools
      SUBDIR += dwdiff
      SUBDIR += e2fsprogs
+     SUBDIR += ec2-api-tools
      SUBDIR += entr
      SUBDIR += eventlog
      SUBDIR += facter
@@ -160,6 +162,7 @@
      SUBDIR += py-augeas,python3
      SUBDIR += py-cef
      SUBDIR += py-daemon
+     SUBDIR += py-elasticsearch-curator
      SUBDIR += py-lockfile
      SUBDIR += py-metlog
      SUBDIR += py-psutil

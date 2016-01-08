@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2015/01/26 12:54:01 jca Exp $
+# $OpenBSD: Makefile,v 1.10 2016/01/07 19:03:19 jasper Exp $
 
 COMMENT=	turns your keyboard into a fast pointer mover
 
 DISTNAME=	keynav-0.20101014.3067
+REVISION=	1
 EPOCH=		0
 
 CATEGORIES=	x11
