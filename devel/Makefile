@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1451 2016/01/09 19:55:18 kili Exp $
+# $OpenBSD: Makefile,v 1.1455 2016/01/10 21:38:24 bluhm Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1060,6 +1060,7 @@
      SUBDIR += p5-Test-Pod
      SUBDIR += p5-Test-Pod-Content
      SUBDIR += p5-Test-Pod-Coverage
+     SUBDIR += p5-Test-Regexp
      SUBDIR += p5-Test-Reporter
      SUBDIR += p5-Test-Requires
      SUBDIR += p5-Test-Script
@@ -1184,6 +1185,8 @@
      SUBDIR += py-addons
      SUBDIR += py-algorithm-munkres
      SUBDIR += py-altgraph
+     SUBDIR += py-appdirs
+     SUBDIR += py-appdirs,python3
      SUBDIR += py-argcomplete
      SUBDIR += py-argh
      SUBDIR += py-asn1
@@ -1292,7 +1295,9 @@
      SUBDIR += py-notify
      SUBDIR += py-optik
      SUBDIR += py-path.py
+     SUBDIR += py-path.py,python3
      SUBDIR += py-pathlib
+     SUBDIR += py-pathlib,python3
      SUBDIR += py-parsedatetime
      SUBDIR += py-parsedatetime,python3
      SUBDIR += py-parsing
@@ -1329,6 +1334,8 @@
      SUBDIR += py-setproctitle,python3
      SUBDIR += py-setuptools
      SUBDIR += py-setuptools,python3
+     SUBDIR += py-setuptools_scm
+     SUBDIR += py-setuptools_scm,python3
      SUBDIR += py-sh
      SUBDIR += py-silc
      SUBDIR += py-simplegeneric
@@ -1347,6 +1354,8 @@
      SUBDIR += py-test-capturelog,python3
      SUBDIR += py-test-cov
      SUBDIR += py-test-cov,python3
+     SUBDIR += py-test-runner
+     SUBDIR += py-test-runner,python3
      SUBDIR += py-test-httpbin
      SUBDIR += py-test-httpbin,python3
      SUBDIR += py-testpath
