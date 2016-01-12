@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1455 2016/01/10 21:38:24 bluhm Exp $
+# $OpenBSD: Makefile,v 1.1458 2016/01/11 14:30:23 shadchin Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -760,6 +760,7 @@
      SUBDIR += p5-Getopt-Long-Descriptive
      SUBDIR += p5-Getopt-Simple
      SUBDIR += p5-Git-Repository
+     SUBDIR += p5-Glib-Object-Introspection
      SUBDIR += p5-Glib2
      SUBDIR += p5-Graph
      SUBDIR += p5-Guard
@@ -1266,6 +1267,7 @@
      SUBDIR += py-ioflo
      SUBDIR += py-ipykernel
      SUBDIR += py-ipython_genutils
+     SUBDIR += py-ipython_genutils,python3
      SUBDIR += py-isodate
      SUBDIR += py-isodate,python3
      SUBDIR += py-jmespath
@@ -1339,7 +1341,9 @@
      SUBDIR += py-sh
      SUBDIR += py-silc
      SUBDIR += py-simplegeneric
+     SUBDIR += py-simplegeneric,python3
      SUBDIR += py-simplejson
+     SUBDIR += py-simplejson,python3
      SUBDIR += py-singledispatch
      SUBDIR += py-sip
      SUBDIR += py-six
@@ -1359,11 +1363,13 @@
      SUBDIR += py-test-httpbin
      SUBDIR += py-test-httpbin,python3
      SUBDIR += py-testpath
+     SUBDIR += py-testpath,python3
      SUBDIR += py-testtools
      SUBDIR += py-testtools,python3
      SUBDIR += py-texscythe
      SUBDIR += py-tpg
      SUBDIR += py-traitlets
+     SUBDIR += py-traitlets,python3
      SUBDIR += py-turbocheetah
      SUBDIR += py-turbokid
      SUBDIR += py-twisted

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.40 2015/01/20 12:28:31 bentley Exp $
+# $OpenBSD: Makefile,v 1.42 2016/01/11 21:29:50 espie Exp $
 
 COMMENT-main=		ur-quan masters: space exploration game with battles
 COMMENT-content=	ur-quan masters: game content
@@ -34,13 +34,13 @@ PKGNAME-remix3 =	uqm-remix3-$V
 PKGNAME-remix4 =	uqm-remix4-$V
 PKGNAME-threedomusic =	uqm-threedomusic-$V
 PKGNAME-voice =		uqm-voice-$V
-REVISION =		2
+REVISION =		3
 EXTRACT_ONLY =		${uqm_source}
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=sc2/}
 
 HOMEPAGE=		http://sc2.sourceforge.net/
 
-MAINTAINER =		Anthony J. Bentley <anthony@cathet.us>
+MAINTAINER =		Anthony J. Bentley <anthony@anjbe.name>
 
 # code GPLv2+, data Creative Commons Attribution-NonCommercial-ShareAlike 2.5
 # NC does not apply to unmodified uqm distributions, but mark it to be safe
