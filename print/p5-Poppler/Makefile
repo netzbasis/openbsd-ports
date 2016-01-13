@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2016/01/11 10:22:48 sthen Exp $
+# $OpenBSD: Makefile,v 1.3 2016/01/12 16:34:12 sthen Exp $
 
 SHARED_ONLY=	Yes
 
 COMMENT=	PDF manipulation library
 
 DISTNAME=	Poppler-1.01
+REVISION=	0
 
 CATEGORIES=	print
 
@@ -20,7 +21,8 @@ MODULES=	cpan
 CPAN_AUTHOR=	VOLKENING
 CONFIGURE_STYLE= modbuild
 
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS} \
+		devel/p5-ExtUtils-PkgConfig
 RUN_DEPENDS=	devel/p5-Glib-Object-Introspection \
 		graphics/p5-Cairo \
 		www/p5-URI
