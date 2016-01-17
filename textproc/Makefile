@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.481 2016/01/07 11:53:04 sebastia Exp $
+# $OpenBSD: Makefile,v 1.483 2016/01/16 23:18:41 kili Exp $
 
      SUBDIR =
      SUBDIR += TclXML
@@ -62,8 +62,6 @@
      SUBDIR += highlight
      SUBDIR += hs-HaXml
      SUBDIR += hs-attoparsec
-     SUBDIR += hs-blaze-html
-     SUBDIR += hs-blaze-markup
      SUBDIR += hs-bytestring-lexing
      SUBDIR += hs-bytestring-nums
      SUBDIR += hs-bytestring-show
@@ -73,7 +71,6 @@
      SUBDIR += hs-tagsoup
      SUBDIR += hs-xml
      SUBDIR += hs-xml-types
-     SUBDIR += hs-xmlhtml
      SUBDIR += html
      SUBDIR += html-xml-utils
      SUBDIR += hunspell

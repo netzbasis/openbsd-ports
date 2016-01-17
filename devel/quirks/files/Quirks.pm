@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.343 2016/01/11 15:51:18 kili Exp $
+# $OpenBSD: Quirks.pm,v 1.345 2016/01/17 01:16:38 juanfra Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -389,6 +389,8 @@ my $stem_extensions = {
 	'tesseract-dan-frak' => 'tesseract-dan_frak',
 	'grive' => 'grive2',
 	'py-reportlab-renderPM' => 'py-reportlab',
+	'cmus-flac' => 'cmus',
+	'cmus-wavpack' => 'cmus',
 };
 
 # reasons for obsolete packages
@@ -701,6 +703,9 @@ my $obsolete_reason = {
 	'hs-network-conduit' => 3,
 	'hs-http-attoparsec' => 5,
 	'hs-shellish' => 5,
+	'hs-xmlhtml' => 5,
+	'hs-blaze-html' => 5,
+	'hs-blaze-markup' => 5,
 };
 
 my @msg = (
