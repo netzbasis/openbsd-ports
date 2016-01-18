@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.19 2015/12/17 19:12:04 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.21 2016/01/17 14:25:12 jasper Exp $
 @bin bin/virsh
 @bin bin/virt-admin
 @bin bin/virt-host-validate

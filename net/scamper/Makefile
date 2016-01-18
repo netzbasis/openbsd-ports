@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.22 2016/01/08 12:48:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.24 2016/01/17 17:49:46 sthen Exp $
 
 SHARED_LIBS +=  scamperfile               1.0 # 0.0
 
 COMMENT =	parallel internet measurement utility
 
 V =		20141211d
+REVISION =	1
 DISTNAME =	scamper-cvs-$V
 PKGNAME =	scamper-$V
 
@@ -21,9 +22,9 @@ WANTLIB += c m
 
 MASTER_SITES =	http://www.caida.org/tools/measurement/scamper/code/
 
-USE_GROFF =		Yes
 SEPARATE_BUILD =	Yes
-CONFIGURE_STYLE =	gnu
+CONFIGURE_STYLE =	autoconf
+AUTOCONF_VERSION =	2.69
 CONFIGURE_ARGS =	--with-privsep-user=_scamper
 
 post-install:
