@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2016/01/17 17:29:08 sthen Exp $
+# $OpenBSD: Makefile,v 1.24 2016/01/18 16:49:38 sthen Exp $
 
 COMMENT=	interactive electronics designing software
 
@@ -28,9 +28,8 @@ PERMIT_PACKAGE_CDROM =	Yes
 MODULES=        x11/qt4
 NO_TEST=	Yes
 
-BUILD_DEPENDS=	comms/qtserialport \
-		devel/boost
-
+LIB_DEPENDS=	comms/qtserialport
+BUILD_DEPENDS=	devel/boost
 RUN_DEPENDS=	devel/desktop-file-utils
 
 pre-configure:
@@ -39,7 +38,7 @@ pre-configure:
 
 WANTLIB += ICE QtGui QtNetwork QtSql QtSvg QtXml SM X11 Xext Xi
 WANTLIB += Xinerama Xrender c fontconfig freetype m pthread stdc++
-WANTLIB += z QtSerialPort
+WANTLIB += z lib/qt4/QtSerialPort
 
 # -DLINUX_32 gets added to CFLAGS, though it's only used to figure out
 # if there is a newer version of the 32-bit Linux binary on the upstream
