@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.45 2015/12/15 22:03:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.47 2016/01/20 23:08:21 sthen Exp $
 
 COMMENT =		ebook management application
 
-V =			2.46.0
+V =			2.49.0
+REVISION =		0
 DISTNAME =		calibre-$V
 CATEGORIES =		textproc
 EXTRACT_SUFX =		.tar.xz
@@ -20,7 +21,7 @@ WANTLIB += Qt5Gui Qt5Widgets X11 Xext Xrender chm crypto fontconfig
 WANTLIB += freetype glib-2.0 gthread-2.0 icudata icui18n icuio
 WANTLIB += icuuc m mtp podofo pthread usb-1.0 z
 
-MASTER_SITES =		https://github.com/kovidgoyal/calibre/releases/download/v$V/
+MASTER_SITES =	https://github.com/kovidgoyal/calibre/releases/download/v$V/
 
 MODULES =		devel/gettext \
 			lang/python \
@@ -54,9 +55,6 @@ COMMON_DEPENDS =	databases/py-apsw \
 
 BUILD_DEPENDS =		${COMMON_DEPENDS}
 
-# aaaargh
-#BUILD_DEPENDS +=	x11/qt5:patch
-
 SUBST_VARS =		WRKDIR
 
 RUN_DEPENDS =		${COMMON_DEPENDS} \
@@ -72,9 +70,6 @@ MAKE_ENV +=		FT_LIB_DIR="${X11BASE}/lib"
 MAKE_ENV +=		XDG_DATA_DIRS="${PREFIX}/share"
 MAKE_ENV +=		PODOFO_INC_DIR="${LOCALBASE}/include/podofo"
 MAKE_ENV +=		PODOFO_LIB_DIR="${LOCALBASE}/lib"
-
-# Requires /sys filesystem for HW detection
-MAKE_ENV +=		WITH_USB=no
 
 PORTHOME =		${WRKDIR}
 NO_TEST =		Yes
