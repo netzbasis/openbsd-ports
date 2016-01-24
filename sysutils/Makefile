@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.373 2016/01/10 13:40:56 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.375 2016/01/23 19:16:01 landry Exp $
 
      SUBDIR =
      SUBDIR += accountsservice
@@ -80,6 +80,8 @@
      SUBDIR += hotplug-diskmount
      SUBDIR += idled
      SUBDIR += iogen
+     SUBDIR += incron
+     SUBDIR += inotify-tools
      SUBDIR += ioping
      SUBDIR += ipmitool
      SUBDIR += iwatch
@@ -105,6 +107,7 @@
      SUBDIR += logtail
      SUBDIR += lookat
      SUBDIR += lsof
+     SUBDIR += lsyncd
      SUBDIR += mac-robber
      SUBDIR += mcollective
      SUBDIR += mcollective-plugins
