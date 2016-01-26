@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.9 2014/09/14 05:58:07 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.11 2016/01/25 20:05:19 sthen Exp $
 
 COMMENT=	local CVE checker tool
 
-DISTNAME=	cvechecker-3.5
-REVISION=	1
+DISTNAME=	cvechecker-3.6
 CATEGORIES=	security sysutils
 
-HOMEPAGE=	http://cvechecker.sourceforge.net/
+HOMEPAGE=	https://github.com/sjvermeu/cvechecker/wiki
 
 MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 
@@ -15,7 +14,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += c config sqlite3
 
-MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=cvechecker/}
+MASTER_SITES=	https://raw.githubusercontent.com/wiki/sjvermeu/cvechecker/releases/
 
 BUILD_DEPENDS=	devel/argp-standalone
 
@@ -25,7 +24,7 @@ RUN_DEPENDS=	net/wget \
 		sysutils/coreutils \
 		textproc/libxslt
 
-# XXX non functionnal yet
+# XXX non functional yet
 #FLAVORS=	mysql
 FLAVOR?=
 
@@ -40,13 +39,13 @@ CONFIGURE_ARGS=	--enable-sqlite3
 FAKE_FLAGS=	sysconfdir=${PREFIX}/share/examples/cvechecker
 
 .if ${FLAVOR:Mmysql}
-WANTLIB += crypto m mysqlclient ssl z
+WANTLIB +=	crypto m mysqlclient ssl z
 LIB_DEPENDS +=	databases/mariadb
 CONFIGURE_ARGS += --enable-mysql
 .endif
 
 pre-configure:
-	perl -pi -e 's,seq ,gseq ,g' ${WRKSRC}/scripts/pullcves
+	sed -i 's,seq ,gseq ,g' ${WRKSRC}/scripts/pullcves
 
 post-install:
 	rmdir ${WRKINST}/var/db/cvechecker/*
