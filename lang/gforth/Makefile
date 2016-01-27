@@ -1,29 +1,36 @@
-# $OpenBSD: Makefile,v 1.13 2015/02/16 22:57:09 naddy Exp $
+# $OpenBSD: Makefile,v 1.15 2016/01/26 22:24:58 jasper Exp $
 
 ONLY_FOR_ARCHS =	amd64 i386 mips64 mips64el powerpc sparc sparc64
 
-COMMENT =		ANS Standard Forth interpreter and compiler
+COMMENT =		ANSI/200x Forth interpreter and compiler
 
-DISTNAME =		gforth-0.6.2
-REVISION =		4
+V =			0.7.3
+DISTNAME =		gforth-${V}
 CATEGORIES =		lang
 
-HOMEPAGE =		http://bernd-paysan.de/gforth.html
+HOMEPAGE =		http://www.gnu.org/software/gforth/
 
-# GPLv2+
+# GPLv3
 PERMIT_PACKAGE_CDROM =	Yes
 
 MASTER_SITES =		${MASTER_SITE_GNU:=gforth/}
 
-WANTLIB =		c m
+WANTLIB += avcall c callback ffi ltdl m pthread
 
+LIB_DEPENDS =		devel/ffcall \
+			devel/libffi \
+			devel/libtool,-ltdl
+
+# XXX: -pthread is added here while libffi.pc doesn't advocate it
 CONFIGURE_STYLE =	gnu
+CONFIGURE_ENV =		CPPFLAGS="-I/usr/local/include" \
+			LDFLAGS="-L/usr/local/lib -pthread"
 
 CFLAGS +=		-Dunix
 FAKE_FLAGS+=		DESTDIR="${WRKINST}"
 
 KERNEL = 		kernl${WORDSIZE}${ENDIAN}.fi
-SUBST_VARS +=		KERNEL
+SUBST_VARS +=		KERNEL V
 
 .include <bsd.port.arch.mk>
 
@@ -40,6 +47,9 @@ ENDIAN =	b
 .else
 ENDIAN =	l
 .endif
+
+pre-configure:
+	${SUBST_CMD} ${WRKSRC}/envos.fs.in
 
 # Remove a bunch of unused and unneeded directories
 post-install:
