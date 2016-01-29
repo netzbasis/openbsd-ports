@@ -1,17 +1,12 @@
-# $OpenBSD: Makefile,v 1.139 2016/01/26 08:44:07 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.141 2016/01/28 11:28:02 dcoppa Exp $
 
 DPB_PROPERTIES =parallel
-
-# avoid segfaults from binaries compiled and then used during the build
-.if ${MACHINE_ARCH} == "arm"
-CFLAGS +=	-O1 -fno-stack-protector
-CXXFLAGS +=	-O1 -fno-stack-protector
-.endif
 
 COMMENT =	portable build system
 
 VER =		3.4.3
 DISTNAME =	cmake-${VER}
+REVISION =	0
 CATEGORIES =	devel
 
 HOMEPAGE =	http://www.cmake.org/
@@ -25,9 +20,14 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += archive c curl expat form jsoncpp m ncurses pthread stdc++ z
 
-# XXX: CMake's built-in ELF parser is broken on arm
+# XXX: On arm libstdc++ from base (and especially iostream) seems
+# to be broken, so use g++ from ports.
+MODULES =		gcc4
+MODGCC4_ARCHS =		arm
+MODGCC4_LANGS =		c++
+
 # XXX: Ninja is broken on m88k
-.if ${MACHINE_ARCH} != "arm" && ${MACHINE_ARCH} != "m88k"
+.if ${MACHINE_ARCH} != "m88k"
 BUILD_DEPENDS =		devel/ninja>=1.5.1
 .endif
 
@@ -72,9 +72,8 @@ pre-configure:
 		${WRKSRC}/Modules/FindSDL.cmake \
 		${WRKSRC}/Modules/FindTCL.cmake
 
-# XXX: CMake's built-in ELF parser is broken on arm
 # XXX: Ninja is broken on m88k
-.if ${MACHINE_ARCH} != "arm" && ${MACHINE_ARCH} != "m88k"
+.if ${MACHINE_ARCH} != "m88k"
 do-build:
 	cd ${WRKBUILD} && exec ${SETENV} ${MAKE_ENV} ninja -v -j \
 		${MAKE_JOBS} ${ALL_TARGET}

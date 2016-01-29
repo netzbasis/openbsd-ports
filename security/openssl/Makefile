@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.13 2015/12/03 19:39:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2016/01/28 22:50:59 sthen Exp $
 
 COMMENT=	TLS/SSL library and tools
 
-V=		1.0.2e
+V=		1.0.2f
 REVISION=	0
 DISTNAME=	openssl-$V
 PKGNAME=	openssl-$V
