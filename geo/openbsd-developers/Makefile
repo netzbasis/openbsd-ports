@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.129 2016/02/26 22:42:30 awolk Exp $
+# $OpenBSD: Makefile,v 1.133 2016/02/27 17:22:38 naddy Exp $
 
 CATEGORIES=		geo
 COMMENT=		geographic location of past and present OpenBSD developers
 
-DISTNAME=		openbsd-developers-1.0
-REVISION=		124
+DISTNAME=		openbsd-developers-2.0
+REVISION=		1
+
 DISTFILES=
 HOMEPAGE=		http://www.openbsd.org/
 
@@ -14,6 +15,9 @@ NO_TEST=		Yes
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/markers
 	${INSTALL_DATA} ${FILESDIR}/OpenBSD ${PREFIX}/share/markers
+	perl -p -e 'BEGIN { print "{ \"type\": \"FeatureCollection\",\"features\":[\n" } ; \
+		s/^#.*$$//; s/^([\d\-\.]+)\s+([\d\.\-]+)\s+"(\w+)"\s+# (.*)$$/{ "type": "Feature", "geometry" : {"type" : "Point", "coordinates": [\2, \1]}, "properties" : {"login": "\3@", "name": "\4"}},/; \
+			END { print "]}" }' ${FILESDIR}/OpenBSD > ${PREFIX}/share/markers/OpenBSD.geojson
 
 where-am-i:
 	@echo "$$(sysctl -n hw.sensors.nmea0.angle0 | cut -d' ' -f1)\t\t$$(sysctl -n hw.sensors.nmea0.angle1 | cut -d' ' -f1)\t\t\"$$(whoami)\"\\t\t#$$(finger $$(whoami) | head -1 | cut -d\: -f3-)"
