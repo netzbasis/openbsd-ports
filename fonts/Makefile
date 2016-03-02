@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.27 2016/01/30 01:13:15 bentley Exp $
+# $OpenBSD: Makefile,v 1.29 2016/03/01 15:20:07 jasper Exp $
 
      SUBDIR =
      SUBDIR += adobe-fonts
@@ -8,10 +8,10 @@
      SUBDIR += blockzone
      SUBDIR += cantarell-fonts
      SUBDIR += comic-neue
-     SUBDIR += cosmic-sans-neue-mono
      SUBDIR += dina-fonts
      SUBDIR += droid-fonts
      SUBDIR += ecoliercourt-fonts
+     SUBDIR += fantasque-sans
      SUBDIR += farsi-bfonts-ttf
      SUBDIR += farsifonts-ttf
      SUBDIR += fira-fonts
@@ -45,6 +45,7 @@
      SUBDIR += overpass
      SUBDIR += pkfonts
      SUBDIR += powerline-fonts
+     SUBDIR += profont
      SUBDIR += roboto-fonts
      SUBDIR += ru-pscyr
      SUBDIR += ru-ptsans

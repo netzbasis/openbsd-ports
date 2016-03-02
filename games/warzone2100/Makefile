@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.24 2015/01/15 21:03:22 kirby Exp $
+# $OpenBSD: Makefile,v 1.26 2016/03/01 19:33:54 kirby Exp $
 
 ONLY_FOR_ARCHS=	amd64 i386
 
 COMMENT=	3D realtime strategy on a future earth
 
-DISTNAME=	warzone2100-3.1.2
+DISTNAME=	warzone2100-3.1.3
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=warzone2100/}
 EXTRACT_SUFX=	.tar.xz
@@ -30,7 +30,8 @@ LIB_DEPENDS=	audio/libogg \
 		graphics/png \
 		multimedia/libtheora
 BUILD_DEPENDS=	archivers/unzip \
-		archivers/zip
+		archivers/zip \
+		textproc/asciidoc
 RUN_DEPENDS=	devel/desktop-file-utils
 
 USE_GMAKE=	Yes
