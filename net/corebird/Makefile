@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2016/03/02 16:52:57 awolk Exp $
+# $OpenBSD: Makefile,v 1.3 2016/03/03 15:55:08 kili Exp $
 
 COMMENT =		native Gtk+ Twitter client
 
@@ -31,6 +31,7 @@ AUTOMAKE_VERSION =	1.14
 
 MODULES =		devel/dconf \
 			devel/gettext \
+			textproc/intltool \
 			x11/gnome
 
 MODGNOME_TOOLS =	desktop-file-utils \
@@ -47,7 +48,8 @@ LIB_DEPENDS =		devel/json-glib \
 			x11/gtk+3
 
 BUILD_DEPENDS +=	${MODGNU_AUTOCONF_DEPENDS} \
-			${MODGNU_AUTOMAKE_DEPENDS}
+			${MODGNU_AUTOMAKE_DEPENDS} \
+			devel/libtool
 
 RUN_DEPENDS =		multimedia/gstreamer1/plugins-bad \
 			multimedia/gstreamer1/plugins-good \
