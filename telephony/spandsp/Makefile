@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.15 2015/05/05 17:19:57 chris Exp $
+# $OpenBSD: Makefile,v 1.17 2016/03/11 21:27:08 mmcc Exp $
 
 COMMENT=	DSP library for telephony
 
 DISTNAME=	spandsp-0.0.6
 CATEGORIES=	telephony
 MASTER_SITES=	${HOMEPAGE}downloads/spandsp/
-EXTRACT_SUFX=	.tar.gz
 
 SHARED_LIBS=	spandsp	7.0
 
@@ -23,7 +22,6 @@ WRKDIST=	${WRKDIR}/spandsp-0.0.6
 LIB_DEPENDS+=	graphics/tiff
 
 CONFIGURE_STYLE= gnu
-CONFIGURE_ARGS+= ${CONFIGURE_SHARED}
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
