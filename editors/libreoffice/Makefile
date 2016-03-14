@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.142 2016/03/03 10:17:38 robert Exp $
+# $OpenBSD: Makefile,v 1.144 2016/03/13 19:20:02 robert Exp $
 
 ONLY_FOR_ARCHS= amd64 i386
 
@@ -7,7 +7,7 @@ COMMENT-kde=	optional integration of LibreOffice to the KDE environment
 COMMENT-java=	optional integration of LibreOffice java features
 
 BV=		5.1
-VERSION=	${BV}.0.3
+VERSION=	${BV}.1.3
 DISTNAME=	libreoffice-${VERSION}
 DISTNAME=	libreoffice-${VERSION}
 WRKDIST=	${WRKDIR}/libreoffice-${VERSION}
@@ -17,6 +17,7 @@ PKGNAME-kde=	libreoffice-kde-${VERSION}
 PKGNAME-java=	libreoffice-java-${VERSION}
 CATEGORIES=	editors productivity
 DPB_PROPERTIES=	parallel tag:kde4
+REVISION-main=	0
 
 EPOCH=		0
 
@@ -92,7 +93,7 @@ DISTFILES+=	${EDISTFILES} \
 		edc4d741888bc0d38e32dbaa17149596-source-sans-pro-2.010R-ro-1.065R-it.tar.gz:0 \
 		eeb2c7ddf0d302fba4bfc6e97eac9624-libbase-1.1.6.zip:0 \
 		f94d9870737518e3b597f9265f4e9803-libserializer-1.1.6.zip:0 \
-		5c0c9ac0996fbb4a0e17780ff5441959-graphite2-minimal-1.3.4.tgz:0 \
+		17df8301bcc459e83f8a8f3aca6183b2-graphite-minimal-1.3.6.tgz:0 \
 		libabw-0.1.1.tar.bz2:0 \
 		libcdr-0.1.2.tar.bz2:0 \
 		libe-book-0.1.2.tar.bz2:0 \
@@ -151,6 +152,7 @@ BUILD_DEPENDS+=	archivers/zip \
 		security/nss \
 		sysutils/coreutils \
 		textproc/clucene \
+		x11/gtk+3 \
 		${MODGNU_AUTOCONF_DEPENDS} \
 		${MODGNU_AUTOMAKE_DEPENDS}
 
@@ -217,6 +219,7 @@ RUN_DEPENDS-main=	devel/desktop-file-utils \
 			misc/shared-mime-info \
 			security/nss \
 			textproc/clucene \
+			x11/gtk+3 \
 			x11/gtk+3,-guic
 
 MODULES+=		x11/qt4
