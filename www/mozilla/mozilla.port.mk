@@ -1,4 +1,4 @@
-# $OpenBSD: mozilla.port.mk,v 1.84 2016/01/27 18:04:09 landry Exp $
+# $OpenBSD: mozilla.port.mk,v 1.87 2016/03/14 20:34:34 landry Exp $
 
 SHARED_ONLY =	Yes
 ONLY_FOR_ARCHS ?=	amd64 i386
@@ -44,10 +44,10 @@ MODMOZ_BUILD_DEPENDS =	archivers/gtar \
 			archivers/zip>=2.3
 
 MODMOZ_LIB_DEPENDS =	textproc/hunspell \
-			devel/nspr>=4.10.10
+			devel/nspr>=4.12
 
 .if !defined(MOZILLA_USE_BUNDLED_NSS)
-MODMOZ_LIB_DEPENDS +=	security/nss>=3.20.1
+MODMOZ_LIB_DEPENDS +=	security/nss>=3.21.1
 MODMOZ_WANTLIB +=	nss3 nssutil3 smime3 ssl3
 CONFIGURE_ARGS +=	--with-system-nss
 .endif
@@ -129,12 +129,13 @@ INSTALL_STRIP =
 CONFIGURE_ARGS +=	--with-system-cairo
 CONFIGURE_ARGS +=	--enable-default-toolkit=cairo-gtk3
 MODMOZ_LIB_DEPENDS +=	x11/gtk+3
-MODMOZ_WANTLIB +=	cairo-gobject gdk-3 gtk-3 pixman-1 pthread-stubs
+MODMOZ_WANTLIB +=	cairo-gobject gdk-3 gtk-3 gdk-x11-2.0 gtk-x11-2.0
 .else
-MODMOZ_LIB_DEPENDS +=	x11/gtk+2
 MODMOZ_WANTLIB +=	Xcomposite Xcursor Xdamage Xfixes Xi Xinerama \
-			Xrandr gdk-x11-2.0 gtk-x11-2.0
+			Xrandr
 .endif
+MODMOZ_LIB_DEPENDS +=	x11/gtk+2
+MODMOZ_WANTLIB +=	gdk-x11-2.0 gtk-x11-2.0
 
 PORTHOME =	${WRKSRC}
 
@@ -151,7 +152,7 @@ WRKDIST ?=	${WRKDIR}/${MOZILLA_DIST}-${MOZILLA_DIST_VERSION}
 .endif
 
 # needed for PLIST
-MOZILLA_VER =	${MOZILLA_VERSION:C/b[0-9]*$//:C/esr//:C/rc.$//}
+MOZILLA_VER =	${MOZILLA_VERSION:C/b[0-9]*//:C/esr//:C/rc.$//}
 SUBST_VARS +=	MOZILLA_PROJECT MOZILLA_VER MOZILLA_VERSION
 
 MAKE_ENV +=	MOZILLA_OFFICIAL=1 \
