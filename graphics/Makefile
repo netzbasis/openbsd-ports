@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.406 2016/03/05 12:12:16 sthen Exp $
+# $OpenBSD: Makefile,v 1.408 2016/03/15 23:19:10 sthen Exp $
 
      SUBDIR =
      SUBDIR += DevIL
@@ -29,7 +29,7 @@
      SUBDIR += colorexplorer
      SUBDIR += comix
      SUBDIR += compface
-     SUBDIR += cqcam
+     SUBDIR += cstitch
      SUBDIR += ctl
      SUBDIR += darktable
      SUBDIR += dcmtk
