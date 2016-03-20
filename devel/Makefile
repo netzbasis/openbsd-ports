@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1472 2016/03/16 19:32:32 naddy Exp $
+# $OpenBSD: Makefile,v 1.1474 2016/03/19 20:24:28 okan Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -308,7 +308,6 @@
      SUBDIR += libast
      SUBDIR += libaudiofile
      SUBDIR += libbio
-     SUBDIR += libclog
      SUBDIR += libconfig
      SUBDIR += libconfuse
      SUBDIR += libdaemon
@@ -323,7 +322,6 @@
      SUBDIR += libevent2
      SUBDIR += libeventextra
      SUBDIR += libexecinfo
-     SUBDIR += libexude
      SUBDIR += libf2c
      SUBDIR += libffi
      SUBDIR += libfmt
@@ -956,9 +954,7 @@
      SUBDIR += p5-SVN-Notify
      SUBDIR += p5-SVN-Simple
      SUBDIR += p5-SVN-Web
-     SUBDIR += p5-Safe-Hole
      SUBDIR += p5-Safe-Isa
-     SUBDIR += p5-Safe-World
      SUBDIR += p5-Scalar-Defer
      SUBDIR += p5-Scope-Guard
      SUBDIR += p5-Scope-Upper
@@ -969,9 +965,6 @@
      SUBDIR += p5-Set-Scalar
      SUBDIR += p5-Shell-Command
      SUBDIR += p5-Signal-Mask
-     SUBDIR += p5-Slay-Makefile
-     SUBDIR += p5-Slay-Makefile-Gress
-     SUBDIR += p5-Slay-Maker
      SUBDIR += p5-Smart-Comments
      SUBDIR += p5-Sort-Key
      SUBDIR += p5-Sort-Naturally

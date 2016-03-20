@@ -1,14 +1,16 @@
-# $OpenBSD: Makefile,v 1.81 2015/04/09 15:37:08 okan Exp $
+# $OpenBSD: Makefile,v 1.83 2016/03/19 10:31:44 sthen Exp $
 
 COMMENT=	mailing list manager with web interface
 
 DISTNAME=	mailman-2.1.20
+REVISION=	0
 CATEGORIES=	mail www
 
 HOMEPAGE=	https://www.gnu.org/software/mailman/
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
+
 WANTLIB=		c
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=mailman/}
@@ -28,7 +30,7 @@ MMSPOOL=		/var/spool/mailman
 
 FAKE_FLAGS=		DIRSETGID=":"
 
-# gnu still breaks the pathes as prefix is actually mailman's home
+# gnu still breaks the paths as prefix is actually mailman's home
 CONFIGURE_STYLE=	simple
 # do not use --without-permcheck as this requires the mailman user and group
 # to exist, otherwise there will be problems running mailman
@@ -41,14 +43,16 @@ CONFIGURE_ARGS+=	--prefix='${MMHOME}' \
 			--with-username=_mailman \
 			--with-groupname=_mailman
 
-FLAVORS=	postfix sendmail
-FLAVOR?=
+FLAVORS=	smtpd postfix sendmail
+FLAVOR?=	smtpd
 .if ${FLAVOR:Mpostfix}
 CONFIGURE_ARGS+=--with-mail-gid=_mailman
 .elif ${FLAVOR:Msendmail}
 CONFIGURE_ARGS+=--with-mail-gid=daemon
-.else
+.elif ${FLAVOR:Msmtpd}
 CONFIGURE_ARGS+=--with-mail-gid=_smtpd
+.else
+ERRORS+="Fatal: a flavor (smtpd, postfix, sendmail) must be specified"
 .endif
 
 SCRIPTS=	Mailman/Archiver/pipermail.py \

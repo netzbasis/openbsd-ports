@@ -1,6 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2016/02/01 21:55:39 sthen Exp $
-
-SHARED_ONLY=	Yes
+# $OpenBSD: Makefile,v 1.31 2016/03/19 23:59:15 naddy Exp $
 
 COMMENT=	fast and stable PHP opcode cacher
 
@@ -48,7 +46,6 @@ CONFIGURE_ARGS+=	--enable-xcache-coverager
 
 MODPHP_DO_PHPIZE=	Yes
 MODPHP_DO_SAMPLE=	xcache
-MESSAGE=		${PKGDIR}/MESSAGE
 
 post-extract:
 	@ln -sf ${LOCALBASE}/bin/gindent ${WRKDIR}/bin/indent

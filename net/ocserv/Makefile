@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.13 2016/02/25 10:22:01 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2016/03/19 20:24:32 sthen Exp $
 
 COMMENT=	server implementing the AnyConnect SSL VPN protocol
 
-DISTNAME=	ocserv-0.10.12
+DISTNAME=	ocserv-0.11.1
 EXTRACT_SUFX=	.tar.xz
 
 CATEGORIES=	net
@@ -14,19 +14,23 @@ MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += c gnutls lz4 ncurses oath pam protobuf-c pthread
-WANTLIB += radcli readline talloc
+WANTLIB += c ev gnutls lz4 m ncurses nettle oath pam protobuf-c
+WANTLIB += pthread radcli readline talloc
 
 MASTER_SITES=	ftp://ftp.infradead.org/pub/ocserv/
 
 MODULES=	devel/gettext
 LIB_DEPENDS=	archivers/lz4 \
-		devel/protobuf-c \
+		devel/libev \
 		devel/libtalloc \
-		net/radcli \
+		devel/protobuf-c \
+		net/radcli>=1.2.5 \
 		security/gnutls \
 		security/oath-toolkit \
 		security/openpam
+TEST_DEPENDS=	net/openconnect \
+		shells/bash \
+		sysutils/coreutils
 
 CONFIGURE_STYLE= autoconf
 AUTOCONF_VERSION= 2.69
@@ -41,14 +45,13 @@ CONFIGURE_ARGS=	--enable-local-libopts \
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
-# most tests are known to fail on OpenBSD anyway, but let's patch the
-# obvious issues.
 post-extract:
-	sed -i 's,/usr/local/bin/bash,${LOCALBASE}/bin/bash,' \
-	    ${WRKSRC}/tests/test-iroute
-	sed -i 's,/usr/local/sbin/openconnect,${LOCALBASE}/sbin/openconnect,' \
+	sed -i 's,#!/bin/bash,#!${LOCALBASE}/bin/bash,' \
+	    ${WRKSRC}/tests/test-{iroute,append-routes,user-config}
+	sed -i 's,/usr/sbin/openconnect,${LOCALBASE}/sbin/openconnect,' \
 	    ${WRKSRC}/tests/common.sh
-	sed -i 's,/etc/ocserv,${SYSCONFDIR}/ocserv,' ${WRKSRC}/src/ocpasswd.c
+	sed -i 's,/etc/ocserv,${SYSCONFDIR}/ocserv,' \
+	    ${WRKSRC}/src/ocpasswd/ocpasswd.c
 	cd ${WRKSRC}; \
 	    sed -i 's,/usr/bin/ocserv-fw,${SYSCONFDIR}/ocserv/ocserv-fw,g' \
 	    src/ocserv-args.def src/main-user.c doc/ocserv.8 doc/sample.config
@@ -61,5 +64,12 @@ post-install:
 	${SUBST_CMD} -c -m ${SHAREMODE} -o ${SHAREOWN} -g ${SHAREGRP} \
 	    ${WRKSRC}/doc/sample.config \
 	    ${PREFIX}/share/examples/ocserv/sample.config
+
+pre-test:
+	ln -fs ${LOCALBASE}/bin/gtimeout ${WRKDIR}/bin/timeout
+
+post-test:
+	@[ `id -u` == 0 ] || printf \
+	 "\n*** NOTE: ocserv has loopback tests which require root ***\n\n"
 
 .include <bsd.port.mk>

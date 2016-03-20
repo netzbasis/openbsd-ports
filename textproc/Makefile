@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.488 2016/03/10 01:16:00 awolk Exp $
+# $OpenBSD: Makefile,v 1.490 2016/03/19 20:24:28 okan Exp $
 
      SUBDIR =
      SUBDIR += TclXML
@@ -104,7 +104,6 @@
      SUBDIR += libxml++
      SUBDIR += libxml++3
      SUBDIR += libxmlbird
-     SUBDIR += libxmlsd
      SUBDIR += libxslt
      SUBDIR += link-grammar
      SUBDIR += linuxdoc
@@ -244,7 +243,6 @@
      SUBDIR += p5-Text-RecordParser
      SUBDIR += p5-Text-Reflow
      SUBDIR += p5-Text-Reform
-     SUBDIR += p5-Text-Restructured
      SUBDIR += p5-Text-SimpleTable
      SUBDIR += p5-Text-Table
      SUBDIR += p5-Text-TabularDisplay
