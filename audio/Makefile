@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.362 2016/01/12 20:45:01 landry Exp $
+# $OpenBSD: Makefile,v 1.364 2016/03/20 20:42:47 naddy Exp $
 
      SUBDIR =
      SUBDIR += abcde
@@ -124,7 +124,6 @@
      SUBDIR += mpd
      SUBDIR += mpd-add-similar
      SUBDIR += mpdscribble
-     SUBDIR += mpegaudio
      SUBDIR += mpg123
      SUBDIR += mpg321
      SUBDIR += mscore
@@ -208,7 +207,6 @@
      SUBDIR += quodlibet
      SUBDIR += radiotray
      SUBDIR += rhythmbox
-     SUBDIR += rplay
      SUBDIR += rsynth
      SUBDIR += rtunes
      SUBDIR += ruby-id3lib,ruby21
