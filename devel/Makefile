@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1476 2016/03/30 09:15:57 shadchin Exp $
+# $OpenBSD: Makefile,v 1.1478 2016/04/01 01:54:46 jsg Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -279,6 +279,7 @@
      SUBDIR += id-utils
      SUBDIR += imake
      SUBDIR += imake-cf
+     SUBDIR += include-what-you-use
      SUBDIR += iniparser
      SUBDIR += intellij
      SUBDIR += ipython
@@ -1051,6 +1052,7 @@
      SUBDIR += p5-Test-Pod
      SUBDIR += p5-Test-Pod-Content
      SUBDIR += p5-Test-Pod-Coverage
+     SUBDIR += p5-Test-Portability-Files
      SUBDIR += p5-Test-Regexp
      SUBDIR += p5-Test-Reporter
      SUBDIR += p5-Test-Requires
