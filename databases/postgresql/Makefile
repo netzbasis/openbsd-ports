@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.210 2016/03/20 16:12:23 naddy Exp $
+# $OpenBSD: Makefile,v 1.212 2016/04/01 14:41:07 sthen Exp $
 
 COMMENT-main=	PostgreSQL RDBMS (client)
 COMMENT-server=	PostgreSQL RDBMS (server)
@@ -11,7 +11,7 @@ BROKEN-sparc=	Requires v9|v9a|v9b; requested architecture is sparclite.
 # DO NOT FORGET to also change the @ask-update entry in pkg/PLIST-server
 # in case a dump before / restore after pkg_add -u is required!
 
-VERSION=	9.4.6
+VERSION=	9.4.7
 DISTNAME=	postgresql-${VERSION}
 PKGNAME-main=	postgresql-client-${VERSION}
 PKGNAME-server=	postgresql-server-${VERSION}
@@ -38,11 +38,6 @@ WANTLIB += c crypto m readline ssl termcap z pthread
 MASTER_SITES=	https://ftp.postgresql.org/pub/source/v${VERSION}/ \
 		ftp://ftp.postgresql.org/pub/source/v${VERSION}/
 MULTI_PACKAGES=	-docs -main -server -contrib -plpython
-
-# The -client SUBPACKAGE should build and run fine on static arches,
-# but the server requires loadable library support. Until we figure
-# out the correct incantation to not build the server on those systems,
-# simply don't build for them, yet.
 
 MAKE_FILE=	GNUmakefile
 
