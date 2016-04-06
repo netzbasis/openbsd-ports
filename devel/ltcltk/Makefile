@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2013/11/29 18:41:52 stu Exp $
+# $OpenBSD: Makefile,v 1.3 2016/04/04 18:55:05 sthen Exp $
 
 COMMENT =	binding for lua to the tcl interpreter and to the tk toolkit
 
@@ -6,6 +6,7 @@ V =		0.9-2
 PV =		-${V:S/-/_/}
 DISTNAME =	ltcltk-${V}
 PKGNAME =	ltcltk${PV}
+REVISION =	0
 CATEGORIES =	devel
 HOMEPAGE =	http://www.tset.de/ltcltk/
 MAINTAINER =	Stuart Cassoff <stwo@users.sourceforge.net>
@@ -29,8 +30,8 @@ CFLAGS +=	-Wall ${PICFLAG} -shared \
 		-I${MODTCL_INCDIR} -I${MODLUA_INCL_DIR} \
 		-L${LOCALBASE}/lib
 
-LK_DOC_DIR =	${MODLUA_DOCDIR:S!${PV}/$!/!}
-LK_EXA_DIR =	${MODLUA_EXAMPLEDIR:S!${PV}/$!/!}
+LK_DOC_DIR=	${PREFIX}/share/doc/ltcltk
+LK_EXA_DIR=	${PREFIX}/share/examples/ltcltk
 
 do-configure:
 	perl -pi \
