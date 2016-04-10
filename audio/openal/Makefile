@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.34 2016/02/21 16:17:25 jsg Exp $
+# $OpenBSD: Makefile,v 1.36 2016/04/09 21:11:56 sthen Exp $
 
 BROKEN-arm =	undefined reference to __sync atomic ops
 BROKEN-hppa =	undefined reference to __sync atomic ops
@@ -8,7 +8,7 @@ COMMENT =	cross-platform 3D audio API
 
 V =		1.15.1
 EPOCH =		0
-REVISION =	1
+REVISION =	3
 DISTNAME =	openal-soft-$V
 PKGNAME =	openal-$V
 CATEGORIES =	audio
@@ -16,7 +16,7 @@ SHARED_LIBS =	openal	2.2
 
 HOMEPAGE =	http://kcat.strangesoft.net/openal.html
 
-MAINTAINER =	Antti Harri <iku@openbsd.fi>
+MAINTAINER =	David Carlier <devnexen@gmail.com>
 
 # LGPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
