@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.26 2015/11/14 14:38:19 benoit Exp $
+# $OpenBSD: Makefile,v 1.28 2016/04/12 15:19:40 naddy Exp $
 
 COMMENT =		curses widgets (menus, lists, etc) for shell scripts
 
 V =			1.2-20150920
 DISTNAME =		dialog-${V}
 PKGNAME =		dialog-${V:S/-/./}
+REVISION =		0
 
 CATEGORIES =		misc
 
@@ -13,12 +14,15 @@ HOMEPAGE =		http://invisible-island.net/dialog/dialog.html
 # LGPLv2.1
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += c m ncurses
+WANTLIB += c iconv intl m ncurses
 
-MASTER_SITES =		ftp://invisible-island.net/dialog/
+MASTER_SITES =		http://invisible-mirror.net/archives/dialog/ \
+			ftp://invisible-island.net/dialog/
 EXTRACT_SUFX =		.tgz
 
-MODULES =		devel/gettext
+BUILD_DEPENDS =		devel/gettext-tools
+
+LIB_DEPENDS =		devel/gettext
 
 MAKE_FILE =		makefile
 
