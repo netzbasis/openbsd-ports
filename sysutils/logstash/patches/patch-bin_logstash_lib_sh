@@ -1,0 +1,37 @@
+$OpenBSD: patch-bin_logstash_lib_sh,v 1.1 2016/04/26 13:31:25 jasper Exp $
+
+Revert: 44edf5bd00c116d356acbcd21369e4cebcbae5f9
+See: https://github.com/elastic/logstash/pull/4303#issuecomment-162823365
+
+--- bin/logstash.lib.sh.orig	Mon Dec  7 18:59:31 2015
++++ bin/logstash.lib.sh	Tue Dec  8 10:15:38 2015
+@@ -62,8 +62,7 @@ setup_java() {
+     # Causes the JVM to dump its heap on OutOfMemory.
+     JAVA_OPTS="$JAVA_OPTS -XX:+HeapDumpOnOutOfMemoryError"
+     # The path to the heap dump location
+-    # This variable needs to be isolated since it may contain spaces
+-    HEAP_DUMP_PATH="-XX:HeapDumpPath=${LOGSTASH_HOME}/heapdump.hprof"
++    JAVA_OPTS="$JAVA_OPTS -XX:HeapDumpPath=${LOGSTASH_HOME}/heapdump.hprof"
+   fi
+ 
+   if [ "$LS_JAVA_OPTS" ] ; then
+@@ -130,7 +129,7 @@ setup_vendored_jruby() {
+ }
+ 
+ setup_ruby() {
+-  RUBYCMD="ruby"
++  RUBYCMD="${RUBY}"
+   VENDORED_JRUBY=
+ }
+ 
+@@ -176,8 +175,8 @@ ruby_exec() {
+     # $VENDORED_JRUBY is non-empty so use the vendored JRuby
+ 
+     if [ "$DEBUG" ] ; then
+-      echo "DEBUG: exec ${JRUBY_BIN} $(jruby_opts) "-J$HEAP_DUMP_PATH" $@"
++      echo "DEBUG: exec ${JRUBY_BIN} $(jruby_opts) $@"
+     fi
+-    exec "${JRUBY_BIN}" $(jruby_opts) "-J$HEAP_DUMP_PATH" "$@"
++    exec "${JRUBY_BIN}" $(jruby_opts) "$@"
+   fi
+ }
