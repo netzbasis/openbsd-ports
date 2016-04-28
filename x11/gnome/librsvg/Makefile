@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.113 2016/04/09 08:19:30 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.115 2016/04/27 21:27:15 jasper Exp $
 
 COMMENT=		SAX-based render library for SVG files
 
 GNOME_PROJECT=		librsvg
 GNOME_VERSION=		2.40.15
+REVISION=		0
 
 SHARED_LIBS +=  rsvg-2               38.2     # 42.13
 
@@ -16,10 +17,9 @@ WANTLIB += X11 Xext Xrender c cairo croco-0.6 expat ffi fontconfig
 WANTLIB += freetype gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0
 WANTLIB += gobject-2.0 graphite2 gthread-2.0 harfbuzz lzma m pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread
-WANTLIB += pthread-stubs xcb xcb-render xcb-shm xml2 z
+WANTLIB += pthread-stubs xcb xcb-render xcb-shm xml2 z iconv intl
 
-MODULES=		devel/gettext \
-			x11/gnome
+MODULES=		x11/gnome
 
 MODGNOME_TOOLS=		gobject-introspection vala
 

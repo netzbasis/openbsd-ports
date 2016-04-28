@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1312 2016/04/26 17:35:35 naddy Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1314 2016/04/27 20:41:04 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -529,8 +529,6 @@ _PKG_ARGS += -D${_i}=1
 .if !${BUILD_PKGPATH:M*,*}
 BUILD_PKGPATH := ${BUILD_PKGPATH},
 .endif
-
-_PKG_ARGS += -DSHARED_LIBS=1
 
 .if !empty(FLAVORS:M[0-9]*)
 ERRORS += "Fatal: flavor should never start with a digit"
@@ -1877,7 +1875,7 @@ check-register-all:
 ${_CACHE_REPO}/${_PKGFILE${_S}}:
 	@install -d ${PACKAGE_REPOSITORY_MODE} ${@D}
 	@${ECHO_MSG} -n "===>  Looking for ${_PKGFILE${_S}} in \$$PKG_PATH - "
-	@if ${SETENV} ${_TERM_ENV} PKG_CACHE=${_CACHE_REPO} PKG_PATH=${_CACHE_REPO}:${_PKG_REPO}:${PACKAGE_REPOSITORY}/${NO_ARCH}/:${PKG_PATH} ${_PKG_ADD} -n -q ${_PKG_ADD_FORCE} -D installed -D downgrade ${_PKGFILE${_S}} >/dev/null 2>&1; then \
+	@if ${SETENV} ${_TERM_ENV} PKG_CACHE=${_CACHE_REPO} PKG_PATH=${_CACHE_REPO}:${_PKG_REPO}:${PACKAGE_REPOSITORY}/${NO_ARCH}/:${PKG_PATH} ${_PKG_ADD} -n -q ${_PKG_ADD_FORCE} -r -D installed -D downgrade ${_PKGFILE${_S}} >/dev/null 2>&1; then \
 		${ECHO_MSG} "found"; \
 		exit 0; \
 	else \
