@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.389 2016/04/27 14:24:03 jasper Exp $
+# $OpenBSD: Quirks.pm,v 1.396 2016/04/28 18:23:47 sthen Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -398,6 +398,7 @@ my $stem_extensions = {
 	'cosmic-sans-neue-mono' => 'fantasque-sans',
 	'droid-fonts' => 'noto-fonts',
 	'py-logilab-astng' => 'py-astroid',
+	'apache-httpd-openbsd' => 'apache-httpd',
 };
 
 # reasons for obsolete packages
@@ -771,6 +772,32 @@ my $obsolete_reason = {
 	'libunique3' => 5,
 	'swfdec' => 3,
 	'asm' => 5,
+	'libqzeitgeist' => 6,
+	'zeitgeist' => 6,
+	'gedit-latex' => 3,
+	'rackmonkey' => 3,
+	'mod_auth_bsd' => 6,
+	'mod_auth_ldap' => 6,
+	'mod_auth_mysql' => 6,
+	'mod_auth_pgsql' => 6,
+	'mod_auth_radius' => 6,
+	'mod_encoding' => 6,
+	'mod_fastcgi' => 6,
+	'mod_geoip' => 6,
+	'mod_gzip' => 6,
+	'mod_jk' => 6,
+	'mod_layout' => 6,
+	'mod_ldapvhost' => 6,
+	'mod_log_sql' => 6,
+	'mod_mp3' => 6,
+	'mod_random' => 6,
+	'mod_scgi' => 6,
+	'mod_security' => 6,
+	'mod_text2html' => 6,
+	'p5-CGI-SpeedyCGI' => 6,
+	'p5-HTML-Embperl' => 6,
+	'p5-libapreq' => 6,
+	'mod_perl' => 6,
 };
 
 my @msg = (

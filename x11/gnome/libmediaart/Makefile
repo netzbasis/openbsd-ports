@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.9 2016/04/27 09:47:44 jasper Exp $
+# $OpenBSD: Makefile,v 1.11 2016/04/28 09:37:23 jasper Exp $
 
 COMMENT=		media art extraction and cache management library
 
 GNOME_PROJECT=		libmediaart
 GNOME_VERSION=		1.9.0
+REVISION=		1
 
 SHARED_LIBS +=  mediaart-2.0              0.0 # 900.0
 

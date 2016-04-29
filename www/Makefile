@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.773 2016/04/27 09:59:58 jasper Exp $
+# $OpenBSD: Makefile,v 1.780 2016/04/28 18:19:47 sthen Exp $
 
      SUBDIR =
      SUBDIR += ajaxterm
@@ -8,7 +8,6 @@
      SUBDIR += ap2-mod_perl
      SUBDIR += ap2-mod_wsgi
      SUBDIR += apache-httpd
-     SUBDIR += apache-httpd-openbsd
      SUBDIR += aria2
      SUBDIR += arora
      SUBDIR += asql
@@ -101,26 +100,6 @@
      SUBDIR += midori,gtk3
      SUBDIR += mimetex
      SUBDIR += minitube
-     SUBDIR += mod_auth_bsd
-     SUBDIR += mod_auth_ldap
-     SUBDIR += mod_auth_mysql
-     SUBDIR += mod_auth_pgsql
-     SUBDIR += mod_auth_radius
-     SUBDIR += mod_encoding
-     SUBDIR += mod_fastcgi
-     SUBDIR += mod_geoip
-     SUBDIR += mod_gzip
-     SUBDIR += mod_jk
-     SUBDIR += mod_layout
-     SUBDIR += mod_ldapvhost
-     SUBDIR += mod_log_sql
-     SUBDIR += mod_mp3
-     SUBDIR += mod_mp3,mysql
-     SUBDIR += mod_perl
-     SUBDIR += mod_random
-     SUBDIR += mod_scgi
-     SUBDIR += mod_security
-     SUBDIR += mod_text2html
      SUBDIR += moinmoin
      SUBDIR += mollify
      SUBDIR += mongrel2
@@ -140,7 +119,6 @@
      SUBDIR += owncloud
      SUBDIR += p5-Alien-Tidyp
      SUBDIR += p5-Any-URI-Escape
-     SUBDIR += p5-Apache-ASP
      SUBDIR += p5-Apache-DB
      SUBDIR += p5-Apache-DBI
      SUBDIR += p5-Apache-Gallery
@@ -169,7 +147,6 @@
      SUBDIR += p5-CGI-Session
      SUBDIR += p5-CGI-Session-Driver-memcached
      SUBDIR += p5-CGI-Simple
-     SUBDIR += p5-CGI-SpeedyCGI
      SUBDIR += p5-CGI-Untaint
      SUBDIR += p5-CGI-XMLApplication
      SUBDIR += p5-CSS-Minifier
@@ -234,7 +211,6 @@
      SUBDIR += p5-HTML-Clean
      SUBDIR += p5-HTML-Copy
      SUBDIR += p5-HTML-Display
-     SUBDIR += p5-HTML-Embperl
      SUBDIR += p5-HTML-FillInForm
      SUBDIR += p5-HTML-Form
      SUBDIR += p5-HTML-FormFu
@@ -360,7 +336,6 @@
      SUBDIR += p5-XML-Atom
      SUBDIR += p5-XML-Atom-SimpleFeed
      SUBDIR += p5-XML-Feed
-     SUBDIR += p5-libapreq
      SUBDIR += p5-libapreq2
      SUBDIR += p5-libwww
      SUBDIR += p5-pQuery
@@ -469,7 +444,6 @@
      SUBDIR += py-wsgiproxy
      SUBDIR += py-wtforms
      SUBDIR += py-wtools
-     SUBDIR += rackmonkey
      SUBDIR += racktables
      SUBDIR += ratproxy
      SUBDIR += rawdog

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2016/03/20 16:12:26 naddy Exp $
+# $OpenBSD: Makefile,v 1.31 2016/04/28 15:59:02 sthen Exp $
 
 COMMENT-main=	fast, powerful, and language-neutral HTML template system
 COMMENT-perl=	perl bindings for clearsilver
@@ -7,7 +7,7 @@ COMMENT-python=	python bindings for clearsilver
 V=		0.10.4
 DISTNAME=	clearsilver-${V}
 EPOCH=		0
-REVISION=	10
+REVISION=	12
 
 PKGNAME-main=	${DISTNAME}
 PKGNAME-perl=	clearsilver-perl-${V}
@@ -18,12 +18,8 @@ CATEGORIES=	www net
 HOMEPAGE=       http://www.clearsilver.net/
 MASTER_SITES=   ${HOMEPAGE}/downloads/
 
-MAINTAINER=	Okan Demirmen <okan@openbsd.org>
-
 # Apache 1
 PERMIT_PACKAGE_CDROM=	Yes
-
-BUILD_DEPENDS=		www/apache-httpd-openbsd
 
 MULTI_PACKAGES=	-main -perl -python
 MODULES=	lang/python
@@ -43,7 +39,7 @@ CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS= --disable-csharp \
 		--disable-java \
 		--disable-ruby \
-		--with-apache=${LOCALBASE} \
+		--disable-apache \
 		--with-python=${MODPY_BIN} \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
@@ -52,5 +48,9 @@ pre-configure:
 
 do-test:
 	@cd ${WRKSRC}/perl && ${MAKE_PROGRAM} test
+
+post-install:
+	rm ${PREFIX}/libdata/perl5/${MACHINE_ARCH}-openbsd/*/perllocal.pod
+	find -d ${PREFIX}/libdata/perl5/${MACHINE_ARCH}-openbsd -type d | xargs rmdir
 
 .include <bsd.port.mk>

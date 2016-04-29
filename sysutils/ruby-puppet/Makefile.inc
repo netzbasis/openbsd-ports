@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile.inc,v 1.31 2015/07/18 21:07:40 jeremy Exp $
+# $OpenBSD: Makefile.inc,v 1.35 2016/04/28 16:02:33 jasper Exp $
 
 PKG_ARCH ?=	*
 COMMENT ?=	centralised configuration management for networks
 DISTNAME ?=	puppet-${VERSION}
-HOMEPAGE ?=	https://puppetlabs.com
+HOMEPAGE ?=	https://puppet.com/
 MASTER_SITES ?=	https://downloads.puppetlabs.com/puppet/
 MAINTAINER ?=	Jasper Lievisse Adriaanse <jasper@openbsd.org>
 NO_TEST ?=	Yes
 NO_BUILD ?=	Yes
-FILESDIR ?=	${.CURDIR}/../files
 PKGDIR ?=	${.CURDIR}/../pkg
 PLIST ?=	${.CURDIR}/pkg/PLIST
 
@@ -21,6 +20,7 @@ SUBST_VARS +=	RUBY
 #  devel/ruby-rgen
 #  databases/puppetdb
 #  databases/ruby-hiera
+#  databases/ruby-hiera3
 #  databases/ruby-hiera-file
 #  net/ruby-msgpack
 #  sysutils/mcollective
@@ -30,25 +30,24 @@ SUBST_VARS +=	RUBY
 #  www/puppet-dashboard
 MODULES +=	lang/ruby
 
+MODULES +=		lang/python
+MODPY_BUILDDEP = 	No
+MODPY_RUNDEP =		No
+
 BUILD_DEPENDS +=${RUN_DEPENDS}
-RUN_DEPENDS +=	databases/ruby-hiera,${MODRUBY_FLAVOR} \
+RUN_DEPENDS +=	archivers/gtar \
 		sysutils/ruby-augeas,${MODRUBY_FLAVOR} \
-		sysutils/ruby-facter>=2.0.1p0 \
+		devel/ruby-rgen,${MODRUBY_FLAVOR} \
 		sysutils/ruby-shadow,${MODRUBY_FLAVOR}>=2.3.4p1
 
 # Apache2
 PERMIT_PACKAGE_CDROM=	Yes
 
-do-install:
-	${SUBST_CMD} ${WRKSRC}/lib/puppet/defaults.rb ${WRKSRC}/ext/rack/config.ru
-	@cd ${WRKSRC} && ${ALL_FAKE_FLAGS} ${RUBY} install.rb
-	mv ${WRKINST}${SYSCONFDIR}/puppet ${PREFIX}/${MODRUBY_RELEXAMPLEDIR}-puppet
-	${INSTALL_DATA} ${WRKSRC}/conf/*.conf ${PREFIX}/${MODRUBY_RELEXAMPLEDIR}-puppet
-	${INSTALL_DATA} ${FILESDIR}/puppet.conf ${PREFIX}/${MODRUBY_RELEXAMPLEDIR}-puppet
-	${INSTALL_DATA_DIR} ${PREFIX}/share/emacs/site-lisp/
-	${INSTALL_DATA} ${WRKSRC}/ext/emacs/* ${PREFIX}/share/emacs/site-lisp/
-	${INSTALL_DATA} ${WRKSRC}/ext/rack/config.ru ${PREFIX}/${MODRUBY_RELEXAMPLEDIR}-puppet/
-	gunzip ${PREFIX}/man/*/*.gz
+PORTHOME=		${WRKDIR}
+SUBST_VARS +=		MODRUBY_BINREV
 
 post-install:
 	find ${PREFIX} -type f \( -name '*.beforesubst' -or -name '*.orig' \) -exec rm {} \;
+	${INSTALL_DATA_DIR} ${PREFIX}/share/emacs/site-lisp/
+	${INSTALL_DATA} ${WRKSRC}/ext/emacs/* ${PREFIX}/share/emacs/site-lisp/
+	gunzip ${PREFIX}/man/*/*.gz

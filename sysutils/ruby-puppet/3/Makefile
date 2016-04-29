@@ -1,21 +1,26 @@
-# $OpenBSD: Makefile,v 1.125 2016/04/27 09:19:38 jasper Exp $
+# $OpenBSD: Makefile,v 1.131 2016/04/28 16:02:33 jasper Exp $
 
-PORTROACH=	limit:^3
+PORTROACH=		limit:^3
 
-VERSION=	3.8.7
+VERSION=		3.8.7
+REVISION=		2
 
-MODULES +=		lang/python
-MODPY_BUILDDEP = 	No
-MODPY_RUNDEP =		No
-RUN_DEPENDS+=	archivers/gtar \
-		devel/ruby-rgen,${MODRUBY_FLAVOR}
+RUN_DEPENDS+=		databases/ruby-hiera,${MODRUBY_FLAVOR} \
+			sysutils/ruby-facter>=2.0.1p0
 
-FAKE_FLAGS +=	HOME=${WKRDIR}/home
-SUBST_VARS +=	MODRUBY_BINREV
+PORTHOME=		${WRKDIR}
+SUBST_VARS +=		MODRUBY_BINREV
 
 pre-install:
-	mkdir -p ${WRKDIR}/home
 	${SUBST_CMD} ${WRKDIST}/lib/puppet/provider/package/gem.rb
 	${SUBST_CMD} ${WRKDIST}/lib/puppet/provider/package/pip.rb
+
+do-install:
+	${SUBST_CMD} ${WRKSRC}/lib/puppet/defaults.rb ${WRKSRC}/ext/rack/config.ru
+	@cd ${WRKSRC} && ${ALL_FAKE_FLAGS} ${RUBY} install.rb
+	mv ${WRKINST}${SYSCONFDIR}/puppet ${PREFIX}/${MODRUBY_RELEXAMPLEDIR}-puppet
+	${INSTALL_DATA} ${WRKSRC}/conf/*.conf ${PREFIX}/${MODRUBY_RELEXAMPLEDIR}-puppet
+	${INSTALL_DATA} ${FILESDIR}/puppet.conf ${PREFIX}/${MODRUBY_RELEXAMPLEDIR}-puppet
+	${INSTALL_DATA} ${WRKSRC}/ext/rack/config.ru ${PREFIX}/${MODRUBY_RELEXAMPLEDIR}-puppet
 
 .include <bsd.port.mk>
