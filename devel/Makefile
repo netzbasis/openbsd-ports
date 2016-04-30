@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1488 2016/04/28 11:34:09 shadchin Exp $
+# $OpenBSD: Makefile,v 1.1492 2016/04/29 21:01:37 zhuk Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -295,7 +295,6 @@
      SUBDIR += json-c
      SUBDIR += json-glib
      SUBDIR += jsoncpp
-     SUBDIR += kdbg
      SUBDIR += kdevelop
      SUBDIR += kdevplatform
      SUBDIR += kdiff3
@@ -399,6 +398,7 @@
      SUBDIR += luaalarm,lua52
      SUBDIR += luabitop
      SUBDIR += luabitop,lua52
+     SUBDIR += luacheck
      SUBDIR += luacopas
      SUBDIR += luacopas,lua52
      SUBDIR += luadoc
@@ -1199,6 +1199,8 @@
      SUBDIR += py-blessings
      SUBDIR += py-blinker
      SUBDIR += py-blinker,python3
+     SUBDIR += py-blist
+     SUBDIR += py-blist,python3
      SUBDIR += py-buildbot
      SUBDIR += py-buildslave
      SUBDIR += py-bytecodeassembler
@@ -1380,6 +1382,7 @@
      SUBDIR += py-tpg
      SUBDIR += py-traitlets
      SUBDIR += py-traitlets,python3
+     SUBDIR += py-trollius
      SUBDIR += py-turbocheetah
      SUBDIR += py-turbokid
      SUBDIR += py-twisted
