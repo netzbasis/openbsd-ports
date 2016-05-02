@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.388 2016/04/29 21:01:38 zhuk Exp $
+# $OpenBSD: Makefile,v 1.390 2016/05/01 17:36:47 jca Exp $
 
      SUBDIR =
      SUBDIR += accountsservice
@@ -244,6 +244,7 @@
      SUBDIR += testdisk
      SUBDIR += tkdvd
      SUBDIR += tmux-mem-cpu-load
+     SUBDIR += tmuxinator
      SUBDIR += toad
      SUBDIR += torture
      SUBDIR += tpb
@@ -251,6 +252,7 @@
      SUBDIR += tray-app
      SUBDIR += tree
      SUBDIR += ttyload
+     SUBDIR += udfclient
      SUBDIR += upower
      SUBDIR += upsd
      SUBDIR += uptimed
