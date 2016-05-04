@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.420 2016/04/06 22:03:45 sthen Exp $
+# $OpenBSD: Makefile,v 1.422 2016/05/03 05:52:45 rpointel Exp $
 
      SUBDIR =
      SUBDIR += ADMsnmp
@@ -215,6 +215,7 @@
      SUBDIR += pcsc-cyberjack
      SUBDIR += pcsc-lite
      SUBDIR += pcsc-tools
+     SUBDIR += pdf-parser
      SUBDIR += pdfcrack
      SUBDIR += pdfid
      SUBDIR += pear-Auth
@@ -325,6 +326,7 @@
      SUBDIR += tclgpg
      SUBDIR += tcltls
      SUBDIR += tempwatch
+     SUBDIR += theharvester
      SUBDIR += towitoko
      SUBDIR += volatility
      SUBDIR += vomit

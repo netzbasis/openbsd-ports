@@ -1,6 +1,6 @@
 #! /usr/bin/perl
 # ex:ts=8 sw=4:
-# $OpenBSD: proot,v 1.6 2016/05/02 06:56:30 espie Exp $
+# $OpenBSD: proot,v 1.9 2016/05/03 09:12:51 espie Exp $
 #
 # Copyright (c) 2016 Marc Espie <espie@openbsd.org>
 #
@@ -125,6 +125,10 @@ sub do_parm
 		    $state->{portuser} = LocalUser->new($v);
 	    }, LOG_USER => sub {
 		    $state->{loguser} = LocalUser->new($v);
+	    }, FETCH_USER => sub {
+		    $state->{fetchuser} = LocalUser->new($v);
+	    }, BUILD_USER => sub {
+		    $state->{builduser} = LocalUser->new($v);
 	    }, PORTSDIR => sub {
 		    $state->{PORTSDIR} = File::Spec->canonpath($v);
 	    }, DISTDIR => sub {
@@ -151,7 +155,14 @@ sub do_parm
 		} else {
 			$state->{actions}{$v} = 1;
 		}
+	    }, sets => sub {
+	    	if ($v =~ m/^-(.*)/) {
+			$state->{sets}{$1} = 0;
+		} else {
+			$state->{sets}{$v} = 1;
+		}
 	    },
+	    	
 	};
 
 	if (defined $opts->{$k}) {
@@ -204,6 +215,15 @@ sub handle_options
 	    resolv => 1,
 	    write_mk => 1,
 	};
+	$state->{sets} = {
+		base => 1,
+		comp => 1,
+		etc => 1,
+		xetc => 1,
+		xbase => 1,
+		xfont => 1,
+		xshare => 1,
+	};
 	$state->SUPER::handle_options("B:S:c:mx", 
 	    "[-B chroot] [-c configfile] [-S chroot] [arg=value...]");
 
@@ -254,7 +274,7 @@ sub handle_options
 	$state->{LOGDIR} //= join('/', $state->{PORTSDIR}, 'logs');
 	$state->{fetchuser} //= LocalUser->new('_pfetch');
 	$state->{builduser} //= LocalUser->new('_pbuild');
-	$state->{loguser} //= $state->{portuser};
+	$state->{loguser} //= $state->{builduser};
 	$state->{PACKAGE_REPOSITORY} //= join('/', $state->{PORTSDIR}, 'packages');
 	$state->{PLIST_DB} //= join('/', $state->{PORTSDIR}, 'plist');
 	$state->{sysdir} //= '/usr/src/sys';
@@ -371,7 +391,8 @@ sub read_locates
 		while (<$cmd>) {
 			chomp;
 			my ($set, $path) = split(':', $_, 2);
-			if ($set =~ m/^(x?base|comp|x?etc|xfont|xshare)/) {
+			$set =~ s/\d+//;
+			if ($state->{sets}{$set}) {
 				$state->{known}{$path} = 1;
 			}
 			$state->{progressmeter}->working(1000);
@@ -406,6 +427,10 @@ sub simple_copy
 			}
 			return;
 		} elsif (-f $path) {
+			my ($dev2, $ino2, $sz2) = (stat $cpath)[0, 1, 7];
+			if (defined $dev2 && $dev2 == $dev && $ino2 == $ino) {
+				return;
+			}
 			my $key = "$dev/$ino";
 
 			if (exists $state->{copied}{$key}) {
@@ -417,7 +442,6 @@ sub simple_copy
 				return;
 			}
 
-			my $sz2 = (stat $cpath)[7];
 			my $okay = 0;
 			if (defined $sz2 && $sz2 == $sz) {
 				$okay = 1;
@@ -567,11 +591,15 @@ sub get_snapshot
 			$state->fatal("Unrecognized snapshot");
 		}
 		my $v = "$1$2";
-		my @files;
-		for my $set (qw(base comp xbase xfont xshare)) {
-			my $file = "$set$v.tgz";
-			&$grab($file);
-			push(@files, $file);
+		my (@files, @later);
+		for my $set (keys %{$state->{sets}}) {
+			if ($set =~ m/etc/) {
+				push(@later, "$set.tgz");
+			} else {
+				my $file = "$set$v.tgz";
+				&$grab($file);
+				push(@files, $file);
+			}
 		}
 		if ($state->system('/usr/bin/signify', '-C', '-p',
 		    "/etc/signify/openbsd-$v-base.pub", '-x', 'SHA256.sig',
@@ -581,7 +609,7 @@ sub get_snapshot
 		for my $archive (@files) {
 			$state->extract_archive($snapdir, $archive);
 		}
-		for my $archive ("etc.tgz", "xetc.tgz") {
+		for my $archive (@later) {
 			$state->extract_archive($state->chroot("var/sysmerge"), 
 			    $archive);
 		}
