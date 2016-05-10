@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2016/04/26 13:53:10 juanfra Exp $
+# $OpenBSD: Makefile,v 1.3 2016/05/09 17:03:43 jca Exp $
 
 COMMENT =		static git page generator
 
-DISTNAME =		stagit-0.3.1
+DISTNAME =		stagit-0.4
 
 CATEGORIES =		www
 
@@ -11,6 +11,7 @@ HOMEPAGE =		http://git.2f30.org/stagit/
 # MIT/X Consortium License
 PERMIT_PACKAGE_CDROM =	Yes
 
+# uses pledge()
 WANTLIB =		c git2
 LIB_DEPENDS =		devel/libgit2/libgit2>=0.22
 
