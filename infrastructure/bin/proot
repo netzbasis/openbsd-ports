@@ -1,6 +1,6 @@
 #! /usr/bin/perl
 # ex:ts=8 sw=4:
-# $OpenBSD: proot,v 1.10 2016/05/08 11:51:40 espie Exp $
+# $OpenBSD: proot,v 1.17 2016/05/10 16:13:31 espie Exp $
 #
 # Copyright (c) 2016 Marc Espie <espie@openbsd.org>
 #
@@ -36,6 +36,8 @@ package MyUser;
 our @ISA = qw(DPB::User);
 
 use File::Basename;
+use File::Find;
+
 sub new
 {
 	my $class = shift;
@@ -51,6 +53,24 @@ sub mkpath
 	}
 	$self->mkdir($dir);
 }
+
+sub mkRpath
+{
+	my ($self, $dir, @except) = @_;
+	my %dont = map {($_, 1)} @except;
+	if (-d $dir) {
+		find(sub {
+		    if ($dont{$_}) {
+			    $File::Find::prune = 1;
+			    return;
+		    }
+		    $self->own($_);
+		}, $dir);
+	} else {
+		$self->mkpath($dir);
+	}
+}
+
 sub own
 {
 	my ($self, $path) = @_;
@@ -63,6 +83,7 @@ sub mkdir
 	mkdir($dir);
 	$self->own($dir);
 }
+
 package MyState;
 our @ISA = (qw(OpenBSD::State));
 
@@ -129,8 +150,11 @@ sub do_parm
 		} else {
 			$state->{sets}{$v} = 1;
 		}
+	    }, key => sub {
+	    	$state->{key} = $v;
+		$state->{SIGNING_PARAMETERS} = 
+		    "-s signify -s /etc/signify/$v-pkg.sec";
 	    },
-	    	
 	};
 
 	if (defined $opts->{$k}) {
@@ -224,13 +248,18 @@ sub handle_options
 	if (!defined $state->{chroot}) {
 		$state->usage("need a chroot base");
 	}
+	if (defined $state->{snapshot} &&
+	    $state->{snapshot} =~ m/^\Q$state->{chroot}\E(.*)/) {
+		push(@{$state->{preserved}}, $1);
+	}
+
 	$state->{progressmeter} = OpenBSD::ProgressMeter->new;
 	$state->{progressmeter}->setup($state->opt('x'), $state->opt('m'), 
 	    $state);
 	if ($< != 0) {
 		$state->fatal("Must be root");
 	}
-	for my $i (qw(PORTSDIR DISTDIR WRKOBJDIR PACKAGE_REPOSTORY PLIST_DB LOCKDIR LOGDIR)) {
+	for my $i (qw(PORTSDIR DISTDIR WRKOBJDIR PACKAGE_REPOSTORY PLIST_DB LOCKDIR LOGDIR SIGNING_PARAMETERS)) {
 		if (defined $state->{$i}) {
 			$state->{write}{$i} = 1;
 		}
@@ -246,12 +275,12 @@ sub handle_options
 	$state->{PACKAGE_REPOSITORY} //= join('/', $state->{PORTSDIR}, 'packages');
 	$state->{PLIST_DB} //= join('/', $state->{PORTSDIR}, 'plist');
 	$state->{sysdir} //= '/usr/src/sys';
-	for my $dir (qw(PORTSDIR DISTDIR WRKOBJDIR LOGDIR PACKAGE_REPOSITORY PLIST_DB)) {
-		if (defined $state->{$dir}) {
-			$state->{$dir} = $state->canonical_dir($state->{$dir});
-		} else {
+	for my $dir (qw(PORTSDIR DISTDIR WRKOBJDIR LOGDIR PACKAGE_REPOSITORY PLIST_DB LOCKDIR)) {
+		if (!defined $state->{$dir}) {
 			$state->fatal("Missing #1", $dir);
 		}
+		$state->{$dir} = $state->canonical_dir($state->{$dir});
+		push(@{$state->{preserved}}, $state->{$dir});
 	}
 	for my $i (qw(portuser loguser fetchuser builduser)) {
 		if (defined $state->{$i}) {
@@ -322,6 +351,9 @@ sub check_mountpoint
 	}
 	close($cmd);
 	my $root = $state->{chroot};
+	if (-l $root) {
+		$root = readlink $root;
+	}
 	for my $dir (keys %$dev) {
 		if ($dir =~ m/^\Q$state->{chroot}\//) {
 			$state->{dontrm}{$dir} = 1;
@@ -346,6 +378,14 @@ sub special_data
 {
 	my $state = shift;
 	$state->{known}{'/etc/resolv.conf'} = 1;
+	$state->{known}{'/etc/hosts'} = 1;
+}
+
+sub key_data
+{
+	my $state = shift;
+	$state->{known}{"/etc/signify/$state->{key}-pkg.pub"} = 1;
+	$state->{known}{"/etc/signify/$state->{key}-pkg.sec"} = 1;
 }
 
 sub read_locates
@@ -582,7 +622,11 @@ sub get_snapshot
 			$state->extract_archive($state->chroot("var/sysmerge"), 
 			    $archive);
 		}
-
+	    	if ($state->{snapshot} =~ m/^(https?|ftp):/) {
+			for my $file (@files) {
+				unlink($file);
+			}
+		}
 	    });
 }
 
@@ -704,11 +748,13 @@ sub unpopulate_chroot
 			if ($state->{dontrm}{$File::Find::name}) {
 				return;
 			}
-		    	my $dir =$File::Find::dir;
-			$dir =~ s/^\Q$state->{chroot}\E//;
-		    	$state->{progressmeter}->message($dir);
+		    	my $file =$File::Find::name;
+			$file =~ s/^\Q$state->{chroot}\E//;
+			if ($state->{known}{$file}) {
+				return;
+			}
+		    	$state->{progressmeter}->message($file);
 		    	if (-l $_ || !-d $_) {
-				#$state->say("unlink #1", $File::Find::name);
 				unlink($_);
 			} else {
 				push(@dirs, $File::Find::name);
@@ -750,16 +796,23 @@ sub verbose_shit
 sub make_ports_subdirs
 {
 	my $state = shift;
-	$state->banner("Making out extra directories",
+	$state->banner("Adjusting ports directories",
 	    sub {
-	    	$state->{fetchuser}->mkpath($state->chroot($state->{DISTDIR}));
+	    	$state->{progressmeter}->message("DISTDIR");
+	    	$state->{fetchuser}->mkRpath($state->chroot($state->{DISTDIR}), 'build-stats');
 		if (defined $state->{loguser}) {
-			$state->{loguser}->mkpath($state->chroot($state->{LOGDIR}));
+			$state->{progressmeter}->message("LOGDIR");
+			$state->{loguser}->mkRpath($state->chroot($state->{LOGDIR}));
+			$state->{loguser}->mkRpath($state->chroot($state->{DISTDIR}, "build-stats"));
+			
 		}
 	    	$state->{builduser}->mkpath($state->chroot($state->{WRKOBJDIR}));
-	    	$state->{builduser}->mkpath($state->chroot($state->{PACKAGE_REPOSITORY}));
-	    	$state->{builduser}->mkpath($state->chroot($state->{PLIST_DB}));
-		$state->{builduser}->mkpath($state->chroot($state->{LOCKDIR}));
+		$state->{progressmeter}->message("PACKAGE_REPOSITORY");
+	    	$state->{builduser}->mkRpath($state->chroot($state->{PACKAGE_REPOSITORY}));
+		$state->{progressmeter}->message("PLIST_DB");
+	    	$state->{builduser}->mkRpath($state->chroot($state->{PLIST_DB}));
+		$state->{progressmeter}->message("LOCKDIR");
+		$state->{builduser}->mkRpath($state->chroot($state->{LOCKDIR}));
 	    });
 }
 
@@ -785,20 +838,24 @@ $state->check_mountpoint;
 if ($state->{actions}{unpopulate}) {
 	$state->unpopulate_chroot;
 }
-if ($state->{actions}{snapshot}) {
-	$state->get_snapshot;
-}
 if ($state->{actions}{locate}) {
 	$state->read_locates;
 }
-
+if ($state->{actions}{snapshot}) {
+	$state->get_snapshot;
+}
 if ($state->{actions}{resolv}) {
 	$state->special_data;
+}
+if ($state->{key}) {
+	$state->key_data;
 }
 if ($state->{actions}{resolv} || $state->{actions}{locate}) {
 	$state->copy_sync;
 }
-
+if ($state->{actions}{unpopulate_light}) {
+	$state->unpopulate_chroot;
+}
 if ($state->{actions}{devs}) {
 	$state->regen_devs;
 }

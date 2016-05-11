@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.88 2016/01/28 15:56:28 dcoppa Exp $
+# $OpenBSD: Makefile,v 1.90 2016/05/10 12:45:28 dcoppa Exp $
 
 COMMENT =		persistent key-value database
-DISTNAME =		redis-3.0.7
+DISTNAME =		redis-3.2.0
 REVISION =		0
 CATEGORIES =		databases
 HOMEPAGE =		http://redis.io/
@@ -32,7 +32,7 @@ USE_GMAKE =		Yes
 TEST_DEPENDS =		${MODTCL_BUILD_DEPENDS}
 TEST_FLAGS =		TCL_BIN="${MODTCL_BIN}"
 
-DBDIR =			/var/redis
+DBDIR =			${VARBASE}/redis
 SUBST_VARS +=		DBDIR
 
 pre-configure:
