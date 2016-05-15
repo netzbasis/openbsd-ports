@@ -1,6 +1,6 @@
 #! /usr/bin/perl
 # ex:ts=8 sw=4:
-# $OpenBSD: proot,v 1.25 2016/05/13 22:40:28 espie Exp $
+# $OpenBSD: proot,v 1.33 2016/05/14 22:49:23 espie Exp $
 #
 # Copyright (c) 2016 Marc Espie <espie@openbsd.org>
 #
@@ -400,9 +400,10 @@ sub check_mountpoint
 		$root = readlink $root;
 	}
 	for my $dir (keys %$dev) {
-		if ($dir =~ m/^\Q$state->{chroot}\//) {
-			$state->{dontrm}{$dir} = 1;
-			$state->say("Preserve #1", $dir);
+		if ($dir =~ m/^\Q$root\E(\/.*)/) {
+			my $devno = (stat $dir)[0];
+			$state->{dontrm_dev}{$devno} = 1;
+			$state->say("Preserve #1", $1);
 		}
 	}
 	my $mnt = $root;
@@ -424,6 +425,9 @@ sub special_data
 	my $state = shift;
 	$state->{known}{'/etc/resolv.conf'} = 1;
 	$state->{known}{'/etc/hosts'} = 1;
+	if (-f '/etc/doas.conf') {
+		$state->{known}{'/etc/doas.conf'} = 1;
+	}
 }
 
 sub key_data
@@ -445,6 +449,7 @@ sub read_locates
 			chomp;
 			my ($set, $path) = split(':', $_, 2);
 			$set =~ s/\d+//;
+#			next if $path =~ m/\.ph$/;
 			if ($state->{sets}{$set}) {
 				$state->{known}{$path} = 1;
 			}
@@ -464,7 +469,11 @@ sub simple_copy
 		return if $state->{dontrm}{$cpath};
 		remove_tree($cpath);
 		my $target = readlink $path;
-		symlink($target, $cpath);
+		if (!defined $target) {
+			$state->errsay("Can't read link to #1: #2", $path, $!);
+		} else {
+			symlink($target, $cpath);
+		}
 		return;
 	} else {
 		my ($dev, $ino, $mode, $uid, $gid, $sz, $atime, $mtime) = 
@@ -584,14 +593,14 @@ sub best_user
 
 sub grab_file
 {
-	my ($state, $file) = @_;
+	my ($state, $snapdir, $file) = @_;
 
 	my $baseurl = $state->{snapshot};
 
 	unless (-f $file) {
-		if ($state->system('/usr/bin/ftp' , "-C", "-o", "$file.part", 
-		    "$baseurl/$file") == 0) {
-			rename("$file.part", $file);
+		if ($state->system('/usr/bin/ftp' , "-C", "-o", 
+		    "$snapdir/$file.part", "$baseurl/$file") == 0) {
+			rename("$snapdir/$file.part", "$snapdir/$file");
 		} else {
 			$state->fatal("fetch #1 failed", $file);
 		}
@@ -636,22 +645,22 @@ sub get_snapshot
 	    	if ($state->{snapshot} =~ m/^(https?|ftp):/) {
 			$snapdir = $state->chroot('/tmp');
 			File::Path::make_path($snapdir);
-			$grab = sub { $state->grab_file(shift); }
+			$grab = sub { $state->grab_file($snapdir, shift); }
 		} else {
 			$snapdir = $state->{snapshot};
 			$grab = sub {};
 		}
-		$state->chdir($snapdir);
 
 		&$grab("SHA256.sig");
-		open my $f, '<', "SHA256.sig" or $state->fatal("no SHA256.sig");
+		open my $f, '<', "$snapdir/SHA256.sig" 
+		    or $state->fatal("no SHA256.sig");
 		my $line = <$f>;
 		if ($line !~ m/openbsd\s+(\d+)\.(\d+)\s+base/) {
 			$state->fatal("Unrecognized snapshot");
 		}
 		my $v = "$1$2";
 		my (@files, @later);
-		for my $set (keys %{$state->{sets}}) {
+		for my $set (sort keys %{$state->{sets}}) {
 			if ($set =~ m/etc/) {
 				push(@later, "$set.tgz");
 			} else {
@@ -660,7 +669,10 @@ sub get_snapshot
 				push(@files, $file);
 			}
 		}
-		if ($state->system('/usr/bin/signify', '-C', '-p',
+		if ($state->system(
+		    sub {
+			$state->chdir($snapdir); },
+		    '/usr/bin/signify', '-C', '-p',
 		    "/etc/signify/openbsd-$v-base.pub", '-x', 'SHA256.sig',
 		    @files) != 0) {
 			$state->fatal("Checksum error");
@@ -674,7 +686,7 @@ sub get_snapshot
 		}
 	    	if ($state->{snapshot} =~ m/^(https?|ftp):/) {
 			for my $file (@files) {
-				unlink($file);
+				unlink("$snapdir/$file");
 			}
 		}
 	    });
@@ -704,7 +716,7 @@ sub copy_ports
 			}
 			$state->simple_copy($realname, $state->chroot($r2),
 			    $state->best_user($r2));
-		    }, ".");
+		    }, $srcports);
 		umask $old;
 	    });
 }
@@ -716,19 +728,20 @@ sub copy_sys
 	    sub {
 		my $old = umask;
 		umask 0;
-		my $sysdir = $state->srcroot($state->{sysdir});
-		$state->chdir($sysdir);
-		$state->{portuser}->mkpath($state->chroot($state->{sysdir}));
+		my $srcsys = $state->srcroot($state->{sysdir});
+		my $destsys = $state->chroot($state->{sysdir});
 		find(sub {
 			# XXX don't bother copying stuff that's NOT .h
 			return if -f $_ && !m/\.h$/ && $_ ne 'Makefile';
-			$state->{progressmeter}->working(1000);
-			my $realname = $File::Find::name;
-			my $r2 = $realname;
-			$realname =~ s,^\./,$sysdir/,;
-			$r2 =~ s,^\./,$state->{sysdir}/,;
-			$state->simple_copy($realname, $state->chroot($r2));
-		    }, ".");
+			if (-d _ && $_ eq 'obj' || $_ eq 'CVS') {
+				$File::Find::prune = 1;
+				return;
+			}
+			my $destname = $File::Find::name;
+			$destname =~ s,^\Q$srcsys\E\b,$destsys,;
+			$state->{progressmeter}->message($File::Find::name);
+			$state->simple_copy($File::Find::name, $destname);
+		    }, $srcsys);
 		umask $old;
 	    });
 }
@@ -738,8 +751,10 @@ sub regen_devs
 	my $state = shift;
 	$state->banner("Generating devices",
 	    sub {
-		$state->chdir($state->chroot("/dev"));
-		$state->system('/bin/sh', './MAKEDEV', 'all');
+		$state->system(
+		    sub {
+			$state->chdir($state->chroot("/dev"));
+		    }, '/bin/sh', './MAKEDEV', 'all');
 		push(@{$state->{preserved}}, "/dev");
 	    });
 }
@@ -788,24 +803,23 @@ sub unpopulate_chroot
 	my $state = shift;
 	$state->run_chroot("Cleaning up files and directories",
 	    sub {
-	    	for my $dir (@{$state->{preserved}}) {
-			$state->{dontrm}{$dir} = 1;
+	    	for my $item (@{$state->{preserved}}) {
+			$state->{dontrm}{$item} = 1;
 		}
 		my @dirs;
 	    	find(
 		    sub {
-			if (-d $_ && $state->{dontrm}{$File::Find::name}) {
-				$File::Find::prune = 1;
-				return;
-			}
-			if ($state->{dontrm}{$File::Find::name}) {
+		    	my $devno = (lstat $_)[0];
+			if ($state->{dontrm_dev}{$devno} || 
+			    $state->{dontrm}{$File::Find::name}) {
+				$File::Find::prune = 1 if -d _;
 				return;
 			}
 			if ($state->{known}{$File::Find::name}) {
 				return;
 			}
 		    	$state->{progressmeter}->message($File::Find::name);
-		    	if (-l $_ || !-d $_) {
+		    	if (-l _ || ! -d _) {
 				unlink($_);
 			} else {
 				push(@dirs, $File::Find::name);
@@ -890,7 +904,7 @@ sub is_under_nfs
 	my ($state, $dir) = @_;
 
 	my $devno = (stat $dir)[0];
-	if (exists $state->{nfs}{$devno}) {
+	if (defined $devno && exists $state->{nfs}{$devno}) {
 		return 1;
 	} else {
 		return 0;
