@@ -1,6 +1,6 @@
 #! /usr/bin/perl
 # ex:ts=8 sw=4:
-# $OpenBSD: proot,v 1.33 2016/05/14 22:49:23 espie Exp $
+# $OpenBSD: proot,v 1.39 2016/05/15 20:31:05 rpe Exp $
 #
 # Copyright (c) 2016 Marc Espie <espie@openbsd.org>
 #
@@ -138,6 +138,16 @@ sub do_parm
 		    $state->{PACKAGE_REPOSITORY} = File::Spec->canonpath($v);
 	    }, PLIST_DB => sub {
 		    $state->{PLIST_DB} = File::Spec->canonpath($v);
+	    }, NFSDIR => sub {
+		    $state->{DISTDIR} = File::Spec->canonpath("$v/distfiles");
+		    $state->{PACKAGE_REPOSITORY} = 
+			File::Spec->canonpath("$v/packages");
+		    my $arch = OpenBSD::Paths->machine_architecture;
+		    $state->{PLIST_DB} = 
+		    	File::Spec->canonpath("$v/plist/$arch");
+	    }, LOCALDIR => sub {
+		    $state->{WRKOBJDIR} = File::Spec->canonpath("$v/pobj");
+		    $state->{LOCKDIR} = File::Spec->canonpath("$v/locks");
 	    }, preserve => sub {
 		    push(@{$state->{preserved}}, $v);
 	    }, portscvs => sub {
@@ -153,7 +163,9 @@ sub do_parm
 	    }, snapshot => sub {
 	    	$state->{snapshot} = $v;
 	    }, actions => sub {
-	    	if ($v =~ m/^-(.*)/) {
+	    	if ($v eq 'none') {
+			delete $state->{actions};
+		} elsif ($v =~ m/^-(.*)/) {
 			$state->{actions}{$1} = 0;
 		} else {
 			$state->{actions}{$v} = 1;
@@ -168,6 +180,10 @@ sub do_parm
 	    	$state->{key} = $v;
 		$state->{SIGNING_PARAMETERS} = 
 		    "-s signify -s /etc/signify/$v-pkg.sec";
+	    }, extra => sub {
+	    	$state->{known}{$v} = 1;
+	    }, mkconf_tail => sub {
+	    	$state->{mkconf_tail} = $v;
 	    },
 	};
 
@@ -273,7 +289,7 @@ sub handle_options
 	if ($< != 0) {
 		$state->fatal("Must be root");
 	}
-	for my $i (qw(PORTSDIR DISTDIR WRKOBJDIR PACKAGE_REPOSTORY PLIST_DB LOCKDIR LOGDIR SIGNING_PARAMETERS)) {
+	for my $i (qw(PORTSDIR DISTDIR WRKOBJDIR PACKAGE_REPOSITORY PLIST_DB LOCKDIR LOGDIR SIGNING_PARAMETERS)) {
 		if (defined $state->{$i}) {
 			$state->{write}{$i} = 1;
 		}
@@ -425,9 +441,6 @@ sub special_data
 	my $state = shift;
 	$state->{known}{'/etc/resolv.conf'} = 1;
 	$state->{known}{'/etc/hosts'} = 1;
-	if (-f '/etc/doas.conf') {
-		$state->{known}{'/etc/doas.conf'} = 1;
-	}
 }
 
 sub key_data
@@ -699,23 +712,25 @@ sub copy_ports
 	    sub {
 		my $old = umask;
 		umask 0;
-		my $srcports = $state->srcroot($state->{PORTSDIR});
-		$state->chdir($srcports);
-		$state->{portuser}->mkpath($state->chroot($state->{PORTSDIR}));
+		my $portsdir = $state->{PORTSDIR};
+		my $srcports = $state->srcroot($portsdir);
+		if (-l $srcports) {
+			$srcports = readlink $srcports;
+		}
+		my $destports = $state->chroot($portsdir);
 		find(sub {
-			my $d = $File::Find::dir;
-			$d =~ s/^\.\///;
-			$state->{progressmeter}->message($d);
 			my $realname = $File::Find::name;
+			$realname =~ s,^\Q$srcports\E\b,,;
 			my $r2 = $realname;
-			$realname =~ s,^\./,$srcports/,;
-			$r2 =~ s,^\./,$state->{PORTSDIR}/,;
+			$r2 =~ s,^,$portsdir,;
 			if ($r2 eq $state->{WRKOBJDIR}) {
 				$File::Find::prune = 1;
 				return;
 			}
-			$state->simple_copy($realname, $state->chroot($r2),
-			    $state->best_user($r2));
+			$realname =~ s,^/,,;
+			$state->{progressmeter}->message($realname);
+			$state->simple_copy($File::Find::name, 
+			    $state->chroot($r2), $state->best_user($r2));
 		    }, $srcports);
 		umask $old;
 	    });
@@ -781,16 +796,18 @@ sub checkout_ports
 	    	my @cvs = ("/usr/bin/cvs", "-z3", "-d", $state->{portscvs});
 		my $dir = $state->chroot($state->{PORTSDIR});
 		if (-d "$dir/CVS") {
-			$state->chdir($dir);
 			$state->{portuser}->run_as(sub {
-			    $state->system(@cvs, "update", "-dP", "-A");
+			    $state->system(
+			    	sub { $state->chdir($dir); },
+				@cvs, "update", "-dP", "-A");
 			    });
 		} else {
 			# okay, so stupid cvs creates the dir, work-around that
 			$state->{portuser}->mkpath("$dir.tmp");
-			$state->chdir("$dir.tmp");
 			$state->{portuser}->run_as(sub {
-			    $state->system(@cvs, "co", "-P", "-A", "ports");
+			    $state->system(
+			    	sub { $state->chdir($dir); },
+			    	@cvs, "co", "-P", "-A", "ports");
 			    });
 			rename("$dir.tmp/ports", "$dir");
 			rmdir("$dir.tmp");
@@ -958,6 +975,16 @@ sub write_mk_conf
 		for my $i (sort keys %{$state->{write}}) {
 			print $f "$i = $state->{$i}\n";
 		}
+		if (exists $state->{mkconf_tail}) {
+			open(my $g, "<", $state->{mkconf_tail}) or
+			    $state->errsay("Couldn't read tail #1: #2",
+				$state->{mkconf_tail}, $!);
+			print $f "# Copied from $state->{mkconf_tail}\n";
+			while(<$g>) {
+				print $f $_;
+			}
+			close $g;
+		}
 		close($f);
 	    });
 }
@@ -966,13 +993,16 @@ package main;
 
 my $state = MyState->new("proot");
 $state->handle_options;
-$state->check_mountpoint;
+if ($state->{actions}{check_mount}) {
+	$state->check_mountpoint;
+}
 if ($state->{actions}{unpopulate}) {
 	$state->unpopulate_chroot;
 }
 if ($state->{actions}{locate}) {
 	$state->read_locates;
 }
+
 if ($state->{actions}{snapshot}) {
 	$state->get_snapshot;
 }
@@ -982,7 +1012,7 @@ if ($state->{actions}{resolv}) {
 if ($state->{key}) {
 	$state->key_data;
 }
-if ($state->{actions}{resolv} || $state->{actions}{locate}) {
+if (defined $state->{known}) {
 	$state->copy_sync;
 }
 if ($state->{actions}{unpopulate_light}) {
@@ -1009,7 +1039,8 @@ if ($state->{actions}{ports_subdirs}) {
 if ($state->{actions}{stragglers}) {
 	$state->verbose_shit;
 }
-if ($state->{actions}{write_mk} && exists $state->{write}) {
+if ($state->{actions}{write_mk} && 
+    exists $state->{write} || exists $state->{mkconf_tail}) {
 	$state->write_mk_conf;
 }
 if ($state->{actions}{check_symlinks}) {

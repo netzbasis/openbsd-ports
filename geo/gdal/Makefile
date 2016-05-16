@@ -1,17 +1,19 @@
-# $OpenBSD: Makefile,v 1.45 2016/03/20 15:58:26 naddy Exp $
+# $OpenBSD: Makefile,v 1.47 2016/05/15 12:29:20 landry Exp $
 
 COMMENT-main =	translator library for geospatial data formats
 COMMENT-python =python bindings and utilities for GDAL
 COMMENT-perl =	perl bindings for GDAL
 
-V =		2.0.2
+V =		2.1.0
 DISTNAME =	gdal-${V}
+DISTFILES =	${DISTNAME}${EXTRACT_SUFX} \
+		gdalautotest-${V}${EXTRACT_SUFX}
 
 PKGNAME-main =	${DISTNAME}
 PKGNAME-python =py-${DISTNAME}
 PKGNAME-perl =	p5-Geo-GDAL-${V}
 
-SHARED_LIBS =	gdal 24.0 #20.2
+SHARED_LIBS =	gdal 25.0 #21.0
 CATEGORIES =	geo devel
 
 HOMEPAGE =	http://www.gdal.org/
@@ -46,20 +48,20 @@ LIB_DEPENDS-main =	${LIB_DEPENDS} \
 
 WANTLIB-main =		${WANTLIB} c expat m stdc++ z tiff openjp2 ssl crypto \
 			curl pq geos geos_c idn png gif jpeg jasper json-c geotiff \
-			perl proj pthread freexl pcre spatialite sqlite3 xml2 lzma nghttp2
+			proj pthread freexl pcre spatialite sqlite3 xml2 lzma nghttp2
 
 
 LIB_DEPENDS-python =	${PKGNAME}:${BASE_PKGPATH},-main
 WANTLIB-python =	${MODPY_WANTLIB} gdal m pthread stdc++
 
 LIB_DEPENDS-perl =	${PKGNAME}:${BASE_PKGPATH},-main
-WANTLIB-perl =		gdal crypto curl expat geos_c geotiff gif idn \
-			jasper jpeg openjp2 m png pq ssl tiff z pthread \
-			json-c freexl pcre spatialite sqlite3 xml2 \
-			nghttp2 ${MODGETTEXT_WANTLIB}
+WANTLIB-perl =		gdal
 
 RUN_DEPENDS +=		math/py-numpy
 BUILD_DEPENDS +=	${RUN_DEPENDS} devel/swig
+
+TEST_DEPENDS +=		${PKGNAME-python}:${BASE_PKGPATH},-python
+TEST_ENV =		GDAL_DOWNLOAD_TEST_DATA=1 GDAL_RUN_SLOW_TESTS=yes
 
 MODPY_SETUPTOOLS =	Yes
 MODPY_EGG_VERSION =	${V}
@@ -68,7 +70,6 @@ MODPY_ADJ_FILES =	swig/python/scripts/*.py
 MAKE_FILE =	GNUmakefile
 MAKE_FLAGS =	LIBTOOL_FINISH=:
 USE_GMAKE =	Yes
-NO_TEST =	Yes
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ENV =	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -pthread"
@@ -91,6 +92,7 @@ CONFIGURE_ARGS =--without-hdf5 \
 		--with-python \
 		--with-perl \
 		--with-geos \
+		--with-gnm \
 		--with-freexl=${LOCALBASE} \
 		--with-spatialite=${LOCALBASE} \
 		--with-png=${LOCALBASE} \
@@ -102,11 +104,13 @@ CONFIGURE_ARGS =--without-hdf5 \
 		--with-libjson-c=${LOCALBASE} \
 		--with-jasper=${LOCALBASE}
 
-post-build:
-	# fix manpages doubled .TH lines/sections, http://trac.osgeo.org/gdal/ticket/6048
-	sed -i -e '2,5d' ${WRKSRC}/man/man1/*.1
+post-extract:
+	ln -sf ${WRKDIR}/gdalautotest-${V} ${WRKSRC}/autotest
 
 post-install:
 	rm ${PREFIX}/man/man1/_home_rouault_dist_wrk_gdal_apps_.1
+
+do-test:
+	cd ${WRKSRC}/autotest && env ${TEST_ENV} ${MODPY_BIN} run_all.py
 
 .include <bsd.port.mk>
