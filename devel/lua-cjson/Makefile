@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2016/03/18 20:49:27 naddy Exp $
+# $OpenBSD: Makefile,v 1.6 2016/05/16 20:52:37 jca Exp $
 
 COMMENT=	JSON support for Lua
 
@@ -11,11 +11,10 @@ HOMEPAGE=	http://www.kyne.com.au/~mark/software/lua-cjson.php
 # MIT
 PERMIT_PACKAGE_CDROM=   Yes
 
-MODULES=	lang/lua
-
 MASTER_SITES=	http://www.kyne.com.au/~mark/software/download/
 
-NO_TEST=	Yes
+MODULES=	lang/lua
+TEST_DEPENDS=	${FULLPKGNAME}:${BUILD_PKGPATH}
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/Makefile ${WRKSRC}/lua/*.lua
@@ -27,5 +26,9 @@ do-install:
 .for s in json2lua lua2json
 	${INSTALL_SCRIPT} ${WRKSRC}/lua/$s.lua ${PREFIX}/bin/$s.lua${MODLUA_VERSION}
 .endfor
+
+do-test:
+	cd ${WRKSRC}/tests && ${SETENV} ${MAKE_ENV} ${MODLUA_BIN} test.lua \
+	    > ${WRKDIR}/test2.log
 
 .include <bsd.port.mk>

@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Grabber.pm,v 1.32 2016/05/15 22:24:56 espie Exp $
+# $OpenBSD: Grabber.pm,v 1.34 2016/05/16 10:37:44 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -106,9 +106,9 @@ sub logger
 
 sub grab_subdirs
 {
-	my ($self, $core, $list) = @_;
+	my ($self, $core, $list, $skip) = @_;
 	$core->unsquiggle;
-	DPB::Vars->grab_list($core, $self, $list, undef,
+	DPB::Vars->grab_list($core, $self, $list, $skip,
 	    $self->{loglist}, $self->{dpb},
 	    sub {
 	    	my $h = shift;
@@ -133,7 +133,7 @@ sub clean_packages
 
 sub complete_subdirs
 {
-	my ($self, $core) = @_;
+	my ($self, $core, $skip) = @_;
 	# more passes if necessary
 	while ($self->{keep_going}) {
 		my $subdirlist = {};
@@ -164,7 +164,7 @@ sub complete_subdirs
 		$self->{engine}->flush;
 		last if (keys %$subdirlist) == 0;
 
-		DPB::Vars->grab_list($core, $self, $subdirlist, undef,
+		DPB::Vars->grab_list($core, $self, $subdirlist, $skip,
 		    $self->{loglist}, $self->{dpb},
 		    sub {
 			$self->finish(shift);
