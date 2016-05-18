@@ -1,6 +1,6 @@
 #! /usr/bin/perl
 # ex:ts=8 sw=4:
-# $OpenBSD: proot,v 1.39 2016/05/15 20:31:05 rpe Exp $
+# $OpenBSD: proot,v 1.42 2016/05/17 16:23:02 espie Exp $
 #
 # Copyright (c) 2016 Marc Espie <espie@openbsd.org>
 #
@@ -278,6 +278,10 @@ sub handle_options
 	if (!defined $state->{chroot}) {
 		$state->usage("need a chroot base");
 	}
+	if (defined $state->{actions}{checkout_ports} &&
+	    !defined $state->{portuser}) {
+	    	$state->usage("can't do action checkout_ports without a PORT_USER");
+	}
 	if (defined $state->{snapshot} &&
 	    $state->{snapshot} =~ m/^\Q$state->{chroot}\E(.*)/) {
 		push(@{$state->{preserved}}, $1);
@@ -303,7 +307,8 @@ sub handle_options
 	$state->{builduser} //= MyUser->new('_pbuild');
 	$state->{loguser} //= $state->{builduser};
 	$state->{PACKAGE_REPOSITORY} //= join('/', $state->{PORTSDIR}, 'packages');
-	$state->{PLIST_DB} //= join('/', $state->{PORTSDIR}, 'plist');
+	my $arch = OpenBSD::Paths->machine_architecture;
+	$state->{PLIST_DB} //= join('/', $state->{PORTSDIR}, 'plist', $arch);
 	$state->{sysdir} //= '/usr/src/sys';
 	for my $dir (qw(PORTSDIR DISTDIR WRKOBJDIR LOGDIR PACKAGE_REPOSITORY PLIST_DB LOCKDIR)) {
 		if (!defined $state->{$dir}) {
@@ -806,7 +811,7 @@ sub checkout_ports
 			$state->{portuser}->mkpath("$dir.tmp");
 			$state->{portuser}->run_as(sub {
 			    $state->system(
-			    	sub { $state->chdir($dir); },
+			    	sub { $state->chdir("$dir.tmp"); },
 			    	@cvs, "co", "-P", "-A", "ports");
 			    });
 			rename("$dir.tmp/ports", "$dir");
