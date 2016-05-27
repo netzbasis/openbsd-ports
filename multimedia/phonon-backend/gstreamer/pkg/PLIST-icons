@@ -1,0 +1,11 @@
+@comment $OpenBSD: PLIST-icons,v 1.2 2016/05/27 03:41:30 zhuk Exp $
+@conflict phonon-gstreamer-<4.8.2p2
+@conflict phonon-qt5-gstreamer-<4.8.2p2
+share/icons/hicolor/128x128/apps/phonon-gstreamer.png
+share/icons/hicolor/16x16/apps/phonon-gstreamer.png
+share/icons/hicolor/22x22/apps/phonon-gstreamer.png
+share/icons/hicolor/48x48/apps/phonon-gstreamer.png
+share/icons/hicolor/64x64/apps/phonon-gstreamer.png
+share/icons/hicolor/scalable/apps/phonon-gstreamer.svgz
+@exec %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
+@unexec-delete %D/bin/gtk-update-icon-cache -q -t %D/share/icons/hicolor
