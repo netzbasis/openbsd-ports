@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.50 2016/05/20 15:36:05 robert Exp $
+# $OpenBSD: Makefile,v 1.52 2016/05/28 16:37:10 robert Exp $
 
 ONLY_FOR_ARCHS=		i386 amd64
 DPB_PROPERTIES=		parallel
 
 COMMENT=		Iridium browser
 
-V=			50.0
+V=			51.1
 DISTNAME=		iridium-browser-${V}
 PKGNAME=		iridium-${V}
 
@@ -185,7 +185,8 @@ do-build:
 	cacheinvalidation cacheinvalidation_proto_cpp gfx_vector_icons \
 	data_reduction_proxy_proto cloud_policy_code_generate common_constants \
 	profile_reset_report_proto autofill_server_proto \
-	$$(ninja -t targets | grep -E '(mojo_bindings|resources): phony' | grep -v test | cut -d ':' -f1); do \
+	$$(ninja -t targets | grep -E '(bindings_mojom|mojo_bindings|resources): phony' | \
+		grep -v test | cut -d ':' -f1); do \
 		cd ${WRKSRC} && env -i ${MAKE_ENV} ninja \
 			-j ${MAKE_JOBS} -C out/${BUILDTYPE} $${_r}; \
 	done
@@ -201,12 +202,14 @@ do-install:
 	${INSTALL_DATA} ${BUILDDIR}/*.pak ${PREFIX}/iridium
 
 	${INSTALL_DATA_DIR} ${PREFIX}/iridium/locales
+	${INSTALL_DATA_DIR} ${PREFIX}/iridium/pseudo_locales
 	${INSTALL_DATA} ${BUILDDIR}/locales/* ${PREFIX}/iridium/locales
+	${INSTALL_DATA} ${BUILDDIR}/pseudo_locales/* ${PREFIX}/iridium/pseudo_locales
 	${INSTALL_DATA} ${BUILDDIR}/*.png ${PREFIX}/iridium
 	${INSTALL_DATA_DIR} ${PREFIX}/iridium/resources
 	@cp -Rp ${BUILDDIR}/resources/* ${PREFIX}/iridium/resources
 	@chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/iridium/resources
-.for f in libexif.so protoc icudtl.dat mksnapshot
+.for f in protoc icudtl.dat mksnapshot
 	${INSTALL_DATA} ${BUILDDIR}/${f} ${PREFIX}/iridium
 .endfor
 .for s in 22 24 48 64 128 256
