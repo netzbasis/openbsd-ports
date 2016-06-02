@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.133 2016/05/27 19:10:39 sebastia Exp $
+# $OpenBSD: Makefile,v 1.135 2016/06/01 12:02:44 jasper Exp $
 
 PORTROACH=		limit:^3
 
 VERSION=		3.8.7
-REVISION=		3
+REVISION=		4
 
 RUN_DEPENDS+=		databases/ruby-hiera,${MODRUBY_FLAVOR} \
 			sysutils/ruby-facter>=2.0.1p0
@@ -12,11 +12,12 @@ SUBST_VARS +=		MODRUBY_BINREV
 
 pre-install:
 	mkdir -p ${WRKDIR}/home
-	${SUBST_CMD} ${WRKDIST}/lib/puppet/provider/package/gem.rb
-	${SUBST_CMD} ${WRKDIST}/lib/puppet/provider/package/pip.rb
+	${SUBST_CMD} ${WRKDIST}/lib/puppet/provider/package/gem.rb \
+		${WRKDIST}/lib/puppet/provider/package/pip.rb \
+		${WRKSRC}/lib/puppet/defaults.rb \
+		${WRKSRC}/ext/rack/config.ru
 
 do-install:
-	${SUBST_CMD} ${WRKSRC}/lib/puppet/defaults.rb ${WRKSRC}/ext/rack/config.ru
 	@cd ${WRKSRC} && ${ALL_FAKE_FLAGS} ${RUBY} install.rb
 	mv ${WRKINST}${SYSCONFDIR}/puppet ${PREFIX}/${MODRUBY_RELEXAMPLEDIR}-puppet
 	${INSTALL_DATA} ${WRKSRC}/conf/*.conf ${PREFIX}/${MODRUBY_RELEXAMPLEDIR}-puppet

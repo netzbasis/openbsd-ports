@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.37 2016/05/31 10:27:38 jasper Exp $
+# $OpenBSD: Makefile.inc,v 1.39 2016/06/01 12:02:44 jasper Exp $
 
 PKG_ARCH ?=	*
 COMMENT ?=	centralised configuration management for networks
@@ -16,20 +16,25 @@ SUBST_VARS +=	RUBY
 
 # For maintenance/ease of use, the following ports should use the same
 # Ruby version as Puppet. Please consult this matrix before adjusting:
-# http://docs.puppetlabs.com/guides/platforms.html
-#  devel/ruby-rgen
-#  databases/puppetdb
-#  databases/puppetdb4
-#  databases/ruby-hiera
-#  databases/ruby-hiera3
-#  databases/ruby-hiera-eyaml
-#  databases/ruby-hiera-file
-#  net/ruby-msgpack
-#  sysutils/mcollective
-#  sysutils/ruby-augeas
-#  sysutils/ruby-facter
-#  sysutils/ruby-shadow
-#  www/puppet-dashboard
+# https://docs.puppet.com/guides/platforms.html#ruby-versions
+# Common:
+#   devel/ruby-rgen
+#   databases/ruby-hiera-eyaml
+#   databases/ruby-hiera-file
+#   net/ruby-msgpack
+#   sysutils/mcollective
+#   sysutils/ruby-augeas
+#   sysutils/ruby-shadow
+# Puppet 3:
+#   databases/puppetdb
+#   databases/ruby-hiera
+#   sysutils/ruby-facter
+#   www/puppet-dashboard
+# Puppet 4:
+#   databases/puppetdb4
+#   databases/ruby-hiera3
+#   sysutils/facter
+
 MODULES +=	lang/ruby
 
 MODULES +=		lang/python
@@ -39,7 +44,6 @@ MODPY_RUNDEP =		No
 BUILD_DEPENDS +=${RUN_DEPENDS}
 RUN_DEPENDS +=	archivers/gtar \
 		sysutils/ruby-augeas,${MODRUBY_FLAVOR} \
-		devel/ruby-rgen,${MODRUBY_FLAVOR} \
 		sysutils/ruby-shadow,${MODRUBY_FLAVOR}>=2.3.4p1
 
 # Apache2

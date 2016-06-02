@@ -1,20 +1,23 @@
-# $OpenBSD: Makefile,v 1.3 2016/05/30 11:18:22 jasper Exp $
+# $OpenBSD: Makefile,v 1.5 2016/06/01 12:02:45 jasper Exp $
 
 PORTROACH=		limit:^4
 
 VERSION=		4.5.0
+REVISION=		0
 
 RUN_DEPENDS+=		databases/ruby-hiera3,${MODRUBY_FLAVOR} \
+			devel/ruby-rgen,${MODRUBY_FLAVOR} \
 			sysutils/facter
 
 pre-install:
-	${SUBST_CMD} ${WRKDIST}/lib/puppet/provider/package/gem.rb
-	${SUBST_CMD} ${WRKDIST}/lib/puppet/provider/package/pip.rb
-	${SUBST_CMD} ${WRKSRC}/lib/puppet/reference/configuration.rb
-	${SUBST_CMD} ${WRKSRC}/lib/puppet/util/run_mode.rb
+	${SUBST_CMD} ${WRKDIST}/lib/puppet/provider/package/gem.rb \
+		${WRKDIST}/lib/puppet/provider/package/pip.rb \
+		${WRKSRC}/lib/puppet/reference/configuration.rb \
+		${WRKSRC}/lib/puppet/util/run_mode.rb \
+		${WRKSRC}/lib/puppet/defaults.rb \
+		${WRKSRC}/ext/rack/config.ru
 
 do-install:
-	${SUBST_CMD} ${WRKSRC}/lib/puppet/defaults.rb ${WRKSRC}/ext/rack/config.ru
 	@cd ${WRKSRC} && ${ALL_FAKE_FLAGS} ${RUBY} install.rb \
 		--vardir=${VARBASE}/db/puppet/cache/ \
 		--rundir=${VARBASE}/run/puppetlabs/
