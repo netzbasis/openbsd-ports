@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.289 2016/05/28 16:37:10 robert Exp $
+# $OpenBSD: Makefile,v 1.292 2016/06/02 21:03:38 sthen Exp $
 
 ONLY_FOR_ARCHS=		i386 amd64
 DPB_PROPERTIES=		parallel
 
 COMMENT=		Chromium browser
 
-V=			51.0.2704.63
+V=			51.0.2704.79
+REVISION=		0
 DISTNAME=		chromium-${V}
 DISTFILES=		${DISTNAME}${EXTRACT_SUFX}
 
@@ -92,7 +93,7 @@ TEST_TARGET=	base_unittests
 
 CONFIGURE_STYLE=none # prevent python MODULE from overriding do-build
 CONFIGURE_ENV=	CPPFLAGS="-idirafter ${LOCALBASE}/include -idirafter ${X11BASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
+		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib -Wl,-z,wxneeded" \
 		GYP_GENERATORS=ninja
 
 ALL_TARGET=	chrome

@@ -1,10 +1,13 @@
-$OpenBSD: patch-CMakeLists_txt,v 1.7 2016/05/30 17:01:44 jasper Exp $
+$OpenBSD: patch-CMakeLists_txt,v 1.9 2016/06/02 20:15:59 jasper Exp $
 
-https://github.com/puppetlabs/facter/pull/1342
+From cb8b0569104a5803fd658f1f0fadd13ae09cef1d Mon Sep 17 00:00:00 2001
+From: Jasper Lievisse Adriaanse <jasper@humppa.nl>
+Date: Mon, 30 May 2016 14:39:48 +0200
+Subject: [PATCH] (FACT-1431) Enable curl on OpenBSD
 
---- CMakeLists.txt.orig	Wed Apr 27 17:53:21 2016
-+++ CMakeLists.txt	Wed Apr 27 17:53:37 2016
-@@ -45,7 +45,7 @@ SET(LEATHERMAN_COMPONENTS locale catch nowide logging 
+--- CMakeLists.txt.orig	Wed Jun  1 20:11:33 2016
++++ CMakeLists.txt	Thu Jun  2 08:55:31 2016
+@@ -51,7 +51,7 @@ SET(LEATHERMAN_COMPONENTS locale catch nowide logging 
  
  # We look for curl early, because whether or not we link to the leatherman curl library
  # is dependant on whether or not we find curl on the system.

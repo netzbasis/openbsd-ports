@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.29 2016/05/31 18:40:06 jasper Exp $
+# $OpenBSD: Makefile,v 1.31 2016/06/02 09:52:37 jasper Exp $
 
 # XXXTODO: Subpackage facter.jar for use with puppetserver
 COMMENT =		collect and display system facts
 
-DISTNAME =		facter-3.1.7
+DISTNAME =		facter-3.1.8
 REVISION =		0
 SHARED_LIBS +=  	facter                    3.0 # 3.2
 PKGSPEC =		facter->=3.0,<4.0
