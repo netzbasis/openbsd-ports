@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2016/01/12 20:44:29 landry Exp $
+# $OpenBSD: Makefile,v 1.3 2016/06/12 05:44:46 jca Exp $
 
 COMMENT =	Qt-based MPD client
 
@@ -31,8 +31,7 @@ LIB_DEPENDS +=	audio/mpg123 \
 		audio/taglib \
 		devel/libmtp \
 		devel/qjson \
-		graphics/ffmpeg \
-		x11/qt4
+		graphics/ffmpeg
 
 WANTLIB += ICE QtDBus QtGui QtNetwork QtSvg QtXml SM X11 Xext
 WANTLIB += avcodec avformat avutil c cdda_interface cdda_paranoia
@@ -40,7 +39,7 @@ WANTLIB += cddb m mpg123 mtp musicbrainz5 pthread qjson speexdsp
 WANTLIB += tag z
 
 CONFIGURE_ARGS +=	-DCMAKE_INSTALL_PREFIX:Path=${PREFIX} \
-			-DLRELEASE_EXECUTABLE:String=lrelease4 \
+			-DLRELEASE_EXECUTABLE:String=${MODQT_LRELEASE} \
 			-DLCONVERT_EXECUTABLE:String=lconvert4
 
 .include <bsd.port.mk>
