@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1504 2016/06/14 09:06:22 czarkoff Exp $
+# $OpenBSD: Makefile,v 1.1507 2016/06/15 19:50:18 rpointel Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -96,6 +96,7 @@
      SUBDIR += dee
      SUBDIR += dejagnu
      SUBDIR += desktop-file-utils
+     SUBDIR += dex2jar
      SUBDIR += dfu-programmer
      SUBDIR += dissy
      SUBDIR += distcc
@@ -290,6 +291,7 @@
      SUBDIR += jam
      SUBDIR += jansson
      SUBDIR += javahelp
+     SUBDIR += jd-gui
      SUBDIR += jdk
      SUBDIR += jenkins
      SUBDIR += jimarc4random
@@ -299,6 +301,7 @@
      SUBDIR += kdevelop
      SUBDIR += kdevplatform
      SUBDIR += kdiff3
+     SUBDIR += keystone
      SUBDIR += kf5
      SUBDIR += kyua-cli
      SUBDIR += kyua-testers
