@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.26 2016/06/18 13:57:45 sthen Exp $
+# $OpenBSD: Makefile,v 1.28 2016/06/28 17:03:27 ajacoutot Exp $
 
 COMMENT=	LLDP (802.1ab)/CDP/EDP/SONMP/FDP daemon and SNMP subagent
 
 DISTNAME=	lldpd-0.9.4
+REVISION=	1
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		LLDP-MIB-200505060000Z.txt:0
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}

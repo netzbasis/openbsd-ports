@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2016/06/27 20:35:31 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2016/06/28 12:24:38 sthen Exp $
 
 PORTROACH=	limit:^3\.
 
@@ -37,7 +37,8 @@ AUTOCONF_VERSION= 2.69
 AUTOMAKE_VERSION= 1.15
 BUILD_DEPENDS=  ${MODGNU_AUTOCONF_DEPENDS} \
 		${MODGNU_AUTOMAKE_DEPENDS} \
-		devel/autoconf-archive
+		devel/autoconf-archive \
+		devel/libtool
 post-patch:
 	cd ${WRKSRC}; \
 	cp ${LOCALBASE}/share/aclocal/ax_{prog_ruby_version,ruby_devel}.m4 m4; \
@@ -79,7 +80,7 @@ USE_LIBTOOL=	no#...has its own _special_ libtool.
 
 # Not really trying to build with this, but --without-rlm_pam doesn't disable
 # it, so just list as a bdep to avoid risk of broken bulk builds.
-BUILD_DEPENDS=	security/openpam
+BUILD_DEPENDS+=	security/openpam
 
 RUN_DEPENDS-main=	#empty
 LIB_DEPENDS-main=	databases/gdbm \
