@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.98 2016/07/02 10:22:30 robert Exp $
+# $OpenBSD: Makefile,v 1.100 2016/07/13 14:04:22 ajacoutot Exp $
 
 COMMENT=	cross platform, open source .NET developement framework
 
 V=		4.4.0
 DISTNAME=	mono-${V}.182
-REVISION=	0
+REVISION=	2
 
 CATEGORIES=	lang devel
 
@@ -21,14 +21,13 @@ MAINTAINER=	Robert Nagy <robert@openbsd.org>
 # GPLv2, LGPL, MIT X11, MPL
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=	c m pthread z
+WANTLIB=	c iconv m pthread z
 
 MASTER_SITES=	http://download.mono-project.com/sources/mono/
 EXTRACT_SUFX=	.tar.bz2
 
 MODULES=	lang/mono \
-		lang/python \
-		converters/libiconv
+		lang/python
 
 MODMONO_DEPS=	No
 
@@ -43,6 +42,8 @@ BUILD_DEPENDS=	devel/bison \
 		shells/bash \
 		${RUN_DEPENDS}
 RUN_DEPENDS=	x11/libgdiplus
+
+LIB_DEPENDS=	converters/libiconv
 
 TEST_DEPENDS=	lang/python/${MODPY_VERSION}
 
