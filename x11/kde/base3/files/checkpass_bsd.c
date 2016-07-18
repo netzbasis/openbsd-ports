@@ -1,5 +1,5 @@
 /*
- * $OpenBSD: checkpass_bsd.c,v 1.2 2016/07/16 10:38:50 zhuk Exp $
+ * $OpenBSD: checkpass_bsd.c,v 1.1 2016/07/17 21:00:16 zhuk Exp $
  *
  * Copyright (c) 2012 Vadim Zhukov <persgray@gmail.com>
  *
@@ -18,7 +18,7 @@
 
 #include "kcheckpass.h"
 
-#ifdef HAVE_BSDAUTH
+#ifdef USE_BSDAUTH
 
 /*******************************************************************
  * This is the authentication code for BSD Authentication system
