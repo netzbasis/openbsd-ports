@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.80 2016/02/26 16:05:12 naddy Exp $
+# $OpenBSD: Makefile,v 1.82 2016/08/01 00:20:00 awolk Exp $
 
     SUBDIR =
     SUBDIR += BasiliskII
@@ -22,6 +22,7 @@
     SUBDIR += gns3
     SUBDIR += gnusim8085
     SUBDIR += gxemul
+    SUBDIR += hatari
     SUBDIR += mednafen
     SUBDIR += mgba
     SUBDIR += mupen64plus
@@ -39,6 +40,7 @@
     SUBDIR += uae
     SUBDIR += vbam
     SUBDIR += vice
+    SUBDIR += virtualjaguar
     SUBDIR += x48
     SUBDIR += xcopilot
     SUBDIR += xhomer
