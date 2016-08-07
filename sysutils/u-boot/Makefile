@@ -1,8 +1,8 @@
-#	$OpenBSD: Makefile,v 1.4 2016/07/30 14:22:19 jsg Exp $
+#	$OpenBSD: Makefile,v 1.6 2016/08/06 08:07:51 jsg Exp $
 
 COMMENT=	U-Boot firmware
 DISTNAME=	u-boot-2016.07
-REVISION=	0
+REVISION=	1
 CATEGORIES=	sysutils
 HOMEPAGE=	http://www.denx.de/wiki/U-Boot
 MAINTAINER=	Jonathan Gray <jsg@openbsd.org>
