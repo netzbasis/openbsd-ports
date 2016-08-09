@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.407 2016/07/11 10:16:48 sthen Exp $
+# $OpenBSD: Quirks.pm,v 1.410 2016/08/09 02:30:06 jturner Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -806,6 +806,9 @@ my $obsolete_reason = {
 	'yt' => 0,
 	'gmime-sharp' => 6,
 	'py-subvertpy' => 5,
+	'clamz' => 3,
+	'p5-Net-Abuse-Utils-Spamhaus' => 6,
+	'mlite' => 3,
 
 # KDE3 removals
 	'amarok' => 2,
