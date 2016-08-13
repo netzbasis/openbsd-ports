@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2016/05/01 17:28:32 jca Exp $
+# $OpenBSD: Makefile,v 1.3 2016/08/12 22:05:14 jca Exp $
 
 COMMENT =	userland implementation of the UDF filesystem
 
-V =		0.8.5
+V =		0.8.6
 DISTNAME =	UDFclient.${V}
 PKGNAME =	udfclient-${V}
 CATEGORIES =	sysutils
@@ -20,5 +20,7 @@ MASTER_SITES =	http://www.13thmonkey.org/udfclient/releases/
 EXTRACT_SUFX =	.tgz
 
 CONFIGURE_STYLE =	gnu
+
+NO_TEST =	Yes
 
 .include <bsd.port.mk>

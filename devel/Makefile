@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1514 2016/08/03 12:44:27 sthen Exp $
+# $OpenBSD: Makefile,v 1.1518 2016/08/12 22:04:32 bluhm Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -68,6 +68,7 @@
      SUBDIR += colordiff
      SUBDIR += commoncpp
      SUBDIR += coxpcall
+     SUBDIR += cpp-hocon
      SUBDIR += cppcheck
      SUBDIR += cpphs
      SUBDIR += cpptest
@@ -1049,6 +1050,7 @@
      SUBDIR += p5-Test-Memory-Cycle
      SUBDIR += p5-Test-MockModule
      SUBDIR += p5-Test-MockObject
+     SUBDIR += p5-Test-MockRandom
      SUBDIR += p5-Test-MockSleep
      SUBDIR += p5-Test-MockTime
      SUBDIR += p5-Test-Most
@@ -1367,6 +1369,7 @@
      SUBDIR += py-simplejson,python3
      SUBDIR += py-singledispatch
      SUBDIR += py-sip
+     SUBDIR += py-sip,python3
      SUBDIR += py-six
      SUBDIR += py-six,python3
      SUBDIR += py-smmap
@@ -1593,6 +1596,7 @@
      SUBDIR += tortoisehg
      SUBDIR += ucpp
      SUBDIR += udis86
+     SUBDIR += utfcpp
      SUBDIR += uthash
      SUBDIR += utop
      SUBDIR += uuid
