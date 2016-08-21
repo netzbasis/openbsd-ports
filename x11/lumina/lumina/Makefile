@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2016/06/22 09:54:45 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.6 2016/08/20 12:57:18 ajacoutot Exp $
 
 COMMENT=	Lumina Desktop Environment
 
 GH_PROJECT=	lumina
 PATCHSET=	1
+REVISION=	0
 
 SHARED_LIBS +=  LuminaUtils               1.0 # 1.0
 
@@ -27,7 +28,6 @@ FAKE_FLAGS=	INSTALL_ROOT=${DESTDIR}
 pre-configure:
 	sed -i 's,/usr/local,${LOCALBASE},g' \
 		${WRKSRC}/src-qt5/core/libLumina/LuminaXDG.cpp \
-		${WRKSRC}/src-qt5/core-utils/lumina-config/mainUI.cpp \
 		${WRKSRC}/src-qt5/core/lumina-desktop/SettingsMenu.cpp
 	sed -i 's,/etc/luminaDesktop.conf,${SYSCONFDIR}/luminaDesktop.conf,g' \
 		${WRKSRC}/src-qt5/core/libLumina/LuminaUtils.cpp

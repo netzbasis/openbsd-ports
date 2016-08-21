@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile.inc,v 1.5 2016/06/22 09:54:45 ajacoutot Exp $
+# $OpenBSD: Makefile.inc,v 1.7 2016/08/20 12:57:18 ajacoutot Exp $
 
-V=			0.9.0
+V=			1.0.0
 GH_ACCOUNT=		trueos
 GH_TAGNAME=		v${V}-Release
 DISTNAME=		${GH_PROJECT}-${V}
@@ -13,7 +13,7 @@ DISTNAME=		${GH_PROJECT}-${V}.${PATCHSET}
 
 CATEGORIES ?=		x11 x11/lumina
 
-MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
+MAINTAINER=		Bryan C. Everly <bryan@bceassociates.com>
 
 # BSD
 PERMIT_PACKAGE_CDROM =	Yes
