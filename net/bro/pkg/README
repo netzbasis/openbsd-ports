@@ -1,0 +1,39 @@
+$OpenBSD: README,v 1.3 2016/08/27 12:58:07 ajacoutot Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+Note that most broctl(8) commands must be run as root.
+
+Post-install steps
+==================
+
+Before starting bro(8) for the first time, the "interface" must be properly
+configured under:
+    ${SYSCONFDIR}/bro/node.cfg
+
+And the configuration and policies must be installed by running:
+    broctl install
+
+File descriptors limit
+======================
+
+Both bro(8) and broctl(8) need to bump their nofile limits.
+
+bro (daemon)
+------------
+The following lines can be added to login.conf(5):
+
+    bro:\
+    	:openfiles-cur=1024:\
+    	:tc=daemon:
+
+Then the login.conf.db can be rebuilt file if necessary:
+    [ -f /etc/login.conf.db ] && cap_mkdb /etc/login.conf
+
+bro and broctl (CLI)
+--------------------
+Some subcommands like "deploy" may require more file descriptors.
+e.g.
+    ulimit -n 512; broctl deploy
