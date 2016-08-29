@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1521 2016/08/26 11:04:14 czarkoff Exp $
+# $OpenBSD: Makefile,v 1.1523 2016/08/28 15:03:34 shadchin Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1195,6 +1195,7 @@
      SUBDIR += py-appdirs
      SUBDIR += py-appdirs,python3
      SUBDIR += py-argcomplete
+     SUBDIR += py-argcomplete,python3
      SUBDIR += py-argh
      SUBDIR += py-asn1
      SUBDIR += py-asn1,python3
@@ -1303,6 +1304,7 @@
      SUBDIR += py-logilab-common
      SUBDIR += py-logilab-common,python3
      SUBDIR += py-mccabe
+     SUBDIR += py-mccabe,python3
      SUBDIR += py-minimock
      SUBDIR += py-mock
      SUBDIR += py-mock,python3
