@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.418 2016/08/26 10:17:04 czarkoff Exp $
+# $OpenBSD: Makefile,v 1.420 2016/08/30 15:24:06 awolk Exp $
 
      SUBDIR =
      SUBDIR += DevIL
@@ -52,6 +52,7 @@
      SUBDIR += feh
      SUBDIR += ffmpeg
      SUBDIR += ffmpegthumbnailer
+     SUBDIR += fotowall
      SUBDIR += freeglut
      SUBDIR += freeimage
      SUBDIR += fswebcam
@@ -271,7 +272,6 @@
      SUBDIR += xbmbrowser
      SUBDIR += xfig
      SUBDIR += xmedcon
-     SUBDIR += xmms-kj
      SUBDIR += xoris
      SUBDIR += xpaint
      SUBDIR += xsane
