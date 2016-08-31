@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1526 2016/08/30 16:37:21 awolk Exp $
+# $OpenBSD: Makefile,v 1.1528 2016/08/31 16:17:47 edd Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -76,6 +76,7 @@
      SUBDIR += cryptopp
      SUBDIR += cscope
      SUBDIR += csmith
+     SUBDIR += ctftools
      SUBDIR += cudf
      SUBDIR += cunit
      SUBDIR += cutils
@@ -110,6 +111,7 @@
      SUBDIR += dtc
      SUBDIR += eclipse
      SUBDIR += ectags
+     SUBDIR += elftoolchain
      SUBDIR += etl
      SUBDIR += fasm
      SUBDIR += ffcall
@@ -1192,6 +1194,8 @@
      SUBDIR += py-addons
      SUBDIR += py-algorithm-munkres
      SUBDIR += py-altgraph
+     SUBDIR += py-apipkg
+     SUBDIR += py-apipkg,python3
      SUBDIR += py-appdirs
      SUBDIR += py-appdirs,python3
      SUBDIR += py-argcomplete
