@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1528 2016/08/31 16:17:47 edd Exp $
+# $OpenBSD: Makefile,v 1.1532 2016/09/01 12:58:55 edd Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1214,6 +1214,7 @@
      SUBDIR += py-backports-abc
      SUBDIR += py-backports-abc,python3
      SUBDIR += py-backports
+     SUBDIR += py-backports-functools-lru-cache
      SUBDIR += py-backports-shutil-get-terminal-size
      SUBDIR += py-backports-ssl-match-hostname
      SUBDIR += py-blessings
@@ -1263,6 +1264,8 @@
      SUBDIR += py-elftools
      SUBDIR += py-enum34
      SUBDIR += py-epsilon
+     SUBDIR += py-execnet
+     SUBDIR += py-execnet,python3
      SUBDIR += py-extremes
      SUBDIR += py-extras
      SUBDIR += py-extras,python3
@@ -1293,6 +1296,8 @@
      SUBDIR += py-ipython_genutils,python3
      SUBDIR += py-isodate
      SUBDIR += py-isodate,python3
+     SUBDIR += py-isort
+     SUBDIR += py-isort,python3
      SUBDIR += py-jmespath
      SUBDIR += py-jmespath,python3
      SUBDIR += py-jsonrpclib
@@ -1400,6 +1405,8 @@
      SUBDIR += py-test-mock,python3
      SUBDIR += py-test-httpbin
      SUBDIR += py-test-httpbin,python3
+     SUBDIR += py-test-xdist
+     SUBDIR += py-test-xdist,python3
      SUBDIR += py-testpath
      SUBDIR += py-testpath,python3
      SUBDIR += py-testtools
@@ -1443,6 +1450,7 @@
      SUBDIR += py-zopetesting
      SUBDIR += pybugz
      SUBDIR += pyflakes
+     SUBDIR += pyflakes,python3
      SUBDIR += pygame
      SUBDIR += pylint
      SUBDIR += pylint,python3
