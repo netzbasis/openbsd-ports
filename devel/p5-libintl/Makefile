@@ -1,19 +1,21 @@
-# $OpenBSD: Makefile,v 1.14 2016/03/22 18:18:04 naddy Exp $
+# $OpenBSD: Makefile,v 1.16 2016/09/02 22:53:17 ajacoutot Exp $
 
 COMMENT=	internationalization library written in Perl
 
-V=		1.24
+V=		1.26
 DISTNAME=	libintl-perl-${V}
 PKGNAME=	p5-libintl-${V}
-REVISION=	1
 CATEGORIES=	devel
-MODULES=	cpan devel/gettext
 CPAN_AUTHOR=	GUIDO
 
 # perl
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB=	perl
+WANTLIB += iconv intl
+
+MODULES=	cpan
+
+LIB_DEPENDS=	devel/gettext
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/gettext_xs/Makefile.PL
