@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.418 2016/09/01 13:21:56 sthen Exp $
+# $OpenBSD: Quirks.pm,v 1.421 2016/09/04 00:59:26 juanfra Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -813,6 +813,11 @@ my $obsolete_reason = {
 	'mlite' => 3,
 	'hgd' => 3,
 	'gfortran' => 5,
+	'cherokee' => 3,
+	'cherokee-geoip' => 3,
+	'cherokee-ldap' => 3,
+	'cherokee-mysql' => 3,
+	'cherokee-streaming' => 3,
 
 # KDE3 removals
 	'amarok' => 2,
@@ -835,27 +840,28 @@ my $obsolete_reason = {
 	'poppassd' => 0,
 	'wmthemeinstall' => 0,
 	'gkrellmms' => 5,
-	'py-xmms', => 5,
-	'xmms', => 5,
+	'py-xmms' => 5,
+	'xmms' => 5,
 	'xmms-faad' => 5,
-	'xmms-flac', => 5,
-	'xmms-fmradio', => 5,
+	'xmms-flac' => 5,
+	'xmms-fmradio' => 5,
 	'xmms-kj' => 5,
-	'xmms-mad', => 5,
+	'xmms-mad' => 5,
 	'xmms-mikmod', => 5,
-	'xmms-mp3', => 5,
-	'xmms-shn', => 5,
-	'xmms-sid', => 5,
-	'xmms-speex', => 5,
-	'xmms-tremor', => 5,
-	'xmms-vorbis', => 5,
-	'xmms-wavpack', => 5,
-	'xmms-xf86audio', => 5,
-	'xmmsctrl', => 5,
-	'glib', => 5,
-	'gtk+', => 5,
-	'gnome-user-share', => 6,
-	'letskencrypt', => 4,
+	'xmms-mp3' => 5,
+	'xmms-shn' => 5,
+	'xmms-sid' => 5,
+	'xmms-speex' => 5,
+	'xmms-tremor' => 5,
+	'xmms-vorbis' => 5,
+	'xmms-wavpack' => 5,
+	'xmms-xf86audio' => 5,
+	'xmmsctrl' => 5,
+	'glib' => 5,
+	'gtk+' => 5,
+	'gnome-user-share' => 6,
+	'letskencrypt' => 4,
+	'emiclock' => 0,
 };
 
 # reasons for obsolete packages

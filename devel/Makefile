@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1534 2016/09/02 17:05:58 edd Exp $
+# $OpenBSD: Makefile,v 1.1536 2016/09/03 16:47:25 eric Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -822,6 +822,7 @@
      SUBDIR += p5-LockFile-Simple
      SUBDIR += p5-Log-Agent
      SUBDIR += p5-Log-Any
+     SUBDIR += p5-Log-Any-Adapter-Callback
      SUBDIR += p5-Log-Dispatch
      SUBDIR += p5-Log-Dispatch-Binlog
      SUBDIR += p5-Log-Dispatch-Config
@@ -1450,6 +1451,7 @@
      SUBDIR += py-zopeevent
      SUBDIR += py-zopeevent,python3
      SUBDIR += py-zopeinterface
+     SUBDIR += py-zopeinterface,python3
      SUBDIR += py-zopetesting
      SUBDIR += pybugz
      SUBDIR += pyflakes
