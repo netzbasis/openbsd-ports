@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.28 2016/09/05 09:00:08 jasper Exp $
+# $OpenBSD: Makefile,v 1.30 2016/09/06 11:27:26 jasper Exp $
 
 PORTROACH=		limit:^1
 
@@ -6,19 +6,18 @@ COMMENT=		simple pluggable hierarchical database
 
 V=			1.3.4
 DISTNAME=		hiera-${V}
-REVISION=		3
+REVISION=		4
 
 CATEGORIES=		databases
 
 HOMEPAGE=		http://projects.puppetlabs.com/projects/hiera
 
-MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>
+MAINTAINER=		Sebastian Reitenbach <sebastia@openbsd.org>
 
 # Apachev2
 PERMIT_PACKAGE_CDROM=	Yes
 
 MODULES=		lang/ruby
-MODRUBY_REV=		2.2
 
 CONFIGURE_STYLE=	ruby gem
 

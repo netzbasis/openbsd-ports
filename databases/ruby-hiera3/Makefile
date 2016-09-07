@@ -1,23 +1,23 @@
-# $OpenBSD: Makefile,v 1.11 2016/09/05 09:00:08 jasper Exp $
+# $OpenBSD: Makefile,v 1.13 2016/09/06 11:26:08 jasper Exp $
 
 COMMENT=		simple pluggable hierarchical database
 
 V=			3.2.1
 DISTNAME=		hiera-${V}
 PKGNAME=		hiera3-${V}
+REVISION=		0
 
 CATEGORIES=		databases
 
 HOMEPAGE=		http://projects.puppetlabs.com/projects/hiera
 
-MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>
+MAINTAINER=		Sebastian Reitenbach <sebastia@openbsd.org>
 
 # Apachev2
 PERMIT_PACKAGE_CDROM=	Yes
 
 MODULES=		lang/ruby
 
-MODRUBY_REV =		2.2
 CONFIGURE_STYLE=	ruby gem
 
 BUILD_DEPENDS=		${RUN_DEPENDS}

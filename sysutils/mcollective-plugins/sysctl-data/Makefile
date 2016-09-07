@@ -1,13 +1,13 @@
-# $OpenBSD: Makefile,v 1.4 2015/11/24 09:11:06 jasper Exp $
+# $OpenBSD: Makefile,v 1.6 2016/09/06 11:34:11 jasper Exp $
 
 COMMENT=		MCollective data plugin to retrieve sysctl values
 
-# git clone of 8fa53c457ebf33e0e942972eea3ffba1a73df7db
+GH_ACCOUNT=		puppetlabs
+GH_PROJECT=		mcollective-sysctl-data
+GH_COMMIT=		8fa53c457ebf33e0e942972eea3ffba1a73df7db
 DISTNAME=		mcollective-sysctl-data-2.0.0
 
-REVISION=		1
-
-MASTER_SITES=		https://distfiles.nl/
+REVISION=		2
 
 MCO_SUBDIRS=		data
 
