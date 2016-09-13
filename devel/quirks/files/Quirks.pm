@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.423 2016/09/08 11:22:49 dcoppa Exp $
+# $OpenBSD: Quirks.pm,v 1.425 2016/09/12 15:21:17 jca Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -865,6 +865,8 @@ my $obsolete_reason = {
 	'emiclock' => 0,
 	'rygel' => 8,
 	'vino' => 8,
+	'ttcp' => 0,
+	'aget' => 3,
 };
 
 # reasons for obsolete packages
