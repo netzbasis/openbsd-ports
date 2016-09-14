@@ -1,22 +1,23 @@
-@comment $OpenBSD: PLIST,v 1.6 2014/10/23 17:25:45 sthen Exp $
-@extraunexec rm -rf %D/railo/server-config/* %D/railo/web-config/*
+@comment $OpenBSD: PLIST,v 1.1.1.1 2016/09/13 16:24:37 sthen Exp $
+@conflict railo-*
+@pkgpath lang/railo
+@extraunexec rm -rf %D/lucee/config/*
 @extraunexec rm -rf %D/webapps/ROOT/WEB-INF/flex
 @extraunexec rm -rf %D/webapps/manager/WEB-INF/flex
-conf/
-conf/web-railo.xml.dist
 @owner root
 @group wheel
+conf/
+conf/web-lucee.xml.dist
 @sample webapps/manager/
 @sample webapps/manager/WEB-INF/
 @owner _tomcat
 @group _tomcat
 @sample webapps/manager/WEB-INF/flex/
-@sample conf/web-railo.xml
+@sample conf/web-lucee.xml
 @owner
 @group
 lib/
 lib/ESAPI.jar
-lib/License.txt
 lib/PDFBox.jar
 lib/PDFRenderer.jar
 lib/antlr.jar
@@ -61,7 +62,6 @@ lib/com.naryx.tagfusion.cfx.jar
 lib/concurrent.jar
 lib/dom4j.jar
 lib/ehcache.jar
-lib/felix.jar
 lib/flex-messaging-common.jar
 lib/flex-messaging-core.jar
 lib/flex-messaging-opt.jar
@@ -77,14 +77,15 @@ lib/jacob.jar
 lib/javaparser.jar
 lib/javassist.jar
 lib/javasysmon.jar
+lib/jcifs.jar
 lib/jcommon.jar
 lib/jencrypt.jar
 lib/jffmpeg.jar
 lib/jfreechart-patch.jar
 lib/jfreechart.jar
 lib/jmimemagic.jar
-lib/joda-time.jar
 lib/jpedal_gpl.jar
+lib/jsch-0.1.53.jar
 lib/jta.jar
 lib/jtds.jar
 lib/jug.jar
@@ -98,7 +99,6 @@ lib/license/license-janino.txt
 lib/license/license-javasysmon.txt
 lib/license/license-jencrypt.txt
 lib/license/license-jmimemagic.txt
-lib/license/license-joda.txt
 lib/license/license-jtds.txt
 lib/license/license-mssql.txt
 lib/license/license-mysql.txt
@@ -108,6 +108,8 @@ lib/license/license-pdfbox.txt
 lib/license/license-sun.txt
 lib/license/license-tagsoup.txt
 lib/lowagie.itext.jar
+lib/lucee-inst.jar
+lib/lucee.jar
 lib/metadata-extractor.jar
 lib/microsoft-mssqlserver.jar
 lib/microsoft-sqljdbc.jar
@@ -116,9 +118,9 @@ lib/objectweb-asm-all.jar
 lib/ojdbc14.jar
 lib/openamf-astranslator.jar
 lib/openamf.jar
+lib/org.mortbay.jetty.jar
 lib/postgresql.jar
-lib/railo-inst.jar
-lib/railo.jar
+lib/railo-sl4j.jar
 lib/resolver.jar
 lib/serializer.jar
 lib/slf4j-api.jar
@@ -140,19 +142,50 @@ lib/sun-xml.saaj.jar
 lib/tagsoup.jar
 lib/versions
 lib/w3c-dom.jar
-lib/web.xml.sample
 lib/xdb.jar
 lib/xml-apis.jar
 lib/xmlbeans.jar
 lib/xmlparserv2.jar
 @owner _tomcat
 @group _tomcat
-railo/
-@sample railo/server-config/
-@sample railo/web-config/
+lucee/
+@sample lucee/config/
+@sample lucee/config/server/
+@sample lucee/config/web/
 @sample webapps/
 @sample webapps/ROOT/
 @owner
+@group
+webapps/lucee-default/
+webapps/lucee-default/Application.cfc
+webapps/lucee-default/License.txt
+webapps/lucee-default/assets/
+webapps/lucee-default/assets/css/
+webapps/lucee-default/assets/css/core/
+webapps/lucee-default/assets/css/core/_ed07b761.core.min.css
+webapps/lucee-default/assets/css/core/ie8.css
+webapps/lucee-default/assets/css/lib/
+webapps/lucee-default/assets/css/lib/bootstrap.min.css
+webapps/lucee-default/assets/img/
+webapps/lucee-default/assets/img/banner-bg.png
+webapps/lucee-default/assets/img/ico-sprite.png
+webapps/lucee-default/assets/img/img-browser.png
+webapps/lucee-default/assets/img/img-code.png
+webapps/lucee-default/assets/img/img-exclamation-mark.png
+webapps/lucee-default/assets/img/img-first-steps.png
+webapps/lucee-default/assets/img/img-lightning.png
+webapps/lucee-default/assets/img/img-link.png
+webapps/lucee-default/assets/img/lucee-logo.png
+webapps/lucee-default/assets/js/
+webapps/lucee-default/assets/js/core/
+webapps/lucee-default/assets/js/core/_38444bee.core.min.js
+webapps/lucee-default/assets/js/core/_core.min.map
+webapps/lucee-default/assets/js/lib/
+webapps/lucee-default/assets/js/lib/SmoothScroll.js
+webapps/lucee-default/assets/js/lib/bootstrap.min.js
+webapps/lucee-default/assets/js/lib/jquery-1.10.1.min.js
+webapps/lucee-default/favicon.ico
+webapps/lucee-default/index.cfm
 @group
 @cwd ${LOCALBASE}/share/doc/pkg-readmes
 ${FULLPKGNAME}
