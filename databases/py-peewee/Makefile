@@ -1,15 +1,12 @@
-# $OpenBSD: Makefile,v 1.12 2016/09/17 15:33:39 danj Exp $
+# $OpenBSD: Makefile,v 1.11 2016/04/16 19:06:25 shadchin Exp $
 
 PKG_ARCH=		*
 COMMENT=		small expressive ORM
 
-MODPY_EGG_VERSION=	2.8.3
+MODPY_EGG_VERSION=	2.8.0
 DISTNAME=		peewee-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
-
-GH_ACCOUNT=		coleifer
-GH_PROJECT=		peewee
-GH_TAGNAME=		${MODPY_EGG_VERSION}
+REVISION=		1
 
 CATEGORIES=		databases
 
@@ -18,7 +15,11 @@ HOMEPAGE=		http://docs.peewee-orm.com/
 # MIT
 PERMIT_PACKAGE_CDROM=	Yes
 
-BUILD_DEPENDS=		textproc/py-sphinx${MODPY_FLAVOR}
+GH_ACCOUNT=		coleifer
+GH_PROJECT=		peewee
+GH_TAGNAME=		${MODPY_EGG_VERSION}
+
+BUILD_DEPENDS =		textproc/py-sphinx${MODPY_FLAVOR}
 
 FLAVORS=		python3
 FLAVOR?=
@@ -39,8 +40,5 @@ post-install:
 	${INSTALL_DATA_DIR} ${EXAMPLES}
 	cd ${WRKSRC}/examples && pax -rw * ${EXAMPLES}
 	mv ${PREFIX}/bin/pwiz.py ${PREFIX}/bin/pwiz${MODPY_BIN_SUFFIX}
-
-do-test:
-	cd ${WRKSRC} && ${MODPY_BIN} tests.py
 
 .include <bsd.port.mk>

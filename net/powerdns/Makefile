@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.48 2016/09/23 09:16:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.47 2016/08/31 14:25:04 florian Exp $
 
 BROKEN-arm =		undefined reference to `__sync_fetch_and_add_4'
 BROKEN-hppa =		undefined reference to `__sync_fetch_and_add_4'
@@ -19,7 +19,6 @@ PKGNAME-ldap=		powerdns-ldap-${V}
 CATEGORIES=		net
 HOMEPAGE=		http://www.powerdns.com/
 MAINTAINER=		Florian Obser <florian+ports@narrans.de>
-REVISION-main=		0
 
 MULTI_PACKAGES=		-main -mysql -pgsql -ldap
 
@@ -42,7 +41,6 @@ MASTER_SITES=		http://downloads.powerdns.com/releases/
 NO_TEST=		Yes
 
 LIB_DEPENDS-main=	${LIB_DEPENDS} \
-			databases/sqlite3 \
 			devel/boost \
 			devel/gmp
 

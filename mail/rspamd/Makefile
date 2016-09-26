@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.22 2016/09/23 09:16:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2016/09/12 09:48:37 edd Exp $
 
 COMMENT=	event-driven spam filtering system in C/Lua
 
 DISTNAME =	rspamd-1.3.5
 EXTRACT_SUFX=	.tar.xz
-REVISION =	0
 
 CATEGORIES=	mail
 
@@ -20,8 +19,7 @@ MASTER_SITES=	https://rspamd.com/downloads/
 
 MODULES=	devel/cmake \
 		devel/gettext
-LIB_DEPENDS=	databases/sqlite3 \
-		devel/libmagic \
+LIB_DEPENDS=	devel/libmagic \
 		devel/glib2 \
 		devel/pcre \
 		lang/luajit \
