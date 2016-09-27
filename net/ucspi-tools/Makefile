@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.5 2016/09/10 13:03:42 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2016/09/21 23:16:41 bluhm Exp $
 
 COMMENT=	socks proxy and tls support for ucspi
 
-DISTNAME=	ucspi-tools-1.4
+DISTNAME=	ucspi-tools-1.6
 CATEGORIES=	net
-REVISION=	0
 
 GH_ACCOUNT=	younix
 GH_PROJECT=	ucspi
-GH_COMMIT=	5e964bbf6e2e38b08bf74bbe17fa648102f5853d
+GH_COMMIT=	1aa21e6bd85ec45a6bce9b570548b6f4a5b1a9ed
 
 HOMEPAGE=	https://github.com/younix/ucspi
 MAINTAINER=	Jan Klemkow <j.klemkow@wemelug.de>
