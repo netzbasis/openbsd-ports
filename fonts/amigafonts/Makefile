@@ -1,17 +1,16 @@
-# $OpenBSD: Makefile,v 1.2 2016/09/22 12:57:18 fcambus Exp $
+# $OpenBSD: Makefile,v 1.1.1.1 2016/06/26 21:05:13 awolk Exp $
 
 COMMENT =	faithfully remade Amiga fonts
 
 GH_ACCOUNT =	rewtnull
 GH_PROJECT =	amigafonts
 GH_TAGNAME =	1.0
-REVISION =	0
 
 CATEGORIES =	fonts
 
 HOMEPAGE =	https://www.trueschool.se/html/fonts.html
 
-MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
+MAINTAINER =	Frederic Cambus <fred@statdns.com>
 
 # CC BY-NC-SA 3.0
 PERMIT_PACKAGE_CDROM =	Non-commercial

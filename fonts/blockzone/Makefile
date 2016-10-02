@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2016/09/22 12:57:18 fcambus Exp $
+# $OpenBSD: Makefile,v 1.8 2016/09/08 17:32:57 jasper Exp $
 
 COMMENT =	pixel-perfect recreation of the original IBM VGA font
 
@@ -6,13 +6,13 @@ TYPEFACE =	${GH_PROJECT}
 GH_ACCOUNT =	ansilove
 GH_PROJECT =	BlockZone
 GH_TAGNAME =	1.004
-REVISION =	2
+REVISION =	1
 
 CATEGORIES =	fonts
 
 HOMEPAGE =	https://github.com/ansilove/blockzone
 
-MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
+MAINTAINER =	Frederic Cambus <fred@statdns.com>
 
 # SIL Open Font License 1.1
 PERMIT_PACKAGE_CDROM =	Yes

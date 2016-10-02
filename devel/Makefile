@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1538 2016/09/30 11:30:45 shadchin Exp $
+# $OpenBSD: Makefile,v 1.1540 2016/10/02 12:01:11 shadchin Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1246,6 +1246,7 @@
      SUBDIR += py-configobj,python3
      SUBDIR += py-configparser
      SUBDIR += py-country
+     SUBDIR += py-country,python3
      SUBDIR += py-coverage
      SUBDIR += py-coverage,python3
      SUBDIR += py-coveralls
@@ -1292,6 +1293,8 @@
      SUBDIR += py-hgtools,python3
      SUBDIR += py-html5lib
      SUBDIR += py-html5lib,python3
+     SUBDIR += py-hypothesis
+     SUBDIR += py-hypothesis,python3
      SUBDIR += py-iniparse
      SUBDIR += py-ioflo
      SUBDIR += py-ipykernel
@@ -1392,6 +1395,8 @@
      SUBDIR += py-six
      SUBDIR += py-six,python3
      SUBDIR += py-smmap
+     SUBDIR += py-spark-parser
+     SUBDIR += py-spark-parser,python3
      SUBDIR += py-stdnum
      SUBDIR += py-stdnum,python3
      SUBDIR += py-suds
@@ -1431,6 +1436,8 @@
      SUBDIR += py-tz,python3
      SUBDIR += py-tzlocal
      SUBDIR += py-tzlocal,python3
+     SUBDIR += py-uncompyle6
+     SUBDIR += py-uncompyle6,python3
      SUBDIR += py-unit
      SUBDIR += py-unit,no_x11
      SUBDIR += py-unittest2
@@ -1448,6 +1455,8 @@
      SUBDIR += py-wsgiutils
      SUBDIR += py-xdg
      SUBDIR += py-xdg,python3
+     SUBDIR += py-xdis
+     SUBDIR += py-xdis,python3
      SUBDIR += py-xmlrunner
      SUBDIR += py-zopecomponent
      SUBDIR += py-zopeevent
