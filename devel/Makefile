@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1540 2016/10/02 12:01:11 shadchin Exp $
+# $OpenBSD: Makefile,v 1.1542 2016/10/03 17:43:18 sebastia Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1072,6 +1072,7 @@
      SUBDIR += p5-Test-Regexp
      SUBDIR += p5-Test-Reporter
      SUBDIR += p5-Test-Requires
+     SUBDIR += p5-Test-RequiresInternet
      SUBDIR += p5-Test-Script
      SUBDIR += p5-Test-SharedFork
      SUBDIR += p5-Test-Spelling
@@ -1447,6 +1448,7 @@
      SUBDIR += py-vcversioner,python3
      SUBDIR += py-virtualenv
      SUBDIR += py-virtualenv,python3
+     SUBDIR += py-voluptuous
      SUBDIR += py-wbem
      SUBDIR += py-wcwidth
      SUBDIR += py-wcwidth,python3

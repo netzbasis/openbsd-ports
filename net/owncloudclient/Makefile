@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.15 2016/09/23 09:16:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2016/08/10 09:32:15 kirby Exp $
 
 COMMENT =		owncloud sync client
 
 DISTNAME =		owncloudclient-2.2.3
-REVISION =		0
 
 SHARED_LIBS =		owncloudsync	2.0
 SHARED_LIBS +=		ocsync		2.0
@@ -28,7 +27,6 @@ MODGCC4_LANGS += 	c++
 RUN_DEPENDS =		devel/desktop-file-utils \
 			x11/gtk+3,-guic
 LIB_DEPENDS =		converters/libiconv \
-			databases/sqlite3 \
 			devel/libinotify
 
 CONFIGURE_ARGS +=	-Wno-dev \
