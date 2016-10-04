@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2016/09/06 11:26:08 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2016/09/21 20:33:34 sebastia Exp $
 
 PORTROACH=	limit:^4
 
@@ -9,8 +9,8 @@ V=		4.2.2
 DISTNAME=	puppetdb-$V
 PKGNAME-main=	${DISTNAME}
 PKGNAME-plugin= puppetdb-termini-$V
-REVISION-main=	0
-REVISION-plugin=0
+REVISION-main=	1
+REVISION-plugin=1
 CATEGORIES=	databases
 
 HOMEPAGE=	http://docs.puppetlabs.com/puppetdb/latest/
@@ -25,8 +25,6 @@ PERMIT_PACKAGE_CDROM=	Yes
 MODULES=	java \
 		lang/ruby
 MODJAVA_VER=	1.8+
-
-MODRUBY_REV=	2.2
 
 MULTI_PACKAGES= -main -plugin
 
