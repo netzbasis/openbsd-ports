@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.24 2016/09/17 14:42:13 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.27 2016/10/07 13:34:56 ajacoutot Exp $
 
 COMMENT=		network analysis and security monitoring framework
 
 DISTNAME=		bro-2.4.1
-REVISION=		5
+REVISION=		8
 
 SHARED_LIBS +=  broccoli                  5.1 # 5.1
 
@@ -48,6 +48,9 @@ RUN_DEPENDS +=		net/curl
 
 CONFIGURE_STYLE=	simple
 
+CONFIGURE_ENV=		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib/libbind \
+				-lbind -Wl,-rpath ${LOCALBASE}/lib/libbind"
+
 CONFIGURE_ARGS=		--prefix=${PREFIX} \
 			--conf-files-dir=${SYSCONFDIR}/bro \
 			--localstatedir=${LOCALSTATEDIR} \
@@ -74,5 +77,8 @@ post-install:
 		${WRKINST}/${MODPY_SITEPKG}/BroControl/
 	rm ${WRKINST}/${MODPY_SITEPKG}/BroControl/options.py.{beforesubst,orig}
 	${MODPY_BIN} ${MODPY_LIBDIR}/compileall.py ${WRKINST}/${MODPY_SITEPKG}
+
+# handled by exec-add / exec-delete ; symlink changes according to spooldir
+	rm ${PREFIX}/share/broctl/scripts/broctl-config.sh
 
 .include <bsd.port.mk>
