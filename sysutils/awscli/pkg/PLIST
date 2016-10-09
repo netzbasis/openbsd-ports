@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.22 2016/09/07 12:33:29 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.25 2016/10/03 07:44:49 ajacoutot Exp $
 bin/aws
 bin/aws_completer
 lib/python${MODPY_VERSION}/site-packages/awscli/
@@ -244,6 +244,8 @@ lib/python${MODPY_VERSION}/site-packages/awscli/customizations/s3/fileinfobuilde
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/s3/fileinfobuilder.pyc
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/s3/filters.py
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/s3/filters.pyc
+lib/python${MODPY_VERSION}/site-packages/awscli/customizations/s3/results.py
+lib/python${MODPY_VERSION}/site-packages/awscli/customizations/s3/results.pyc
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/s3/s3.py
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/s3/s3.pyc
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/s3/s3handler.py
@@ -625,7 +627,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/directconnect/delete-vi
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/directconnect/describe-connection-loa.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/directconnect/describe-connections-on-interconnect.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/directconnect/describe-connections.rst
-lib/python${MODPY_VERSION}/site-packages/awscli/examples/directconnect/describe-identity-id-format.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/directconnect/describe-interconnect-loa.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/directconnect/describe-interconnects.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/directconnect/describe-locations.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/directconnect/describe-virtual-gateways.rst
@@ -978,11 +980,14 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/emr/add-tags.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/emr/create-cluster-examples.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/emr/create-cluster-synopsis.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/emr/create-default-roles.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/emr/create-security-configuration.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/emr/delete-security-configuration.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/emr/describe-cluster.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/emr/describe-step.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/emr/get.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/emr/list-clusters.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/emr/list-instances.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/emr/list-security-configurations.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/emr/list-steps.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/emr/modify-cluster-attributes.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/emr/put.rst

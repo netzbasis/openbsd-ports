@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.43 2016/09/19 17:09:37 edd Exp $
+# $OpenBSD: Makefile,v 1.46 2016/10/01 13:56:26 naddy Exp $
 
 COMMENT =	GNU privacy guard - a free PGP replacement
 
 DISTNAME =	gnupg-2.1.15
+REVISION =	1
 CATEGORIES = 	security
 
-MASTER_SITES =	${MASTER_SITES_GNUPG:=gnupg/}
+MASTER_SITES =	${MASTER_SITE_GNUPG:=gnupg/}
 
 HOMEPAGE = 	http://www.gnupg.org/
 
@@ -14,18 +15,17 @@ MAINTAINER = 	Pierre-Emmanuel Andre <pea@openbsd.org>
 # GPLv3+
 PERMIT_PACKAGE_CDROM = 	Yes
 
-WANTLIB +=		assuan bz2 c gcrypt gnutls gpg-error
-WANTLIB +=		ksba npth pthread readline sqlite3
-WANTLIB +=		termcap usb-1.0 z
+WANTLIB += assuan bz2 c gcrypt gnutls gpg-error iconv intl ksba
+WANTLIB += npth pthread readline sqlite3 termcap usb-1.0 z
 
 EXTRACT_SUFX = 		.tar.bz2
-
-MODULES = 		devel/gettext
 
 FLAVORS = 		ldap
 FLAVOR ?=
 
 LIB_DEPENDS =		archivers/bzip2 \
+			databases/sqlite3 \
+			devel/gettext \
 			devel/libusb1 \
 			devel/npth \
 			security/gnutls \
