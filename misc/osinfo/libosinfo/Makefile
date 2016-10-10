@@ -1,31 +1,18 @@
-# $OpenBSD: Makefile,v 1.20 2016/07/02 08:03:49 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.1.1.1 2016/10/09 15:24:19 ajacoutot Exp $
 
 COMMENT=		library for managing information about operating systems
 
-DISTNAME=		libosinfo-0.3.1
+DISTNAME=		libosinfo-${V}
 
-SHARED_LIBS +=  osinfo-1.0           1.0      # 3.1
-
-CATEGORIES=		misc devel
-
-MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
-
-HOMEPAGE=		http://libosinfo.org/
-
-# LGPLv2+
-PERMIT_PACKAGE_CDROM=	Yes
+SHARED_LIBS +=  osinfo-1.0           1.0      # 1000.0
 
 WANTLIB += c ffi gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 iconv
 WANTLIB += intl lzma m pcre pthread xml2 xslt z
-
-MASTER_SITES=		https://fedorahosted.org/releases/l/i/libosinfo/
 
 MODULES=		textproc/intltool \
 			x11/gnome
 
 MODGNOME_TOOLS=		gobject-introspection vala
-
-USE_GMAKE=		Yes
 
 # needed for test
 BUILD_DEPENDS +=	devel/check \
@@ -34,9 +21,8 @@ BUILD_DEPENDS +=	devel/check \
 LIB_DEPENDS=		devel/glib2 \
 			textproc/libxslt
 
-RUN_DEPENDS=		misc/hwdata
-
-CONFIGURE_STYLE=	gnu
+RUN_DEPENDS=		misc/hwdata \
+			misc/osinfo/osinfo-db
 
 CONFIGURE_ARGS=		--with-usb-ids-path=${LOCALBASE}/share/hwdata/usb.ids \
 			--with-pci-ids-path=${LOCALBASE}/share/hwdata/pnp.ids
