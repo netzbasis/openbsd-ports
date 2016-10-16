@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.59 2016/10/14 12:51:15 jasper Exp $
+# $OpenBSD: Makefile,v 1.62 2016/10/15 09:04:36 jasper Exp $
 
 COMMENT =		ssh based config management framework
 
 MODPY_EGG_VERSION =	2.1.2.0
 DISTNAME =		ansible-${MODPY_EGG_VERSION}
-REVISION =		2
+REVISION =		3
 
 CATEGORIES =		sysutils
 
@@ -22,7 +22,6 @@ MODPY_SETUPTOOLS =	Yes
 
 RUN_DEPENDS =		security/py-crypto \
 			security/py-keyczar \
-			security/py-paramiko \
 			security/py-passlib \
 			textproc/py-yaml \
 			www/py-jinja2
@@ -31,27 +30,22 @@ NO_TEST =		Yes
 
 DOCDIR =		${PREFIX}/share/doc/ansible
 EXDIR =			${PREFIX}/share/examples/ansible
-MANDIR =		${PREFIX}/man
 PLUGINDIR =		${PREFIX}/share/ansible_plugins
 
 pre-configure:
-	@perl -pi -e "s,/usr/share,${TRUEPREFIX}/share,g;" \
+	sed -i -e "s,/usr/share,${TRUEPREFIX}/share,g;" \
 		  -e "s,/usr/share/ansible_plugins,${PLUGINDIR},g" \
 		${WRKSRC}/lib/ansible/constants.py \
 		${WRKSRC}/examples/ansible.cfg \
 		${WRKSRC}/docs/man/man1/*.1
 
-pre-install:
-	@find ${WRKSRC} \( -name '*.orig' -o -name '.git*' \
-		-o -name '.travis.yml' \) -type f -exec rm {} +
-
 post-install:
-	${INSTALL_DATA_DIR} ${EXDIR} ${DOCDIR} ${MANDIR}
-	@cp -R ${WRKSRC}/examples/* ${EXDIR}/
-	@chown -R ${SHAREOWN}:${SHAREGRP} ${EXDIR}
+	${INSTALL_DATA_DIR} ${EXDIR} ${DOCDIR}
+	${INSTALL_DATA} ${WRKSRC}/examples/* ${EXDIR}
 	${SUBST_CMD} ${EXDIR}/hosts
-	@rm ${EXDIR}/hosts.beforesubst
-	${INSTALL_DATA} ${WRKSRC}/docs/man/man1/*.1 ${MANDIR}/man1
+	${INSTALL_DATA} ${WRKSRC}/docs/man/man1/*.1 ${PREFIX}/man/man1
 	${INSTALL_DATA} ${WRKSRC}/{COPYING,README.md} ${DOCDIR}/
+	find ${PREFIX} \( -name '*.orig' -o -name '.git*' \
+		-o -name '*.beforesubst' \) -type f -exec rm {} +
 
 .include <bsd.port.mk>
