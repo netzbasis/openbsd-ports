@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2016/03/18 20:49:28 naddy Exp $
+# $OpenBSD: Makefile,v 1.10 2016/10/16 23:21:23 jca Exp $
 
 COMMENT=		time profiler for Lua
 
@@ -11,9 +11,12 @@ HOMEPAGE=		http://luaprofiler.luaforge.net/
 # MIT
 PERMIT_PACKAGE_CDROM=	Yes
 
+MASTER_SITES=		http://luaforge.net/frs/download.php/3400/
+
 MODULES=		lang/lua
 
-MASTER_SITES=		http://luaforge.net/frs/download.php/3400/
+FLAVORS=		lua52
+FLAVOR?=
 
 NO_TEST=		Yes
 
