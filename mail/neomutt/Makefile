@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.88 2016/10/18 11:33:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.2 2016/10/18 10:51:39 sthen Exp $
 
-COMMENT=	tty-based e-mail client
+COMMENT=	tty-based e-mail client, Mutt with patches
 
-DISTNAME=	mutt-1.7.1
-EPOCH=		3
+V=		20161014
+DISTNAME=	neomutt-$V
 
 CATEGORIES=	mail
-HOMEPAGE=	http://www.mutt.org/
+HOMEPAGE=	http://www.neomutt.org/
 
 MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 
@@ -14,39 +14,40 @@ MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 PERMIT_PACKAGE_CDROM=	Yes
 
 # uses pledge()
-WANTLIB+=	c crypto iconv idn intl qdbm ssl z
+WANTLIB+=	c crypto iconv idn intl ncurses ssl z
 
-MASTER_SITES=	http://ftp.mutt.org/pub/mutt/ \
-		https://bitbucket.org/mutt/mutt/downloads/ \
-		ftp://ftp.mutt.org/pub/mutt/
+MASTER_SITES=	https://github.com/neomutt/neomutt/releases/download/neomutt-$V/
 
-LIB_DEPENDS=	databases/qdbm \
-		devel/gettext \
+LIB_DEPENDS+=	devel/gettext \
 		devel/libidn
 BUILD_DEPENDS+=	textproc/docbook-xsl \
 		www/lynx
 
-FLAVORS=	gpgme sasl slang
+FLAVORS=	gpgme sasl
 FLAVOR?=
-
-CONFIGURE_STYLE=  gnu
 
 FLAVOR_COMMA=	${FLAVOR_EXT:S/-/,/g}
 SUBST_VARS=	FLAVOR_COMMA
 
-CONFIGURE_ARGS+= --enable-external_dotlock \
+CONFIGURE_STYLE= gnu
+
+CONFIGURE_ARGS+= --enable-compressed \
+		--enable-external_dotlock \
 		--disable-fcntl \
 		--enable-flock \
 		--enable-hcache \
-		--with-idn \
 		--enable-imap \
+		--enable-nntp \
+		--disable-notmuch \
 		--enable-pop \
+		--enable-sidebar \
 		--enable-smtp \
 		--mandir=${PREFIX}/man \
-		--without-gdbm \
-		--without-tokyocabinet \
-		--with-qdbm \
+		--with-curses \
 		--with-docdir="${PREFIX}/share/doc/mutt" \
+		--without-tokyocabinet \
+		--without-gdbm \
+		--with-idn \
 		--with-ssl
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
@@ -54,11 +55,8 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 SYSCONFDIR=	${BASESYSCONFDIR}/mutt
 FAKE_FLAGS=	sysconfdir="${PREFIX}/share/examples/mutt"
 
-.if defined(DEBUG)
-CONFIGURE_ARGS+=	--enable-debug
-.endif
-
-## standard flavours:
+DEBUG+=		-g
+#CONFIGURE_ARGS+= --enable-debug
 
 .if ${FLAVOR:Mgpgme}
 CONFIGURE_ARGS+= --enable-gpgme
@@ -72,13 +70,18 @@ LIB_DEPENDS+=	security/cyrus-sasl2
 WANTLIB+=	sasl2
 .endif
 
-.if ${FLAVOR:Mslang}
-CONFIGURE_ARGS+= --with-slang="${PREFIX}"
-LIB_DEPENDS+=	devel/libslang
-WANTLIB+=	m termlib slang>=14
+.include <bsd.port.arch.mk>
+
+.if ${ARCH} == arm || ${ARCH} == hppa || ${ARCH} == powerpc
+LIB_DEPENDS+=	databases/qdbm
+WANTLIB+=	qdbm
+CONFIGURE_ARGS+= --without-kyotocabinet \
+		--with-qdbm
 .else
-CONFIGURE_ARGS+= --with-curses
-WANTLIB+=	ncurses
+LIB_DEPENDS+=	databases/kyotocabinet
+WANTLIB+=	kyotocabinet pthread
+CONFIGURE_ARGS+= --with-kyotocabinet \
+		--without-qdbm
 .endif
 
 post-install:
