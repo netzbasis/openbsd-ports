@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.58 2016/10/28 08:32:11 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.60 2016/10/29 10:37:12 ajacoutot Exp $
 
 COMMENT=	create, alter and inspect Matroska files
 
 DISTNAME=	mkvtoolnix-9.5.0
+REVISION=	0
 CATEGORIES=	multimedia x11
 MASTER_SITES=	${HOMEPAGE}/sources/
 EXTRACT_SUFX=	.tar.xz
@@ -26,8 +27,7 @@ MODRUBY_RUNDEP=	No
 MODGCC4_ARCHS=	*
 MODGCC4_LANGS=	c++
 
-BUILD_DEPENDS=	devel/ruby-rake \
-		devel/utfcpp
+BUILD_DEPENDS=	devel/ruby-rake
 LIB_DEPENDS=	audio/flac \
 		audio/libogg \
 		audio/libvorbis \
