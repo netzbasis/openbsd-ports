@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.42 2016/04/25 14:53:50 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.44 2016/10/31 10:38:35 ajacoutot Exp $
 include/gnome-settings-daemon-3.0/
 include/gnome-settings-daemon-3.0/gnome-settings-daemon/
 include/gnome-settings-daemon-3.0/gnome-settings-daemon/gnome-settings-plugin.h
@@ -128,6 +128,7 @@ share/locale/eu/LC_MESSAGES/gnome-settings-daemon.mo
 share/locale/fa/LC_MESSAGES/gnome-settings-daemon.mo
 share/locale/fi/LC_MESSAGES/gnome-settings-daemon.mo
 share/locale/fr/LC_MESSAGES/gnome-settings-daemon.mo
+share/locale/fur/LC_MESSAGES/gnome-settings-daemon.mo
 share/locale/ga/LC_MESSAGES/gnome-settings-daemon.mo
 share/locale/gd/LC_MESSAGES/gnome-settings-daemon.mo
 share/locale/gl/LC_MESSAGES/gnome-settings-daemon.mo

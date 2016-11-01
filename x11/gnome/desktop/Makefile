@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.145 2016/05/10 06:59:03 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.147 2016/10/31 09:41:26 ajacoutot Exp $
 
 COMMENT=		components for the GNOME desktop
 
 GNOME_PROJECT=		gnome-desktop
 # sync with meta/gnome "V" variable
-GNOME_VERSION=		3.20.2
+GNOME_VERSION=		3.22.1
 
 SHARED_LIBS +=  gnome-desktop-3      2.1      # 13.0
 
@@ -42,7 +42,8 @@ LIB_DEPENDS=		x11/gtk+3
 
 MODGNOME_TOOLS=		gobject-introspection yelp
 
-CONFIGURE_ARGS=		--with-gnome-distributor="OpenBSD Ports"
+CONFIGURE_ARGS=		--with-gnome-distributor="OpenBSD Ports" \
+			--disable-udev
 
 # https://bugzilla.gnome.org/show_bug.cgi?id=590059
 CONFIGURE_ARGS +=	--with-pnp-ids-path=${LOCALBASE}/share/hwdata
