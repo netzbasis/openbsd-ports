@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.14 2016/11/01 15:23:48 landry Exp $
+# $OpenBSD: Makefile,v 1.16 2016/11/03 16:20:40 landry Exp $
 
 COMMENT=	Xfce4 datetime and calendar plugin
 
 XFCE_VERSION=	0.7.0
 XFCE_PLUGIN=	datetime
+REVISION =	0
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -18,8 +19,7 @@ WANTLIB += gobject-2.0 gthread-2.0 m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pixman-1 png pthread-stubs xcb
 WANTLIB += xcb-util xcb-render xcb-shm xfce4util xfce4ui-2 z
 WANTLIB += ICE SM X11-xcb ffi pcre startup-notification-1
-WANTLIB += harfbuzz graphite2 pthread
+WANTLIB += harfbuzz graphite2 pthread iconv intl
 WANTLIB += atk-bridge-2.0 atspi cairo-gobject dbus-1 epoxy gdk-3 gtk-3
-
 
 .include <bsd.port.mk>

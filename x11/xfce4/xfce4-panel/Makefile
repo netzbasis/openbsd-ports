@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.61 2016/10/31 15:38:18 landry Exp $
+# $OpenBSD: Makefile,v 1.63 2016/11/03 16:20:40 landry Exp $
 
 COMMENT=	Xfce4 desktop panel
 
 XFCE_PROJECT=	xfce4-panel
 XFCE_VERSION=	4.12.1
+REVISION =	0
 
 SHARED_LIBS=	xfce4panel-1.0	1.0 \
 		xfce4panel-2.0	0.0 # 4.0
@@ -20,6 +21,7 @@ WANTLIB += gobject-2.0 graphite2 gthread-2.0 gtk-3 gtk-x11-2.0 harfbuzz
 WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png
 WANTLIB += pthread pthread-stubs startup-notification-1 wnck-1 xcb
 WANTLIB += xcb-render xcb-shm xcb-util xfce4ui-1 xfce4util xfconf-0 z
+WANTLIB += iconv intl
 
 MODULES=	x11/xfce4
 MODXFCE_DESKTOP_FILE=	Yes

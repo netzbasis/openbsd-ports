@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.26 2015/04/04 09:21:09 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.28 2016/11/03 16:20:40 landry Exp $
 
 COMMENT=	Xfce4 places panel plugin
 
 XFCE_VERSION=	1.7.0
 XFCE_PLUGIN=	places
-REVISION=	0
+REVISION=	1
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -22,6 +22,6 @@ WANTLIB += gmodule-2.0 gobject-2.0 gthread-2.0 gtk-x11-2.0
 WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
 WANTLIB += png pthread pthread-stubs startup-notification-1
 WANTLIB += xcb xcb-util xcb-render xcb-shm xfce4util xfce4ui-1 z
-WANTLIB += harfbuzz dbus-1 dbus-glib-1 graphite2 xfconf-0
+WANTLIB += harfbuzz dbus-1 dbus-glib-1 graphite2 xfconf-0 iconv intl
 
 .include <bsd.port.mk>

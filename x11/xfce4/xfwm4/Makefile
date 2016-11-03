@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.49 2015/06/26 07:44:17 landry Exp $
+# $OpenBSD: Makefile,v 1.51 2016/11/03 16:20:41 landry Exp $
 
 COMMENT=	Xfce4 window manager
 
 XFCE_PROJECT=	xfwm4
 XFCE_VERSION=	4.12.3
+REVISION =	0
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -24,6 +25,6 @@ WANTLIB += gmodule-2.0 gobject-2.0 gthread-2.0 gtk-x11-2.0 m pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread
 WANTLIB += pthread-stubs startup-notification-1 wnck-1 xcb xcb-util
 WANTLIB += xcb-render xcb-shm xfce4kbd-private-2 xfce4ui-1 xfce4util
-WANTLIB += xfconf-0 z graphite2 harfbuzz
+WANTLIB += xfconf-0 z graphite2 harfbuzz iconv intl
 
 .include <bsd.port.mk>

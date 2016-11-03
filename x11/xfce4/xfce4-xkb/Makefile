@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.32 2015/08/21 19:17:10 sthen Exp $
+# $OpenBSD: Makefile,v 1.34 2016/11/03 16:20:41 landry Exp $
 
 COMMENT=	Xfce4 xkb layout switcher panel plugin
 
 XFCE_VERSION=	0.7.1
-REVISION=	0
+REVISION=	1
 XFCE_PLUGIN=	xkb
 
 # BSD
@@ -21,7 +21,7 @@ WANTLIB += gmodule-2.0 gobject-2.0 gthread-2.0 gtk-x11-2.0 m pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread
 WANTLIB += pthread-stubs rsvg-2 startup-notification-1 wnck-1
 WANTLIB += xcb xcb-util xcb-render xcb-shm xfce4ui-1 xfce4util
-WANTLIB += xkbfile xklavier xml2 z
+WANTLIB += xkbfile xklavier xml2 z iconv intl
 WANTLIB += harfbuzz graphite2 garcon-1 lzma
 
 .include <bsd.port.mk>

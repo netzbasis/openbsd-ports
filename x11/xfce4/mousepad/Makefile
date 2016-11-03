@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.32 2016/03/21 03:52:44 mmcc Exp $
+# $OpenBSD: Makefile,v 1.34 2016/11/03 16:20:40 landry Exp $
 
 COMMENT=	Xfce4 simple text editor
 
 XFCE_VERSION=	0.4.0
 XFCE_GOODIE=	mousepad
-REVISION=	1
+REVISION=	2
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -23,6 +23,6 @@ WANTLIB=	X11 Xcomposite Xcursor Xdamage Xext \
 		pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png \
 		z pthread-stubs xcb ffi harfbuzz graphite2 lzma \
 		gthread-2.0 pthread xcb-render xcb-shm \
-		dbus-1 dbus-glib-1 gtksourceview-2.0 xml2
+		dbus-1 dbus-glib-1 gtksourceview-2.0 xml2 iconv intl
 
 .include <bsd.port.mk>
