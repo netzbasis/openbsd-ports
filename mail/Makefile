@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.349 2016/10/18 11:33:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.351 2016/11/02 19:30:58 jeremy Exp $
 
      SUBDIR =
      SUBDIR += abook
@@ -199,9 +199,9 @@
      SUBDIR += rspamd
      SUBDIR += rss2email
      SUBDIR += ruby-mail
-     SUBDIR += ruby-mailfactory
      SUBDIR += ruby-mime
      SUBDIR += ruby-mime-types
+     SUBDIR += ruby-mime-types-data
      SUBDIR += s-nail
      SUBDIR += sendmail
      SUBDIR += sendmail,ldap
