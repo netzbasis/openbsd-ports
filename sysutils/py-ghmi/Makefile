@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2016/11/02 08:28:33 jasper Exp $
+# $OpenBSD: Makefile,v 1.1.1.1 2016/10/31 17:28:47 jasper Exp $
 
 COMMENT =		pure python IPMI protocol library
 
-MODPY_EGG_VERSION =	1.0.12
+MODPY_EGG_VERSION =	1.0.11
 DISTNAME =		pyghmi-${MODPY_EGG_VERSION}
 PKGNAME =		${DISTNAME:S/py/${MODPY_PY_PREFIX}/}
 
@@ -23,8 +23,7 @@ MODPY_SETUPTOOLS =	Yes
 #FLAVORS =		python3
 #FLAVOR ?=
 
-BUILD_DEPENDS =		devel/py-pbr${MODPY_FLAVOR} \
-			security/py-crypto${MODPY_FLAVOR}
+BUILD_DEPENDS =		security/py-crypto${MODPY_FLAVOR}
 RUN_DEPENDS =		security/py-crypto${MODPY_FLAVOR}
 
 .include <bsd.port.mk>
