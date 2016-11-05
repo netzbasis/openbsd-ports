@@ -1,0 +1,13 @@
+$OpenBSD: README-main,v 1.1 2016/11/04 22:13:43 jeremy Exp $
+
++-----------------------------------------------------------------------
+| Running ${FULLPKGNAME} on OpenBSD
++-----------------------------------------------------------------------
+
+Log file rotation
+=================
+To use newsyslog to rotate the log files, you can replace the standard
+entries for httpd(8) in /etc/newsyslog.conf with these:
+
+/var/www/logs/access.log		644  4     *    $W0   Z /var/run/nginx.pid SIGUSR1
+/var/www/logs/error.log			644  7     250  *     Z /var/run/nginx.pid SIGUSR1
