@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.797 2016/11/03 11:10:01 danj Exp $
+# $OpenBSD: Makefile,v 1.799 2016/11/05 16:45:43 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += ajaxterm
@@ -49,7 +49,6 @@
      SUBDIR += firefox-esr-i18n
      SUBDIR += firefox-i18n
      SUBDIR += gcap
-     SUBDIR += gnash
      SUBDIR += goaccess
      SUBDIR += gtkhtml4
      SUBDIR += haserl
@@ -109,10 +108,6 @@
      SUBDIR += newsbeuter
      SUBDIR += nghttp2
      SUBDIR += nginx
-     SUBDIR += nginx,lua
-     SUBDIR += nginx,mailproxy
-     SUBDIR += nginx,naxsi
-     SUBDIR += nginx,passenger
      SUBDIR += nostromo
      SUBDIR += opengroupware
      SUBDIR += otter-browser
