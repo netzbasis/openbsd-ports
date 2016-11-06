@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.8 2015/12/27 08:26:50 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.10 2016/10/20 11:36:12 sthen Exp $
 
 COMMENT=	ACME protocol implementation
 
 DISTNAME=	acme-${MODPY_EGG_VERSION}
 PKGNAME=	${MODPY_PY_PREFIX}${DISTNAME:S/.dev/pre/}
+REVISION=	0
 
 FLAVORS=	python3
 FLAVOR?=

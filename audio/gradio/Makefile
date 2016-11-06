@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2016/10/31 17:11:06 landry Exp $
+# $OpenBSD: Makefile,v 1.3 2016/11/02 15:02:34 landry Exp $
 
 COMMENT =	internet radio browser and player
 DISTNAME =	gradio-5.0.0beta2
@@ -22,8 +22,12 @@ WANTLIB += pangocairo-1.0 pthread soup-2.4 webkit2gtk-4.0
 CONFIGURE_STYLE =	gnu
 NO_TEST =		Yes
 USE_GMAKE =		Yes
+
 AUTOMAKE_VERSION =	1.14
 AUTOCONF_VERSION =	2.65
+BUILD_DEPENDS +=	lang/vala \
+			${MODGNU_AUTOCONF_DEPENDS} \
+			${MODGNU_AUTOMAKE_DEPENDS}
 
 pre-configure:
 	cd ${WRKSRC} && env NOCONFIGURE=yes \

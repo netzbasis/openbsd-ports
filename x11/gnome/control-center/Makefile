@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.17 2016/04/25 16:46:37 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.19 2016/11/01 07:12:56 ajacoutot Exp $
 
 # XXX change proxy settings without network-manager?
 
 COMMENT=		GNOME control center
 
 GNOME_PROJECT=		gnome-control-center
-GNOME_VERSION=		3.20.1
+GNOME_VERSION=		3.22.1
 
 CATEGORIES=		x11
 
@@ -31,8 +31,7 @@ WANTLIB += pthread-stubs pulse pulse-mainloop-glib pwquality rest-0.7
 WANTLIB += sasl2 secret-1 smbclient sndfile soup-2.4 soup-gnome-2.4
 WANTLIB += sqlite3 ssl stdc++ tasn1 telepathy-glib upower-glib
 WANTLIB += vorbis vorbisenc vorbisfile webkit2gtk-4.0 xcb xcb-dri2
-WANTLIB += xcb-glx xcb-render xcb-shape xcb-shm xcb-xfixes xml2
-WANTLIB += z
+WANTLIB += xcb-glx xcb-render xcb-shm xcb-xfixes xml2 z
 WANTLIB += heimdal/lib/heimsqlite
 
 MODULES=		security/heimdal \
@@ -48,7 +47,7 @@ LIB_DEPENDS=		audio/pulseaudio \
 			sysutils/accountsservice \
 			sysutils/upower \
 			x11/gnome/desktop \
-			x11/gnome/grilo>=0.3.0 \
+			x11/gnome/grilo \
 			x11/gnome/online-accounts
 
 BUILD_DEPENDS=		x11/gnome/settings-daemon \
@@ -89,5 +88,13 @@ MODGNOME_CPPFLAGS=	-I${X11BASE}/include
 MODGNOME_LDFLAGS=	-L${X11BASE}/lib
 
 FAKE_FLAGS=		sysconfdir=${PREFIX}/share/examples/gnome-control-center
+
+# XXX
+# http://permalink.gmane.org/gmane.comp.gnome.desktop/51950
+# https://bugzilla.gnome.org/show_bug.cgi?id=770758#c3
+# https://bugzilla.gnome.org/show_bug.cgi?id=766329
+# https://bugzilla.gnome.org/show_bug.cgi?id=772736 (systemd --user
+post-install:
+	rm ${PREFIX}/share/applications/gnome-sharing-panel.desktop
 
 .include <bsd.port.mk>

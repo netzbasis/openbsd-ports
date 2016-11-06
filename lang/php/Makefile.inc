@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.86 2016/06/25 18:55:11 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.88 2016/11/04 11:35:19 sthen Exp $
 #
 
 BROKEN-hppa=	no __sync_bool_compare_and_swap support nor asm fallback
@@ -130,7 +130,7 @@ MULTI_PACKAGES+=	-curl
 COMMENT-curl=		curl URL library extensions for php5
 CONFIGURE_ARGS+=	--with-curl=shared,${LOCALBASE}
 LIB_DEPENDS-curl=	net/curl
-WANTLIB-curl=		pthread crypto idn nghttp2 ssl z curl>=2
+WANTLIB-curl=		pthread crypto nghttp2 ssl z curl>=2
 
 # dba
 MULTI_PACKAGES+=	-dba
@@ -267,7 +267,7 @@ MULTI_PACKAGES+=	-soap
 COMMENT-soap=		SOAP functions for php5
 CONFIGURE_ARGS+=	--enable-soap=shared,${LOCALBASE}
 LIB_DEPENDS-soap=	textproc/libxml
-WANTLIB-soap=		iconv m pthread z xml2>=8
+WANTLIB-soap=		iconv m pthread z xml2>=8 lzma
 
 # snmp
 MULTI_PACKAGES+=	-snmp
@@ -313,14 +313,14 @@ MULTI_PACKAGES+=	-xmlrpc
 COMMENT-xmlrpc=		XML RPC functions for php5
 CONFIGURE_ARGS+=	--with-xmlrpc=shared
 LIB_DEPENDS-xmlrpc=	textproc/libxml
-WANTLIB-xmlrpc=		iconv m z xml2>=8 pthread
+WANTLIB-xmlrpc=		iconv m z xml2>=8 pthread lzma
 
 # xsl
 MULTI_PACKAGES+=	-xsl
 COMMENT-xsl=		XSL functions for php5
 CONFIGURE_ARGS+=	--with-xsl=shared --enable-dom
 LIB_DEPENDS-xsl=	textproc/libxslt
-WANTLIB-xsl=		iconv m xml2 z xslt>=3 exslt pthread
+WANTLIB-xsl=		iconv m xml2 z xslt>=3 exslt pthread lzma
 
 # zip
 MULTI_PACKAGES+=	-zip

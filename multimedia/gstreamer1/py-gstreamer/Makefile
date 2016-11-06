@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2016/04/10 10:14:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2016/11/02 22:20:55 ajacoutot Exp $
 
 COMMENT=		overrides for the gobject-introspection-based pygst bindings
 

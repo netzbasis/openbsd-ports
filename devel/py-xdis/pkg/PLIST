@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2016/10/07 07:15:33 shadchin Exp $
+@comment $OpenBSD: PLIST,v 1.4 2016/11/04 07:12:33 shadchin Exp $
 bin/pydisasm${MODPY_BIN_SUFFIX}
 lib/python${MODPY_VERSION}/site-packages/xdis/
 lib/python${MODPY_VERSION}/site-packages/xdis-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/

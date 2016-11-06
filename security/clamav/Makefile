@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.109 2016/05/22 21:03:33 sthen Exp $
+# $OpenBSD: Makefile,v 1.112 2016/11/04 11:35:20 sthen Exp $
 
 COMMENT=	virus scanner
 DISTNAME=	clamav-0.99.2
-REVISION=	0
+REVISION=	3
 
 CATEGORIES=	security
 
@@ -17,8 +17,8 @@ MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 # GPLv2/LGPL, with OpenSSL exemption
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += bz2 c crypto curl iconv idn intl ltdl lzma m milter
-WANTLIB += ncurses nghttp2 pcre pthread ssl stdc++ xml2 z
+WANTLIB += bz2 c crypto curl iconv ltdl lzma m milter ncurses
+WANTLIB += nghttp2 pcre2-8 pthread ssl xml2 z
 
 BUILD_DEPENDS=		devel/check \
 			devel/libexecinfo
@@ -26,15 +26,15 @@ BUILD_DEPENDS=		devel/check \
 LIB_DEPENDS=		archivers/bzip2 \
 			devel/gettext \
 			devel/libtool,-ltdl \
-			devel/pcre \
+			devel/pcre2 \
 			mail/sendmail,-libmilter \
 			net/curl \
 			textproc/libxml
 
 MASTER_SITES=		http://www.clamav.net/downloads/production/
 
-CONFIGURE_STYLE=        gnu
-CONFIGURE_ARGS+=        --disable-clamav \
+CONFIGURE_STYLE=	gnu
+CONFIGURE_ARGS+=	--disable-clamav \
 			--enable-dependency-tracking \
 			--disable-clamuko \
 			--enable-bigstack \

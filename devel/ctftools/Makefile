@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2016/09/09 12:24:45 jasper Exp $
+# $OpenBSD: Makefile,v 1.9 2016/10/21 12:51:55 jca Exp $
 
 COMMENT =		collection of CTF tools
 
 DISTNAME =		ctftools-0.1
-REVISION =		4
+REVISION =		5
 GH_ACCOUNT =		jasperla
 GH_PROJECT =		ctftools
 GH_COMMIT =		c4a72ae4266a97407916728689568c7f747d0e4b
@@ -19,7 +19,14 @@ WANTLIB +=		c dwarf elf pthread z
 LIB_DEPENDS =		devel/libelf \
 			devel/libdwarf>=20160613p0
 
-WRKDIST =		${WRKDIR}/ctftools-${GH_COMMIT}/cddl/
+WRKDIST =		${WRKDIR}/ctftools-${GH_COMMIT}/
+WRKSRC =		${WRKDIR}/ctftools-${GH_COMMIT}/cddl/
+
+do-configure:
+	${SUBST_CMD} ${WRKSRC}/lib/libctf/Makefile \
+	    ${WRKSRC}/usr.bin/ctfconvert/Makefile \
+	    ${WRKSRC}/usr.bin/ctfdump/Makefile \
+	    ${WRKSRC}/usr.bin/ctfmerge/Makefile
 
 do-build:
 	cd ${WRKSRC}/lib/libctf && ${MAKE_PROGRAM}

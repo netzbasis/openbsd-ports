@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.240 2016/09/23 09:16:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.242 2016/11/04 11:35:20 sthen Exp $
 
 COMMENT-main=		open source multi-protocol PBX and telephony toolkit
 
-VER=			13.11.2
+VER=			13.12.1
 PORTROACH=		limitw:0,odd
 DISTNAME=		asterisk-${VER:S/beta/-beta/:S/rc/-rc/}
 PKGNAME-main=		asterisk-${VER}
 REVISION-main=		0
-REVISION-calendar=	0
 
 CATEGORIES=		telephony
 
@@ -22,7 +21,7 @@ MAINTAINER=		Stuart Henderson <sthen@openbsd.org>
 PERMIT_PACKAGE_CDROM=	patent licensing clauses
 PERMIT_PACKAGE_FTP=	Yes
 
-WANTLIB-main += c crypto curl execinfo g7221codec gsm idn iksemel ilbccodec
+WANTLIB-main += c crypto curl execinfo g7221codec gsm iksemel ilbccodec
 WANTLIB-main += iconv jansson lzma m nghttp2 ogg opencore-amrnb opencore-amrwb
 WANTLIB-main += pj pjlib-util pjmedia pjmedia-audiodev pjmedia-codec
 WANTLIB-main += pjmedia-videodev pjnath pjsip pjsip-simple pjsip-ua
