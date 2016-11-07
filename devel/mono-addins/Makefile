@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.14 2015/10/03 11:56:05 robert Exp $
+# $OpenBSD: Makefile,v 1.16 2016/11/07 10:36:50 sthen Exp $
+
+BROKEN=		failing since mono update
 
 COMMENT=	framework for creating extensible applications
 
