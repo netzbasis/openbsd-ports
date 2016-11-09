@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.7 2016/03/06 00:53:20 abieber Exp $
+# $OpenBSD: Makefile,v 1.9 2016/11/07 10:36:50 sthen Exp $
+
+BROKEN=		failing since mono update
 
 COMMENT=	functional-first programming language
 
