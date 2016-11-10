@@ -1,21 +1,5 @@
 #!/usr/bin/perl
 
-# $OpenBSD: portbump,v 1.19 2016/11/06 21:37:55 zhuk Exp $
-#
-# Copyright (c) 2014-2016 Vadim Zhukov <zhuk@openbsd.org>
-#
-# Permission to use, copy, modify, and distribute this software for any
-# purpose with or without fee is hereby granted, provided that the above
-# copyright notice and this permission notice appear in all copies.
-#
-# THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES
-# WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
-# MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR
-# ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
-# WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
-# ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
-# OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
-
 package Util;
 use strict;
 use warnings;
@@ -95,10 +79,10 @@ sub new {
 	# REVISIONs) and shared libraries.
 	#
 	open (my $dumpvars, '-|', "make", "SUBDIR=$dir", "dump-vars") or
-		die "cannot run make dump-vars: $!";
+		die "cannot run make dump-vars";
 	while (<$dumpvars>) {
 		chomp;
-		next unless /^[^,]*(?:,[^.-]*(-[^.]+)?)?\.([^=.]+)=(.*)$/;
+		next unless /^[^,]*(?:,(-[^.]+))?\.([^=.]+)=(.*)$/;
 		my ($subpkg, $var, $value) = ($1, $2, $3);
 		$subpkg //= "";
 
@@ -132,7 +116,7 @@ sub new {
 		# to be used to avoid extra WANTLIB-* lines.
 		#
 		open ($dumpvars, '-|', "make", "SUBDIR=$dir", "show=WANTLIB") or
-			die "cannot run make show=WANTLIB: $!";
+			die "cannot run make show=WANTLIB";
 		while (<$dumpvars>) {
 			chomp;
 			next if /^===>/;
@@ -147,7 +131,7 @@ sub new {
 		# first, make sure we don't have to build/install anything
 		if ($lib_depends_tgt eq 'lib-depends-check') {
 			open ($dumpvars, '-|', qw(make show=PKGFILES)) or
-				die "cannot run make show=PKGFILES: $!";
+				die "cannot run make show=PKGFILES";
 			my @missing;
 			while (<$dumpvars>) {
 				chomp;
@@ -165,7 +149,7 @@ sub new {
 			}
 		} else {
 			open ($dumpvars, '-|', qw(make show=_FAKE_COOKIE)) or
-				die "cannot run make show=_FAKE_COOKIE: $!";
+				die "cannot run make show=_FAKE_COOKIE";
 			my $cookie = <$dumpvars>;
 			close $dumpvars;
 			chomp $cookie;
@@ -179,7 +163,7 @@ sub new {
 		$self->{wantlib_extra} = { "" => [] };
 		$self->{wantlib_missing} = { "" => [] };
 		open ($dumpvars, '-|', "make", "SUBDIR=$dir", $lib_depends_tgt) or
-			die "cannot run make $lib_depends_tgt: $!";
+			die "cannot run make $lib_depends_tgt";
 		my $subpkg = "";
 		my %not_reachable;
 		while (<$dumpvars>) {
@@ -225,7 +209,7 @@ sub _adj_whitespace {
 	my ($self, $var, $value, $wssample) = @_;
 	
 	unless (defined($wssample) and
-	        $wssample =~ /^( *)([A-Za-z0-9_+-]+)(\s*)[\+\?\!]*=(\s*)/) {
+	        $wssample =~ /^( *)([A-Za-z0-9_-]+)(\s*)[\+\?\!]*=(\s*)/) {
 		return "$var =\t$value";
 	}
 
@@ -412,7 +396,7 @@ sub _put_wantlib_lines {
 			next;
 		}
 
-		$self->{wantlib}->{$subpkg}->{wssample} =~ /^ *WANTLIB(?:-[A-Za-z0-9_+]*)?(\s*)[\+\?\!]*=/;
+		$self->{wantlib}->{$subpkg}->{wssample} =~ /^ *WANTLIB(?:-[A-Za-z_0-9]*)?(\s*)[\+\?\!]*=/;
 		my $ws = $1;
 
 		my @libs;
@@ -565,7 +549,7 @@ sub process_makefile {
 			$self->{has_global_rev} = 1;
 		}
 
-		if (/^ *PERMIT_(?:PACKAGE_(?:CDROM|FTP)|DISTFILES_FTP)(-[A-Za-z0-9_+]*)?\b/) {
+		if (/^ *PERMIT_(?:PACKAGE_(?:CDROM|FTP)|DISTFILES_FTP)(-[A-Za-z_0-9]*)?\b/) {
 			$last_was_permit = 1;
 			for my $subpkg(keys %{$self->{wantlib}}) {
 				$self->{wantlib}->{$subpkg}->{permitline}++
@@ -591,7 +575,7 @@ sub process_makefile {
 				$self->_init_wantlib($subpkg);
 				$self->{wantlib}->{$subpkg}->{permitline} = $in->input_line_number();
 			}
-		} elsif (/^ *(${_rev_neighbors_plain})(-[A-Za-z0-9_+]*)?(\s*)[\+\?\!]*=(\s*)(.*)$/o) {
+		} elsif (/^ *(${_rev_neighbors_plain})(-[A-Za-z_0-9]*)?(\s*)[\+\?\!]*=(\s*)(.*)$/o) {
 			my $var = $1;
 			my $subpkg = $2 // "";
 			$self->{newrevplace}->{$subpkg} //= {};
@@ -606,7 +590,7 @@ sub process_makefile {
 				}
 			}
 			$block1begin = $in->input_line_number() if !$block1begin;
-		} elsif ($wantlib_block or /^ *WANTLIB(-[A-Za-z0-9_+]*)?\s*[\+\?\!]*=\s*(.*)$/) {
+		} elsif ($wantlib_block or /^ *WANTLIB(-[A-Za-z_0-9]*)?\s*[\+\?\!]*=\s*(.*)$/) {
 			if ($wantlib_block) {
 				$_ =~ s/#.*$//;
 				$w_value .= " ".$_;
@@ -643,7 +627,7 @@ sub process_makefile {
 				}
 				delete $self->{wantlib}->{$w_subpkg}->{blockend};
 			}
-		} elsif (/^ *PERMIT_(?:PACKAGE_(?:CDROM|FTP)|DISTFILES_FTP)(-[A-Za-z0-9_+]*)?\b/) {
+		} elsif (/^ *PERMIT_(?:PACKAGE_(?:CDROM|FTP)|DISTFILES_FTP)(-[A-Za-z_0-9]*)?\b/) {
 			my $subpkg = $1 // "";
 			$self->_init_wantlib($subpkg);
 			$self->{wantlib}->{$subpkg}->{permitline} = $in->input_line_number();
@@ -668,13 +652,6 @@ sub process_makefile {
 	if ($self->{maxrevsin}->{blockend} == 0) {
 		$self->{maxrevsin}->{blockend} = $block1end ? $block1end :
 		    $in->input_line_number();
-	}
-
-	# make sure new REVISION-foo won't arise when bumping REVISION
-	if ($self->{has_global_rev} and $self->{maxrevsin}->{blockend} <
-		                        $self->{newrevplace}->{""}->{blockend}) {
-		$self->{maxrevsin}->{blockend} = $self->{newrevplace}->{""}->{blockend};
-		$self->{maxrevsin}->{count} = 2;    # see _add_new_revs for >1 check
 	}
 
 	return unless $self->{tweak_wantlib};
@@ -725,7 +702,7 @@ sub process_makefile {
 	if (scalar(@mod_wantlib_seen)) {
 		my $show = 'show='.join(' ', @mod_wantlib_seen);
 		open (my $makeh, '-|', 'make', $show)
-		    or die "cannot run make $show: $!";
+		    or die "cannot run make $show";
 		while (<$makeh>) {
 			chomp;
 			my $m = shift @mod_wantlib_seen;
@@ -807,7 +784,7 @@ sub update {
 				$shline =~ s/^\s*//;
 				$nchanges += $self->_update_shlibs($shline);
 			}
-		} elsif ($wantlib_block or /^ *WANTLIB(?:-[A-Za-z0-9_+]*)?\s*[\+\?\!]*=/) {
+		} elsif ($wantlib_block or /^ *WANTLIB(?:-[a-zA-Z0-9_]*)?\s*[\+\?\!]*=/) {
 			my $line = $_;
 			$wantlib_block = $line =~ s/\s*\\$//;
 			if ($self->{tweak_wantlib}) {
@@ -815,7 +792,7 @@ sub update {
 				$empty_line = $prev_line_was_empty;
 				$wl_ws_removal = 0 unless defined $wl_ws_removal;
 			}
-		} elsif (/^ *REVISION(-[A-Za-z0-9_+]+)?.*=\s*([0-9]*)$/) {
+		} elsif (/^ *REVISION(-[a-zA-Z0-9_]+)?.*=\s*([0-9]*)$/) {
 			$wl_ws_removal = undef;
 			my $subpkg = $1 // "";
 			if ($removerevs) {
@@ -1006,7 +983,7 @@ for my $dir (keys %allpkgs) {
 	#
 
 	open (my $in, '<', "$dir/Makefile") or
-		die "cannot open input file $dir/Makefile: $!";
+		die "cannot open input file $dir/Makefile";
 
 	$port->process_makefile($in);
 
@@ -1027,7 +1004,7 @@ for my $dir (keys %allpkgs) {
 
 	my $outpath = $opt_o // "$dir/Makefile.bump";
 	open (my $out, '>', $outpath) or
-		die "cannot open output file $outpath: $!";
+		die "cannot open output file $outpath";
 	seek($in, 0, 0);
 	$in->input_line_number(0);
 	my $nchanges = $port->update($in, $out, $bumppkgs, $opt_r, $opt_d,
@@ -1044,7 +1021,7 @@ for my $dir (keys %allpkgs) {
 			unlink $outpath;
 		} elsif (!$opt_n) {
 			rename($outpath, "$dir/Makefile") or
-			    die "cannot move $outpath to $dir/Makefile: $!"
+			    die "cannot move $outpath to $dir/Makefile"
 		}
 	}
 }

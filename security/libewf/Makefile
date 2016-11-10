@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2016/11/07 08:41:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.1.1.1 2016/10/26 05:45:26 rpointel Exp $
 
 COMMENT =		access the Expert Witness Compression Format
 
 VERSION =		20160424
-REVISION =		0
 DISTNAME =		libewf-experimental-${VERSION}
 PKGNAME =		libewf-${VERSION}
 
@@ -30,8 +29,7 @@ LIB_DEPENDS +=		devel/libbfio \
 CONFIGURE_STYLE =	simple
 CONFIGURE_ARGS +=	--mandir=${PREFIX}/man \
 			--enable-python \
-			--with-pyprefix=${LOCALBASE} \
-			--with-libuuid=no
+			--with-pyprefix=${LOCALBASE}
 
 WRKDIST =		${WRKDIR}/${PKGNAME}
 
