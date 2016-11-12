@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.118 2016/11/10 16:54:02 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.120 2016/11/11 07:56:23 ajacoutot Exp $
 
 ONLY_FOR_ARCHS-mono=	${MONO_ARCHS}
 
@@ -8,11 +8,9 @@ COMMENT-gtk3=		gtk+3 avahi-ui libraries
 COMMENT-gui=		GUI client utilities for avahi
 COMMENT-mono=		mono (.NET) bindings for avahi
 COMMENT-python=		python bindings for avahi
-COMMENT-qt3=		qt3 bindings for avahi
-COMMENT-qt4=		qt4 bindings for avahi
 COMMENT-ui=		common avahi-ui header for gtk+2 and gtk+3
 
-V=			0.6.31
+V=			0.6.32
 DISTNAME=		avahi-${V}
 CATEGORIES=		net devel
 
@@ -22,41 +20,31 @@ PKGNAME-gtk3=		avahi-gtk3-${V}
 PKGNAME-gui=		avahi-gui-${V}
 PKGNAME-mono=		mono-avahi-${V}
 PKGNAME-python=		py-avahi-${V}
-PKGNAME-qt3=		avahi-qt3-${V}
-PKGNAME-qt4=		avahi-qt4-${V}
 PKGNAME-ui=		avahi-ui-${V}
-
-REVISION-main=		26
-REVISION-gtk=		7
-REVISION-gtk3=		8
-REVISION-gui=		11
-REVISION-mono=		3
-REVISION-qt3=		6
-REVISION-qt4=		7
-REVISION-ui=		4
-REVISION-python=	1
 
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
-SHARED_LIBS +=  avahi-common         0.0      # .8.0
-SHARED_LIBS +=  avahi-core           0.0      # .5.5
-SHARED_LIBS +=  avahi-client         0.0      # .5.4
-SHARED_LIBS +=  avahi-glib           0.0      # .1.1
-SHARED_LIBS +=  avahi-gobject        0.0      # .0.1
-SHARED_LIBS +=  howl                 0.0      # .0.0
-SHARED_LIBS +=  dns_sd               0.0      # .1.0
+SHARED_LIBS +=  avahi-common         0.0      # 8.3
+SHARED_LIBS +=  avahi-core           0.0      # 7.2
+SHARED_LIBS +=  avahi-client         0.0      # 5.9
+SHARED_LIBS +=  avahi-glib           0.0      # 1.2
+SHARED_LIBS +=  avahi-gobject        0.0      # 0.4
+SHARED_LIBS +=  dns_sd               0.0      # 1.0
+SHARED_LIBS +=  howl                 0.0      # 0.0
+SHARED_LIBS +=  avahi-ui             0.0      # 1.4
+SHARED_LIBS +=  avahi-ui-gtk3        0.0      # 1.4
 
 HOMEPAGE=		http://www.avahi.org/
 
 # LGPLv2.1
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=		http://www.avahi.org/download/
+MASTER_SITES=		https://github.com/lathiat/avahi/releases/download/v${V}/
 
-PSEUDO_FLAVORS=		no_gui no_mono no_qt3 no_qt4 bootstrap
-FLAVOR?=		no_gui no_mono no_qt3 no_qt4 bootstrap
+PSEUDO_FLAVORS=		no_gui no_mono bootstrap
+FLAVOR?=		no_gui no_mono bootstrap
 
-MULTI_PACKAGES= 	-main -mono -qt3 -qt4 -gui -gtk -gtk3 -python -ui
+MULTI_PACKAGES= 	-main -mono -gui -gtk -gtk3 -python -ui
 
 MODULES=		textproc/intltool
 
@@ -105,7 +93,6 @@ BUILD_DEPENDS+=		lang/python/${MODPY_VERSION},-gdbm \
 			x11/dbus-python
 
 ### -gtk
-SHARED_LIBS +=  	avahi-ui             0.0      # .1.0
 LIB_DEPENDS-gtk=	x11/gtk+2 \
 			${BUILD_PKGPATH}
 RUN_DEPENDS-gtk=	${BUILD_PKGPATH},-ui
@@ -119,7 +106,6 @@ WANTLIB-gtk += xcb-render avahi-client avahi-common xcb-shm
 WANTLIB-gtk += avahi-glib ffi harfbuzz graphite2 iconv intl
 
 ### -gtk3
-SHARED_LIBS +=		avahi-ui-gtk3             0.0 # 1.4
 LIB_DEPENDS-gtk3=	x11/gtk+3 \
 			${BUILD_PKGPATH}
 RUN_DEPENDS-gtk3=	${BUILD_PKGPATH},-ui
@@ -173,33 +159,6 @@ CONFIGURE_ARGS+=	--disable-gtk \
 			--disable-python-dbus
 .endif
 
-.if ${BUILD_PACKAGES:M-qt3}
-SHARED_LIBS +=  	avahi-qt3            0.0      # .1.2
-MODULES+=		x11/qt3
-LIB_DEPENDS-qt3=	${MODQT3_LIB_DEPENDS} \
-			${BUILD_PKGPATH}
-
-WANTLIB-qt3 += GL ICE SM X11 Xcursor Xext Xfixes Xft Xi
-WANTLIB-qt3 += Xinerama Xmu Xrandr Xrender Xt expat fontconfig
-WANTLIB-qt3 += freetype jpeg lcms m mng png pthread xcb z
-WANTLIB-qt3 += avahi-common stdc++ ${MODQT3_WANTLIB}
-WANTLIB-qt3 += X11-xcb iconv intl glapi xcb-dri2 xcb-glx
-WANTLIB-qt3 += Xdamage Xxf86vm drm pthread-stubs
-.else
-CONFIGURE_ARGS+=	--disable-qt3
-.endif
-
-.if ${BUILD_PACKAGES:M-qt4}
-SHARED_LIBS +=		avahi-qt4            0.0      # .1.2
-MODULES+=		x11/qt4
-LIB_DEPENDS-qt4=	x11/qt4 \
-			${BUILD_PKGPATH}
-WANTLIB-qt4 += QtCore avahi-common m stdc++ pthread
-WANTLIB-qt4 += glib-2.0 gthread-2.0 pcre z iconv intl
-.else
-CONFIGURE_ARGS+=	--disable-qt4
-.endif
-
 USE_GMAKE=		Yes
 
 MODPY_RUNDEP=		No
@@ -224,6 +183,8 @@ CONFIGURE_ARGS+=	--with-dbus-sys="${SYSCONFDIR}/dbus-1/" \
 			--enable-core-docs \
 			--enable-tests \
 			--enable-introspection \
+			--disable-qt3 \
+			--disable-qt4 \
 			--disable-autoipd \
 			--disable-doxygen-doc \
 			--disable-doxygen-dot \
