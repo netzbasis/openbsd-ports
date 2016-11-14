@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.4 2016/11/10 06:05:53 shadchin Exp $
+# $OpenBSD: Makefile,v 1.3 2016/08/04 11:39:10 shadchin Exp $
 
 COMMENT =		thin-wrapper around mock package for easier use with pytest
 
-MODPY_EGG_VERSION =	1.4.0
+MODPY_EGG_VERSION =	1.2
 DISTNAME =		pytest-mock-${MODPY_EGG_VERSION}
 PKGNAME =		${DISTNAME:S/py/py-/}
 CATEGORIES =		devel
@@ -13,6 +13,8 @@ MAINTAINER =		Alexandr Shadchin <shadchin@openbsd.org>
 
 # MIT
 PERMIT_PACKAGE_CDROM =	Yes
+
+EXTRACT_SUFX =		.zip
 
 MODULES =		lang/python
 
