@@ -1,25 +1,25 @@
-# $OpenBSD: Makefile,v 1.42 2016/10/19 01:07:32 visa Exp $
+# $OpenBSD: Makefile,v 1.45 2016/11/15 10:04:58 sthen Exp $
 
 ONLY_FOR_ARCHS = amd64 arm hppa i386 mips64 mips64el powerpc sparc64
 DPB_PROPERTIES = parallel
 
 V = 4.9.4
-REVISION = 2
+REVISION = 3
 FULL_VERSION = $V
 FULL_PKGVERSION = $V
 
-ADASTRAP_LIBC-amd64 = 88.0
-ADASTRAP_LIBM-amd64 = 9.0
-ADASTRAP-amd64 = adastrap-amd64-$V-0.tar.xz
+ADASTRAP_LIBC-amd64 = 89.2
+ADASTRAP_LIBM-amd64 = 10.0
+ADASTRAP-amd64 = adastrap-amd64-$V-1.tar.xz
 ADASTRAP_LIBC-arm = 88.0
 ADASTRAP_LIBM-arm = 9.0
 ADASTRAP-arm = adastrap-arm-$V-0.tar.xz
 ADASTRAP_LIBC-hppa = 80.0
 ADASTRAP_LIBM-hppa = 9.0
 ADASTRAP-hppa = adastrap-hppa-4.9.3-0.tar.xz
-ADASTRAP_LIBC-i386 = 89.0
-ADASTRAP_LIBM-i386 = 9.0
-ADASTRAP-i386 = adastrap-i386-$V-0.tar.xz
+ADASTRAP_LIBC-i386 = 89.2
+ADASTRAP_LIBM-i386 = 10.0
+ADASTRAP-i386 = adastrap-i386-$V-1.tar.xz
 ADASTRAP_LIBC-mips64 = 89.2
 ADASTRAP_LIBM-mips64 = 10.0
 ADASTRAP-mips64 = adastrap-mips64-$V-0.tar.xz
@@ -56,7 +56,7 @@ SHARED_LIBS =	estdc++		17.0 \
 PSEUDO_FLAVORS = no_java no_ada full
 FLAVOR ?= 
 
-ONLY_FOR_ARCHS-ada = amd64 hppa i386 mips64 powerpc sparc64
+ONLY_FOR_ARCHS-ada = amd64 i386
 ONLY_FOR_ARCHS-java = amd64 i386 sparc64
 
 MULTI_PACKAGES = -main -libs -f95 -objc -c++ -java -ada
@@ -207,7 +207,7 @@ WANTLIB-main =		${WANTLIB}
 WANTLIB-ada =		${WANTLIB} pthread util
 WANTLIB-libs =		m pthread
 
-LIB_DEPENDS +=		devel/gmp>=4.2 \
+LIB_DEPENDS +=		devel/gmp>=6.1.1 \
 			devel/mpfr \
 			devel/libmpc
 LIB_DEPENDS-libs =
