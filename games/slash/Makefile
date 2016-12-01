@@ -1,21 +1,17 @@
-# $OpenBSD: Makefile,v 1.46 2015/03/31 09:44:48 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.48 2016/12/01 00:11:22 jca Exp $
 
 COMMENT =	dungeon explorin', hackin' game, but harder than nethack
 
 DISTNAME =	slash-e8
 PKGNAME =	slash-3.2.2.e8
-REVISION =	4
+REVISION =	5
 CATEGORIES =	games
 
-MASTER_SITES =	ftp://ftp.nethack.org/pub/nethack/oldver/3.2.2/src/ \
-		ftp://ftp.uu.net/pub/games/nethack/sources/ \
-		${MASTER_SITE_GNU:=nethack/}
+MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=nethack/}
+MASTER_SITES0 =	http://www.rz.tu-ilmenau.de/~wi019/Slash/
 
-MASTER_SITES0 =	ftp://ftp.nethack.org/pub/nethack/oldver/3.2.3/src/
-MASTER_SITES1 =	http://www.rz.tu-ilmenau.de/~wi019/Slash/
-
-DISTFILES =	nethack-3.2.2.tar.gz Slash-Unix.tar.gz:1
-PATCHFILES =	nh-3.2.2-3.2.3.diff:0
+DISTFILES =	nethack-322.tgz Slash-Unix.tar.gz:0
+PATCHFILES =	nh-3.2.2-3.2.3.diff
 
 
 MAINTAINER =	Marc Espie <espie@openbsd.org>
