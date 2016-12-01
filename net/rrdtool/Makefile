@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.98 2016/09/06 15:37:53 jeremy Exp $
+# $OpenBSD: Makefile,v 1.100 2016/11/29 10:21:59 jca Exp $
 
 COMMENT-main=	system to store and display time-series data
 COMMENT-update=	lightweight update-only tool for rrdtool
@@ -7,7 +7,7 @@ COMMENT-ruby=	ruby interface to librrd
 
 MODPY_EGG_VERSION= 0.2.2
 VERSION=	1.6.0
-REVISION-main=	0
+REVISION-main=	1
 REVISION-ruby=	0
 DISTNAME=	rrdtool-${VERSION}
 PKGNAME-main=	${DISTNAME}
@@ -104,6 +104,16 @@ RUN_DEPENDS-python=	${MODPY_RUN_DEPENDS}
 LIB_DEPENDS-ruby=	rrdtool-${VERSION}:net/rrdtool \
 			${MODRUBY_LIB_DEPENDS}
 RUN_DEPENDS-ruby=	${MODRUBY_RUN_DEPENDS}
+
+# Overriden by python.port.mk
+TEST_TARGET=		check
+TEST_DEPENDS=		shells/bash \
+			sysutils/coreutils
+
+pre-test:
+	find ${WRKSRC}/tests -type f -perm -0111 \
+	    -exec sed -i '1s,#!.*bash,#!${LOCALBASE}/bin/bash,' {} +
+	ln -s ${LOCALBASE}/bin/gseq ${WRKDIR}/bin/seq
 
 post-install:
 	cd ${WRKSRC}; ${INSTALL_DATA} CHANGES COPYRIGHT \
