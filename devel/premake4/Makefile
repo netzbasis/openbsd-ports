@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2016/12/04 11:43:09 jca Exp $
+# $OpenBSD: Makefile,v 1.4 2016/12/05 10:35:10 jca Exp $
 
 COMMENT=		build configuration tool
 
@@ -7,6 +7,7 @@ COMMENT=		build configuration tool
 # of the affected files in ${FILESDIR}.
 DISTNAME=		premake-4.4-beta5-src
 PKGNAME=		premake4-4.4beta5
+REVISION=		0
 
 CATEGORIES=		devel
 
@@ -36,7 +37,7 @@ do-install:
 
 do-test:
 	mkdir -p ${WRKSRC}/bin/debug/
-	ln -s ${WRKSRC}/bin/release/premake4 ${WRKSRC}/bin/debug/premake4
+	ln -sf ${WRKSRC}/bin/release/premake4 ${WRKSRC}/bin/debug/premake4
 	cd ${WRKSRC}/tests ; /bin/sh test
 
 .include <bsd.port.mk>
