@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.439 2016/12/11 14:10:52 patrick Exp $
+# $OpenBSD: Quirks.pm,v 1.441 2016/12/14 14:26:25 jca Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -896,6 +896,8 @@ my $obsolete_reason = {
 	'eclipse-plugin-uml2-sdk' => 2,
 	'eclipse-plugin-wtp-sdk' => 2,
 	'lsof' => 0,
+	'l0phtcrack' => 0,
+	'bunny' => 3,
 };
 
 # reasons for obsolete packages

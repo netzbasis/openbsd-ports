@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.438 2016/11/04 11:18:00 jeremy Exp $
+# $OpenBSD: Makefile,v 1.440 2016/12/14 14:26:25 jca Exp $
 
      SUBDIR =
      SUBDIR += ADMsnmp
@@ -12,7 +12,6 @@
      SUBDIR += botan
      SUBDIR += bounix
      SUBDIR += bsd-airtools
-     SUBDIR += bunny
      SUBDIR += burpsuite
      SUBDIR += ccid
      SUBDIR += ccrypt
@@ -88,7 +87,6 @@
      SUBDIR += knockpy
      SUBDIR += kpcli
      SUBDIR += kqoauth
-     SUBDIR += l0phtcrack
      SUBDIR += lastpass-cli
      SUBDIR += letsencrypt
      SUBDIR += libassuan
