@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2016/11/26 12:29:50 danj Exp $
+# $OpenBSD: Makefile,v 1.38 2016/12/29 14:05:08 jca Exp $
 
 COMMENT =	reliable, high performance TCP/HTTP load balancer
 
@@ -32,11 +32,16 @@ MAKE_FLAGS +=	USE_OPENSSL=1 USE_PCRE=1
 MAKE_FLAGS +=	USE_PRIVATE_CACHE=1
 .endif
 
-NO_TEST =	Yes
+# Needs __sync_sub_and_fetch_4, __sync_lock_test_and_set_4, etc
+MODULES =	gcc4
+MODGCC4_ARCHS=	arm
+
 LIB_DEPENDS =	devel/pcre
 
+NO_TEST =	Yes
+
 DOCS =		architecture configuration gpl lgpl
-EXAMPLES =	acl-content-sw content-sw-sample option-http_proxy 
+EXAMPLES =	acl-content-sw content-sw-sample option-http_proxy
 
 DOCSDIR =	${PREFIX}/share/doc/haproxy
 EXAMPLESDIR =	${PREFIX}/share/examples/haproxy
