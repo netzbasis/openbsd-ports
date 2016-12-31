@@ -1,17 +1,15 @@
-# $OpenBSD: Makefile,v 1.191 2016/12/28 09:14:19 landry Exp $
-
-BROKEN-i386 =   wants __atomic_{store,fetch_add,load}_8, even with -march=i586
+# $OpenBSD: Makefile,v 1.193 2016/12/30 08:25:18 landry Exp $
 
 COMMENT-main =		Mozilla application suite
 COMMENT-lightning =	Mozilla Seamonkey calendar extension
 BROKEN-sparc64 =	xpcshell SIGBUS during fake
-
 
 MOZILLA_VERSION =	2.46
 MOZILLA_BRANCH =	release
 MOZILLA_PROJECT =	seamonkey
 MOZILLA_CODENAME =	suite
 EXTRACT_SUFX =		.tar.xz
+REVISION-main =		0
 
 MULTI_PACKAGES =	-main -lightning
 PKGNAME-main =		${PKGNAME}
@@ -43,6 +41,8 @@ MODCLANG_LANGS =	c c++
 
 # gecko >= 44 doesnt build with base libevent
 MOZILLA_USE_BUNDLED_LIBEVENT =	Yes
+# gecko >= 46 defaults to gtk+3
+MOZILLA_USE_GTK3 = Yes
 
 NO_TEST=	Yes
 
@@ -83,8 +83,9 @@ post-install:
 .endfor
 	# lightning cant be used packed as a zip because it contains a binary component
 	# (libcalbasecomps.so) that the system wouldnt be able to load...
-	mv ${PREFIX}/lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/distribution/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103} \
+	cp -r ${WRKBUILD}/dist/bin/distribution/extensions/{e2fda1a4-762b-4020-b5ad-a41df1933103} \
 		${EXTDIR}
+
 	# install prefs
 	${SUBST_DATA} ${FILESDIR}/all-openbsd.js \
 		${PREFIX}/lib/${MOZILLA_PROJECT}-${MOZILLA_VER}/defaults/pref/all-openbsd.js
