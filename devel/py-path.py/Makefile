@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2016/12/17 11:11:12 shadchin Exp $
+# $OpenBSD: Makefile,v 1.9 2017/01/03 19:19:49 landry Exp $
 
 COMMENT =		os.path wrapper for Python
 
-MODPY_EGG_VERSION =	9.0.1
+MODPY_EGG_VERSION =	10.0
 DISTNAME =		path.py-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		devel
 
