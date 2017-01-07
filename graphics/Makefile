@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.425 2016/11/24 08:11:43 kirby Exp $
+# $OpenBSD: Makefile,v 1.427 2017/01/06 16:08:18 jeremy Exp $
 
      SUBDIR =
      SUBDIR += DevIL
@@ -43,6 +43,7 @@
      SUBDIR += dpic
      SUBDIR += dumpmpeg
      SUBDIR += dvdrip
+     SUBDIR += ebook-viewer
      SUBDIR += enblend-enfuse
      SUBDIR += enjoympeg
      SUBDIR += evince
@@ -241,6 +242,7 @@
      SUBDIR += ruby-gruff
      SUBDIR += ruby-rmagick,ruby22
      SUBDIR += ruby-rmagick,ruby23
+     SUBDIR += ruby-rmagick,ruby24
      SUBDIR += s10sh
      SUBDIR += sane-backends
      SUBDIR += sane-backends,snmp
