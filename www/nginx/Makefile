@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.102 2016/11/04 22:13:43 jeremy Exp $
+# $OpenBSD: Makefile,v 1.104 2017/01/08 19:38:12 robert Exp $
 
 BROKEN-arm=	src/core/ngx_rwlock.c:116:2: error: \#error ngx_atomic_cmp_set() is not defined!
 BROKEN-hppa=	src/core/ngx_rwlock.c:116:2: error: \#error ngx_atomic_cmp_set() is not defined!
@@ -11,8 +11,8 @@ COMMENT-mailproxy=	nginx mail proxy module
 COMMENT-stream=		nginx TCP/UDP proxy module
 COMMENT-naxsi=		nginx web application firewall module
 COMMENT-lua=		nginx lua scripting module
-COMMENT-perl=		nginx perl scripting module		
-COMMENT-passenger=	nginx passenger (ruby/python/nodejs) integration module		
+COMMENT-perl=		nginx perl scripting module
+COMMENT-passenger=	nginx passenger (ruby/python/nodejs) integration module
 
 VERSION=	1.10.2
 DISTNAME=	nginx-${VERSION}
@@ -29,7 +29,7 @@ PKGNAME-lua=		nginx-lua-${VERSION}
 PKGNAME-perl=		nginx-perl-${VERSION}
 PKGNAME-passenger=	nginx-passenger-${VERSION}
 
-REVISION-main=	0
+REVISION-main=	1
 
 MASTER_SITES=	http://nginx.org/download/
 MASTER_SITES0=	https://github.com/simpl/ngx_devel_kit/archive/
@@ -53,12 +53,12 @@ PERMIT_PACKAGE_CDROM=	yes
 MULTI_PACKAGES =	-main -image_filter -geoip -xslt -mailproxy -stream -naxsi -lua -perl -passenger
 
 WANTLIB-main=		c z pcre ssl crypto
-WANTLIB-mailproxy=	
-WANTLIB-stream=		
+WANTLIB-mailproxy=
+WANTLIB-stream=
 WANTLIB-image_filter=	gd
 WANTLIB-geoip=		GeoIP
-WANTLIB-xslt=		exslt xml2 xslt 
-WANTLIB-naxsi=		
+WANTLIB-xslt=		exslt xml2 xslt
+WANTLIB-naxsi=
 WANTLIB-lua=		${MODLUA_WANTLIB} m
 WANTLIB-perl=		c m perl
 WANTLIB-passenger=	m pthread stdc++
@@ -126,6 +126,7 @@ CONFIGURE_ARGS+=	--prefix=${NGINX_DIR} \
 			--with-http_image_filter_module=dynamic \
 			--with-http_geoip_module=dynamic \
 			--with-http_gzip_static_module \
+			--with-http_gunzip_module \
 			--with-http_perl_module=dynamic \
 			--with-http_realip_module \
 			--with-http_slice_module \
