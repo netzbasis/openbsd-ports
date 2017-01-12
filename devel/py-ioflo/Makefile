@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.19 2017/01/07 19:06:32 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.21 2017/01/11 23:28:16 ajacoutot Exp $
 
 COMMENT=		automated reasoning engine, flow based programming framework
 
-MODPY_EGG_VERSION=	1.6.6
+MODPY_EGG_VERSION=	1.6.7
 DISTNAME=		ioflo-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
 
@@ -19,5 +19,7 @@ MODULES=		lang/python
 
 MODPY_PI=		Yes
 MODPY_SETUPTOOLS=	Yes
+
+BUILD_DEPENDS=		devel/py-setuptools_git
 
 .include <bsd.port.mk>
