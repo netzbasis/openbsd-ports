@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.14 2016/11/13 18:07:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2017/01/25 20:31:52 sthen Exp $
 
+# if building tools, N.B. https://github.com/nghttp2/nghttp2/pull/789 /
+# https://patch-diff.githubusercontent.com/raw/nghttp2/nghttp2/pull/789.diff
 COMMENT=	library for HTTP/2
 
-V=		1.16.1
+V=		1.19.0
 DISTNAME=	nghttp2-$V
 
 SHARED_LIBS +=	nghttp2              0.9     # 26.0
