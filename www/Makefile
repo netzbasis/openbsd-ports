@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.808 2017/01/25 08:32:15 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.810 2017/01/31 21:52:16 gonzalo Exp $
 
      SUBDIR =
      SUBDIR += ajaxterm
@@ -440,7 +440,6 @@
      SUBDIR += py-webdav
      SUBDIR += py-weberror
      SUBDIR += py-webhelpers
-     SUBDIR += py-webkitgtk
      SUBDIR += py-webob
      SUBDIR += py-webpy
      SUBDIR += py-webtest
@@ -562,7 +561,6 @@
      SUBDIR += wwwoffle
      SUBDIR += xapian-omega
      SUBDIR += xcache
-     SUBDIR += xombrero
      SUBDIR += youtube-dl
      SUBDIR += zendframework
 

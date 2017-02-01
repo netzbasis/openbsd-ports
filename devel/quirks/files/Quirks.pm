@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.445 2017/01/01 20:29:39 kili Exp $
+# $OpenBSD: Quirks.pm,v 1.447 2017/01/31 21:53:07 gonzalo Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -301,7 +301,6 @@ my $stem_extensions = {
 	'p5-Email-MIME-Modifier' => 'p5-Email-MIME',
 	'libmpcdec' => 'musepack',
 	'mppenc' => 'musepack',
-	'xxxterm' => 'xombrero',
 	'pecl-zip' => 'php-zip',
 	'XML-Sablotron' => 'p5-XML-Sablotron',
 # 5.3
@@ -903,6 +902,9 @@ my $obsolete_reason = {
 	'bunny' => 3,
 	'jakarta-servletapi' => 5,
 	'ldistfp' => 0,
+	'rednotebook' => 5,
+	'py-webkitgtk' => 2,
+	'xombrero' => 3,
 };
 
 # reasons for obsolete packages
