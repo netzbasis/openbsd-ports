@@ -1,18 +1,16 @@
-# $OpenBSD: Makefile,v 1.10 2016/06/23 13:32:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2017/02/02 23:01:30 sthen Exp $
 
 COMMENT =	next-generation web UI for icinga
 
-V =		2.3.4
-DISTNAME =	icinga-web2-$V
-DISTFILES =	${DISTNAME}{v$V}.tar.gz
-WRKDIST =	${WRKDIR}/icingaweb2-$V
-
-MASTER_SITES =	https://github.com/Icinga/icingaweb2/archive/
+GH_ACCOUNT =	Icinga
+GH_PROJECT =	icingaweb2
+GH_TAGNAME =	v2.4.1
+PKGNAME =	icinga-web2-${GH_TAGNAME:S/v//}
+REVISION =	0
 
 MODULES=	lang/php
 
-RUN_DEPENDS =	graphics/pecl-imagick \
-		lang/php/${MODPHP_VERSION},-intl \
+RUN_DEPENDS =	lang/php/${MODPHP_VERSION},-intl \
 		php-pdo_mysql-${MODPHP_VSPEC}|php-pdo_pgsql-${MODPHP_VSPEC}:lang/php/${MODPHP_VERSION},-pdo_mysql
 
 NO_TEST =	Yes
