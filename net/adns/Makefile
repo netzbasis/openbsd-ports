@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.13 2016/04/27 15:42:55 jca Exp $
+# $OpenBSD: Makefile,v 1.15 2017/02/06 09:10:29 jca Exp $
 
 COMMENT=		asynchronous dns resolver client library and utilities
-DISTNAME=		adns-1.5.0
+DISTNAME=		adns-1.5.1
 CATEGORIES=		net devel
 SHARED_LIBS=		adns	2.0
 
@@ -15,11 +15,6 @@ MASTER_SITES=		${HOMEPAGE}/ftp/
 
 CONFIGURE_STYLE=	gnu dest
 USE_GMAKE=		Yes
-MAKE_FLAGS=		MAJOR=${LIBadns_MAJOR} MINOR=${LIBadns_VERSION:E}
-
-LIBadns_MAJOR=${LIBadns_VERSION:R}
-SUBST_VARS+=		LIBadns_MAJOR
-
-TEST_TARGET=		check
+MAKE_FLAGS=		MAJOR=${LIBadns_VERSION:R} MINOR=${LIBadns_VERSION:E}
 
 .include <bsd.port.mk>
