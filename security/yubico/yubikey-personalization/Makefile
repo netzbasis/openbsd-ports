@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.3 2016/03/11 19:59:16 naddy Exp $
+# $OpenBSD: Makefile,v 1.5 2017/02/07 21:17:01 sthen Exp $
 
 COMMENT=	library and tools to program YubiKeys
 
 YK_PROJECT=	yubikey-personalization
-DISTNAME=	ykpers-1.17.3
+DISTNAME=	ykpers-1.18.0
 
-SHARED_LIBS +=	ykpers-1                  0.5 # 18.2
+SHARED_LIBS +=	ykpers-1                  0.6 # 19.0
 
 CATEGORIES=	sysutils
 
@@ -15,7 +15,6 @@ LIB_DEPENDS=	devel/json-c \
 		devel/libusb1>=1.0.9p1 \
 		security/yubico/yubico-c
 
-SEPARATE_BUILD=	Yes
 CONFIGURE_STYLE= gnu
 
 .include <bsd.port.mk>
