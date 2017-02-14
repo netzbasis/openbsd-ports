@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1583 2017/02/04 12:42:13 edd Exp $
+# $OpenBSD: Makefile,v 1.1585 2017/02/14 16:06:57 naddy Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -352,6 +352,7 @@
      SUBDIR += libguess
      SUBDIR += libhid
      SUBDIR += libidn
+     SUBDIR += libidn2
      SUBDIR += libinotify
      SUBDIR += libio
      SUBDIR += libiscsi
@@ -388,6 +389,7 @@
      SUBDIR += libusb-compat
      SUBDIR += libusb1
      SUBDIR += libutf
+     SUBDIR += libuv
      SUBDIR += libvirt-glib
      SUBDIR += libvmime
      SUBDIR += libvstr
