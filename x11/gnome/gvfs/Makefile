@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.167 2016/12/16 08:46:19 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.169 2017/02/18 17:33:52 ajacoutot Exp $
 
 COMMENT-main=		GNOME Virtual File System
 COMMENT-smb=		GVFS mount module for samba
@@ -14,6 +14,11 @@ PKGNAME-smb=		${GNOME_PROJECT}-smb-${GNOME_VERSION}
 PKGNAME-goa=		${GNOME_PROJECT}-goa-${GNOME_VERSION}
 PKGNAME-nfs=		${GNOME_PROJECT}-nfs-${GNOME_VERSION}
 PKGNAME-google=		${GNOME_PROJECT}-google-${GNOME_VERSION}
+REVISION-goa=		0
+REVISION-google=	0
+REVISION-main=		0
+REVISION-nfs=		0
+REVISION-smb=		0
 
 # LGPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -37,7 +42,7 @@ WANTLIB-main += xcb-shm xml2 crypto lz4
 
 WANTLIB-smb += ${WANTLIB}
 WANTLIB-smb += crypto dcerpc-binding execinfo gcrypt samba-errors
-WANTLIB-smb += gmp gnutls gpg-error gthread-2.0 hogweed iconv idn
+WANTLIB-smb += gmp gnutls gpg-error gthread-2.0 hogweed iconv idn2
 WANTLIB-smb += intl lber-2.4 ldap-2.4 ldb ndr ndr-krb5pac ndr-nbt
 WANTLIB-smb += ndr-standard nettle p11-kit replace samba-credentials
 WANTLIB-smb += samba-hostconfig samba-util samdb sasl2 smbclient smbconf

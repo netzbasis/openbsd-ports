@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.144 2017/01/11 13:32:11 zhuk Exp $
+# $OpenBSD: Makefile,v 1.146 2017/02/18 17:33:52 ajacoutot Exp $
 
 COMMENT-main =		K Desktop Environment, basic applications
 COMMENT-samba =		K Desktop Environment, samba support
@@ -13,10 +13,10 @@ PKGNAME-en_US =		kde3-locale-en_US-${VERSION}
 PKGNAME-locale =	kde3-locale-${VERSION}
 PKG_ARCH-en_US =	*
 PKG_ARCH-locale =	*
-REVISION-main =		44
-REVISION-samba =	22
-REVISION-en_US =	2
-REVISION-locale =	2
+REVISION-main =		45
+REVISION-samba =	23
+REVISION-en_US =	3
+REVISION-locale =	3
 
 MODKDE_VERSION =	3.5.8
 
@@ -68,7 +68,7 @@ WANTLIB =  crypto expat m pthread pthread-stubs ssl stdc++ util z
 WANTLIB += ICE SM X11 Xext Xfixes Xrender Xt freetype fontconfig xcb
 WANTLIB += ${KDE}/DCOP ${KDE}/kdecore>=6 ${KDE}/kdefx ${KDE}/kdesu
 WANTLIB += ${KDE}/kdeui ${KDE}/kio ${KDE}/kwalletclient
-WANTLIB += art_lgpl_2 fam idn lber-2.4 ldap-2.4 png sasl2
+WANTLIB += art_lgpl_2 fam idn2 lber-2.4 ldap-2.4 png sasl2
 
 WANTLIB-main =  ${WANTLIB} c sndio IexMath
 WANTLIB-main += GL GLU Half Iex IlmImf IlmThread Imath Xau Xcomposite

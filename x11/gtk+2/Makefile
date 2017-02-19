@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.212 2016/09/09 20:35:19 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.214 2017/02/18 17:33:52 ajacoutot Exp $
 
 COMMENT-main=		multi-platform graphical toolkit
 COMMENT-cups=		gtk+2 CUPS print backend
@@ -8,6 +8,8 @@ GNOME_PROJECT=		gtk+
 
 PKGNAME-main=		gtk+2-${GNOME_VERSION}
 PKGNAME-cups=		gtk+2-cups-${GNOME_VERSION}
+REVISION-cups=		0
+REVISION-main=		0
 
 CATEGORIES=		x11 devel
 
@@ -33,7 +35,7 @@ WANTLIB-main += ${WANTLIB} c
 
 WANTLIB-cups += ${WANTLIB}
 WANTLIB-cups += avahi-client avahi-common cups dbus-1 gdk-x11-2.0 gmp
-WANTLIB-cups += gnutls gtk-x11-2.0 hogweed idn nettle p11-kit tasn1
+WANTLIB-cups += gnutls gtk-x11-2.0 hogweed idn2 nettle p11-kit tasn1
 
 MULTI_PACKAGES=		-main -cups
 

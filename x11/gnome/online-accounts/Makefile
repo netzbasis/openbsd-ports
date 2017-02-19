@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.85 2017/01/11 13:47:16 jasper Exp $
+# $OpenBSD: Makefile,v 1.87 2017/02/18 17:33:52 ajacoutot Exp $
 
 COMMENT=	interfaces for interacting with online accounts
 
 GNOME_PROJECT=	gnome-online-accounts
 GNOME_VERSION=	3.22.4
+REVISION=	0
 
 SHARED_LIBS +=  goa-1.0              3.2      # .0.0
 SHARED_LIBS +=  goa-backend-1.0      3.3      # .1.0
@@ -27,7 +28,7 @@ WANTLIB += webp xcb xcb-render xcb-shm xml2 xslt z gbm
 WANTLIB += X11-xcb Xxf86vm drm epoxy estdc++ glapi
 WANTLIB += javascriptcoregtk-4.0 notify webkit2gtk-4.0 xcb-dri2
 WANTLIB += xcb-xfixes xcb-glx hyphen intl iconv
-WANTLIB += gmp gnutls hogweed idn nettle p11-kit tasn1
+WANTLIB += gmp gnutls hogweed idn2 nettle p11-kit tasn1
 
 MODULES=		devel/dconf \
 			x11/gnome

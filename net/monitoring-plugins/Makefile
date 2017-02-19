@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2017/01/27 10:20:17 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2017/02/18 17:33:51 ajacoutot Exp $
 
 COMMENT-main=	monitoring plugins (for Nagios, Icinga, etc)
 COMMENT-dbi=	dbi monitoring plugin
@@ -12,7 +12,7 @@ COMMENT-snmp=	monitoring plugins using snmp
 COMMENT-radius=	RADIUS monitoring plugin
 
 V=		2.2
-REVISION-main=	0
+REVISION-main=	1
 DISTNAME=	monitoring-plugins-$V
 PKGNAME-main=	monitoring-plugins-$V
 PKGNAME-dbi=	monitoring-plugins-dbi-$V
@@ -25,6 +25,15 @@ PKGNAME-samba=	monitoring-plugins-samba-$V
 PKGNAME-snmp=	monitoring-plugins-snmp-$V
 PKGNAME-radius=	monitoring-plugins-radius-$V
 CATEGORIES=	net
+REVISION-dbi=	0
+REVISION-fping=	0
+REVISION-game=	0
+REVISION-ldap=	0
+REVISION-mysql=	0
+REVISION-pgsql=	0
+REVISION-radius=0
+REVISION-samba=	0
+REVISION-snmp=	0
 
 HOMEPAGE=	https://www.monitoring-plugins.org/
 
@@ -91,7 +100,7 @@ RUN_DEPENDS-snmp=	${RUN_DEPENDS} \
 			net/p5-Net-SNMP
 
 LIB_DEPENDS-radius=	net/radcli
-WANTLIB-radius+=	${WANTLIB} ffi gmp gnutls hogweed idn nettle
+WANTLIB-radius+=	${WANTLIB} ffi gmp gnutls hogweed idn2 nettle
 WANTLIB-radius+=	p11-kit radcli tasn1 z
 
 # MYSQL

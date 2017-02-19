@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.84 2016/09/13 11:44:07 naddy Exp $
+# $OpenBSD: Makefile,v 1.86 2017/02/18 17:33:51 ajacoutot Exp $
 
 COMMENT=	database drivers for Sybase/Microsoft SQL Server
 
 DISTNAME=	freetds-0.95.95
-REVISION=	1
+REVISION=	2
 # 1.00 releases have problems with at least sqsh, libdbi-drivers, p5-sybperl
 
 SHARED_LIBS +=  ct                   6.0      # 4.0
@@ -19,7 +19,7 @@ MASTER_SITES=	ftp://ftp.freetds.org/pub/freetds/stable/
 # LGPLv2+ (most things) GPLv2+ (fisql, tdspool) FDL (docs)
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += c ffi gmp gnutls hogweed iconv idn intl iodbc iodbcinst ncurses
+WANTLIB += c ffi gmp gnutls hogweed iconv idn2 intl iodbc iodbcinst ncurses
 WANTLIB += nettle p11-kit pthread readline tasn1 z
 WANTLIB += gcrypt gpg-error
 

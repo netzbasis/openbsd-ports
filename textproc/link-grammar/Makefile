@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.35 2017/02/17 10:46:09 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.37 2017/02/18 11:27:13 ajacoutot Exp $
 
 ONLY_FOR_ARCHS-java =	i386 amd64
 
