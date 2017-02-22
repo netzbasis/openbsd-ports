@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.443 2017/01/22 08:11:06 rpointel Exp $
+# $OpenBSD: Makefile,v 1.445 2017/02/21 10:39:25 rpointel Exp $
 
      SUBDIR =
      SUBDIR += ADMsnmp
@@ -90,6 +90,7 @@
      SUBDIR += lastpass-cli
      SUBDIR += letsencrypt
      SUBDIR += libassuan
+     SUBDIR += libbde
      SUBDIR += libewf
      SUBDIR += libfprint
      SUBDIR += libgcrypt
@@ -254,6 +255,7 @@
      SUBDIR += py-cryptography_vectors
      SUBDIR += py-cryptography_vectors,python3
      SUBDIR += py-dfdatetime
+     SUBDIR += py-dfwinreg
      SUBDIR += py-ecdsa
      SUBDIR += py-ecdsa,python3
      SUBDIR += py-gnupg

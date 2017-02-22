@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1330 2017/02/20 13:45:17 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1336 2017/02/21 13:55:16 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -14,24 +14,6 @@
 # The ports@openbsd.org address is the `default' MAINTAINER (the generic
 # OpenBSD ports mailing-list).
 
-# Enquiries as to the bsd.port.mk framework should usually be directed
-# to ports@openbsd.org.
-
-
-.if ${.MAKEFLAGS:MFLAVOR=*}
-ERRORS += "Fatal: Use 'env FLAVOR=${FLAVOR} ${MAKE}' instead."
-.endif
-.if ${.MAKEFLAGS:MSUBPACKAGE=*}
-ERRORS += "Fatal: Use 'env SUBPACKAGE=${SUBPACKAGE} ${MAKE}' instead."
-.endif
-
-.for f v in bsd.port.mk _BSD_PORT_MK bsd.port.subdir.mk _BSD_PORT_SUBDIR_MK
-.  if defined($v)
-ERRORS += "Fatal: inclusion of bsd.port.mk from $f"
-.  endif
-.endfor
-
-_BSD_PORT_MK = Done
 
 # The definitive source of documentation to this file's user-visible parts
 # is bsd.port.mk(5).
@@ -40,8 +22,14 @@ _BSD_PORT_MK = Done
 # is internal to bsd.port.mk, not part of the user's API, and liable to
 # change without notice.
 #
+# a few experimental variables are voluntarily NOT documented
+# PORTS_BUILD_XENOCARA_TOO, XENOCARA_COMPONENT, 
+# PARALLEL_BUILD, PARALLEL_INSTALL, DANGEROUS, GLOBAL_DEPENDS_CACHE
+#
+# Enquiries as to the bsd.port.mk framework should usually be directed
+# to ports@openbsd.org.
 
-# Default sequence for "all" is:  fetch checksum extract patch configure build
+# Sequence for "all" is:  fetch checksum prepare extract patch configure build
 #
 # Please read the comments in the targets section below, you
 # should be able to use the pre-* or post-* targets (which
@@ -56,13 +44,30 @@ _BSD_PORT_MK = Done
 # pre-patch `real distpatch' post-distpatch `real patch' post-patch
 #
 
+#
+# tests and variable definitions come first, THEN targets
+#
+.if ${.MAKEFLAGS:MFLAVOR=*}
+ERRORS += "Fatal: Use 'env FLAVOR=${FLAVOR} ${MAKE}' instead."
+.endif
+.if ${.MAKEFLAGS:MSUBPACKAGE=*}
+ERRORS += "Fatal: Use 'env SUBPACKAGE=${SUBPACKAGE} ${MAKE}' instead."
+.endif
+
+.for f v in bsd.port.mk _BSD_PORT_MK bsd.port.subdir.mk _BSD_PORT_SUBDIR_MK
+.  if defined($v)
+ERRORS += "Fatal: inclusion of bsd.port.mk from $f"
+.  endif
+.endfor
+
+# include guard so that other parts don't include this twice
+_BSD_PORT_MK = Done
+
 # User settings
 FETCH_PACKAGES ?= No
 CLEANDEPENDS ?= No
 BULK ?= Auto
-RECURSIVE_FETCH_LIST ?= No
 WRKDIR_LINKNAME ?=
-_FETCH_MAKEFILE ?= /dev/stdout
 
 USE_MFS ?= No
 WRKOBJDIR ?= ${PORTSDIR}/pobj
@@ -82,7 +87,7 @@ DPB_PROPERTIES ?=
 BINMODE = 755
 NONBINMODE = 644
 
-# All variables relevant to the port's description
+# All variables relevant to the port's description (see dump-vars)
 _ALL_VARIABLES = BUILD_DEPENDS IS_INTERACTIVE \
 	SUBPACKAGE FLAVOR BUILD_PACKAGES DPB_PROPERTIES \
 	MULTI_PACKAGES
@@ -90,7 +95,8 @@ _ALL_VARIABLES = BUILD_DEPENDS IS_INTERACTIVE \
 _ALL_VARIABLES_INDEXED = FULLPKGNAME RUN_DEPENDS LIB_DEPENDS IGNORE
 _ALL_VARIABLES_PER_ARCH =
 
-
+# consumers of (dump-vars) include sqlports generation and dpb
+# dpb doesn't need everything, those are speed optimizations
 .if ${DPB:L:Mfetch} || ${DPB:L:Mall}
 _ALL_VARIABLES += DISTFILES PATCHFILES SUPDISTFILES DIST_SUBDIR MASTER_SITES \
 	MASTER_SITES0 MASTER_SITES1 MASTER_SITES2 MASTER_SITES3 MASTER_SITES4 \
@@ -118,12 +124,10 @@ _ALL_VARIABLES_INDEXED += COMMENT PKGNAME \
 	PERMIT_PACKAGE_FTP PERMIT_PACKAGE_CDROM WANTLIB CATEGORIES DESCR \
 	EPOCH REVISION STATIC_PLIST PKG_ARCH
 .endif
-# special purpose user settings
+
 PATCH_CHECK_ONLY ?= No
 REFETCH ?= false
 PORTROACH ?=
-
-# Constants used by the ports tree
 
 # Global path locations.
 PORTSDIR ?= /usr/ports
@@ -154,7 +158,9 @@ ERRORS += "Fatal: building ports requires correctly installed X11"
 .  endif
 .endif
 
-# local path locations
+# stuff common to bsd.port.mk and bsd.port.subdir.mk
+# (determination of PKGPATH and various shell fragments:
+#  flavor determination, dependency caching behavior...)
 .include "${PORTSDIR}/infrastructure/mk/pkgpath.mk"
 
 .if ${USE_MFS:L} == "yes"
@@ -172,8 +178,6 @@ CLEANDEPENDS_${PKGPATH} ?= ${CLEANDEPENDS}
 # Commands and command settings.
 PKG_DBDIR ?= /var/db/pkg
 
-FTP_KEEPALIVE ?= 0
-
 PROGRESS_METER ?= Yes
 .if ${PROGRESS_METER:L} == "yes"
 _PROGRESS = -m
@@ -181,7 +185,7 @@ _PROGRESS = -m
 _PROGRESS =
 .endif
 
-FETCH_CMD ?= /usr/bin/ftp -V ${_PROGRESS} -k ${FTP_KEEPALIVE} -C
+FETCH_CMD ?= /usr/bin/ftp -V ${_PROGRESS} -C
 
 # switch for fetching each distfile: avoid warnings for missing
 # distinfo and wrong size when running makesum
@@ -196,7 +200,7 @@ PKG_DELETE ?= /usr/sbin/pkg_delete
 
 _PKG_ADD = ${PKG_ADD} ${_PROGRESS} -I
 _PKG_CREATE = ${PKG_CREATE} ${_PROGRESS}
-_PKG_ADD_LOCAL = PKG_PATH=${_PKG_REPO} ${_PKG_ADD} -Dunsigned
+_PKG_ADD_LOCAL = TRUSTED_PKG_PATH=${_PKG_REPO} ${_PKG_ADD}
 _PKG_DELETE = ${PKG_DELETE} ${_PROGRESS}
 
 .if !defined(_ARCH_DEFINES_INCLUDED)
@@ -210,6 +214,7 @@ _MAKEFILE_INC_DONE = Yes
 .    include "${.CURDIR}/../Makefile.inc"
 .  endif
 .endif
+# XXX default target varies, so that make show=... and make clean=... work
 .if defined(verbose-show)
 .MAIN: verbose-show
 .elif defined(show)
@@ -223,8 +228,7 @@ clean = ${_internal-clean}
 .MAIN: all
 .endif
 
-# need to go through an extra var because clean is set in stone,
-# on the cmdline.
+# XXX clean is set in stone on the cmdline.
 _clean = ${clean}
 .if empty(_clean) || ${_clean} == "depends"
 _clean += work
@@ -241,7 +245,7 @@ _clean += fake
 .if ${_clean:Mforce}
 _clean += -f
 .endif
-# check that clean is clean
+
 _okay_words = depends work fake -f flavors dist install sub packages package \
 	bulk force plist build all
 .for _w in ${_clean}
@@ -366,6 +370,8 @@ CONFIGURE_ENV += MAKE=${MAKE_PROGRAM}
 .else
 MAKE_PROGRAM = ${MAKE}
 .endif
+# Even if a port does not actually use libtool, defaulting to Yes does no
+# harm since there is a libtool in the base system.
 USE_LIBTOOL ?= Yes
 _lt_libs =
 .if ${USE_LIBTOOL:L} != "no"
@@ -376,8 +382,9 @@ BUILD_DEPENDS += devel/libtool
 LIBTOOL ?= /usr/bin/libtool
 MAKE_ENV += PORTSDIR="${PORTSDIR}"
 .  endif
-# Intermediate variable because some tools like python to not properly
-# parse variables with trailing spaces and add a bogus "" argument.
+# Massage into an intermediate variable because python does 
+# not parse variables with trailing spaces properly and adds 
+# a bogus "" argument.
 _LIBTOOL = ${LIBTOOL}
 .if !empty(LIBTOOL_FLAGS)
 _LIBTOOL += "${LIBTOOL_FLAGS}"
@@ -386,6 +393,7 @@ CONFIGURE_ENV += LIBTOOL="${_LIBTOOL}" ${_lt_libs}
 MAKE_ENV += LIBTOOL="${_LIBTOOL}" ${_lt_libs}
 MAKE_FLAGS += LIBTOOL="${_LIBTOOL}" ${_lt_libs}
 .endif
+# log for the SHARED_LIBS override
 MAKE_FLAGS += SHARED_LIBS_LOG=${WRKBUILD}/shared_libs.log
 USE_CCACHE ?= No
 NO_CCACHE ?= No
@@ -399,12 +407,17 @@ CONFIGURE_ENV += CCACHE_DIR=${CCACHE_DIR}
 BUILD_DEPENDS += devel/ccache
 .endif
 
+# by default, installation (fake) does not need -jN.
 ALL_FAKE_FLAGS=	${MAKE_FLAGS:N-j[0-9]*} ${DESTDIRNAME}=${WRKINST} ${FAKE_FLAGS}
 
 .if ${LOCALBASE:L} != "/usr/local"
 _PKG_ADD += -L ${LOCALBASE}
 .endif
 
+# XXX this stuff is not production-ready, because there are too many bugs in
+# parallel make yet.  MAKE_JOBS>1 is known to work on a few ports and used
+# sparingly by dpb (DPB_PROPERTIES=parallel) for obvious gains.
+#
 PARALLEL_BUILD ?= Yes
 PARALLEL_INSTALL ?= ${PARALLEL_BUILD}
 MAKE_JOBS ?= 1
@@ -418,7 +431,7 @@ ALL_FAKE_FLAGS += -j${MAKE_JOBS}
 .  endif
 .endif
 
-
+# Here comes the part that sets BUILD_PACKAGES and various IGNORE* up.
 .if !defined(_BSD_PORT_ARCH_MK_INCLUDED)
 .  include "${PORTSDIR}/infrastructure/mk/bsd.port.arch.mk"
 .endif
@@ -662,12 +675,11 @@ _ALL_COOKIES = ${_EXTRACT_COOKIE} ${_PATCH_COOKIE} ${_CONFIGURE_COOKIE} \
 
 _MAKE_COOKIE = touch
 
-# Miscellaneous overridable commands:
 GMAKE ?= gmake
 
 CHECKSUM_FILE ?= ${.CURDIR}/distinfo
 
-# Don't touch !!! Used for generating checksums.
+# Current digest algorithm
 _CIPHER = sha256
 
 PORTPATH ?= ${WRKDIR}/bin:/usr/bin:/bin:/usr/sbin:/sbin:${LOCALBASE}/bin:${X11BASE}/bin
@@ -683,6 +695,8 @@ CFLAGS += ${CDIAGFLAGS}
 CXXFLAGS += ${CXXDIAGFLAGS}
 .endif
 
+# XXX trick ports into trying to write into / instead of the current user's
+# homedir.
 PORTHOME ?= /${PKGNAME}_writes_to_HOME
 
 MAKE_ENV += PATH='${PORTPATH}' PREFIX='${PREFIX}' \
@@ -942,6 +956,7 @@ _INSTALL_MACROS = BSD_INSTALL_PROGRAM="${INSTALL_PROGRAM}" \
 	BSD_INSTALL_MAN_DIR="${INSTALL_MAN_DIR}"
 MAKE_ENV += ${_INSTALL_MACROS}
 
+# setup for libtool
 SHARED_LIBS ?=
 
 .for _n _v in ${SHARED_LIBS}
@@ -1045,15 +1060,6 @@ MESSAGE ?= ${PKGDIR}/MESSAGE
 UNMESSAGE ?= ${PKGDIR}/UNMESSAGE
 .  endif
 
-.  if exists(${PKGDIR}/INSTALL)
-ERRORS += "Fatal: INSTALL script support is obsolete"
-.  endif
-.  if exists(${PKGDIR}/DEINSTALL)
-ERRORS += "Fatal: DEINSTALL script support is obsolete"
-.  endif
-.  if exists(${PKGDIR}/REQ)
-ERRORS += "Fatal: REQ script support is obsolete"
-.  endif
 DESCR ?= ${PKGDIR}/DESCR
 
 .  for _v in PLIST _COMMENT MESSAGE UNMESSAGE DESCR
@@ -1081,15 +1087,6 @@ UNMESSAGE${_S} ?= ${PKGDIR}/UNMESSAGE${_S}
 
 DESCR${_S} ?= ${PKGDIR}/DESCR${_S}
 
-.    if exists(${PKGDIR}/INSTALL${_S})
-ERRORS += "Fatal: INSTALL script support is obsolete"
-.    endif
-.    if exists(${PKGDIR}/DEINSTALL${_S})
-ERRORS += "Fatal: DEINSTALL script support is obsolete"
-.    endif
-.    if exists(${PKGDIR}/REQ${_S})
-ERRORS += "Fatal: REQ script support is obsolete"
-.    endif
 .  endfor
 .endif
 
@@ -1211,6 +1208,18 @@ DISTFILES ?= ${DISTNAME}${EXTRACT_SUFX}
 PATCHFILES ?=
 SUPDISTFILES ?=
 
+# the following loop "parses" DISTFILES-style files
+# _PATH_x contains filenames with SUBDIR prepended when necessary
+# _LIST_x contains pure filenames
+#
+# _FULL_FETCH_LIST is used for creating all targets later on:
+# 	say if DISTFILES=filename{url}sufx:0 DIST_SUBDIR=foo/
+#	it will expand to  foo/filenamesufx filename MASTER_SITES0 urlsufx
+#
+# _FILES is used to de-duplicates names
+# the order matters: DISTFILES PATCHFILES SUPDISTFILES
+# - we never have the same names in DISTFILES and PATCHFILES
+# - SUPDISTFILES has to happen later
 _FILES=
 .for v in DISTFILES PATCHFILES SUPDISTFILES
 .  if !empty($v)
@@ -1219,10 +1228,10 @@ _FILES=
 .        if empty(_FILES:M$f)
 _FILES += $f
 .          if empty(DIST_SUBDIR)
-_FULL_$v += $f $f $m $u
+_FULL_FETCH_LIST += $f $f $m $u
 _PATH_$v += $f
 .          else
-_FULL_$v += ${DIST_SUBDIR}/$f $f $m $u
+_FULL_FETCH_LIST += ${DIST_SUBDIR}/$f $f $m $u
 _PATH_$v += ${DIST_SUBDIR}/$f
 .          endif
 _LIST_$v += $f
@@ -1230,11 +1239,11 @@ _LIST_$v += $f
 .      endfor
 .    endfor
 .  else
-_FULL_$v =
 _PATH_$v =
 _LIST_$v =
 .  endif
 .endfor
+_FULL_FETCHLIST ?=
 
 CHECKSUMFILES = ${_PATH_DISTFILES} ${_PATH_PATCHFILES}
 MAKESUMFILES = ${CHECKSUMFILES} ${_PATH_SUPDISTFILES}
@@ -1248,9 +1257,8 @@ EXTRACT_CASES ?=
 
 _LIST_EXTRACTED = ${EXTRACT_ONLY} ${_LIST_PATCHFILES}
 
-# XXX note that we DON'T set EXTRACT_SUFX.
-
 # okay, time for some guess work
+# this is mostly ad-hoc, we may want to add more PATCH_CASES eventually.
 .if !empty(_LIST_EXTRACTED:M*.zip)
 BUILD_DEPENDS += archivers/unzip
 EXTRACT_CASES += *.zip) \
@@ -1359,6 +1367,8 @@ MISSING_FILES += ${_F}
 ################################################################
 # Many ways to disable a port.
 #
+# A lot of them actually occur earlier on, in bsd.port.arch.mk
+#
 # If we're in BATCH mode and the port is interactive, or we're
 # in interactive mode and the port is non-interactive, skip all
 # the important targets.  The reason we have two modes is that
@@ -1442,8 +1452,6 @@ lib_depends_args ?= lib-depends-args
 
 
 
-PORT_LD_LIBRARY_PATH = ${LOCALBASE}/lib:${X11BASE}/lib:/usr
-
 .if ${FORCE_UPDATE:L} == "yes" || ${FORCE_UPDATE:L} == "hard"
 _force_update_fragment = { \
 		${ECHO_MSG} "===>  Verifying update for $$pkg in $$dir"; \
@@ -1465,7 +1473,7 @@ _PKG_ADD_FORCE =
 
 _FULL_PACKAGE_NAME ?= No
 
-# XXX save result pre-normalization, just for checking
+# We check for dependency syntax errors before rewriting things.
 _CHECK_DEPENDS =
 .for _v in BUILD LIB RUN TEST
 _CHECK_DEPENDS +:= ${${_v}_DEPENDS}
@@ -1537,10 +1545,10 @@ _DEPLIST = ${_BUILD_DEPLIST} ${_RUN_DEPLIST} ${_TEST_DEPLIST} \
 
 # compute DEPBUILD_COOKIES and friends
 .for _DEP in BUILD RUN BUILDLIB RUNLIB TEST
-_DEP${_DEP}_COOKIES =
 .  for _i in ${_${_DEP}_DEPLIST}
 _DEP${_DEP}_COOKIES += ${WRKDIR}/.dep-${_i:C,>=,ge-,g:C,<=,le-,g:C,<,lt-,g:C,>,gt-,g:C,\*,ANY,g:C,[|:/=],-,g}
 .  endfor
+_DEP${_DEP}_COOKIES ?=
 .endfor
 
 # Normal user-mode targets are PHONY targets, e.g., don't create the
@@ -1561,10 +1569,6 @@ FAKE_SETUP = PATH='${PORTPATH}' TRUEPREFIX=${PREFIX} \
 	PREFIX=${WRKINST}${PREFIX} ${DESTDIRNAME}=${WRKINST}
 
 _CLEANDEPENDS ?= Yes
-
-.for _S in ${MULTI_PACKAGES}
-_FETCH_MAKEFILE_NAMES += ${PKGPATH}/${FULLPKGNAME${_S}}
-.endfor
 
 # Internal variables, used by dependencies targets
 # Only keep pkg:dir spec, strip extra target
@@ -2241,31 +2245,27 @@ _internal-checksum: _internal-fetch
 	fi
 	@cd ${DISTDIR}; OK=true; list=''; \
 	  for file in ${CHECKSUMFILES}; do \
-		set -- $$(grep -i "^${_CIPHER} ($$file)" ${CHECKSUM_FILE}) \
-		  && break || \
-		  ${ECHO_MSG} ">> No ${_CIPHER} checksum recorded for $$file."; \
-		case "$$4" in \
-		  "") \
-			${ECHO_MSG} ">> No checksum recorded for $$file."; \
-			OK=false;; \
-		  *) \
+		if set -- $$(grep "^${_CIPHER:U} ($$file)" ${CHECKSUM_FILE}); \
+		then \
 			echo -n '>> '; \
 			if ! echo "$$@" | cksum -c; then \
-				echo ">> Checksum mismatch for $$file. ($$cipher)"; \
-				list="$$list $$file $$cipher $$4"; \
+				list="$$list $$file ${_CIPHER} $$4"; \
 				OK=false; \
-			fi;; \
-		esac; \
+			fi; \
+		else  \
+			${ECHO_MSG} ">> No ${_CIPHER} recorded for $$file."; \
+			OK=false; \
+		fi; \
 	  done; \
 	  set --; \
 	  if ! $$OK; then \
 		if ${REFETCH}; then \
 		  cd ${.CURDIR} && PKGPATH=${PKGPATH} ${MAKE} _refetch _PROBLEMS="$$list"; \
 		else \
-		  echo "Make sure the Makefile and checksum file (${CHECKSUM_FILE})"; \
-		  echo "are up to date.  If you want to fetch a good copy of this"; \
-		  echo "file from the OpenBSD main archive, type"; \
-		  echo "\"make REFETCH=true [other args]\"."; \
+		  echo "Make sure the Makefile and ${CHECKSUM_FILE}"; \
+		  echo "are up to date.  If you want to fetch a good copy of this file"; \
+		  echo "from the OpenBSD main archive, type"; \
+		  echo "\tmake REFETCH=true [other args]"; \
 		  exit 1; \
 		fi; \
 	  fi
@@ -2837,7 +2837,7 @@ _internal-subpackage: ${_PACKAGE_COOKIES${SUBPACKAGE}}
 
 # Separate target for each file fetch-all will retrieve
 
-.for p f m u in ${_FULL_DISTFILES} ${_FULL_PATCHFILES} ${_FULL_SUPDISTFILES}
+.for p f m u in ${_FULL_FETCH_LIST}
 ${DISTDIR}/$p:
 .  if ${FETCH_MANUALLY:L} != "no"
 .    if !empty(MISSING_FILES)
