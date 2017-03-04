@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2016/12/29 14:07:11 awolk Exp $
+# $OpenBSD: Makefile,v 1.4 2017/03/03 21:29:00 jca Exp $
 
 COMMENT-main =	graphical sdl rogue-like game
 COMMENT-data =	data for Tales of Maj'Eyal
@@ -42,6 +42,7 @@ WANTLIB-data =
 GAMEDIR =	${PREFIX}/share/tome4
 SUBST_VARS =	GAMEDIR
 
+# The build system hardcodes the use of the "gcc" command
 MODULES =	gcc4
 MODGCC4_ARCHS =	*
 
@@ -52,6 +53,7 @@ MAKE_FLAGS =	verbose=1
 MAKE_ENV =	config=release
 
 do-configure:
+	sed -i 's/gcc /${CC} /g' ${WRKSRC}/build/te4core.lua
 	${SUBST_CMD} ${WRKSRC}/src/getself.c
 	${SUBST_CMD} ${WRKSRC}/premake4.lua
 	@cd ${WRKSRC} ; premake4 gmake
