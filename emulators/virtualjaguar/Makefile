@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2016/09/22 12:57:18 fcambus Exp $
+# $OpenBSD: Makefile,v 1.4 2017/03/04 16:16:32 jca Exp $
 
 COMMENT =	Atari Jaguar emulator
 
@@ -27,6 +27,12 @@ LIB_DEPENDS =	devel/sdl
 WRKDIST =	${WRKDIR}/virtualjaguar
 
 USE_GMAKE =	Yes
+MAKE_FLAGS =	CC="${CC}" \
+		CXX="${CXX}" \
+		HOSTCC="${CC}" \
+		LD="${CC}" \
+		LINK="${CXX}" \
+		V=1
 
 NO_TEST =	Yes
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1589 2017/02/28 22:41:29 edd Exp $
+# $OpenBSD: Makefile,v 1.1593 2017/03/05 02:51:05 danj Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -408,6 +408,8 @@
      SUBDIR += lpeg,lua53
      SUBDIR += ltcltk
      SUBDIR += lua-bit32
+     SUBDIR += lua-bitop
+     SUBDIR += lua-bitop,lua52
      SUBDIR += lua-cjson
      SUBDIR += lua-cjson,lua52
      SUBDIR += lua-cjson,lua53
@@ -486,13 +488,9 @@
      SUBDIR += ninja
      SUBDIR += npth
      SUBDIR += nspr
-     SUBDIR += ocaml-batteries
-     SUBDIR += ocaml-bitstring
-     SUBDIR += ocaml-calendar
      SUBDIR += ocaml-camomile
      SUBDIR += ocaml-cmdliner
      SUBDIR += ocaml-cppo
-     SUBDIR += ocaml-curses
      SUBDIR += ocaml-dose
      SUBDIR += ocaml-extlib
      SUBDIR += ocaml-graph
@@ -500,8 +498,6 @@
      SUBDIR += ocaml-lambda-term
      SUBDIR += ocaml-lwt
      SUBDIR += ocaml-menhir
-     SUBDIR += ocaml-mlgmp
-     SUBDIR += ocaml-net
      SUBDIR += ocaml-ocamlbuild
      SUBDIR += ocaml-parmap
      SUBDIR += ocaml-pcre
@@ -1515,6 +1511,8 @@
      SUBDIR += py-wbem
      SUBDIR += py-wcwidth
      SUBDIR += py-wcwidth,python3
+     SUBDIR += py-wheel
+     SUBDIR += py-wheel,python3
      SUBDIR += py-wrapt
      SUBDIR += py-wrapt,python3
      SUBDIR += py-wsgiutils
