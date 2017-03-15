@@ -1,7 +1,6 @@
-# $OpenBSD: Makefile,v 1.68 2017/03/04 21:59:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.70 2017/03/14 12:23:21 jca Exp $
 
-BROKEN-arm =		undefined reference to `__sync_fetch_and_add_4'
-BROKEN-hppa =		undefined reference to `__sync_fetch_and_add_4'
+BROKEN-hppa =		undefined reference to __sync_fetch_and_add_4
 BROKEN-sparc64 =	infinite loop or aborts during build
 
 COMMENT =		Prolog for the real world
@@ -25,7 +24,7 @@ WANTLIB += ICE SM X11 Xext Xft Xinerama Xpm Xt c crypto execinfo
 WANTLIB += fontconfig freetype gmp jpeg m ncursesw pthread readline ssl
 WANTLIB += z
 
-MASTER_SITES =		${HOMEPAGE}/download/stable/src/ \
+MASTER_SITES =		${HOMEPAGE}download/stable/src/ \
 			https://distfiles.nl/
 
 CONFIGURE_STYLE =		gnu
@@ -50,6 +49,10 @@ MAKE_ENV =		MAKESHELL=/bin/sh
 
 MAKE_FLAGS =		SONAMEOPT= \
 			SHAREDV=libpl.so.${LIBpl_VERSION}
+
+MODULES =		gcc4
+# for atomic builtins
+MODGCC4_ARCHS =		arm
 
 BUILD_DEPENDS =		${RUN_DEPENDS}
 LIB_DEPENDS =		devel/gmp \
