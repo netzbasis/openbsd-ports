@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2017/03/14 09:13:52 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2017/03/16 11:44:12 sthen Exp $
 
 COMMENT=		Reliable Asynchronous Event Transport protocol
 
@@ -24,6 +24,7 @@ RUN_DEPENDS=		devel/py-enum34 \
 			devel/py-ioflo \
 			devel/py-six \
 			security/py-libnacl
+BUILD_DEPENDS=		devel/py-setuptools_git
 
 TEST_DEPENDS=		${RUN_DEPENDS}
 
