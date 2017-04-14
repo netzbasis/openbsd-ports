@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.77 2017/02/02 12:48:37 landry Exp $
+# $OpenBSD: Makefile,v 1.80 2017/04/13 09:05:52 landry Exp $
 
 COMMENT =	lightweight web browser
 
@@ -6,7 +6,7 @@ XFCE_VERSION =	0.5.11
 XFCE_GOODIE =	midori
 DISTNAME =	midori_0.5.11_all_
 WRKDIST =	${WRKDIR}/${PKGNAME}
-REVISION =	1
+REVISION =	3
 
 HOMEPAGE =	http://www.midori-browser.org
 MAINTAINER =	Landry Breuil <landry@openbsd.org>
@@ -45,6 +45,8 @@ WANTLIB += pango-1.0 xml2 gck-1 gcr-base-3 p11-kit
 WANTLIB += soup-2.4 sqlite3 soup-gnome-2.4
 
 pre-configure:
+	# cmake trips on it
+	rm ${WRKSRC}/extensions/*.orig
 	${SUBST_CMD} ${WRKSRC}/CMakeLists.txt
 
 .include <bsd.port.mk>

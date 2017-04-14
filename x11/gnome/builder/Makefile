@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.44 2017/04/10 11:46:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.46 2017/04/13 07:38:44 ajacoutot Exp $
+
+BROKEN=			broken after vala 0.36 update
 
 COMMENT=		IDE for GNOME
 
@@ -73,6 +75,8 @@ LIB_DEPENDS=		${MODPY_LIB_DEPENDS} \
 			x11/gnome/devhelp \
 			x11/gtksourceview3 \
 			x11/gtk3mm
+
+CONFIGURE_STYLE=	gnu
 
 CONFIGURE_ENV=		ac_cv_path_PYTHON3_CONFIG=python${MODPY_VERSION}-config
 

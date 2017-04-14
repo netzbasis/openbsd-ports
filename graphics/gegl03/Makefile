@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.16 2017/04/10 11:46:20 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2017/04/13 13:01:20 ajacoutot Exp $
 
 COMMENT=		graph based image processing framework (API version 0.3)
 
@@ -59,7 +59,6 @@ CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 CONFIGURE_ARGS=		--without-lensfun \
 			--without-openexr \
 			--without-sdl \
-			--without-libopenraw \
 			--without-graphviz \
 			--without-libavformat \
 			--without-libv4l \
