@@ -1,14 +1,16 @@
-# $OpenBSD: Makefile,v 1.63 2017/04/10 11:46:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.65 2017/04/17 00:37:30 jca Exp $
 
 COMMENT=	video stream processing tools
 
 DISTNAME=	transcode-1.1.7
-REVISION=	7
+REVISION=	9
 CATEGORIES=	multimedia
+
+HOMEPAGE=	https://bitbucket.org/achurch_/transcode/
+
+# XXX MASTER_SITES broken
 MASTER_SITES=	http://cdn.bitbucket.org/france/transcode-tcforge/downloads/
 EXTRACT_SUFX=	.tar.bz2
-
-HOMEPAGE=	http://www.transcoding.org/
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -56,7 +58,7 @@ LIB_DEPENDS=	audio/lame \
 
 RUN_DEPENDS=	audio/sox \
 		audio/vorbis-tools \
-		audio/toolame \
+		audio/twolame \
 		graphics/ffmpeg \
 		x11/mplayer
 
