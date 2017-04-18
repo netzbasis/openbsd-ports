@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.259 2017/02/27 19:33:53 jasper Exp $
+# $OpenBSD: Makefile,v 1.262 2017/04/17 17:57:52 jasper Exp $
 
      SUBDIR =
      SUBDIR += adwaita-icon-theme
      SUBDIR += aisleriot
-     SUBDIR += anjuta
      SUBDIR += at-spi2-atk
      SUBDIR += at-spi2-core
      SUBDIR += autoar
@@ -46,6 +45,7 @@
      SUBDIR += gjs
      SUBDIR += grilo
      SUBDIR += grilo-plugins
+     SUBDIR += gtef
      SUBDIR += gucharmap
      SUBDIR += gvfs,
      SUBDIR += icon-theme
@@ -84,7 +84,6 @@
      SUBDIR += online-miners
      SUBDIR += orca
      SUBDIR += photos
-     SUBDIR += pinpoint
      SUBDIR += planner
      SUBDIR += power-manager
      SUBDIR += py-atspi

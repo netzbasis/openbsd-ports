@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.472 2017/04/05 20:03:38 fcambus Exp $
+# $OpenBSD: Quirks.pm,v 1.477 2017/04/17 19:49:39 naddy Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -856,8 +856,6 @@ my $obsolete_reason = {
 	"sudoku-solver" => 3,
 	"clearsilver" => 3,
 	"poppler-qt" => 3,
-
-# KDE3 removals
 	'amarok' => 2,
 	'digikam-doc' => 6,
 	'gwenview-i18n' => 6,
@@ -953,6 +951,9 @@ my $obsolete_reason = {
 	'py-pigment' => 3,
 	'gogo' => 3,
 	'spectemu' => 3,
+	'pinpoint' => 3,
+	'anjuta' => 3,
+	'libneural' => 5,
 };
 
 # reasons for obsolete packages
