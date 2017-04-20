@@ -1,6 +1,6 @@
-$OpenBSD: patch-Jamsettings,v 1.2 2016/11/01 09:10:41 landry Exp $
+$OpenBSD: patch-Jamsettings,v 1.4 2017/04/20 00:16:06 jca Exp $
 --- Jamsettings.orig	Mon Mar 10 14:44:59 2014
-+++ Jamsettings	Mon Oct 31 19:06:23 2016
++++ Jamsettings	Thu Apr 20 02:13:56 2017
 @@ -28,7 +28,7 @@ MANDIR = $(PREFIX)/man ;
  
  # Supporting files
@@ -32,7 +32,7 @@ $OpenBSD: patch-Jamsettings,v 1.2 2016/11/01 09:10:41 landry Exp $
  #
 -CONFIGDIR = $(PREFIX) ;
 +CONFIGDIR = ${SYSCONFDIR} ;
-
+ 
  # The directory where the README and other files are installed.
  #
 -READMEDIR = $(PREFIX) ;
@@ -46,7 +46,7 @@ $OpenBSD: patch-Jamsettings,v 1.2 2016/11/01 09:10:41 landry Exp $
  
 -C++FLAGS = -g -Werror -funsigned-char ;
 -LINKFLAGS = -g ;
-+C++FLAGS = -I. -I.. -g -Werror -funsigned-char ;
++C++FLAGS = -I. -I.. -g -funsigned-char ;
 +LINKFLAGS = -lcrypto -g ;
  
  # Mode for installed binaries
