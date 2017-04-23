@@ -1,0 +1,43 @@
+$OpenBSD: patch-src_tclx_src_tclxgdat_y,v 1.4 2017/04/22 19:49:18 espie Exp $
+--- src/tclx/src/tclxgdat.y.orig	Mon Feb  4 03:52:26 2008
++++ src/tclx/src/tclxgdat.y	Sat Apr 22 17:10:49 2017
+@@ -50,7 +50,7 @@
+ #else
+ 	static time_t timeconv();
+ 	static time_t daylcorr();
+-	static lookup();
++	static int lookup();
+ #endif
+ 
+ #define AM 1
+@@ -229,6 +229,7 @@ time_t daylcorr(future, now) time_t future, now;
+ static char *lptr;
+ 
+ //static
++int
+ yylex()
+ {
+ #ifndef YYSTYPE
+@@ -458,11 +459,11 @@ struct table milzone[] = {
+         {"z", ZONE, 0 HRS},
+         {0, 0, 0}};
+ 
+-static
++static int
+ lookup(id) char *id;
+ {
+ #define gotit (yylval=i->value,  i->type)
+-#define getid for(j=idvar, k=id; *j++ = *k++; )
++#define getid for(j=idvar, k=id; (*j++ = *k++); )
+ 
+         char idvar[20];
+         register char *j, *k;
+@@ -545,7 +546,7 @@ Tcl_GetDate (p, now, zone)
+         merid = 24;
+         ourzone = zone;
+ 
+-        if (err = yyparse()) return (-1);
++        if ((err = yyparse())) return (-1);
+ 
+         mcheck(timeflag);
+         mcheck(zoneflag);
