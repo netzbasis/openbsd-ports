@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2017/04/09 11:30:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2017/04/30 10:36:43 ajacoutot Exp $
 
 COMMENT=		network-related giomodule for GLib using openssl
 
 GNOME_VERSION=		2.50.2
 GNOME_PROJECT=		glib-openssl
+REVISION=		1
 
 CATEGORIES=		security net
 
