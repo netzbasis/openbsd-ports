@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.486 2017/05/02 19:14:15 fcambus Exp $
+# $OpenBSD: Quirks.pm,v 1.488 2017/05/03 16:24:07 fcambus Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -963,6 +963,8 @@ my $obsolete_reason = {
 	'logic2cnf' => 3,
 	'bytebench' => 3,
 	'libdivxdecore' => 5,
+	'xgrab' => 9,
+	'quirc' => 3,
 };
 
 # reasons for obsolete packages
@@ -976,6 +978,7 @@ my @msg = (
 	"no longer useful", #6
 	"removed in favor of using languages package manager", #7
 	"requires systemd", #8
+	"256 colors only, suggest scrot or xwd", #9
 );
 
 # ->is_base_system($handle, $state):

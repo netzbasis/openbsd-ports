@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2016/10/01 11:54:17 naddy Exp $
+# $OpenBSD: Makefile,v 1.14 2017/05/03 12:33:12 jca Exp $
 
 COMMENT=	turns your keyboard into a fast pointer mover
 
 DISTNAME=	keynav-0.20101014.3067
-REVISION=	2
+REVISION=	3
 EPOCH=		0
 
 CATEGORIES=	x11
@@ -22,7 +22,8 @@ LIB_DEPENDS=	devel/gettext \
 		graphics/cairo \
 		x11/xdotool
 
-MAKE_FLAGS=	CFLAGS="$$(pkg-config --cflags cairo-xlib xinerama glib-2.0) ${CFLAGS}" \
+MAKE_FLAGS=	CC="${CC}" \
+		CFLAGS="$$(pkg-config --cflags cairo-xlib xinerama glib-2.0) ${CFLAGS}" \
 		LDFLAGS="$$(pkg-config --libs cairo-xlib xinerama glib-2.0) ${LDFLAGS}"
 
 NO_TEST=	Yes
