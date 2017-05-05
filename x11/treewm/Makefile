@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.16 2017/04/10 11:46:36 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2017/05/04 13:14:55 jca Exp $
 
 COMMENT=		tree window manager
 DISTNAME=		treewm-0.4.5
-REVISION=		1
+REVISION=		2
 CATEGORIES=		x11
 
 MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=treewm/}
@@ -20,7 +20,8 @@ BUILD_DEPENDS=		devel/imake
 
 USE_GMAKE=		Yes
 
-MAKE_FLAGS=		CXX="${CXX}" CXXFLAGS="${CXXFLAGS}" \
+MAKE_FLAGS=		CC="${CC}" CCOPTIONS="${CFLAGS}" CDEBUGFLAGS="" \
+			CXX="${CXX}" CXXFLAGS="${CXXFLAGS}" \
 			PREFIX="${PREFIX}" \
 			LIBS="-L${X11BASE}/lib -lXxf86vm -lXpm -lXext -lX11" \
 			INCLUDES="-I${X11BASE}/include"
