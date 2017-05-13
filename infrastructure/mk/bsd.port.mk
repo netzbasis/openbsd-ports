@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1344 2017/05/06 15:01:31 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1348 2017/05/12 18:18:09 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -116,7 +116,7 @@ _ALL_VARIABLES += HOMEPAGE DISTNAME \
 	SHARED_LIBS TARGETS PSEUDO_FLAVOR \
 	MAINTAINER AUTOCONF_VERSION AUTOMAKE_VERSION CONFIGURE_ARGS \
 	GH_ACCOUNT GH_COMMIT GH_PROJECT GH_TAGNAME PORTROACH \
-	PORTROACH_COMMENT MAKEFILE_LIST USE_WXNEEDED
+	PORTROACH_COMMENT MAKEFILE_LIST USE_WXNEEDED WANT_CXX
 _ALL_VARIABLES_PER_ARCH += BROKEN
 # and stuff needing to be MULTI_PACKAGE'd
 _ALL_VARIABLES_INDEXED += COMMENT PKGNAME \
@@ -268,23 +268,6 @@ INSTALL_TARGET ?= install
 .if !defined(_ARCH_DEFINES_INCLUDED)
 _ARCH_DEFINES_INCLUDED = Done
 .  include "${PORTSDIR}/infrastructure/mk/arch-defines.mk"
-.endif
-
-USE_CXX ?= No
-.if ${USE_CXX:L:Mc++11}
-.  if ${PROPERTIES:Mclang}
-# nothing to do
-.  elif ${PROPERTIES:Mllvm}
-# prefer llvm module
-MODULES +=	lang/clang
-MODCLANG_ARCH ?=	*
-MODCLANG_LANGS +=	c++
-.  else
-# try gcc4
-MODULES +=		gcc4
-MODGCC4_LANGS +=		c++
-MODGCC4_ARCHS ?=		*
-.  endif
 .endif
 
 .if ${CONFIGURE_STYLE:L:Mautomake} || ${CONFIGURE_STYLE:L:Mautoconf} || \
@@ -1631,6 +1614,13 @@ _TEST_DEP = ${_TEST_DEP2:C,^[^:/]*:,,}
 
 REORDER_DEPENDENCIES ?=
 ECHO_REORDER ?= :
+
+# recheck WRK...
+.for w in WRKDIR WRKDIST WRKSRC WRKCONF WRKBUILD WRKINST DIST_SUBDIR
+.  if ${$w:M*/}
+ERRORS += "Fatal: $w ends with a slash"
+.  endif
+.endfor
 
 # Lock infrastructure:
 # to remove locks handling, define LOCKDIR to an empty value
