@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.22 2017/03/21 13:04:04 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.24 2017/05/13 09:54:24 espie Exp $
 
 COMMENT=		GObject wrapper around exiv2
 
-GNOME_VERSION=		0.10.5
+GNOME_VERSION=		0.10.6
 GNOME_PROJECT=		gexiv2
 PKGNAME=		lib${DISTNAME}
-REVISION=		0
 
 CATEGORIES=		graphics
 
@@ -24,21 +23,20 @@ MODULES=		lang/python \
 			x11/gnome
 
 MODGNOME_TOOLS=		gobject-introspection vala
+MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
 
-# gexiv2/gexiv2-metadata-gps.cpp:29:15: error: 'overflow_error' is not a member of 'std'
-MODULES +=		gcc4
-MODGCC4_LANGS=		c++
-MODGCC4_ARCHS=		*
+# C++11
+WANT_CXX = 		base gcc
 CXXFLAGS +=		-std=c++11
 
 LIB_DEPENDS=		devel/glib2 \
 			graphics/exiv2
 
 # import gi
-BUILD_DEPENDS=		devel/py-gobject3
-RUN_DEPENDS=		devel/py-gobject3
+BUILD_DEPENDS=		devel/py-gobject3${MODPY_FLAVOR}
+RUN_DEPENDS=		devel/py-gobject3${MODPY_FLAVOR}
 
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ENV=		ac_cv_path_PYTHON2_PATH=${MODPY_BIN}
+CONFIGURE_ENV=		ac_cv_path_PYTHON3_PATH=${MODPY_BIN}
 
 .include <bsd.port.mk>
