@@ -1019,6 +1019,7 @@
      SUBDIR += p5-Sub-Install
      SUBDIR += p5-Sub-Lambda
      SUBDIR += p5-Sub-Name
+     SUBDIR += p5-Sub-Quote
      SUBDIR += p5-Sub-Override
      SUBDIR += p5-Sub-Uplevel
      SUBDIR += p5-Switch
@@ -1316,7 +1317,6 @@
      SUBDIR += py-entrypoints
      SUBDIR += py-entrypoints,python3
      SUBDIR += py-enum34
-     SUBDIR += py-epsilon
      SUBDIR += py-execnet
      SUBDIR += py-execnet,python3
      SUBDIR += py-extremes
