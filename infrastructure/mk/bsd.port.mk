@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1349 2017/05/13 12:34:01 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1351 2017/05/18 12:38:46 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -202,6 +202,12 @@ _PKG_ADD = ${PKG_ADD} ${_PROGRESS} -I
 _PKG_CREATE = ${PKG_CREATE} ${_PROGRESS}
 _PKG_ADD_LOCAL = TRUSTED_PKG_PATH=${_PKG_REPO} ${_PKG_ADD}
 _PKG_DELETE = ${PKG_DELETE} ${_PROGRESS}
+
+.if defined(PKG_PATH)
+_PKG_PATH = ${PKG_PATH}
+.else
+_PKG_PATH = installpath
+.endif
 
 .if !defined(_ARCH_DEFINES_INCLUDED)
 _ARCH_DEFINES_INCLUDED = Done
@@ -1872,7 +1878,7 @@ check-register-all:
 ${_CACHE_REPO}${_PKGFILE${_S}}:
 	@install -d ${PACKAGE_REPOSITORY_MODE} ${@D}
 	@${ECHO_MSG} -n "===>  Looking for ${_PKGFILE${_S}} in \$$PKG_PATH - "
-	@if ${SETENV} ${_TERM_ENV} PKG_CACHE=${_CACHE_REPO} PKG_PATH=${_CACHE_REPO}:${_PKG_REPO}:${PACKAGE_REPOSITORY}/${NO_ARCH}/:${PKG_PATH} ${_PKG_ADD} -n -q ${_PKG_ADD_FORCE} -r -D installed -D downgrade ${_PKGFILE${_S}} >/dev/null 2>&1; then \
+	@if ${SETENV} ${_TERM_ENV} PKG_CACHE=${_CACHE_REPO} PKG_PATH=${_CACHE_REPO}:${_PKG_REPO}:${PACKAGE_REPOSITORY}/${NO_ARCH}/:${_PKG_PATH} ${_PKG_ADD} -n -q ${_PKG_ADD_FORCE} -r -D installed -D downgrade ${_PKGFILE${_S}} >/dev/null 2>&1; then \
 		${ECHO_MSG} "found"; \
 		exit 0; \
 	else \
@@ -2182,7 +2188,7 @@ ${WRKINST}/.saved_libs: ${_FAKE_COOKIE} ${_FAKESUDO_CHECK_COOKIE}
 	@${_FAKESUDO} ${_CHECK_LIB_DEPENDS} -O $@t && ${_FAKESUDO} mv $@t $@
 
 port-lib-depends-check: ${WRKINST}/.saved_libs
-	@-${_cache_fragment}; for s in ${MULTI_PACKAGES}; do \
+	@-${_cache_fragment}; for s in ${BUILD_PACKAGES}; do \
 		SUBPACKAGE=$$s ${MAKE} print-plist-with-depends \
 		lib_depends_args=all-lib-depends-args \
 		wantlib_args=fake-wantlib-args| \
@@ -2330,7 +2336,7 @@ _internal-plist _internal-update-plist: _internal-fake ${_FAKESUDO_CHECK_COOKIE}
 	MAKE="${MAKE}" \
 	PORTSDIR=${PORTSDIR} \
 	PORTSDIR_PATH=${PORTSDIR_PATH} \
-	FLAVORS='${FLAVORS}' MULTI_PACKAGES='${MULTI_PACKAGES}' \
+	FLAVORS='${FLAVORS}' MULTI_PACKAGES='${BUILD_PACKAGES}' \
 	OKAY_FILES='${_FAKE_COOKIE} ${_INSTALL_PRE_COOKIE} ${WRKINST}/.saved_libs' \
 	OWNER=$$(id -u) \
 	GROUP=$$(id -g) \
@@ -2803,7 +2809,7 @@ print-plist-libs-with-depends:
 	fi
 
 print-plist-all:
-.for _S in ${MULTI_PACKAGES}
+.for _S in ${BUILD_PACKAGES}
 		@${ECHO_MSG} "===> ${FULLPKGNAME${_S}}"
 .  if ${STATIC_PLIST${_s}:L} == "yes"
 		@${_PKG_CREATE} -n -q ${PKG_ARGS${_S}} ${_PACKAGE_COOKIE${_S}}
@@ -2813,7 +2819,7 @@ print-plist-all:
 .endfor
 
 print-plist-all-with-depends:
-.for _S in ${MULTI_PACKAGES}
+.for _S in ${BUILD_PACKAGES}
 	@${ECHO_MSG} "===> ${FULLPKGNAME${_S}}"
 	@if a=`SUBPACKAGE=${_S} PKGPATH=${PKGPATH} ${MAKE} print-package-args`; \
 	then \
@@ -3033,7 +3039,7 @@ full-${_i}-depends:
 .endfor
 
 license-check:
-.for _S in ${MULTI_PACKAGES}
+.for _S in ${BUILD_PACKAGES}
 .  if ${PERMIT_PACKAGE_CDROM${_S}:L} == "yes" || \
 	${PERMIT_PACKAGE_FTP${_S}:L} == "yes"
 	@SUBPACKAGE=${_S} PKGPATH=${PKGPATH} ${MAKE} all-dir-depends|${_sort_dependencies}|while read subdir; do \
