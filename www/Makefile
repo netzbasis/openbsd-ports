@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.820 2017/05/12 08:53:03 shadchin Exp $
+# $OpenBSD: Makefile,v 1.823 2017/05/19 07:59:53 pirofti Exp $
 
      SUBDIR =
      SUBDIR += ajaxterm
@@ -143,6 +143,7 @@
      SUBDIR += p5-CGI-Untaint
      SUBDIR += p5-CGI-XMLApplication
      SUBDIR += p5-CSS-Minifier
+     SUBDIR += p5-CSS-Minifier-XS
      SUBDIR += p5-CSS-Squish
      SUBDIR += p5-CSS-Tiny
      SUBDIR += p5-Catalyst-Action-RenderView
@@ -193,6 +194,7 @@
      SUBDIR += p5-Dancer2-Plugin-DBIC
      SUBDIR += p5-Dancer2-Plugin-Database
      SUBDIR += p5-Data-URIEncode
+     SUBDIR += p5-Data-Page-Pageset
      SUBDIR += p5-Drupal-Admin
      SUBDIR += p5-FCGI-ProcManager
      SUBDIR += p5-Feed-Find
@@ -269,6 +271,7 @@
      SUBDIR += p5-HTTPD-Log-Filter
      SUBDIR += p5-IO-HTML
      SUBDIR += p5-JavaScript-Minifier
+     SUBDIR += p5-JavaScript-Minifier-XS
      SUBDIR += p5-LWP-Authen-Wsse
      SUBDIR += p5-LWP-MediaTypes
      SUBDIR += p5-LWP-Protocol-https
