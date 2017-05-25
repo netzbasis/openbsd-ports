@@ -1,12 +1,16 @@
-$OpenBSD: patch-source_common_Makefile_in,v 1.9 2016/12/05 16:15:56 ajacoutot Exp $
---- source/common/Makefile.in.orig	Fri Sep  9 18:41:15 2016
-+++ source/common/Makefile.in	Thu Dec  1 17:22:48 2016
-@@ -66,7 +66,7 @@ endif
- CPPFLAGS += -I$(srcdir) $(LIBCPPFLAGS) $(CPPFLAGSICUUC)
- # we want DEFS here
- DEFS += -DU_COMMON_IMPLEMENTATION 
--LDFLAGS += $(LDFLAGSICUUC)
-+LDFLAGS += -fPIC $(LDFLAGSICUUC)
- 
- # for plugin configuration
- CPPFLAGS += "-DDEFAULT_ICU_PLUGINS=\"$(libdir)/icu\" "
+$OpenBSD: patch-source_common_Makefile_in,v 1.10 2017/05/24 15:44:42 ajacoutot Exp $
+
+Don't strip static libraries.
+
+Index: source/common/Makefile.in
+--- source/common/Makefile.in.orig
++++ source/common/Makefile.in
+@@ -149,7 +149,7 @@ install-local: install-headers install-library
+ install-library: all-local
+ 	$(MKINSTALLDIRS) $(DESTDIR)$(libdir)
+ ifneq ($(ENABLE_STATIC),)
+-	$(INSTALL-L) $(TARGET) $(DESTDIR)$(libdir)
++	$(INSTALL_DATA) $(TARGET) $(DESTDIR)$(libdir)
+ endif
+ ifneq ($(ENABLE_SHARED),)
+ 	$(INSTALL-L) $(FINAL_SO_TARGET) $(DESTDIR)$(libdir)

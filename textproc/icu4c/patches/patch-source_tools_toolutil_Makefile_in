@@ -1,0 +1,16 @@
+$OpenBSD: patch-source_tools_toolutil_Makefile_in,v 1.4 2017/05/24 15:44:42 ajacoutot Exp $
+
+Don't strip static libraries.
+
+Index: source/tools/toolutil/Makefile.in
+--- source/tools/toolutil/Makefile.in.orig
++++ source/tools/toolutil/Makefile.in
+@@ -91,7 +91,7 @@ install-local: install-library
+ install-library: all-local
+ 	$(MKINSTALLDIRS) $(DESTDIR)$(libdir)
+ ifneq ($(ENABLE_STATIC),)
+-	$(INSTALL-L) $(TARGET) $(DESTDIR)$(libdir)
++	$(INSTALL_DATA) $(TARGET) $(DESTDIR)$(libdir)
+ endif
+ ifneq ($(ENABLE_SHARED),)
+ 	$(INSTALL-L) $(FINAL_SO_TARGET) $(DESTDIR)$(libdir)
