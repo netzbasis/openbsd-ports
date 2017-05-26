@@ -1,14 +1,16 @@
-$OpenBSD: patch-mutt_sasl_c,v 1.1.1.1 2016/10/18 10:47:15 sthen Exp $
+$OpenBSD: patch-mutt_sasl_c,v 1.3 2017/05/25 18:42:31 sthen Exp $
 
 Pledge
 
---- mutt_sasl.c.orig	Fri Aug 26 23:53:14 2016
-+++ mutt_sasl.c	Thu Sep  1 18:11:34 2016
-@@ -86,7 +86,6 @@ static sasl_callback_t mutt_sasl_callbacks[5];
+Index: mutt_sasl.c
+--- mutt_sasl.c.orig
++++ mutt_sasl.c
+@@ -123,7 +123,7 @@ static int mutt_sasl_cb_log(void *context, int priorit
  
- static sasl_secret_t *secret_ptr = NULL;
+ /* mutt_sasl_start: called before doing a SASL exchange - initialises library
+  *   (if necessary). */
+-static int mutt_sasl_start(void)
++int mutt_sasl_start(void)
+ {
+   static unsigned char sasl_init = 0;
  
--static int mutt_sasl_start (void);
- 
- /* callbacks */
- static int mutt_sasl_cb_log (void* context, int priority, const char* message);
