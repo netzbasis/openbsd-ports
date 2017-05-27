@@ -834,6 +834,7 @@
      SUBDIR += p5-Lchown
      SUBDIR += p5-List-Cycle
      SUBDIR += p5-List-MoreUtils
+     SUBDIR += p5-List-MoreUtils-XS
      SUBDIR += p5-Locale-Hebrew
      SUBDIR += p5-Locale-Maketext-Fuzzy
      SUBDIR += p5-Locale-Maketext-Gettext
@@ -1327,6 +1328,8 @@
      SUBDIR += py-fastimport
      SUBDIR += py-fastimport,python3
      SUBDIR += py-fpconst
+     SUBDIR += py-freezegun
+     SUBDIR += py-freezegun,python3
      SUBDIR += py-funcsigs
      SUBDIR += py-funcsigs,python3
      SUBDIR += py-functools32
@@ -1352,6 +1355,8 @@
      SUBDIR += py-html5lib,python3
      SUBDIR += py-hypothesis
      SUBDIR += py-hypothesis,python3
+     SUBDIR += py-icalendar
+     SUBDIR += py-icalendar,python3
      SUBDIR += py-iniparse
      SUBDIR += py-incremental
      SUBDIR += py-incremental,python3

@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.2 2016/12/01 08:53:38 kirby Exp $
+# $OpenBSD: Makefile,v 1.4 2017/05/26 12:12:01 kirby Exp $
 
 COMMENT =		image processing and analysis library
 
 GH_ACCOUNT =		ukoethe
 GH_PROJECT =		vigra
-GH_TAGNAME = 		Version-1-11-0
-DISTNAME =		vigra-1.11.0
-REVISION = 		0
+GH_TAGNAME = 		Version-1-11-1
+DISTNAME =		vigra-1.11.1
 
 SHARED_LIBS =		vigraimpex 0.0 # 5.1
 

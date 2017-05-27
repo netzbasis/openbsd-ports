@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.216 2017/04/28 17:35:11 espie Exp $
+# $OpenBSD: Makefile,v 1.218 2017/05/26 18:02:01 ajacoutot Exp $
 
 # Everything is a Freaking GLib/GTK+ problem
 CFLAGS +=		-g
@@ -69,6 +69,8 @@ MODGNOME_TOOLS=		gobject-introspection gtk-update-icon-cache
 
 MODGNOME_CPPFLAGS=	-I${X11BASE}/include/freetype2
 
+CFLAGS +=xi		 -Wno-expansion-to-defined
+
 TEST_IS_INTERACTIVE=	x11
 
 CONFIGURE_STYLE=	gnu
@@ -86,7 +88,3 @@ post-install:
 	rm ${PREFIX}/bin/gtk-update-icon-cache
 
 .include <bsd.port.mk>
-
-.if ${PROPERTIES:Mclang}
-CFLAGS += -Wno-expansion-to-defined
-.endif
