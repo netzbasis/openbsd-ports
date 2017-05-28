@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.14 2017/04/10 11:46:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.16 2017/05/27 19:57:07 ajacoutot Exp $
 
 COMMENT =	STUN server implementing RFCs 5389, 5769, and 5780
 NOT_FOR_ARCHS = arm hppa # atomic ops
@@ -8,6 +8,7 @@ DISTNAME =	stunserver-${VERSION}
 PKGNAME =	stuntman-${VERSION}
 CATEGORIES =	telephony net
 EXTRACT_SUFX =	.tgz
+REVISION =	1
 
 MAINTAINER =	Roman Kravchuk <kravchuk.kp@gmail.com>
 

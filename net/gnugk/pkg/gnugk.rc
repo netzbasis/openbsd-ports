@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $OpenBSD: gnugk.rc,v 1.1 2011/05/11 09:01:26 ajacoutot Exp $
+# $OpenBSD: gnugk.rc,v 1.3 2017/05/27 19:57:06 ajacoutot Exp $
 
 daemon="${TRUEPREFIX}/bin/gnugk"
 daemon_flags="-t -c ${SYSCONFDIR}/gatekeeper.ini -u _gnugk -o /var/log/gnugk/gnugk.log"

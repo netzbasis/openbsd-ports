@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $OpenBSD: deadwood.rc,v 1.1.1.1 2012/03/21 16:17:58 sthen Exp $
+# $OpenBSD: deadwood.rc,v 1.3 2017/05/27 19:57:06 ajacoutot Exp $
 
 daemon="${TRUEPREFIX}/sbin/Deadwood"
 

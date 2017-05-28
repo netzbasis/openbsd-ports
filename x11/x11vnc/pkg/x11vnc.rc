@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $OpenBSD: x11vnc.rc,v 1.9 2011/09/19 21:33:42 ajacoutot Exp $
+# $OpenBSD: x11vnc.rc,v 1.11 2017/05/27 19:57:08 ajacoutot Exp $
 
 daemon="${TRUEPREFIX}/bin/x11vnc"
 daemon_flags="-localhost -logfile /var/log/x11vnc -ncache 0 -forever -loop100 -auth guess"

@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $OpenBSD: yubiserve.rc,v 1.2 2015/07/15 17:42:08 ajacoutot Exp $
+# $OpenBSD: yubiserve.rc,v 1.4 2017/05/27 19:57:07 ajacoutot Exp $
 
 daemon="${TRUEPREFIX}/sbin/yubiserve"
 daemon_user="_yubiserve"

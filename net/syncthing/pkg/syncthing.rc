@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $OpenBSD: syncthing.rc,v 1.2 2016/04/23 08:02:06 edd Exp $
+# $OpenBSD: syncthing.rc,v 1.4 2017/05/27 19:57:06 ajacoutot Exp $
 
 daemon="${TRUEPREFIX}/bin/syncthing"
 daemon_flags="-no-browser"
@@ -8,7 +8,7 @@ daemon_user="_syncthing"
 
 . /etc/rc.d/rc.subr
 
-rc_reload=NO
 rc_bg=YES
+rc_reload=NO
 
 rc_cmd $1
