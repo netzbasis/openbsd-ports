@@ -1,7 +1,5 @@
 obj
 *.err.log
-CVS
-CVSROOT
 bulk
 distfiles
 locks
