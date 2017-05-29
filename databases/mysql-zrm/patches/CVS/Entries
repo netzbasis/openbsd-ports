@@ -1,0 +1,12 @@
+/patch-etc_mysql-zrm_mysql-zrm_conf/1.4/Tue May 13 14:00:45 2014//
+/patch-usr_bin_mysql-zrm/1.2/Wed May  5 17:03:19 2010//
+/patch-usr_bin_mysql-zrm-backup/1.5/Tue May 13 14:00:45 2014//
+/patch-usr_bin_mysql-zrm-reporter/1.1/Tue Apr 24 15:56:25 2012//
+/patch-usr_bin_mysql-zrm-scheduler/1.2/Tue May 13 14:00:45 2014//
+/patch-usr_bin_mysql-zrm-verify-backup/1.4/Tue May 13 14:00:45 2014//
+/patch-usr_bin_zrm-pre-scheduler/1.2/Fri Sep  4 10:44:46 2015//
+/patch-usr_lib_mysql-zrm_ZRM_Common_pm/1.6/Mon Mar 16 10:04:11 2015//
+/patch-usr_lib_mysql-zrm_ZRM_MySQL_pm/1.1/Tue May 13 14:00:45 2014//
+/patch-usr_share_mysql-zrm_plugins_socket-copy_pl/1.1/Tue Apr  3 10:56:03 2012//
+/patch-usr_share_mysql-zrm_plugins_ssh-copy_pl/1.1/Tue Apr  3 10:56:03 2012//
+D

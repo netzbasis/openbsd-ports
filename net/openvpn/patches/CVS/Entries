@@ -1,0 +1,15 @@
+/patch-configure/1.16/Sun May 14 16:43:33 2017//
+/patch-include_Makefile_in/1.8/Tue Mar 28 22:16:37 2017//
+/patch-include_openvpn-plugin_h_in/1.1/Mon May 15 14:30:56 2017//
+/patch-sample_sample-config-files_client_conf/1.1/Sat Apr 20 16:22:55 2013//
+/patch-sample_sample-config-files_server_conf/1.4/Tue Nov 29 09:22:02 2016//
+/patch-sample_sample-config-files_static-home_conf/1.2/Tue Nov 29 09:22:02 2016//
+/patch-sample_sample-config-files_static-office_conf/1.2/Tue Nov 29 09:22:02 2016//
+/patch-sample_sample-config-files_tls-home_conf/1.1/Sat Apr 20 16:22:55 2013//
+/patch-sample_sample-config-files_tls-office_conf/1.1/Sat Apr 20 16:22:55 2013//
+/patch-sample_sample-config-files_xinetd-client-config/1.1/Sat Apr 20 16:22:55 2013//
+/patch-sample_sample-config-files_xinetd-server-config/1.1/Sat Apr 20 16:22:55 2013//
+/patch-src_openvpn_route_c/1.9/Sun May 21 16:12:43 2017//
+/patch-src_openvpn_syshead_h/1.3/Thu Feb 16 21:16:55 2017//
+/patch-src_openvpn_tun_c/1.13/Sun Apr 16 20:14:17 2017//
+D

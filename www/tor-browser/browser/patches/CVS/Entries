@@ -1,0 +1,14 @@
+/patch-_mozconfig/1.1.1.1/Sun Nov 13 21:15:43 2016//
+/patch-browser_installer_Makefile_in/1.1.1.1/Sun Nov 13 21:15:43 2016//
+/patch-configure_in/1.1.1.1/Sun Nov 13 21:15:43 2016//
+/patch-gfx_skia_moz_build/1.1.1.1/Sun Nov 13 21:15:43 2016//
+/patch-gfx_skia_skia_src_opts_SkBlitRow_opts_SSE4_h/1.1.1.1/Sun Nov 13 21:15:43 2016//
+/patch-intl_icu_source_Makefile_in/1.1.1.1/Sun Nov 13 21:15:43 2016//
+/patch-security_nss_Makefile/1.1.1.1/Sun Nov 13 21:15:43 2016//
+/patch-security_nss_coreconf_OpenBSD_mk/1.1.1.1/Sun Nov 13 21:15:43 2016//
+/patch-security_nss_coreconf_UNIX_mk/1.1.1.1/Sun Nov 13 21:15:43 2016//
+/patch-security_nss_lib_freebl_blapi_h/1.1.1.1/Sun Nov 13 21:15:43 2016//
+/patch-storage_mozStorageConnection_cpp/1.1.1.1/Sun Nov 13 21:15:43 2016//
+/patch-toolkit_components_protobuf_src_google_protobuf_stubs_atomicops_h/1.1.1.1/Sun Nov 13 21:15:43 2016//
+/patch-xpcom_io_TorFileUtils_cpp/1.1.1.1/Sun Nov 13 21:15:43 2016//
+D

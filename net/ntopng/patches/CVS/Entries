@@ -1,0 +1,20 @@
+/patch-Makefile_in/1.1.1.1/Tue Apr 26 20:56:01 2016//
+/patch-autogen_sh/1.1/Sun May  1 13:27:56 2016//
+/patch-configure_seed/1.1.1.1/Tue Apr 26 20:56:01 2016//
+/patch-include_Flow_h/1.2/Sat Jul  9 12:14:28 2016//
+/patch-include_NetworkInterface_h/1.2/Sat Jul  9 12:14:28 2016//
+/patch-include_Utils_h/1.2/Sat Jul  9 12:14:28 2016//
+/patch-include_ntop_defines_h/1.2/Sat Jul  9 12:14:28 2016//
+/patch-nDPI_autogen_sh/1.1.1.1/Tue Apr 26 20:56:01 2016//
+/patch-nDPI_example_ndpiReader_c/1.2/Sat Jul  9 12:14:28 2016//
+/patch-nDPI_example_ndpi_util_c/1.2/Sat Jul  9 12:14:28 2016//
+/patch-nDPI_src_include_ndpi_define_h/1.1.1.1/Tue Apr 26 20:56:01 2016//
+/patch-src_ActivityStats_cpp/1.1.1.1/Tue Apr 26 20:56:01 2016//
+/patch-src_DivertInterface_cpp/1.1.1.1/Tue Apr 26 20:56:01 2016//
+/patch-src_DummyInterface_cpp/1.1.1.1/Tue Apr 26 20:56:01 2016//
+/patch-src_Flow_cpp/1.2/Sat Jul  9 12:14:28 2016//
+/patch-src_HTTPserver_cpp/1.1.1.1/Tue Apr 26 20:56:01 2016//
+/patch-src_Lua_cpp/1.2/Sat Jul  9 12:14:28 2016//
+/patch-src_NetworkInterface_cpp/1.2/Sat Jul  9 12:14:28 2016//
+/patch-src_Utils_cpp/1.2/Sat Jul  9 12:14:28 2016//
+D

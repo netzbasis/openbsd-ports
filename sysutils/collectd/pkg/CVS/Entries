@@ -1,0 +1,23 @@
+/DESCR-main/1.1.1.1/Wed Jun 23 18:04:26 2010//
+/DESCR-memcachec/1.1/Sun May  3 10:41:35 2015//
+/DESCR-mysql/1.2/Thu Jun 24 06:53:37 2010//
+/DESCR-nut/1.1/Sun May  3 10:41:35 2015//
+/DESCR-pgsql/1.2/Thu Jun 24 06:53:37 2010//
+/DESCR-python/1.1/Sun May  3 10:41:35 2015//
+/DESCR-riemann/1.1/Sat Dec  3 11:44:41 2016//
+/DESCR-rrdtool/1.2/Thu Jun 24 06:53:37 2010//
+/DESCR-snmp/1.2/Thu Jun 24 06:53:37 2010//
+/DESCR-virt/1.1/Sun May  3 10:41:35 2015//
+/PLIST-main/1.11/Sat Dec  3 11:44:41 2016//
+/PLIST-memcachec/1.1/Sun May  3 10:41:35 2015//
+/PLIST-mysql/1.2/Thu Jun 24 06:53:37 2010//
+/PLIST-nut/1.1/Sun May  3 10:41:35 2015//
+/PLIST-pgsql/1.2/Thu Jun 24 06:53:37 2010//
+/PLIST-python/1.1/Sun May  3 10:41:35 2015//
+/PLIST-riemann/1.1/Sat Dec  3 11:44:41 2016//
+/PLIST-rrdtool/1.4/Mon Dec  1 09:07:12 2014//
+/PLIST-snmp/1.2/Thu Jun 24 06:53:37 2010//
+/PLIST-virt/1.2/Thu Jul 23 07:33:17 2015//
+/README-main/1.1/Thu Jul 23 07:33:17 2015//
+/collectd.rc/1.2/Thu Jul 23 07:33:17 2015//
+D

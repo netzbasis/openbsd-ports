@@ -1,0 +1,12 @@
+/patch-libao_Makefile_am/1.1/Sun Oct 26 15:23:09 2014//
+/patch-libao_Makefile_in/1.1/Sun Oct 26 15:23:09 2014//
+/patch-libao_audio_out_c/1.1/Sun Oct 26 15:23:09 2014//
+/patch-libao_configure_incl/1.1/Sun Oct 26 15:23:09 2014//
+/patch-libdca_Makefile_in/1.2/Mon Apr 26 20:01:25 2010//
+/patch-libdca_bitstream_c/1.1/Tue May 15 16:17:27 2012//
+/patch-libdca_parse_c/1.1/Tue May 15 16:17:27 2012//
+/patch-libdca_tables_fir_h/1.1/Tue May 15 16:17:27 2012//
+/patch-libdca_tables_huffman_h/1.1/Tue May 15 16:17:27 2012//
+/patch-libdca_tables_quantization_h/1.1/Tue May 15 16:17:27 2012//
+/patch-src_Makefile_in/1.1/Fri Jul 17 17:00:06 2009//
+D

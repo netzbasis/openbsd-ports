@@ -1,0 +1,24 @@
+/patch-src_bin_Makefile_in/1.1.1.1/Sat Oct 20 04:35:55 2012//
+/patch-src_include_fst_accumulator_h/1.1/Sun May  7 20:00:25 2017//
+/patch-src_include_fst_arc-map_h/1.1/Sun May  7 20:00:25 2017//
+/patch-src_include_fst_config_h_in/1.1/Sun May  7 20:00:25 2017//
+/patch-src_include_fst_determinize_h/1.1/Sun May  7 20:00:25 2017//
+/patch-src_include_fst_encode_h/1.1/Sun May  7 20:00:25 2017//
+/patch-src_include_fst_epsnormalize_h/1.1/Sun May  7 20:00:26 2017//
+/patch-src_include_fst_equivalent_h/1.1/Sun May  7 20:00:26 2017//
+/patch-src_include_fst_factor-weight_h/1.1/Sun May  7 20:00:26 2017//
+/patch-src_include_fst_label-reachable_h/1.1/Sun May  7 20:00:26 2017//
+/patch-src_include_fst_relabel_h/1.1/Sun May  7 20:00:26 2017//
+/patch-src_include_fst_replace-util_h/1.1/Sun May  7 20:00:26 2017//
+/patch-src_include_fst_replace_h/1.1/Sun May  7 20:00:26 2017//
+/patch-src_include_fst_rmepsilon_h/1.1/Sun May  7 20:00:26 2017//
+/patch-src_include_fst_rmfinalepsilon_h/1.1/Sun May  7 20:00:26 2017//
+/patch-src_include_fst_script_compile-impl_h/1.1/Sun May  7 20:00:26 2017//
+/patch-src_include_fst_sparse-tuple-weight_h/1.1/Sun May  7 20:00:26 2017//
+/patch-src_include_fst_state-map_h/1.1/Sun May  7 20:00:26 2017//
+/patch-src_include_fst_symbol-table-ops_h/1.1/Sun May  7 20:00:26 2017//
+/patch-src_include_fst_synchronize_h/1.1/Sun May  7 20:00:26 2017//
+/patch-src_include_fst_test-properties_h/1.1/Sun May  7 20:00:26 2017//
+/patch-src_include_fst_util_h/1.1/Sun May  7 20:00:26 2017//
+/patch-src_test_Makefile_in/1.1.1.1/Sat Oct 20 04:35:55 2012//
+D

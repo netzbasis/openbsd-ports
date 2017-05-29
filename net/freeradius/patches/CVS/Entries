@@ -1,0 +1,13 @@
+/patch-Makefile/1.7/Thu Jul 17 00:20:51 2014//
+/patch-raddb_certs_Makefile/1.1/Tue Nov  3 22:54:23 2015//
+/patch-raddb_radiusd_conf_in/1.14/Tue Jun 23 21:38:06 2015//
+/patch-src_lib_Makefile/1.8/Thu Jul 17 00:20:51 2014//
+/patch-src_main_radsniff_c/1.3/Sun Apr 13 20:16:03 2014//
+/patch-src_modules_rlm_eap_libeap_Makefile/1.7/Thu Jul 17 00:20:51 2014//
+/patch-src_modules_rlm_perl_Makefile_in/1.3/Mon Jan 21 22:21:24 2008//
+/patch-src_modules_rlm_sql_drivers_rlm_sql_iodbc_configure/1.2/Sun Apr 13 20:16:03 2014//
+/patch-src_modules_rlm_sql_drivers_rules_mak/1.7/Thu Jul 17 00:20:51 2014//
+/patch-src_modules_rlm_unix_rlm_unix_c/1.1/Thu Nov 19 14:19:05 2015//
+/patch-src_modules_rules_mak/1.10/Thu Jul 17 00:20:51 2014//
+/patch-src_tests_runtests_sh/1.1/Mon May 17 16:39:25 2010//
+D

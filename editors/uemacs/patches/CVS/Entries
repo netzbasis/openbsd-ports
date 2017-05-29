@@ -1,0 +1,19 @@
+/patch-Makefile/1.1/Tue Jan  6 03:29:08 2004//
+/patch-freebsd_estruct_h/1.1/Tue Jan  6 03:29:09 2004//
+/patch-freebsd_makefile/1.1/Tue Jan  6 03:29:09 2004//
+/patch-h_ebind_h/1.1/Tue Jan  6 03:29:09 2004//
+/patch-h_epath_h/1.1/Tue Jan  6 03:29:09 2004//
+/patch-h_eproto_h/1.2/Mon May  1 22:25:54 2017//
+/patch-openbsd_estruct_h/1.1/Tue Jan  6 03:29:09 2004//
+/patch-openbsd_makefile/1.1/Tue Jan  6 03:29:09 2004//
+/patch-src_bind_c/1.2/Mon May  1 22:25:54 2017//
+/patch-src_char_c/1.2/Mon May  1 22:25:54 2017//
+/patch-src_dolock_c/1.1/Tue Jan  6 03:29:09 2004//
+/patch-src_eval_c/1.1/Mon May  1 22:25:54 2017//
+/patch-src_file_c/1.2/Mon May  1 22:25:54 2017//
+/patch-src_fileio_c/1.1/Tue Jan  6 03:29:09 2004//
+/patch-src_input_c/1.2/Mon May  1 22:25:54 2017//
+/patch-src_keyboard_c/1.2/Mon May  1 22:25:54 2017//
+/patch-src_lock_c/1.2/Mon May  1 22:25:54 2017//
+/patch-src_unix_c/1.1/Tue Jan  6 03:29:09 2004//
+D

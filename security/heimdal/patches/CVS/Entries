@@ -1,0 +1,14 @@
+/patch-kadmin_add-random-users_c/1.2/Sat Dec 17 14:58:31 2016//
+/patch-kpasswd_kpasswd-generator_c/1.2/Sat Dec 17 14:58:31 2016//
+/patch-kuser_generate-requests_c/1.2/Sat Dec 17 14:58:31 2016//
+/patch-lib_hcrypto_test_rsa_c/1.2/Sat Dec 17 14:58:31 2016//
+/patch-lib_hx509_softp11_c/1.2/Sat Dec 17 14:58:31 2016//
+/patch-lib_krb5_crypto-rand_c/1.2/Sat Dec 17 14:58:31 2016//
+/patch-lib_krb5_krb5_h/1.2/Sat Dec 17 14:58:31 2016//
+/patch-lib_krb5_test_crypto_c/1.1/Sun Jul 13 14:10:14 2014//
+/patch-lib_krb5_test_rfc3961_c/1.1/Sun Jul 13 14:10:14 2014//
+/patch-lib_roken_rand_c/1.2/Sat Dec 17 14:58:31 2016//
+/patch-lib_roken_roken_h_in/1.1/Sat Dec 17 14:58:31 2016//
+/patch-lib_sqlite_sqlite3_c/1.2/Sat Dec 17 14:58:31 2016//
+/patch-tools_krb5-config_in/1.4/Wed Apr 12 09:50:01 2017//
+D

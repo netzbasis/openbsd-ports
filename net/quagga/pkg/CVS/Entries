@@ -1,0 +1,12 @@
+/DESCR/1.2/Tue Sep 27 09:45:53 2011//
+/PLIST/1.20/Tue Mar 22 12:57:54 2016//
+/quagga_babeld.rc/1.1/Thu Apr 18 20:29:08 2013//
+/quagga_bgpd.rc/1.1/Thu Apr 18 20:29:08 2013//
+/quagga_isisd.rc/1.1/Mon Jan 19 15:44:12 2015//
+/quagga_ospf6d.rc/1.1/Thu Apr 18 20:29:08 2013//
+/quagga_ospfd.rc/1.1/Thu Apr 18 20:29:08 2013//
+/quagga_pimd.rc/1.1/Tue Mar 22 12:57:54 2016//
+/quagga_ripd.rc/1.1/Thu Apr 18 20:29:08 2013//
+/quagga_ripngd.rc/1.1/Thu Apr 18 20:29:08 2013//
+/quagga_zebra.rc/1.1/Thu Apr 18 20:29:08 2013//
+D

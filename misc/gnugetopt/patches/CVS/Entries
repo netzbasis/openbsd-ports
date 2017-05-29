@@ -1,0 +1,13 @@
+/patch-Makefile/1.4/Wed Dec 10 20:46:57 2014//
+/patch-getopt_1/1.3/Wed Dec 10 20:46:57 2014//
+/patch-getopt_c/1.3/Wed Dec 10 20:46:57 2014//
+/patch-gnu_getopt_c/1.1/Sun Mar 15 21:23:09 2009//
+/patch-tests_invalid_getopt_option_stderr/1.1/Wed Dec 10 20:46:57 2014//
+/patch-tests_invocation_without_parameters_stderr/1.1/Wed Dec 10 20:46:57 2014//
+/patch-tests_long_option_ambiguous_1_stderr/1.1/Wed Dec 10 20:46:57 2014//
+/patch-tests_name_option_long_stderr/1.1/Wed Dec 10 20:46:57 2014//
+/patch-tests_name_option_short_stderr/1.1/Wed Dec 10 20:46:57 2014//
+/patch-tests_quiet_output_option_long_stderr/1.1/Wed Dec 10 20:46:57 2014//
+/patch-tests_quiet_output_option_short_stderr/1.1/Wed Dec 10 20:46:57 2014//
+/patch-tests_unknown_options_stderr/1.1/Wed Dec 10 20:46:57 2014//
+D

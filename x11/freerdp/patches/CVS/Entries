@@ -1,0 +1,19 @@
+/patch-CMakeLists_txt/1.5/Sat Nov  7 05:55:08 2015//
+/patch-channels_CMakeLists_txt/1.1/Sat Nov 21 10:04:31 2015//
+/patch-channels_client_CMakeLists_txt/1.2/Sat Nov 21 10:04:31 2015//
+/patch-client_CMakeLists_txt/1.1/Sat Nov 21 10:04:31 2015//
+/patch-client_X11_CMakeLists_txt/1.2/Sat Nov  7 05:55:08 2015//
+/patch-libfreerdp_crypto_tls_c/1.1/Wed Feb  1 11:43:23 2017//
+/patch-server_CMakeLists_txt/1.1/Sat Nov 21 10:04:32 2015//
+/patch-third-party_CMakeLists_txt/1.1/Sat Nov 21 10:04:32 2015//
+/patch-winpr_include_winpr_crt_h/1.1/Sat Nov  7 05:55:08 2015//
+/patch-winpr_libwinpr_crt_alignment_c/1.1/Wed Jan 13 22:25:48 2016//
+/patch-winpr_libwinpr_synch_CMakeLists_txt/1.1/Sat Nov  7 05:55:08 2015//
+/patch-winpr_libwinpr_synch_wait_c/1.1/Sat Nov  7 05:55:08 2015//
+/patch-winpr_libwinpr_sysinfo_CMakeLists_txt/1.1/Sat Nov  7 05:55:08 2015//
+/patch-winpr_libwinpr_sysinfo_sysinfo_c/1.1/Sat Nov  7 05:55:08 2015//
+/patch-winpr_libwinpr_utils_CMakeLists_txt/1.1/Sat Nov  7 05:55:08 2015//
+/patch-winpr_libwinpr_utils_trio_triodef_h/1.1/Sat Nov  7 05:55:08 2015//
+/patch-winpr_libwinpr_winsock_winsock_c/1.1/Sat Nov  7 05:55:08 2015//
+/patch-winpr_pc_in/1.1/Sat Nov  7 05:55:08 2015//
+D

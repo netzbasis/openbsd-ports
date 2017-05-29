@@ -1,0 +1,19 @@
+/patch-qt_config_tests_unix_gnu-libiconv_gnu-libiconv_cpp/1.1/Wed Jan  6 16:50:35 2016//
+/patch-qt_configure/1.1/Thu Mar  2 10:12:02 2017//
+/patch-qt_mkspecs_openbsd-g++_qmake_conf/1.1/Thu Mar  2 10:12:02 2017//
+/patch-qt_qmake_generators_unix_unixmake2_cpp/1.1/Wed Jan  6 16:50:35 2016//
+/patch-qt_qmake_generators_unix_unixmake_cpp/1.1/Wed Jan  6 16:50:35 2016//
+/patch-qt_src_3rdparty_webkit_Source_JavaScriptCore_heap_MachineStackMarker_cpp/1.1/Wed Jan  6 16:50:35 2016//
+/patch-qt_src_3rdparty_webkit_Source_JavaScriptCore_jit_JITStubs_cpp/1.1/Wed Jan  6 16:50:35 2016//
+/patch-qt_src_3rdparty_webkit_Source_JavaScriptCore_wtf_Atomics_h/1.1/Thu Apr 27 16:23:14 2017//
+/patch-qt_src_3rdparty_webkit_Source_WebCore_html_HTMLImageElement_cpp/1.1/Thu Apr 27 16:23:14 2017//
+/patch-qt_src_corelib_codecs_qiconvcodec_cpp/1.1/Wed Jan  6 16:50:35 2016//
+/patch-qt_src_corelib_concurrent_qtconcurrentiteratekernel_cpp/1.1/Sat Sep 10 13:03:43 2016//
+/patch-qt_src_corelib_plugin_qlibrary_unix_cpp/1.1/Wed Jan  6 16:50:35 2016//
+/patch-qt_src_network_ssl_qsslsocket_cpp/1.1/Wed Jan  6 16:50:35 2016//
+/patch-qt_src_network_ssl_qsslsocket_openssl_cpp/1.2/Wed Jan  6 17:13:48 2016//
+/patch-qt_src_network_ssl_qsslsocket_openssl_symbols_cpp/1.1/Wed Jan  6 16:50:35 2016//
+/patch-src_image_image_pro/1.2/Wed Jan  6 16:50:35 2016//
+/patch-src_lib_lib_pro/1.1/Wed Jan 13 22:31:38 2016//
+/patch-src_pdf_pdf_pro/1.2/Wed Jan  6 16:50:35 2016//
+D

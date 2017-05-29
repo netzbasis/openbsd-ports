@@ -1,0 +1,17 @@
+/patch-dist_Makefile_in/1.10/Thu Oct 28 10:33:16 2010//
+/patch-dist_configure/1.9/Fri Oct 26 14:06:02 2007//
+/patch-java_src_com_sleepycat_db_internal_db_javaJNI_java/1.1/Fri Oct 26 14:06:02 2007//
+/patch-libdb_java_java_util_i/1.2/Fri Oct 26 14:06:02 2007//
+/patch-tcl_tcl_compat_c/1.3/Fri Oct 26 14:06:02 2007//
+/patch-tcl_tcl_db_c/1.3/Fri Oct 26 14:06:02 2007//
+/patch-tcl_tcl_db_pkg_c/1.3/Fri Oct 26 14:06:02 2007//
+/patch-tcl_tcl_dbcursor_c/1.3/Fri Oct 26 14:06:02 2007//
+/patch-tcl_tcl_env_c/1.3/Fri Oct 26 14:06:02 2007//
+/patch-tcl_tcl_lock_c/1.3/Fri Oct 26 14:06:02 2007//
+/patch-tcl_tcl_log_c/1.3/Fri Oct 26 14:06:02 2007//
+/patch-tcl_tcl_mp_c/1.3/Fri Oct 26 14:06:02 2007//
+/patch-tcl_tcl_rep_c/1.2/Fri Oct 26 14:06:02 2007//
+/patch-tcl_tcl_txn_c/1.3/Fri Oct 26 14:06:02 2007//
+/patch-tcl_tcl_util_c/1.3/Fri Oct 26 14:06:02 2007//
+/patch-test_include_tcl/1.4/Tue Oct 28 11:53:33 2008//
+D

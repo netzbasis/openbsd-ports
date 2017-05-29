@@ -1,0 +1,8 @@
+/patch-extern_lua-5_1_src_loadlib_c/1.1/Sun Nov  3 10:11:35 2013//
+/patch-extern_lua-5_1_src_luaconf_h/1.1/Sun Nov  3 08:59:14 2013//
+/patch-src_Makefile_in/1.5/Sun Mar 23 22:39:28 2014//
+/patch-src_arch_ArchHooks_ArchHooks_Unix_cpp/1.1.1.1/Sun Nov  3 00:00:32 2013//
+/patch-src_archutils_Unix_Backtrace_h/1.1.1.1/Sun Nov  3 00:00:32 2013//
+/patch-src_archutils_Unix_SignalHandler_h/1.1.1.1/Sun Nov  3 00:00:32 2013//
+/patch-src_libtomcrypt_src_headers_tomcrypt_macros_h/1.1/Fri Apr 28 11:04:56 2017//
+D

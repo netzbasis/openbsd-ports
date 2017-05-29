@@ -1,0 +1,18 @@
+/DESCR-freetds/1.1/Mon Jun 27 20:35:31 2016//
+/DESCR-iodbc/1.1.1.1/Thu Nov 12 12:59:37 2015//
+/DESCR-ldap/1.1.1.1/Thu Nov 12 12:59:37 2015//
+/DESCR-main/1.1.1.1/Thu Nov 12 12:59:38 2015//
+/DESCR-memcached/1.1/Mon Jan 25 20:32:15 2016//
+/DESCR-mysql/1.1.1.1/Thu Nov 12 12:59:38 2015//
+/DESCR-pgsql/1.1.1.1/Thu Nov 12 12:59:38 2015//
+/DESCR-python/1.1.1.1/Thu Nov 12 12:59:38 2015//
+/PLIST-freetds/1.1/Mon Jun 27 20:35:31 2016//
+/PLIST-iodbc/1.3/Wed Jun 29 16:14:43 2016//
+/PLIST-ldap/1.3/Wed Jun 29 16:14:43 2016//
+/PLIST-main/1.7/Wed Mar  8 17:23:25 2017//
+/PLIST-memcached/1.1/Mon Jan 25 20:32:15 2016//
+/PLIST-mysql/1.3/Wed Jun 29 16:14:43 2016//
+/PLIST-pgsql/1.3/Wed Jun 29 16:14:43 2016//
+/PLIST-python/1.2/Mon Nov 30 22:01:43 2015//
+/freeradius.rc/1.1.1.1/Thu Nov 12 12:59:38 2015//
+D

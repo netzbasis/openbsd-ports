@@ -1,0 +1,11 @@
+/patch-cmake_Modules_WaffleDefineOS_cmake/1.1.1.1/Sat Dec 26 03:00:13 2015//
+/patch-cmake_Modules_WaffleValidateOptions_cmake/1.1.1.1/Sat Dec 26 03:00:13 2015//
+/patch-src_waffle_CMakeLists_txt/1.1.1.1/Sat Dec 26 03:00:13 2015//
+/patch-src_waffle_egl_wegl_platform_c/1.1.1.1/Sat Dec 26 03:00:13 2015//
+/patch-src_waffle_gbm_wgbm_display_c/1.1.1.1/Sat Dec 26 03:00:13 2015//
+/patch-src_waffle_gbm_wgbm_platform_c/1.1.1.1/Sat Dec 26 03:00:13 2015//
+/patch-src_waffle_glx_glx_platform_c/1.1.1.1/Sat Dec 26 03:00:13 2015//
+/patch-src_waffle_linux_linux_dl_c/1.1.1.1/Sat Dec 26 03:00:13 2015//
+/patch-tests_functional_CMakeLists_txt/1.1.1.1/Sat Dec 26 03:00:13 2015//
+/patch-third_party_cmocka_include_cmocka_h/1.1/Mon Dec 28 17:20:18 2015//
+D

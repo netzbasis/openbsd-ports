@@ -1,0 +1,14 @@
+/patch-ext_rack_config_ru/1.1/Tue Nov 25 13:19:28 2014//
+/patch-lib_puppet_defaults_rb/1.16/Tue Aug 11 20:19:45 2015//
+/patch-lib_puppet_network_http_rack_rest_rb/1.1/Fri May 27 19:10:39 2016//
+/patch-lib_puppet_provider_package_gem_rb/1.1/Wed Oct 15 10:37:24 2014//
+/patch-lib_puppet_provider_package_openbsd_rb/1.29/Mon Aug 24 11:24:26 2015//
+/patch-lib_puppet_provider_package_pip_rb/1.2/Fri Jan 22 13:56:27 2016//
+/patch-lib_puppet_provider_service_openbsd_rb/1.28/Thu Aug 13 10:46:31 2015//
+/patch-lib_puppet_provider_user_openbsd_rb/1.4/Mon Dec 29 18:56:55 2014//
+/patch-lib_puppet_reference_configuration_rb/1.2/Fri Dec 20 14:10:41 2013//
+/patch-lib_puppet_type_package_rb/1.2/Mon Jun  1 06:41:00 2015//
+/patch-lib_puppet_type_user_rb/1.4/Sun Dec  7 13:31:08 2014//
+/patch-lib_puppet_util_run_mode_rb/1.1/Fri Mar  8 16:12:47 2013//
+/patch-lib_puppet_vendor_safe_yaml_lib_safe_yaml_rb/1.1/Fri Jul 17 17:53:21 2015//
+D

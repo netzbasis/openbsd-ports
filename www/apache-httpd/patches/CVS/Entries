@@ -1,0 +1,19 @@
+/patch-Makefile_in/1.7/Sat Jul 18 00:55:09 2015//
+/patch-config_layout/1.8/Sat Jul 18 00:33:53 2015//
+/patch-configure/1.13/Fri Mar 17 07:36:35 2017//
+/patch-docs_conf_httpd_conf_in/1.8/Fri Mar 17 07:36:35 2017//
+/patch-docs_man_apachectl_8/1.3/Fri May 15 08:08:04 2015//
+/patch-docs_man_apxs_1/1.3/Fri May 15 08:08:04 2015//
+/patch-docs_man_dbmmanage_1/1.2/Fri May 15 08:08:04 2015//
+/patch-docs_man_htdbm_1/1.4/Fri May 15 08:08:04 2015//
+/patch-docs_man_htdigest_1/1.3/Thu Oct 18 08:12:17 2012//
+/patch-docs_man_htpasswd_1/1.6/Fri May 15 08:08:04 2015//
+/patch-docs_man_httpd_8/1.6/Fri May 15 08:08:04 2015//
+/patch-docs_man_logresolve_1/1.3/Fri May 15 08:08:04 2015//
+/patch-docs_man_rotatelogs_8/1.6/Fri May 15 08:08:04 2015//
+/patch-docs_man_suexec_8/1.4/Fri May 15 08:08:04 2015//
+/patch-server_mpm_unix_c/1.2/Fri Mar 17 07:36:35 2017//
+/patch-support_apachectl_in/1.4/Fri May 15 08:08:04 2015//
+/patch-support_apxs_in/1.3/Fri May 15 08:08:04 2015//
+/patch-support_rotatelogs_c/1.5/Fri May 15 08:08:04 2015//
+D

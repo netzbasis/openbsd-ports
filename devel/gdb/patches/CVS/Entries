@@ -1,0 +1,16 @@
+/patch-bfd_coff-rs6000_c/1.3/Thu Aug 14 07:50:24 2014//
+/patch-bfd_elf_c/1.9/Sun Oct  9 11:39:20 2016//
+/patch-bfd_peXXigen_c/1.6/Sun Oct  9 11:39:20 2016//
+/patch-gdb_alphabsd-nat_c/1.1/Sat Sep  3 13:48:39 2016//
+/patch-gdb_armnbsd-nat_c/1.1/Sat Sep  3 13:48:39 2016//
+/patch-gdb_data-directory_Makefile_in/1.9/Sun Oct  9 11:39:20 2016//
+/patch-gdb_hppaobsd-nat_c/1.1/Sat Sep  3 13:48:39 2016//
+/patch-gdb_m88kbsd-nat_c/1.1/Sat Sep  3 13:48:39 2016//
+/patch-gdb_mips64obsd-nat_c/1.2/Fri Oct 21 13:13:31 2016//
+/patch-gdb_ppcobsd-nat_c/1.1/Sat Sep  3 13:48:39 2016//
+/patch-gdb_python_python-config_py/1.3/Sat May  4 21:27:11 2013//
+/patch-gdb_shnbsd-nat_c/1.1/Sat Sep  3 13:48:39 2016//
+/patch-include_filenames_h/1.1/Sat Aug 16 11:14:05 2014//
+/patch-libiberty_Makefile_in/1.7/Wed Sep  9 19:47:17 2015//
+/patch-libiberty_filename_cmp_c/1.2/Sun Mar 15 02:58:07 2015//
+D

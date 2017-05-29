@@ -1,0 +1,12 @@
+/patch-base_Makefile_in/1.6/Thu Nov  7 10:31:38 2013//
+/patch-cgi_Makefile_in/1.8/Fri Apr  3 15:09:15 2015//
+/patch-configure/1.17/Mon Apr 17 17:29:13 2017//
+/patch-include_config_h_in/1.9/Mon Apr 17 17:29:13 2017//
+/patch-include_locations_h_in/1.4/Thu Nov  7 10:31:38 2013//
+/patch-lib_runcmd_c/1.1/Thu Feb  5 22:58:24 2015//
+/patch-sample-config_cgi_cfg_in/1.7/Mon Apr 17 17:29:13 2017//
+/patch-sample-config_httpd_conf_in/1.4/Mon Apr 17 17:29:13 2017//
+/patch-sample-config_nagios_cfg_in/1.6/Mon Apr 17 17:29:13 2017//
+/patch-sample-config_template-object_localhost_cfg_in/1.2/Thu Nov  7 10:31:38 2013//
+/patch-sample-config_template-object_templates_cfg_in/1.2/Thu Nov  7 10:31:38 2013//
+D

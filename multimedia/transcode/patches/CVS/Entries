@@ -1,0 +1,17 @@
+/patch-Makefile_am/1.1/Mon Jan 11 08:49:27 2010//
+/patch-acinclude_m4/1.2/Thu May  3 06:06:59 2012//
+/patch-avilib_avidump_c/1.1/Thu May  3 06:06:59 2012//
+/patch-configure_in/1.7/Wed Nov 19 09:36:53 2014//
+/patch-export_aud_aux_c/1.7/Mon May  5 11:51:37 2014//
+/patch-export_export_ffmpeg_c/1.8/Mon May  5 11:51:37 2014//
+/patch-export_ffmpeg_cfg_c/1.3/Mon May  5 11:51:37 2014//
+/patch-filter_filter_pp_c/1.1/Thu May  3 06:06:59 2012//
+/patch-filter_subtitler_load_font_c/1.1/Thu Jan  9 22:42:33 2014//
+/patch-import_Makefile_am/1.1/Mon Jan 11 08:49:27 2010//
+/patch-import_decode_lavc_c/1.5/Mon May  5 11:51:37 2014//
+/patch-import_import_ffmpeg_c/1.4/Mon May  5 11:51:37 2014//
+/patch-import_probe_ffmpeg_c/1.3/Mon May  5 11:51:37 2014//
+/patch-libtc_tcavcodec_h/1.2/Sat Jan 26 12:47:44 2013//
+/patch-libtc_tcglob_c/1.1/Mon Jan 11 08:49:27 2010//
+/patch-src_transcode_c/1.1/Mon Jan 11 08:49:27 2010//
+D
