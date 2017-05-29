@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.158 2017/05/27 04:54:31 espie Exp $
+# $OpenBSD: Makefile,v 1.160 2017/05/28 11:59:52 zhuk Exp $
 
 COMMENT=	audio/video converter and streamer
 
@@ -8,6 +8,7 @@ PKGNAME=	ffmpeg-${V}
 CATEGORIES=	graphics multimedia
 MASTER_SITES=	http://comstyle.com/source/
 EXTRACT_SUFX=	.tar.xz
+REVISION=	0
 
 SHARED_LIBS=	avcodec		22.2 \
 		avdevice	10.0 \
@@ -35,7 +36,7 @@ WANTLIB=	SDL X11 Xext Xv ass bz2 c crypto fontconfig freetype fribidi \
 WANT_CXX =	base clang
 
 MODCLANG_ARCHS=	amd64
-MODCLANG_LANG=	c
+MODCLANG_LANGS=	c
 
 BUILD_DEPENDS=	textproc/texi2html
 .if ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "i386"
