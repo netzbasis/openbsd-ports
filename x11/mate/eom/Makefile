@@ -1,19 +1,17 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2017/04/30 19:01:28 robert Exp $
+# $OpenBSD: Makefile,v 1.7 2017/05/30 21:59:34 ajacoutot Exp $
 
-COMMENT=	image viewer for the MATE desktop
+USE_WXNEEDED=		Yes
 
-CATEGORIES=	graphics
+COMMENT=		image viewer for the MATE desktop
 
-MATE_PROJECT=	eom
-MATE_VERSION=	1.18.1
+CATEGORIES=		graphics
 
-USE_WXNEEDED=	Yes
+MATE_PROJECT=		eom
+MATE_VERSION=		1.18.2
+REVISION=		1
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
-
-MODULES=	devel/dconf \
-		x11/gnome
 
 WANTLIB += ICE SM X11 X11-xcb Xcomposite Xcursor Xdamage Xext
 WANTLIB += Xfixes Xi Xinerama Xrandr Xrender c dconf epoxy expat
@@ -27,13 +25,18 @@ WANTLIB += girepository-1.0 graphite2 gtk-3 harfbuzz lcms2
 WANTLIB += mate-desktop-2 pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += peas-1.0 peas-gtk-1.0 rsvg-2 startup-notification-1
 
-LIB_DEPENDS=	devel/libpeas \
-		graphics/lcms2 \
-		graphics/libexif \
-		textproc/exempi \
-		x11/dbus-glib \
-		x11/mate/desktop
+MODULES=		devel/dconf \
+			x11/gnome
 
-MODGNOME_TOOLS=	desktop-file-utils gtk-update-icon-cache
+LIB_DEPENDS=		devel/libpeas \
+			graphics/lcms2 \
+			graphics/libexif \
+			textproc/exempi \
+			x11/dbus-glib \
+			x11/mate/desktop
+
+MODGNOME_TOOLS=		desktop-file-utils gtk-update-icon-cache
+
+CONFIGURE_STYLE=	gnu
 
 .include <bsd.port.mk>

@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2017/04/30 19:01:28 robert Exp $
+# $OpenBSD: Makefile,v 1.5 2017/05/30 21:59:34 ajacoutot Exp $
 
-COMMENT=	MATE support utilities
+COMMENT=		MATE support utilities
 
 SHARED_LIBS +=  matedict                  6.7 # 6.7
 
-MATE_PROJECT=	mate-utils
-MATE_VERSION=	1.18.1
+MATE_PROJECT=		mate-utils
+MATE_VERSION=		1.18.2
+REVISION=		0
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -20,12 +21,14 @@ WANTLIB += canberra-gtk3 canberra dbus-1 gdk-3 graphite2 gtk-3
 WANTLIB += gtop-2.0 harfbuzz ltdl mate-panel-applet-4 ogg pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 vorbis vorbisfile
 
-MODULES=	devel/dconf \
-		x11/gnome
+MODULES=		devel/dconf \
+			x11/gnome
 
-LIB_DEPENDS=	devel/libgtop2 \
-		x11/mate/panel
+LIB_DEPENDS=		devel/libgtop2 \
+			x11/mate/panel
 
-MODGNOME_TOOLS=	desktop-file-utils gtk-update-icon-cache
+MODGNOME_TOOLS=		desktop-file-utils gtk-update-icon-cache
+
+CONFIGURE_STYLE=	gnu
 
 .include <bsd.port.mk>

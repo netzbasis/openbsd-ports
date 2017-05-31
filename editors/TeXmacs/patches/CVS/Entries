@@ -1,7 +1,9 @@
 /patch-Makefile_in/1.1.1.1/Tue Apr  5 23:30:54 2016//
 /patch-aclocal_m4/1.1.1.1/Tue Apr  5 23:30:54 2016//
-/patch-configure_in/1.1.1.1/Tue Apr  5 23:30:54 2016//
+/patch-configure_in/1.2/Tue May 30 22:06:39 2017//
+/patch-src_Plugins_Qt_QTMSockets_cpp/1.1/Tue May 30 22:06:39 2017//
 /patch-src_Plugins_Qt_qt_gui_cpp/1.1.1.1/Tue Apr  5 23:30:54 2016//
+/patch-src_Plugins_Unix_unix_sys_utils_cpp/1.1/Tue May 30 22:06:39 2017//
 /patch-src_System_Link_pipe_link_cpp/1.1.1.1/Tue Apr  5 23:30:54 2016//
 /patch-src_System_Link_socket_notifier_cpp/1.2/Sun Sep 11 20:54:12 2016//
 D

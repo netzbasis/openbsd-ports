@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2017/04/30 19:01:25 robert Exp $
+# $OpenBSD: Makefile,v 1.4 2017/05/30 21:59:34 ajacoutot Exp $
 
 COMMENT=		mixer library for MATE desktop
 
 MATE_PROJECT=		libmatemixer
+REVISION=		1
 
 SHARED_LIBS +=  matemixer                 0.0 # 0.0
 
@@ -19,5 +20,7 @@ WANTLIB += sndfile vorbis vorbisenc
 MODULES=		x11/gnome
 
 LIB_DEPENDS=		audio/pulseaudio
+
+CONFIGURE_STYLE=	gnu
 
 .include <bsd.port.mk>

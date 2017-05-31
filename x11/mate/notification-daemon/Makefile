@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2017/04/30 19:01:28 robert Exp $
+# $OpenBSD: Makefile,v 1.4 2017/05/30 21:59:34 ajacoutot Exp $
 
 COMMENT=		MATE notification daemon
 
 MATE_PROJECT=		mate-notification-daemon
+REVISION=		1
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -28,5 +29,7 @@ LIB_DEPENDS=		audio/libcanberra,-gtk3 \
 			x11/dbus-glib
 
 MODGNOME_TOOLS=		desktop-file-utils gtk-update-icon-cache
+
+CONFIGURE_STYLE=	gnu
 
 .include <bsd.port.mk>

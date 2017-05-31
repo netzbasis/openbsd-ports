@@ -1,11 +1,12 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2017/04/30 19:01:25 robert Exp $
+# $OpenBSD: Makefile,v 1.4 2017/05/30 21:59:34 ajacoutot Exp $
 
 COMMENT=		file manager for the MATE desktop
 
 SHARED_LIBS +=  caja-extension            5.0 # 5.0
 
 MATE_PROJECT=		caja
-MATE_VERSION=		1.18.2
+MATE_VERSION=		1.18.3
+REVISION=		0
 
 CATEGORIES=		x11
 
@@ -36,5 +37,7 @@ LIB_DEPENDS=		devel/libnotify \
 
 MODGNOME_TOOLS=		shared-mime-info gobject-introspection \
 			gtk-update-icon-cache
+
+CONFIGURE_STYLE=	gnu
 
 .include <bsd.port.mk>

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2017/04/30 19:01:27 robert Exp $
+# $OpenBSD: Makefile,v 1.3 2017/05/30 21:59:34 ajacoutot Exp $
 
 COMMENT=		standard MATE themes
 
 MATE_PROJECT=		mate-themes
-MATE_VERSION=		3.22.7
+MATE_VERSION=		3.22.9
 
 MASTER_SITES=		http://pub.mate-desktop.org/releases/themes/${MATE_VERSION:C/^([0-9]+\.[0-9]+).*/\1/}/
 
@@ -20,5 +20,7 @@ MODGNOME_TOOLS=		gtk-update-icon-cache
 # https://mail.gnome.org/archives/desktop-devel-list/2011-March/msg00017.html
 # we need to depend on gtk-engines2 in order for the gtk2 themes to work.
 RUN_DEPENDS +=		x11/gtk-engines2
+
+CONFIGURE_STYLE=	gnu
 
 .include <bsd.port.mk>

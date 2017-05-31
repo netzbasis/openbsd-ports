@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2017/04/30 19:01:24 robert Exp $
+# $OpenBSD: Makefile,v 1.4 2017/05/30 21:59:34 ajacoutot Exp $
 
 COMMENT=		MATE settings daemon
 
 MATE_PROJECT=		mate-settings-daemon
 MATE_VERSION=		1.18.1
+REVISION=		1
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -41,5 +42,7 @@ RUN_DEPENDS=		sysutils/consolekit
 FAKE_FLAGS=		desktopdir=${PREFIX}/share/examples/mate-settings-daemon/xdg/autostart \
 			sysconfdir=${PREFIX}/share/examples/mate-settings-daemon \
 			DBUS_SYS_DIR=${PREFIX}/share/examples/mate-settings-daemon/dbus-1/system.d
+
+CONFIGURE_STYLE=	gnu
 
 .include <bsd.port.mk>

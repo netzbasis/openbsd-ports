@@ -1,10 +1,12 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2017/04/30 19:01:25 robert Exp $
+# $OpenBSD: Makefile,v 1.4 2017/05/30 21:59:34 ajacoutot Exp $
 
 COMMENT=		the MATE window manager
 
 SHARED_LIBS +=  marco-private             1.0 # 1.0
 
 MATE_PROJECT=		marco
+MATE_VERSION=		1.18.1
+REVISION=		0
 
 CATEGORIES=		x11
 
@@ -29,5 +31,7 @@ RUN_DEPENDS=		x11/gnome/zenity
 
 MODULES=		devel/dconf \
 			x11/gnome
+
+CONFIGURE_STYLE=	gnu
 
 .include <bsd.port.mk>
