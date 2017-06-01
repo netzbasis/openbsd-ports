@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.44 2017/05/27 05:07:48 espie Exp $
+# $OpenBSD: Makefile,v 1.46 2017/05/31 08:08:17 espie Exp $
 
 COMMENT =		convert source code to markup formats
 
-DISTNAME =		highlight-3.36
+DISTNAME =		highlight-3.37
 CATEGORIES =		textproc converters
 
 HOMEPAGE =		http://www.andre-simon.de/
@@ -27,7 +27,7 @@ BUILD_DEPENDS =		devel/boost
 LIB_DEPENDS =		${MODLUA_LIB_DEPENDS}
 
 # c++11
-WANT_CXX =		base gcc
+COMPILER =		gcc
 
 MAKE_FILE =		makefile
 MAKE_FLAGS =		CXX=${CXX} \

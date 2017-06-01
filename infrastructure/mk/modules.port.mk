@@ -1,4 +1,4 @@
-# $OpenBSD: modules.port.mk,v 1.10 2017/05/23 15:12:28 espie Exp $
+# $OpenBSD: modules.port.mk,v 1.12 2017/05/31 08:53:39 espie Exp $
 #
 #  Copyright (c) 2001 Marc Espie
 # 
@@ -27,7 +27,22 @@
 #
 
 .undef _MODULES_KEEP_GOING
-.for _m in ${MODULES:L}
+
+_COMPILER=
+.if defined(COMPILER) && !defined(CHOSEN_COMPILER)
+.  if defined(_MODULES_DONE) && ${_MODULES_DONE:Mgcc4}
+ERRORS += "Fatal: COMPILER coming from a file included *after* the gcc module"
+.  endif
+COMPILER_LANGS ?= c c++
+ONLY_FOR_ARCHS ?= ${CXX11_ARCHS}
+.  if ${PROPERTIES:Mclang}
+CHOSEN_COMPILER = base
+.  else
+_COMPILER=compiler
+.  endif
+.endif
+
+.for _m in ${_COMPILER} ${MODULES:L}
 .  if "${_m:M*/*}" != ""
 .    for _d in ${PORTSDIR_PATH:S/:/ /g}
 .      if empty(_MODULES_DONE:M${_m}) && exists(${_d}/${_m}/${_m:T}.port.mk)
@@ -47,61 +62,6 @@ ERRORS += "Fatal: Missing support for module ${_m}."
 .    endif
 .  endif
 .endfor
-
-# support for preferred compiler
-.if defined(WANT_CXX) && !defined(CHOSEN_CXX)
-.  for c in ${WANT_CXX:L}
-.    if "$c" == "base"
-.      if ${PROPERTIES:Mclang}
-CHOSEN_CXX ?= base
-.      endif
-.    elif "$c" == "gcc"
-.      if !defined(CHOSEN_CXX)
-MODGCC4_ARCHS ?=	*
-_MODGCC4_ARCH_USES = 	No
-
-.        if ${MODGCC4_ARCHS} != ""
-.          for _i in ${MODGCC4_ARCHS}
-.            if !empty(MACHINE_ARCH:M${_i})
-_MODGCC4_ARCH_USES = 	Yes
-.            endif
-.          endfor
-.        endif
-
-.        if ${_MODGCC4_ARCH_USES:L} == "yes"
-MODULES +=		gcc4
-MODGCC4_LANGS ?=	c c++
-CHOSEN_CXX = 		gcc
-_MODULES_KEEP_GOING = 	Yep
-.        endif
-.      endif
-.    elif "$c" == "clang"
-.      if !defined(CHOSEN_CXX)
-MODCLANG_ARCHS ?=	*
-_MODCLANG_ARCH_USES = 	No
-
-.        if ${MODCLANG_ARCHS} != ""
-.          for _i in ${MODCLANG_ARCHS}
-.            if !empty(MACHINE_ARCH:M${_i})
-_MODCLANG_ARCH_USES = 	Yes
-.            endif
-.          endfor
-.        endif
-
-.        if ${_MODCLANG_ARCH_USES:L} == "yes"
-MODULES +=		lang/clang
-MODCLANG_LANGS ?=	c c++
-CHOSEN_CXX = 		clang
-_MODULES_KEEP_GOING = 	Yep
-.        endif
-.      endif
-.    else
-ERRORS += "Fatal: unknown keyword $c in WANT_CXX"
-CHOSEN_CXX = error
-.    endif
-.  endfor
-ONLY_FOR_ARCHS ?= $(CXX11_ARCHS)
-.endif
 
 
 # Tail recursion

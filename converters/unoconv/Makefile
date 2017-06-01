@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2017/01/03 19:16:08 landry Exp $
+# $OpenBSD: Makefile,v 1.6 2017/05/31 15:03:27 espie Exp $
 
 PKG_ARCH=		*
 
 COMMENT=		UNiversal Office CONVerter
 
 DISTNAME=		unoconv-0.7
-REVISION=		2
+REVISION=		3
 
 CATEGORIES=		converters textproc
 
@@ -21,9 +21,7 @@ MODULES=		lang/python
 # see FILESDIR/unoconv.in
 # should really be the following, but using the module is easier
 # RUN_DEPENDS +=	STEM->=4.9,<4.10:lang/gcc/4.9,-libs
-MODULES +=		gcc4
-MODGCC4_ARCHS=		*
-MODGCC4_LANGS=		c++
+COMPILER =		gcc
 
 NO_BUILD=		Yes
 NO_TEST=		Yes
@@ -45,9 +43,17 @@ do-install:
 	cd ${WRKBUILD} && \
 		${SETENV} ${MAKE_ENV} ${_FAKE_SETUP} \
 		${MAKE_PROGRAM} ${ALL_FAKE_FLAGS} -f ${MAKE_FILE} install-links
+
+.include <bsd.port.arch.mk>
+.if ${PROPERTIES:Mclang}
+PKG_ARGS += -DPRELOAD_WRAPPER=0
+.else
+post-install:
 	mv ${PREFIX}/bin/unoconv ${PREFIX}/bin/unoconv.py
 	${SUBST_CMD} -m 0555 -o ${BINOWN} -g ${BINGRP} \
 		-c ${FILESDIR}/unoconv.in \
 		${PREFIX}/bin/unoconv
+PKG_ARGS += -DPRELOAD_WRAPPER=1
+.endif
 
 .include <bsd.port.mk>
