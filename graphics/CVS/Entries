@@ -1,4 +1,4 @@
-/Makefile/1.436/Tue May  2 19:11:10 2017//
+/Makefile/1.437/Thu Jun  1 16:38:40 2017//
 D/DevIL////
 D/GraphicsMagick////
 D/ImageMagick////
@@ -113,6 +113,7 @@ D/jpeg2ps////
 D/jpegdump////
 D/jpegpixi////
 D/k3dsurf////
+D/krita////
 D/l2p////
 D/lcms////
 D/lcms2////

@@ -1,4 +1,4 @@
-/Makefile/1.1007/Sun May 28 12:03:02 2017//
+/Makefile/1.1008/Thu Jun  1 21:36:12 2017//
 D/GeoIP////
 D/adns////
 D/adsuck////
@@ -433,6 +433,7 @@ D/p5-Validate-Net////
 D/p5-XML-RPC////
 D/p5-Zonemaster////
 D/p5-flowd////
+D/packetq////
 D/packit////
 D/pavuk////
 D/pbgpp////
