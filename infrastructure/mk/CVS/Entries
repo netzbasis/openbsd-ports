@@ -5,7 +5,7 @@
 /bsd.port.arch.mk/1.13/Tue Mar 15 21:45:16 2016//
 /bsd.port.mk/1.1352/Wed May 31 08:08:16 2017//
 /bsd.port.subdir.mk/1.109/Wed Oct 10 10:55:33 2012//
-/compiler.port.mk/1.1/Wed May 31 08:08:16 2017//
+/compiler.port.mk/1.2/Sat Jun  3 15:02:26 2017//
 /cpan.port.mk/1.20/Sun Mar 20 19:56:44 2016//
 /font.port.mk/1.4/Fri Nov  4 15:44:14 2016//
 /fortran.port.mk/1.14/Fri Sep  2 13:02:24 2016//
@@ -13,7 +13,7 @@
 /gnu.port.mk/1.55/Tue Apr 26 10:56:59 2016//
 /imake.port.mk/1.9/Tue Apr 26 10:56:59 2016//
 /java.port.mk/1.1/Fri Jun 17 14:59:27 2005//
-/modules.port.mk/1.12/Wed May 31 08:53:39 2017//
+/modules.port.mk/1.13/Sat Jun  3 15:02:26 2017//
 /perl.port.mk/1.29/Tue Apr 26 10:56:59 2016//
 /pkgpath.mk/1.66/Wed May 17 11:16:38 2017//
 D

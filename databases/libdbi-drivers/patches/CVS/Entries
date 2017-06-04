@@ -1,3 +1,5 @@
-/patch-configure/1.1.1.1/Tue Jun  2 00:58:58 2009//
-/patch-drivers_freetds_dbd_freetds_c/1.1/Fri Jul  8 11:32:17 2011//
+/patch-configure/1.2/Sat Jun  3 16:24:05 2017//
+/patch-drivers_freetds_dbd_freetds_c/1.2/Sat Jun  3 16:24:05 2017//
+/patch-tests_test_libdbi_sh/1.1/Sat Jun  3 16:24:05 2017//
+/patch-tests_test_pgsql_sh/1.1/Sat Jun  3 16:24:05 2017//
 D
