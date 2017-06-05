@@ -1,12 +1,17 @@
-# $OpenBSD: Makefile,v 1.29 2017/05/30 19:56:35 edd Exp $
+# $OpenBSD: Makefile,v 1.32 2017/06/04 22:22:05 sthen Exp $
+
+NOT_FOR_ARCHS=		${CLANG_ARCHS} # hangs during build, while running
+# ../asy -dir ../base -config "" -render=0 -f pdf -noprc cube.asy
+# in WRKSRC/doc. run the abovef command with -vvv for more info.
+# this does not fail with ports clang, though.
 
 COMMENT=		powerful descriptive vector graphics language
 BROKEN-hppa=		ghostscript segfaults during build
 
-DISTNAME=		asymptote-2.24.src
-PKGNAME=		asymptote-2.24
+DISTNAME=		asymptote-2.41.src
+PKGNAME=		asymptote-2.41
+REVISION=		0
 CATEGORIES=		graphics
-REVISION=		8
 
 HOMEPAGE=		http://asymptote.sourceforge.net/
 
