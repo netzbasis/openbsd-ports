@@ -1,4 +1,4 @@
-/Makefile/1.590/Wed May  3 15:54:59 2017//
+/Makefile/1.591/Wed Jun  7 01:24:27 2017//
 D/Xaw3d////
 D/XawMu////
 D/Xdialog////
@@ -233,7 +233,6 @@ D/root-tail////
 D/rox-filer////
 D/roxterm////
 D/ruby-dbus////
-D/rxvt////
 D/rxvt-unicode////
 D/sakura////
 D/sawfish////
