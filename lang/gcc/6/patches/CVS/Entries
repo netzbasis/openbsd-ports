@@ -46,7 +46,7 @@
 /patch-gcc_config_arm_openbsd_h/1.3/Tue Sep 20 21:51:54 2016//
 /patch-gcc_config_exec-stack_h/1.1.1.1/Sun Sep  4 16:20:17 2016//
 /patch-gcc_config_gcc/1.3/Wed Dec 28 21:48:21 2016//
-/patch-gcc_config_i386_i386_c/1.3/Wed Dec 28 21:48:21 2016//
+/patch-gcc_config_i386_i386_c/1.4/Wed Jun  7 23:34:02 2017//
 /patch-gcc_config_i386_openbsd_h/1.1.1.1/Sun Sep  4 16:20:17 2016//
 /patch-gcc_config_i386_openbsdelf_h/1.1.1.1/Sun Sep  4 16:20:17 2016//
 /patch-gcc_config_mips_mips_h/1.2/Mon Sep 19 10:14:07 2016//

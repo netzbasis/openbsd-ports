@@ -1,4 +1,4 @@
-/Makefile/1.1008/Thu Jun  1 21:36:12 2017//
+/Makefile/1.1009/Wed Jun  7 21:59:08 2017//
 D/GeoIP////
 D/adns////
 D/adsuck////
@@ -162,7 +162,6 @@ D/irrtoolset////
 D/irssi////
 D/irssi-icb////
 D/irssi-otr////
-D/irssi-silc////
 D/irssi-xmpp////
 D/isc-bind////
 D/isc-dhcp////
