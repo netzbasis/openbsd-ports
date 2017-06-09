@@ -1,9 +1,7 @@
-/patch-Makefile_in/1.9/Sun May  1 11:19:09 2016//
-/patch-configure/1.4/Sun May  1 11:19:09 2016//
-/patch-lib_tlscontext_c/1.2/Sun May  1 11:19:09 2016//
-/patch-libtest_mock-transport_c/1.1/Sat Nov 30 10:02:12 2013//
-/patch-modules_afmongodb_libmongo-client_src_mongo-utils_c/1.2/Tue Jul 21 20:29:34 2015//
-/patch-modules_afsocket_transport-unix-socket_c/1.1/Tue Jul 21 20:29:34 2015//
-/patch-modules_dbparser_patternize_c/1.1/Sat Nov 30 10:02:12 2013//
+/patch-Makefile_in/1.10/Thu Jun  8 18:19:37 2017//
+/patch-configure/1.5/Thu Jun  8 18:19:37 2017//
+/patch-libtest_mock-transport_c/1.2/Thu Jun  8 18:19:37 2017//
+/patch-modules_afsocket_transport-unix-socket_c/1.2/Thu Jun  8 18:19:37 2017//
+/patch-modules_dbparser_patternize_c/1.2/Thu Jun  8 18:19:37 2017//
 /patch-syslog-ng-ctl_control-client-unix_c/1.2/Sun May  1 11:19:09 2016//
 D
