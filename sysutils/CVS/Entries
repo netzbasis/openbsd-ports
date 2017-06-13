@@ -1,4 +1,4 @@
-/Makefile/1.440/Tue May 16 17:36:25 2017//
+/Makefile/1.441/Mon Jun 12 09:16:12 2017//
 D/accountsservice////
 D/amazon-ecs-cli////
 D/amazon-ssm-agent////
@@ -261,6 +261,7 @@ D/sslmate////
 D/stan////
 D/stow////
 D/stress////
+D/sunxi-tools////
 D/superscript////
 D/supervisor////
 D/supuner////

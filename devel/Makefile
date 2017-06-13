@@ -1,4 +1,4 @@
-# $oPEnBSD: Makefile,v 1.1596 2017/03/12 20:52:10 krw Exp $
+# $OpenBSD: Makefile,v 1.1618 2017/06/12 07:34:25 nigel Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -518,7 +518,6 @@
      SUBDIR += p5-Algorithm-IncludeExclude
      SUBDIR += p5-Algorithm-MarkovChain
      SUBDIR += p5-Algorithm-Munkres
-     SUBDIR += p5-Algorithm-Munkres,python3
      SUBDIR += p5-Algorithm-Permute
      SUBDIR += p5-Alien-wxWidgets
      SUBDIR += p5-Any-Moose
@@ -1227,6 +1226,7 @@
      SUBDIR += py-SOAPpy
      SUBDIR += py-addons
      SUBDIR += py-algorithm-munkres
+     SUBDIR += py-algorithm-munkres,python3
      SUBDIR += py-altgraph
      SUBDIR += py-apipkg
      SUBDIR += py-apipkg,python3
