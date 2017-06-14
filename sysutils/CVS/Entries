@@ -1,4 +1,4 @@
-/Makefile/1.441/Mon Jun 12 09:16:12 2017//
+/Makefile/1.442/Tue Jun 13 21:47:42 2017//
 D/accountsservice////
 D/amazon-ecs-cli////
 D/amazon-ssm-agent////
@@ -16,6 +16,7 @@ D/awscli////
 D/backuppc////
 D/bacula////
 D/bchunk////
+D/bdfresize////
 D/beats////
 D/binwalk////
 D/bitrot////

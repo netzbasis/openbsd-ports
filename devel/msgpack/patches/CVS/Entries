@@ -1,5 +1,6 @@
 /patch-CMakeLists_txt/1.2/Sun Jun 11 16:15:52 2017//
-/patch-include_msgpack_sysdep_h/1.1/Sun Jun 11 16:15:52 2017//
-/patch-include_msgpack_vrefbuffer_h/1.1/Sun Jun 11 16:15:52 2017//
+/patch-include_msgpack_sysdep_h/1.2/Tue Jun 13 17:30:18 2017//
+/patch-include_msgpack_v1_vrefbuffer_hpp/1.1/Tue Jun 13 17:30:18 2017//
+/patch-include_msgpack_vrefbuffer_h/1.2/Tue Jun 13 17:30:18 2017//
 /patch-test_CMakeLists_txt/1.2/Sun Jun 11 16:15:52 2017//
 D
