@@ -1,4 +1,4 @@
-/Makefile/1.1010/Tue Jun 13 14:02:25 2017//
+/Makefile/1.1011/Thu Jun 15 16:39:16 2017//
 D/GeoIP////
 D/adns////
 D/adsuck////
@@ -464,6 +464,7 @@ D/pidgin////
 D/pidgin-icb////
 D/pidgin-sipe////
 D/pidgin-tlen////
+D/pidgin-window-merge////
 D/pktstat////
 D/plushs////
 D/pmacct////

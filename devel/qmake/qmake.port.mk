@@ -1,4 +1,4 @@
-# $OpenBSD: qmake.port.mk,v 1.6 2017/06/09 10:34:41 espie Exp $
+# $OpenBSD: qmake.port.mk,v 1.8 2017/06/15 15:55:14 zhuk Exp $
 
 .if empty(CONFIGURE_STYLE)
 CONFIGURE_STYLE =	qmake
@@ -26,6 +26,11 @@ MODQMAKE_ARGS +=	PREFIX=${PREFIX} \
 			QMAKE_LFLAGS_RELEASE="${LDFLAGS}"
 
 .if !${MODULES:Mx11/qt3} || ${MODQT_QMAKE} != ${MODQT3_QMAKE}
+MODQMAKE_RECURSIVE ?=	Yes
+.else
+MODQMAKE_RECURSIVE =	No
+.endif
+.if ${MODQMAKE_RECURSIVE:L} == "yes"
 MODQMAKE_ARGS +=	-recursive
 .endif
 
@@ -44,6 +49,7 @@ MODQMAKE_ENV +=	LIB${_l}_VERSION=${_v}
 MODQMAKE_configure =
 MODQMAKE_build =
 MODQMAKE_install =
+MODQMAKE_test =
 .for _qp in ${MODQMAKE_PROJECTS}
 _MODQMAKE_CD_${_qp:/=_} = \
 	cd ${WRKBUILD}; \
@@ -75,6 +81,10 @@ MODQMAKE_install += \
 	${_FAKESUDO} ${SETENV} ${MAKE_ENV} ${FAKE_SETUP} \
 		${MAKE_PROGRAM} ${ALL_FAKE_FLAGS} ${_MODQMAKE_FAKE_FLAGS} \
 		-f Makefile ${FAKE_TARGET};
+MODQMAKE_test += \
+	${_MODQMAKE_CD_${_qp:/=_}}; \
+	${SETENV} ${ALL_TEST_ENV} \
+                ${MAKE_PROGRAM} ${ALL_TEST_FLAGS} -f Makefile ${TEST_TARGET};
 .endfor
 
 .if ${CONFIGURE_STYLE:Mqmake}
@@ -98,5 +108,10 @@ do-build:
 . if !target(do-install) && "${CONFIGURE_STYLE:Nqmake}" == ""
 do-install:
 	@${MODQMAKE_install}
+. endif
+
+. if !target(do-test) && ${NO_TEST:L} != "yes"
+do-test:
+	@${MODQMAKE_test}
 . endif
 .endif		# CONFIGURE_STYLE:Mqmake

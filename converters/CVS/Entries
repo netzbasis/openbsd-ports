@@ -1,4 +1,4 @@
-/Makefile/1.87/Fri Jan 13 19:17:52 2017//
+/Makefile/1.88/Thu Jun 15 23:35:25 2017//
 D/base64////
 D/btoa////
 D/convmv////
@@ -35,6 +35,7 @@ D/p5-Convert-UU////
 D/p5-Convert-UUlib////
 D/p5-Cpanel-JSON-XS////
 D/p5-Date-Tolkien-Shire////
+D/p5-Date-Tolkien-Shire-Data////
 D/p5-DateManip////
 D/p5-Encode-IMAPUTF7////
 D/p5-Finance-Currency-Convert-XE////

@@ -1,4 +1,4 @@
-/Makefile/1.457/Wed May 24 18:38:05 2017//
+/Makefile/1.458/Thu Jun 15 07:52:33 2017//
 D/ADMsnmp////
 D/aescrypt////
 D/aide////
@@ -279,7 +279,6 @@ D/ruby-openid////
 D/ruby-pledge////
 D/ruby-yadis////
 D/samdump2////
-D/samhain////
 D/scanlogd////
 D/scanssh////
 D/scrypt////
