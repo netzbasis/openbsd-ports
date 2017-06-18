@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1619 2017/06/13 18:47:49 feinerer Exp $
+# $OpenBSD: Makefile,v 1.1622 2017/06/17 13:25:55 jasper Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -42,6 +42,7 @@
      SUBDIR += boris
      SUBDIR += bouml
      SUBDIR += bpython
+     SUBDIR += bpython,python3
      SUBDIR += bullet
      SUBDIR += bzr
      SUBDIR += bzr-svn
@@ -1260,6 +1261,7 @@
      SUBDIR += py-bencode
      SUBDIR += py-binplist
      SUBDIR += py-blessings
+     SUBDIR += py-blessings,python3
      SUBDIR += py-blinker
      SUBDIR += py-blinker,python3
      SUBDIR += py-blist
@@ -1305,6 +1307,7 @@
      SUBDIR += py-cparser
      SUBDIR += py-cparser,python3
      SUBDIR += py-curtsies
+     SUBDIR += py-curtsies,python3
      SUBDIR += py-dateutil
      SUBDIR += py-dateutil,python3
      SUBDIR += py-decorator
