@@ -1,18 +1,16 @@
 /patch-configure_ac/1.1/Mon Jan 11 07:51:26 2010//
-/patch-mp3blaster_1/1.1/Wed Feb 18 16:15:37 2015//
+/patch-mp3blaster_1/1.2/Sun Jun 18 14:56:03 2017//
 /patch-mpegsound_Makefile_am/1.1/Mon Jan 11 07:51:26 2010//
 /patch-mpegsound_fileplayer_cc/1.1/Mon Jan 11 07:51:26 2010//
-/patch-mpegsound_mpegsound_h/1.1/Mon Jan 11 07:51:26 2010//
-/patch-mpegsound_oggplayer_cc/1.2/Mon Jan 11 07:51:26 2010//
+/patch-mpegsound_mpegsound_h/1.2/Sun Jun 18 14:56:03 2017//
+/patch-mpegsound_oggplayer_cc/1.3/Sun Jun 18 14:56:03 2017//
 /patch-mpegsound_wavetoraw_cc/1.1/Mon Jan 11 07:51:26 2010//
-/patch-nmixer_1/1.1/Sat Apr  4 14:45:36 2015//
 /patch-nmixer_Makefile_am/1.1/Mon Jan 11 07:51:26 2010//
 /patch-nmixer_nmixer_cc/1.1/Mon Jan 11 07:51:26 2010//
 /patch-nmixer_nmixer_h/1.1/Mon Jan 11 07:51:26 2010//
 /patch-src_Makefile_am/1.1/Mon Jan 11 07:51:26 2010//
-/patch-src_global_cc/1.1/Wed Apr 26 14:58:38 2017//
 /patch-src_main_cc/1.3/Mon Jan 11 07:51:27 2010//
 /patch-src_mp3blaster_h/1.1/Mon Jan 11 07:51:27 2010//
-/patch-src_splay_cc/1.1/Mon Jan 11 07:51:27 2010//
+/patch-src_splay_cc/1.2/Sun Jun 18 14:56:03 2017//
 /patch-src_splay_common_cc/1.1/Mon Jan 11 07:51:27 2010//
 D
