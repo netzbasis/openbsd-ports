@@ -1,3 +1,10 @@
-/patch-src_Makefile_in/1.1/Sat Nov 12 21:17:02 2016//
-/patch-tests_Makefile_in/1.1/Sat Nov 12 21:17:02 2016//
+/patch-aclocal_m4/1.1/Mon Jun 19 21:02:11 2017//
+/patch-src_Makefile_in/1.2/Mon Jun 19 21:02:11 2017//
+/patch-src_TRObject_h/1.1/Mon Jun 19 21:02:11 2017//
+/patch-src_TRObject_m/1.1/Mon Jun 19 21:02:11 2017//
+/patch-src_auth-ldap_m/1.1/Mon Jun 19 21:02:11 2017//
+/patch-tests_Makefile_in/1.2/Mon Jun 19 21:02:11 2017//
+/patch-tests_TRHash_m/1.1/Mon Jun 19 21:02:11 2017//
+/patch-tests_tests_c/1.1/Mon Jun 19 21:02:11 2017//
+/patch-tests_tests_h/1.1/Mon Jun 19 21:02:11 2017//
 D
