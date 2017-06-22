@@ -1,4 +1,4 @@
-/Makefile/1.1011/Thu Jun 15 16:39:16 2017//
+/Makefile/1.1012/Wed Jun 21 20:30:39 2017//
 D/GeoIP////
 D/adns////
 D/adsuck////
@@ -610,7 +610,6 @@ D/tcpstat////
 D/tcptrace////
 D/tcptraceroute////
 D/telepathy////
-D/texapp////
 D/thcrut////
 D/tinc////
 D/tintin++////

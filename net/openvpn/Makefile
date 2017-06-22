@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.78 2017/06/11 12:15:50 jca Exp $
+# $OpenBSD: Makefile,v 1.80 2017/06/21 19:01:23 jca Exp $
 
 COMMENT=	easy-to-use, robust, and highly configurable VPN
 
-DISTNAME=	openvpn-2.4.2
-REVISION=	2
+DISTNAME=	openvpn-2.4.3
+REVISION=	1
 CATEGORIES=	net security
 
 HOMEPAGE=	https://openvpn.net/index.php/open-source/
@@ -15,7 +15,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += c crypto lz4 lzo2 ssl
 
-MASTER_SITES=	http://swupdate.openvpn.net/community/releases/
+MASTER_SITES=	http://wxcvbn.org/~jca/distfiles/
 
 LIB_DEPENDS=	archivers/lzo2 \
 		archivers/lz4

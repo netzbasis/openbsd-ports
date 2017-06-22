@@ -1,4 +1,4 @@
-/Makefile/1.75/Fri May 26 19:45:23 2017//
+/Makefile/1.76/Wed Jun 21 07:15:11 2017//
 D/akonadi////
 D/akonadi-googledata////
 D/aqbanking////
@@ -40,6 +40,7 @@ D/taskd////
 D/taskwarrior////
 D/tdl////
 D/thinkingrock////
+D/tudu////
 D/vdirsyncer////
 D/vit////
 D/vym////
