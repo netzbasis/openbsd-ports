@@ -1,4 +1,4 @@
-/Makefile/1.442/Tue Jun 13 21:47:42 2017//
+/Makefile/1.443/Fri Jun 23 12:46:44 2017//
 D/accountsservice////
 D/amazon-ecs-cli////
 D/amazon-ssm-agent////
@@ -299,6 +299,7 @@ D/usmb////
 D/virt-manager////
 D/vmdktool////
 D/vmwh////
+D/waagent////
 D/whowatch////
 D/wmapm////
 D/wmcb////

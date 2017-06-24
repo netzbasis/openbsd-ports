@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2017/06/20 15:14:10 stsp Exp $
+# $OpenBSD: Makefile,v 1.32 2017/06/23 14:54:03 ajacoutot Exp $
 
 COMMENT-main=		OLSR routing daemon
 COMMENT-gui=		OLSR routing daemon GUI
@@ -7,7 +7,9 @@ VERSION=		0.9.6.1
 DISTNAME=		olsrd-${VERSION}
 PKGNAME-main=		olsrd-${VERSION}
 PKGNAME-gui=		olsrd-gui-${VERSION}
-REVISION-main=		0
+
+REVISION-main=		1
+REVISION-gui=		1
 
 CATEGORIES=	net
 
@@ -26,18 +28,14 @@ BUILD_DEPENDS=	devel/bison
 WANTLIB-main=	c
 
 LIB_DEPENDS-gui= x11/gtk+2
-WANTLIB-gui=	${MODGETTEXT_WANTLIB}
 WANTLIB-gui += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama
 WANTLIB-gui += Xrandr Xrender atk-1.0 c cairo fontconfig freetype
 WANTLIB-gui += gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gobject-2.0
-WANTLIB-gui += gtk-x11-2.0 m pango-1.0 pangocairo-1.0 pangoft2-1.0
+WANTLIB-gui += gtk-x11-2.0 intl m pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB-gui += z
-
 
 USE_GMAKE=	Yes
 NO_TEST=	Yes
-
-MODULES=	devel/gettext
 
 ALL_TARGET=	build_all
 MAKE_FLAGS=	CC="${CC}" OS=obsd VERBOSE=1

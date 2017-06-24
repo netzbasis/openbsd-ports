@@ -1,4 +1,4 @@
-/Makefile/1.1012/Wed Jun 21 20:30:39 2017//
+/Makefile/1.1013/Sat Jun 24 00:25:12 2017//
 D/GeoIP////
 D/adns////
 D/adsuck////
@@ -609,6 +609,7 @@ D/tcpslice////
 D/tcpstat////
 D/tcptrace////
 D/tcptraceroute////
+D/telegram-purple////
 D/telepathy////
 D/thcrut////
 D/tinc////
