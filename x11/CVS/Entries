@@ -1,4 +1,4 @@
-/Makefile/1.594/Mon Jun 19 17:15:26 2017//
+/Makefile/1.595/Sat Jun 24 19:36:07 2017//
 D/Xaw3d////
 D/XawMu////
 D/Xdialog////
@@ -159,7 +159,6 @@ D/motif////
 D/mouseclock////
 D/mowitz////
 D/mplayer////
-D/mrxvt////
 D/mterm////
 D/mxconns////
 D/nagstamon////
