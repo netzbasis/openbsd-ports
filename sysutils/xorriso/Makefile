@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2017/06/30 13:26:43 uaa Exp $
+# $OpenBSD: Makefile,v 1.4 2017/07/02 03:04:21 jca Exp $
 
 COMMENT =	ISO 9660 Rock Ridge Filesystem Manipulator
 
 DISTNAME =	xorriso-1.4.6
-REVISION =	0
 
 CATEGORIES =	sysutils
 
@@ -20,7 +19,7 @@ LIB_DEPENDS =		archivers/bzip2 \
 			converters/libiconv
 
 CONFIGURE_STYLE =	gnu
-
-NO_TEST =		Yes
+CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
+			LDFLAGS="-L${LOCALBASE}/lib ${LDFLAGS}"
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-/Makefile/1.595/Sat Jun 24 19:36:07 2017//
+/Makefile/1.596/Sat Jul  1 17:26:28 2017//
 D/Xaw3d////
 D/XawMu////
 D/Xdialog////
@@ -138,6 +138,7 @@ D/keybinder////
 D/keybinder3////
 D/keynav////
 D/klavaro////
+D/krusader////
 D/lablgtk2////
 D/lemonbar////
 D/libdnd////
