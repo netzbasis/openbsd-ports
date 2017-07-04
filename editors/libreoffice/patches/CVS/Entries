@@ -1,6 +1,6 @@
 /patch-basic_source_runtime_methods_cxx/1.4/Tue Mar  1 21:39:58 2016//
 /patch-clucene_configs__clucene-config-OPENBSD_h/1.1/Wed Oct 31 08:34:12 2012//
-/patch-configure/1.17/Tue Jan  3 19:30:58 2017//
+/patch-configure/1.18/Mon Jul  3 11:02:02 2017//
 /patch-connectivity_Executable_mork_helper_mk/1.1/Fri Oct 10 17:13:10 2014//
 /patch-cppunit_openbsd-cppunit_patch/1.2/Tue Nov 12 07:57:23 2013//
 /patch-desktop_source_app_app_cxx/1.10/Sun Sep  4 12:02:49 2016//
@@ -47,13 +47,14 @@
 /patch-lpsolve_lp_solve-timeb_patch/1.2/Fri Oct 10 17:13:10 2014//
 /patch-rsc_Executable_rsc_mk/1.1/Tue Mar  1 21:39:58 2016//
 /patch-sal_cppunittester_cppunittester_cxx/1.5/Sun Sep  4 12:02:49 2016//
-/patch-sc_qa_unit_subsequent_filters-test_cxx/1.8/Sun Sep  4 12:02:49 2016//
+/patch-sc_qa_unit_subsequent_filters-test_cxx/1.9/Mon Jul  3 08:32:10 2017//
 /patch-sc_source_core_data_column3_cxx/1.5/Tue Mar  1 21:39:58 2016//
 /patch-sc_source_core_data_types_cxx/1.1/Fri Oct 10 17:13:10 2014//
 /patch-sdext_Executable_pdf2xml_mk/1.2/Sun Sep  4 12:02:49 2016//
 /patch-shell_source_unix_exec_shellexec_cxx/1.5/Sun Sep  4 12:02:49 2016//
 /patch-solenv_bin_ooinstall/1.5/Tue Mar  1 21:39:58 2016//
 /patch-solenv_gbuild_platform_com_GCC_defs_mk/1.4/Sat Nov  7 09:22:54 2015//
+/patch-solenv_gbuild_platform_unxgcc_mk/1.4/Mon Jul  3 08:32:10 2017//
 /patch-stoc_source_corereflection_criface_cxx/1.2/Sun May  3 11:30:33 2015//
 /patch-svtools_Executable_langsupport_mk/1.1/Fri Oct 10 17:13:10 2014//
 /patch-svx_Library_svxcore_mk/1.5/Sun Sep  4 12:02:49 2016//
@@ -68,6 +69,6 @@
 /patch-vcl_Library_vclplug_tde_mk/1.2/Tue Sep 29 16:10:48 2015//
 /patch-vcl_StaticLibrary_glxtest_mk/1.1/Sun May  3 11:30:33 2015//
 /patch-vcl_unx_generic_app_wmadaptor_cxx/1.2/Fri Oct 10 17:13:10 2014//
-/patch-vcl_unx_generic_plugadapt_salplug_cxx/1.1/Tue Mar  1 21:39:58 2016//
+/patch-vcl_unx_generic_plugadapt_salplug_cxx/1.2/Mon Jul  3 08:32:10 2017//
 /patch-writerfilter_source_rtftok_rtfsprm_hxx/1.4/Sun Sep  4 12:02:49 2016//
 D

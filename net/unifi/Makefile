@@ -1,10 +1,12 @@
-# $OpenBSD: Makefile,v 1.41 2017/06/08 16:14:39 sthen Exp $
+# $OpenBSD: Makefile,v 1.43 2017/07/03 22:01:47 sthen Exp $
 
 COMMENT=	controller for Ubiquiti uniFi (wifi/routing/switching/voip)
 
-VERSION=	5.4.18-e6e6ebb7b5
+# https://community.ubnt.com/t5/UniFi-Updates-Blog/bg-p/Blog_UniFi
+# https://community.ubnt.com/t5/UniFi-Beta-Blog/bg-p/Blog_UniFi_Beta
+VERSION=	5.5.19-e1f8f0efe7
 MASTER_SITES=	http://dl.ubnt.com/unifi/${VERSION}/
-REL_V=		5.4.18.1
+REL_V=		5.5.19.0
 
 V=		${VERSION:C/-.*//}
 DISTFILES=	unifi-$V{UniFi.unix}.zip unifi_sh_api-$V{unifi_sh_api}
