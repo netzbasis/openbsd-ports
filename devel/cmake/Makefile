@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.156 2017/04/21 18:37:43 kurt Exp $
+# $OpenBSD: Makefile,v 1.158 2017/07/04 20:07:51 dcoppa Exp $
 
 DPB_PROPERTIES =parallel
 
@@ -7,7 +7,7 @@ COMMENT =	portable build system
 VER =		3.7.2
 DISTNAME =	cmake-${VER}
 CATEGORIES =	devel
-REVISION =	0
+REVISION =	2
 
 HOMEPAGE =	https://www.cmake.org/
 

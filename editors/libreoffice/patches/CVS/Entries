@@ -51,7 +51,8 @@
 /patch-sc_source_core_data_column3_cxx/1.5/Tue Mar  1 21:39:58 2016//
 /patch-sc_source_core_data_types_cxx/1.1/Fri Oct 10 17:13:10 2014//
 /patch-sdext_Executable_pdf2xml_mk/1.2/Sun Sep  4 12:02:49 2016//
-/patch-shell_source_unix_exec_shellexec_cxx/1.5/Sun Sep  4 12:02:49 2016//
+/patch-shell_source_unix_exec_shellexec_cxx/1.6/Tue Jul  4 08:17:55 2017//
+/patch-shell_source_unix_misc_senddoc_sh/1.1/Tue Jul  4 08:17:55 2017//
 /patch-solenv_bin_ooinstall/1.5/Tue Mar  1 21:39:58 2016//
 /patch-solenv_gbuild_platform_com_GCC_defs_mk/1.4/Sat Nov  7 09:22:54 2015//
 /patch-solenv_gbuild_platform_unxgcc_mk/1.4/Mon Jul  3 08:32:10 2017//
