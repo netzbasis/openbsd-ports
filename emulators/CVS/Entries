@@ -1,4 +1,4 @@
-/Makefile/1.91/Thu Apr 20 13:49:12 2017//
+/Makefile/1.92/Sat Jul  8 20:18:55 2017//
 D/BasiliskII////
 D/advancemame////
 D/advancemess////
@@ -20,6 +20,7 @@ D/fuse-utils////
 D/gambatte////
 D/gns3////
 D/gnusim8085////
+D/gr-lida////
 D/gxemul////
 D/hatari////
 D/libretro-genesis-plus-gx////
