@@ -1,4 +1,4 @@
-/Makefile/1.1013/Sat Jun 24 00:25:12 2017//
+/Makefile/1.1014/Sun Jul  9 11:01:56 2017//
 D/GeoIP////
 D/adns////
 D/adsuck////
@@ -47,7 +47,6 @@ D/corebird////
 D/crawl////
 D/ctrace////
 D/curl////
-D/cutegram////
 D/cvsync////
 D/czmq////
 D/daq////

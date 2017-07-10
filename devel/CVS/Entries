@@ -1,4 +1,4 @@
-/Makefile/1.1625/Fri Jul  7 17:08:02 2017//
+/Makefile/1.1626/Sun Jul  9 11:01:56 2017//
 D/ElectricFence////
 D/ORBit2////
 D/acpica////
@@ -368,7 +368,6 @@ D/libowfat////
 D/libpeas////
 D/libplist////
 D/libproplist////
-D/libqtelegram-aseman-edition////
 D/libregexp9////
 D/libsigc++-2////
 D/libsigsegv////
