@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.30 2017/06/28 16:34:59 sthen Exp $
+# $OpenBSD: Makefile,v 1.32 2017/07/10 20:10:36 sthen Exp $
 
 COMMENT =	network switch style shell
 
 DISTNAME =	nsh-1.0.20160605
-REVISION =	5
+REVISION =	7
 
 GH_ACCOUNT =	yellowman
 GH_PROJECT =	nsh
@@ -34,8 +34,8 @@ do-install:
 .for i in save-ro.sh save-rw.sh
 	${INSTALL_SCRIPT} ${WRKDIST}/${i} ${PREFIX}/bin
 .endfor
-	ln -s ${TRUEPREFIX}/bin/save-rw.sh ${PREFIX}/bin/save.sh
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/nsh
+	sed -i s,/usr/local,${LOCALBASE},g ${WRKDIST}/MANUAL
 .for i in MANUAL README TODO COPYRIGHT
 	${INSTALL_DATA} ${WRKDIST}/${i} ${PREFIX}/share/doc/nsh/
 .endfor
