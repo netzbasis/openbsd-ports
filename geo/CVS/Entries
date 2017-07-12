@@ -1,4 +1,4 @@
-/Makefile/1.51/Tue Jun 20 17:16:25 2017//
+/Makefile/1.52/Tue Jul 11 18:50:52 2017//
 D/emerillon////
 D/foxtrotgps////
 D/garmindev////
@@ -42,6 +42,7 @@ D/p5-Geo-TigerLine////
 D/p5-Geo-UK-Postcode-Regex////
 D/p5-Geography-Countries////
 D/pdal////
+D/pgpointcloud////
 D/pgrouting////
 D/postgis////
 D/py-laspy////
