@@ -1,9 +1,11 @@
 /patch-build_py/1.1/Wed Jul  5 11:54:22 2017//
 /patch-src_qt_qtbase_config_tests_unix_iconv_iconv_pro/1.1/Wed Jul  5 11:54:22 2017//
 /patch-src_qt_qtbase_config_tests_unix_pulseaudio_pulseaudio_pro/1.1/Wed Jul  5 11:54:22 2017//
-/patch-src_qt_qtbase_configure/1.1/Wed Jul  5 11:54:22 2017//
+/patch-src_qt_qtbase_configure/1.2/Fri Jul 14 22:15:31 2017//
 /patch-src_qt_qtbase_mkspecs_features_create_cmake_prf/1.1/Wed Jul  5 11:54:22 2017//
-/patch-src_qt_qtbase_mkspecs_openbsd-g++_qmake_conf/1.1/Wed Jul  5 11:54:22 2017//
+/patch-src_qt_qtbase_mkspecs_openbsd-clang_qmake_conf/1.1/Fri Jul 14 22:15:31 2017//
+/patch-src_qt_qtbase_mkspecs_openbsd-clang_qplatformdefs_h/1.1/Fri Jul 14 22:15:31 2017//
+/patch-src_qt_qtbase_mkspecs_openbsd-g++_qmake_conf/1.2/Fri Jul 14 22:15:31 2017//
 /patch-src_qt_qtbase_qmake_generators_makefile_cpp/1.1/Wed Jul  5 11:54:22 2017//
 /patch-src_qt_qtbase_qmake_generators_unix_unixmake2_cpp/1.1/Wed Jul  5 11:54:22 2017//
 /patch-src_qt_qtbase_qmake_generators_unix_unixmake_cpp/1.1/Wed Jul  5 11:54:22 2017//
@@ -15,6 +17,7 @@
 /patch-src_qt_qtbase_src_corelib_io_qlockfile_unix_cpp/1.1/Wed Jul  5 11:54:22 2017//
 /patch-src_qt_qtbase_src_corelib_io_qstorageinfo_unix_cpp/1.1/Wed Jul  5 11:54:22 2017//
 /patch-src_qt_qtbase_src_corelib_kernel_qcore_unix_p_h/1.1/Wed Jul  5 11:54:22 2017//
+/patch-src_qt_qtbase_src_corelib_plugin_qlibrary_unix_cpp/1.1/Fri Jul 14 22:15:31 2017//
 /patch-src_qt_qtbase_src_corelib_tools_qbytearray_cpp/1.1/Wed Jul  5 11:54:22 2017//
 /patch-src_qt_qtbase_src_corelib_tools_qbytearray_h/1.1/Wed Jul  5 11:54:22 2017//
 /patch-src_qt_qtbase_src_gui_image_qxbmhandler_cpp/1.1/Wed Jul  5 11:54:22 2017//
