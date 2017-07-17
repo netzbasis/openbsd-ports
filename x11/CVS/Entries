@@ -1,4 +1,4 @@
-/Makefile/1.596/Sat Jul  1 17:26:28 2017//
+/Makefile/1.597/Sun Jul 16 16:26:49 2017//
 D/Xaw3d////
 D/XawMu////
 D/Xdialog////
@@ -325,6 +325,7 @@ D/xbae////
 D/xbanish////
 D/xbindkeys////
 D/xcalib////
+D/xcape////
 D/xcb////
 D/xchm////
 D/xclip////
