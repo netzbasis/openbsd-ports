@@ -1,7 +1,7 @@
-/Makefile/1.57/Wed Dec 28 01:41:23 2016//
-/Makefile.inc/1.5/Wed Apr 19 11:16:03 2017//
-/Makefile.version/1.1.1.1/Sun Dec 25 14:13:11 2016//
-/qt5.port.mk/1.15/Wed May 31 08:08:18 2017//
+/Makefile/1.58/Mon Jul 17 08:34:37 2017//
+/Makefile.inc/1.6/Mon Jul 17 08:34:37 2017//
+/Makefile.version/1.2/Mon Jul 17 08:34:37 2017//
+/qt5.port.mk/1.16/Mon Jul 17 08:34:37 2017//
 D/qt3d////
 D/qtactiveqt////
 D/qtbase////
@@ -12,7 +12,6 @@ D/qtconnectivity////
 D/qtdatavis3d////
 D/qtdeclarative////
 D/qtdoc////
-D/qtenginio////
 D/qtgamepad////
 D/qtgraphicaleffects////
 D/qtimageformats////

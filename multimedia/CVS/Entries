@@ -1,4 +1,4 @@
-/Makefile/1.96/Fri Jun  9 11:13:18 2017//
+/Makefile/1.97/Mon Jul 17 21:17:47 2017//
 D/atomicparsley////
 D/audiopreview////
 D/avidemux////
@@ -56,6 +56,7 @@ D/p5-Mac-iTunes-Library////
 D/p5-Storable-AMF////
 D/phonon////
 D/phonon-backend////
+D/phonon-qt5////
 D/py-pafy////
 D/qt-gstreamer////
 D/regionset////

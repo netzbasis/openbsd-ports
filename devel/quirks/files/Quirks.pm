@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.506 2017/07/14 16:15:07 ajacoutot Exp $
+# $OpenBSD: Quirks.pm,v 1.510 2017/07/17 21:09:01 fcambus Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -983,9 +983,16 @@ my $obsolete_reason = {
 	'texapp' => 6,
 	'surf2' => 5,
 	'mrxvt' => 2,
-	'net/cutegram' => 3,
-	'devel/libqtelegram-aseman-edition' => 5,
-	'security/qca-tls' => 3,
+	'cutegram' => 3,
+	'libqtelegram-aseman-edition' => 5,
+	'qca-tls' => 3,
+	'py-qt5-docs' => 3,
+	'qtenginio' => 3,
+	'qtenginio-docindex' => 3,
+	'qtenginio-examples' => 3,
+	'qtenginio-html' => 3,
+	'qtenginio-qch' => 3,
+	'crxvt' => 2,
 };
 
 # reasons for obsolete packages
