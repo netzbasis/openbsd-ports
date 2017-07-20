@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2017/07/16 19:18:58 espie Exp $
+# $OpenBSD: Makefile,v 1.15 2017/07/19 12:14:29 zhuk Exp $
 
 COMMENT-main=	monitoring plugins (for Nagios, Icinga, etc)
 COMMENT-dbi=	dbi monitoring plugin
@@ -12,7 +12,7 @@ COMMENT-snmp=	monitoring plugins using snmp
 COMMENT-radius=	RADIUS monitoring plugin
 
 V=		2.2
-REVISION-main=	1
+REVISION-main=	2
 DISTNAME=	monitoring-plugins-$V
 PKGNAME-main=	monitoring-plugins-$V
 PKGNAME-dbi=	monitoring-plugins-dbi-$V
@@ -52,6 +52,7 @@ FAKE_FLAGS=	setuid_root_mode=0555
 
 CONFIGURE_STYLE= autoconf
 AUTOCONF_VERSION= 2.69
+CONFIGURE_ENV+= LDFLAGS="-L${LOCALBASE}/lib"
 # cgiurl is only used to produce an href to traceroute.cgi in check_ping output
 CONFIGURE_ARGS+= --libexecdir=${PREFIX}/libexec/nagios \
 		--with-cgiurl=/cgi-bin/nagios \
