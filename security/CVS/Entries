@@ -1,4 +1,4 @@
-/Makefile/1.459/Tue Jul 11 20:50:27 2017//
+/Makefile/1.460/Thu Jul 20 18:35:17 2017//
 D/ADMsnmp////
 D/aescrypt////
 D/aide////
@@ -259,6 +259,7 @@ D/py-rsa////
 D/py-secretstorage////
 D/py-service_identity////
 D/qca////
+D/qca-qt5////
 D/qoauth////
 D/qtkeychain////
 D/radiusniff////

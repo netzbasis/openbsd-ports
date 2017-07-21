@@ -527,6 +527,7 @@ D/p5-Carp-Datum////
 D/p5-Catalyst-Manual////
 D/p5-Catalyst-Plugin-C3////
 D/p5-Catalyst-Plugin-StackTrace////
+D/p5-Check-ISA////
 D/p5-Class-Accessor////
 D/p5-Class-Accessor-Chained////
 D/p5-Class-Accessor-Grouped////
@@ -1025,6 +1026,8 @@ D/p5-Test-Cmd////
 D/p5-Test-Command-Simple////
 D/p5-Test-Corpus-Audio-MPD////
 D/p5-Test-Deep////
+D/p5-Test-Deep-JSON////
+D/p5-Test-Deep-Type////
 D/p5-Test-Differences////
 D/p5-Test-DistManifest////
 D/p5-Test-Distribution////
