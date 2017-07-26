@@ -6,6 +6,8 @@
 /patch-imap_mbexamine_c/1.6/Sun May 28 15:46:11 2017//
 /patch-imap_tls_c/1.2/Sun May 28 15:46:11 2017//
 /patch-lib_byteorder64_h/1.1/Sun Mar 15 08:51:07 2015//
+/patch-lib_crc32_c/1.1/Tue Jul 25 12:08:36 2017//
+/patch-lib_crc32c_c/1.1/Tue Jul 25 12:08:36 2017//
 /patch-lib_imapoptions/1.12/Sun May 28 15:46:11 2017//
 /patch-man_imapd_conf_5/1.11/Sun May 28 15:46:11 2017//
 /patch-tools_masssievec/1.1/Sun May 28 15:46:11 2017//
