@@ -1,4 +1,4 @@
-/Makefile/1.1628/Mon Jul 17 00:24:11 2017//
+/Makefile/1.1630/Wed Jul 26 22:13:34 2017//
 D/ElectricFence////
 D/ORBit2////
 D/acpica////
@@ -123,6 +123,7 @@ D/fossil////
 D/fox////
 D/frama-c////
 D/fribidi////
+D/gas////
 D/gconf-editor////
 D/gconf2////
 D/gdb////

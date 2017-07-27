@@ -1,4 +1,4 @@
-/Makefile/1.460/Thu Jul 20 18:35:17 2017//
+/Makefile/1.461/Thu Jul 27 00:09:37 2017//
 D/ADMsnmp////
 D/aescrypt////
 D/aide////
@@ -294,6 +294,7 @@ D/ssdeep////
 D/ssh-askpass-fullscreen////
 D/ssh-ldap-helper////
 D/sshguard////
+D/sshlockout////
 D/sslScanner////
 D/sslscan////
 D/sslsplit////

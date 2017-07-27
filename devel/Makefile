@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1628 2017/07/17 00:24:11 danj Exp $
+# $OpenBSD: Makefile,v 1.1630 2017/07/26 22:13:34 juanfra Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -129,6 +129,7 @@
      SUBDIR += fox
      SUBDIR += frama-c
      SUBDIR += fribidi
+     SUBDIR += gas
      SUBDIR += gconf-editor
      SUBDIR += gconf2
      SUBDIR += gdb
@@ -1476,6 +1477,7 @@
      SUBDIR += py-setuptools_scm
      SUBDIR += py-setuptools_scm,python3
      SUBDIR += py-sh
+     SUBDIR += py-sh,python3
      SUBDIR += py-silc
      SUBDIR += py-simpleeval
      SUBDIR += py-simpleeval,python3
