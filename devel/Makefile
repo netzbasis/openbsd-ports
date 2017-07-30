@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1630 2017/07/26 22:13:34 juanfra Exp $
+# $OpenBSD: Makefile,v 1.1633 2017/07/29 11:49:36 bluhm Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -564,6 +564,7 @@
      SUBDIR += p5-Catalyst-Manual
      SUBDIR += p5-Catalyst-Plugin-C3
      SUBDIR += p5-Catalyst-Plugin-StackTrace
+     SUBDIR += p5-Check-ISA
      SUBDIR += p5-Class-Accessor
      SUBDIR += p5-Class-Accessor-Chained
      SUBDIR += p5-Class-Accessor-Grouped
@@ -607,8 +608,8 @@
      SUBDIR += p5-Class-Std
      SUBDIR += p5-Class-Std-Fast
      SUBDIR += p5-Class-Std-Utils
-     SUBDIR += p5-Class-Tiny
      SUBDIR += p5-Class-Throwable
+     SUBDIR += p5-Class-Tiny
      SUBDIR += p5-Class-Trigger
      SUBDIR += p5-Class-Unload
      SUBDIR += p5-Class-Virtual
@@ -781,6 +782,7 @@
      SUBDIR += p5-FileHandle-Unget
      SUBDIR += p5-Filesys-Statvfs
      SUBDIR += p5-Filter-Template
+     SUBDIR += p5-Forest
      SUBDIR += p5-FormValidator-Simple
      SUBDIR += p5-Fortran-Format
      SUBDIR += p5-FreezeThaw
@@ -907,6 +909,7 @@
      SUBDIR += p5-MooseX-Role-Parameterized
      SUBDIR += p5-MooseX-Role-WithOverloading
      SUBDIR += p5-MooseX-SemiAffordanceAccessor
+     SUBDIR += p5-MooseX-Storage
      SUBDIR += p5-MooseX-Traits
      SUBDIR += p5-MooseX-Traits-Pluggable
      SUBDIR += p5-MooseX-Types
@@ -1023,8 +1026,8 @@
      SUBDIR += p5-Sub-Install
      SUBDIR += p5-Sub-Lambda
      SUBDIR += p5-Sub-Name
-     SUBDIR += p5-Sub-Quote
      SUBDIR += p5-Sub-Override
+     SUBDIR += p5-Sub-Quote
      SUBDIR += p5-Sub-Uplevel
      SUBDIR += p5-Switch
      SUBDIR += p5-Symbol-Global-Name
@@ -1061,6 +1064,8 @@
      SUBDIR += p5-Test-Command-Simple
      SUBDIR += p5-Test-Corpus-Audio-MPD
      SUBDIR += p5-Test-Deep
+     SUBDIR += p5-Test-Deep-JSON
+     SUBDIR += p5-Test-Deep-Type
      SUBDIR += p5-Test-Differences
      SUBDIR += p5-Test-DistManifest
      SUBDIR += p5-Test-Distribution
@@ -1765,7 +1770,6 @@
      SUBDIR += xdg-user-dirs
      SUBDIR += xdg-utils
      SUBDIR += xmake
-     SUBDIR += xulrunner
      SUBDIR += yaml-cpp
      SUBDIR += yasm
      SUBDIR += zeal

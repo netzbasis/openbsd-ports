@@ -1,4 +1,4 @@
-/Makefile/1.1630/Wed Jul 26 22:13:34 2017//
+/Makefile/1.1633/Sat Jul 29 11:49:36 2017//
 D/ElectricFence////
 D/ORBit2////
 D/acpica////
@@ -746,6 +746,7 @@ D/p5-File-pushd////
 D/p5-FileHandle-Unget////
 D/p5-Filesys-Statvfs////
 D/p5-Filter-Template////
+D/p5-Forest////
 D/p5-FormValidator-Simple////
 D/p5-Fortran-Format////
 D/p5-FreezeThaw////
@@ -872,6 +873,7 @@ D/p5-MooseX-Params-Validate////
 D/p5-MooseX-Role-Parameterized////
 D/p5-MooseX-Role-WithOverloading////
 D/p5-MooseX-SemiAffordanceAccessor////
+D/p5-MooseX-Storage////
 D/p5-MooseX-Traits////
 D/p5-MooseX-Traits-Pluggable////
 D/p5-MooseX-Types////
@@ -1006,7 +1008,6 @@ D/p5-Tcl////
 D/p5-Term-Encoding////
 D/p5-Term-ProgressBar////
 D/p5-Term-Prompt////
-D/p5-Term-ReadKey////
 D/p5-Term-ReadLine-Gnu////
 D/p5-Term-ReadLine-Perl////
 D/p5-Term-ReadLine-TTYtter////
@@ -1577,7 +1578,6 @@ D/vte3////
 D/xdg-user-dirs////
 D/xdg-utils////
 D/xmake////
-D/xulrunner////
 D/yaml-cpp////
 D/yasm////
 D/zeal////

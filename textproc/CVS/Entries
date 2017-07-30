@@ -1,4 +1,4 @@
-/Makefile/1.534/Sun May 28 13:53:12 2017//
+/Makefile/1.535/Sat Jul 29 10:26:15 2017//
 D/TclXML////
 D/antiword////
 D/apertium////
@@ -235,6 +235,7 @@ D/p5-Text-CSV_XS////
 D/p5-Text-Diff////
 D/p5-Text-Diff-HTML////
 D/p5-Text-DoubleMetaphone////
+D/p5-Text-Flow////
 D/p5-Text-Format////
 D/p5-Text-German////
 D/p5-Text-Glob////
