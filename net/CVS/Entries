@@ -1,4 +1,4 @@
-/Makefile/1.1016/Fri Jul 14 16:10:10 2017//
+/Makefile/1.1017/Sun Jul 30 21:16:18 2017//
 D/GeoIP////
 D/adns////
 D/adsuck////
@@ -215,6 +215,7 @@ D/maradns////
 D/maradns-deadwood////
 D/mbrowse////
 D/mcabber////
+D/mcast-proxy////
 D/meanwhile////
 D/megatools////
 D/mfi////
