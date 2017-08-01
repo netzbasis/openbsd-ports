@@ -1,4 +1,4 @@
-/Makefile/1.1017/Sun Jul 30 21:16:18 2017//
+/Makefile/1.1018/Tue Aug  1 07:06:55 2017//
 D/GeoIP////
 D/adns////
 D/adsuck////
@@ -175,7 +175,6 @@ D/ktorrent-kde4////
 D/ladvd////
 D/ldns////
 D/lftp////
-D/libaccounts-glib////
 D/libbgpdump////
 D/libbind////
 D/libcares////

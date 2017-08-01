@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2017/07/30 21:12:36 jca Exp $
+# $OpenBSD: Makefile,v 1.3 2017/07/31 09:38:56 ajacoutot Exp $
 
 COMMENT =		multicast proxy daemon
 
 DISTNAME =		mcast-proxy-1.0
 CATEGORIES =		net
+REVISION =		1
 
-HOMEPAGE =		http://www.weirdnet.nl/openbsd/code/mcast-proxy/
 MASTER_SITES =		http://www.weirdnet.nl/openbsd/code/mcast-proxy/
 
 MAINTAINER =		Paul de Weerd <weerd@weirdnet.nl>

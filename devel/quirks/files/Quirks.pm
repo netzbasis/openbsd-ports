@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.512 2017/07/30 20:36:50 landry Exp $
+# $OpenBSD: Quirks.pm,v 1.514 2017/08/01 07:08:10 ajacoutot Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -478,6 +478,7 @@ my $stem_extensions = {
 	'qtwebsockets-qch' => 'qt5-qch',
 	'qtx11extras-qch' => 'qt5-qch',
 	'qtxmlpatterns-qch' => 'qt5-qch',
+	'cargo' => 'rust',
 };
 
 my $obsolete_reason = {
@@ -1094,6 +1095,7 @@ my $obsolete_reason = {
 	'conkeror' => 3,
 	'xulrunner' => 5,
 	'xulrunner-devel' => 5,
+	'libaccounts-glib' => 6,
 };
 
 # reasons for obsolete packages
