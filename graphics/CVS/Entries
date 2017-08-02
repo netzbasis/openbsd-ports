@@ -1,4 +1,4 @@
-/Makefile/1.438/Mon Jun 19 18:27:05 2017//
+/Makefile/1.439/Tue Aug  1 16:40:03 2017//
 D/DevIL////
 D/GraphicsMagick////
 D/ImageMagick////
@@ -58,6 +58,7 @@ D/fswebcam////
 D/ftgl////
 D/fyre////
 D/gd////
+D/gdcm////
 D/gdk-pixbuf2////
 D/geeqie////
 D/gegl////
