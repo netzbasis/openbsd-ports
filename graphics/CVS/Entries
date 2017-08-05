@@ -1,4 +1,4 @@
-/Makefile/1.439/Tue Aug  1 16:40:03 2017//
+/Makefile/1.440/Fri Aug  4 12:21:53 2017//
 D/DevIL////
 D/GraphicsMagick////
 D/ImageMagick////
@@ -176,7 +176,10 @@ D/p5-Barcode-DataMatrix-PNG////
 D/p5-Cairo////
 D/p5-Captcha-reCAPTCHA////
 D/p5-Chart////
+D/p5-Chart-Clicker////
 D/p5-Color-Calc////
+D/p5-Color-Library////
+D/p5-Color-Scheme////
 D/p5-GD////
 D/p5-GD-Barcode////
 D/p5-GD-Graph////
@@ -184,8 +187,12 @@ D/p5-GD-Graph3d////
 D/p5-GD-SVG////
 D/p5-GD-SecurityImage////
 D/p5-GD-TextUtil////
+D/p5-Geometry-Primitive////
+D/p5-Graphics-Color////
 D/p5-Graphics-ColorNames////
 D/p5-Graphics-ColorNames-WWW////
+D/p5-Graphics-Primitive////
+D/p5-Graphics-Primitive-Driver-Cairo////
 D/p5-Image-BioChrome////
 D/p5-Image-EXIF////
 D/p5-Image-ExifTool////
@@ -195,6 +202,7 @@ D/p5-Image-MetaData-JPEG////
 D/p5-Image-Size////
 D/p5-Imager////
 D/p5-Imager-QRCode////
+D/p5-Layout-Manager////
 D/p5-SVG////
 D/p5-SVG-Graph////
 D/p5-Sane////
