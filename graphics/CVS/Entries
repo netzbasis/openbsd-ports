@@ -1,4 +1,4 @@
-/Makefile/1.440/Fri Aug  4 12:21:53 2017//
+/Makefile/1.441/Tue Aug  8 09:18:36 2017//
 D/DevIL////
 D/GraphicsMagick////
 D/ImageMagick////
@@ -112,6 +112,7 @@ D/jhead////
 D/jpeg////
 D/jpeg2ps////
 D/jpegdump////
+D/jpegoptim////
 D/jpegpixi////
 D/k3dsurf////
 D/krita////

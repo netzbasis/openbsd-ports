@@ -1,4 +1,4 @@
-/Makefile/1.461/Thu Jul 27 00:09:37 2017//
+/Makefile/1.462/Tue Aug  8 22:07:18 2017//
 D/ADMsnmp////
 D/aescrypt////
 D/aide////
@@ -267,6 +267,7 @@ D/rarcrack////
 D/rdp////
 D/regripper////
 D/reop////
+D/rhash////
 D/routersploit////
 D/ruby-akami////
 D/ruby-bcrypt////
