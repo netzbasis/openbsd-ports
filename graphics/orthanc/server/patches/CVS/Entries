@@ -1,0 +1,12 @@
+/patch-CMakeLists_txt/1.1.1.1/Wed Aug  9 14:39:32 2017//
+/patch-Core_MultiThreading_Mutex_cpp/1.1.1.1/Wed Aug  9 14:39:32 2017//
+/patch-Core_SystemToolbox_cpp/1.2/Wed Aug  9 17:02:35 2017//
+/patch-OrthancServer_FromDcmtkBridge_cpp/1.1.1.1/Wed Aug  9 14:39:32 2017//
+/patch-Plugins_Engine_PluginsManager_cpp/1.1.1.1/Wed Aug  9 14:39:32 2017//
+/patch-Plugins_Engine_SharedLibrary_cpp/1.1.1.1/Wed Aug  9 14:39:32 2017//
+/patch-Resources_CMake_Compiler_cmake/1.2/Wed Aug  9 17:02:35 2017//
+/patch-Resources_Configuration_json/1.1.1.1/Wed Aug  9 14:39:32 2017//
+/patch-Resources_ThirdParty_minizip_ioapi_h/1.1.1.1/Wed Aug  9 14:39:32 2017//
+/patch-UnitTestsSources_PluginsTests_cpp/1.1.1.1/Wed Aug  9 14:39:32 2017//
+/patch-UnitTestsSources_UnitTestsMain_cpp/1.1.1.1/Wed Aug  9 14:39:32 2017//
+D

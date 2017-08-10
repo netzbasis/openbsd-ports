@@ -1,4 +1,4 @@
-/Makefile/1.441/Tue Aug  8 09:18:36 2017//
+/Makefile/1.442/Wed Aug  9 14:43:09 2017//
 D/DevIL////
 D/GraphicsMagick////
 D/ImageMagick////
@@ -172,6 +172,7 @@ D/openjp2////
 D/openjpeg////
 D/openscenegraph////
 D/optipng////
+D/orthanc////
 D/p5-Barcode-DataMatrix////
 D/p5-Barcode-DataMatrix-PNG////
 D/p5-Cairo////
