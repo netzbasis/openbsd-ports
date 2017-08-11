@@ -1,4 +1,4 @@
-/Makefile/1.446/Mon Jul 17 18:23:33 2017//
+/Makefile/1.447/Thu Aug 10 12:24:10 2017//
 D/accountsservice////
 D/amazon-ecs-cli////
 D/amazon-ssm-agent////
@@ -299,6 +299,7 @@ D/usbutil////
 D/usbutils////
 D/usmb////
 D/virt-manager////
+D/virt-what////
 D/vmdktool////
 D/vmwh////
 D/waagent////

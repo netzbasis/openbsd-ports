@@ -1,4 +1,4 @@
-/Makefile/1.828/Sat Jul 29 06:27:24 2017//
+/Makefile/1.829/Thu Aug 10 20:37:45 2017//
 D/ajaxterm////
 D/analog////
 D/ap2-mod_dnssd////
@@ -14,6 +14,7 @@ D/awstats////
 D/blogsum////
 D/bluefish////
 D/bozohttpd////
+D/buku////
 D/c-icap////
 D/calamaris////
 D/canto////

@@ -1,4 +1,4 @@
-/Makefile/1.598/Wed Jul 26 23:58:50 2017//
+/Makefile/1.599/Thu Aug 10 13:32:25 2017//
 D/2bwm////
 D/Xaw3d////
 D/XawMu////
@@ -24,6 +24,7 @@ D/bgs////
 D/blackbox////
 D/blast////
 D/bricons////
+D/bspwm////
 D/bwidget////
 D/byzi////
 D/cegui////
@@ -255,6 +256,7 @@ D/stalonetray////
 D/stumpwm////
 D/swarp////
 D/swisswatch////
+D/sxhkd////
 D/tabbed////
 D/tangerine-icon-theme////
 D/tango-icon-theme////
