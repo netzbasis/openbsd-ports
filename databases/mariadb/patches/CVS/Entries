@@ -2,11 +2,11 @@
 /patch-cmake_install_macros_cmake/1.8/Sat Oct 31 19:40:43 2015//
 /patch-cmake_mysql_version_cmake/1.1.1.1/Thu Apr  4 18:58:44 2013//
 /patch-libmysql_CMakeLists_txt/1.11/Wed May  4 07:37:22 2016//
-/patch-scripts_CMakeLists_txt/1.6/Sat Oct 31 19:40:43 2015//
+/patch-scripts_CMakeLists_txt/1.7/Fri Aug 11 19:04:49 2017//
 /patch-scripts_mysql_install_db_sh/1.7/Tue Dec  8 16:15:23 2015//
 /patch-scripts_mysqld_safe_sh/1.12/Fri Jan 20 10:03:10 2017//
-/patch-sql_CMakeLists_txt/1.13/Sat Oct 31 19:40:43 2015//
-/patch-storage_connect_reldef_cpp/1.8/Fri Jan 20 10:03:10 2017//
+/patch-sql_CMakeLists_txt/1.14/Fri Aug 11 19:04:49 2017//
+/patch-storage_connect_reldef_cpp/1.9/Fri Aug 11 19:04:49 2017//
 /patch-storage_oqgraph_CMakeLists_txt/1.6/Sat Oct 31 19:40:43 2015//
 /patch-support-files_my-huge_cnf_sh/1.1/Fri Feb 12 13:30:38 2016//
 /patch-support-files_my-innodb-heavy-4G_cnf_sh/1.1/Fri Feb 12 13:30:38 2016//
