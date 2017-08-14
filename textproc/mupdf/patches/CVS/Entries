@@ -1,6 +1,7 @@
 /patch-Makefile/1.13/Fri May  5 14:02:51 2017//
 /patch-Makerules/1.17/Fri May  5 14:02:51 2017//
 /patch-docs_man_mupdf_1/1.3/Sun Oct 16 09:16:52 2016//
+/patch-include_mupdf_fitz_context_h/1.1/Mon Aug 14 09:59:07 2017//
 /patch-platform_gl_gl-main_c/1.4/Fri May  5 14:02:51 2017//
 /patch-platform_x11_jstest_main_c/1.2/Mon Dec 12 10:54:39 2016//
 /patch-platform_x11_pdfapp_c/1.8/Fri May  5 14:02:51 2017//
