@@ -33,6 +33,7 @@
 /patch-kdecore_util_kshareddatacache_p_h/1.2/Wed Apr 12 17:59:32 2017//
 /patch-kdesu_CMakeLists_txt/1.1/Sun Dec 25 16:38:08 2016//
 /patch-kdesu_su_cpp/1.3/Sun Dec 25 16:33:01 2016//
+/patch-kdeui_CMakeLists_txt/1.1/Sun Aug 13 13:18:43 2017//
 /patch-kdeui_dialogs_kbugreport_cpp/1.2/Sun Dec  8 19:13:32 2013//
 /patch-kdeui_dialogs_ktip_cpp/1.1/Sun Dec  8 19:13:32 2013//
 /patch-kdeui_kernel_kapplication_h/1.1/Sun Dec  8 19:13:32 2013//
