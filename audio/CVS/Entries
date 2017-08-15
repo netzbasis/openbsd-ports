@@ -1,4 +1,4 @@
-/Makefile/1.388/Sun Aug  6 21:56:05 2017//
+/Makefile/1.389/Tue Aug 15 01:03:44 2017//
 D/abcde////
 D/adplay////
 D/adplug////
@@ -223,6 +223,7 @@ D/soundtracker////
 D/sox////
 D/speech-dispatcher////
 D/speex////
+D/speexdsp////
 D/squeezecenter////
 D/squeezelite////
 D/streamripper////

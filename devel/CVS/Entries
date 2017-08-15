@@ -1,4 +1,4 @@
-/Makefile/1.1636/Tue Aug  8 22:11:08 2017//
+/Makefile/1.1638/Mon Aug 14 17:50:40 2017//
 D/ElectricFence////
 D/ORBit2////
 D/acpica////
@@ -430,7 +430,6 @@ D/mcs////
 D/mercurial////
 D/meson////
 D/metaauto////
-D/mico////
 D/mingw////
 D/mk////
 D/mm////
@@ -1079,7 +1078,6 @@ D/p5-Test-Strict////
 D/p5-Test-SubCalls////
 D/p5-Test-Taint////
 D/p5-Test-TempDir////
-D/p5-Test-Tester////
 D/p5-Test-Time////
 D/p5-Test-TrailingSpace////
 D/p5-Test-Trap////
@@ -1094,7 +1092,6 @@ D/p5-Test-Without-Module////
 D/p5-Test-XML////
 D/p5-Test-YAML////
 D/p5-Test-YAML-Valid////
-D/p5-Test-use-ok////
 D/p5-Text-FixEOL////
 D/p5-Text-vFile-asData////
 D/p5-Throwable////
