@@ -1,4 +1,4 @@
-/Makefile/1.1019/Thu Aug 10 16:41:22 2017//
+/Makefile/1.1020/Tue Aug 15 16:06:04 2017//
 D/GeoIP////
 D/adns////
 D/adsuck////
@@ -656,6 +656,7 @@ D/wget////
 D/whatweb////
 D/wide-dhcpv6////
 D/wifind////
+D/wireless////
 D/wireshark////
 D/wmifinfo////
 D/wmnet////

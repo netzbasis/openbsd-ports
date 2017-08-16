@@ -1,4 +1,4 @@
-/Makefile/1.1638/Mon Aug 14 17:50:40 2017//
+/Makefile/1.1640/Tue Aug 15 15:56:29 2017//
 D/ElectricFence////
 D/ORBit2////
 D/acpica////
@@ -769,7 +769,6 @@ D/p5-Hash-NoRef////
 D/p5-Hash-Util-FieldHash-Compat////
 D/p5-Heap////
 D/p5-Hook-LexWrap////
-D/p5-I18N-LangTags////
 D/p5-IO-AIO////
 D/p5-IO-All////
 D/p5-IO-Capture////
@@ -1040,7 +1039,6 @@ D/p5-Test-File-Contents////
 D/p5-Test-File-ShareDir////
 D/p5-Test-Group////
 D/p5-Test-HTML-Tidy////
-D/p5-Test-Harness////
 D/p5-Test-Inline////
 D/p5-Test-Inter////
 D/p5-Test-JSON////
