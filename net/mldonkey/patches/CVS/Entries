@@ -1,20 +1,4 @@
-/patch-config_Makefile_config_in/1.1/Tue Feb 10 11:50:09 2015//
 /patch-config_Makefile_in/1.5/Fri Oct 31 08:19:39 2014//
-/patch-config_configure/1.5/Tue Mar  1 09:05:33 2016//
-/patch-src_config_unix_os_stubs_c_c/1.1/Wed Dec 23 14:46:06 2015//
-/patch-src_daemon_common_commonOptions_ml/1.1/Tue Feb 10 11:50:09 2015//
-/patch-src_networks_bittorrent_bTOptions_ml/1.1/Tue Feb 10 11:50:09 2015//
-/patch-src_networks_donkey_donkeyGlobals_ml/1.2/Wed Nov 23 14:16:10 2016//
-/patch-src_networks_donkey_donkeyOvernet_ml/1.1/Wed Nov 23 14:16:10 2016//
-/patch-src_utils_cdk_gdstubs_c/1.2/Wed Nov 23 14:16:10 2016//
-/patch-src_utils_cdk_zip_ml/1.2/Wed Nov 23 14:16:10 2016//
-/patch-src_utils_cdk_zlibstubs_c/1.1/Wed Dec 23 14:46:06 2015//
-/patch-src_utils_lib_fst_hash_c/1.1/Wed Dec 23 14:46:06 2015//
+/patch-config_configure/1.6/Thu Aug 17 10:06:12 2017//
 /patch-src_utils_lib_misc2_mlcpp/1.1/Tue Feb 10 11:50:09 2015//
-/patch-src_utils_lib_options_ml4/1.2/Wed Nov 23 14:16:10 2016//
-/patch-src_utils_lib_os_stubs_h/1.1/Wed Dec 23 14:46:06 2015//
-/patch-src_utils_lib_stubs_c_c/1.1/Tue Feb 10 11:50:09 2015//
-/patch-src_utils_net_terminal_ml/1.2/Tue Feb 10 11:50:09 2015//
-/patch-src_utils_net_upnp_stubs_c/1.1/Mon Jun  6 10:15:53 2016//
-/patch-tools_bt_dht_node_ml/1.1/Tue Feb 10 11:50:09 2015//
 D
