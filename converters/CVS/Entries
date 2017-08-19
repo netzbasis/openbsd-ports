@@ -1,4 +1,4 @@
-/Makefile/1.88/Thu Jun 15 23:35:25 2017//
+/Makefile/1.89/Fri Aug 18 12:08:46 2017//
 D/base64////
 D/btoa////
 D/convmv////
@@ -8,6 +8,7 @@ D/enca////
 D/html2text////
 D/html2wml////
 D/ish////
+D/k2pdfopt////
 D/lastools////
 D/libdvdcss////
 D/libiconv////
