@@ -1,6 +1,8 @@
 /patch-CMakeLists_txt/1.1/Sat Jan 14 11:19:04 2017//
+/patch-kmymoney_dialogs_settings_CMakeLists_txt/1.1/Thu Aug 24 09:31:35 2017//
 /patch-kmymoney_plugins_kbanking_CMakeLists_txt/1.1/Fri Jan 20 09:14:12 2017//
-/patch-kmymoney_plugins_onlinetasks_sepa_CMakeLists_txt/1.1/Sat Jan 14 11:19:04 2017//
+/patch-kmymoney_plugins_onlinetasks_national_CMakeLists_txt/1.1/Thu Aug 24 09:31:35 2017//
+/patch-kmymoney_plugins_onlinetasks_sepa_CMakeLists_txt/1.2/Thu Aug 24 09:31:35 2017//
 /patch-kmymoney_views_kmymoneyview_cpp/1.1/Sat Jan 14 11:19:04 2017//
 /patch-po_ru_kmymoney_po/1.1/Sat Jan 14 11:19:04 2017//
 /patch-tools_CMakeLists_txt/1.1/Sat Jan 14 11:19:04 2017//
