@@ -1,5 +1,6 @@
 /patch-WINGs_Makefile_in/1.9/Wed Mar 29 08:51:24 2017//
 /patch-WINGs_wapplication_c/1.5/Fri Jun 17 11:49:33 2016//
+/patch-WINGs_wview_c/1.1/Fri Aug 25 11:01:17 2017//
 /patch-WPrefs_app_Appearance_c/1.1/Fri Jun 17 11:49:33 2016//
 /patch-WPrefs_app_Makefile_in/1.2/Wed Mar 29 08:51:24 2017//
 /patch-WPrefs_app_Menu_c/1.5/Fri Jun 17 11:49:33 2016//
@@ -14,4 +15,5 @@
 /patch-m4_wm_i18n_m4/1.1/Fri Jun 17 11:49:33 2016//
 /patch-src_event_c/1.3/Fri Jun 17 11:49:33 2016//
 /patch-src_startup_c/1.1/Fri Jun 17 11:49:33 2016//
+/patch-util_wmmenugen_parse_xdg_c/1.1/Fri Aug 25 11:01:17 2017//
 D
