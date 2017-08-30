@@ -1,4 +1,4 @@
-/Makefile/1.463/Wed Aug  9 21:00:59 2017//
+/Makefile/1.464/Tue Aug 29 17:03:59 2017//
 D/ADMsnmp////
 D/aescrypt////
 D/aide////
@@ -47,6 +47,8 @@ D/gnupg////
 D/gnupg2////
 D/gnutls////
 D/go-crypto////
+D/go-ed25519////
+D/go-siphash////
 D/gpa////
 D/gpgme////
 D/gringotts////

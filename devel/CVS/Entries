@@ -1,4 +1,4 @@
-/Makefile/1.1640/Tue Aug 15 15:56:29 2017//
+/Makefile/1.1641/Tue Aug 29 17:03:59 2017//
 D/ElectricFence////
 D/ORBit2////
 D/acpica////
@@ -151,6 +151,7 @@ D/gmake////
 D/gmc4cc////
 D/gmp////
 D/go-check-v1////
+D/go-goptlib////
 D/go-tools////
 D/gobject-introspection////
 D/goffice////
@@ -1326,6 +1327,7 @@ D/py-pluggy////
 D/py-ply////
 D/py-pretend////
 D/py-prioritized_methods////
+D/py-progress////
 D/py-progressbar////
 D/py-prompt_toolkit////
 D/py-protocols////
