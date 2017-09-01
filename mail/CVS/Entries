@@ -1,4 +1,4 @@
-/Makefile/1.356/Thu Jun  8 12:53:38 2017//
+/Makefile/1.357/Thu Aug 31 21:56:37 2017//
 D/abook////
 D/adcomplain////
 D/akpop3d////
@@ -147,7 +147,6 @@ D/pear-Mime-Type////
 D/pecl-mailparse////
 D/perdition////
 D/pflogsumm////
-D/pgpsendmail////
 D/pine-pgp-filters////
 D/pop3d////
 D/popa3d////
