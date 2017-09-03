@@ -6,4 +6,15 @@
 /patch-jruby-launcher_ng_c/1.1/Sat Sep 10 13:03:41 2016//
 /patch-jruby-launcher_unixlauncher_cpp/1.4/Sun Jul 26 04:40:16 2015//
 /patch-lib_ruby_stdlib_ffi_library_rb/1.1/Sun Jul 26 04:40:16 2015//
+/patch-lib_ruby_stdlib_rubygems_commands_open_command_rb/1.1/Sat Sep  2 21:36:55 2017//
+/patch-lib_ruby_stdlib_rubygems_commands_query_command_rb/1.1/Sat Sep  2 21:36:55 2017//
+/patch-lib_ruby_stdlib_rubygems_commands_sources_command_rb/1.1/Sat Sep  2 21:36:55 2017//
+/patch-lib_ruby_stdlib_rubygems_dependency_list_rb/1.1/Sat Sep  2 21:36:55 2017//
+/patch-lib_ruby_stdlib_rubygems_installer_rb/1.1/Sat Sep  2 21:36:55 2017//
+/patch-lib_ruby_stdlib_rubygems_platform_rb/1.1/Sat Sep  2 21:36:55 2017//
+/patch-lib_ruby_stdlib_rubygems_rb/1.1/Sat Sep  2 21:36:55 2017//
+/patch-lib_ruby_stdlib_rubygems_remote_fetcher_rb/1.1/Sat Sep  2 21:36:55 2017//
+/patch-lib_ruby_stdlib_rubygems_specification_rb/1.1/Sat Sep  2 21:36:55 2017//
+/patch-lib_ruby_stdlib_rubygems_test_case_rb/1.1/Sat Sep  2 21:36:55 2017//
+/patch-lib_ruby_stdlib_rubygems_text_rb/1.1/Sat Sep  2 21:36:55 2017//
 D

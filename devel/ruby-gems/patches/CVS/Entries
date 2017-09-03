@@ -1,8 +1,11 @@
 /patch-lib_rubygems_commands_install_command_rb/1.5/Sat Oct 11 19:52:10 2014//
-/patch-lib_rubygems_commands_setup_command_rb/1.4/Fri Apr 27 18:41:07 2012//
+/patch-lib_rubygems_commands_query_command_rb/1.1/Sat Sep  2 21:34:12 2017//
+/patch-lib_rubygems_commands_setup_command_rb/1.5/Sat Sep  2 21:34:12 2017//
 /patch-lib_rubygems_config_file_rb/1.5/Fri Apr 27 18:41:07 2012//
 /patch-lib_rubygems_dependency_installer_rb/1.7/Sat Oct 11 19:52:10 2014//
 /patch-lib_rubygems_ext_builder_rb/1.2/Wed Oct 24 22:50:27 2012//
-/patch-lib_rubygems_specification_rb/1.1/Wed Jun 25 15:38:18 2014//
+/patch-lib_rubygems_installer_rb/1.11/Sat Sep  2 21:34:12 2017//
+/patch-lib_rubygems_specification_rb/1.2/Sat Sep  2 21:34:12 2017//
+/patch-lib_rubygems_text_rb/1.1/Sat Sep  2 21:34:12 2017//
 /patch-lib_rubygems_version_rb/1.1/Mon Jan  6 02:24:49 2014//
 D
