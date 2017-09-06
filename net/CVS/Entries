@@ -1,4 +1,4 @@
-/Makefile/1.1021/Tue Aug 29 17:03:59 2017//
+/Makefile/1.1022/Wed Sep  6 07:09:21 2017//
 D/GeoIP////
 D/adns////
 D/adsuck////
@@ -229,7 +229,6 @@ D/mldonkey////
 D/mlvpn////
 D/mon////
 D/monitoring-plugins////
-D/mono-zeroconf////
 D/mosh////
 D/mosquitto////
 D/mrtg////
