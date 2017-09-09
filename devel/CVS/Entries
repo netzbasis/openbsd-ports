@@ -1,4 +1,4 @@
-/Makefile/1.1643/Tue Sep  5 14:34:08 2017//
+/Makefile/1.1644/Fri Sep  8 16:44:05 2017//
 D/ElectricFence////
 D/ORBit2////
 D/acpica////
@@ -152,6 +152,7 @@ D/gmc4cc////
 D/gmp////
 D/go-check-v1////
 D/go-goptlib////
+D/go-sys////
 D/go-tools////
 D/gobject-introspection////
 D/goffice////
