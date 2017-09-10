@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.337 2017/09/05 14:14:52 robert Exp $
+# $OpenBSD: Makefile,v 1.339 2017/09/09 22:07:11 sthen Exp $
 
 .include <bsd.port.arch.mk>
 
@@ -9,7 +9,7 @@ DPB_PROPERTIES=		parallel
 
 COMMENT=		Chromium browser
 
-V=			60.0.3112.113
+V=			61.0.3163.79
 
 DISTNAME=		chromium-${V}
 
@@ -48,7 +48,7 @@ WANTLIB += X11 Xext Xfixes Xrender Xss c cups dbus-1 event
 WANTLIB += execinfo fontconfig gconf-2
 WANTLIB += gdk_pixbuf-2.0 glib-2.0 gobject-2.0
 WANTLIB += m
-WANTLIB += pthread
+WANTLIB += pthread pthread-stubs
 WANTLIB += xslt
 WANTLIB += sndio
 WANTLIB += Xcomposite
@@ -128,8 +128,13 @@ GN_ARGS=	enable_nacl=false \
 		use_allocator=\"none\" \
 		is_official_build=true \
 		fieldtrial_testing_like_official_build=true \
-		extra_cppflags=\"-idirafter ${LOCALBASE}/include -idirafter ${X11BASE}/include\" \
-		extra_ldflags=\"-L${LOCALBASE}/lib -L${X11BASE}/lib\"
+		extra_cppflags=\"-idirafter ${LOCALBASE}/include -idirafter ${X11BASE}/include\"
+
+.if ${MACHINE_ARCH} == i386
+GN_ARGS+=	extra_ldflags=\"-L${LOCALBASE}/lib -L${X11BASE}/lib -Wl,--no-keep-memory\"
+.else
+GN_ARGS+=	extra_ldflags=\"-L${LOCALBASE}/lib -L${X11BASE}/lib\"
+.endif
 
 # Note: these keys are for OpenBSD use ONLY. For your own distribution,
 # please get your own set of keys. It's free!

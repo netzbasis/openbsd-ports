@@ -1,5 +1,7 @@
 /patch-CMakeLists_txt/1.9/Wed Mar 29 13:25:52 2017//
 /patch-Source_JavaScriptCore_CMakeLists_txt/1.7/Wed Mar 29 13:25:52 2017//
+/patch-Source_JavaScriptCore_assembler_ARM64Assembler_h/1.1/Sat Sep  9 19:25:29 2017//
+/patch-Source_JavaScriptCore_assembler_ARMAssembler_h/1.1/Sat Sep  9 19:25:29 2017//
 /patch-Source_JavaScriptCore_assembler_MacroAssemblerX86Common_h/1.2/Wed Mar 29 13:25:52 2017//
 /patch-Source_JavaScriptCore_dfg_DFGOpInfo_h/1.2/Wed Mar 29 13:25:52 2017//
 /patch-Source_JavaScriptCore_heap_MachineStackMarker_cpp/1.4/Wed May 10 10:57:54 2017//
