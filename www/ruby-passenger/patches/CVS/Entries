@@ -1,7 +1,8 @@
 /patch-src_agent_Core_ApplicationPool_Pool_AnalyticsCollection_cpp/1.1/Fri Nov  4 22:08:19 2016//
+/patch-src_cxx_supportlib_vendor-copy_libuv_configure/1.1/Sun Sep 10 19:33:19 2017//
 /patch-src_cxx_supportlib_vendor-modified_boost_predef_detail_endian_compat_h/1.1/Fri Nov  4 22:08:19 2016//
 /patch-src_cxx_supportlib_vendor-modified_boost_smart_ptr_detail_sp_has_sync_hpp/1.1/Fri Nov  4 22:08:19 2016//
-/patch-src_cxx_supportlib_vendor-modified_libev_configure/1.1/Mon Mar 27 18:10:55 2017//
+/patch-src_cxx_supportlib_vendor-modified_libev_configure/1.2/Sun Sep 10 19:33:19 2017//
 /patch-src_helper-scripts_download_binaries_extconf_rb/1.1/Fri Nov  4 22:08:19 2016//
 /patch-src_nginx_module_config/1.1/Fri Nov  4 22:08:19 2016//
 /patch-src_ruby_supportlib_phusion_passenger_config_agent_compiler_rb/1.1/Fri Nov  4 22:08:19 2016//
