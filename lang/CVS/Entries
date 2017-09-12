@@ -1,8 +1,9 @@
-/Makefile/1.204/Fri Sep  1 18:08:07 2017//
+/Makefile/1.205/Mon Sep 11 23:48:41 2017//
 D/STk////
 D/abcl////
 D/algol68g////
 D/antlr3////
+D/apl////
 D/arena////
 D/bacon////
 D/brandy////
@@ -46,6 +47,7 @@ D/jikes////
 D/jimtcl////
 D/jruby////
 D/kawa////
+D/kona////
 D/librep////
 D/libv8////
 D/lua////

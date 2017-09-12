@@ -1,4 +1,4 @@
-/Makefile/1.141/Fri May 19 07:38:06 2017//
+/Makefile/1.142/Mon Sep 11 18:38:55 2017//
 D/R////
 D/aamath////
 D/abs////
@@ -10,6 +10,7 @@ D/cblas////
 D/cfitsio////
 D/cgal////
 D/coq////
+D/dieharder////
 D/ecm////
 D/eigen////
 D/eigen2////

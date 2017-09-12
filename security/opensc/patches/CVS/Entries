@@ -1,6 +1,11 @@
 /patch-configure_ac/1.7/Wed Aug 16 14:39:07 2017//
 /patch-doc_tools_Makefile_am/1.1/Tue Jun  7 14:08:44 2016//
 /patch-etc_Makefile_am/1.1/Wed Aug 16 14:39:07 2017//
+/patch-src_common_libpkcs11_c/1.3/Mon Sep 11 09:27:38 2017//
+/patch-src_libopensc_card-jpki_c/1.1/Mon Sep 11 09:27:38 2017//
+/patch-src_libopensc_pkcs15-pubkey_c/1.3/Mon Sep 11 09:27:38 2017//
 /patch-src_pkcs11_Makefile_am/1.2/Wed Aug 16 14:39:07 2017//
+/patch-src_pkcs11_framework-pkcs15_c/1.1/Mon Sep 11 09:27:38 2017//
+/patch-src_pkcs11_mechanism_c/1.1/Mon Sep 11 09:27:38 2017//
 /patch-src_tests_Makefile_am/1.2/Wed Aug 16 14:39:07 2017//
 D
