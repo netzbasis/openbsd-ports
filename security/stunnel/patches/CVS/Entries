@@ -1,11 +1,9 @@
-/patch-Makefile_in/1.13/Fri Dec  4 01:38:56 2015//
+/patch-Makefile_in/1.14/Tue Sep 12 16:15:24 2017//
 /patch-src_common_h/1.1/Wed Nov  9 23:14:31 2016//
-/patch-src_ctx_c/1.4/Wed Nov  9 23:14:31 2016//
-/patch-src_options_c/1.8/Mon Jan  9 15:40:30 2017//
-/patch-src_prototypes_h/1.3/Mon Jan  9 15:40:30 2017//
-/patch-src_ssl_c/1.5/Mon Jan  9 15:40:30 2017//
-/patch-src_sthreads_c/1.2/Thu Nov 10 10:10:50 2016//
+/patch-src_ctx_c/1.5/Tue Sep 12 16:15:24 2017//
+/patch-src_ssl_c/1.6/Tue Sep 12 16:15:24 2017//
+/patch-src_sthreads_c/1.3/Tue Sep 12 16:15:24 2017//
 /patch-src_stunnel3_in/1.1/Wed Oct 14 02:05:06 2015//
-/patch-src_verify_c/1.5/Thu Nov 10 10:10:50 2016//
-/patch-tools_stunnel_conf-sample_in/1.15/Wed Nov  9 23:14:31 2016//
+/patch-src_verify_c/1.6/Tue Sep 12 16:15:24 2017//
+/patch-tools_stunnel_conf-sample_in/1.16/Tue Sep 12 16:15:24 2017//
 D
