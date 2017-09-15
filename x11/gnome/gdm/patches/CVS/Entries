@@ -8,13 +8,13 @@
 /patch-daemon_gdm-display_c/1.2/Fri Mar  3 13:01:26 2017//
 /patch-daemon_gdm-launch-environment_c/1.8/Mon Apr 17 13:17:07 2017//
 /patch-daemon_gdm-local-display-factory_c/1.6/Fri Mar  3 13:01:26 2017//
-/patch-daemon_gdm-manager_c/1.14/Wed May 10 10:18:15 2017//
+/patch-daemon_gdm-manager_c/1.15/Thu Sep 14 13:45:22 2017//
 /patch-daemon_gdm-server_c/1.8/Fri Apr 15 14:11:09 2016//
 /patch-daemon_gdm-session-record_c/1.7/Sun Oct 18 13:25:54 2015//
 /patch-daemon_gdm-session-worker-job_c/1.1/Sun Oct 18 13:25:54 2015//
 /patch-daemon_gdm-session-worker_c/1.15/Sun Mar 12 12:58:03 2017//
 /patch-daemon_gdm-session-worker_xml/1.1/Sun Oct 18 13:25:54 2015//
-/patch-daemon_gdm-session_c/1.12/Wed May 10 10:18:15 2017//
+/patch-daemon_gdm-session_c/1.13/Thu Sep 14 13:45:22 2017//
 /patch-daemon_gdm-session_h/1.4/Tue Apr 26 08:25:04 2016//
 /patch-daemon_main_c/1.2/Fri Apr  3 18:39:06 2015//
 /patch-data_Init_in/1.8/Sun Apr 16 12:43:20 2017//

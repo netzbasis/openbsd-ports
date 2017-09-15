@@ -1,4 +1,4 @@
-/Makefile/1.539/Thu Aug 17 18:51:17 2017//
+/Makefile/1.540/Thu Sep 14 19:14:30 2017//
 D/TclXML////
 D/antiword////
 D/apertium////
@@ -46,7 +46,6 @@ D/glimpse////
 D/gnuvd////
 D/go-text////
 D/go-xlsx////
-D/gonzui////
 D/gpresent////
 D/grepcidr////
 D/groff////
