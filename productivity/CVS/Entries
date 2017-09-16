@@ -1,4 +1,4 @@
-/Makefile/1.76/Wed Jun 21 07:15:11 2017//
+/Makefile/1.77/Fri Sep 15 13:44:51 2017//
 D/akonadi////
 D/akonadi-googledata////
 D/aqbanking////
@@ -32,6 +32,7 @@ D/projectlibre////
 D/py-carddav////
 D/qhacc////
 D/radicale////
+D/rednotebook////
 D/rubrica2////
 D/siag////
 D/sl////
