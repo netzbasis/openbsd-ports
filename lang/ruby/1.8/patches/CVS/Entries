@@ -11,6 +11,9 @@
 /patch-lib_fileutils_rb/1.1/Tue Oct 12 15:39:06 2010//
 /patch-lib_rexml_document_rb/1.2/Fri Nov 14 17:41:50 2014//
 /patch-lib_rexml_entity_rb/1.1/Sat Nov  1 04:56:40 2014//
+/patch-lib_webrick_httpstatus_rb/1.1/Sat Sep 16 22:54:58 2017//
+/patch-lib_webrick_log_rb/1.1/Sat Sep 16 22:54:58 2017//
+/patch-sprintf_c/1.1/Sat Sep 16 22:54:58 2017//
 /patch-test_openssl_test_ssl_rb/1.1/Wed Apr 15 21:58:16 2015//
 /patch-util_c/1.1/Sun Nov 24 02:27:08 2013//
 D

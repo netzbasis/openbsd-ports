@@ -6,4 +6,6 @@
 /patch-jruby-launcher_ng_c/1.1/Sat Sep 10 13:03:41 2016//
 /patch-jruby-launcher_unixlauncher_cpp/1.4/Sun Jul 26 04:40:16 2015//
 /patch-lib_ruby_stdlib_ffi_library_rb/1.1/Sun Jul 26 04:40:16 2015//
+/patch-lib_ruby_stdlib_webrick_httpstatus_rb/1.1/Sat Sep 16 22:56:41 2017//
+/patch-lib_ruby_stdlib_webrick_log_rb/1.1/Sat Sep 16 22:56:41 2017//
 D
