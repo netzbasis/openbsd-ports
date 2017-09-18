@@ -1,4 +1,4 @@
-/Makefile/1.390/Sun Aug 27 16:09:21 2017//
+/Makefile/1.391/Sun Sep 17 16:45:29 2017//
 D/abcde////
 D/adplay////
 D/adplug////
@@ -114,7 +114,6 @@ D/morseplayer////
 D/mp3blaster////
 D/mp3cddb////
 D/mp3cut////
-D/mp3gain////
 D/mp3info////
 D/mp3splt////
 D/mp3splt-gtk////
@@ -200,6 +199,7 @@ D/pykaraoke////
 D/pympd////
 D/quodlibet////
 D/radiotray////
+D/rgain////
 D/rhythmbox////
 D/rsynth////
 D/rtunes////
