@@ -1,4 +1,4 @@
-/Makefile/1.52/Tue Jul 11 18:50:52 2017//
+/Makefile/1.53/Tue Sep 19 05:34:00 2017//
 D/emerillon////
 D/foxtrotgps////
 D/garmindev////
@@ -37,6 +37,7 @@ D/p5-Geo-Forward////
 D/p5-Geo-Functions////
 D/p5-Geo-Inverse////
 D/p5-Geo-METAR////
+D/p5-Geo-Parse-OSM////
 D/p5-Geo-StreetAddress-US////
 D/p5-Geo-TigerLine////
 D/p5-Geo-UK-Postcode-Regex////

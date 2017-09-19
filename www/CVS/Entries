@@ -1,4 +1,4 @@
-/Makefile/1.830/Mon Aug 28 11:45:57 2017//
+/Makefile/1.831/Tue Sep 19 07:49:33 2017//
 D/ajaxterm////
 D/analog////
 D/ap2-mod_dnssd////
@@ -491,6 +491,7 @@ D/tor-browser////
 D/trac////
 D/trac-ldapplugin////
 D/tracnav////
+D/ttyd////
 D/twill////
 D/uget////
 D/uriparser////
