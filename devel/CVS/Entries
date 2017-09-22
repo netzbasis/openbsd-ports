@@ -1,4 +1,4 @@
-/Makefile/1.1645/Wed Sep 13 09:52:02 2017//
+/Makefile/1.1646/Thu Sep 21 19:07:04 2017//
 D/ElectricFence////
 D/ORBit2////
 D/acpica////
@@ -1412,6 +1412,7 @@ D/pylint////
 D/pyrex////
 D/pysvn////
 D/pyusb////
+D/qbs////
 D/qgit////
 D/qjson////
 D/qmake////
