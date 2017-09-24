@@ -1,4 +1,4 @@
-/Makefile/1.205/Mon Sep 11 23:48:41 2017//
+/Makefile/1.206/Sat Sep 23 13:31:43 2017//
 D/STk////
 D/abcl////
 D/algol68g////
@@ -67,7 +67,6 @@ D/nqp////
 D/obc////
 D/ocaml////
 D/ocaml-camlp4////
-D/oo2c////
 D/open-cobol////
 D/otcl////
 D/p5-Language-Ook////
@@ -88,7 +87,6 @@ D/scheme-report////
 D/scheme48////
 D/scm////
 D/seed7////
-D/smlnj////
 D/spidermonkey////
 D/squeak////
 D/swi-prolog////
