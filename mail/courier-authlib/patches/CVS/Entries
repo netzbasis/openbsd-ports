@@ -1,7 +1,7 @@
 /patch-Makefile_in/1.7/Fri Feb 10 09:40:01 2017//
 /patch-authdaemond_in/1.2/Thu Oct 18 08:04:01 2012//
-/patch-configure/1.8/Fri Aug  4 23:14:32 2017//
 /patch-libs_bdbobj_Makefile_in/1.2/Fri May 27 16:18:28 2016//
+/patch-libs_rfc822_configure_ac/1.1/Tue Sep 26 16:14:07 2017//
 /patch-preauthpam_c/1.1/Fri May 27 16:18:28 2016//
 /patch-preauthpwd_c/1.1/Fri May 27 16:18:28 2016//
 /patch-userdb_pw2userdb_in/1.2/Thu Oct 18 08:04:01 2012//
