@@ -1,22 +1,18 @@
-/patch-ECtools_mapitime_cpp/1.1.1.1/Wed Sep 13 10:38:41 2017//
+/patch-ECtools_mapitime_cpp/1.2/Wed Sep 27 08:36:53 2017//
 /patch-ECtools_monitor_monitor_cpp/1.1.1.1/Wed Sep 13 10:38:41 2017//
-/patch-ECtools_search_Makefile_in/1.1.1.1/Wed Sep 13 10:38:41 2017//
-/patch-Makefile_in/1.1.1.1/Wed Sep 13 10:38:41 2017//
+/patch-ECtools_search_Makefile_in/1.2/Wed Sep 27 08:36:53 2017//
+/patch-Makefile_in/1.2/Wed Sep 27 08:36:53 2017//
 /patch-autoconf_php_m4/1.1.1.1/Wed Sep 13 10:38:42 2017//
 /patch-caldav_CalDAV_cpp/1.1.1.1/Wed Sep 13 10:38:41 2017//
-/patch-common_ECLogger_cpp/1.1.1.1/Wed Sep 13 10:38:42 2017//
-/patch-common_include_kopano_lockhelper_hpp/1.1.1.1/Wed Sep 13 10:38:41 2017//
 /patch-common_include_kopano_platform_linux_h/1.1.1.1/Wed Sep 13 10:38:41 2017//
 /patch-common_libkcmapi_sym_in/1.1.1.1/Wed Sep 13 10:38:42 2017//
 /patch-common_platform_linux_cpp/1.1.1.1/Wed Sep 13 10:38:41 2017//
-/patch-configure_ac/1.1.1.1/Wed Sep 13 10:38:42 2017//
+/patch-configure_ac/1.2/Wed Sep 27 08:36:53 2017//
 /patch-gateway_Gateway_cpp/1.1.1.1/Wed Sep 13 10:38:42 2017//
-/patch-installer_linux_Makefile_in/1.1.1.1/Wed Sep 13 10:38:42 2017//
 /patch-installer_linux_createuser_dotforward/1.1.1.1/Wed Sep 13 10:38:42 2017//
-/patch-installer_linux_dagent_cfg/1.1.1.1/Wed Sep 13 10:38:42 2017//
+/patch-installer_linux_dagent_cfg/1.2/Wed Sep 27 08:36:53 2017//
 /patch-installer_linux_gateway_cfg/1.1.1.1/Wed Sep 13 10:38:42 2017//
 /patch-installer_linux_ical_cfg/1.1.1.1/Wed Sep 13 10:38:42 2017//
-/patch-installer_linux_kopano-autorespond/1.1.1.1/Wed Sep 13 10:38:42 2017//
 /patch-installer_linux_ldap_m4/1.1.1.1/Wed Sep 13 10:38:42 2017//
 /patch-installer_linux_monitor_cfg/1.1.1.1/Wed Sep 13 10:38:42 2017//
 /patch-installer_linux_search_cfg/1.1.1.1/Wed Sep 13 10:38:42 2017//
@@ -33,7 +29,7 @@
 /patch-provider_server_ECServer_cpp/1.1.1.1/Wed Sep 13 10:38:42 2017//
 /patch-spooler_DAgent_cpp/1.1.1.1/Wed Sep 13 10:38:42 2017//
 /patch-spooler_Spooler_cpp/1.1.1.1/Wed Sep 13 10:38:42 2017//
-/patch-spooler_python_Makefile_in/1.1.1.1/Wed Sep 13 10:38:42 2017//
+/patch-spooler_python_Makefile_in/1.2/Wed Sep 27 08:36:53 2017//
 /patch-swig_python_kopano_kopano_config_py/1.1.1.1/Wed Sep 13 10:38:42 2017//
 /patch-tools_python-scripts_kopano-cachestat/1.1.1.1/Wed Sep 13 10:38:42 2017//
 D

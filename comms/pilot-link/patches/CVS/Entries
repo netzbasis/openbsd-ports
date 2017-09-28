@@ -1,7 +1,7 @@
 /patch-bindings_Perl_Makefile_PL_in/1.5/Mon Sep 21 08:46:50 2015//
 /patch-bindings_Perl_Pilot_xs/1.3/Mon Sep 21 08:46:50 2015//
 /patch-bindings_Perl_typemap/1.3/Mon Sep 21 08:46:50 2015//
-/patch-configure/1.10/Thu May  4 14:21:34 2017//
+/patch-configure_ac/1.1/Wed Sep 27 21:05:42 2017//
 /patch-libpisock_freebsdusb_c/1.5/Mon Sep 21 08:46:50 2015//
 /patch-libpisock_unixserial_c/1.5/Mon Sep 21 08:46:50 2015//
 /patch-src_Makefile_in/1.6/Mon Sep 21 08:46:50 2015//
