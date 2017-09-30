@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.68 2017/09/27 13:20:02 giovanni Exp $
+# $OpenBSD: Makefile,v 1.71 2017/09/29 22:05:30 naddy Exp $
 
 COMMENT-main=		authentication library for courier
 COMMENT-ldap=		ldap authentication module for courier-authLib
@@ -39,10 +39,9 @@ EXTRACT_SUFX=		.tar.bz2
 
 USE_GMAKE=		Yes
 AUTOCONF_VERSION=	2.69
-AUTOMAKE_VERSION=	1.15
 # only libs/rfc822/configure.ac is patched
 AUTOCONF_DIR=		${WRKSRC}/libs/rfc822
-CONFIGURE_STYLE=	autoconf automake
+CONFIGURE_STYLE=	autoconf
 
 CONFIGURE_ENV=		LIBS="-L${LOCALBASE}/lib" \
 			LDFLAGS="-L${LOCALBASE}/lib" \
@@ -151,6 +150,12 @@ CONFIGURE_ARGS+=	--with-makedatprog=${PREFIX}/libexec/courier-authlib/makedatpro
 CONFIGURE_ARGS+=	--without-authuserdb \
 			--without-makedatprog
 .endif
+
+# avoid triggering autotools cascade after patching configure.ac
+pre-configure:
+	@for d in ${AUTOCONF_DIR}; do \
+	    touch -r $$d/aclocal.m4 $$d/configure.ac; \
+	done
 
 post-install:
 	mv ${PREFIX}/lib/courier-authlib/lib* ${PREFIX}/lib

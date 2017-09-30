@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.64 2017/09/27 13:20:02 giovanni Exp $
+# $OpenBSD: Makefile,v 1.67 2017/09/29 22:05:30 naddy Exp $
 
 COMMENT-main=		mail delivery agent with filtering abilities
 COMMENT-utils=		quota tools for the Courier mail suite
@@ -27,11 +27,10 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 COMPILER =		gcc
 
+CONFIGURE_STYLE=	autoconf
 AUTOCONF_VERSION=	2.69
-AUTOMAKE_VERSION=	1.15
 # only libs/rfc822/configure.ac is patched
-AUTOCONF_DIR=           ${WRKSRC}/libs/rfc822
-CONFIGURE_STYLE=	autoconf automake
+AUTOCONF_DIR=		${WRKSRC}/libs/rfc822
 
 CONFIGURE_ENV=		LDFLAGS="-L${LOCALBASE}/lib" \
 			CPPFLAGS="${CFLAGS:C/ *$//} -I${LOCALBASE}/include" \
@@ -107,6 +106,12 @@ DOCFILES=		README \
 			libs/maildir/README.sharedfolders.txt \
 			libs/maildir/README.maildirquota.txt \
 			libs/maildir/quotawarnmsg
+
+# avoid triggering autotools cascade after patching configure.ac
+pre-configure:
+	@for d in ${AUTOCONF_DIR}; do \
+	    touch -r $$d/aclocal.m4 $$d/configure.ac; \
+	done
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/maildrop
