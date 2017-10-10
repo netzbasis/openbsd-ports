@@ -1,4 +1,4 @@
-/Makefile/1.831/Tue Sep 19 07:49:33 2017//
+/Makefile/1.832/Mon Oct  9 15:29:01 2017//
 D/ajaxterm////
 D/analog////
 D/ap2-mod_dnssd////
@@ -358,7 +358,6 @@ D/pnp4nagios////
 D/polipo////
 D/pound////
 D/privoxy////
-D/puppet-dashboard////
 D/puppetboard////
 D/py-CherryPy////
 D/py-aiohttp////

@@ -1,6 +1,7 @@
-/patch-configure_py/1.4/Fri Aug 11 22:30:38 2017//
+/patch-configure_py/1.5/Mon Oct  9 20:05:07 2017//
 /patch-src_build-data_cc_gcc_txt/1.1.1.1/Mon Mar 13 15:00:39 2017//
 /patch-src_build-data_os_openbsd_txt/1.3/Mon Apr 10 11:10:33 2017//
-/patch-src_tests_main_cpp/1.1/Sun Aug 13 14:40:18 2017//
-/patch-src_tests_test_ffi_cpp/1.1/Sun Aug 13 14:40:18 2017//
+/patch-src_lib_prov_openssl_openssl_rsa_cpp/1.1/Mon Oct  9 20:05:07 2017//
+/patch-src_lib_utils_os_utils_cpp/1.1/Mon Oct  9 20:05:07 2017//
+/patch-src_tests_main_cpp/1.2/Mon Oct  9 20:05:07 2017//
 D
