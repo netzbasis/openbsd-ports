@@ -1,4 +1,4 @@
-/Makefile/1.1023/Mon Sep 18 22:23:29 2017//
+/Makefile/1.1024/Wed Oct 11 18:52:17 2017//
 D/GeoIP////
 D/adns////
 D/adsuck////
@@ -62,7 +62,6 @@ D/dleyna////
 D/dlint////
 D/dnscrypt-proxy////
 D/dnsdist////
-D/dnsfilter////
 D/dnsmasq////
 D/dnsreflector////
 D/dnstop////

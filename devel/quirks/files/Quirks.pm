@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.536 2017/10/09 15:34:24 jeremy Exp $
+# $OpenBSD: Quirks.pm,v 1.538 2017/10/11 23:28:15 jeremy Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -490,6 +490,8 @@ my $stem_extensions = {
 	'zarafa-mapi' => 'kopano-mapi',
 	'zarafa-webapp' => 'kopano-webapp',
 	'extract_url' => 'extracturl',
+# 6.3
+	'ruby-arirang' => 'arirang',
 };
 
 my $obsolete_reason = {
@@ -1123,6 +1125,7 @@ my $obsolete_reason = {
 	'pgp' => 3,
 	'gonzui' => 3,
 	'puppet-dashboard' => 5,
+	'dnsfilter' => 3,
 };
 
 # reasons for obsolete packages
