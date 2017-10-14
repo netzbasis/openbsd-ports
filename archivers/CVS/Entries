@@ -1,4 +1,4 @@
-/Makefile/1.84/Sun Jun 25 18:10:39 2017//
+/Makefile/1.85/Fri Oct 13 12:04:11 2017//
 D/arc////
 D/brotli////
 D/bzip2////
@@ -57,6 +57,7 @@ D/unarj////
 D/unrar////
 D/unshield////
 D/unzip////
+D/woff2////
 D/xdms////
 D/xz////
 D/zip////
