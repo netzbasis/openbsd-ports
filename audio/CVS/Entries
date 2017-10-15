@@ -1,4 +1,4 @@
-/Makefile/1.391/Sun Sep 17 16:45:29 2017//
+/Makefile/1.393/Sat Oct 14 16:23:46 2017//
 D/abcde////
 D/adplay////
 D/adplug////
@@ -111,6 +111,7 @@ D/mkplaylist////
 D/moc////
 D/mono-taglib////
 D/morseplayer////
+D/mp3applygain////
 D/mp3blaster////
 D/mp3cddb////
 D/mp3cut////

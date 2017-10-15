@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.391 2017/09/17 16:45:29 sthen Exp $
+# $OpenBSD: Makefile,v 1.393 2017/10/14 16:23:46 jeremy Exp $
 
      SUBDIR =
      SUBDIR += abcde
@@ -113,6 +113,7 @@
      SUBDIR += moc
      SUBDIR += mono-taglib
      SUBDIR += morseplayer
+     SUBDIR += mp3applygain
      SUBDIR += mp3blaster
      SUBDIR += mp3cddb
      SUBDIR += mp3cut
@@ -215,14 +216,11 @@
      SUBDIR += rhythmbox
      SUBDIR += rsynth
      SUBDIR += rtunes
-     SUBDIR += ruby-id3lib,ruby22
      SUBDIR += ruby-id3lib,ruby23
      SUBDIR += ruby-id3lib,ruby24
      SUBDIR += ruby-sonos
-     SUBDIR += ruby-taglib,ruby22
      SUBDIR += ruby-taglib,ruby23
      SUBDIR += ruby-taglib,ruby24
-     SUBDIR += ruby-vorbis_comment,ruby22
      SUBDIR += ruby-vorbis_comment,ruby23
      SUBDIR += ruby-vorbis_comment,ruby24
      SUBDIR += schismtracker
