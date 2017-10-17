@@ -1,4 +1,4 @@
-/Makefile/1.1648/Sat Oct 14 16:23:46 2017//
+/Makefile/1.1649/Mon Oct 16 21:36:43 2017//
 D/ElectricFence////
 D/ORBit2////
 D/acpica////
@@ -1369,8 +1369,10 @@ D/py-test-capturelog////
 D/py-test-cov////
 D/py-test-expect////
 D/py-test-httpbin////
+D/py-test-localserver////
 D/py-test-mock////
 D/py-test-runner////
+D/py-test-subtesthack////
 D/py-test-xdist////
 D/py-testpath////
 D/py-testtools////
