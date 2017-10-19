@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.81 2017/09/29 16:36:23 jca Exp $
+# $OpenBSD: Makefile,v 1.85 2017/10/19 00:55:02 jca Exp $
 
 COMMENT=	easy-to-use, robust, and highly configurable VPN
 
 DISTNAME=	openvpn-2.4.4
+REVISION=	0
 CATEGORIES=	net security
 
 HOMEPAGE=	https://openvpn.net/index.php/open-source/
@@ -12,7 +13,7 @@ MAINTAINER=	Jeremie Courreges-Anglas <jca@wxcvbn.org>
 # GPLv2 only
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB += c crypto lz4 lzo2 ssl
+WANTLIB += c lz4 lzo2
 
 MASTER_SITES=	https://swupdate.openvpn.org/community/releases/
 
@@ -22,20 +23,21 @@ LIB_DEPENDS=	archivers/lzo2 \
 SEPARATE_BUILD=	Yes
 CONFIGURE_STYLE= gnu
 
-CONFIGURE_ARGS+=	--enable-password-save
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib ${LDFLAGS}"
+# XXX enable when mbedtls gets a proper update
+FLAVORS=	#mbedtls
+FLAVOR?=
+
+.if ${FLAVOR:Mmbedtls}
+LIB_DEPENDS+=	security/polarssl
+CONFIGURE_ARGS+= --with-crypto-library=mbedtls
+WANTLIB += mbedcrypto mbedtls mbedx509 pthread
+.else
+WANTLIB += crypto ssl
+.endif
 
 SAMPLES_DIR=	${PREFIX}/share/examples/openvpn
-
-# not enabled yet; OpenVPN's PolarSSL support currently requires 1.2 API
-#FLAVORS=	polarssl
-#FLAVOR?=
-#.if ${FLAVOR:Mpolarssl}
-#LIB_DEPENDS+=	security/polarssl
-#WANTLIB+=	polarssl
-#CONFIGURE_ARGS+= --with-crypto-library=polarssl
-#.endif
 
 post-install:
 	cd ${WRKSRC}/sample/; \
