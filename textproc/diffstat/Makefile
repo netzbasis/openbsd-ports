@@ -1,19 +1,24 @@
-# $OpenBSD: Makefile,v 1.20 2016/04/12 11:41:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.23 2017/10/20 19:05:18 jca Exp $
 
 COMMENT=		accumulates and displays statistics from a diff file
 
 DISTNAME=		diffstat-1.61
-CATEGORIES=		textproc
-MASTER_SITES=		http://invisible-mirror.net/archives/diffstat/ \
-			ftp://invisible-island.net/diffstat/
-EXTRACT_SUFX=		.tgz
+REVISION=		1
 
-HOMEPAGE=		http://dickey.his.com/diffstat/diffstat.html
+CATEGORIES=		textproc
+
+MAINTAINER=		Jeremie Courreges-Anglas <jca@wxcvbn.org>
+
+HOMEPAGE=		http://invisible-island.net/diffstat/diffstat.html
 
 # ISC-like
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB=		c
+
+MASTER_SITES=		http://invisible-mirror.net/archives/diffstat/ \
+			ftp://ftp.invisible-island.net/diffstat/
+EXTRACT_SUFX=		.tgz
 
 CONFIGURE_STYLE=	gnu
 SEPARATE_BUILD=		Yes

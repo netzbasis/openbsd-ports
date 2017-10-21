@@ -1,4 +1,4 @@
-/Makefile/1.542/Sat Oct 14 16:23:46 2017//
+/Makefile/1.543/Fri Oct 20 12:03:19 2017//
 D/TclXML////
 D/antiword////
 D/apertium////
@@ -363,6 +363,7 @@ D/py-ruamel.yaml////
 D/py-snowballstemmer////
 D/py-sphinx////
 D/py-sphinx-intl////
+D/py-sphinx_guzzle_theme////
 D/py-sphinx_rtd_theme////
 D/py-stemmer////
 D/py-unidecode////

@@ -1,4 +1,4 @@
-/Makefile/1.455/Sat Oct 14 16:23:46 2017//
+/Makefile/1.456/Fri Oct 20 15:49:42 2017//
 D/accountsservice////
 D/amazon-ecs-cli////
 D/amazon-ssm-agent////
@@ -144,6 +144,7 @@ D/logstalgia////
 D/logstash////
 D/logtail////
 D/lookat////
+D/lscpu////
 D/lsyncd////
 D/mac-robber////
 D/mcollective////

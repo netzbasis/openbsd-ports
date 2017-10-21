@@ -1,3 +1,4 @@
-/patch-CMakeLists_txt/1.4/Sat Sep 12 20:30:00 2015//
-/patch-include_mbedtls_config_h/1.1/Sat Aug 27 07:46:50 2016//
+/patch-CMakeLists_txt/1.5/Sat Oct 21 00:47:52 2017//
+/patch-include_mbedtls_config_h/1.2/Sat Oct 21 00:47:52 2017//
+/patch-tests_suites_main_test_function/1.1/Sat Oct 21 00:47:52 2017//
 D
