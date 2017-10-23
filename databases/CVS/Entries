@@ -1,4 +1,4 @@
-/Makefile/1.339/Sat Oct 14 16:23:46 2017//
+/Makefile/1.340/Mon Oct 23 03:54:50 2017//
 D/apache-couchdb////
 D/architect////
 D/barman////
@@ -189,7 +189,6 @@ D/redis////
 D/repmgr////
 D/riak////
 D/ruby-amalgalite////
-D/ruby-bdb////
 D/ruby-data_objects////
 D/ruby-do_mysql////
 D/ruby-do_postgres////
