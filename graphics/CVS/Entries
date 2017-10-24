@@ -1,4 +1,4 @@
-/Makefile/1.444/Sat Oct 14 16:23:46 2017//
+/Makefile/1.445/Mon Oct 23 21:39:49 2017//
 D/DevIL////
 D/GraphicsMagick////
 D/ImageMagick////
@@ -48,6 +48,7 @@ D/enjoympeg////
 D/evince////
 D/exiftran////
 D/exiv2////
+D/farbfeld////
 D/feh////
 D/ffmpeg////
 D/ffmpegthumbnailer////

@@ -1,4 +1,4 @@
-/Makefile/1.206/Sat Sep 23 13:31:43 2017//
+/Makefile/1.207/Mon Oct 23 21:47:24 2017//
 D/STk////
 D/abcl////
 D/algol68g////
@@ -24,6 +24,7 @@ D/eltclsh////
 D/erlang////
 D/expect////
 D/fpc////
+D/freebasic////
 D/freehdl////
 D/fsharp////
 D/g77////

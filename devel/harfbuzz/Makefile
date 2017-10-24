@@ -1,20 +1,20 @@
-# $OpenBSD: Makefile,v 1.72 2017/10/14 10:10:04 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.75 2017/10/24 02:57:19 ajacoutot Exp $
 
 BROKEN-hppa=		no atomic primitives
 
 COMMENT-main=		text shaping library
 COMMENT-icu=		ICU support for libharfbuzz
 
-V=			1.6.0
+V=			1.6.2
 DISTNAME=		harfbuzz-${V}
 EXTRACT_SUFX=		.tar.bz2
 
 PKGNAME-main=		harfbuzz-${V}
 PKGNAME-icu=		harfbuzz-icu-${V}
 
-SHARED_LIBS +=  harfbuzz             9.1      # 10600.0
-SHARED_LIBS +=  harfbuzz-icu         0.5      # 10600.0
-SHARED_LIBS +=  harfbuzz-gobject     0.1      # 10600.0
+SHARED_LIBS +=  harfbuzz             9.2      # 10600.2
+SHARED_LIBS +=  harfbuzz-icu         0.6      # 10600.2
+SHARED_LIBS +=  harfbuzz-gobject     0.1      # 10600.2
 
 CATEGORIES=		devel graphics textproc
 
@@ -36,8 +36,7 @@ USE_GMAKE=		Yes
 
 WANTLIB-main += ${WANTLIB}
 WANTLIB-main += X11 Xext Xrender c cairo expat fontconfig pixman-1
-WANTLIB-main += png pthread-stubs xcb xcb-render xcb-shm ffi
-WANTLIB-main += gobject-2.0
+WANTLIB-main += png xcb xcb-render xcb-shm ffi gobject-2.0
 
 WANTLIB-icu += ${WANTLIB}
 WANTLIB-icu += harfbuzz icudata icuuc

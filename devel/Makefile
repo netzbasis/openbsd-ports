@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1649 2017/10/16 21:36:43 remi Exp $
+# $OpenBSD: Makefile,v 1.1651 2017/10/23 14:45:42 rsadowski Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -107,6 +107,7 @@
      SUBDIR += desktop-file-utils
      SUBDIR += dex2jar
      SUBDIR += dfu-programmer
+     SUBDIR += dlib
      SUBDIR += dissy
      SUBDIR += distcc
      SUBDIR += doc++
@@ -1344,6 +1345,8 @@
      SUBDIR += py-funcsigs
      SUBDIR += py-funcsigs,python3
      SUBDIR += py-functools32
+     SUBDIR += py-future
+     SUBDIR += py-future,python3
      SUBDIR += py-futures
      SUBDIR += py-gdata
      SUBDIR += py-gevent
