@@ -1,4 +1,4 @@
-/Makefile/1.599/Thu Aug 10 13:32:25 2017//
+/Makefile/1.601/Thu Oct 26 12:55:25 2017//
 D/2bwm////
 D/Xaw3d////
 D/XawMu////
@@ -135,7 +135,6 @@ D/kde////
 D/kde-applications////
 D/kde-shared-data////
 D/kde4////
-D/kdirstat////
 D/keybinder////
 D/keybinder3////
 D/keynav////
@@ -219,6 +218,7 @@ D/py-qt5////
 D/py-qtawesome////
 D/py-qtpy////
 D/py-wxPython////
+D/qdirstat////
 D/qrfcview////
 D/qt3////
 D/qt4////
