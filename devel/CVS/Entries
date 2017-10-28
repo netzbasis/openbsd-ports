@@ -1,4 +1,4 @@
-/Makefile/1.1651/Mon Oct 23 14:45:42 2017//
+/Makefile/1.1652/Fri Oct 27 16:47:28 2017//
 D/ElectricFence////
 D/ORBit2////
 D/acpica////
@@ -1542,6 +1542,7 @@ D/sparsehash////
 D/spe////
 D/spice-protocol////
 D/spidermonkey38////
+D/spidermonkey52////
 D/splint////
 D/src////
 D/srecord////
