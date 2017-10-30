@@ -25,7 +25,7 @@
 /patch-base_process_process_metrics_openbsd_cc/1.9/Thu Jul 27 14:23:46 2017//
 /patch-base_process_process_metrics_posix_cc/1.2/Sun Oct  8 16:02:46 2017//
 /patch-base_process_process_posix_cc/1.11/Thu Jul 27 14:23:46 2017//
-/patch-base_sys_info_openbsd_cc/1.12/Wed Oct 25 13:47:07 2017//
+/patch-base_sys_info_openbsd_cc/1.13/Sun Oct 29 14:36:53 2017//
 /patch-base_sys_info_posix_cc/1.9/Wed Oct 25 13:47:07 2017//
 /patch-base_test_launcher_test_launcher_cc/1.5/Wed Oct 25 13:47:07 2017//
 /patch-base_test_test_file_util_linux_cc/1.5/Sat Sep  9 19:16:43 2017//
