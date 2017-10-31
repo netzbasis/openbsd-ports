@@ -1,14 +1,2 @@
-/patch-README/1.1.1.1/Thu May 29 08:31:26 2014//
-/patch-include_FileClasses_GFXManager_h/1.1/Mon Aug 18 09:30:52 2014//
-/patch-include_Game_h/1.1.1.1/Thu May 29 08:31:26 2014//
-/patch-include_misc_functional_h/1.1/Sat May  6 02:51:13 2017//
-/patch-include_misc_memory_h/1.1/Sat May  6 02:51:13 2017//
-/patch-src_FileClasses_GFXManager_cpp/1.1/Mon Aug 18 09:30:52 2014//
-/patch-src_FileClasses_TextManager_cpp/1.1.1.1/Thu May 29 08:31:26 2014//
-/patch-src_FileClasses_music_ADLPlayer_cpp/1.1.1.1/Thu May 29 08:31:26 2014//
-/patch-src_GUI_dune_InGameSettingsMenu_cpp/1.1.1.1/Thu May 29 08:31:26 2014//
-/patch-src_Game_cpp/1.2/Mon Aug 18 09:30:52 2014//
-/patch-src_Makefile_in/1.1.1.1/Thu May 29 08:31:26 2014//
-/patch-src_Map_cpp/1.1.1.1/Thu May 29 08:31:26 2014//
-/patch-src_units_InfantryBase_cpp/1.1.1.1/Thu May 29 08:31:26 2014//
+/patch-src_Makefile_in/1.2/Mon Oct 30 20:45:45 2017//
 D

@@ -1,4 +1,4 @@
-/Makefile/1.53/Tue Sep 19 05:34:00 2017//
+/Makefile/1.55/Mon Oct 30 14:31:44 2017//
 D/emerillon////
 D/foxtrotgps////
 D/garmindev////
@@ -47,6 +47,7 @@ D/pgpointcloud////
 D/pgrouting////
 D/postgis////
 D/py-laspy////
+D/py-owslib////
 D/py-planet////
 D/py-proj////
 D/py-shapely////

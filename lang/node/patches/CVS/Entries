@@ -15,13 +15,13 @@
 /patch-deps_v8_tools_gyp_v8_gyp/1.3/Tue Jun 27 12:04:08 2017//
 /patch-lib_module_js/1.6/Tue Jun 27 12:04:08 2017//
 /patch-node_gypi/1.1/Sun Aug  6 15:01:45 2017//
-/patch-test_common_index_js/1.1/Tue Oct 10 13:32:07 2017//
+/patch-test_common_index_js/1.2/Tue Oct 31 01:31:45 2017//
 /patch-test_parallel_test-child-process-exec-timeout_js/1.1/Tue Oct 10 13:32:07 2017//
 /patch-test_parallel_test-cluster-dgram-1_js/1.1/Tue Oct 10 13:32:07 2017//
 /patch-test_parallel_test-http-dns-error_js/1.1/Tue Oct 10 13:32:07 2017//
 /patch-test_parallel_test-net-dns-error_js/1.1/Tue Oct 10 13:32:07 2017//
-/patch-test_parallel_test-process-execpath_js/1.1/Tue Oct 10 13:32:07 2017//
-/patch-test_sequential_test-child-process-execsync_js/1.1/Tue Oct 10 13:32:07 2017//
+/patch-test_parallel_test-process-execpath_js/1.2/Tue Oct 31 01:31:45 2017//
+/patch-test_sequential_test-child-process-execsync_js/1.2/Tue Oct 31 01:31:45 2017//
 /patch-test_sequential_test-module-loading_js/1.1/Tue Oct 10 13:32:07 2017//
 /patch-tools_icu_icu-generic_gyp/1.1/Mon Jan 23 16:47:04 2017//
 /patch-tools_test_py/1.3/Sun Aug  6 15:01:45 2017//
