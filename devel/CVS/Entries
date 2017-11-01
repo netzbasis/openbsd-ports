@@ -1,4 +1,4 @@
-/Makefile/1.1654/Tue Oct 31 22:14:17 2017//
+/Makefile/1.1656/Wed Nov  1 17:17:57 2017//
 D/ElectricFence////
 D/ORBit2////
 D/acpica////
@@ -1021,6 +1021,7 @@ D/p5-Term-ScreenColor////
 D/p5-Term-Shell////
 D/p5-Term-ShellUI////
 D/p5-Term-Size////
+D/p5-Term-Table////
 D/p5-Test-Assertions////
 D/p5-Test-Base////
 D/p5-Test-CPAN-Meta////
@@ -1460,7 +1461,6 @@ D/ruby-ffi////
 D/ruby-ffi-inliner////
 D/ruby-flexmock////
 D/ruby-gem_plugin////
-D/ruby-gems////
 D/ruby-gettext////
 D/ruby-gettext-setup////
 D/ruby-gir_ffi////
@@ -1488,7 +1488,6 @@ D/ruby-polyglot////
 D/ruby-prof////
 D/ruby-puppet_forge////
 D/ruby-racc////
-D/ruby-rake////
 D/ruby-rake-compiler////
 D/ruby-rake-remote_task////
 D/ruby-rb-gsl////

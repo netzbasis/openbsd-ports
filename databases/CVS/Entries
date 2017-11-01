@@ -1,4 +1,4 @@
-/Makefile/1.340/Mon Oct 23 03:54:50 2017//
+/Makefile/1.341/Wed Nov  1 09:35:46 2017//
 D/apache-couchdb////
 D/architect////
 D/barman////
@@ -189,10 +189,6 @@ D/redis////
 D/repmgr////
 D/riak////
 D/ruby-amalgalite////
-D/ruby-data_objects////
-D/ruby-do_mysql////
-D/ruby-do_postgres////
-D/ruby-do_sqlite3////
 D/ruby-hiera////
 D/ruby-hiera-eyaml////
 D/ruby-hiera-file////
@@ -208,9 +204,6 @@ D/ruby-resque////
 D/ruby-sequel////
 D/ruby-sequel_pg////
 D/ruby-sqlite3////
-D/ruby-swift-db-mysql////
-D/ruby-swift-db-postgres////
-D/ruby-swift-db-sqlite3////
 D/ruby-tiny_tds////
 D/ruby-validatable////
 D/sharedance////

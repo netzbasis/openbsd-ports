@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1027 2017/10/26 08:22:36 jca Exp $
+# $OpenBSD: Makefile,v 1.1029 2017/11/01 16:18:48 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += GeoIP
@@ -86,7 +86,6 @@
      SUBDIR += ettercap,no_x11
      SUBDIR += exabgp
      SUBDIR += ezstream
-     SUBDIR += farstream
      SUBDIR += filezilla
      SUBDIR += firewalk
      SUBDIR += flickcurl
@@ -200,7 +199,6 @@
      SUBDIR += libmaxminddb
      SUBDIR += libmygpo-qt
      SUBDIR += libnet
-     SUBDIR += libnice
      SUBDIR += libnids
      SUBDIR += liboauth
      SUBDIR += liboping

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.263 2017/09/06 07:08:21 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.265 2017/11/01 15:20:02 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += adwaita-icon-theme
@@ -26,7 +26,6 @@
      SUBDIR += dictionary
      SUBDIR += doc-utils
      SUBDIR += documents
-     SUBDIR += empathy
      SUBDIR += eog
      SUBDIR += eog-plugins
      SUBDIR += epub-thumbnailer
@@ -104,6 +103,7 @@
      SUBDIR += totem
      SUBDIR += totem-pl-parser
      SUBDIR += tracker
+     SUBDIR += tracker-miners
      SUBDIR += tweak-tool
      SUBDIR += user-docs
      SUBDIR += vfs2

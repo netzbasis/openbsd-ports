@@ -1,4 +1,4 @@
-/Makefile/1.263/Wed Sep  6 07:08:21 2017//
+/Makefile/1.265/Wed Nov  1 15:20:02 2017//
 /Makefile.inc/1.15/Thu Apr 13 07:38:44 2017//
 /gnome.port.mk/1.108/Mon Oct 30 10:15:10 2017//
 D/adwaita-icon-theme////
@@ -26,7 +26,6 @@ D/devhelp////
 D/dictionary////
 D/doc-utils////
 D/documents////
-D/empathy////
 D/eog////
 D/eog-plugins////
 D/epub-thumbnailer////
@@ -104,6 +103,7 @@ D/todo////
 D/totem////
 D/totem-pl-parser////
 D/tracker////
+D/tracker-miners////
 D/tweak-tool////
 D/user-docs////
 D/vfs2////
