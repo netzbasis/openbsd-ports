@@ -1,4 +1,4 @@
-/Makefile/1.1653/Mon Oct 30 22:26:30 2017//
+/Makefile/1.1654/Tue Oct 31 22:14:17 2017//
 D/ElectricFence////
 D/ORBit2////
 D/acpica////
@@ -989,6 +989,7 @@ D/p5-String-Truncate////
 D/p5-Sub-Exporter////
 D/p5-Sub-Exporter-Progressive////
 D/p5-Sub-Identify////
+D/p5-Sub-Info////
 D/p5-Sub-Install////
 D/p5-Sub-Lambda////
 D/p5-Sub-Name////
