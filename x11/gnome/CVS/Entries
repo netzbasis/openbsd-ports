@@ -1,4 +1,4 @@
-/Makefile/1.265/Wed Nov  1 15:20:02 2017//
+/Makefile/1.266/Wed Nov  1 21:54:46 2017//
 /Makefile.inc/1.15/Thu Apr 13 07:38:44 2017//
 /gnome.port.mk/1.108/Mon Oct 30 10:15:10 2017//
 D/adwaita-icon-theme////
@@ -43,7 +43,6 @@ D/ghex////
 D/gjs////
 D/grilo////
 D/grilo-plugins////
-D/gtef////
 D/gucharmap////
 D/gvfs////
 D/icon-theme////
@@ -97,6 +96,7 @@ D/shell////
 D/shell-extensions////
 D/sushi////
 D/system-monitor////
+D/tepl////
 D/terminal////
 D/themes-standard////
 D/todo////

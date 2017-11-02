@@ -1,4 +1,4 @@
-/Makefile/1.341/Wed Nov  1 09:35:46 2017//
+/Makefile/1.342/Wed Nov  1 21:53:32 2017//
 D/apache-couchdb////
 D/architect////
 D/barman////
@@ -148,6 +148,7 @@ D/ports-readmes-dancer////
 D/postgresql////
 D/postgresql-odbc////
 D/postgresql-pllua////
+D/postgresql-plr////
 D/postgresql-plv8////
 D/postgresql-previous////
 D/postgresql_autodoc////
