@@ -1,4 +1,4 @@
-# $OpenBSD: meson.port.mk,v 1.10 2017/11/01 19:08:00 ajacoutot Exp $
+# $OpenBSD: meson.port.mk,v 1.13 2017/11/02 15:48:44 ajacoutot Exp $
 
 BUILD_DEPENDS +=	devel/meson>=0.43.0p1
 SEPARATE_BUILD ?=	Yes
@@ -20,8 +20,9 @@ CONFIGURE_STYLE=	meson
 CONFIGURE_ARGS +=	--strip
 .endif
 
-# don't use "-Wl,--no-undefined when linking", we are BSD: it's fine to have
-# undefined references to libc functions
+# don't use "-Wl,--no-undefined" nor "-zdefs" when linking"; OpenBSD does not
+# link libc into shared-libraries by default to avoid binding libraries to
+# specific libc majors, so those options have always suffered false positives
 CONFIGURE_ARGS +=	-Db_lundef=false
 
 # from ${LOCALBASE}/bin/meson:
@@ -37,6 +38,8 @@ MODMESON_configure=	${SETENV} CC="${CC}" CFLAGS="${CFLAGS}" CXX="${CXX}" \
 				${LOCALBASE}/bin/meson --buildtype=plain \
 				--prefix "${PREFIX}" --mandir="${PREFIX}/man" \
 				--sysconfdir="${SYSCONFDIR}" \
+				--localstatedir="${LOCALSTATEDIR}" \
+				--sharedstatedir="/var/db" \
 				${CONFIGURE_ARGS} ${WRKSRC} ${WRKBUILD}
 
 .if !target(do-build)

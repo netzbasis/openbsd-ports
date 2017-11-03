@@ -1,4 +1,4 @@
-/Makefile/1.1656/Wed Nov  1 17:17:57 2017//
+/Makefile/1.1658/Thu Nov  2 18:31:59 2017//
 D/ElectricFence////
 D/ORBit2////
 D/acpica////
@@ -115,6 +115,7 @@ D/dtc////
 D/ectags////
 D/elftoolchain////
 D/etl////
+D/expect-lite////
 D/fasm////
 D/ffcall////
 D/flake8////
@@ -1585,6 +1586,7 @@ D/vte3////
 D/xdg-user-dirs////
 D/xdg-utils////
 D/xmake////
+D/xtensa-elf////
 D/yaml-cpp////
 D/yasm////
 D/zeal////

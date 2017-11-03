@@ -1,4 +1,4 @@
-/Makefile/1.40/Mon Sep 11 23:41:53 2017//
+/Makefile/1.42/Thu Nov  2 22:23:35 2017//
 D/abyssinica////
 D/adobe-fonts////
 D/amigafonts////
@@ -32,7 +32,6 @@ D/inconsolata-font////
 D/intlfonts////
 D/ja-funetfonts////
 D/ja-kanjistrokeorders-ttf////
-D/ja-mplus-ttf////
 D/ja-sazanami-ttf////
 D/jmk-fonts////
 D/junicode////
@@ -47,6 +46,7 @@ D/lohit-fonts////
 D/mftrace////
 D/migmix////
 D/migu////
+D/mixfont-mplus-ipa////
 D/mplus-fonts////
 D/msctfonts////
 D/msttcorefonts////
@@ -65,6 +65,7 @@ D/symbola-ttf////
 D/terminus-font////
 D/ubuntu-fonts////
 D/un-fonts////
+D/vlgothic////
 D/zh-arphicttf////
 D/zh-bg5pdf////
 D/zh-bg5ps////

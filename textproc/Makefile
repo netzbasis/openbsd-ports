@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.543 2017/10/20 12:03:19 danj Exp $
+# $OpenBSD: Makefile,v 1.545 2017/11/02 12:59:25 sthen Exp $
 
      SUBDIR =
      SUBDIR += TclXML
@@ -351,6 +351,8 @@
      SUBDIR += py-alabaster,python3
      SUBDIR += py-chardet
      SUBDIR += py-chardet,python3
+     SUBDIR += py-commonmark
+     SUBDIR += py-commonmark,python3
      SUBDIR += py-cssselect
      SUBDIR += py-cssselect,python3
      SUBDIR += py-cssutils
@@ -391,6 +393,7 @@
      SUBDIR += py-pdfminer
      SUBDIR += py-podcastparser
      SUBDIR += py-polib
+     SUBDIR += py-polib,python3
      SUBDIR += py-prettytable
      SUBDIR += py-pyRFC3339
      SUBDIR += py-pyRFC3339,python3
