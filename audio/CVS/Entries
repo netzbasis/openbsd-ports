@@ -1,13 +1,11 @@
-/Makefile/1.393/Sat Oct 14 16:23:46 2017//
+/Makefile/1.395/Fri Nov  3 13:22:19 2017//
 D/abcde////
 D/adplay////
 D/adplug////
 D/alac_decoder////
 D/aqualung////
-D/ardour////
 D/ario////
 D/ascd////
-D/aubio////
 D/aucatctl////
 D/audacious////
 D/audacious-plugins////
@@ -80,7 +78,6 @@ D/libdiscid////
 D/libgpod////
 D/libid3tag////
 D/liblastfm////
-D/liblo////
 D/libmad////
 D/libmikmod////
 D/libmodplug////

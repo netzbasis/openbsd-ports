@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.128 2017/07/26 17:54:44 robert Exp $
+# $OpenBSD: Makefile,v 1.130 2017/11/03 11:15:15 jca Exp $
 
 COMMENT-main =		network and application monitoring - agent
 COMMENT-server =	network and application monitoring - server
 COMMENT-web =		network and application monitoring - web frontend
 
 VERSION =		3.2.7
+REVISION = 		0
 DISTNAME =		zabbix-${VERSION}
 FULLPKGNAME-main =	zabbix-agent-${VERSION}
 FULLPKGPATH-main =	net/zabbix,-main
@@ -46,12 +47,13 @@ RUN_DEPENDS-main =
 LIB_DEPENDS-server =	${LIB_DEPENDS} \
 			textproc/libxml \
 			net/net-snmp \
-			textproc/iksemel
+			textproc/iksemel \
+			security/libssh2
 RUN_DEPENDS-server =	net/fping
 # we want the _zabbix user&group as well as README-main
 RUN_DEPENDS-server +=	net/zabbix,-main>=${VERSION}
 WANTLIB-server =	${WANTLIB} crypto ssl z netsnmp iksemel pthread \
-			xml2
+			xml2 ssh2
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS =	--enable-server \
@@ -62,7 +64,8 @@ CONFIGURE_ARGS =	--enable-server \
 			--with-libxml2 \
 			--with-net-snmp \
 			--with-ldap \
-			--with-jabber="${LOCALBASE}"
+			--with-jabber="${LOCALBASE}" \
+			--with-ssh2
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib -lexecinfo" \
 			ac_cv_search___res_query=no
@@ -130,7 +133,7 @@ post-install:
 	# Database schemas
 	cd ${WRKSRC}/database/ && tar -cf - mysql postgresql sqlite3 | \
 		tar -C ${PREFIX}/share/zabbix/schema -xf -
-	# Script to easy upgrading from previous major version
+	# Script to ease upgrading from previous major version
 	cd ${WRKSRC}/upgrades/ && tar -cf - dbpatches | \
 		tar -C ${PREFIX}/share/zabbix -xf -
 

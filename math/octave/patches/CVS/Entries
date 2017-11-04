@@ -1,5 +1,4 @@
-/patch-configure/1.9/Sat Apr 23 12:44:14 2016//
-/patch-doc_interpreter_Makefile_in/1.8/Fri Apr 22 17:21:39 2016//
-/patch-doc_liboctave_Makefile_in/1.8/Fri Apr 22 17:21:39 2016//
-/patch-scripts_pkg_private_configure_make_m/1.1/Fri Jul 24 14:54:01 2015//
+/patch-configure/1.10/Fri Nov  3 12:28:53 2017//
+/patch-liboctave_system_file-stat_cc/1.1/Fri Nov  3 12:28:53 2017//
+/patch-scripts_pkg_private_configure_make_m/1.2/Fri Nov  3 12:28:53 2017//
 D

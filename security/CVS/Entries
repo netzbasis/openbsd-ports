@@ -62,8 +62,11 @@ D/hs-crypto////
 D/hs-crypto-api////
 D/hs-cryptocipher////
 D/hs-cryptohash////
+D/hs-cryptohash-sha256////
 D/hs-digest////
+D/hs-ed25519////
 D/hs-entropy////
+D/hs-hackage-security////
 D/hs-mwc-random////
 D/hs-pwstore-fast////
 D/hs-skein////

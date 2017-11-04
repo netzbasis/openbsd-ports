@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.545 2017/11/02 12:59:25 sthen Exp $
+# $OpenBSD: Makefile,v 1.547 2017/11/03 23:51:50 bentley Exp $
 
      SUBDIR =
      SUBDIR += TclXML
@@ -61,6 +61,7 @@
      SUBDIR += halibut
      SUBDIR += heirloom-doctools
      SUBDIR += hevea
+     SUBDIR += hfst
      SUBDIR += hgrep
      SUBDIR += highlight
      SUBDIR += hs-HaXml
@@ -211,6 +212,7 @@
      SUBDIR += p5-PatchReader
      SUBDIR += p5-Pod-Cpandoc
      SUBDIR += p5-Pod-LaTeX
+     SUBDIR += p5-Pod-Markdown
      SUBDIR += p5-Pod-POM
      SUBDIR += p5-Pod-Spell
      SUBDIR += p5-Pod-Tests

@@ -1,4 +1,4 @@
-/Makefile/1.1658/Thu Nov  2 18:31:59 2017//
+/Makefile/1.1660/Fri Nov  3 15:32:04 2017//
 D/ElectricFence////
 D/ORBit2////
 D/acpica////
@@ -30,6 +30,7 @@ D/automoc////
 D/avr////
 D/avr32////
 D/avrdude////
+D/bashunit////
 D/beediff////
 D/bison////
 D/blame////
@@ -305,6 +306,7 @@ D/jimarc4random////
 D/json-c////
 D/json-glib////
 D/jsoncpp////
+D/jsonrpc-glib////
 D/kdevelop////
 D/kdevplatform////
 D/kdiff3////
@@ -1561,6 +1563,7 @@ D/tclcl////
 D/tcllib////
 D/tclthread////
 D/teensyloader////
+D/template-glib////
 D/ti-msp430gcc////
 D/tig////
 D/tkcvs////

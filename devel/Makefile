@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1658 2017/11/02 18:31:59 bentley Exp $
+# $OpenBSD: Makefile,v 1.1660 2017/11/03 15:32:04 rpe Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -33,6 +33,7 @@
      SUBDIR += avr
      SUBDIR += avr32
      SUBDIR += avrdude
+     SUBDIR += bashunit
      SUBDIR += beediff
      SUBDIR += bison
      SUBDIR += blame
@@ -311,6 +312,7 @@
      SUBDIR += json-c
      SUBDIR += json-glib
      SUBDIR += jsoncpp
+     SUBDIR += jsonrpc-glib
      SUBDIR += kdevelop
      SUBDIR += kdevplatform
      SUBDIR += kdiff3
@@ -1746,6 +1748,7 @@
      SUBDIR += tcllib
      SUBDIR += tclthread
      SUBDIR += teensyloader
+     SUBDIR += template-glib
      SUBDIR += ti-msp430gcc
      SUBDIR += tig
      SUBDIR += tkcvs

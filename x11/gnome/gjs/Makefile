@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.59 2017/10/23 17:11:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.61 2017/11/03 14:12:03 ajacoutot Exp $
 
 USE_WXNEEDED=		Yes
 
 COMMENT=		Javascript bindings for GNOME
 
 GNOME_PROJECT=		gjs
-GNOME_VERSION=		1.48.7
-REVISION=		1
+GNOME_VERSION=		1.50.2
 
 SHARED_LIBS +=  gjs                  5.0      # 0.0
 
@@ -20,24 +19,25 @@ PERMIT_PACKAGE_CDROM=	Yes
 WANTLIB += ${COMPILER_LIBCXX}
 WANTLIB += X11 Xext Xrender c cairo cairo-gobject expat ffi fontconfig
 WANTLIB += freetype gio-2.0 girepository-1.0 glib-2.0 gmodule-2.0
-WANTLIB += gobject-2.0 gthread-2.0 m mozjs-38 ncurses ncursesw
+WANTLIB += gobject-2.0 gthread-2.0 m ncurses ncursesw
 WANTLIB += nspr4 pcre pixman-1 plc4 plds4 png pthread
 WANTLIB += readline xcb xcb-render xcb-shm z Xrandr epoxy
-WANTLIB += ICE SM Xcomposite Xcursor Xdamage Xfixes Xi Xinerama
+WANTLIB += Xcomposite Xcursor Xdamage Xfixes Xi Xinerama
 WANTLIB += atk-1.0 atk-bridge-2.0 atspi dbus-1 gdk-3 gdk_pixbuf-2.0
 WANTLIB += graphite2 gtk-3 harfbuzz pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB += iconv intl icudata icui18n icuuc
+WANTLIB += iconv intl icudata icui18n icuuc Xtst mozjs-52
 
 MODULES=		x11/gnome
 
-# sync with devel/spidermonkey38
-COMPILER =		gcc
+# sync with devel/spidermonkey52 and SHARED_LIBS consumers:
+# x11/gnome/documents x11/gnome/shell x11/gnome/sushi
+COMPILER=		base-clang ports-clang ports-gcc
 
 MODPY_RUNDEP=		No
 MODPY_BUILDDEP= 	No
 
 LIB_DEPENDS=		devel/gobject-introspection \
-			devel/spidermonkey38>=38.0,<39.0 \
+			devel/spidermonkey52>=52.0,<53.0 \
 			x11/gtk+3
 
 TEST_DEPENDS=		sysutils/e2fsprogs #uuidgen(1)

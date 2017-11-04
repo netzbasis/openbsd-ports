@@ -1,4 +1,4 @@
-/Makefile/1.545/Thu Nov  2 12:59:25 2017//
+/Makefile/1.547/Fri Nov  3 23:51:50 2017//
 D/TclXML////
 D/antiword////
 D/apertium////
@@ -59,6 +59,7 @@ D/gxml////
 D/halibut////
 D/heirloom-doctools////
 D/hevea////
+D/hfst////
 D/hgrep////
 D/highlight////
 D/hs-HaXml////
@@ -194,6 +195,7 @@ D/p5-PPIx-Utilities////
 D/p5-PatchReader////
 D/p5-Pod-Cpandoc////
 D/p5-Pod-LaTeX////
+D/p5-Pod-Markdown////
 D/p5-Pod-POM////
 D/p5-Pod-Spell////
 D/p5-Pod-Tests////

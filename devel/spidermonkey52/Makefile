@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2017/11/02 22:45:33 jasper Exp $
+# $OpenBSD: Makefile,v 1.8 2017/11/03 12:19:56 ajacoutot Exp $
 
 # see patch-js_src_old-configure_in
 USE_WXNEEDED =		Yes
@@ -20,7 +20,7 @@ DISTNAME =		firefox-${V}esr.source
 EXTRACT_SUFX =		.tar.bz2
 PKGNAME =		spidermonkey-${MOZILLA_VERSION}.4.0
 PKGSPEC =		spidermonkey->=52.0,<53.0
-REVISION =		1
+REVISION =		2
 
 SHARED_LIBS =		mozjs-52 0.0
 
@@ -43,8 +43,7 @@ MODULES =		lang/python
 MODPY_RUNDEP =		No
 
 # C++11
-# XXX GNOME 3.26:
-# sync with x11/gnome/builder x11/gnome/shell x11/gnome/gjs
+# sync with SHARED_LIBS consumers: x11/gnome/gjs
 COMPILER =		base-clang ports-clang ports-gcc
 
 USE_GMAKE =		yes
