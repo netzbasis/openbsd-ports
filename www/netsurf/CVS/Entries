@@ -1,5 +1,5 @@
-/Makefile/1.6/Fri Dec  2 06:25:36 2016//
-/Makefile.inc/1.17/Thu Apr 20 04:27:58 2017//
+/Makefile/1.7/Sat Nov  4 22:28:01 2017//
+/Makefile.inc/1.18/Sat Nov  4 22:28:01 2017//
 D/browser////
 D/buildsystem////
 D/hubbub////
@@ -8,6 +8,7 @@ D/libdom////
 D/libnsbmp////
 D/libnsfb////
 D/libnsgif////
+D/libnslog////
 D/libnspsl////
 D/libnsutils////
 D/libparserutils////

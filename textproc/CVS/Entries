@@ -1,4 +1,4 @@
-/Makefile/1.547/Fri Nov  3 23:51:50 2017//
+/Makefile/1.548/Sat Nov  4 21:18:23 2017//
 D/TclXML////
 D/antiword////
 D/apertium////
@@ -101,7 +101,6 @@ D/liblrdf////
 D/libnxml////
 D/libtextcat////
 D/libtranslate////
-D/libwbxml////
 D/libwpd////
 D/libxml////
 D/libxml++////

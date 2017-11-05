@@ -1,4 +1,4 @@
-/Makefile/1.142/Mon Sep 11 18:38:55 2017//
+/Makefile/1.143/Sat Nov  4 11:54:11 2017//
 D/R////
 D/aamath////
 D/abs////
@@ -37,6 +37,7 @@ D/hs-half////
 D/jacal////
 D/kst////
 D/lapack////
+D/libcerf////
 D/libqalculate////
 D/libtommath////
 D/lpsolve////

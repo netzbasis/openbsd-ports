@@ -1,4 +1,4 @@
-/Makefile/1.355/Sun Oct 29 17:27:49 2017//
+/Makefile/1.357/Sat Nov  4 22:06:01 2017//
 D/0ad////
 D/abuse////
 D/ace////
@@ -79,6 +79,8 @@ D/enigma////
 D/extremetuxracer////
 D/f1spirit////
 D/falconseye////
+D/fifechan////
+D/fifengine////
 D/fillets-ng////
 D/fire////
 D/flare////
@@ -246,6 +248,7 @@ D/tuxpaint-stamps////
 D/typespeed////
 D/ufoai////
 D/uhexen2////
+D/unknown-horizons////
 D/uqm////
 D/urbanterror////
 D/urbanterror-data////
@@ -305,7 +308,6 @@ D/xpilot////
 D/xripple////
 D/xroach////
 D/xscavenger////
-D/xscorch////
 D/xscrabble////
 D/xskat////
 D/xsoldier////
