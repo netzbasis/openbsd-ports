@@ -1,4 +1,4 @@
-/Makefile/1.342/Wed Nov  1 21:53:32 2017//
+/Makefile/1.343/Sun Nov  5 22:03:16 2017//
 D/apache-couchdb////
 D/architect////
 D/barman////
@@ -192,6 +192,7 @@ D/riak////
 D/ruby-amalgalite////
 D/ruby-hiera////
 D/ruby-hiera-eyaml////
+D/ruby-hiera-eyaml-gpg////
 D/ruby-hiera-file////
 D/ruby-hiera3////
 D/ruby-kirbybase////

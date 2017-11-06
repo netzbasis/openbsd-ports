@@ -1,4 +1,4 @@
-/Makefile/1.395/Fri Nov  3 13:22:19 2017//
+/Makefile/1.396/Sun Nov  5 17:20:14 2017//
 D/abcde////
 D/adplay////
 D/adplug////
@@ -201,7 +201,6 @@ D/rgain////
 D/rhythmbox////
 D/rsynth////
 D/rtunes////
-D/ruby-id3lib////
 D/ruby-sonos////
 D/ruby-taglib////
 D/ruby-vorbis_comment////

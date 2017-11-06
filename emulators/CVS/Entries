@@ -1,4 +1,4 @@
-/Makefile/1.92/Sat Jul  8 20:18:55 2017//
+/Makefile/1.93/Sun Nov  5 22:07:06 2017//
 D/BasiliskII////
 D/advancemame////
 D/advancemess////
@@ -31,6 +31,7 @@ D/mupen64plus////
 D/nestopia////
 D/openmsx////
 D/pcsxr////
+D/ppsspp////
 D/qemu////
 D/retroarch////
 D/sdlmame////

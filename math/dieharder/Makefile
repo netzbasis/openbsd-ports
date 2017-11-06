@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2017/09/11 18:29:52 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2017/11/05 18:19:06 jasper Exp $
 
 COMMENT =		random number generator (rng) testing suite
 
 DISTNAME =		dieharder-3.31.1
+REVISION =		1
 SHARED_LIBS +=  dieharder                 0.0 # 0.0
 CATEGORIES =		math
 
@@ -21,6 +22,17 @@ CONFIGURE_STYLE =	gnu
 CONFIGURE_ENV +=	CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
+BUILD_DEPENDS =		textproc/latex2html
 LIB_DEPENDS =		devel/gsl
+
+USE_GMAKE =		Yes
+
+post-build:
+	cd ${WRKSRC}/manual && ${MAKE_PROGRAM} ${MAKE_ENV}
+
+post-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/dieharder/
+	${INSTALL_DATA} ${WRKSRC}/manual/dieharder.pdf \
+		${PREFIX}/share/doc/dieharder/
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-/Makefile/1.602/Wed Nov  1 14:33:07 2017//
+/Makefile/1.603/Sun Nov  5 17:18:49 2017//
 D/2bwm////
 D/Xaw3d////
 D/XawMu////
@@ -235,6 +235,7 @@ D/root-tail////
 D/rox-filer////
 D/roxterm////
 D/ruby-dbus////
+D/ruby-tk////
 D/rxvt-unicode////
 D/sakura////
 D/sawfish////
