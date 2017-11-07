@@ -1,4 +1,4 @@
-/Makefile/1.209/Mon Nov  6 01:21:49 2017//
+/Makefile/1.210/Mon Nov  6 08:14:43 2017//
 D/STk////
 D/a60////
 D/abcl////
@@ -90,6 +90,7 @@ D/scheme-report////
 D/scheme48////
 D/scm////
 D/seed7////
+D/snobol4////
 D/spidermonkey////
 D/squeak////
 D/swi-prolog////

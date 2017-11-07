@@ -1,4 +1,4 @@
-/Makefile/1.1664/Mon Nov  6 01:21:49 2017//
+/Makefile/1.1665/Mon Nov  6 13:51:53 2017//
 D/ElectricFence////
 D/ORBit2////
 D/acpica////
@@ -475,6 +475,7 @@ D/ocaml-uutf////
 D/ode////
 D/ois////
 D/omake////
+D/open-ath9k-htc-firmware////
 D/openmpi////
 D/openocd////
 D/ophis////

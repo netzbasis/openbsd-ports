@@ -1,4 +1,4 @@
-/Makefile/1.69/Fri Nov 25 12:02:22 2016//
+/Makefile/1.70/Mon Nov  6 10:13:12 2017//
 D/amtterm////
 D/birda////
 D/bottlerocket////
@@ -13,7 +13,6 @@ D/fldigi////
 D/flipit////
 D/gammu////
 D/gmfsk////
-D/gnokii////
 D/gpsk31////
 D/hamlib////
 D/hylafax////
