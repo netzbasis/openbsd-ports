@@ -1,14 +1,16 @@
-# $OpenBSD: Makefile,v 1.11 2017/10/23 17:11:03 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2017/11/07 10:03:32 jca Exp $
 
 COMMENT=	keep X clipboard and cutbuffer in sync
 
 V=		0.10.0
 DISTNAME=	autocutsel-$V
-REVISION=	1
+REVISION=	2
 
 CATEGORIES=	x11
 
 HOMEPAGE=	http://www.nongnu.org/autocutsel/
+
+MAINTAINER=	Jeremie Courreges-Anglas <jca@wxcvbn.org>
 
 # GPLv2+
 PERMIT_PACKAGE_CDROM=	Yes
@@ -20,6 +22,18 @@ MASTER_SITES=	https://github.com/sigmike/autocutsel/releases/download/$V/
 
 CONFIGURE_STYLE= gnu
 CONFIGURE_ENV=	 CPPFLAGS="-I${X11BASE}/include"
+
+MODULES=		lang/ruby
+MODRUBY_BUILDDEP=	No
+MODRUBY_RUNDEP=		No
+TEST_DEPENDS=		lang/ruby/${MODRUBY_REV}
+TEST_IS_INTERACTIVE=	X11
+
+do-test:
+	@if pgrep -q autocutsel; then \
+	  echo 'WARNING: autocutsel process detected, some tests might fail'; \
+	fi
+	cd ${WRKSRC}; ${RUBY} test_autocutsel.rb
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/autocutsel
