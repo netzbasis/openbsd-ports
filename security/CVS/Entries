@@ -1,4 +1,4 @@
-/Makefile/1.474/Tue Nov  7 16:30:32 2017//
+/Makefile/1.476/Wed Nov  8 20:23:28 2017//
 D/ADMsnmp////
 D/aescrypt////
 D/aide////
@@ -136,6 +136,7 @@ D/openpam////
 D/opensc////
 D/openssl////
 D/ophcrack////
+D/origami////
 D/otpcalc////
 D/outguess////
 D/p0f////

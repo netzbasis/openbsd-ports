@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.25 2017/11/08 05:35:31 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.29 2017/11/08 10:04:53 ajacoutot Exp $
 
 COMMENT-main=		implementation of the iCalendar protocols and data units
 COMMENT-glib=		GObject wrapper for libical library
@@ -9,6 +9,9 @@ GH_TAGNAME=		v3.0.0
 
 PKGNAME-main=		${PKGNAME}
 PKGNAME-glib=		${GH_PROJECT}-glib-${GH_TAGNAME:C/^v//}
+
+REVISION-main=		2
+REVISION-glib=		1
 
 SHARED_LIBS +=  ical                 4.0
 SHARED_LIBS +=  icalss               4.0
@@ -35,6 +38,7 @@ MULTI_PACKAGES=		-main -glib
 MODULES=		devel/cmake
 
 BUILD_DEPENDS=		devel/gobject-introspection \
+			lang/vala \
 			textproc/gtk-doc
 
 LIB_DEPENDS-main=	databases/db/v4 \
@@ -44,8 +48,16 @@ LIB_DEPENDS-glib=	devel/glib2 \
 			${BASE_PKGPATH},-main
 
 
-CONFIGURE_ARGS=		-DGOBJECT_INTROSPECTION=true
+CONFIGURE_ARGS=		-DGOBJECT_INTROSPECTION=true \
+			-DICAL_GLIB_VAPI=true
+
 CFLAGS +=		-I${LOCALBASE}/include
+
+# needed for libical-glib tests
+MODULES +=		lang/python
+MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
+MODPY_RUNDEP=		No
+TEST_DEPENDS=		${MODPY_RUN_DEPENDS}
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/cmake/modules/FindBDB.cmake

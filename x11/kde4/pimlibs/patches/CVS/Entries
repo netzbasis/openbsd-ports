@@ -14,10 +14,13 @@
 /patch-kabc_plugins_net_CMakeLists_txt/1.1/Sun Dec  8 19:13:33 2013//
 /patch-kabc_tests_CMakeLists_txt/1.1/Wed Jul  9 20:03:30 2014//
 /patch-kcal_CMakeLists_txt/1.2/Wed Jul  9 20:03:30 2014//
+/patch-kcal_icalformat_p_cpp/1.1/Wed Nov  8 05:37:50 2017//
+/patch-kcal_icaltimezones_cpp/1.1/Wed Nov  8 05:37:50 2017//
 /patch-kcalcore_CMakeLists_txt/1.4/Wed Jul  9 20:03:30 2014//
 /patch-kcalcore_calformat_cpp/1.4/Wed Jul  9 20:03:30 2014//
 /patch-kcalcore_config-kcalcore_h_cmake/1.3/Wed Jul  9 20:03:30 2014//
-/patch-kcalcore_icaltimezones_cpp/1.4/Wed Jul  9 20:03:30 2014//
+/patch-kcalcore_icalformat_p_cpp/1.1/Wed Nov  8 05:37:50 2017//
+/patch-kcalcore_icaltimezones_cpp/1.5/Wed Nov  8 05:37:50 2017//
 /patch-kcalcore_tests_CMakeLists_txt/1.2/Wed Jul  9 20:03:30 2014//
 /patch-kcalutils_CMakeLists_txt/1.2/Wed Jul  9 20:03:30 2014//
 /patch-kholidays_CMakeLists_txt/1.2/Wed Jul  9 20:03:30 2014//

@@ -1,4 +1,4 @@
-/Makefile/1.834/Wed Nov  1 20:43:07 2017//
+/Makefile/1.835/Wed Nov  8 22:27:34 2017//
 D/ajaxterm////
 D/analog////
 D/ap2-mod_dnssd////
@@ -95,6 +95,7 @@ D/mozilla-sync////
 D/mozplugger////
 D/netsurf////
 D/newsbeuter////
+D/newsboat////
 D/nextcloud////
 D/nghttp2////
 D/nginx////

@@ -1,4 +1,4 @@
-/Makefile/1.1666/Tue Nov  7 18:16:36 2017//
+/Makefile/1.1668/Wed Nov  8 19:37:21 2017//
 D/ElectricFence////
 D/ORBit2////
 D/acpica////
@@ -192,7 +192,6 @@ D/hs-QuickCheck////
 D/hs-StateVar////
 D/hs-abstract-deque////
 D/hs-abstract-par////
-D/hs-aeson////
 D/hs-ansi-terminal////
 D/hs-ansi-wl-pprint////
 D/hs-async////
@@ -1181,7 +1180,6 @@ D/pear-Date-Holidays////
 D/pear-Log////
 D/pear-System-Command////
 D/pear-Validate////
-D/pep8////
 D/perltidy////
 D/physfs////
 D/pkgconfig////

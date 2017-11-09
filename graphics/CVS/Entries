@@ -1,4 +1,4 @@
-/Makefile/1.445/Mon Oct 23 21:39:49 2017//
+/Makefile/1.446/Wed Nov  8 19:33:19 2017//
 D/DevIL////
 D/GraphicsMagick////
 D/ImageMagick////
@@ -91,10 +91,6 @@ D/graphite2////
 D/gthumb////
 D/gtkam////
 D/gtkimageview////
-D/hs-GLURaw////
-D/hs-GLUT////
-D/hs-OpenGL////
-D/hs-OpenGLRaw////
 D/hugin////
 D/icoutils////
 D/iec16022////

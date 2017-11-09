@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1029 2017/11/01 16:18:48 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.1031 2017/11/08 14:10:54 fcambus Exp $
 
      SUBDIR =
      SUBDIR += GeoIP
@@ -311,7 +311,6 @@
      SUBDIR += osrtspproxy
      SUBDIR += owamp
      SUBDIR += owncloudclient
-     SUBDIR += owncloudclient,qt5
      SUBDIR += p5-AnyEvent-IRC
      SUBDIR += p5-BSD-Socket-Splice
      SUBDIR += p5-Bot-BasicBot
@@ -485,7 +484,6 @@
      SUBDIR += pidgin,gtkspell
      SUBDIR += pidgin-icb
      SUBDIR += pidgin-sipe
-     SUBDIR += pidgin-tlen
      SUBDIR += pidgin-window-merge
      SUBDIR += pktstat
      SUBDIR += plushs

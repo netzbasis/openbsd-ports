@@ -23,6 +23,10 @@
 /patch-installer_userscripts_groups_common_sh/1.1.1.1/Wed Sep 13 10:38:42 2017//
 /patch-installer_userscripts_users_common_sh/1.1.1.1/Wed Sep 13 10:38:42 2017//
 /patch-lddcheck/1.1.1.1/Wed Sep 13 10:38:41 2017//
+/patch-libicalmapi_icalrecurrence_cpp/1.1/Wed Nov  8 05:37:16 2017//
+/patch-libicalmapi_valarm_cpp/1.1/Wed Nov  8 05:37:16 2017//
+/patch-libicalmapi_vconverter_cpp/1.1/Wed Nov  8 05:37:16 2017//
+/patch-libicalmapi_vtimezone_cpp/1.1/Wed Nov  8 05:37:16 2017//
 /patch-mapi4linux_src_libkchl_sym_in/1.1.1.1/Wed Sep 13 10:38:41 2017//
 /patch-mapi4linux_src_libmapi_sym_in/1.1.1.1/Wed Sep 13 10:38:41 2017//
 /patch-provider_libserver_ECSession_cpp/1.1.1.1/Wed Sep 13 10:38:42 2017//

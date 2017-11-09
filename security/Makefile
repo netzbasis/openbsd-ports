@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.474 2017/11/07 16:30:32 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.476 2017/11/08 20:23:28 rpointel Exp $
 
      SUBDIR =
      SUBDIR += ADMsnmp
@@ -72,8 +72,11 @@
      SUBDIR += hs-crypto-api
      SUBDIR += hs-cryptocipher
      SUBDIR += hs-cryptohash
+     SUBDIR += hs-cryptohash-sha256
      SUBDIR += hs-digest
+     SUBDIR += hs-ed25519
      SUBDIR += hs-entropy
+     SUBDIR += hs-hackage-security
      SUBDIR += hs-mwc-random
      SUBDIR += hs-pwstore-fast
      SUBDIR += hs-skein
@@ -146,6 +149,7 @@
      SUBDIR += opensc
      SUBDIR += openssl
      SUBDIR += ophcrack
+     SUBDIR += origami
      SUBDIR += otpcalc
      SUBDIR += outguess
      SUBDIR += p0f

@@ -1,16 +1,15 @@
-# $OpenBSD: Makefile,v 1.346 2017/11/06 07:38:28 jeremy Exp $
+# $OpenBSD: Makefile,v 1.348 2017/11/08 13:50:40 robert Exp $
 
 .include <bsd.port.arch.mk>
 
 USE_WXNEEDED=		Yes
 
-ONLY_FOR_ARCHS=		i386 amd64
+ONLY_FOR_ARCHS=		amd64
 DPB_PROPERTIES=		parallel
 
 COMMENT=		Chromium browser
 
-V=			62.0.3202.62
-REVISION=		1
+V=			62.0.3202.89
 
 DISTNAME=		chromium-${V}
 

@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-glib,v 1.1 2017/11/08 05:35:31 ajacoutot Exp $
+@comment $OpenBSD: PLIST-glib,v 1.3 2017/11/08 07:40:46 ajacoutot Exp $
 include/libical-glib/
 include/libical-glib/i-cal-array.h
 include/libical-glib/i-cal-attach.h
@@ -90,3 +90,6 @@ share/gtk-doc/html/libical-glib/right.png
 share/gtk-doc/html/libical-glib/style.css
 share/gtk-doc/html/libical-glib/up-insensitive.png
 share/gtk-doc/html/libical-glib/up.png
+share/vala/
+share/vala/vapi/
+share/vala/vapi/libical-glib.vapi
