@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.22 2017/11/07 11:02:12 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.24 2017/11/09 09:18:04 ajacoutot Exp $
 @bin bin/gnome-builder
 @bin bin/gnome-builder-cli
 include/gnome-builder/

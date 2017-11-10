@@ -22,7 +22,7 @@
 /patch-src_qt_qtbase_src_corelib_tools_qbytearray_h/1.1/Wed Jul  5 11:54:22 2017//
 /patch-src_qt_qtbase_src_gui_image_qxbmhandler_cpp/1.1/Wed Jul  5 11:54:22 2017//
 /patch-src_qt_qtbase_src_network_kernel_qdnslookup_unix_cpp/1.1/Wed Jul  5 11:54:22 2017//
-/patch-src_qt_qtbase_src_network_socket_qnativesocketengine_unix_cpp/1.1/Wed Jul  5 11:54:22 2017//
+/patch-src_qt_qtbase_src_network_socket_qnativesocketengine_unix_cpp/1.2/Thu Nov  9 16:50:39 2017//
 /patch-src_qt_qtbase_src_network_ssl_qsslcontext_openssl_cpp/1.1/Wed Jul  5 11:54:22 2017//
 /patch-src_qt_qtbase_src_network_ssl_qsslsocket_cpp/1.1/Wed Jul  5 11:54:22 2017//
 /patch-src_qt_qtbase_src_platformheaders_platformheaders_pro/1.1/Wed Jul  5 11:54:22 2017//

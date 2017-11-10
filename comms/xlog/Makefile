@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.25 2017/04/28 22:29:31 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.27 2017/11/09 18:59:20 jasper Exp $
 
 COMMENT=		logbook program for amateur radio operators
 
-DISTNAME=		xlog-2.0.14
+DISTNAME=		xlog-2.0.15
 CATEGORIES=    		comms hamradio
 
 HOMEPAGE=		http://www.nongnu.org/xlog/
@@ -16,7 +16,8 @@ WANTLIB += gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gobject-2.0
 WANTLIB += gtk-x11-2.0 hamlib intl m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 z
 
-MASTER_SITES=		http://download.savannah.nongnu.org/releases/xlog/
+MASTER_SITES=		http://download.savannah.nongnu.org/releases/xlog/ \
+			https://distfiles.nl/
 
 RUN_DEPENDS=		devel/desktop-file-utils \
 			misc/shared-mime-info
