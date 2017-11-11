@@ -1,7 +1,11 @@
-/patch-Makefile_in/1.10/Thu Jun  8 18:19:37 2017//
-/patch-configure/1.5/Thu Jun  8 18:19:37 2017//
+/patch-Makefile_in/1.11/Fri Nov 10 21:58:26 2017//
+/patch-configure/1.6/Fri Nov 10 21:58:26 2017//
+/patch-lib_compat_getent-bb_h/1.1/Fri Nov 10 21:58:26 2017//
+/patch-lib_compat_getent_c/1.1/Fri Nov 10 21:58:26 2017//
+/patch-lib_compat_getent_h/1.1/Fri Nov 10 21:58:26 2017//
 /patch-libtest_mock-transport_c/1.2/Thu Jun  8 18:19:37 2017//
 /patch-modules_afsocket_transport-unix-socket_c/1.2/Thu Jun  8 18:19:37 2017//
 /patch-modules_dbparser_patternize_c/1.2/Thu Jun  8 18:19:37 2017//
+/patch-modules_getent_tfgetent_c/1.1/Fri Nov 10 21:58:26 2017//
 /patch-syslog-ng-ctl_control-client-unix_c/1.2/Sun May  1 11:19:09 2016//
 D

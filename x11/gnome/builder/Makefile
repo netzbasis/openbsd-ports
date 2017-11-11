@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.67 2017/11/09 09:18:04 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.69 2017/11/10 10:26:58 ajacoutot Exp $
 
 COMMENT=		IDE for GNOME
 
 GNOME_PROJECT=		gnome-builder
 GNOME_VERSION=		3.26.2
-REVISION=		2
+REVISION=		4
 
 SHARED_LIBS +=  gstyle-private            1.0 # 0.0
 
@@ -65,11 +65,15 @@ CONFIGURE_ARGS=		-Dwith_valgrind=false \
 # XXX C library 'libclang' not found
 CONFIGURE_ARGS +=	-Dwith_clang=false
 
+MODGNOME_LDFLAGS +=	-L${X11BASE}/lib
+
 # XXX fails to build if graphics/gd is installed
 # XXX https://bugzilla.gnome.org/show_bug.cgi?id=787578
 # XXX https://github.com/mesonbuild/meson/issues/2182
-MODGNOME_LDFLAGS +=	-L${WRKBUILD}/subprojects/libgd/libgd
-
-MODGNOME_LDFLAGS +=	-L${X11BASE}/lib
+pre-configure:
+	echo "#!/bin/sh" >${WRKDIR}/bin/g-ir-scanner
+	echo "exec ${LOCALBASE}/bin/g-ir-scanner -L${WRKBUILD}/subprojects/libgd/libgd \"\$$@\"" \
+		>>${WRKDIR}/bin/g-ir-scanner
+	chmod 0555 ${WRKDIR}/bin/g-ir-scanner
 
 .include <bsd.port.mk>
