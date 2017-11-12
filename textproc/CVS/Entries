@@ -1,4 +1,4 @@
-/Makefile/1.548/Sat Nov  4 21:18:23 2017//
+/Makefile/1.549/Sat Nov 11 10:44:29 2017//
 D/TclXML////
 D/antiword////
 D/apertium////
@@ -43,7 +43,6 @@ D/fragistics////
 D/fzy////
 D/gdiff////
 D/glimpse////
-D/gnuvd////
 D/go-text////
 D/go-xlsx////
 D/gpresent////
