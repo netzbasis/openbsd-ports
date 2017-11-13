@@ -123,6 +123,7 @@
 /patch-libstdc++-v3_libsupc++_Makefile_in/1.1.1.1/Thu Jun 26 16:30:18 2014//
 /patch-libstdc++-v3_src_Makefile_in/1.1.1.1/Thu Jun 26 16:30:18 2014//
 /patch-libtool_m4/1.1.1.1/Thu Jun 26 16:30:17 2014//
+/patch-ltmain_sh/1.1/Sun Nov 12 22:38:13 2017//
 /patch-lto-plugin_Makefile_in/1.1.1.1/Thu Jun 26 16:30:18 2014//
 /patch-lto-plugin_configure/1.2/Mon Aug 18 07:42:12 2014//
 /patch-zlib_configure/1.1.1.1/Thu Jun 26 16:30:18 2014//

@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.555 2017/11/11 10:48:25 steven Exp $
+# $OpenBSD: Quirks.pm,v 1.557 2017/11/12 20:05:47 danj Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -494,6 +494,7 @@ my $stem_extensions = {
 	'ruby-arirang' => 'arirang',
 	'ja-mplus-ttf' => 'mixfont-mplus-ipa',
 	'kdirstat' => 'qdirstat',
+	'stem' => 'py-stem',
 };
 
 my $obsolete_reason = {
@@ -1155,6 +1156,7 @@ my $obsolete_reason = {
 	'hs-OpenGL' => 6,
 	'hs-OpenGLRaw' => 6,
 	'gnuvd' => 6,
+	'gtkhtml4' => 5,
 };
 
 # reasons for obsolete packages

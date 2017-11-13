@@ -1,4 +1,4 @@
-/Makefile/1.1031/Wed Nov  8 14:10:54 2017//
+/Makefile/1.1032/Sun Nov 12 20:05:18 2017//
 D/GeoIP////
 D/adns////
 D/adsuck////
@@ -523,6 +523,7 @@ D/py-smbc////
 D/py-snmp////
 D/py-socketio-client////
 D/py-socks////
+D/py-stem////
 D/py-twitter////
 D/py-websocket-client////
 D/py-xmpp////
@@ -590,7 +591,6 @@ D/ssldump////
 D/sslh////
 D/sslsniffer////
 D/ssvnc////
-D/stem////
 D/supybot////
 D/syncthing////
 D/synergy////
