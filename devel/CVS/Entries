@@ -1,4 +1,4 @@
-/Makefile/1.1668/Wed Nov  8 19:37:21 2017//
+/Makefile/1.1670/Mon Nov 13 23:57:54 2017//
 D/ElectricFence////
 D/ORBit2////
 D/acpica////
@@ -1443,11 +1443,8 @@ D/rlog////
 D/ruby-abstract////
 D/ruby-arrayfields////
 D/ruby-atomic////
-D/ruby-bacon////
 D/ruby-bundler////
 D/ruby-cicphash////
-D/ruby-clio////
-D/ruby-color-tools////
 D/ruby-colorator////
 D/ruby-colored////
 D/ruby-colorize////
@@ -1460,9 +1457,7 @@ D/ruby-diff-lcs////
 D/ruby-extlib////
 D/ruby-fast_gettext////
 D/ruby-ffi////
-D/ruby-ffi-inliner////
 D/ruby-flexmock////
-D/ruby-gem_plugin////
 D/ruby-gettext////
 D/ruby-gettext-setup////
 D/ruby-gir_ffi////
@@ -1481,10 +1476,8 @@ D/ruby-log4r////
 D/ruby-metaclass////
 D/ruby-minitest////
 D/ruby-mocha////
-D/ruby-mspec////
 D/ruby-narray////
 D/ruby-ncurses////
-D/ruby-needle////
 D/ruby-ole////
 D/ruby-open4////
 D/ruby-polyglot////
@@ -1504,7 +1497,6 @@ D/ruby-rubyinline////
 D/ruby-safe_yaml////
 D/ruby-semantic_puppet////
 D/ruby-sexp_processor////
-D/ruby-stringex////
 D/ruby-subset_sum////
 D/ruby-systemu////
 D/ruby-therubyracer////

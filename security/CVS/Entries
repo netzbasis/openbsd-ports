@@ -1,4 +1,4 @@
-/Makefile/1.476/Wed Nov  8 20:23:28 2017//
+/Makefile/1.477/Mon Nov 13 23:57:54 2017//
 D/ADMsnmp////
 D/aescrypt////
 D/aide////
@@ -279,12 +279,10 @@ D/rhash////
 D/routersploit////
 D/ruby-akami////
 D/ruby-bcrypt////
-D/ruby-ezcrypto////
 D/ruby-gpgme////
 D/ruby-hmac////
 D/ruby-openid////
 D/ruby-pledge////
-D/ruby-yadis////
 D/samdump2////
 D/scanlogd////
 D/scanssh////

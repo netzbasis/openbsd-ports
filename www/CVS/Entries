@@ -1,4 +1,4 @@
-/Makefile/1.836/Sun Nov 12 12:26:30 2017//
+/Makefile/1.837/Mon Nov 13 23:57:54 2017//
 D/ajaxterm////
 D/analog////
 D/ap2-mod_dnssd////
@@ -454,7 +454,6 @@ D/ruby-sanitize////
 D/ruby-savon////
 D/ruby-sinatra////
 D/ruby-thin////
-D/ruby-thin_http////
 D/ruby-unicorn////
 D/ruby-vegas////
 D/ruby-wasabi////

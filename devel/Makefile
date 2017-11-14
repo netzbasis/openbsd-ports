@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1668 2017/11/08 19:37:21 kili Exp $
+# $OpenBSD: Makefile,v 1.1670 2017/11/13 23:57:54 jeremy Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1417,6 +1417,7 @@
      SUBDIR += py-mccabe
      SUBDIR += py-mccabe,python3
      SUBDIR += py-minimock
+     SUBDIR += py-minimock,python3
      SUBDIR += py-mock
      SUBDIR += py-mock,python3
      SUBDIR += py-modulegraph
@@ -1617,11 +1618,8 @@
      SUBDIR += ruby-arrayfields
      SUBDIR += ruby-atomic,ruby23
      SUBDIR += ruby-atomic,ruby24
-     SUBDIR += ruby-bacon
      SUBDIR += ruby-bundler
      SUBDIR += ruby-cicphash
-     SUBDIR += ruby-clio
-     SUBDIR += ruby-color-tools
      SUBDIR += ruby-colorator
      SUBDIR += ruby-colored
      SUBDIR += ruby-colorize
@@ -1635,9 +1633,7 @@
      SUBDIR += ruby-fast_gettext
      SUBDIR += ruby-ffi,ruby23
      SUBDIR += ruby-ffi,ruby24
-     SUBDIR += ruby-ffi-inliner
      SUBDIR += ruby-flexmock
-     SUBDIR += ruby-gem_plugin
      SUBDIR += ruby-gettext
      SUBDIR += ruby-gettext-setup
      SUBDIR += ruby-gir_ffi
@@ -1658,12 +1654,10 @@
      SUBDIR += ruby-metaclass
      SUBDIR += ruby-minitest
      SUBDIR += ruby-mocha
-     SUBDIR += ruby-mspec
      SUBDIR += ruby-narray,ruby23
      SUBDIR += ruby-narray,ruby24
      SUBDIR += ruby-ncurses,ruby23
      SUBDIR += ruby-ncurses,ruby24
-     SUBDIR += ruby-needle
      SUBDIR += ruby-ole
      SUBDIR += ruby-open4
      SUBDIR += ruby-polyglot
@@ -1687,7 +1681,6 @@
      SUBDIR += ruby-safe_yaml
      SUBDIR += ruby-semantic_puppet
      SUBDIR += ruby-sexp_processor
-     SUBDIR += ruby-stringex
      SUBDIR += ruby-subset_sum,ruby23
      SUBDIR += ruby-subset_sum,ruby24
      SUBDIR += ruby-systemu

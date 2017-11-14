@@ -1,4 +1,4 @@
-/Makefile/1.1032/Sun Nov 12 20:05:18 2017//
+/Makefile/1.1034/Mon Nov 13 23:57:54 2017//
 D/GeoIP////
 D/adns////
 D/adsuck////
@@ -270,6 +270,7 @@ D/ntimed////
 D/ntopng////
 D/ntp////
 D/nylon////
+D/nyx////
 D/obfs4proxy////
 D/ocserv////
 D/oggfwd////
@@ -558,11 +559,9 @@ D/ruby-net-scp////
 D/ruby-net-sftp////
 D/ruby-net-ssh////
 D/ruby-net-ssh-gateway////
-D/ruby-nmap-parser////
 D/ruby-snmp////
 D/ruby-sshkit////
 D/ruby-stomp////
-D/ruby-xmpp4r////
 D/sacc////
 D/samba////
 D/sbm////

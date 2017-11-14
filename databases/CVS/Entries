@@ -1,4 +1,4 @@
-/Makefile/1.343/Sun Nov  5 22:03:16 2017//
+/Makefile/1.344/Mon Nov 13 23:57:54 2017//
 D/apache-couchdb////
 D/architect////
 D/barman////
@@ -207,7 +207,6 @@ D/ruby-sequel////
 D/ruby-sequel_pg////
 D/ruby-sqlite3////
 D/ruby-tiny_tds////
-D/ruby-validatable////
 D/sharedance////
 D/skytools////
 D/soprano////
