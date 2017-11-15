@@ -1,7 +1,10 @@
-/patch-devtools_client_debugger_new_debugger_js/1.1/Thu Sep 28 16:39:11 2017//
+/patch-config_rules_mk/1.20/Tue Nov 14 20:08:59 2017//
 /patch-intl_icu_source_Makefile_in/1.5/Thu Sep 28 16:39:11 2017//
 /patch-js_src_ctypes_libffi_src_dlmalloc_c/1.4/Tue Sep  2 16:43:04 2014//
 /patch-js_src_jit_ProcessExecutableMemory_h/1.1/Wed Jun 14 05:30:05 2017//
+/patch-layout_style_bindgen_toml_in/1.1/Tue Nov 14 20:08:59 2017//
+/patch-media_libcubeb_src_cubeb_sndio_c/1.5/Tue Nov 14 20:08:59 2017//
+/patch-modules_libpref_init_all_js/1.1/Tue Nov 14 20:08:59 2017//
 /patch-security_manager_pki_resources_content_exceptionDialog_js/1.13/Tue Aug  8 10:17:15 2017//
 /patch-storage_mozStorageConnection_cpp/1.10/Thu Sep 28 16:39:11 2017//
 /patch-widget_nsPrintSettingsImpl_cpp/1.3/Wed Apr 27 13:50:27 2016//

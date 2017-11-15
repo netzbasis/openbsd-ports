@@ -1,4 +1,4 @@
-/Makefile/1.70/Mon Nov  6 10:13:12 2017//
+/Makefile/1.71/Tue Nov 14 20:27:36 2017//
 D/amtterm////
 D/birda////
 D/bottlerocket////
@@ -31,6 +31,7 @@ D/p5-SendPage////
 D/picocom////
 D/pilot-link////
 D/py-gammu////
+D/qodem////
 D/qpage////
 D/qtserialport////
 D/rtl-sdr////

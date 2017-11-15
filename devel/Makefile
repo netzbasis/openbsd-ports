@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1670 2017/11/13 23:57:54 jeremy Exp $
+# $OpenBSD: Makefile,v 1.1672 2017/11/14 20:31:41 sthen Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -439,8 +439,6 @@
      SUBDIR += luaalarm
      SUBDIR += luaalarm,lua52
      SUBDIR += luaalarm,lua53
-     SUBDIR += luabitop
-     SUBDIR += luabitop,lua52
      SUBDIR += luacheck
      SUBDIR += luacopas
      SUBDIR += luacopas,lua52
@@ -1342,6 +1340,7 @@
      SUBDIR += py-fasteners,python3
      SUBDIR += py-fastimport
      SUBDIR += py-fastimport,python3
+     SUBDIR += py-faulthandler
      SUBDIR += py-flexmock
      SUBDIR += py-flexmock,python3
      SUBDIR += py-fpconst
