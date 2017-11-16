@@ -1,17 +1,18 @@
-# $OpenBSD: Makefile,v 1.4 2017/07/21 06:56:10 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.6 2017/11/15 09:49:39 bentley Exp $
 
 TYPEFACE =		gentium
 V =			5.000
 COMMENT =		readable font for Latin, Cyrillic, and Greek
 DISTNAME =		GentiumPlus-$V
 CATEGORIES =		fonts
+REVISION =		0
 
-HOMEPAGE =		http://software.sil.org/gentium/
+HOMEPAGE =		https://software.sil.org/gentium/
 
 # SIL OFL 1.1
 PERMIT_PACKAGE_CDROM =	Yes
 
-MASTER_SITES =		http://software.sil.org/downloads/r/gentium/
+MASTER_SITES =		https://software.sil.org/downloads/r/gentium/
 
 MODULES =		font
 
@@ -21,8 +22,7 @@ NO_TEST =		Yes
 WRKDIST =		${WRKDIR}/${DISTNAME}
 DOCDIR =		${PREFIX}/share/doc/gentium
 
-do-install:
-	${MODFONT_do-install}
+post-install:
 	${INSTALL_DATA_DIR} ${DOCDIR}
 	${INSTALL_DATA} ${WRKDIST}/*.txt ${DOCDIR}
 

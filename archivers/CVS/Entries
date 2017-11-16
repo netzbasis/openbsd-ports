@@ -1,9 +1,10 @@
-/Makefile/1.85/Fri Oct 13 12:04:11 2017//
+/Makefile/1.86/Wed Nov 15 07:20:20 2017//
 D/arc////
 D/brotli////
 D/bzip2////
 D/cabextract////
 D/deco////
+D/deutex////
 D/fastjar////
 D/freeze////
 D/fuse-zip////
