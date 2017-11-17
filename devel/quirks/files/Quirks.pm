@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.559 2017/11/14 14:59:06 bcallah Exp $
+# $OpenBSD: Quirks.pm,v 1.561 2017/11/16 20:17:28 naddy Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -497,6 +497,7 @@ my $stem_extensions = {
 	'stem' => 'py-stem',
 	'arm' => 'nyx',
 	'luabitop' => 'lua-bitop',
+	'livestreamer' => 'streamlink',
 };
 
 my $obsolete_reason = {
@@ -1159,6 +1160,8 @@ my $obsolete_reason = {
 	'hs-OpenGLRaw' => 6,
 	'gnuvd' => 6,
 	'gtkhtml4' => 5,
+	'livestreamer-curses' => 6,
+	'xdmchoose' => 6,
 };
 
 # reasons for obsolete packages

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.97 2017/11/14 11:57:25 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.99 2017/11/16 18:37:01 martijn Exp $
 
 BROKEN-hppa=	no __sync_bool_compare_and_swap support nor asm fallback
 
@@ -71,12 +71,8 @@ CONFIGURE_ARGS+=	--enable-shared \
 			--with-pdo-sqlite \
 			--enable-sqlite-utf8 \
 			--with-sqlite3 \
-			--program-suffix=-${PV}
-
-# readline is broken in PHP-5.3
-.if ${PV} != 5.3
-CONFIGURE_ARGS +=	--with-readline
-.endif
+			--program-suffix=-${PV} \
+			--with-readline
 
 # apache module
 CONFIGURE_ARGS+=	--with-apxs2=${LOCALBASE}/sbin/apxs2
@@ -119,31 +115,31 @@ MULTI_PACKAGES+=	-main -fastcgi
 
 # bz2
 MULTI_PACKAGES+=	-bz2
-COMMENT-bz2=		bzip2 compression extensions for php5
+COMMENT-bz2=		bzip2 compression extensions for php
 CONFIGURE_ARGS+=	--with-bz2=shared,${LOCALBASE}
 LIB_DEPENDS-bz2=	archivers/bzip2
 WANTLIB-bz2=		bz2>=10 pthread
 
 # curl
 MULTI_PACKAGES+=	-curl
-COMMENT-curl=		curl URL library extensions for php5
+COMMENT-curl=		curl URL library extensions for php
 CONFIGURE_ARGS+=	--with-curl=shared,${LOCALBASE}
 LIB_DEPENDS-curl=	net/curl
 WANTLIB-curl=		pthread crypto nghttp2 ssl z curl>=2
 
 # dba
 MULTI_PACKAGES+=	-dba
-COMMENT-dba=		dba GDBM access extensions for php5
+COMMENT-dba=		dba GDBM access extensions for php
 CONFIGURE_ARGS+=	--enable-dba=shared --with-gdbm=${LOCALBASE}
 LIB_DEPENDS-dba=	databases/gdbm
 WANTLIB-dba=		gdbm>=2 pthread
 
 # gd
 MULTI_PACKAGES+=	-gd
-COMMENT-gd=		image manipulation extensions for php5
+COMMENT-gd=		image manipulation extensions for php
 LIB_DEPENDS-gd=		graphics/jpeg \
 			graphics/png
-.if ${PV} != "7.0"
+.if ${PV} == "5.6"
 LIB_DEPENDS-gd+=	devel/t1lib
 WANTLIB-gd+=		t1>=5
 .endif
@@ -158,14 +154,14 @@ CONFIGURE_ARGS+=	--with-gd=shared \
 
 # gmp
 MULTI_PACKAGES+=	-gmp
-COMMENT-gmp=		gmp math library support for php5
+COMMENT-gmp=		gmp math library support for php
 CONFIGURE_ARGS+=	--with-gmp=shared,${LOCALBASE}
 LIB_DEPENDS-gmp=	devel/gmp
 WANTLIB-gmp=		gmp>=4 pthread
 
 # intl
 MULTI_PACKAGES+=	-intl
-COMMENT-intl=		intl library support for php5
+COMMENT-intl=		intl library support for php
 CONFIGURE_ARGS+=	--enable-intl=shared \
 			--with-icu-dir=${LOCALBASE}
 LIB_DEPENDS-intl=	textproc/icu4c
@@ -174,7 +170,7 @@ WANTLIB-intl=		${COMPILER_LIBCXX} icudata icui18n icuio icuuc m pthread
 
 # imap
 MULTI_PACKAGES+=	-imap
-COMMENT-imap=		imap, pop3 and nntp extensions for php5
+COMMENT-imap=		imap, pop3 and nntp extensions for php
 CONFIGURE_ARGS+=	--with-imap=shared,${LOCALBASE} \
 			--with-imap-ssl
 LIB_DEPENDS-imap=	mail/alpine,-c-client
@@ -182,124 +178,94 @@ WANTLIB-imap=		pthread crypto ssl c-client>=5
 
 # ldap
 MULTI_PACKAGES+=	-ldap
-COMMENT-ldap=		ldap protocol extensions for php5
+COMMENT-ldap=		ldap protocol extensions for php
 CONFIGURE_ARGS+=	--with-ldap=shared,${LOCALBASE}
 LIB_DEPENDS-ldap=	databases/openldap
 WANTLIB-ldap=		pthread ldap>=2 lber
 
 # mcrypt
 MULTI_PACKAGES+=	-mcrypt
-COMMENT-mcrypt=		mcrypt encryption/decryption extensions for php5
+COMMENT-mcrypt=		mcrypt encryption/decryption extensions for php
 CONFIGURE_ARGS+=	--with-mcrypt=shared,${LOCALBASE}
 LIB_DEPENDS-mcrypt=	security/libmcrypt devel/libtool,-ltdl
 WANTLIB-mcrypt=		mcrypt ltdl>=1 pthread
 
-.if ${PV} != "7.0"
-# mysql
-MULTI_PACKAGES+=	-mysql
-COMMENT-mysql=		mysql database access extensions for php5
-CONFIGURE_ARGS+=	--with-mysql=shared,${LOCALBASE}
-LIB_DEPENDS-mysql=	databases/mariadb
-WANTLIB-mysql=		pthread lib/mysql/mysqlclient
-.endif
-
 # mysqli
 MULTI_PACKAGES+=	-mysqli
-COMMENT-mysqli=		mysql database access extensions for php5
+COMMENT-mysqli=		mysql database access extensions for php
 CONFIGURE_ARGS+=	--with-mysqli=shared,${LOCALBASE}/bin/mysql_config
 LIB_DEPENDS-mysqli=	databases/mariadb
 WANTLIB-mysqli=		crypto m pthread ssl z lib/mysql/mysqlclient
 
 # odbc
 MULTI_PACKAGES+=	-odbc
-COMMENT-odbc=		odbc database access extensions for php5
+COMMENT-odbc=		odbc database access extensions for php
 CONFIGURE_ARGS+=        --with-iodbc=shared,${LOCALBASE}
 LIB_DEPENDS-odbc=	databases/iodbc
-WANTLIB-odbc=		iodbc>=2 pthread
-.if ${PV} != "5.3"
-WANTLIB-odbc+=		iodbcinst
-.endif
+WANTLIB-odbc=		iodbc>=2 pthread iodbcinst
 
 # pcntl
 MULTI_PACKAGES+=	-pcntl
-COMMENT-pcntl=		PCNTL extensions for php5
+COMMENT-pcntl=		PCNTL extensions for php
 CONFIGURE_ARGS+=	--enable-pcntl=shared
 LIB_DEPENDS-pcntl=
 WANTLIB-pcntl=		pthread
 
 # pdo-mysql
 MULTI_PACKAGES+=	-pdo_mysql
-COMMENT-pdo_mysql=	PDO mysql database access extensions for php5
+COMMENT-pdo_mysql=	PDO mysql database access extensions for php
 CONFIGURE_ARGS+=	--with-pdo-mysql=shared,${LOCALBASE}
 LIB_DEPENDS-pdo_mysql=	databases/mariadb
 WANTLIB-pdo_mysql=	crypto m pthread ssl z lib/mysql/mysqlclient
 
 # pdo-pgsql
 MULTI_PACKAGES+=	-pdo_pgsql
-COMMENT-pdo_pgsql=	PDO database access extensions for php5
+COMMENT-pdo_pgsql=	PDO database access extensions for php
 CONFIGURE_ARGS+=        --with-pdo-pgsql=shared,${LOCALBASE}
 LIB_DEPENDS-pdo_pgsql=	databases/postgresql
 WANTLIB-pdo_pgsql=	pq>=2 pthread
 
 # pgsql
 MULTI_PACKAGES+=	-pgsql
-COMMENT-pgsql=		pgsql database access extensions for php5
+COMMENT-pgsql=		pgsql database access extensions for php
 CONFIGURE_ARGS+=	--with-pgsql=shared,${LOCALBASE}
 LIB_DEPENDS-pgsql=	databases/postgresql
 WANTLIB-pgsql=		pq>=2 pthread
 
 # pspell
 MULTI_PACKAGES+=	-pspell
-COMMENT-pspell=		pspell library extensions for php5
+COMMENT-pspell=		pspell library extensions for php
 CONFIGURE_ARGS+=	--with-pspell=shared,${LOCALBASE}
 LIB_DEPENDS-pspell=	textproc/aspell/core
 WANTLIB-pspell=		aspell>=16 pspell>=16 pthread
 
 # shmop
 MULTI_PACKAGES+=	-shmop
-COMMENT-shmop=		shared memory extensions for php5
+COMMENT-shmop=		shared memory extensions for php
 CONFIGURE_ARGS+=	--enable-shmop=shared,${LOCALBASE}
 LIB_DEPENDS-shmop=
 WANTLIB-shmop=		pthread
 
 # soap
 MULTI_PACKAGES+=	-soap
-COMMENT-soap=		SOAP functions for php5
+COMMENT-soap=		SOAP functions for php
 CONFIGURE_ARGS+=	--enable-soap=shared,${LOCALBASE}
 LIB_DEPENDS-soap=	textproc/libxml
 WANTLIB-soap=		iconv m pthread z xml2>=8 lzma
 
 # snmp
 MULTI_PACKAGES+=	-snmp
-COMMENT-snmp=		snmp protocol extensions for php5
+COMMENT-snmp=		snmp protocol extensions for php
 CONFIGURE_ARGS+=	--with-snmp=shared,${LOCALBASE} --enable-ucd-snmp-hack
 LIB_DEPENDS-snmp=	net/net-snmp
 WANTLIB-snmp=		crypto m netsnmp>=6.2 pthread
 
-.if ${PV} != "7.0"
-# sybase-ct
-MULTI_PACKAGES+=	-sybase_ct
-COMMENT-sybase_ct=	sybase database access extensions for php5
-CONFIGURE_ARGS+=	--with-sybase-ct=shared,${LOCALBASE}
-LIB_DEPENDS-sybase_ct=	databases/freetds
-WANTLIB-sybase_ct=	ct pthread
-.endif
-
 # pdo-dblib
 MULTI_PACKAGES+=	-pdo_dblib
-COMMENT-pdo_dblib=	PDO DB-LIB support for php5
+COMMENT-pdo_dblib=	PDO DB-LIB support for php
 CONFIGURE_ARGS+=        --with-pdo-dblib=shared,${LOCALBASE}
 LIB_DEPENDS-pdo_dblib=	databases/freetds
 WANTLIB-pdo_dblib=	sybdb>=6 pthread
-
-.if ${PV} != "7.0"
-# mssql
-MULTI_PACKAGES+=	-mssql
-COMMENT-mssql=		microsoft sql access extensions for php5
-CONFIGURE_ARGS+=        --with-mssql=shared,${LOCALBASE}
-LIB_DEPENDS-mssql=	databases/freetds
-WANTLIB-mssql=		sybdb>=6 pthread
-.endif
 
 # tidy
 MULTI_PACKAGES+=	-tidy
@@ -310,21 +276,21 @@ WANTLIB-tidy=		tidyp pthread
 
 # xml-rpc
 MULTI_PACKAGES+=	-xmlrpc
-COMMENT-xmlrpc=		XML RPC functions for php5
+COMMENT-xmlrpc=		XML RPC functions for php
 CONFIGURE_ARGS+=	--with-xmlrpc=shared
 LIB_DEPENDS-xmlrpc=	textproc/libxml
 WANTLIB-xmlrpc=		iconv m z xml2>=8 pthread lzma
 
 # xsl
 MULTI_PACKAGES+=	-xsl
-COMMENT-xsl=		XSL functions for php5
+COMMENT-xsl=		XSL functions for php
 CONFIGURE_ARGS+=	--with-xsl=shared --enable-dom
 LIB_DEPENDS-xsl=	textproc/libxslt
 WANTLIB-xsl=		iconv m xml2 z xslt>=3 exslt pthread lzma
 
 # zip
 MULTI_PACKAGES+=	-zip
-COMMENT-zip=		zip functions for php5
+COMMENT-zip=		zip functions for php
 CONFIGURE_ARGS+=	--enable-zip=shared,${LOCALBASE}
 LIB_DEPENDS-zip=
 WANTLIB-zip=		z pthread
@@ -341,7 +307,6 @@ PHPXS_SUBST+= -e 's,${i},${${i}},'
 WANTLIB-main+=		c crypto iconv intl lzma m pthread ssl xml2>=8 z
 WANTLIB-main+=		ncurses readline ${COMPILER_LIBCXX}
 
-# php 5.4/5.5 : WANTLIB-main += ${COMPILER_LIBCXX}
 WANTLIB-fastcgi=	${WANTLIB-main}
 LIB_DEPENDS-main=	devel/gettext \
 			textproc/libxml

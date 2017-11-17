@@ -1,4 +1,4 @@
-/Makefile/1.100/Tue Nov 14 06:29:59 2017//
+/Makefile/1.101/Thu Nov 16 16:04:22 2017//
 D/assimp////
 D/atomicparsley////
 D/audiopreview////
@@ -34,8 +34,6 @@ D/libtheora////
 D/libv4l////
 D/libvpx////
 D/lives////
-D/livestreamer////
-D/livestreamer-curses////
 D/lsdvd////
 D/mediainfo////
 D/mediatomb////
