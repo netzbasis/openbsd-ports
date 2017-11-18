@@ -1,4 +1,4 @@
-# $OpenBSD: OpenBSD,v 1.149 2017/11/05 20:17:15 denis Exp $
+# $OpenBSD: OpenBSD,v 1.151 2017/11/18 01:09:16 ccardenas Exp $
 #
 # This is a list of OpenBSD developers and related people.
 #
@@ -84,6 +84,7 @@
 47.402103	8.502002	"remi"		# Remi Locherer
 47.404841	8.562961	"tb"		# Theo Buehler
 47.50		7.60		"dhartmei"	# Daniel Hartmeier
+47.507603	-121.740109	"ccardenas"	# Carlos Cardenas
 47.532		7.648		"winiger"	# Marc Winiger
 47.581		7.589		"mbalmer"	# Marc Balmer
 47.837768	35.211241	"av"		# Alexey Vatchenko
