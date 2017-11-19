@@ -1,4 +1,4 @@
-/Makefile/1.344/Mon Nov 13 23:57:54 2017//
+/Makefile/1.345/Sun Nov 19 01:04:03 2017//
 D/apache-couchdb////
 D/architect////
 D/barman////
@@ -11,11 +11,7 @@ D/gdbm////
 D/gnats////
 D/gq////
 D/hs-HDBC////
-D/hs-HDBC-mysql////
-D/hs-HDBC-postgresql////
 D/hs-HDBC-sqlite3////
-D/hs-hedis////
-D/hs-postgresql-libpq////
 D/hs-resource-pool////
 D/iodbc////
 D/jxplorer////

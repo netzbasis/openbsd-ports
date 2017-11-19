@@ -1,4 +1,4 @@
-/Makefile/1.838/Tue Nov 14 16:52:29 2017//
+/Makefile/1.839/Sun Nov 19 01:04:03 2017//
 D/ajaxterm////
 D/analog////
 D/ap2-mod_dnssd////
@@ -49,7 +49,6 @@ D/goaccess////
 D/haserl////
 D/havp////
 D/hiawatha////
-D/hs-cgi////
 D/hs-html////
 D/http_load////
 D/http_ping////

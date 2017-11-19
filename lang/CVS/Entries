@@ -1,4 +1,4 @@
-/Makefile/1.211/Wed Nov  8 11:02:37 2017//
+/Makefile/1.212/Sun Nov 19 01:04:03 2017//
 D/STk////
 D/a60////
 D/abcl////
@@ -41,7 +41,6 @@ D/gprolog////
 D/gravity////
 D/guile////
 D/guile2////
-D/hs-haskell-src////
 D/icon////
 D/intel2gas////
 D/iverilog////

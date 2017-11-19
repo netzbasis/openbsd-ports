@@ -1,4 +1,4 @@
-/Makefile/1.143/Sat Nov  4 11:54:11 2017//
+/Makefile/1.144/Sun Nov 19 01:04:03 2017//
 D/R////
 D/aamath////
 D/abs////
@@ -33,7 +33,6 @@ D/hc////
 D/hdf5////
 D/hexcalc////
 D/hoc////
-D/hs-half////
 D/jacal////
 D/kst////
 D/lapack////

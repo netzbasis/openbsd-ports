@@ -1,4 +1,4 @@
-/Makefile/1.1034/Mon Nov 13 23:57:54 2017//
+/Makefile/1.1035/Sun Nov 19 01:04:03 2017//
 D/GeoIP////
 D/adns////
 D/adsuck////
@@ -116,10 +116,8 @@ D/honeyd////
 D/hping////
 D/hpodder////
 D/hs-HTTP////
-D/hs-curl////
 D/hs-hostname////
 D/hs-multipart////
-D/hs-network-info////
 D/httptunnel////
 D/icbd////
 D/icbirc////
