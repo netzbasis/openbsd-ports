@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.20 2017/11/16 23:20:39 naddy Exp $
+# $OpenBSD: Makefile,v 1.22 2017/11/20 14:27:32 jca Exp $
 
 COMMENT =		authoritative DNS server
 
 DISTNAME =		knot-2.4.5
-REVISION =		0
+REVISION =		2
 
 SHARED_LIBS +=	zscanner             1.0      # .1.0
 SHARED_LIBS +=	knot                 1.1      # .5.0
@@ -41,6 +41,8 @@ CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS +=	--with-storage=${LOCALSTATEDIR}/db/knot \
 			--with-libidn \
 			--disable-dnstap
+# Disable workaround for old clang versions.
+CONFIGURE_ARGS +=	--enable-fastparser=force
 
 CONFIGURE_ENV =		ac_cv_path_PDFLATEX="false" \
 			ac_cv_path_SPHINXBUILD="false"
@@ -48,6 +50,11 @@ CONFIGURE_ENV =		ac_cv_path_PDFLATEX="false" \
 .if ${MACHINE_ARCH} == "i386"
 CFLAGS += -march=i586
 .endif
+
+post-extract:
+	# Workaround symbol conflict somehow avoided by GNU libtool
+	sed -i 's/net_send/contrib_&/g' ${WRKSRC}/tests/contrib/test_net.c
+	sed -i 's/net_send/contrib_&/g' ${WRKSRC}/src/contrib/net.[ch]
 
 post-install:
 	mv ${WRKINST}/etc/knot/ ${PREFIX}/share/examples/knot/

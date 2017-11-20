@@ -1,4 +1,4 @@
-/Makefile/1.478/Sun Nov 19 01:04:03 2017//
+/Makefile/1.479/Mon Nov 20 17:57:09 2017//
 D/ADMsnmp////
 D/aescrypt////
 D/aide////
@@ -37,6 +37,7 @@ D/emldump////
 D/encfs////
 D/erl-bcrypt////
 D/fcrackzip////
+D/fierce////
 D/flasm////
 D/foremost////
 D/fragroute////
