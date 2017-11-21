@@ -1,4 +1,4 @@
-/Makefile/1.1673/Sun Nov 19 01:04:03 2017//
+/Makefile/1.1674/Mon Nov 20 19:18:26 2017//
 D/ElectricFence////
 D/ORBit2////
 D/acpica////
@@ -239,6 +239,7 @@ D/hs-system-fileio////
 D/hs-system-filepath////
 D/hs-tagged////
 D/hs-tar////
+D/hs-temporary////
 D/hs-test-framework////
 D/hs-test-framework-hunit////
 D/hs-test-framework-quickcheck2////

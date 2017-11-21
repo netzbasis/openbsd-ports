@@ -1,4 +1,4 @@
-/Makefile/1.551/Sun Nov 19 01:04:03 2017//
+/Makefile/1.552/Mon Nov 20 19:22:05 2017//
 D/TclXML////
 D/antiword////
 D/apertium////
@@ -68,6 +68,8 @@ D/hs-bytestring-show////
 D/hs-libxml-sax////
 D/hs-polyparse////
 D/hs-scanner////
+D/hs-stringsearch////
+D/hs-wl-pprint-text////
 D/hs-xml////
 D/hs-xml-types////
 D/html////

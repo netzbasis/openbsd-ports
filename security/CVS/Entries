@@ -1,4 +1,4 @@
-/Makefile/1.479/Mon Nov 20 17:57:09 2017//
+/Makefile/1.480/Mon Nov 20 18:49:57 2017//
 D/ADMsnmp////
 D/aescrypt////
 D/aide////
@@ -315,7 +315,6 @@ D/theharvester////
 D/towitoko////
 D/vault////
 D/volatility////
-D/vomit////
 D/vpnc////
 D/wpa_supplicant////
 D/xca////
