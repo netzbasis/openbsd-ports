@@ -1,5 +1,5 @@
 /patch-Makefile_in/1.7/Sat Aug 15 07:50:02 2015//
-/patch-configure/1.20/Fri Jul  7 16:01:58 2017//
+/patch-configure/1.21/Wed Nov 22 22:35:25 2017//
 /patch-manpages_Makefile_in/1.6/Sat Aug 15 07:50:02 2015//
 /patch-manpages_bat_1/1.6/Sat Apr 19 09:44:11 2014//
 /patch-scripts_bat_desktop_in/1.4/Thu Nov 17 23:45:56 2011//
@@ -7,6 +7,9 @@
 /patch-src_dird_bacula-dir_conf_in/1.12/Thu Feb 16 17:16:19 2017//
 /patch-src_findlib_Makefile_in/1.4/Sat Aug 15 07:50:02 2015//
 /patch-src_lib_Makefile_in/1.6/Fri Jul  7 16:01:58 2017//
+/patch-src_lib_crypto_c/1.1/Wed Nov 22 22:35:25 2017//
+/patch-src_lib_openssl-compat_h/1.1/Wed Nov 22 22:35:25 2017//
+/patch-src_lib_openssl_c/1.1/Wed Nov 22 22:35:25 2017//
 /patch-src_qt-console_main_cpp/1.10/Tue Jan 19 22:51:09 2016//
 /patch-src_stored_Makefile_in/1.6/Fri Jul  7 16:01:58 2017//
 /patch-src_stored_bacula-sd_conf_in/1.10/Fri Jul  7 16:01:58 2017//
