@@ -1,9 +1,9 @@
 /README.internals/1.15/Thu Aug 24 13:25:38 2017//
 /apache-module.port.mk/1.11/Fri Apr 29 13:59:52 2016//
-/arch-defines.mk/1.45/Thu Oct 26 19:40:32 2017//
+/arch-defines.mk/1.46/Thu Nov 23 14:33:21 2017//
 /automake.dep/1.3/Sat Feb  3 17:08:59 2007//
 /bsd.port.arch.mk/1.13/Tue Mar 15 21:45:16 2016//
-/bsd.port.mk/1.1372/Sun Nov 19 17:31:04 2017//
+/bsd.port.mk/1.1375/Thu Nov 23 18:11:05 2017//
 /bsd.port.subdir.mk/1.109/Wed Oct 10 10:55:33 2012//
 /compiler.port.mk/1.5/Fri Nov 17 00:24:01 2017//
 /cpan.port.mk/1.20/Sun Mar 20 19:56:44 2016//
