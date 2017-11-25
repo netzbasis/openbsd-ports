@@ -1,8 +1,8 @@
-/Affinity.pm/1.18/Sun May 15 20:08:30 2016//
+/Affinity.pm/1.19/Fri Nov 24 14:24:04 2017//
 /AffinityStub.pm/1.1/Sun Oct 13 18:23:35 2013//
 /BasePkgPath.pm/1.6/Sun Dec  7 15:18:50 2014//
 /Clock.pm/1.8/Tue Aug 11 22:39:57 2015//
-/Config.pm/1.71/Thu Nov 23 12:36:25 2017//
+/Config.pm/1.72/Fri Nov 24 14:26:20 2017//
 /Core.pm/1.83/Sun May  8 09:31:38 2016//
 /Distfile.pm/1.11/Sat May 13 09:56:03 2017//
 /Engine.pm/1.124/Thu May  4 23:40:29 2017//
@@ -24,7 +24,7 @@
 /Reporter.pm/1.29/Tue Jun 28 15:28:20 2016//
 /Serialize.pm/1.1/Sat Nov 16 16:39:28 2013//
 /Shell.pm/1.17/Tue Jul 21 05:10:12 2015//
-/Signature.pm/1.9/Sun May 10 08:14:14 2015//
+/Signature.pm/1.10/Fri Nov 24 14:26:20 2017//
 /State.pm/1.21/Mon Nov 13 13:51:21 2017//
 /SubEngine.pm/1.25/Mon Jun 22 12:18:50 2015//
 /Trace.pm/1.2/Fri Oct 30 09:46:45 2015//
