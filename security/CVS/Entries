@@ -1,4 +1,4 @@
-/Makefile/1.480/Mon Nov 20 18:49:57 2017//
+/Makefile/1.481/Sun Nov 26 10:21:45 2017//
 D/ADMsnmp////
 D/aescrypt////
 D/aide////
@@ -269,6 +269,7 @@ D/qtkeychain////
 D/radiusniff////
 D/rarcrack////
 D/rdp////
+D/recon-ng////
 D/regripper////
 D/reop////
 D/rhash////
