@@ -1,13 +1,3 @@
 /patch-MANUAL/1.1/Mon Jul 10 20:10:36 2017//
-/patch-Makefile/1.4/Wed Jun 28 16:34:59 2017//
-/patch-arp_c/1.1/Wed Jun 28 16:34:59 2017//
-/patch-commands_c/1.4/Wed Jun 28 16:34:59 2017//
-/patch-conf_c/1.9/Wed Jun 28 16:34:59 2017//
-/patch-externs_h/1.1/Wed Jun 28 16:34:59 2017//
-/patch-ieee80211_c/1.1/Sat Sep 10 13:03:43 2016//
-/patch-if_c/1.10/Thu Jan 26 12:30:02 2017//
-/patch-pfsync_c/1.1/Thu Jan 26 12:30:02 2017//
-/patch-show_c/1.5/Fri Sep  2 15:42:07 2016//
-/patch-stats_c/1.8/Wed Jun 28 16:34:59 2017//
-/patch-sysctl_c/1.5/Thu Jul 13 17:01:14 2017//
+/patch-stats_c/1.9/Mon Nov 27 22:03:24 2017//
 D
