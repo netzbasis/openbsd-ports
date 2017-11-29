@@ -1,4 +1,4 @@
-/Makefile/1.459/Mon Nov 13 17:25:08 2017//
+/Makefile/1.460/Tue Nov 28 08:43:01 2017//
 D/accountsservice////
 D/amazon-ecs-cli////
 D/amazon-ssm-agent////
@@ -93,6 +93,7 @@ D/go-cs////
 D/google-cloud-sdk////
 D/google-compute-engine////
 D/gource////
+D/govmomi////
 D/gpioflicker////
 D/grive2////
 D/grub////

@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: External.pm,v 1.2 2017/11/27 17:00:50 espie Exp $
+# $OpenBSD: External.pm,v 1.9 2017/11/28 15:38:07 espie Exp $
 #
 # Copyright (c) 2017 Marc Espie <espie@openbsd.org>
 #
@@ -20,43 +20,18 @@ use warnings;
 
 # socket for external commands
 
-package DPB::External::Command;
-
-sub new
-{
-	my ($class, $line, $fh) = @_;
-	bless { line => $line, fh => $fh}, $class;
-}
-
-sub line
-{
-	my $self = shift;
-	return $self->{line};
-}
-
-sub print
-{
-	my $self = shift;
-	$self->{fh}->print(@_);
-}
-
-sub unknown_command
-{
-	my $self = shift;
-	$self->print("Unknown command: ", $self->line, "\ndpb\$ ");
-}
-
 package DPB::External;
 use IO::Socket;
 use IO::Select;
 
+my $motto = "shut up and hack!";
 sub server
 {
 	my ($class, $state) = @_;
 
-	my $o = bless {commands => []}, $class;
-
-	my $path = $state->{subst}->value('SOCKET');
+	my $o = bless {state => $state, 
+	    subdirlist => {}}, $class;
+	my $path = $state->expand_path($state->{subst}->value('CONTROL'));
 
 	# this ensures the socket belongs to log_user.
 	$state->{log_user}->run_as(
@@ -66,10 +41,12 @@ sub server
 		    Type => SOCK_STREAM,
 		    Local => $path);
 	    	if (!defined $o->{server}) {
-			$state->fatal("Can't create socket named #1", $path);
+			$state->fatal("Can't create socket named #1: #2", 
+			    $path, $!);
 		}
 		chmod 0700, $path or 
-		    $state->fatal("Can't fix rights for socket #1", $path);
+		    $state->fatal("Can't enforce permissions for socket #1:#2", 
+			$path, $!);
 	    });
 	# NOW we can listen
 	$o->{server}->listen;
@@ -77,9 +54,49 @@ sub server
 	return $o;
 }
 
-sub peek
+sub handle_command
+{
+	my ($self, $line, $fh) = @_;
+	my $state = $self->{state};
+	if ($line =~ m/^dontclean\s+(.*)/) {
+		for my $p (split(/\s+/, $1)) {
+			$state->{builder}{dontclean}{$p} = 1;
+		}
+	} elsif ($line =~ m/^addhost\s+(.*)/) {
+		my @list = split(/\s+/, $1);
+		DPB::Config->add_host($state, @list);
+	} elsif ($line =~ m/^stats\b/) {
+		$fh->print($state->engine->statline, "\n");
+	} elsif ($line =~ m/^pf{6}\b/) {
+		$fh->print($motto, "\n");
+	} elsif ($line =~ m/^addpath\s+(.*)/) {
+		$state->interpret_paths(split(/\s+/, $1),
+		    sub {
+			my ($pkgpath, $weight) = @_;
+			if (defined $weight) {
+				$state->heuristics->set_weight($pkgpath);
+			}
+			$pkgpath->add_to_subdirlist($self->{subdirlist});
+		    });
+	} elsif ($line =~ m/^help\b/) {
+		$fh->print(
+		    "Commands:\n",
+		    "\taddhost <hostline>\n",
+		    "\taddpath <fullpkgpath>...\n",
+		    "\tbye\n",
+		    "\tdontclean <pkgpath>...\n",
+		    "\tstats\n"
+		);
+	} else {
+		$fh->print("Unknown command: ", $line, " (help for details)\n");
+	}
+	$fh->print('dpb$ ');
+}
+
+sub receive_commands
 {
 	my $self = shift;
+
 	while (my @ready = $self->{select}->can_read(0)) {
 		foreach my $fh (@ready) {
 			if ($fh == $self->{server}) {
@@ -93,24 +110,19 @@ sub peek
 					$fh->close;
 					$self->{select}->remove($fh);
 				} else {
-					$fh->print('dpb$ ');
-					push(@{$self->{commands}}, 
-					    DPB::External::Command->new(
-					    	$line, $fh));
+					$self->handle_command($line, $fh);
 				}
 			}
 		}
 	}
-}
 
-sub command
-{
-	my $self = shift;
-	$self->peek;
-	if (@{$self->{commands}} > 0) {
-		return shift @{$self->{commands}};
-	} else {
-		return undef;
+	if (keys %{$self->{subdirlist}} > 0 && DPB::Core->avail) {
+		# XXX store value first, re-entrancy
+		my $subdirlist = $self->{subdirlist};
+		$self->{subdirlist} = {};
+		my $core = DPB::Core->get;
+		$self->{state}->grabber->grab_subdirs($core, $subdirlist, 
+		    undef);
 	}
 }
 

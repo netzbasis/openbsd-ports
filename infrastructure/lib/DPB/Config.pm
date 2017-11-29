@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Config.pm,v 1.72 2017/11/24 14:26:20 espie Exp $
+# $OpenBSD: Config.pm,v 1.74 2017/11/28 10:31:50 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -92,8 +92,8 @@ sub parse_command_line
 		},
 	};
 
-	$state->SUPER_handle_options('aceimqrRstuUvh:S:xX:A:B:C:f:F:I:j:J:M:p:P:b:l:L:',
-    "[-aceimqrRsuUvx] [-A arch] [-B chroot] [-C plist] [-f m] [-F m]",
+	$state->SUPER_handle_options('acemqrRstuUvh:S:xX:A:B:C:f:F:I:j:J:M:p:P:b:l:L:',
+    "[-acemqrRsuUvx] [-A arch] [-B chroot] [-C plist] [-f m] [-F m]",
     "[-I pathlist] [-J p] [-j n] [-p parallel] [-P pathlist] [-h hosts]",
     "[-L logdir] [-l lockdir] [-b log] [-M threshold] [-X pathlist]",
     "[pathlist ...]");
@@ -102,10 +102,6 @@ sub parse_command_line
 		if (defined $o && $o !~ m/^\d+$/) {
 			$state->usage("-$l takes an integer argument, not $o");
 		}
-	}
-	if ($state->opt('i')) {
-		require DPB::Interactive;
-		$state->{interactive} = DPB::Interactive->new;
 	}
 
     	$state->{chroot} = $state->opt('B');
@@ -217,6 +213,12 @@ sub parse_command_line
 	if ($state->define_present('LOGDIR')) {
 		$state->{logdir} = $state->{subst}->value('LOGDIR');
 	}
+	if ($state->define_present('CONTROL')) {
+		require DPB::External;
+		$state->{external} = DPB::External->server($state);
+	} else {
+		$state->{external} = DPB::ExternalStub->new;
+	}
 	if ($state->{opt}{s}) {
 		$state->{wantsize} = 1;
 	} elsif ($state->define_present('WANTSIZE')) {
@@ -261,7 +263,7 @@ sub parse_command_line
 		$state->{want_fetchinfo} = 1;
 	}
 
-	my $k = $state->is_interactive ? "STARTUPI" : "STARTUP";
+	my $k = "STARTUP";
 	if ($state->define_present($k)) {
 		$state->{startup_script} = $state->expand_chrooted_path($state->{subst}->value($k));
 	}
@@ -391,6 +393,7 @@ sub parse_config_files
 		DPB::Core::Init->new('localhost', $prop);
 	}
 	$state->{default_prop} = $prop;
+	$state->{override_prop} = $override_prop;
 }
 
 sub parse_hosts_file
@@ -433,6 +436,30 @@ sub parse_hosts_file
 		    	$state->{build_user} = $prop->{build_user};
 		}
 	}
+}
+
+sub add_host
+{
+	my ($class, $state, $host, @properties) = @_;
+	my $prop = DPB::HostProperties->new($state->{default_prop});
+	for my $arg (@properties) {
+		if ($arg =~ m/^(.*?)=(.*)$/) {
+			$prop->{$1} = $2;
+		}
+	}
+	$prop->finalize_with_overrides($state->{override_prop});
+	DPB::Core::Init->new($host, $prop);
+}
+
+package DPB::ExternalStub;
+sub new
+{
+	my $class = shift;
+	bless {}, $class;
+}
+
+sub receive_commands
+{
 }
 
 1;

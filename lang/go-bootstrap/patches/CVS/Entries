@@ -1,9 +1,0 @@
-/patch-src_cmd_8l_asm_c/1.1/Wed May 11 15:53:26 2016//
-/patch-src_cmd_ld_ldelf_c/1.1/Sun Oct  8 15:40:56 2017//
-/patch-src_go_build_build_go/1.1/Sun Oct  8 15:40:56 2017//
-/patch-src_runtime_sys_openbsd_386_s/1.2/Mon Jun 27 15:54:59 2016//
-/patch-src_runtime_sys_openbsd_amd64_s/1.1/Mon Jun 27 15:54:59 2016//
-/patch-src_syscall_zsysnum_openbsd_386_go/1.1/Mon Jun 27 15:54:59 2016//
-/patch-src_syscall_zsysnum_openbsd_amd64_go/1.1/Mon Jun 27 15:54:59 2016//
-/patch-src_time_format_test_go/1.1/Sun Oct  8 15:40:56 2017//
-D

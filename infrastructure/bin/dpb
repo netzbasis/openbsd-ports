@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: dpb,v 1.121 2016/05/21 12:20:10 espie Exp $
+# $OpenBSD: dpb,v 1.124 2017/11/28 14:29:30 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -102,7 +102,7 @@ DPB::Trace->setup(\%SIG);
 my $state = DPB::State->new('dpb');
 $state->handle_options;
 
-$state->{all} = !$state->is_interactive;
+$state->{all} = 1;
 
 my $default_handling =
     sub {
@@ -182,6 +182,7 @@ sub handle_non_waiting_jobs
 	my $checked = 0;
 	my $force_report = 0;
 	my $reaped = DPB::Core->reap;
+	$state->{external}->receive_commands;
 	$keep_going = !-e $state->logdir."/stop";
 	if (DPB::Core->avail > 1) {
 		$state->engine->recheck_errors;
@@ -190,6 +191,7 @@ sub handle_non_waiting_jobs
 		$state->engine->check_buildable;
 		$checked = 1;
 	}
+
 	while ($keep_going && DPB::Core->avail && $state->engine->can_build) {
 		$force_report = 1;
 		if (!$state->engine->start_new_job) {
@@ -219,9 +221,7 @@ sub handle_non_waiting_jobs
 	}
 	DPB::Core->log_concurrency(time(), $state->{concurrent});
 	DPB::Core->wake_jobs;
-	if ($state->want_report) {
-		$reporter->report($force_report);
-	}
+	$reporter->report($force_report);
 }
 
 sub main_loop
@@ -251,8 +251,7 @@ sub main_loop
 				}
 			}
 		}
-		if ($state->may_ask_for_commands) {
-		} elsif (!$state->opt('q') || !$state->engine->recheck_errors) {
+		if (!$state->opt('q') || !$state->engine->recheck_errors) {
 			last;
 		}
 	}
