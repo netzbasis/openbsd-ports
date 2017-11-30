@@ -1,4 +1,4 @@
-/Makefile/1.1674/Mon Nov 20 19:18:26 2017//
+/Makefile/1.1675/Wed Nov 29 13:09:42 2017//
 D/ElectricFence////
 D/ORBit2////
 D/acpica////
@@ -959,6 +959,7 @@ D/p5-String-CRC32////
 D/p5-String-Format////
 D/p5-String-Scanf////
 D/p5-String-Truncate////
+D/p5-Sub-Attribute////
 D/p5-Sub-Exporter////
 D/p5-Sub-Exporter-Progressive////
 D/p5-Sub-Identify////
