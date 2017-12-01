@@ -1,4 +1,4 @@
-/Makefile/1.552/Mon Nov 20 19:22:05 2017//
+/Makefile/1.553/Thu Nov 30 20:15:18 2017//
 D/TclXML////
 D/antiword////
 D/apertium////
@@ -334,6 +334,7 @@ D/py-cssselect////
 D/py-cssutils////
 D/py-defusedxml////
 D/py-demjson////
+D/py-dicttoxml////
 D/py-docutils////
 D/py-elasticsearch////
 D/py-elementtidy////
@@ -367,6 +368,7 @@ D/py-sphinx-intl////
 D/py-sphinx_guzzle_theme////
 D/py-sphinx_rtd_theme////
 D/py-stemmer////
+D/py-unicodecsv////
 D/py-unidecode////
 D/py-vatnumber////
 D/py-vobject////

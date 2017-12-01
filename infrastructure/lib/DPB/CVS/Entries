@@ -3,11 +3,11 @@
 /BasePkgPath.pm/1.6/Sun Dec  7 15:18:50 2014//
 /Clock.pm/1.8/Tue Aug 11 22:39:57 2015//
 /Config.pm/1.74/Tue Nov 28 10:31:50 2017//
-/Core.pm/1.83/Sun May  8 09:31:38 2016//
+/Core.pm/1.85/Thu Nov 30 14:54:00 2017//
 /Distfile.pm/1.11/Sat May 13 09:56:03 2017//
-/Engine.pm/1.124/Thu May  4 23:40:29 2017//
+/Engine.pm/1.125/Thu Nov 30 14:54:00 2017//
 /ErrorList.pm/1.4/Mon Jun 22 12:18:19 2015//
-/External.pm/1.10/Wed Nov 29 11:21:49 2017//
+/External.pm/1.12/Thu Nov 30 14:54:00 2017//
 /Fetch.pm/1.76/Sun May  7 16:50:22 2017//
 /Grabber.pm/1.37/Sun May 22 11:41:56 2016//
 /Heuristics.pm/1.32/Sun May 14 12:43:55 2017//
