@@ -1,5 +1,5 @@
-/patch-Makefile/1.74/Wed Nov  8 09:17:14 2017//
-/patch-config_mak_uname/1.3/Sat Aug  5 19:09:05 2017//
+/patch-Makefile/1.75/Sat Dec  2 15:24:31 2017//
+/patch-config_mak_uname/1.4/Sat Dec  2 15:24:31 2017//
 /patch-contrib_svn-fe_Makefile/1.1/Sat Feb  7 18:19:41 2015//
 /patch-gitweb_gitweb_perl/1.30/Wed Nov  8 09:17:14 2017//
 /patch-perl_Makefile_PL/1.5/Fri Nov 30 21:16:30 2012//
@@ -7,5 +7,5 @@
 /patch-t_t1450-fsck_sh/1.5/Tue Oct 24 05:26:43 2017//
 /patch-t_t9117-git-svn-init-clone_sh/1.2/Sat Jan 24 14:31:29 2009//
 /patch-t_t9200-git-cvsexportcommit_sh/1.8/Wed May 10 08:05:04 2017//
-/patch-t_test-lib_sh/1.24/Wed Nov  8 09:17:14 2017//
+/patch-t_test-lib_sh/1.25/Sat Dec  2 15:24:31 2017//
 D
