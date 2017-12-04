@@ -1,4 +1,4 @@
-/Makefile/1.840/Sun Nov 19 13:23:18 2017//
+/Makefile/1.841/Sun Dec  3 10:11:51 2017//
 D/ajaxterm////
 D/analog////
 D/ap2-mod_dnssd////
@@ -411,6 +411,7 @@ D/py-sockjs-tornado////
 D/py-tempita////
 D/py-terminado////
 D/py-tornado////
+D/py-uritemplate////
 D/py-urlgrabber////
 D/py-urllib3////
 D/py-waitress////
