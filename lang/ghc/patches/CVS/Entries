@@ -1,6 +1,7 @@
 /patch-compiler_main_SysTools_hs/1.2/Tue Nov  7 02:58:34 2017//
 /patch-configure/1.17/Tue Nov  7 02:58:34 2017//
 /patch-ghc_mk/1.12/Tue Nov  7 02:58:34 2017//
+/patch-iserv_ghc_mk/1.1/Tue Dec  5 20:21:19 2017//
 /patch-libffi_ghc_mk/1.6/Tue Nov  7 02:58:34 2017//
 /patch-libraries_Cabal_Cabal_Distribution_Simple_Program_Strip_hs/1.2/Tue Nov  7 02:58:34 2017//
 /patch-libraries_base_GHC_IO_Encoding_hs/1.4/Sat Sep 19 07:42:57 2015//
