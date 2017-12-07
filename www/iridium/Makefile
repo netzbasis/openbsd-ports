@@ -1,15 +1,18 @@
-# $OpenBSD: Makefile,v 1.68 2017/12/04 13:55:41 robert Exp $
+# $OpenBSD: Makefile,v 1.70 2017/12/06 15:34:48 sthen Exp $
+
+ONLY_FOR_ARCHS=		amd64
 
 .include <bsd.port.arch.mk>
 
 USE_WXNEEDED=		Yes
 
-ONLY_FOR_ARCHS=		i386 amd64
 DPB_PROPERTIES=		parallel
 
 COMMENT=		Iridium browser
 
 V=			2017.11
+REVISION=		0
+
 DISTNAME=		iridium-browser-${V}
 PKGNAME=		iridium-${V}
 DISTFILES=		${DISTNAME}${EXTRACT_SUFX}
@@ -67,7 +70,8 @@ RUN_DEPENDS=	devel/xdg-utils \
 		fonts/noto/fonts \
 		graphics/libexif \
 		x11/gnome/libgnome-keyring \
-		x11/gtk+3,-guic
+		x11/gtk+3,-guic \
+		x11/gtk+3,-cups
 BUILD_DEPENDS=	archivers/bzip2 \
 		devel/gperf \
 		devel/bison \
