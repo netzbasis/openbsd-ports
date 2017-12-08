@@ -1,4 +1,4 @@
-/Makefile/1.553/Thu Nov 30 20:15:18 2017//
+/Makefile/1.554/Thu Dec  7 15:57:03 2017//
 D/TclXML////
 D/antiword////
 D/apertium////
@@ -321,6 +321,7 @@ D/pear-XML-Tree////
 D/pinfo////
 D/pod2mdoc////
 D/podofo////
+D/pplatex////
 D/pugixml////
 D/py-Chart////
 D/py-HappyDoc////
