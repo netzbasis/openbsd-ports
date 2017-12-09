@@ -1,4 +1,4 @@
-/Makefile/1.213/Fri Nov 24 13:40:35 2017//
+/Makefile/1.214/Sat Dec  9 00:21:44 2017//
 D/STk////
 D/a60////
 D/abcl////
@@ -10,6 +10,7 @@ D/bacon////
 D/brandy////
 D/chibi-scheme////
 D/chicken////
+D/cim////
 D/clang////
 D/classpath////
 D/clisp////
