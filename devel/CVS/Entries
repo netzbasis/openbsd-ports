@@ -1,4 +1,4 @@
-/Makefile/1.1679/Sun Dec 10 12:05:37 2017//
+/Makefile/1.1680/Mon Dec 11 10:08:28 2017//
 D/ElectricFence////
 D/ORBit2////
 D/acpica////
@@ -143,6 +143,7 @@ D/git-bz////
 D/git-cola////
 D/git-cvs////
 D/git-lfs////
+D/github-backup////
 D/gitsh////
 D/glade////
 D/glib2////

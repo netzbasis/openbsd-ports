@@ -1,4 +1,4 @@
-/Makefile/1.89/Fri Aug 18 12:08:46 2017//
+/Makefile/1.90/Tue Dec 12 00:48:16 2017//
 D/base64////
 D/btoa////
 D/convmv////
@@ -60,6 +60,7 @@ D/p5-Unicode-String////
 D/p5-Unicode-Stringprep////
 D/pflogx////
 D/ppmtoTbmp////
+D/py-amf////
 D/py-cjkcodecs////
 D/py-html2text////
 D/py-iconvcodec////
