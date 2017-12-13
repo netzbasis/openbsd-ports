@@ -1,4 +1,4 @@
-/Makefile/1.1680/Mon Dec 11 10:08:28 2017//
+/Makefile/1.1682/Tue Dec 12 20:52:23 2017//
 D/ElectricFence////
 D/ORBit2////
 D/acpica////
@@ -1301,6 +1301,7 @@ D/py-parsedatetime////
 D/py-parsing////
 D/py-path.py////
 D/py-pathlib////
+D/py-pathspec////
 D/py-pbr////
 D/py-peak-rules////
 D/py-pexpect////
@@ -1385,6 +1386,7 @@ D/py-xdg////
 D/py-xdis////
 D/py-xlsxwriter////
 D/py-xmlrunner////
+D/py-yamllint////
 D/py-zopecomponent////
 D/py-zopeevent////
 D/py-zopeinterface////
