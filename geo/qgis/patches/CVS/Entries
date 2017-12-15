@@ -4,7 +4,7 @@
 /patch-cmake_FindPostgres_cmake/1.9/Wed Nov 30 16:53:37 2016//
 /patch-debian_qgis_desktop/1.4/Tue Nov  1 09:18:13 2016//
 /patch-doc_CMakeLists_txt/1.11/Tue May 23 09:16:29 2017//
-/patch-src_app_qgisapp_cpp/1.20/Mon Sep 18 12:12:46 2017//
+/patch-src_app_qgisapp_cpp/1.21/Thu Dec 14 10:17:27 2017//
 /patch-src_app_qgsabout_cpp/1.8/Wed Mar  2 14:39:10 2016//
 /patch-src_core_CMakeLists_txt/1.18/Tue Apr 25 11:54:54 2017//
 /patch-src_core_qgsapplication_cpp/1.9/Mon Aug  8 17:45:40 2016//
