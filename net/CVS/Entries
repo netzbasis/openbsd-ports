@@ -1,10 +1,9 @@
-/Makefile/1.1038/Fri Dec  8 13:26:27 2017//
+/Makefile/1.1041/Sat Dec 16 20:37:34 2017//
 D/GeoIP////
 D/adns////
 D/adsuck////
 D/aggregate////
 D/aggregate6////
-D/aimsniff////
 D/aircontrol////
 D/amule////
 D/angst////
@@ -265,7 +264,6 @@ D/ns////
 D/nslint////
 D/nsping////
 D/nssl////
-D/ntimed////
 D/ntopng////
 D/ntp////
 D/nylon////
@@ -469,7 +467,6 @@ D/poezio////
 D/poink////
 D/pop3gwd////
 D/poptop////
-D/pork////
 D/powerdns////
 D/profanity////
 D/prosody////

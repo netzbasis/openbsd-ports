@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1038 2017/12/08 13:26:27 jca Exp $
+# $OpenBSD: Makefile,v 1.1041 2017/12/16 20:37:34 naddy Exp $
 
      SUBDIR =
      SUBDIR += GeoIP
@@ -6,7 +6,6 @@
      SUBDIR += adsuck
      SUBDIR += aggregate
      SUBDIR += aggregate6
-     SUBDIR += aimsniff
      SUBDIR += aircontrol
      SUBDIR += amule
      SUBDIR += angst
@@ -287,7 +286,6 @@
      SUBDIR += nslint,static
      SUBDIR += nsping
      SUBDIR += nssl
-     SUBDIR += ntimed
      SUBDIR += ntopng
      SUBDIR += ntp
      SUBDIR += nylon
@@ -497,7 +495,6 @@
      SUBDIR += poink
      SUBDIR += pop3gwd
      SUBDIR += poptop
-     SUBDIR += pork
      SUBDIR += powerdns
      SUBDIR += profanity
      SUBDIR += prosody
