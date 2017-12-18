@@ -1,4 +1,4 @@
-/Makefile/1.360/Sun Dec 10 22:45:17 2017//
+/Makefile/1.361/Sun Dec 17 16:58:37 2017//
 D/0ad////
 D/2048-cli////
 D/abuse////
@@ -194,6 +194,7 @@ D/puzzles////
 D/pyganim////
 D/pysol////
 D/qgo////
+D/qqwing////
 D/qstat////
 D/quadrupleback////
 D/quakespasm////

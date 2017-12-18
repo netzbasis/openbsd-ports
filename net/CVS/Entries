@@ -1,4 +1,4 @@
-/Makefile/1.1041/Sat Dec 16 20:37:34 2017//
+/Makefile/1.1042/Sun Dec 17 21:04:35 2017//
 D/GeoIP////
 D/adns////
 D/adsuck////
@@ -612,6 +612,7 @@ D/tircproxy////
 D/tkabber////
 D/tkirc////
 D/tn5250////
+D/toot////
 D/tor////
 D/torsocks////
 D/totd////

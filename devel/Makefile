@@ -1,4 +1,4 @@
-#${MODPY_COMMENT} $OpenBSD: Makefile,v 1.1682 2017/12/12 20:52:23 rpointel Exp $
+#${MODPY_COMMENT} $OpenBSD: Makefile,v 1.1684 2017/12/17 20:31:14 kili Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -204,7 +204,6 @@
      SUBDIR += hs-convertible
      SUBDIR += hs-data-default
      SUBDIR += hs-data-ordlist
-     SUBDIR += hs-dataenc
      SUBDIR += hs-dlist
      SUBDIR += hs-enclosed-exceptions
      SUBDIR += hs-exceptions
@@ -1529,6 +1528,7 @@
      SUBDIR += py-turbokid
      SUBDIR += py-twisted
      SUBDIR += py-typing
+     SUBDIR += py-txaio
      SUBDIR += py-tz
      SUBDIR += py-tz,python3
      SUBDIR += py-tzlocal
