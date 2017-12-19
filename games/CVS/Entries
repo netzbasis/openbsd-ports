@@ -1,4 +1,4 @@
-/Makefile/1.361/Sun Dec 17 16:58:37 2017//
+/Makefile/1.362/Tue Dec 19 03:28:10 2017//
 D/0ad////
 D/2048-cli////
 D/abuse////
@@ -229,6 +229,7 @@ D/spider////
 D/starfighter////
 D/starlanes////
 D/stepmania////
+D/stockfish////
 D/stone-soup////
 D/sudognu////
 D/sudoku////
