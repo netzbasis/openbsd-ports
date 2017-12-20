@@ -1,4 +1,4 @@
-/Makefile/1.460/Tue Nov 28 08:43:01 2017//
+/Makefile/1.461/Tue Dec 19 20:21:56 2017//
 D/accountsservice////
 D/amazon-ecs-cli////
 D/amazon-ssm-agent////
@@ -110,6 +110,7 @@ D/ipmitool////
 D/iwatch////
 D/krename-kde4////
 D/ktsuss////
+D/libburn////
 D/libesedb////
 D/libevt////
 D/libevtx////
@@ -117,6 +118,8 @@ D/libfsntfs////
 D/libfvde////
 D/libfwnt////
 D/libfwsi////
+D/libisoburn////
+D/libisofs////
 D/liblnk////
 D/libmsiecf////
 D/libolecf////
@@ -319,7 +322,6 @@ D/xbatt////
 D/xbattbar////
 D/xbattmon////
 D/xjobs////
-D/xorriso////
 D/xps////
 D/xstatbar////
 D/xuvmstat////
