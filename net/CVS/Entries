@@ -1,4 +1,4 @@
-/Makefile/1.1042/Sun Dec 17 21:04:35 2017//
+/Makefile/1.1043/Sat Dec 23 21:20:11 2017//
 D/GeoIP////
 D/adns////
 D/adsuck////
@@ -216,6 +216,7 @@ D/mfi////
 D/microblog-purple////
 D/minbif////
 D/mininet////
+D/minio////
 D/miniupnp////
 D/mirmon////
 D/mirror////
