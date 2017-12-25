@@ -263,6 +263,10 @@
 /patch-device_serial_serial_io_handler_posix_cc/1.6/Sat Dec 10 15:35:25 2016//
 /patch-device_usb_BUILD_gn/1.7/Wed Oct 25 13:47:07 2017//
 /patch-extensions_browser_api_messaging_message_service_cc/1.1/Wed Oct 25 13:47:07 2017//
+/patch-extensions_browser_api_networking_private_networking_private_delegate_factory_cc/1.1/Mon Dec 25 00:17:32 2017//
+/patch-extensions_common_api__permission_features_json/1.1/Mon Dec 25 00:17:32 2017//
+/patch-extensions_common_feature_switch_cc/1.1/Mon Dec 25 00:17:32 2017//
+/patch-extensions_common_features_feature_cc/1.1/Mon Dec 25 00:17:32 2017//
 /patch-gpu_ipc_client_gpu_memory_buffer_impl_cc/1.1/Sun Jun 25 21:53:56 2017//
 /patch-gpu_ipc_common_gpu_memory_buffer_support_cc/1.2/Wed Oct 25 13:47:07 2017//
 /patch-gpu_ipc_service_gpu_init_cc/1.7/Sat Dec 16 15:34:40 2017//
@@ -291,7 +295,8 @@
 /patch-media_capture_video_video_capture_device_factory_cc/1.7/Wed Oct 25 13:47:07 2017//
 /patch-media_media_options_gni/1.10/Wed Oct 25 13:47:07 2017//
 /patch-net_BUILD_gn/1.12/Sat Dec 16 15:34:40 2017//
-/patch-net_base_address_tracker_linux_h/1.2/Sun Mar  6 10:51:14 2016//
+/patch-net_base_address_tracker_linux_cc/1.1/Mon Dec 25 00:17:32 2017//
+/patch-net_base_address_tracker_linux_h/1.3/Mon Dec 25 00:17:32 2017//
 /patch-net_base_network_change_notifier_cc/1.21/Wed Oct 25 13:47:07 2017//
 /patch-net_base_network_interfaces_openbsd_cc/1.1/Tue Mar 14 12:18:54 2017//
 /patch-net_base_network_interfaces_openbsd_h/1.1/Tue Mar 14 12:18:54 2017//
@@ -305,7 +310,7 @@
 /patch-net_proxy_proxy_service_cc/1.18/Sat Dec 16 15:34:40 2017//
 /patch-net_quic_platform_impl_quic_ip_address_impl_cc/1.1/Tue Mar 14 12:18:54 2017//
 /patch-net_socket_socks5_client_socket_cc/1.7/Sat Dec 10 15:35:25 2016//
-/patch-net_socket_udp_socket_posix_cc/1.7/Sat Dec 16 15:34:40 2017//
+/patch-net_socket_udp_socket_posix_cc/1.8/Mon Dec 25 00:17:32 2017//
 /patch-net_tools_cert_verify_tool_verify_using_path_builder_cc/1.5/Thu Jul 27 14:23:46 2017//
 /patch-net_tools_get_server_time_get_server_time_cc/1.5/Sat Dec 16 15:34:40 2017//
 /patch-net_url_request_url_request_context_builder_cc/1.18/Sat Dec 16 15:34:40 2017//
@@ -419,6 +424,8 @@
 /patch-tools_gn_bootstrap_build_ninja_template/1.2/Wed Oct 26 06:22:08 2016//
 /patch-tools_gyp_pylib_gyp_generator_make_py/1.23/Thu Jul 27 14:23:46 2017//
 /patch-tools_gyp_pylib_gyp_generator_ninja_py/1.25/Thu Jul 27 14:23:46 2017//
+/patch-tools_json_schema_compiler_feature_compiler_py/1.1/Mon Dec 25 00:17:32 2017//
+/patch-tools_json_schema_compiler_model_py/1.1/Mon Dec 25 00:17:32 2017//
 /patch-tools_variations_fieldtrial_to_struct_py/1.3/Wed Oct 25 13:47:07 2017//
 /patch-ui_base_dragdrop_os_exchange_data_provider_factory_cc/1.3/Wed Oct 25 13:47:07 2017//
 /patch-ui_base_ime_ime_engine_handler_interface_h/1.2/Tue Mar 14 12:18:54 2017//

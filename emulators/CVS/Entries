@@ -1,4 +1,4 @@
-/Makefile/1.93/Sun Nov  5 22:07:06 2017//
+/Makefile/1.94/Sun Dec 24 06:52:14 2017//
 D/BasiliskII////
 D/advancemame////
 D/advancemess////
@@ -23,6 +23,7 @@ D/gnusim8085////
 D/gr-lida////
 D/gxemul////
 D/hatari////
+D/higan////
 D/libretro-genesis-plus-gx////
 D/libretro-pcsx-rearmed////
 D/mednafen////
