@@ -2,6 +2,7 @@
 /patch-platforms_Cross_plugins_Mpeg3Plugin_libmpeg_video_getpicture_c/1.1/Sat May  6 17:15:20 2017//
 /patch-platforms_Cross_plugins_Mpeg3Plugin_libmpeg_video_idct_c/1.1/Sat May  6 17:15:20 2017//
 /patch-platforms_unix_config_configure/1.1/Mon Dec 30 12:14:55 2013//
+/patch-platforms_unix_config_make_prg_in/1.1/Mon Dec 25 07:04:45 2017//
 /patch-platforms_unix_npsqueak_Makefile/1.1/Wed Jul 23 11:17:22 2008//
 /patch-platforms_unix_plugins_AsynchFilePlugin_sqUnixAsynchFile_c/1.1/Sat Sep 10 13:03:42 2016//
 /patch-platforms_unix_plugins_LocalePlugin_sqUnixLocale_c/1.1/Wed Jul 23 11:17:22 2008//
