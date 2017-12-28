@@ -1,4 +1,4 @@
-/Makefile/1.1684/Sun Dec 17 20:31:14 2017//
+/Makefile/1.1685/Wed Dec 27 17:39:18 2017//
 D/ElectricFence////
 D/ORBit2////
 D/acpica////
@@ -310,6 +310,7 @@ D/libevent2////
 D/libeventextra////
 D/libexecinfo////
 D/libf2c////
+D/libfastjson////
 D/libffi////
 D/libfirm////
 D/libfmt////
@@ -329,6 +330,7 @@ D/libio////
 D/libiscsi////
 D/libivykis////
 D/libixp////
+D/liblognorm////
 D/liblouis////
 D/libmagic////
 D/libmemcached////
