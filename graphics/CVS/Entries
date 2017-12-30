@@ -1,4 +1,4 @@
-/Makefile/1.447/Mon Nov 20 19:25:21 2017//
+/Makefile/1.448/Fri Dec 29 22:41:58 2017//
 D/DevIL////
 D/GraphicsMagick////
 D/ImageMagick////
@@ -41,6 +41,7 @@ D/djview4////
 D/djvulibre////
 D/dmtx-utils////
 D/dpic////
+D/drawpile////
 D/dumpmpeg////
 D/dvdrip////
 D/enblend-enfuse////

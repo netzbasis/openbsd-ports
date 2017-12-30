@@ -1,4 +1,4 @@
-/Makefile/1.554/Thu Dec  7 15:57:03 2017//
+/Makefile/1.555/Fri Dec 29 09:06:11 2017//
 D/TclXML////
 D/antiword////
 D/apertium////
@@ -35,6 +35,7 @@ D/docx2txt////
 D/ebook-tools////
 D/elasticsearch////
 D/enchant////
+D/enchant2////
 D/exempi////
 D/extract_url////
 D/fcbanner////
