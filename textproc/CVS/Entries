@@ -1,4 +1,4 @@
-/Makefile/1.555/Fri Dec 29 09:06:11 2017//
+/Makefile/1.556/Sun Dec 31 01:52:32 2017//
 D/TclXML////
 D/antiword////
 D/apertium////
@@ -331,6 +331,7 @@ D/py-MarkupSafe////
 D/py-PEG2////
 D/py-alabaster////
 D/py-chardet////
+D/py-colored////
 D/py-commonmark////
 D/py-cssselect////
 D/py-cssutils////
