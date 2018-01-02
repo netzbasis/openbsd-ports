@@ -1,4 +1,4 @@
-/Makefile/1.481/Sun Nov 26 10:21:45 2017//
+/Makefile/1.482/Mon Jan  1 15:41:38 2018//
 D/ADMsnmp////
 D/aescrypt////
 D/aide////
@@ -87,6 +87,7 @@ D/kqoauth////
 D/lastpass-cli////
 D/letsencrypt////
 D/libassuan////
+D/libb2////
 D/libbde////
 D/libewf////
 D/libfprint////
