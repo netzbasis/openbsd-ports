@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.845 2017/12/27 19:37:10 bcallah Exp $
+# $OpenBSD: Makefile,v 1.847 2018/01/04 10:08:15 fcambus Exp $
 
      SUBDIR =
      SUBDIR += ajaxterm
@@ -32,7 +32,6 @@
      SUBDIR += cronolog
      SUBDIR += dansguardian
      SUBDIR += darkhttpd
-     SUBDIR += decss
      SUBDIR += dillo
      SUBDIR += dokuwiki
      SUBDIR += drupal7
@@ -90,7 +89,6 @@
      SUBDIR += logswan
      SUBDIR += luakit
      SUBDIR += lynx
-     SUBDIR += man2web
      SUBDIR += mhonarc
      SUBDIR += midori
      SUBDIR += mimetex

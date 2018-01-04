@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Port.pm,v 1.174 2017/12/31 13:03:07 espie Exp $
+# $OpenBSD: Port.pm,v 1.176 2018/01/03 23:19:51 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -1186,7 +1186,13 @@ sub add_normal_tasks
 	}
 	if ($c) {
 		$hostprop->{junk_count}++;
-		push(@todo, qw(depends show-prepare-results));
+		push(@todo, 'depends');
+		# depends only install dependencies, stuff that have
+		# an extra :patch/:configure stage need to complete prepare !
+		if (exists $self->{v}{info}{BEXTRA}) {
+			push(@todo, 'prepare');
+		}
+		push(@todo, 'show-prepare-results');
 	}
 	# gc stuff we will no longer need
 	delete $self->{v}{info}{solved};
@@ -1316,16 +1322,11 @@ sub tweak_msg
 	if (defined $self->{tracked} && $self->{tracked} == 1) {
 		# we tracked already, so never do it again
 		$self->{tracked} = 0;
-		if (my $fh = $self->{file}->open('<')) {
-			# optimistic grab of last line of file
-			seek $fh, -150, 2;
-			local $/;
-			local $_ = <$fh>;
-			chomp;
-			if (m/Awaiting lock\s+(.*)/) {
-				$self->{override} = " stuck on $1";
-			}
-			close $fh;
+		# optimistic grab of last line of file
+		my $line = $self->peek(150);
+		chomp $line;
+		if ($line =~ m/Awaiting lock\s+(.*)/) {
+			$self->{override} = " stuck on $1";
 		}
 	}
 	if (defined $self->{override}) {

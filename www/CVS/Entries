@@ -1,4 +1,4 @@
-/Makefile/1.845/Wed Dec 27 19:37:10 2017//
+/Makefile/1.847/Thu Jan  4 10:08:15 2018//
 D/ajaxterm////
 D/analog////
 D/ap2-mod_dnssd////
@@ -30,7 +30,6 @@ D/composer////
 D/cronolog////
 D/dansguardian////
 D/darkhttpd////
-D/decss////
 D/dillo////
 D/dokuwiki////
 D/drupal7////
@@ -79,7 +78,6 @@ D/llgal////
 D/logswan////
 D/luakit////
 D/lynx////
-D/man2web////
 D/mhonarc////
 D/midori////
 D/mimetex////

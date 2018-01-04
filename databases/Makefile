@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.347 2017/12/04 08:35:50 rpointel Exp $
+# $OpenBSD: Makefile,v 1.349 2018/01/03 21:35:10 rsadowski Exp $
 
      SUBDIR =
      SUBDIR += apache-couchdb
@@ -15,11 +15,13 @@
      SUBDIR += hs-HDBC
      SUBDIR += hs-HDBC-sqlite3
      SUBDIR += hs-resource-pool
+     SUBDIR += influxdb
      SUBDIR += iodbc
      SUBDIR += jxplorer
      SUBDIR += ksql
      SUBDIR += kyotocabinet
      SUBDIR += lbdb
+     SUBDIR += leveldb
      SUBDIR += libdbi
      SUBDIR += libdbi-drivers
      SUBDIR += libhiredis

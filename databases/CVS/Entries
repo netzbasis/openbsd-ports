@@ -1,4 +1,4 @@
-/Makefile/1.347/Mon Dec  4 08:35:50 2017//
+/Makefile/1.349/Wed Jan  3 21:35:10 2018//
 D/apache-couchdb////
 D/architect////
 D/barman////
@@ -13,11 +13,13 @@ D/gq////
 D/hs-HDBC////
 D/hs-HDBC-sqlite3////
 D/hs-resource-pool////
+D/influxdb////
 D/iodbc////
 D/jxplorer////
 D/ksql////
 D/kyotocabinet////
 D/lbdb////
+D/leveldb////
 D/libdbi////
 D/libdbi-drivers////
 D/libhiredis////
