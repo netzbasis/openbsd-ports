@@ -1,4 +1,4 @@
-/Makefile/1.43/Wed Nov 15 08:49:25 2017//
+/Makefile/1.44/Sat Jan  6 04:44:14 2018//
 D/abyssinica////
 D/adobe-fonts////
 D/amigafonts////
@@ -28,7 +28,9 @@ D/gentium////
 D/go-fonts////
 D/gohufont////
 D/hack-fonts////
+D/hanazono////
 D/hermit-font////
+D/ibm-plex////
 D/inconsolata-font////
 D/intlfonts////
 D/ja-funetfonts////

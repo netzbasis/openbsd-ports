@@ -1,6 +1,5 @@
-/Makefile/1.77/Fri Sep 15 13:44:51 2017//
+/Makefile/1.78/Fri Jan  5 07:15:31 2018//
 D/akonadi////
-D/akonadi-googledata////
 D/aqbanking////
 D/attica////
 D/baikal////
@@ -22,7 +21,6 @@ D/khal////
 D/kmymoney////
 D/ledger////
 D/libalkimia////
-D/libgcal////
 D/libkfbapi////
 D/libkgapi////
 D/librcps////
