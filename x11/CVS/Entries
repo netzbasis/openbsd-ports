@@ -1,4 +1,4 @@
-/Makefile/1.605/Sat Dec  9 14:11:09 2017//
+/Makefile/1.606/Mon Jan  8 19:24:57 2018//
 D/2bwm////
 D/Xaw3d////
 D/XawMu////
@@ -311,6 +311,7 @@ D/wmname////
 D/wmpinboard////
 D/wmtime////
 D/wmtz////
+D/wmutils////
 D/wmweather////
 D/wmx////
 D/worker////

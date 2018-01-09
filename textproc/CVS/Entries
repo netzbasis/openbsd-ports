@@ -1,4 +1,4 @@
-/Makefile/1.556/Sun Dec 31 01:52:32 2017//
+/Makefile/1.557/Mon Jan  8 20:28:02 2018//
 D/TclXML////
 D/antiword////
 D/apertium////
@@ -109,6 +109,7 @@ D/libxmlbird////
 D/libxslt////
 D/link-grammar////
 D/linuxdoc////
+D/loccount////
 D/lowdown////
 D/lq-sp////
 D/lttoolbox////
