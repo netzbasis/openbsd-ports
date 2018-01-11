@@ -1,4 +1,4 @@
-/Makefile/1.1043/Sat Dec 23 21:20:11 2017//
+/Makefile/1.1044/Wed Jan 10 18:01:34 2018//
 D/GeoIP////
 D/adns////
 D/adsuck////
@@ -43,6 +43,7 @@ D/clive////
 D/cnupm////
 D/coccinella////
 D/corebird////
+D/cppzmq////
 D/crawl////
 D/ctrace////
 D/curl////
