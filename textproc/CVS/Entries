@@ -1,4 +1,4 @@
-/Makefile/1.557/Mon Jan  8 20:28:02 2018//
+/Makefile/1.558/Thu Jan 11 09:48:39 2018//
 D/TclXML////
 D/antiword////
 D/apertium////
@@ -179,6 +179,8 @@ D/p5-Lingua-Stem-Snowball-Da////
 D/p5-Lingua-Stem-Snowball-No////
 D/p5-Lingua-Stem-Snowball-Se////
 D/p5-Lingua-Treebank////
+D/p5-List-SomeUtils////
+D/p5-List-SomeUtils-XS////
 D/p5-List-UtilsBy////
 D/p5-Mojolicious-Plugin-TtRenderer////
 D/p5-Number-Format////

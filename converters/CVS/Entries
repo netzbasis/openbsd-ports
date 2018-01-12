@@ -1,4 +1,4 @@
-/Makefile/1.90/Tue Dec 12 00:48:16 2017//
+/Makefile/1.91/Thu Jan 11 14:19:14 2018//
 D/base64////
 D/btoa////
 D/convmv////
@@ -71,6 +71,7 @@ D/rpm2cpio////
 D/ruby-multi_json////
 D/trans////
 D/unoconv////
+D/unsf////
 D/uudeview////
 D/wv////
 D/wv2////
