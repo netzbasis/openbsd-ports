@@ -1,4 +1,4 @@
-/Makefile/1.368/Fri Jan  5 23:50:42 2018//
+/Makefile/1.369/Fri Jan 12 22:32:56 2018//
 D/0ad////
 D/2048-cli////
 D/abuse////
@@ -213,6 +213,7 @@ D/sauerbraten////
 D/scorched3d////
 D/scummvm////
 D/scummvm-tools////
+D/sdl-jstest////
 D/sdlpop////
 D/sdlroids////
 D/sdlzombies////

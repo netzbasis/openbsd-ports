@@ -1,4 +1,4 @@
-# $OpenBSD: network.conf.template,v 1.212 2017/08/22 19:40:59 sthen Exp $
+# $OpenBSD: network.conf.template,v 1.214 2018/01/13 03:00:46 bentley Exp $
 
 #
 # NEVER EDIT THIS FILE DIRECTLY!!!!
@@ -19,7 +19,7 @@ _MASTER_SITE_OPENBSD ?=	${MASTER_SITE_OPENBSD:=${DIST_SUBDIR}/}
 
 # Default FreeBSD backup site
 _MASTER_SITE_FREEBSD?=	\
-	http://distcache.FreeBSD.org/ports-distfiles/
+	https://pkg.FreeBSD.org/ports-distfiles/
 
 # Default NetBSD backup site
 _MASTER_SITE_NETBSD?=	\
@@ -189,7 +189,7 @@ MASTER_SITE_WINDOWMAKER+=	\
 	http://www.windowmaker.org/pub/
 
 MASTER_SITE_FREEBSD_LOCAL+=	\
-	http://distcache.FreeBSD.org/local-distfiles/
+	https://pkg.FreeBSD.org/local-distfiles/
 
 MASTER_SITE_PACKETSTORM+=	\
 	http://dl.packetstormsecurity.net/ \
@@ -202,12 +202,9 @@ MASTER_SITE_APACHE+= \
 	https://www.apache.org/dist/ \
 	https://archive.apache.org/dist/ \
 	https://www.mirrorservice.org/sites/ftp.apache.org/ \
-	http://www.reverse.net/pub/apache/ \
-	http://www.meisei-u.ac.jp/mirror/apache/dist/ \
-	http://apache.belnet.be/ \
-	ftp://ftp.uni-erlangen.de/pub/mirrors/apache/ \
-	http://apache.mirror.aussiehq.net.au/ \
-	http://apache.sunsite.ualberta.ca/
+	http://mirror.reverse.net/pub/apache/ \
+	http://ftp.meisei-u.ac.jp/mirror/apache/dist/ \
+	http://apache.belnet.be/
 
 MASTER_SITE_PYPI +=	\
 	https://pypi.io/packages/source/
