@@ -1,4 +1,4 @@
-/Makefile/1.349/Wed Jan  3 21:35:10 2018//
+/Makefile/1.350/Sun Jan 14 04:27:13 2018//
 D/apache-couchdb////
 D/architect////
 D/barman////
@@ -219,6 +219,8 @@ D/sqsh////
 D/strigi////
 D/tdb////
 D/tdbc////
+D/tdbc-mysql////
+D/tdbc-postgres////
 D/tdbc-sqlite3////
 D/tinycdb////
 D/tokyocabinet////
