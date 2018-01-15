@@ -1,4 +1,4 @@
-/Makefile/1.449/Fri Jan 12 22:52:40 2018//
+/Makefile/1.450/Sun Jan 14 21:49:30 2018//
 D/DevIL////
 D/GraphicsMagick////
 D/ImageMagick////
@@ -214,6 +214,7 @@ D/pdfmod////
 D/pdfsandwich////
 D/pecl-imagick////
 D/pho////
+D/piglit////
 D/pinta////
 D/png////
 D/png2ico////
