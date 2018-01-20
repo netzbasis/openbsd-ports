@@ -1,4 +1,4 @@
-/Makefile/1.29/Tue May 19 08:49:30 2015//
+/Makefile/1.31/Fri Jan 19 22:18:00 2018//
 D/ansiweather////
 D/celestia////
 D/dgpsip////
@@ -7,6 +7,7 @@ D/jday////
 D/libnova////
 D/luna////
 D/phoon////
+D/py-astral////
 D/py-metar////
 D/sattrack////
 D/stellarium////

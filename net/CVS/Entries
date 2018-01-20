@@ -1,4 +1,4 @@
-/Makefile/1.1045/Tue Jan 16 01:42:40 2018//
+/Makefile/1.1046/Fri Jan 19 22:26:42 2018//
 D/GeoIP////
 D/adns////
 D/adsuck////
@@ -527,6 +527,7 @@ D/py-twitter////
 D/py-websocket-client////
 D/py-xmpp////
 D/py-xmpppy////
+D/py-zeroconf////
 D/py-zmq////
 D/py-zsi////
 D/qsyncthingtray////
