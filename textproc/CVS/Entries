@@ -1,4 +1,4 @@
-/Makefile/1.559/Tue Jan 16 01:42:40 2018//
+/Makefile/1.560/Sat Jan 20 15:30:58 2018//
 D/TclXML////
 D/antiword////
 D/apertium////
@@ -234,6 +234,7 @@ D/p5-Text-Aligner////
 D/p5-Text-Aspell////
 D/p5-Text-Autoformat////
 D/p5-Text-CSV////
+D/p5-Text-CSV-Hashify////
 D/p5-Text-CSV_XS////
 D/p5-Text-Diff////
 D/p5-Text-Diff-HTML////
