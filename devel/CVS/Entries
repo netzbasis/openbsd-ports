@@ -1,4 +1,4 @@
-/Makefile/1.1690/Fri Jan 19 22:15:50 2018//
+/Makefile/1.1692/Mon Jan 22 21:52:55 2018//
 D/ElectricFence////
 D/ORBit2////
 D/acpica////
@@ -560,6 +560,7 @@ D/p5-Class-WhiteHole////
 D/p5-Class-XPath////
 D/p5-Class-XSAccessor////
 D/p5-Clone////
+D/p5-Clone-PP////
 D/p5-Config-Any////
 D/p5-Config-Auto////
 D/p5-Config-AutoConf////
@@ -592,6 +593,7 @@ D/p5-Data-ICal-TimeZone////
 D/p5-Data-Lazy////
 D/p5-Data-Munge////
 D/p5-Data-OptList////
+D/p5-Data-Printer////
 D/p5-Data-Random////
 D/p5-Data-SExpression////
 D/p5-Data-ShowTable////
