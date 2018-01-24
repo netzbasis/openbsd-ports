@@ -1,7 +1,6 @@
 /gcc3-patch-glib_tests_Makefile_in/1.6/Thu Oct 26 08:48:59 2017//
 /patch-gio_glib-compile-schemas_c/1.10/Fri Nov  3 13:16:06 2017//
 /patch-gio_gunixmount_c/1.14/Fri Oct 28 13:40:04 2016//
-/patch-gio_kqueue_gkqueuefilemonitor_c/1.2/Mon May  8 16:57:08 2017//
-/patch-gio_kqueue_kqueue-helper_c/1.4/Tue Jan  9 12:31:54 2018//
-/patch-gio_tests_file_c/1.7/Thu Sep 24 10:23:42 2015//
+/patch-gio_tests_file_c/1.8/Tue Jan 23 10:43:42 2018//
+/patch-kqueue_fix/1.1/Tue Jan 23 10:43:42 2018//
 D

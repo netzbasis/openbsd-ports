@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.115 2018/01/11 19:27:10 rpe Exp $
+# $OpenBSD: Makefile,v 1.117 2018/01/23 18:32:39 jasper Exp $
 
 # optional dependencies
 # https://github.com/saltstack/salt/blob/develop/doc/conf.py#L54
 # libvirt-python
 # py-GitPython
+# py-croniter
 # py-django
 # py-libcloud (cloud-requirements.txt)
 # py-mako
@@ -17,7 +18,7 @@ COMMENT =		remote execution and configuration management system
 
 MODPY_EGG_VERSION =	2017.7.2
 DISTNAME =		salt-${MODPY_EGG_VERSION}
-REVISION =		7
+REVISION =		8
 
 CATEGORIES =		sysutils net devel
 
@@ -48,12 +49,6 @@ RUN_DEPENDS =		devel/py-futures \
 # requirements/zeromq.txt
 RUN_DEPENDS +=		net/py-zmq \
 			security/py-crypto
-
-# requirements/raet.txt (see pkg/DESCR)
-#RUN_DEPENDS +=		devel/py-ioflo \
-#			net/py-raet
-#			security/py-libnacl
-
 
 # salt/output/progress.py
 RUN_DEPENDS +=		devel/py-progressbar
