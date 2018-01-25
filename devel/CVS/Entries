@@ -1,4 +1,4 @@
-/Makefile/1.1692/Mon Jan 22 21:52:55 2018//
+/Makefile/1.1693/Wed Jan 24 18:09:17 2018//
 D/ElectricFence////
 D/ORBit2////
 D/acpica////
@@ -1323,6 +1323,7 @@ D/py-prompt_toolkit////
 D/py-protocols////
 D/py-ptyprocess////
 D/py-py////
+D/py-pyinotify////
 D/py-pyprof2calltree////
 D/py-pyro////
 D/py-python2-pythondialog////
