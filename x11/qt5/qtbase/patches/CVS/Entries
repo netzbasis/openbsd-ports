@@ -8,14 +8,14 @@
 /patch-qmake_generators_unix_unixmake_cpp/1.2/Mon Jul 17 08:34:37 2017//
 /patch-qmake_generators_unix_unixmake_h/1.2/Mon Jul 17 08:34:37 2017//
 /patch-src_3rdparty_forkfd_forkfd_c/1.2/Tue Oct 24 10:12:19 2017//
-/patch-src_corelib_global_global_pri/1.2/Mon Jul 17 08:34:37 2017//
+/patch-src_corelib_global_global_pri/1.3/Thu Jan 25 15:02:25 2018//
 /patch-src_corelib_global_qcompilerdetection_h/1.4/Wed Dec 27 16:27:06 2017//
 /patch-src_corelib_global_qversiontagging_cpp/1.2/Mon Jul 17 08:34:37 2017//
 /patch-src_corelib_kernel_qfunctions_fake_env_p_h/1.1/Mon Jul 17 08:34:37 2017//
 /patch-src_corelib_tools_qbytearray_cpp/1.2/Mon Jul 17 08:34:37 2017//
 /patch-src_corelib_tools_qbytearray_h/1.2/Mon Jul 17 08:34:37 2017//
 /patch-src_gui_image_qxbmhandler_cpp/1.2/Mon Jul 17 08:34:37 2017//
-/patch-src_network_kernel_qdnslookup_unix_cpp/1.2/Mon Jul 17 08:34:37 2017//
+/patch-src_network_kernel_qdnslookup_unix_cpp/1.3/Thu Jan 25 15:02:25 2018//
 /patch-src_network_socket_qnativesocketengine_unix_cpp/1.2/Mon Jul 17 08:34:37 2017//
 /patch-src_network_ssl_qsslcontext_openssl_cpp/1.3/Mon Jul 17 08:34:37 2017//
 /patch-src_network_ssl_qsslsocket_cpp/1.4/Wed Dec 27 16:27:06 2017//
