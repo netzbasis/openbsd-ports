@@ -1,4 +1,4 @@
-# $OpenBSD: mozilla.port.mk,v 1.108 2017/09/28 16:32:42 landry Exp $
+# $OpenBSD: mozilla.port.mk,v 1.111 2018/01/27 10:22:14 landry Exp $
 
 # ppc: firefox-esr/thunderbird xpcshell segfaults during startup compilation
 # ppc: seamonkey/firefox - failure to link for atomic ops on 64 bits
@@ -21,8 +21,6 @@ MAINTAINER ?=	Landry Breuil <landry@openbsd.org>
 MOZILLA_DIST ?=	${MOZILLA_PROJECT}
 MOZILLA_DIST_VERSION ?=	${MOZILLA_VERSION:C/rc.//}
 
-HOMEPAGE ?=	https://www.mozilla.org/projects/${MOZILLA_DIST}
-
 .if ${MOZILLA_VERSION:M*rc?}
 MASTER_SITES ?=	https://ftp.mozilla.org/pub/mozilla.org/${MOZILLA_DIST}/candidates/${MOZILLA_DIST_VERSION}-candidates/build${MOZILLA_VERSION:C/.*(.)/\1/}/source/
 # first is the CDN and only has last releases
@@ -30,6 +28,18 @@ MASTER_SITES ?=	https://ftp.mozilla.org/pub/mozilla.org/${MOZILLA_DIST}/candidat
 .else
 MASTER_SITES ?=	https://releases.mozilla.org/pub/mozilla.org/${MOZILLA_DIST}/releases/${MOZILLA_DIST_VERSION}/source/ \
 		https://ftp.mozilla.org/pub/mozilla.org/${MOZILLA_DIST}/releases/${MOZILLA_DIST_VERSION}/source/
+.endif
+
+.if defined(MOZILLA_COMMIT) && defined(MOZILLA_BRANCH)
+DISTNAME =	${MOZILLA_DIST}-${MOZILLA_DIST_VERSION}
+DISTFILES =	${MOZILLA_DIST}-${MOZILLA_DIST_VERSION}${EXTRACT_SUFX}{${MOZILLA_COMMIT}${EXTRACT_SUFX}}
+WRKDIST =	${WRKDIR}/mozilla-${MOZILLA_BRANCH}-${MOZILLA_COMMIT}
+MASTER_SITES =	https://hg.mozilla.org/releases/mozilla-${MOZILLA_BRANCH}/archive/
+EXTRACT_SUFX =	.tar.bz2
+MODMOZILLA_pre-configure+= \
+	cp ${WRKSRC}/${CONFIGURE_SCRIPT}.in ${WRKSRC}/${CONFIGURE_SCRIPT}; \
+	cp ${WRKSRC}/js/src/${CONFIGURE_SCRIPT}.in ${WRKSRC}/js/src/${CONFIGURE_SCRIPT}; \
+	chmod +x ${WRKSRC}/${CONFIGURE_SCRIPT}
 .endif
 
 DISTNAME ?=	${MOZILLA_DIST}-${MOZILLA_DIST_VERSION}.source
@@ -129,9 +139,12 @@ CONFIGURE_ARGS +=	--enable-debug-symbols=-g \
 INSTALL_STRIP =
 .endif
 
-.if defined(MOZILLA_USE_GTK3)
+.if !defined(MOZILLA_USE_BUNDLED_CAIRO)
 # https://bugzilla.mozilla.org/show_bug.cgi?id=983843
 CONFIGURE_ARGS +=	--with-system-cairo
+.endif
+
+.if defined(MOZILLA_USE_GTK3)
 CONFIGURE_ARGS +=	--enable-default-toolkit=cairo-gtk3
 MODMOZ_LIB_DEPENDS +=	x11/gtk+3
 MODMOZ_WANTLIB +=	cairo-gobject gdk-3 gtk-3
