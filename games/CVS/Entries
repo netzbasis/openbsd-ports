@@ -1,4 +1,4 @@
-/Makefile/1.370/Wed Jan 17 20:19:28 2018//
+/Makefile/1.371/Sun Jan 28 16:08:14 2018//
 D/0ad////
 D/2048-cli////
 D/abuse////
@@ -175,6 +175,7 @@ D/oilwar////
 D/omega////
 D/oolite////
 D/openarena////
+D/openjk////
 D/openmw////
 D/openrct2////
 D/opensonic////
