@@ -1,4 +1,4 @@
-/Makefile/1.1046/Fri Jan 19 22:26:42 2018//
+/Makefile/1.1047/Tue Jan 30 09:21:42 2018//
 D/GeoIP////
 D/adns////
 D/adsuck////
@@ -202,6 +202,7 @@ D/libvncserver////
 D/livemedia////
 D/lldpd////
 D/loudmouth////
+D/lua-mmdb////
 D/lua-psl////
 D/luasocket////
 D/maclookup////
