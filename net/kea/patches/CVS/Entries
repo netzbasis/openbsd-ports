@@ -1,5 +1,10 @@
 /patch-src_bin_keactrl_kea-ca_conf_pre/1.1/Sun Aug 27 11:14:51 2017//
 /patch-src_bin_keactrl_kea_conf_pre/1.1/Sun Aug 27 11:14:51 2017//
 /patch-src_bin_keactrl_keactrl_conf_in/1.1/Sun Aug 27 11:14:51 2017//
+/patch-src_lib_asiolink_io_service_h/1.1/Wed Jan 31 22:29:09 2018//
+/patch-src_lib_asiolink_tcp_acceptor_h/1.1/Wed Jan 31 22:29:09 2018//
+/patch-src_lib_asiolink_tcp_socket_h/1.1/Wed Jan 31 22:29:09 2018//
+/patch-src_lib_asiolink_udp_socket_h/1.1/Wed Jan 31 22:29:09 2018//
+/patch-src_lib_asiolink_unix_domain_socket_cc/1.1/Wed Jan 31 22:29:09 2018//
 /patch-src_lib_util_watch_socket_cc/1.1/Mon May 22 14:02:55 2017//
 D
