@@ -1,4 +1,4 @@
-/Makefile/1.1695/Tue Jan 30 09:09:08 2018//
+/Makefile/1.1696/Mon Feb  5 14:38:25 2018//
 D/ElectricFence////
 D/ORBit2////
 D/acpica////
@@ -782,6 +782,7 @@ D/p5-Internals////
 D/p5-Iterator////
 D/p5-Iterator-Util////
 D/p5-Lchown////
+D/p5-List-Compare////
 D/p5-List-Cycle////
 D/p5-List-MoreUtils////
 D/p5-List-MoreUtils-XS////
