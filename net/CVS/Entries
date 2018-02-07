@@ -1,4 +1,4 @@
-/Makefile/1.1047/Tue Jan 30 09:21:42 2018//
+/Makefile/1.1048/Tue Feb  6 22:06:24 2018//
 D/GeoIP////
 D/adns////
 D/adsuck////
@@ -352,7 +352,6 @@ D/p5-Net-IRC////
 D/p5-Net-Ident////
 D/p5-Net-Inspect////
 D/p5-Net-Jabber////
-D/p5-Net-LDNS////
 D/p5-Net-LibIDN////
 D/p5-Net-MySQL////
 D/p5-Net-NTP////

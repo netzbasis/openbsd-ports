@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2017/12/29 07:23:08 florian Exp $
+# $OpenBSD: Makefile,v 1.1 2018/02/06 21:55:39 sthen Exp $
 
 COMMENT =	module to interface the DNS resolver using the ldns library
 
 MODULES =	cpan
-DISTNAME =	Net-LDNS-0.75
+CPAN_AUTHOR =	ZNMSTR
+DISTNAME =	Zonemaster-LDNS-1.0.2
 CATEGORIES =	net
-REVISION =	1
 
 MAINTAINER =	Stuart Henderson <sthen@openbsd.org>
 
