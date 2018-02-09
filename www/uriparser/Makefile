@@ -1,14 +1,15 @@
-# $OpenBSD: Makefile,v 1.5 2015/10/31 23:02:07 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2018/02/09 00:18:20 ajacoutot Exp $
 
 COMMENT =		URI parsing library
 
-DISTNAME =		uriparser-0.8.4
+DISTNAME =		uriparser-0.8.5
+REVISION =		0
 
-SHARED_LIBS +=  uriparser                 0.1 # 1.19
+SHARED_LIBS +=  uriparser                 1.0 # 1.21
 
 CATEGORIES =		www
 
-HOMEPAGE =		http://uriparser.sourceforge.net/
+HOMEPAGE =		https://uriparser.github.io/
 
 # BSD 3-clause
 PERMIT_PACKAGE_CDROM =	Yes
@@ -22,7 +23,7 @@ EXTRACT_SUFX =		.tar.bz2
 BUILD_DEPENDS =		devel/cpptest
 TEST_DEPENDS =		devel/cpptest
 
-
+SEPARATE_BUILD =	Yes
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS =	--disable-doc
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include"

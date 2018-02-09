@@ -1,4 +1,4 @@
-/Makefile/1.1048/Tue Feb  6 22:06:24 2018//
+/Makefile/1.1049/Thu Feb  8 06:34:12 2018//
 D/GeoIP////
 D/adns////
 D/adsuck////
@@ -53,6 +53,7 @@ D/daq////
 D/darkstat////
 D/dclib////
 D/ddclient////
+D/deluge////
 D/dhcdrop////
 D/dhcpcd////
 D/dhcpdump////
@@ -197,6 +198,7 @@ D/libsmi////
 D/libst////
 D/libstrophe////
 D/libtorrent////
+D/libtorrent-rasterbar////
 D/libupnp////
 D/libvncserver////
 D/livemedia////
