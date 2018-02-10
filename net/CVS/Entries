@@ -1,4 +1,4 @@
-/Makefile/1.1049/Thu Feb  8 06:34:12 2018//
+/Makefile/1.1050/Fri Feb  9 09:52:18 2018//
 D/GeoIP////
 D/adns////
 D/adsuck////
@@ -54,6 +54,7 @@ D/darkstat////
 D/dclib////
 D/ddclient////
 D/deluge////
+D/deluge-ltconfig////
 D/dhcdrop////
 D/dhcpcd////
 D/dhcpdump////
