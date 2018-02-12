@@ -1,10 +1,5 @@
-/patch-configure_ac/1.1.1.1/Tue Feb 14 09:37:16 2017//
-/patch-src_unix_internal_h/1.1.1.1/Tue Feb 14 09:37:16 2017//
-/patch-src_unix_openbsd_c/1.2/Wed Feb 22 14:28:30 2017//
-/patch-src_unix_tcp_c/1.1/Wed Feb 22 14:28:30 2017//
-/patch-src_unix_udp_c/1.1/Wed Feb 22 14:28:30 2017//
-/patch-test_test-fs_c/1.1.1.1/Tue Feb 14 09:37:16 2017//
-/patch-test_test-poll_c/1.1.1.1/Tue Feb 14 09:37:16 2017//
-/patch-test_test-udp-ipv6_c/1.1/Wed Feb 22 14:28:30 2017//
-/patch-test_test-udp-multicast-join6_c/1.1/Wed Feb 22 14:28:30 2017//
+/patch-src_unix_tcp_c/1.2/Sun Feb 11 18:31:35 2018//
+/patch-test_test-fs_c/1.2/Sun Feb 11 18:31:35 2018//
+/patch-test_test-udp-ipv6_c/1.2/Sun Feb 11 18:31:35 2018//
+/patch-test_test-udp-multicast-join6_c/1.2/Sun Feb 11 18:31:35 2018//
 D

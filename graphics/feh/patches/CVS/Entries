@@ -1,10 +1,9 @@
-/patch-Makefile/1.6/Fri Jun  9 10:20:22 2017//
-/patch-config_mk/1.8/Tue Aug 30 14:44:37 2016//
+/patch-Makefile/1.7/Sun Feb 11 19:23:49 2018//
+/patch-config_mk/1.9/Sun Feb 11 19:23:49 2018//
 /patch-examples_themes/1.1/Tue Oct 11 07:49:07 2011//
-/patch-man_feh_pre/1.40/Fri Sep  8 08:19:20 2017//
-/patch-src_Makefile/1.4/Fri Sep  8 08:19:20 2017//
-/patch-src_events_c/1.10/Tue Aug 30 14:44:37 2016//
+/patch-man_feh_pre/1.41/Sun Feb 11 19:23:49 2018//
+/patch-src_events_c/1.11/Sun Feb 11 19:23:49 2018//
 /patch-src_getopt_c/1.2/Fri Sep  9 09:51:43 2011//
-/patch-src_keyevents_c/1.15/Fri Sep  8 08:19:20 2017//
-/patch-src_options_c/1.13/Fri Sep  8 08:19:20 2017//
+/patch-src_keyevents_c/1.16/Sun Feb 11 19:23:49 2018//
+/patch-src_options_c/1.14/Sun Feb 11 19:23:49 2018//
 D

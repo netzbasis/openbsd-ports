@@ -1,4 +1,4 @@
-# $OpenBSD: OpenBSD,v 1.152 2017/12/26 06:13:10 ians Exp $
+# $OpenBSD: OpenBSD,v 1.154 2018/02/11 21:18:41 bket Exp $
 #
 # This is a list of OpenBSD developers and related people.
 #
@@ -114,6 +114,7 @@
 49.313446	-123.063975	"mjc"		# Michael Coulter
 49.48		8.42		"naddy"		# Christian Weisgerber
 49.5557300	22.2056000	"awolk"		# Adam Wolk
+49.866667	8.65		"kn"		# Klemens Nanni
 50.0412		21.9991		"fcambus"	# Frederic Cambus
 50.0616		19.9373		"akfaew"	# Michal Mazurek
 50.342651	7.584064	"pascal"	# Pascal Stumpf
@@ -128,6 +129,7 @@
 51.395466	-0.759525	"nigel"		# Nigel Taylor
 51.46		-0.13		"fgsch"		# Federico G. Schwindt
 51.488		-0.106		"tom"		# Tom Cosgrove
+51.5853		5.0564		"bket"		# Björn Ketelaars
 51.8365		5.00271		"jasper"	# Jasper Lievisse Adriaanse
 51.6		-114.1		"deraadt"	# Theo de Raadt
 51.67938	5.1194		"weerd"		# Paul de Weerd
