@@ -2,12 +2,15 @@
 /clangpatch-src_utils_queue_buckets_h/1.1/Fri May 19 12:26:43 2017//
 /patch-src_data_memory_chunk_cc/1.1/Fri May 19 22:25:53 2017//
 /patch-src_net_socket_set_h/1.2/Fri May 19 22:25:53 2017//
+/patch-src_protocol_extensions_cc/1.1/Mon Feb 12 17:31:35 2018//
+/patch-src_protocol_handshake_cc/1.5/Mon Feb 12 17:31:35 2018//
 /patch-src_protocol_request_list_cc/1.1/Fri May 19 22:25:53 2017//
 /patch-src_torrent_common_h/1.2/Fri May 19 22:25:53 2017//
 /patch-src_torrent_data_block_failed_h/1.2/Fri May 19 22:25:53 2017//
 /patch-src_torrent_data_file_cc/1.1/Fri May 19 22:25:53 2017//
 /patch-src_torrent_data_transfer_list_cc/1.2/Fri May 19 22:25:53 2017//
 /patch-src_torrent_download_cc/1.1/Fri May 19 22:25:53 2017//
+/patch-src_torrent_object_stream_cc/1.1/Mon Feb 12 17:31:35 2018//
 /patch-src_torrent_peer_connection_list_cc/1.1/Fri May 19 22:25:53 2017//
 /patch-src_torrent_poll_kqueue_cc/1.7/Tue Mar 24 13:35:09 2015//
 /patch-src_torrent_utils_extents_h/1.2/Fri May 19 22:25:53 2017//
