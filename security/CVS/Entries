@@ -1,4 +1,4 @@
-/Makefile/1.484/Sat Feb 10 09:32:58 2018//
+/Makefile/1.486/Thu Feb 15 18:37:47 2018//
 D/ADMsnmp////
 D/aescrypt////
 D/aide////
@@ -309,6 +309,8 @@ D/steghide////
 D/strobe////
 D/stunnel////
 D/sudo////
+D/suricata////
+D/suricata-update////
 D/swatch////
 D/tclgpg////
 D/tcltls////
