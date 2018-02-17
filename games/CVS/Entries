@@ -1,4 +1,4 @@
-/Makefile/1.371/Sun Jan 28 16:08:14 2018//
+/Makefile/1.372/Fri Feb 16 11:42:24 2018//
 D/0ad////
 D/2048-cli////
 D/abuse////
@@ -100,6 +100,7 @@ D/freeserf////
 D/fretsonfire////
 D/frotz////
 D/frozen-bubble////
+D/fs2open////
 D/galois////
 D/gamine////
 D/garden////

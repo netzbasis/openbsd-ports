@@ -1,4 +1,4 @@
-/Makefile/1.486/Thu Feb 15 18:37:47 2018//
+/Makefile/1.487/Fri Feb 16 15:29:35 2018//
 D/ADMsnmp////
 D/aescrypt////
 D/aide////
@@ -236,6 +236,7 @@ D/ppgen////
 D/pwgen////
 D/pwsafe////
 D/py-M2Crypto////
+D/py-PyNaCl////
 D/py-Rijndael////
 D/py-artifacts////
 D/py-asn1crypto////
