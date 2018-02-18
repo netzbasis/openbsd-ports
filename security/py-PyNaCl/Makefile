@@ -1,16 +1,17 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/02/16 15:28:42 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2018/02/17 19:21:40 sthen Exp $
 
 COMMENT =		Python binding to the NaCl library
 
 MODPY_EGG_VERSION =	1.2.1
 DISTNAME =		PyNaCl-${MODPY_EGG_VERSION}
+REVISION =		1
 PKGNAME =		py-${DISTNAME}
 
 CATEGORIES =		security
 
 HOMEPAGE =		https://github.com/pyca/pynacl/
 
-MAINTAINER =		Jasper Lievisse Adriaanse <jasper@opensd.org>
+MAINTAINER =		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 # Apache 2.0
 PERMIT_PACKAGE_CDROM =	Yes
@@ -24,6 +25,9 @@ FLAVORS =		python3
 FLAVOR ?=
 
 WANTLIB += ${MODPY_WANTLIB} pthread sodium
+
+BUILD_DEPENDS =		${RUN_DEPENDS}
+RUN_DEPENDS =		devel/py-cffi${MODPY_FLAVOR}
 
 LIB_DEPENDS =		security/libsodium
 TEST_DEPENDS =		devel/py-hypothesis${MODPY_FLAVOR}

@@ -1,4 +1,4 @@
-/Makefile/1.1050/Fri Feb  9 09:52:18 2018//
+/Makefile/1.1052/Sat Feb 17 14:10:44 2018//
 D/GeoIP////
 D/adns////
 D/adsuck////
@@ -241,6 +241,7 @@ D/mygpoclient////
 D/nagios////
 D/nam////
 D/nanomsg////
+D/napalm////
 D/natpmpd////
 D/nbtscan////
 D/ncftp////
@@ -510,6 +511,7 @@ D/py-msgpack////
 D/py-nbxmpp////
 D/py-netaddr////
 D/py-netifaces////
+D/py-netmiko////
 D/py-nmap////
 D/py-oauth2////
 D/py-paho-mqtt////
