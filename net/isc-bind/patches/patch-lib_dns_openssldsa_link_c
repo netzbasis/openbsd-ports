@@ -1,0 +1,21 @@
+$OpenBSD: patch-lib_dns_openssldsa_link_c,v 1.4 2018/02/18 14:09:40 sthen Exp $
+
+Index: lib/dns/openssldsa_link.c
+--- lib/dns/openssldsa_link.c.orig
++++ lib/dns/openssldsa_link.c
+@@ -49,6 +49,7 @@
+ static isc_result_t openssldsa_todns(const dst_key_t *key, isc_buffer_t *data);
+ 
+ #if OPENSSL_VERSION_NUMBER < 0x10100000L || defined(LIBRESSL_VERSION_NUMBER)
++#if defined(LIBRESSL_VERSION_NUMBER) && LIBRESSL_VERSION_NUMBER < 0x2070000fL
+ static void
+ DSA_get0_pqg(const DSA *d, const BIGNUM **p, const BIGNUM **q,
+ 	     const BIGNUM **g)
+@@ -82,6 +83,7 @@ DSA_get0_key(const DSA *d, const BIGNUM **pub_key, con
+ 	if (priv_key != NULL)
+ 		*priv_key = d->priv_key;
+ }
++#endif
+ 
+ static int
+ DSA_set0_key(DSA *d, BIGNUM *pub_key, BIGNUM *priv_key) {

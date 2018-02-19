@@ -1,12 +1,14 @@
-$OpenBSD: patch-DSA_xs,v 1.4 2017/03/28 11:02:47 benoit Exp $
---- DSA.xs.orig	Fri Jan 13 09:14:53 2017
-+++ DSA.xs	Tue Mar 28 12:56:46 2017
-@@ -19,7 +19,7 @@ extern "C" {
- }
- #endif
+$OpenBSD: patch-DSA_xs,v 1.6 2018/02/18 20:24:16 sthen Exp $
+Index: DSA.xs
+--- DSA.xs.orig
++++ DSA.xs
+@@ -86,7 +86,9 @@ static int DSA_set0_key(DSA *d, BIGNUM *pub_key, BIGNU
  
--#if OPENSSL_VERSION_NUMBER < 0x10100000L
+     return 1;
+ }
++#endif
+ 
 +#if OPENSSL_VERSION_NUMBER < 0x10100000L || defined(LIBRESSL_VERSION_NUMBER)
- static void DSA_get0_pqg(const DSA *d,
-                   const BIGNUM **p, const BIGNUM **q, const BIGNUM **g)
+ static void DSA_SIG_get0(const DSA_SIG *sig, const BIGNUM **pr,
+      const BIGNUM **ps)
  {

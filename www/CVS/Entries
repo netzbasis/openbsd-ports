@@ -1,4 +1,4 @@
-/Makefile/1.849/Fri Jan 19 14:40:46 2018//
+/Makefile/1.851/Sun Feb 18 21:17:37 2018//
 D/ajaxterm////
 D/analog////
 D/ap2-mod_dnssd////
@@ -90,7 +90,6 @@ D/mozilla-firefox////
 D/mozilla-sync////
 D/mozplugger////
 D/netsurf////
-D/newsbeuter////
 D/newsboat////
 D/nextcloud////
 D/nghttp2////
@@ -423,6 +422,7 @@ D/py-werkzeug////
 D/py-wsgiproxy////
 D/py-wtforms////
 D/py-wtools////
+D/py-yarl////
 D/qutebrowser////
 D/racktables////
 D/ratproxy////

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.849 2018/01/19 14:40:46 jca Exp $
+# $OpenBSD: Makefile,v 1.851 2018/02/18 21:17:37 jung Exp $
 
      SUBDIR =
      SUBDIR += ajaxterm
@@ -99,7 +99,6 @@
      SUBDIR += mozilla-firefox
      SUBDIR += mozplugger
      SUBDIR += netsurf
-     SUBDIR += newsbeuter
      SUBDIR += newsboat
      SUBDIR += nextcloud
      SUBDIR += nghttp2
@@ -463,6 +462,7 @@
      SUBDIR += py-wtforms,python3
      SUBDIR += py-wtools
      SUBDIR += py-wtools,python3
+     SUBDIR += py-yarl
      SUBDIR += qutebrowser
      SUBDIR += racktables
      SUBDIR += ratproxy

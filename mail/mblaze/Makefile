@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2017/09/16 03:43:32 sunil Exp $
+# $OpenBSD: Makefile,v 1.3 2018/02/19 05:25:09 bentley Exp $
 
 COMMENT =	set of Maildir utilities
 
-VERSION =	0.2
+VERSION =	0.3.2
 DISTNAME =	mblaze-${VERSION}
 GH_ACCOUNT =	chneukirchen
 GH_PROJECT =	mblaze
@@ -19,8 +19,9 @@ LIB_DEPENDS =	converters/libiconv
 
 USE_GMAKE =	Yes
 MAKE_FILE =	GNUmakefile
-MAKE_FLAGS =	PORTS_CFLAGS="${CFLAGS}" \
-		LOCALBASE="${LOCALBASE}"
+MAKE_FLAGS =	LOCALBASE="${LOCALBASE}" \
+		CFLAGS="${CFLAGS} -I${LOCALBASE}/include -pthread" \
+		LDLIBS="-L${LOCALBASE}/lib -liconv -pthread"
 FAKE_FLAGS =	PREFIX="${PREFIX}" \
 		MANDIR="${PREFIX}/man"
 
