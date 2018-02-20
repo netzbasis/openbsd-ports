@@ -1,4 +1,4 @@
-/Makefile/1.1052/Sat Feb 17 14:10:44 2018//
+/Makefile/1.1054/Mon Feb 19 17:18:33 2018//
 D/GeoIP////
 D/adns////
 D/adsuck////
@@ -169,7 +169,7 @@ D/kismet////
 D/kissd////
 D/knot////
 D/konversation////
-D/ktorrent-kde4////
+D/ktorrent////
 D/ladvd////
 D/ldns////
 D/lftp////
