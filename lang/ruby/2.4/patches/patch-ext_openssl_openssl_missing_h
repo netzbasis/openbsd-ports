@@ -1,8 +1,17 @@
-$OpenBSD: patch-ext_openssl_openssl_missing_h,v 1.1 2018/02/18 18:01:02 sthen Exp $
+$OpenBSD: patch-ext_openssl_openssl_missing_h,v 1.3 2018/02/22 21:35:11 sthen Exp $
 
 Index: ext/openssl/openssl_missing.h
 --- ext/openssl/openssl_missing.h.orig
 +++ ext/openssl/openssl_missing.h
+@@ -116,7 +116,7 @@ void ossl_HMAC_CTX_free(HMAC_CTX *);
+ 	CRYPTO_get_ex_data(&(x)->ex_data, (idx))
+ #endif
+ 
+-#if !defined(HAVE_X509_STORE_SET_EX_DATA)
++#if !defined(HAVE_X509_STORE_SET_EX_DATA) || defined(LIBRESSL_VERSION_NUMBER)
+ #  define X509_STORE_set_ex_data(x, idx, data) \
+ 	CRYPTO_set_ex_data(&(x)->ex_data, (idx), (data))
+ #  define X509_STORE_get_ex_new_index(l, p, newf, dupf, freef) \
 @@ -192,6 +192,7 @@ void ossl_X509_REQ_get0_signature(const X509_REQ *, co
  #endif
  
@@ -11,16 +20,11 @@ Index: ext/openssl/openssl_missing.h
  #define IMPL_PKEY_GETTER(_type, _name) \
  static inline _type *EVP_PKEY_get0_##_type(EVP_PKEY *pkey) { \
  	return pkey->pkey._name; }
-@@ -243,7 +244,12 @@ IMPL_PKEY_GETTER(EC_KEY, ec)
+@@ -243,6 +244,7 @@ IMPL_PKEY_GETTER(EC_KEY, ec)
  #undef IMPL_PKEY_GETTER
  #undef IMPL_KEY_ACCESSOR2
  #undef IMPL_KEY_ACCESSOR3
 +#endif
  #endif /* HAVE_OPAQUE_OPENSSL */
-+
-+#if defined(LIBRESSL_VERSION_NUMBER)
-+static inline ENGINE *DH_get0_engine(DH *dh) { return dh->engine; }
-+#endif
  
  #if defined(HAVE_AUTHENTICATED_ENCRYPTION) && !defined(EVP_CTRL_AEAD_GET_TAG)
- #  define EVP_CTRL_AEAD_GET_TAG EVP_CTRL_GCM_GET_TAG
