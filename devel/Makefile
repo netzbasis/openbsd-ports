@@ -1,4 +1,4 @@
-#${MODPY_COMMENT} $OpenBSD: Makefile,v 1.1700 2018/02/17 09:38:38 jasper Exp $
+#${MODPY_COMMENT} $OpenBSD: Makefile,v 1.1703 2018/02/23 22:00:00 sthen Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -49,9 +49,9 @@
      SUBDIR += bzr-svn
      SUBDIR += cabal-install
      SUBDIR += capstone
+     SUBDIR += cargo-generate-vendor
      SUBDIR += catalyst
      SUBDIR += catalyst-tutorial
-     SUBDIR += cargo-generate-vendor
      SUBDIR += catch2
      SUBDIR += cbmc
      SUBDIR += ccache
@@ -62,7 +62,6 @@
      SUBDIR += check
      SUBDIR += chmlib
      SUBDIR += cil
-     SUBDIR += cln
      SUBDIR += cln
      SUBDIR += cmake
      SUBDIR += cmocka
@@ -109,9 +108,10 @@
      SUBDIR += desktop-file-utils
      SUBDIR += dex2jar
      SUBDIR += dfu-programmer
-     SUBDIR += dlib
+     SUBDIR += diffutiltcl
      SUBDIR += dissy
      SUBDIR += distcc
+     SUBDIR += dlib
      SUBDIR += doc++
      SUBDIR += dotconf
      SUBDIR += doxygen
@@ -162,8 +162,8 @@
      SUBDIR += gmp
      SUBDIR += go-check-v1
      SUBDIR += go-goptlib
-     SUBDIR += go-tools
      SUBDIR += go-sys
+     SUBDIR += go-tools
      SUBDIR += gobject-introspection
      SUBDIR += goffice
      SUBDIR += goffice08
@@ -301,9 +301,9 @@
      SUBDIR += libJudy
      SUBDIR += libast
      SUBDIR += libaudiofile
+     SUBDIR += libbfio
      SUBDIR += libbinio
      SUBDIR += libbio
-     SUBDIR += libbfio
      SUBDIR += libconfig
      SUBDIR += libconfuse
      SUBDIR += libdaemon
@@ -1187,8 +1187,8 @@
      SUBDIR += pangox-compat
      SUBDIR += pccts
      SUBDIR += pcre
-     SUBDIR += pcre2
      SUBDIR += pcre++
+     SUBDIR += pcre2
      SUBDIR += pear-Cache
      SUBDIR += pear-Config
      SUBDIR += pear-Console-Table
@@ -1245,9 +1245,9 @@
      SUBDIR += py-automat,python3
      SUBDIR += py-babel
      SUBDIR += py-babel,python3
+     SUBDIR += py-backports
      SUBDIR += py-backports-abc
      SUBDIR += py-backports-abc,python3
-     SUBDIR += py-backports
      SUBDIR += py-backports-functools-lru-cache
      SUBDIR += py-backports-shutil-get-terminal-size
      SUBDIR += py-backports-ssl-match-hostname
@@ -1318,14 +1318,15 @@
      SUBDIR += py-editdist
      SUBDIR += py-efilter
      SUBDIR += py-elftools
+     SUBDIR += py-elftools,python3
      SUBDIR += py-entrypoints
      SUBDIR += py-entrypoints,python3
      SUBDIR += py-enum34
      SUBDIR += py-execnet
      SUBDIR += py-execnet,python3
-     SUBDIR += py-extremes
      SUBDIR += py-extras
      SUBDIR += py-extras,python3
+     SUBDIR += py-extremes
      SUBDIR += py-fasteners
      SUBDIR += py-fasteners,python3
      SUBDIR += py-fastimport
@@ -1368,9 +1369,9 @@
      SUBDIR += py-hypothesis,python3
      SUBDIR += py-icalendar
      SUBDIR += py-icalendar,python3
-     SUBDIR += py-iniparse
      SUBDIR += py-incremental
      SUBDIR += py-incremental,python3
+     SUBDIR += py-iniparse
      SUBDIR += py-ioflo
      SUBDIR += py-ioflo,python3
      SUBDIR += py-ipykernel
@@ -1412,10 +1413,10 @@
      SUBDIR += py-mock,python3
      SUBDIR += py-modulegraph
      SUBDIR += py-modulegraph,python3
-     SUBDIR += py-monthdelta
-     SUBDIR += py-mox
      SUBDIR += py-monotonic
      SUBDIR += py-monotonic,python3
+     SUBDIR += py-monthdelta
+     SUBDIR += py-mox
      SUBDIR += py-mxDateTime
      SUBDIR += py-nbconvert
      SUBDIR += py-nbconvert,python3
@@ -1431,16 +1432,16 @@
      SUBDIR += py-olefile
      SUBDIR += py-olefile,python3
      SUBDIR += py-optik
+     SUBDIR += py-parsedatetime
+     SUBDIR += py-parsedatetime,python3
+     SUBDIR += py-parsing
+     SUBDIR += py-parsing,python3
      SUBDIR += py-path.py
      SUBDIR += py-path.py,python3
      SUBDIR += py-pathlib
      SUBDIR += py-pathlib,python3
      SUBDIR += py-pathspec
      SUBDIR += py-pathspec,python3
-     SUBDIR += py-parsedatetime
-     SUBDIR += py-parsedatetime,python3
-     SUBDIR += py-parsing
-     SUBDIR += py-parsing,python3
      SUBDIR += py-pbr
      SUBDIR += py-pbr,python3
      SUBDIR += py-peak-rules
@@ -1521,16 +1522,16 @@
      SUBDIR += py-test-cov,python3
      SUBDIR += py-test-expect
      SUBDIR += py-test-expect,python3
+     SUBDIR += py-test-httpbin
+     SUBDIR += py-test-httpbin,python3
      SUBDIR += py-test-localserver
      SUBDIR += py-test-localserver,python3
+     SUBDIR += py-test-mock
+     SUBDIR += py-test-mock,python3
      SUBDIR += py-test-runner
      SUBDIR += py-test-runner,python3
      SUBDIR += py-test-subtesthack
      SUBDIR += py-test-subtesthack,python3
-     SUBDIR += py-test-mock
-     SUBDIR += py-test-mock,python3
-     SUBDIR += py-test-httpbin
-     SUBDIR += py-test-httpbin,python3
      SUBDIR += py-test-xdist
      SUBDIR += py-test-xdist,python3
      SUBDIR += py-testpath
@@ -1547,8 +1548,8 @@
      SUBDIR += py-turbocheetah
      SUBDIR += py-turbokid
      SUBDIR += py-twisted
-     SUBDIR += py-typing
      SUBDIR += py-txaio
+     SUBDIR += py-typing
      SUBDIR += py-tz
      SUBDIR += py-tz,python3
      SUBDIR += py-tzlocal
@@ -1610,6 +1611,7 @@
      SUBDIR += ragel
      SUBDIR += rapidsvn
      SUBDIR += rats
+     SUBDIR += rcs-fast-import
      SUBDIR += re2c
      SUBDIR += readline
      SUBDIR += rebar
@@ -1783,8 +1785,8 @@
      SUBDIR += vte3
      SUBDIR += xdg-user-dirs
      SUBDIR += xdg-utils
-     SUBDIR += xtensa-elf
      SUBDIR += xmake
+     SUBDIR += xtensa-elf
      SUBDIR += yaml-cpp
      SUBDIR += yasm
      SUBDIR += zeal
