@@ -1,4 +1,4 @@
-/Makefile/1.56/Wed Nov  1 16:48:28 2017//
+/Makefile/1.57/Sun Feb 25 13:40:31 2018//
 D/emerillon////
 D/foxtrotgps////
 D/garmindev////
@@ -46,6 +46,8 @@ D/pdal////
 D/pgpointcloud////
 D/pgrouting////
 D/postgis////
+D/py-cligj////
+D/py-fiona////
 D/py-laspy////
 D/py-owslib////
 D/py-planet////

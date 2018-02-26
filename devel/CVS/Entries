@@ -1,4 +1,4 @@
-/Makefile/1.1703/Fri Feb 23 22:00:00 2018//
+/Makefile/1.1704/Sun Feb 25 13:40:31 2018//
 D/ElectricFence////
 D/ORBit2////
 D/acpica////
@@ -1214,6 +1214,7 @@ D/py-cffi////
 D/py-cheetah////
 D/py-click////
 D/py-click-log////
+D/py-click-plugins////
 D/py-click-threading////
 D/py-clint////
 D/py-cloudpickle////
@@ -1301,6 +1302,7 @@ D/py-modulegraph////
 D/py-monotonic////
 D/py-monthdelta////
 D/py-mox////
+D/py-munch////
 D/py-mxDateTime////
 D/py-nbconvert////
 D/py-nbformat////
