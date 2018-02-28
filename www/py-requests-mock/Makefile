@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/02/24 21:16:27 bcallah Exp $
+# $OpenBSD: Makefile,v 1.3 2018/02/27 13:16:58 sthen Exp $
 
 MODPY_EGG_VERSION =	1.4.0
 COMMENT =	mock out responses from py-requests
@@ -18,6 +18,7 @@ MODPY_SETUPTOOLS =	Yes
 FLAVORS =	python3
 FLAVOR ?=
 
+BUILD_DEPENDS =	devel/py-pbr${MODPY_FLAVOR}
 RUN_DEPENDS =	devel/py-six${MODPY_FLAVOR} \
 		www/py-requests${MODPY_FLAVOR}
 
