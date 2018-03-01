@@ -1,13 +1,14 @@
-# $OpenBSD: Makefile,v 1.5 2017/10/23 17:11:07 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2018/02/28 13:43:30 rsadowski Exp $
 
 COMMENT =	wallpaper setting utility for X
 
-GH_ACCOUNT =	stoeckmann
-GH_PROJECT =	xwallpaper
-GH_TAGNAME =	v0.3.0
-REVISION=	0
+V =		0.3.0
+DISTNAME =	xwallpaper-${V}
+REVISION =	1
 
 CATEGORIES =	x11 graphics
+
+HOMEPAGE =	https://github.com/stoeckmann/xwallpaper
 
 MAINTAINER =	Rafael Sadowski <rsadowski@openbsd.org>
 
@@ -17,6 +18,8 @@ PERMIT_PACKAGE_CDROM =	Yes
 # uses pledge()
 WANTLIB += X11 Xpm c jpeg pixman-1 png xcb xcb-image
 WANTLIB += xcb-randr xcb-shm xcb-util z
+
+MASTER_SITES =	https://github.com/stoeckmann/xwallpaper/releases/download/v${V}/
 
 LIB_DEPENDS +=	graphics/jpeg \
 		graphics/png
@@ -35,6 +38,6 @@ AUTOMAKE_VERSION =	1.11
 
 pre-configure:
 	cd ${WRKSRC} && ${SETENV} AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
-		AUTOCONF_VERSION=${AUTOCONF_VERSION} autoreconf --install
+		AUTOCONF_VERSION=${AUTOCONF_VERSION} autoreconf -fiv
 
 .include <bsd.port.mk>
