@@ -1,4 +1,4 @@
-/Makefile/1.1055/Wed Feb 28 15:11:26 2018//
+/Makefile/1.1056/Fri Mar  2 11:04:19 2018//
 D/GeoIP////
 D/adns////
 D/adsuck////
@@ -582,7 +582,6 @@ D/silc-server////
 D/sing////
 D/sipcalc////
 D/sipsak////
-D/sirc////
 D/slurm////
 D/smokeping////
 D/snmptt////
