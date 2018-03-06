@@ -1,4 +1,4 @@
-/Makefile/1.1704/Sun Feb 25 13:40:31 2018//
+/Makefile/1.1705/Mon Mar  5 10:32:06 2018//
 D/ElectricFence////
 D/ORBit2////
 D/acpica////
@@ -285,6 +285,8 @@ D/kdevplatform////
 D/kdiff3////
 D/keystone////
 D/kf5////
+D/kproperty////
+D/kreport////
 D/kyua-cli////
 D/kyua-testers////
 D/lam////
