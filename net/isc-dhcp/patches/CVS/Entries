@@ -1,5 +1,5 @@
-/patch-bind_Makefile_in/1.2/Sat Apr  9 12:59:41 2016//
-/patch-bind_bind-9_9_11_lib_isc_backtrace_c/1.1/Mon Sep  4 17:24:44 2017//
-/patch-client_Makefile_in/1.8/Sat Apr  9 12:59:41 2016//
-/patch-common_socket_c/1.6/Mon Sep  4 17:24:44 2017//
+/patch-bind_Makefile_in/1.3/Tue Mar  6 08:37:39 2018//
+/patch-bind_bind-9_11_2-P1_lib_isc_backtrace_c/1.1/Tue Mar  6 08:37:39 2018//
+/patch-client_Makefile_in/1.9/Tue Mar  6 08:37:39 2018//
+/patch-common_socket_c/1.7/Tue Mar  6 08:37:39 2018//
 D

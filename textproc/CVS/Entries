@@ -1,4 +1,4 @@
-/Makefile/1.564/Sat Feb 17 12:04:07 2018//
+/Makefile/1.565/Tue Mar  6 11:06:58 2018//
 D/TclXML////
 D/antiword////
 D/apertium////
@@ -422,6 +422,7 @@ D/ruby-yard////
 D/rxp////
 D/sablotron////
 D/sim////
+D/solr////
 D/source-highlight////
 D/sp////
 D/sphinx////

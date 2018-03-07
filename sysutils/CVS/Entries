@@ -1,4 +1,4 @@
-/Makefile/1.471/Fri Mar  2 22:29:12 2018//
+/Makefile/1.472/Tue Mar  6 13:51:30 2018//
 D/accountsservice////
 D/amazon-ecs-cli////
 D/amazon-ssm-agent////
@@ -235,6 +235,7 @@ D/relayd-updateconf////
 D/remotebox////
 D/resmon////
 D/restic////
+D/restic-rest-server////
 D/riemann////
 D/riemann-c-client////
 D/rofi////
