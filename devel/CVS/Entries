@@ -1,4 +1,4 @@
-/Makefile/1.1705/Mon Mar  5 10:32:06 2018//
+/Makefile/1.1706/Wed Mar  7 15:12:45 2018//
 D/ElectricFence////
 D/ORBit2////
 D/acpica////
@@ -180,7 +180,6 @@ D/happy////
 D/harfbuzz////
 D/hasktags////
 D/help2man////
-D/hgview////
 D/hs-ConfigFile////
 D/hs-FindBin////
 D/hs-HUnit////
