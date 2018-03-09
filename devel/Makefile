@@ -1,4 +1,4 @@
-#${MODPY_COMMENT} $OpenBSD: Makefile,v 1.1706 2018/03/07 15:12:45 juanfra Exp $
+#${MODPY_COMMENT} $OpenBSD: Makefile,v 1.1710 2018/03/08 20:49:10 kili Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1456,6 +1456,8 @@
      SUBDIR += py-pip,python3
      SUBDIR += py-pluggy
      SUBDIR += py-pluggy,python3
+     SUBDIR += py-plugnplay
+     SUBDIR += py-plugnplay,python3
      SUBDIR += py-ply
      SUBDIR += py-ply,python3
      SUBDIR += py-pretend
@@ -1517,6 +1519,8 @@
      SUBDIR += py-stdnum,python3
      SUBDIR += py-suds
      SUBDIR += py-symboltype
+     SUBDIR += py-tabulate
+     SUBDIR += py-tabulate,python3
      SUBDIR += py-test
      SUBDIR += py-test,python3
      SUBDIR += py-test-benchmark
@@ -1555,6 +1559,7 @@
      SUBDIR += py-twisted
      SUBDIR += py-txaio
      SUBDIR += py-typing
+     SUBDIR += py-typing,python3
      SUBDIR += py-tz
      SUBDIR += py-tz,python3
      SUBDIR += py-tzlocal
@@ -1737,6 +1742,7 @@
      SUBDIR += sdlmm
      SUBDIR += sfio
      SUBDIR += shapelib
+     SUBDIR += shellcheck
      SUBDIR += shtool
      SUBDIR += shunit2
      SUBDIR += silc-toolkit

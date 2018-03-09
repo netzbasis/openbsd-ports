@@ -1,4 +1,4 @@
-/Makefile/1.1706/Wed Mar  7 15:12:45 2018//
+/Makefile/1.1710/Thu Mar  8 20:49:10 2018//
 D/ElectricFence////
 D/ORBit2////
 D/acpica////
@@ -1323,6 +1323,7 @@ D/py-peak-rules////
 D/py-pexpect////
 D/py-pip////
 D/py-pluggy////
+D/py-plugnplay////
 D/py-ply////
 D/py-pretend////
 D/py-prioritized_methods////
@@ -1362,6 +1363,7 @@ D/py-spark-parser////
 D/py-stdnum////
 D/py-suds////
 D/py-symboltype////
+D/py-tabulate////
 D/py-test////
 D/py-test-benchmark////
 D/py-test-capturelog////
@@ -1522,6 +1524,7 @@ D/sdl2-ttf////
 D/sdlmm////
 D/sfio////
 D/shapelib////
+D/shellcheck////
 D/shtool////
 D/shunit2////
 D/silc-toolkit////
