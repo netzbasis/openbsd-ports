@@ -1,4 +1,4 @@
-/Makefile/1.1057/Wed Mar  7 23:02:28 2018//
+/Makefile/1.1058/Fri Mar  9 23:40:58 2018//
 D/GeoIP////
 D/adns////
 D/adsuck////
@@ -282,6 +282,7 @@ D/oidentd////
 D/oinkmaster////
 D/olsrd////
 D/onioncat////
+D/onionshare////
 D/openafs////
 D/openconnect////
 D/openfire////

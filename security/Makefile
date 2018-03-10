@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.489 2018/03/05 09:24:48 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.491 2018/03/09 16:58:04 rpointel Exp $
 
      SUBDIR =
      SUBDIR += ADMsnmp
@@ -226,6 +226,7 @@
      SUBDIR += p5-POE-Component-SSLify
      SUBDIR += p5-Text-Password-Pronounceable
      SUBDIR += p5-Tie-EncryptedHash
+     SUBDIR += pass-otp
      SUBDIR += passwdqc
      SUBDIR += password-gorilla
      SUBDIR += password-store
@@ -305,6 +306,7 @@
      SUBDIR += py-secretstorage,python3
      SUBDIR += py-service_identity
      SUBDIR += py-service_identity,python3
+     SUBDIR += py-vivisect
      SUBDIR += qca
      SUBDIR += qca-qt5
      SUBDIR += qoauth

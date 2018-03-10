@@ -1,4 +1,4 @@
-/Makefile/1.489/Mon Mar  5 09:24:48 2018//
+/Makefile/1.491/Fri Mar  9 16:58:04 2018//
 D/ADMsnmp////
 D/aescrypt////
 D/aide////
@@ -212,6 +212,7 @@ D/p5-PGP-Sign////
 D/p5-POE-Component-SSLify////
 D/p5-Text-Password-Pronounceable////
 D/p5-Tie-EncryptedHash////
+D/pass-otp////
 D/passwdqc////
 D/password-gorilla////
 D/password-store////
@@ -266,6 +267,7 @@ D/py-rsa////
 D/py-scp////
 D/py-secretstorage////
 D/py-service_identity////
+D/py-vivisect////
 D/qca////
 D/qca-qt5////
 D/qoauth////
