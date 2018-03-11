@@ -1,4 +1,4 @@
-#${MODPY_COMMENT} $OpenBSD: Makefile,v 1.1710 2018/03/08 20:49:10 kili Exp $
+#${MODPY_COMMENT} $OpenBSD: Makefile,v 1.1712 2018/03/11 05:29:59 rpointel Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -274,6 +274,7 @@
      SUBDIR += ipython,python3
      SUBDIR += iso-codes
      SUBDIR += itcl
+     SUBDIR += jadx
      SUBDIR += jam
      SUBDIR += jansson
      SUBDIR += javahelp
@@ -1343,6 +1344,8 @@
      SUBDIR += py-funcsigs
      SUBDIR += py-funcsigs,python3
      SUBDIR += py-functools32
+     SUBDIR += py-funcy
+     SUBDIR += py-funcy,python3
      SUBDIR += py-future
      SUBDIR += py-future,python3
      SUBDIR += py-futures

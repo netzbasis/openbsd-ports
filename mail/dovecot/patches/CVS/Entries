@@ -8,5 +8,7 @@
 /patch-doc_mkcert_sh/1.8/Sun Dec  4 21:36:02 2016//
 /patch-src_auth_password-scheme-crypt_c/1.4/Tue Nov  1 14:12:04 2016//
 /patch-src_imap_imap-client_h/1.1/Sun Sep 11 20:54:13 2016//
+/patch-src_lib-master_master-service-ssl-settings_c/1.1/Sat Mar 10 21:54:30 2018//
 /patch-src_master_master-settings_c/1.19/Sun Nov  5 19:27:56 2017//
+/patch-src_plugins_fts-solr_fts-backend-solr_c/1.1/Sat Mar 10 21:54:30 2018//
 D

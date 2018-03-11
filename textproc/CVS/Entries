@@ -1,4 +1,4 @@
-/Makefile/1.566/Thu Mar  8 20:42:46 2018//
+/Makefile/1.567/Sat Mar 10 12:48:11 2018//
 D/TclXML////
 D/antiword////
 D/apertium////
@@ -452,7 +452,6 @@ D/wdg-sgml-lib////
 D/wdiff////
 D/wkhtmltopdf////
 D/xalan-j////
-D/xerces////
 D/xerces-c////
 D/xlsx2csv////
 D/xml2rfc////

@@ -1,4 +1,4 @@
-/Makefile/1.1710/Thu Mar  8 20:49:10 2018//
+/Makefile/1.1712/Sun Mar 11 05:29:59 2018//
 D/ElectricFence////
 D/ORBit2////
 D/acpica////
@@ -268,6 +268,7 @@ D/intellij////
 D/ipython////
 D/iso-codes////
 D/itcl////
+D/jadx////
 D/jam////
 D/jansson////
 D/javahelp////
@@ -1256,6 +1257,7 @@ D/py-fpconst////
 D/py-freezegun////
 D/py-funcsigs////
 D/py-functools32////
+D/py-funcy////
 D/py-future////
 D/py-futures////
 D/py-gdata////
