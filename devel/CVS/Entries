@@ -1,4 +1,4 @@
-/Makefile/1.1712/Sun Mar 11 05:29:59 2018//
+/Makefile/1.1713/Sun Mar 11 22:39:44 2018//
 D/ElectricFence////
 D/ORBit2////
 D/acpica////
@@ -1166,6 +1166,7 @@ D/pear-System-Command////
 D/pear-Validate////
 D/perltidy////
 D/physfs////
+D/pkgconf////
 D/pkgconfig////
 D/plib////
 D/poedit////
