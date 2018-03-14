@@ -1,4 +1,4 @@
-# $OpenBSD: mozilla.port.mk,v 1.112 2018/01/29 18:20:33 landry Exp $
+# $OpenBSD: mozilla.port.mk,v 1.114 2018/03/13 21:18:53 landry Exp $
 
 # ppc: firefox-esr/thunderbird xpcshell segfaults during startup compilation
 # ppc: seamonkey/firefox - failure to link for atomic ops on 64 bits
@@ -34,7 +34,7 @@ MASTER_SITES ?=	https://releases.mozilla.org/pub/mozilla.org/${MOZILLA_DIST}/rel
 DISTNAME =	${MOZILLA_DIST}-${MOZILLA_DIST_VERSION}
 DISTFILES =	${MOZILLA_DIST}-${MOZILLA_DIST_VERSION}${EXTRACT_SUFX}{${MOZILLA_COMMIT}${EXTRACT_SUFX}}
 WRKDIST =	${WRKDIR}/mozilla-${MOZILLA_BRANCH}-${MOZILLA_COMMIT}
-MASTER_SITES =	https://hg.mozilla.org/releases/mozilla-${MOZILLA_BRANCH}/archive/
+MASTER_SITES ?=	https://hg.mozilla.org/releases/mozilla-${MOZILLA_BRANCH}/archive/
 EXTRACT_SUFX =	.tar.bz2
 MODMOZILLA_pre-configure+= \
 	cp ${WRKSRC}/${CONFIGURE_SCRIPT}.in ${WRKSRC}/${CONFIGURE_SCRIPT}; \
@@ -54,13 +54,13 @@ MODMOZ_BUILD_DEPENDS =	devel/autoconf/2.13 \
 			archivers/zip>=2.3
 
 .if !defined(MOZILLA_USE_BUNDLED_NSS)
-MODMOZ_LIB_DEPENDS +=	security/nss>=3.33
+MODMOZ_LIB_DEPENDS +=	security/nss>=3.35
 MODMOZ_WANTLIB +=	nss3 nssutil3 smime3 ssl3
 CONFIGURE_ARGS +=	--with-system-nss
 .endif
 
 .if !defined(MOZILLA_USE_BUNDLED_NSPR)
-MODMOZ_LIB_DEPENDS +=	devel/nspr>=4.17
+MODMOZ_LIB_DEPENDS +=	devel/nspr>=4.18
 MODMOZ_WANTLIB +=	nspr4 plc4 plds4
 CONFIGURE_ARGS +=	--with-system-nspr
 .endif

@@ -1,17 +1,4 @@
-/patch-Makefile_in/1.1/Sun Oct 26 23:19:30 2008//
-/patch-configure/1.1/Sun Oct 26 23:19:30 2008//
-/patch-lib-src_Makefile_in/1.1/Sun Oct 26 23:19:30 2008//
-/patch-lib-src_enigma-core_IMG_SavePNG_c/1.1/Fri Jul  8 20:38:01 2011//
-/patch-lib-src_enigma-core_ecl_alist_hh/1.1/Thu May  4 22:59:23 2017//
-/patch-lib-src_enigma-core_ecl_dict_hh/1.1/Thu May  4 22:59:23 2017//
-/patch-lib-src_enigma-core_ecl_font_cc/1.1/Thu May  4 23:00:48 2017//
-/patch-lib-src_lua_tolua++_h/1.1/Thu May  4 23:00:16 2017//
-/patch-lib-src_lua_tolua_is_c/1.1/Thu May  4 23:00:16 2017//
-/patch-lib-src_lua_tolua_map_c/1.1/Thu May  4 23:00:16 2017//
-/patch-src_Makefile_in/1.1/Sun Oct 26 23:19:30 2008//
-/patch-src_client_cc/1.1/Wed Jun 29 09:06:32 2011//
-/patch-src_lev_PersistentIndex_cc/1.1/Thu May  4 23:00:48 2017//
-/patch-src_lua_cc/1.1/Thu May  4 22:59:23 2017//
-/patch-src_netgame_cc/1.1/Wed Jun 29 09:06:32 2011//
-/patch-src_stones_complex_cc/1.1/Thu May  4 23:00:48 2017//
+/patch-configure/1.2/Tue Mar 13 21:13:48 2018//
+/patch-lib-src_Makefile_in/1.2/Tue Mar 13 21:13:48 2018//
+/patch-src_Makefile_in/1.2/Tue Mar 13 21:13:48 2018//
 D
