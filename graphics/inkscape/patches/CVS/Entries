@@ -1,8 +1,4 @@
-/patch-CMakeScripts_DefineDependsandFlags_cmake/1.1/Mon Dec 25 22:59:24 2017//
-/patch-config_h_cmake/1.1/Mon Dec 25 22:59:24 2017//
 /patch-src_extension_implementation_script_cpp/1.5/Fri Feb 24 08:05:34 2017//
-/patch-src_extension_internal_pdfinput_pdf-input_cpp/1.1/Mon Dec 25 22:59:24 2017//
-/patch-src_extension_internal_pdfinput_pdf-parser_cpp/1.11/Mon Dec 25 22:59:24 2017//
-/patch-src_libavoid_connector_cpp/1.1/Mon May 22 15:02:40 2017//
-/patch-src_libnrtype_FontFactory_cpp/1.1/Fri Feb 24 08:05:34 2017//
+/patch-src_libavoid_connector_cpp/1.2/Thu Mar 15 15:59:19 2018//
+/patch-src_libnrtype_FontFactory_cpp/1.2/Thu Mar 15 15:59:19 2018//
 D
