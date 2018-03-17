@@ -1,4 +1,4 @@
-#${MODPY_COMMENT} $OpenBSD: Makefile,v 1.1713 2018/03/11 22:39:44 kn Exp $
+#${MODPY_COMMENT} $OpenBSD: Makefile,v 1.1715 2018/03/16 14:09:07 danj Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1216,6 +1216,7 @@
      SUBDIR += ptlib
      SUBDIR += pudb
      SUBDIR += pudb,python3
+     SUBDIR += pycharm
      SUBDIR += py-Checker
      SUBDIR += py-SOAPpy
      SUBDIR += py-addons
@@ -1379,6 +1380,8 @@
      SUBDIR += py-incremental
      SUBDIR += py-incremental,python3
      SUBDIR += py-iniparse
+     SUBDIR += py-intervaltree
+     SUBDIR += py-intervaltree,python3
      SUBDIR += py-ioflo
      SUBDIR += py-ioflo,python3
      SUBDIR += py-ipykernel

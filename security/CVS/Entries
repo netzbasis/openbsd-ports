@@ -1,4 +1,4 @@
-/Makefile/1.492/Thu Mar 15 07:17:22 2018//
+/Makefile/1.493/Fri Mar 16 19:43:23 2018//
 D/ADMsnmp////
 D/aescrypt////
 D/aide////
@@ -253,6 +253,7 @@ D/py-dfvfs////
 D/py-dfwinreg////
 D/py-ecdsa////
 D/py-gnupg////
+D/py-josepy////
 D/py-keyczar////
 D/py-keyring////
 D/py-libnacl////
