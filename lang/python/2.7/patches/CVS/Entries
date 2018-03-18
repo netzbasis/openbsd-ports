@@ -1,7 +1,8 @@
 /patch-Lib_test_regrtest_py/1.11/Sun Nov  5 06:33:45 2017//
 /patch-Lib_test_test_tempfile_py/1.5/Tue May 24 09:57:50 2016//
 /patch-Makefile_pre_in/1.12/Thu Nov  9 10:05:14 2017//
-/patch-Modules__ssl_c/1.5/Thu Feb 22 23:03:12 2018//
+/patch-Modules__hashopenssl_c/1.1/Sun Mar 18 01:27:30 2018//
+/patch-Modules__ssl_c/1.6/Sat Mar 17 22:30:04 2018//
 /patch-Modules_pyexpat_c/1.2/Wed Jul  6 12:05:56 2011//
 /patch-configure_ac/1.9/Sun Nov  5 06:33:45 2017//
 /patch-setup_py/1.13/Sun Nov  5 06:33:45 2017//
