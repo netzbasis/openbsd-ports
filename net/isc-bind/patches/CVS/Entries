@@ -4,6 +4,7 @@
 /patch-bin_named_include_named_globals_h/1.6/Fri Jan 12 17:08:01 2018//
 /patch-lib_dns_openssldh_link_c/1.8/Thu Mar 15 00:59:18 2018//
 /patch-lib_dns_openssldsa_link_c/1.7/Thu Mar 15 00:59:18 2018//
+/patch-lib_dns_opensslecdsa_link_c/1.1/Sun Mar 18 23:56:59 2018//
 /patch-lib_dns_opensslgost_link_c/1.1/Sun Feb 18 11:52:03 2018//
 /patch-lib_dns_opensslrsa_link_c/1.6/Tue Feb 20 21:02:13 2018//
 /patch-lib_isc_Makefile_in/1.2/Fri Jan 12 17:08:01 2018//
