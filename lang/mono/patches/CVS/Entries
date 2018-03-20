@@ -1,4 +1,4 @@
-/patch-configure/1.6/Tue Jan  2 13:19:10 2018//
+/patch-configure/1.7/Mon Mar 19 15:12:20 2018//
 /patch-libgc_Makefile_in/1.4/Sun Jun 26 10:40:28 2016//
 /patch-libgc_dyn_load_c/1.3/Mon Nov  7 15:22:38 2016//
 /patch-libgc_include_private_gc_priv_h/1.4/Mon Nov  7 15:22:38 2016//
@@ -7,11 +7,13 @@
 /patch-mcs_jay_Makefile/1.1/Fri Oct 24 07:06:01 2008//
 /patch-mono_metadata_mono-route_h/1.2/Tue Jan  2 13:19:10 2018//
 /patch-mono_metadata_w32process-unix-bsd_c/1.1/Tue Jan  2 13:19:10 2018//
-/patch-mono_mini_main_c/1.5/Tue Jan  2 13:19:10 2018//
+/patch-mono_mini_main_c/1.6/Mon Mar 19 15:12:20 2018//
 /patch-mono_mini_test_op_il_seq_point_headerfooter_sh/1.1/Mon Oct 31 11:45:07 2016//
 /patch-mono_profiler_mprof-report_c/1.1/Tue Jan  2 13:19:10 2018//
+/patch-mono_utils_mono-context_h/1.1/Mon Mar 19 15:12:20 2018//
 /patch-mono_utils_mono-proclib_c/1.19/Tue Jan  2 13:19:10 2018//
 /patch-mono_utils_mono-threads-openbsd_c/1.2/Tue Jan  2 13:19:10 2018//
+/patch-mono_utils_mono-threads-posix-signals_c/1.1/Mon Mar 19 15:12:20 2018//
 /patch-mono_utils_networking-posix_c/1.2/Tue Jan  2 13:19:10 2018//
 /patch-support_sys-mman_c/1.2/Mon Dec 29 10:49:12 2014//
 /patch-tools_monograph_Makefile_in/1.1/Tue Jan 16 16:12:54 2018//
