@@ -1,4 +1,4 @@
-/Makefile/1.493/Fri Mar 16 19:43:23 2018//
+/Makefile/1.496/Thu Mar 29 23:06:51 2018//
 D/ADMsnmp////
 D/aescrypt////
 D/aide////
@@ -40,6 +40,7 @@ D/erl-bcrypt////
 D/fcrackzip////
 D/fierce////
 D/flasm////
+D/floss////
 D/foremost////
 D/fragroute////
 D/fragrouter////
@@ -268,6 +269,7 @@ D/py-rsa////
 D/py-scp////
 D/py-secretstorage////
 D/py-service_identity////
+D/py-viv_utils////
 D/py-vivisect////
 D/qca////
 D/qca-qt5////

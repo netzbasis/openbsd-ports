@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.493 2018/03/16 19:43:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.496 2018/03/29 23:06:51 jeremy Exp $
 
      SUBDIR =
      SUBDIR += ADMsnmp
@@ -49,6 +49,7 @@
      SUBDIR += fcrackzip
      SUBDIR += fierce
      SUBDIR += flasm
+     SUBDIR += floss
      SUBDIR += foremost
      SUBDIR += fragroute
      SUBDIR += fragrouter
@@ -311,6 +312,7 @@
      SUBDIR += py-service_identity
      SUBDIR += py-service_identity,python3
      SUBDIR += py-vivisect
+     SUBDIR += py-viv_utils
      SUBDIR += qca
      SUBDIR += qca-qt5
      SUBDIR += qoauth
@@ -325,13 +327,10 @@
      SUBDIR += rhash
      SUBDIR += routersploit
      SUBDIR += ruby-akami
-     SUBDIR += ruby-bcrypt,ruby23
      SUBDIR += ruby-bcrypt,ruby24
      SUBDIR += ruby-bcrypt,ruby25
-     SUBDIR += ruby-gpgme,ruby23
      SUBDIR += ruby-gpgme,ruby24
      SUBDIR += ruby-gpgme,ruby25
-     SUBDIR += ruby-pledge,ruby23
      SUBDIR += ruby-pledge,ruby24
      SUBDIR += ruby-pledge,ruby25
      SUBDIR += ruby-hmac
