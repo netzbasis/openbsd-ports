@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.157 2018/02/09 10:09:44 kili Exp $
+# $OpenBSD: Makefile,v 1.159 2018/03/30 23:16:59 kili Exp $
 
 COMMENT =		compiler for the functional language Haskell
 
@@ -12,12 +12,12 @@ COMMENT =		compiler for the functional language Haskell
 NO_CCACHE =		Yes
 
 DISTNAME =		ghc-${MODGHC_VER}
-REVISION =		1
+REVISION =		2
 CATEGORIES =		lang devel
 HOMEPAGE =		https://www.haskell.org/ghc/
 
 # Version of the precompiled binaries
-BIN_VER =		8.0.1.20171204
+BIN_VER =		8.2.2.20180330
 
 # Pull in lang/ghc to get MODGHC_VER and ONLY_FOR_ARCHS, which is maintained
 # in ghc.port.mk. lang/python needed for regression tests.
@@ -202,14 +202,14 @@ do-test:
 # It doesn't matter wether this is the actual date of the bootstrapper
 # build. It's just used to get different distfiles whenever new
 # bootstrappers have to be built.
-BOOTSTRAP_DATE =	20171204
+BOOTSTRAP_DATE =	20180330
 
 # Create a bootstrapper. This compiles a stripped-down version of
 # ghc and creates a `bindist', i.e. a tarball with binaries that
 # can be used for bootstrapping.
 bootstrap: patch
-	@if [ ! -x ${LOCALBASE}/bin/autoconf-2.61 ]; then \
-		echo Please install autoconf-2.61.; \
+	@if [ ! -x ${LOCALBASE}/bin/autoconf-2.69 ]; then \
+		echo Please install autoconf-2.69.; \
 		false; \
 	fi
 	@if [ ! -x ${LOCALBASE}/bin/automake-1.4 ]; then \
@@ -237,7 +237,7 @@ bootstrap: patch
 
 	env CONFIGURE_ENV=RELEASE=NO ${MAKE} configure
 
-	env MAKE_ENV="AUTOCONF_VERSION=2.61 AUTOMAKE_VERSION=1.4" \
+	env MAKE_ENV="AUTOCONF_VERSION=2.69 AUTOMAKE_VERSION=1.4" \
 	${MAKE} build ALL_TARGET="all binary-dist"
 
 	mkdir -p ${WRKBUILD}/ghc-${MODGHC_VER}.${BOOTSTRAP_DATE}-shlibs-$$(arch -s)

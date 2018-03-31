@@ -1,4 +1,4 @@
-/Makefile/1.1716/Thu Mar 29 23:06:50 2018//
+/Makefile/1.1718/Fri Mar 30 13:54:18 2018//
 D/ElectricFence////
 D/ORBit2////
 D/acpica////
@@ -1185,6 +1185,7 @@ D/py-SOAPpy////
 D/py-addons////
 D/py-algorithm-munkres////
 D/py-altgraph////
+D/py-anytree////
 D/py-apipkg////
 D/py-appdirs////
 D/py-argcomplete////
@@ -1427,6 +1428,7 @@ D/qbs////
 D/qgit////
 D/qjson////
 D/qmake////
+D/qp////
 D/qt-creator////
 D/quilt////
 D/quirks////
