@@ -1,4 +1,4 @@
-/Makefile/1.1720/Tue Apr  3 05:33:41 2018//
+/Makefile/1.1722/Wed Apr  4 22:06:27 2018//
 D/ElectricFence////
 D/ORBit2////
 D/acpica////
@@ -741,6 +741,7 @@ D/p5-Getopt-ArgvFile////
 D/p5-Getopt-Euclid////
 D/p5-Getopt-Long-Descriptive////
 D/p5-Getopt-Simple////
+D/p5-Getopt-Tabular////
 D/p5-Git-Repository////
 D/p5-Glib-Object-Introspection////
 D/p5-Glib2////
@@ -1254,6 +1255,7 @@ D/py-extremes////
 D/py-fasteners////
 D/py-fastimport////
 D/py-faulthandler////
+D/py-filebytes////
 D/py-flexmock////
 D/py-fpconst////
 D/py-freezegun////

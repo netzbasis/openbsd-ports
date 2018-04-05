@@ -1,4 +1,4 @@
-/Makefile/1.91/Thu Jan 11 14:19:14 2018//
+/Makefile/1.93/Wed Apr  4 21:59:16 2018//
 D/base64////
 D/btoa////
 D/convmv////
@@ -50,6 +50,8 @@ D/p5-Jcode////
 D/p5-MARC-Record////
 D/p5-Net-IDN-Encode////
 D/p5-Net-IDN-Nameprep////
+D/p5-Sereal-Decoder////
+D/p5-Sereal-Encoder////
 D/p5-Text-Iconv////
 D/p5-Types-Serialiser////
 D/p5-Unicode-LineBreak////
