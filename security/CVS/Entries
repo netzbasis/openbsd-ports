@@ -1,4 +1,4 @@
-/Makefile/1.497/Tue Apr  3 13:23:26 2018//
+/Makefile/1.498/Thu Apr  5 08:16:14 2018//
 D/ADMsnmp////
 D/aescrypt////
 D/aide////
@@ -272,6 +272,7 @@ D/py-secretstorage////
 D/py-service_identity////
 D/py-viv_utils////
 D/py-vivisect////
+D/py-yaswfp////
 D/qca////
 D/qca-qt5////
 D/qoauth////
