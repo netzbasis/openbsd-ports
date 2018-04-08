@@ -1,4 +1,4 @@
-/Makefile/1.361/Sat Nov  4 16:45:32 2017//
+/Makefile/1.362/Sat Apr  7 08:32:41 2018//
 D/abook////
 D/adcomplain////
 D/akpop3d////
@@ -66,6 +66,7 @@ D/mairix////
 D/majordomo////
 D/mblaze////
 D/mboxgrep////
+D/mdsort////
 D/metamail////
 D/mew////
 D/milter-checkrcpt////

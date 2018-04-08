@@ -1,4 +1,4 @@
-/Makefile/1.1723/Fri Apr  6 19:35:32 2018//
+/Makefile/1.1724/Sat Apr  7 10:58:23 2018//
 D/ElectricFence////
 D/ORBit2////
 D/acpica////
@@ -423,7 +423,6 @@ D/mono-gdata////
 D/mono-notify////
 D/monotone////
 D/mowgli////
-D/mozjs17////
 D/mpfr////
 D/msgpack////
 D/msp430////
