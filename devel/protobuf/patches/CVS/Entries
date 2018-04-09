@@ -1,6 +1,7 @@
 /patch-Makefile_in/1.3/Wed May 17 20:23:45 2017//
 /patch-configure/1.5/Wed May 17 20:23:45 2017//
 /patch-src_Makefile_in/1.3/Wed May 17 20:23:45 2017//
+/patch-src_google_protobuf_compiler_command_line_interface_cc/1.1/Sun Apr  8 08:35:14 2018//
 /patch-src_google_protobuf_compiler_cpp_cpp_unittest_cc/1.1/Wed May 17 20:23:45 2017//
 /patch-src_google_protobuf_extension_set_unittest_cc/1.1/Wed May 17 20:23:45 2017//
 /patch-src_google_protobuf_generated_message_reflection_unittest_cc/1.1/Wed May 17 20:23:45 2017//
