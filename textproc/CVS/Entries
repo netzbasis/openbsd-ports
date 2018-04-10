@@ -1,4 +1,4 @@
-/Makefile/1.568/Thu Mar 29 23:06:51 2018//
+/Makefile/1.569/Mon Apr  9 12:13:30 2018//
 D/TclXML////
 D/antiword////
 D/apertium////
@@ -416,6 +416,7 @@ D/ruby-redcarpet////
 D/ruby-redcloth////
 D/ruby-rexical////
 D/ruby-ronn////
+D/ruby-rouge////
 D/ruby-syntax////
 D/ruby-text////
 D/ruby-treetop////
