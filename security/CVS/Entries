@@ -1,4 +1,4 @@
-/Makefile/1.498/Thu Apr  5 08:16:14 2018//
+/Makefile/1.499/Tue Apr 10 12:09:31 2018//
 D/ADMsnmp////
 D/aescrypt////
 D/aide////
@@ -142,6 +142,7 @@ D/outguess////
 D/p0f////
 D/p0f3////
 D/p11-kit////
+D/p5-Auth-Yubikey_Decrypter////
 D/p5-Authen-Htpasswd////
 D/p5-Authen-NTLM////
 D/p5-Authen-Radius////

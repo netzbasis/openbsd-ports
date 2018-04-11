@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.78 2018/03/19 08:13:15 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.80 2018/04/10 13:20:18 ajacoutot Exp $
 
 # patches/patch-Source_JavaScriptCore_javascriptcoregtk_pc_in
 # patches/patch-Source_WebKit_gtk_webkit2gtk-web-extension_pc_in
@@ -12,7 +12,7 @@ PORTROACH =		limitw:1,even
 
 COMMENT =		GTK+ port of the WebKit rendering engine
 
-V =			2.20.0
+V =			2.20.1
 DISTNAME =		webkitgtk-${V}
 PKGNAME =		webkitgtk4-${V}
 EXTRACT_SUFX =		.tar.xz
@@ -74,7 +74,7 @@ LIB_DEPENDS =		archivers/woff2 \
 			devel/libnotify \
 			devel/libsoup \
 			graphics/libwebp \
-			multimedia/gstreamer1/plugins-bad \
+			multimedia/gstreamer1/plugins-base \
 			textproc/enchant \
 			textproc/hyphen \
 			textproc/libxslt \
