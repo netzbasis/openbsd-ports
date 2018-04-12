@@ -1,4 +1,4 @@
-/Makefile/1.1061/Wed Apr  4 18:58:50 2018//
+/Makefile/1.1062/Wed Apr 11 09:54:18 2018//
 D/GeoIP////
 D/adns////
 D/adsuck////
@@ -32,7 +32,6 @@ D/bwm-ng////
 D/cadaver////
 D/cagibi////
 D/castget////
-D/centerim////
 D/cftp////
 D/cgo////
 D/cgterm////

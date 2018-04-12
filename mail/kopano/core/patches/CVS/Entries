@@ -1,5 +1,5 @@
 /patch-ECtools_mapitime_cpp/1.4/Fri Mar 16 15:35:02 2018//
-/patch-ECtools_monitor_monitor_cpp/1.4/Thu Mar 29 19:41:46 2018//
+/patch-ECtools_monitor_monitor_cpp/1.5/Wed Apr 11 17:56:47 2018//
 /patch-ECtools_presence_kopano_presence___init___py/1.2/Thu Mar 29 19:41:46 2018//
 /patch-ECtools_search_Makefile_in/1.5/Thu Mar 29 19:41:46 2018//
 /patch-ECtools_search_kopano_search___init___py/1.1/Fri Mar 16 15:35:02 2018//
@@ -35,9 +35,9 @@
 /patch-php-ext_mapi_ini/1.1/Fri Mar 16 15:35:02 2018//
 /patch-provider_libserver_ECAttachmentStorage_cpp/1.2/Thu Mar 29 19:41:46 2018//
 /patch-provider_libserver_ECSession_cpp/1.5/Thu Mar 29 19:41:46 2018//
-/patch-provider_server_ECServer_cpp/1.5/Thu Mar 29 19:41:46 2018//
-/patch-spooler_DAgent_cpp/1.4/Thu Apr  5 19:51:35 2018//
-/patch-spooler_Spooler_cpp/1.5/Thu Mar 29 19:41:46 2018//
+/patch-provider_server_ECServer_cpp/1.6/Wed Apr 11 17:56:47 2018//
+/patch-spooler_DAgent_cpp/1.5/Wed Apr 11 17:56:47 2018//
+/patch-spooler_Spooler_cpp/1.6/Wed Apr 11 17:56:47 2018//
 /patch-spooler_python_Makefile_in/1.4/Fri Mar 16 15:35:02 2018//
 /patch-swig_python_kopano_kopano_config_py/1.2/Fri Mar 16 15:35:02 2018//
 /patch-swig_python_kopano_kopano_item_py/1.2/Thu Mar 29 19:41:46 2018//
