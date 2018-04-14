@@ -1,4 +1,4 @@
-/Makefile/1.179/Fri Jan 13 17:27:16 2017//
+/Makefile/1.180/Fri Apr 13 15:40:38 2018//
 D/WordGenerator////
 D/astrolog////
 D/bible-kjv////
@@ -51,6 +51,7 @@ D/mmv////
 D/most////
 D/nyancat////
 D/openbabel////
+D/os-test////
 D/osinfo////
 D/p5-Acme-LOLCAT////
 D/p5-CreditCard////
