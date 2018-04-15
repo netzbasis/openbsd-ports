@@ -1,18 +1,20 @@
 /patch-CMakeLists_txt/1.4/Wed Jul  9 20:03:30 2014//
 /patch-ConfigureChecks_cmake/1.2/Sun Dec  8 19:13:33 2013//
 /patch-KdepimLibsConfig_cmake_in/1.2/Sun Dec  8 19:13:33 2013//
-/patch-akonadi_CMakeLists_txt/1.2/Wed Jul  9 20:03:30 2014//
+/patch-akonadi_CMakeLists_txt/1.3/Sat Apr 14 10:01:43 2018//
 /patch-akonadi_contact_tests_CMakeLists_txt/1.2/Wed Jul  9 20:03:30 2014//
 /patch-akonadi_kmime_tests_CMakeLists_txt/1.1/Wed Jul  9 20:03:30 2014//
 /patch-akonadi_xml_CMakeLists_txt/1.1/Wed Jul  9 20:03:30 2014//
+/patch-cmake_modules_FindQGpgme_cmake/1.1/Sat Apr 14 10:01:43 2018//
+/patch-gpgme++_CMakeLists_txt/1.1/Sat Apr 14 10:01:43 2018//
 /patch-includes_tests_CMakeLists_txt/1.4/Wed Jul  9 20:03:30 2014//
-/patch-kabc_CMakeLists_txt/1.2/Wed Jul  9 20:03:30 2014//
+/patch-kabc_CMakeLists_txt/1.3/Sat Apr 14 10:01:43 2018//
 /patch-kabc_formats_CMakeLists_txt/1.1/Sun Dec  8 19:13:33 2013//
 /patch-kabc_plugins_dir_CMakeLists_txt/1.1/Sun Dec  8 19:13:33 2013//
 /patch-kabc_plugins_file_CMakeLists_txt/1.2/Wed Jul  9 20:03:30 2014//
 /patch-kabc_plugins_ldapkio_CMakeLists_txt/1.2/Wed Jul  9 20:03:30 2014//
 /patch-kabc_plugins_net_CMakeLists_txt/1.1/Sun Dec  8 19:13:33 2013//
-/patch-kabc_tests_CMakeLists_txt/1.1/Wed Jul  9 20:03:30 2014//
+/patch-kabc_tests_CMakeLists_txt/1.2/Sat Apr 14 10:01:43 2018//
 /patch-kcal_CMakeLists_txt/1.2/Wed Jul  9 20:03:30 2014//
 /patch-kcal_icalformat_p_cpp/1.1/Wed Nov  8 05:37:50 2017//
 /patch-kcal_icaltimezones_cpp/1.1/Wed Nov  8 05:37:50 2017//
@@ -30,11 +32,12 @@
 /patch-kioslave_smtp_command_cpp/1.2/Sun Dec  8 19:13:33 2013//
 /patch-kldap_CMakeLists_txt/1.2/Wed Jul  9 20:03:30 2014//
 /patch-kmbox_CMakeLists_txt/1.2/Wed Jul  9 20:03:30 2014//
-/patch-kmime_kmime_util_cpp/1.2/Wed Jul  9 20:03:30 2014//
+/patch-kmime_kmime_util_cpp/1.3/Sat Apr 14 10:01:43 2018//
 /patch-kpimtextedit_CMakeLists_txt/1.2/Wed Jul  9 20:03:30 2014//
 /patch-kpimutils_CMakeLists_txt/1.2/Wed Jul  9 20:03:30 2014//
 /patch-kresources_CMakeLists_txt/1.2/Wed Jul  9 20:03:30 2014//
 /patch-ktnef_CMakeLists_txt/1.2/Wed Jul  9 20:03:30 2014//
 /patch-mailtransport_CMakeLists_txt/1.2/Wed Jul  9 20:03:30 2014//
 /patch-microblog_CMakeLists_txt/1.2/Wed Jul  9 20:03:30 2014//
+/patch-qgpgme_CMakeLists_txt/1.1/Sat Apr 14 10:01:43 2018//
 D

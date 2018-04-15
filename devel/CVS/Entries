@@ -1,4 +1,4 @@
-/Makefile/1.1725/Thu Apr 12 07:54:09 2018//
+/Makefile/1.1726/Sat Apr 14 21:27:20 2018//
 D/ElectricFence////
 D/ORBit2////
 D/acpica////
@@ -183,16 +183,13 @@ D/help2man////
 D/hs-ConfigFile////
 D/hs-FindBin////
 D/hs-HUnit////
-D/hs-List////
 D/hs-MissingH////
-D/hs-OneTuple////
 D/hs-QuickCheck////
 D/hs-ansi-terminal////
 D/hs-ansi-wl-pprint////
 D/hs-async////
 D/hs-base16-bytestring////
 D/hs-base64-bytestring////
-D/hs-blaze-builder////
 D/hs-cereal////
 D/hs-cmdargs////
 D/hs-conduit////
@@ -250,13 +247,10 @@ D/hs-text////
 D/hs-tf-random////
 D/hs-transformers-base////
 D/hs-transformers-compat////
-D/hs-unbounded-delays////
 D/hs-unix-compat////
-D/hs-unordered-containers////
 D/hs-utf8-string////
 D/hs-vector////
 D/hs-void////
-D/hscolour////
 D/hub////
 D/hyena////
 D/id-utils////
