@@ -1,4 +1,4 @@
-/Makefile/1.180/Fri Apr 13 15:40:38 2018//
+/Makefile/1.181/Mon Apr 16 00:32:24 2018//
 D/WordGenerator////
 D/astrolog////
 D/bible-kjv////
@@ -113,7 +113,6 @@ D/xd////
 D/xgas////
 D/xkcd-viewer////
 D/xless////
-D/xnc////
 D/xtar////
 D/xtimer////
 D/ytree////
