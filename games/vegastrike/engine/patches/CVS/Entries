@@ -1,6 +1,7 @@
 /patch-Makefile_in/1.2/Thu Jun  1 11:29:12 2017//
 /patch-configure/1.2/Thu Jun  1 11:29:12 2017//
-/patch-setup_src_include_central_cpp/1.1/Thu Jun  1 11:29:12 2017//
+/patch-objconv_basemaker_base_maker_cpp/1.1/Mon Apr 16 11:15:49 2018//
+/patch-setup_src_include_central_cpp/1.2/Mon Apr 16 11:15:49 2018//
 /patch-setup_src_include_display_gtk_cpp/1.1/Thu Jun  1 11:29:12 2017//
 /patch-setup_src_include_file_cpp/1.1/Thu Jun  1 11:29:12 2017//
 /patch-setup_src_include_general_cpp/1.1/Thu Jun  1 11:29:12 2017//
@@ -13,10 +14,13 @@
 /patch-src_cmd_unit_jump_h/1.1/Thu Jun  1 11:29:12 2017//
 /patch-src_cmd_unit_physics_h/1.1/Thu Jun  1 11:29:12 2017//
 /patch-src_endianness_h/1.1.1.1/Fri Apr 18 15:14:09 2014//
+/patch-src_gfx_cockpit_xml_cpp/1.1/Mon Apr 16 11:15:49 2018//
 /patch-src_gldrv_hashtable_3d_h/1.1/Thu Jun  1 11:29:12 2017//
+/patch-src_gui_text_area_cpp/1.1/Mon Apr 16 11:15:49 2018//
 /patch-src_gui_textinputdisplay_h/1.1/Thu Jun  1 11:29:12 2017//
 /patch-src_networking_lowlevel_packetmem_cpp/1.1.1.1/Fri Apr 18 15:14:09 2014//
 /patch-src_physics_h/1.1/Thu Jun  1 11:29:12 2017//
+/patch-src_pk3_cpp/1.1/Mon Apr 16 11:15:49 2018//
 /patch-src_posh_h/1.1.1.1/Fri Apr 18 15:14:09 2014//
 /patch-src_ship_commands_cpp/1.1/Thu Jun  1 11:29:12 2017//
 D

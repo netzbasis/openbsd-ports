@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2018/04/07 07:49:40 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.38 2018/04/16 20:01:22 rsadowski Exp $
 
 #Qt5Webkit
 USE_WXNEEDED =		Yes
@@ -7,6 +7,7 @@ COMMENT =		cross-platform IDE for use with Qt
 V =			4.6.0
 DISTNAME =		qt-creator-opensource-src-${V}
 PKGNAME =		qt-creator-${V}
+REVISION =		0
 
 SHARED_LIBS +=	Aggregation               0.0 # 0.0
 SHARED_LIBS +=	CPlusPlus                 1.0 # 0.0
@@ -41,7 +42,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 WANTLIB += ${COMPILER_LIBCXX} GL Qt5Concurrent Qt5Core Qt5Designer
 WANTLIB += Qt5DesignerComponents Qt5Gui Qt5Help Qt5Network Qt5PrintSupport
 WANTLIB += Qt5Qml Qt5Quick Qt5QuickWidgets Qt5Script Qt5Sql Qt5Svg
-WANTLIB += Qt5Widgets Qt5Xml botan-1.10 c clang m
+WANTLIB += Qt5Widgets Qt5Xml botan-1.10 c clang m qbscore qbsqtprofilesetup
 
 MASTER_SITES =	https://download.qt.io/official_releases/qtcreator/${V:R}/${V}/
 
@@ -83,7 +84,8 @@ NO_TEST =		Yes
 
 FAKE_FLAGS =		INSTALL_ROOT=${WRKINST}${TRUEPREFIX}
 
-CONFIGURE_ENV =		QBS_INSTALL_DIR=${LOCALBASE}
+CONFIGURE_ENV =		QBS_INSTALL_DIR=${LOCALBASE} \
+			LLVM_INSTALL_DIR=${LOCALBASE}
 
 GDB_ADJ_FILES = \
 	src/plugins/debugger/debuggeritemmanager.cpp \

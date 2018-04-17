@@ -9,6 +9,7 @@
 /patch-modules_download-tftp_TFTPDialogue_cpp/1.1/Mon May 22 16:26:49 2017//
 /patch-modules_log-prelude_log-prelude_hpp/1.1/Mon May 22 16:26:49 2017//
 /patch-modules_module-honeytrap_PCAPSocket_cpp/1.1/Mon May 22 16:26:49 2017//
+/patch-modules_module-honeytrap_TrapSocket_cpp/1.1/Mon Apr 16 23:05:32 2018//
 /patch-modules_module-peiros_PeirosParser_cpp/1.1/Mon May 22 16:26:49 2017//
 /patch-modules_module-peiros_PeirosParser_hpp/1.1/Mon May 22 16:26:49 2017//
 /patch-modules_module-peiros_TapInterface_hpp/1.1/Mon May 22 16:26:49 2017//
@@ -26,18 +27,26 @@
 /patch-modules_submit-mwserv_TransferSession_hpp/1.1/Tue Jul  5 08:18:30 2011//
 /patch-modules_submit-mwserv_submit-mwserv_hpp/1.1/Tue Jul  5 08:18:30 2011//
 /patch-modules_submit-norman_submit-norman_hpp/1.2/Mon May 22 16:26:49 2017//
+/patch-modules_vuln-asn1_asn1-shellcodes_h/1.1/Mon Apr 16 23:05:32 2018//
 /patch-modules_vuln-bagle_vuln-bagle_cpp/1.1/Mon May 22 16:26:49 2017//
 /patch-modules_vuln-dameware_vuln-dameware_cpp/1.1/Mon May 22 16:26:49 2017//
+/patch-modules_vuln-dcom_DCOMDialogue_cpp/1.1/Mon Apr 16 23:05:32 2018//
+/patch-modules_vuln-dcom_dcom-shellcodes_h/1.1/Mon Apr 16 23:05:32 2018//
 /patch-modules_vuln-dcom_vuln-dcom_cpp/1.1/Mon May 22 16:26:49 2017//
 /patch-modules_vuln-ftpd_vuln-ftpd_cpp/1.1/Mon May 22 16:26:49 2017//
+/patch-modules_vuln-iis_iis-shellcodes_h/1.1/Mon Apr 16 23:05:32 2018//
 /patch-modules_vuln-iis_vuln-iis_cpp/1.1/Mon May 22 16:26:49 2017//
 /patch-modules_vuln-kuang2_vuln-kuang2_cpp/1.1/Mon May 22 16:26:49 2017//
 /patch-modules_vuln-lsass_vuln-lsass_cpp/1.1/Mon May 22 16:26:49 2017//
 /patch-modules_vuln-msdtc_vuln-msdtc_cpp/1.1/Mon May 22 16:26:49 2017//
 /patch-modules_vuln-msmq_vuln-msmq_cpp/1.1/Mon May 22 16:26:49 2017//
+/patch-modules_vuln-mssql_mssql-shellcodes_h/1.1/Mon Apr 16 23:05:32 2018//
 /patch-modules_vuln-mydoom_vuln-mydoom_cpp/1.1/Mon May 22 16:26:49 2017//
+/patch-modules_vuln-netbiosname_SMBNameDialogue_cpp/1.1/Mon Apr 16 23:05:32 2018//
 /patch-modules_vuln-optix_vuln-optix_cpp/1.1/Mon May 22 16:26:49 2017//
 /patch-modules_vuln-pnp_vuln-pnp_cpp/1.1/Mon May 22 16:26:49 2017//
+/patch-modules_vuln-realvnc_vuln-realvnc_cpp/1.1/Mon Apr 16 23:05:32 2018//
+/patch-modules_vuln-realvnc_vuln-realvnc_hpp/1.1/Mon Apr 16 23:05:32 2018//
 /patch-modules_vuln-sub7_vuln-sub7_cpp/1.1/Mon May 22 16:26:49 2017//
 /patch-modules_vuln-wins_vuln-wins_cpp/1.1/Mon May 22 16:26:49 2017//
 /patch-modules_x-5_x-5_cpp/1.1/Mon May 22 16:26:49 2017//
@@ -53,5 +62,5 @@
 /patch-nepenthes-core_src_Nepenthes_cpp/1.1/Mon May 22 16:26:49 2017//
 /patch-nepenthes-core_src_RingFileLogger_cpp/1.1/Mon May 22 16:26:49 2017//
 /patch-nepenthes-core_src_SocketManager_cpp/1.1/Mon May 22 16:26:49 2017//
-/patch-nepenthes-core_src_Utilities_cpp/1.1/Mon May 22 16:26:49 2017//
+/patch-nepenthes-core_src_Utilities_cpp/1.2/Mon Apr 16 18:50:53 2018//
 D
