@@ -3,11 +3,13 @@
 /patch-dcop_dcopidl2cpp_Makefile_in/1.2/Tue Aug 26 16:52:29 2008//
 /patch-dcop_dcopidl_Makefile_in/1.2/Tue Aug 26 16:52:29 2008//
 /patch-dcop_dcopidlng_kdocAstUtil_pm/1.1/Fri Apr 15 00:04:45 2016//
-/patch-kate_part_katebuffer_cpp/1.1/Wed Apr 19 13:21:23 2017//
+/patch-kate_part_katebuffer_cpp/1.2/Tue Apr 17 14:47:49 2018//
 /patch-kate_part_katehighlight_cpp/1.1/Sat Oct  7 10:24:46 2017//
 /patch-kdecore_kpty_cpp/1.3/Tue Aug 26 16:52:29 2008//
 /patch-kdecore_kstandarddirs_cpp/1.5/Mon Dec 23 19:23:01 2013//
 /patch-kdecore_network_kresolver_cpp/1.11/Sat Mar 31 23:33:34 2007//
+/patch-kdecore_network_kresolverworkerbase_h/1.1/Tue Apr 17 14:47:49 2018//
+/patch-kdecore_network_kserversocket_cpp/1.1/Tue Apr 17 14:47:49 2018//
 /patch-kdecore_tests_kurltest_cpp/1.4/Tue Aug 26 16:52:29 2008//
 /patch-kded_kbuildsycoca_cpp/1.1/Sat Nov 14 16:41:03 2009//
 /patch-kded_vfolder_menu_cpp/1.1/Wed Dec  2 15:39:39 2009//
@@ -15,7 +17,13 @@
 /patch-kdeprint_cups_cupsdconf2_cupsddialog_cpp/1.1/Sat Oct  6 12:47:20 2007//
 /patch-kdeprint_cups_kmcupsmanager_cpp/1.2/Wed Oct 24 21:52:18 2007//
 /patch-kdesu_process_cpp/1.10/Tue Aug 26 16:52:29 2008//
+/patch-kdeui_kdialogbase_h/1.1/Tue Apr 17 14:47:49 2018//
 /patch-kdeui_ksconfig_cpp/1.2/Thu Oct 12 23:12:19 2006//
+/patch-khtml_dom_dom2_traversal_h/1.1/Tue Apr 17 14:47:49 2018//
+/patch-khtml_ecma_kjs_events_cpp/1.1/Tue Apr 17 14:47:49 2018//
+/patch-khtml_misc_decoder_cpp/1.1/Tue Apr 17 14:47:49 2018//
+/patch-kinit_kinit_cpp/1.1/Tue Apr 17 14:47:49 2018//
+/patch-kio_kio_kshred_cpp/1.1/Tue Apr 17 14:47:49 2018//
 /patch-kio_kssl_kopenssl_cc/1.3/Wed Oct  6 08:13:32 2010//
 /patch-kio_kssl_kopenssl_h/1.3/Wed Oct  6 08:13:32 2010//
 /patch-kio_kssl_ksmimecrypto_cc/1.1/Wed Oct  6 08:13:32 2010//
@@ -24,4 +32,5 @@
 /patch-kioslave_file_file_cc/1.5/Sat Nov 14 16:41:03 2009//
 /patch-kioslave_ftp_ftp_cc/1.6/Wed Apr 19 13:21:49 2017//
 /patch-kioslave_http_kcookiejar_kcookiejar_cpp/1.3/Mon Jan 21 19:12:21 2013//
+/patch-kstyles_keramik_keramik_cpp/1.1/Tue Apr 17 14:47:49 2018//
 D

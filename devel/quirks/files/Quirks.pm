@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.591 2018/04/16 00:33:28 bcallah Exp $
+# $OpenBSD: Quirks.pm,v 1.593 2018/04/18 02:17:35 jeremy Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1256,6 +1256,8 @@ my $obsolete_reason = {
 	'hs-bytestring-lexing' => 6,
 	'hs-scanner' => 6,
 	'xnc' => 0,
+	'nepenthes' => 3,
+	'mongrel2' => 6,
 };
 
 # reasons for obsolete packages
