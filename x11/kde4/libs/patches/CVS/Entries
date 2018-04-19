@@ -8,6 +8,7 @@
 /patch-cmake_modules_FindTaglib_cmake/1.2/Tue Apr 29 09:39:32 2014//
 /patch-cmake_modules_KDE4Macros_cmake/1.5/Wed Apr 24 19:45:29 2013//
 /patch-config_h_cmake/1.1/Sun Dec  8 19:13:32 2013//
+/patch-dnssd_servicemodel_h/1.1/Wed Apr 18 19:29:46 2018//
 /patch-doc_kjs_man-kjs_1_docbook/1.1/Wed Jan 15 19:42:11 2014//
 /patch-kde3support_kdecore_k3tempfile_cpp/1.1/Sun Dec  8 19:13:32 2013//
 /patch-kde3support_kunittest_CMakeLists_txt/1.1/Mon Aug 12 01:29:03 2013//
@@ -39,9 +40,11 @@
 /patch-kdeui_dialogs_ktip_cpp/1.1/Sun Dec  8 19:13:32 2013//
 /patch-kdeui_icons_kiconcache_cpp/1.1/Tue Apr 17 13:50:35 2018//
 /patch-kdeui_kernel_kapplication_h/1.1/Sun Dec  8 19:13:32 2013//
+/patch-kdeui_windowmanagement_netwm_cpp/1.1/Wed Apr 18 19:29:46 2018//
 /patch-kdewidgets_CMakeLists_txt/1.1/Mon Aug 12 01:29:03 2013//
 /patch-kdoctools_CMakeLists_txt/1.2/Sun Dec  8 19:13:32 2013//
 /patch-kdoctools_man-template_docbook/1.1/Fri Jan 10 08:12:11 2014//
+/patch-khtml_misc_AtomicString_cpp/1.1/Wed Apr 18 19:29:46 2018//
 /patch-kinit_kinit_cpp/1.2/Tue Apr 17 13:50:35 2018//
 /patch-kinit_klauncher_cpp/1.3/Fri Jul 18 08:17:12 2014//
 /patch-kinit_lnusertemp_c/1.3/Tue Jan 20 21:58:43 2015//

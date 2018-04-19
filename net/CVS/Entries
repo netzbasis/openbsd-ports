@@ -1,4 +1,4 @@
-/Makefile/1.1064/Tue Apr 17 11:29:06 2018//
+/Makefile/1.1065/Wed Apr 18 09:19:23 2018//
 D/GeoIP////
 D/adns////
 D/adsuck////
@@ -545,7 +545,6 @@ D/rabbitmq////
 D/rabbitmq-c////
 D/radcli////
 D/rbldnsd////
-D/retroshare////
 D/rrdtool////
 D/rsnapshot////
 D/rsync////

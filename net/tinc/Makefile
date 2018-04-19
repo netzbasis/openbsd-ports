@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2018/01/11 19:27:08 rpe Exp $
+# $OpenBSD: Makefile,v 1.9 2018/04/18 10:49:08 sthen Exp $
 
 COMMENT =		Virtual Private Network (VPN) daemon
 DISTNAME =		tinc-1.0.33
 CATEGORIES =		net security
-REVISION =		0
+EPOCH =			0
 
 HOMEPAGE =		https://www.tinc-vpn.org/
 
