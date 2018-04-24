@@ -1,14 +1,15 @@
-# $OpenBSD: Makefile,v 1.14 2018/04/20 17:41:59 jasper Exp $
+# $OpenBSD: Makefile,v 1.16 2018/04/23 08:55:27 tb Exp $
 
 COMMENT =		opensource MQTT broker
 
 DISTNAME =		mosquitto-1.4.15
+REVISION =		1
 
 SHARED_LIBS +=  mosquitto                 0.0 # 1.4
 SHARED_LIBS +=  mosquittopp               0.0 # 1.4
 
 CATEGORIES =		net
-HOMEPAGE =		http://mosquitto.org/
+HOMEPAGE =		https://mosquitto.org/
 
 MAINTAINER =		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
@@ -18,7 +19,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 WANTLIB +=		c crypto m pthread ssl ${COMPILER_LIBCXX}
 
 CFLAGS +=		-I${LOCALBASE}/include
-MASTER_SITES =		http://mosquitto.org/files/source/
+MASTER_SITES =		https://mosquitto.org/files/source/
 
 MODULES =		devel/cmake \
 			lang/python

@@ -1,4 +1,4 @@
-/Makefile/1.611/Sun Apr  8 20:18:42 2018//
+/Makefile/1.612/Mon Apr 23 13:39:01 2018//
 D/2bwm////
 D/Xaw3d////
 D/XawMu////
@@ -108,6 +108,7 @@ D/gtkglextmm////
 D/gtkhotkey////
 D/gtksourceview////
 D/gtksourceview3////
+D/gtksourceview4////
 D/gtksourceviewmm3////
 D/gxmessage////
 D/herbstluftwm////

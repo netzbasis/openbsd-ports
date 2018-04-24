@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.68 2018/03/14 20:33:13 jasper Exp $
+# $OpenBSD: Makefile,v 1.70 2018/04/23 13:45:20 jasper Exp $
+
+PORTROACH=		limit:^3
 
 COMMENT=		text widget that extends the GTK3 GtkTextView widget
 
@@ -28,7 +30,6 @@ WANTLIB += pthread xcb xcb-render xcb-shm xml2 z
 
 MODULES=		x11/gnome
 
-BUILD_DEPENDS=		textproc/itstool
 LIB_DEPENDS=		textproc/libxml \
 			x11/gtk+3
 

@@ -1,4 +1,4 @@
-/Makefile/1.858/Wed Apr 18 02:11:15 2018//
+/Makefile/1.859/Mon Apr 23 22:02:22 2018//
 D/ajaxterm////
 D/analog////
 D/ap2-mod_dnssd////
@@ -67,6 +67,7 @@ D/kwebkitpart////
 D/larbin////
 D/libcroco////
 D/libmicrohttpd////
+D/libsass////
 D/libwebsockets////
 D/liferea////
 D/lightsquid////
@@ -465,6 +466,7 @@ D/ruby-xpath////
 D/sabredav////
 D/sarg////
 D/sass////
+D/sassc////
 D/sblg////
 D/seamonkey////
 D/seamonkey-i18n////
