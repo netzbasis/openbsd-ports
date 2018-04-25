@@ -1,4 +1,4 @@
-/Makefile/1.859/Mon Apr 23 22:02:22 2018//
+/Makefile/1.860/Tue Apr 24 12:45:20 2018//
 D/ajaxterm////
 D/analog////
 D/ap2-mod_dnssd////
@@ -499,6 +499,7 @@ D/uget////
 D/uriparser////
 D/urlwatch////
 D/varnish////
+D/vimb////
 D/visitors////
 D/vteplugin////
 D/w3m////

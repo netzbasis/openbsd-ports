@@ -25,7 +25,7 @@
 /patch-sapi_cgi_cgi_main_c/1.1.1.1/Mon Dec 14 17:58:46 2015//
 /patch-sapi_cli_php_cli_c/1.2/Fri Feb 24 09:13:12 2017//
 /patch-sapi_fpm_fpm_fpm_atomic_h/1.1.1.1/Mon Dec 14 17:58:46 2015//
-/patch-sapi_fpm_www_conf_in/1.1.1.1/Mon Dec 14 17:58:45 2015//
+/patch-sapi_fpm_www_conf_in/1.2/Tue Apr 24 15:26:32 2018//
 /patch-scripts_Makefile_frag/1.1.1.1/Mon Dec 14 17:58:46 2015//
 /patch-scripts_php-config_in/1.1.1.1/Mon Dec 14 17:58:46 2015//
 /patch-scripts_phpize_in/1.1.1.1/Mon Dec 14 17:58:46 2015//

@@ -1,4 +1,4 @@
-/Makefile/1.57/Sun Feb 25 13:40:31 2018//
+/Makefile/1.58/Tue Apr 24 13:17:27 2018//
 D/emerillon////
 D/foxtrotgps////
 D/garmindev////
@@ -22,7 +22,6 @@ D/mapserver////
 D/merkaartor////
 D/openbsd-developers////
 D/osm-gps-map////
-D/osm2go////
 D/osm2pgrouting////
 D/osm2pgsql////
 D/p5-GPS-PRN////

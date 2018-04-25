@@ -1,4 +1,4 @@
-/Makefile/1.452/Thu Mar 29 23:06:50 2018//
+/Makefile/1.453/Tue Apr 24 13:24:05 2018//
 D/DevIL////
 D/GraphicsMagick////
 D/ImageMagick////
@@ -80,7 +80,6 @@ D/glpng////
 D/gmt////
 D/gnofract4d////
 D/gocr////
-D/goocanvas////
 D/goocanvas2////
 D/gphoto2////
 D/gpicview////

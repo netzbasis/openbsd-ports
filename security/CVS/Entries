@@ -1,4 +1,4 @@
-/Makefile/1.499/Tue Apr 10 12:09:31 2018//
+/Makefile/1.500/Tue Apr 24 10:02:26 2018//
 D/ADMsnmp////
 D/aescrypt////
 D/aide////
@@ -82,6 +82,7 @@ D/keepassx////
 D/keepassxc////
 D/keybase////
 D/keychain////
+D/keyringer////
 D/klaxon////
 D/knockpy////
 D/kpcli////

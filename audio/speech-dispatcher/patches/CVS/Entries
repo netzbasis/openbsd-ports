@@ -1,6 +1,9 @@
 /patch-doc_speech-dispatcher-cs_texi/1.1/Sat Apr 25 19:33:20 2015//
 /patch-include_speechd_types_h/1.1/Wed Apr 17 16:26:35 2013//
+/patch-src_api_c_libspeechd_c/1.1/Tue Apr 24 21:20:04 2018//
 /patch-src_api_python_speechd_config_config_py_in/1.3/Fri May 26 20:43:12 2017//
+/patch-src_clients_spdsend_spdsend_c/1.1/Tue Apr 24 21:20:04 2018//
+/patch-src_common_spd_getline_c/1.1/Tue Apr 24 21:20:04 2018//
 /patch-src_server_speechd_c/1.4/Sun Dec  3 12:45:52 2017//
 /patch-src_server_speechd_h/1.5/Sat Aug 27 20:44:08 2016//
 D

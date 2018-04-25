@@ -1,7 +1,16 @@
 /patch-CMakeLists_txt/1.2/Tue Nov  4 14:58:39 2014//
 /patch-bitmaps_CMakeLists_txt/1.1/Wed Jun 19 16:16:22 2013//
 /patch-common_gestfich_cpp/1.3/Tue May  3 18:31:14 2011//
+/patch-common_pcbcommon_cpp/1.1/Tue Apr 24 16:21:10 2018//
+/patch-eeschema_class_drawsheet_cpp/1.1/Tue Apr 24 16:21:10 2018//
 /patch-eeschema_class_libentry_cpp/1.1/Fri Dec 29 09:22:22 2017//
+/patch-eeschema_class_pin_cpp/1.1/Tue Apr 24 16:21:10 2018//
+/patch-eeschema_class_sch_cmp_field_cpp/1.1/Tue Apr 24 16:21:10 2018//
+/patch-gerbview_tracepcb_cpp/1.1/Tue Apr 24 16:21:10 2018//
+/patch-include_common_h/1.1/Tue Apr 24 16:21:10 2018//
+/patch-include_pcbcommon_h/1.1/Tue Apr 24 16:21:10 2018//
 /patch-pcbnew_CMakeLists_txt/1.1/Wed Jun 19 16:16:22 2013//
 /patch-pcbnew_class_module_cpp/1.2/Tue May  3 18:31:14 2011//
+/patch-pcbnew_class_pad_draw_functions_cpp/1.1/Tue Apr 24 16:21:10 2018//
+/patch-pcbnew_hotkeys_h/1.1/Tue Apr 24 16:21:10 2018//
 D

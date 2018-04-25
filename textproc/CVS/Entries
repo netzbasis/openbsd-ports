@@ -1,4 +1,4 @@
-/Makefile/1.570/Sat Apr 14 21:27:20 2018//
+/Makefile/1.571/Tue Apr 24 10:10:31 2018//
 D/TclXML////
 D/antiword////
 D/apertium////
@@ -370,6 +370,8 @@ D/py-rdflib////
 D/py-rtf////
 D/py-ruamel.yaml////
 D/py-snowballstemmer////
+D/py-spdx////
+D/py-spdx-lookup////
 D/py-sphinx////
 D/py-sphinx-intl////
 D/py-sphinx_guzzle_theme////
