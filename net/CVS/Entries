@@ -1,4 +1,4 @@
-/Makefile/1.1065/Wed Apr 18 09:19:23 2018//
+/Makefile/1.1069/Wed Apr 25 14:51:14 2018//
 D/GeoIP////
 D/adns////
 D/adsuck////
@@ -25,6 +25,7 @@ D/bing////
 D/bird////
 D/bitlbee////
 D/bitlbee-facebook////
+D/blaeu////
 D/bnc////
 D/bro////
 D/btpd////
@@ -481,6 +482,7 @@ D/ptpd////
 D/pure-ftpd////
 D/putty////
 D/py-GeoIP////
+D/py-IOSXR////
 D/py-IP////
 D/py-adns////
 D/py-aiodns////
@@ -489,11 +491,13 @@ D/py-boto3////
 D/py-botocore////
 D/py-cares////
 D/py-curl////
+D/py-cymruwhois////
 D/py-czmq////
 D/py-dns////
 D/py-dnslib////
 D/py-dnspython////
 D/py-dpkt////
+D/py-eapi////
 D/py-flowd////
 D/py-flowtools////
 D/py-ftpdlib////
@@ -503,15 +507,18 @@ D/py-impacket////
 D/py-ipaddr////
 D/py-ipaddress////
 D/py-irclib////
+D/py-junos-eznc////
 D/py-libcloud////
 D/py-libpcap////
 D/py-medusa////
 D/py-msgpack////
 D/py-nbxmpp////
+D/py-ncclient////
 D/py-netaddr////
 D/py-netifaces////
 D/py-netmiko////
 D/py-nmap////
+D/py-nxos////
 D/py-oauth2////
 D/py-paho-mqtt////
 D/py-pcapy////

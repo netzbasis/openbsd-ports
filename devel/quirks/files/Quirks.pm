@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.599 2018/04/24 13:24:47 jasper Exp $
+# $OpenBSD: Quirks.pm,v 1.603 2018/04/25 19:18:50 jasper Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -506,6 +506,8 @@ my $stem_extensions = {
 	'latexila' => 'gnome-latex',
 	'osh' => 'etsh',
 	'gnome-themes-standard' => 'gnome-themes-extra',
+	'open-cobol' => 'gnucobol',
+	'fanstasque-sans' => 'fantasque-sans',
 };
 
 my $obsolete_reason = {
@@ -1036,7 +1038,6 @@ my $obsolete_reason = {
 	'claws-mail-htmlviewer' => 2,
 	'postgresql-jdbc' => 6,
 	'postgresql-jdbc-docs' => 6,
-	'vimb' => 2,
 	'plor' => 3,
 	'coherence' => 3,
 	'hugs98' => 3,
@@ -1379,7 +1380,7 @@ my $cve = {
 	'www/cherokee,-ldap' => 'cherokee-ldap-<1.2.101p6',
 	'www/drupal6/views' => 'drupal6-views-<2.18',
 	'www/p5-CGI-Application' => 'p5-CGI-Application-<4.50p0',
-	'www/drupal7/core' => 'drupal->=7.0,<7.58',
+	'www/drupal7/core' => 'drupal->=7.0,<7.59',
 	'www/drupal7/theme-newsflash' => 'drupal7-theme-newsflash-<2.5',
 };
 

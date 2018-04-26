@@ -1,4 +1,4 @@
-/Makefile/1.218/Wed Jan 31 00:22:00 2018//
+/Makefile/1.220/Wed Apr 25 07:43:55 2018//
 D/STk////
 D/a60////
 D/abcl////
@@ -38,6 +38,7 @@ D/gawk////
 D/gcc////
 D/gforth////
 D/ghc////
+D/gnucobol////
 D/go////
 D/go-bootstrap////
 D/gprolog////
@@ -73,7 +74,6 @@ D/obc////
 D/ocaml////
 D/ocaml-camlp4////
 D/ocaml-camlp5////
-D/open-cobol////
 D/otcl////
 D/p5-Language-Ook////
 D/parrot////

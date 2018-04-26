@@ -33,8 +33,8 @@
 /patch-imep_rxmit_queue_cc/1.1/Sat Nov  1 20:05:01 2003//
 /patch-imep_rxmit_queue_h/1.2/Sat Nov  1 20:05:01 2003//
 /patch-indep-utils_cmu-scen-gen_setdest_Makefile_in/1.3/Wed Oct 24 15:01:09 2007//
-/patch-indep-utils_cmu-scen-gen_setdest_calcdest_cc/1.1/Thu May 18 23:28:53 2017//
-/patch-indep-utils_cmu-scen-gen_setdest_setdest_cc/1.1/Thu May 18 23:28:53 2017//
+/patch-indep-utils_cmu-scen-gen_setdest_calcdest_cc/1.2/Wed Apr 25 19:44:04 2018//
+/patch-indep-utils_cmu-scen-gen_setdest_setdest_cc/1.2/Wed Apr 25 19:44:04 2018//
 /patch-indep-utils_cmu-scen-gen_setdest_setdest_h/1.2/Thu May 18 23:28:53 2017//
 /patch-indep-utils_webtrace-conv_dec_my-endian_cc/1.2/Sat Nov  1 20:05:01 2003//
 /patch-indep-utils_webtrace-conv_dec_proxytrace_cc/1.3/Wed Oct 24 15:01:09 2007//

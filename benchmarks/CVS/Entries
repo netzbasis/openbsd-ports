@@ -1,4 +1,4 @@
-/Makefile/1.27/Mon May  1 11:10:31 2017//
+/Makefile/1.28/Wed Apr 25 11:25:04 2018//
 D/blogbench////
 D/bonnie++////
 D/fs_mark////
@@ -17,4 +17,5 @@ D/sysbench////
 D/tcpblast////
 D/tsung////
 D/ubench////
+D/wrk////
 D/xengine////

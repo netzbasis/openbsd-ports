@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1065 2018/04/18 09:19:23 kn Exp $
+# $OpenBSD: Makefile,v 1.1069 2018/04/25 14:51:14 denis Exp $
 
      SUBDIR =
      SUBDIR += GeoIP
@@ -31,6 +31,7 @@
      SUBDIR += bitlbee,otr
      SUBDIR += bitlbee,otr,libpurple
      SUBDIR += bitlbee-facebook
+     SUBDIR += blaeu
      SUBDIR += bnc
      SUBDIR += bro
      SUBDIR += btpd
@@ -518,6 +519,8 @@
      SUBDIR += pure-ftpd,virtual_chroot
      SUBDIR += putty
      SUBDIR += py-GeoIP
+     SUBDIR += py-IOSXR
+     SUBDIR += py-IOSXR,python3
      SUBDIR += py-IP
      SUBDIR += py-IP,python3
      SUBDIR += py-adns
@@ -538,6 +541,8 @@
      SUBDIR += py-cares,python3
      SUBDIR += py-curl
      SUBDIR += py-curl,python3
+     SUBDIR += py-cymruwhois
+     SUBDIR += py-cymruwhois,python3
      SUBDIR += py-czmq
      SUBDIR += py-dns
      SUBDIR += py-dnslib
@@ -545,6 +550,8 @@
      SUBDIR += py-dnspython
      SUBDIR += py-dnspython,python3
      SUBDIR += py-dpkt
+     SUBDIR += py-eapi
+     SUBDIR += py-eapi,python3
      SUBDIR += py-flowd
      SUBDIR += py-flowtools
      SUBDIR += py-ftpdlib
@@ -555,12 +562,16 @@
      SUBDIR += py-ipaddr
      SUBDIR += py-ipaddress
      SUBDIR += py-irclib
+     SUBDIR += py-junos-eznc
+     SUBDIR += py-junos-eznc,python3
      SUBDIR += py-libcloud
      SUBDIR += py-libpcap
      SUBDIR += py-medusa
      SUBDIR += py-msgpack
      SUBDIR += py-msgpack,python3
      SUBDIR += py-nbxmpp
+     SUBDIR += py-ncclient
+     SUBDIR += py-ncclient,python3
      SUBDIR += py-netaddr
      SUBDIR += py-netaddr,python3
      SUBDIR += py-netifaces
@@ -568,6 +579,8 @@
      SUBDIR += py-netmiko
      SUBDIR += py-netmiko,python3
      SUBDIR += py-nmap
+     SUBDIR += py-nxos
+     SUBDIR += py-nxos,python3
      SUBDIR += py-oauth2
      SUBDIR += py-paho-mqtt
      SUBDIR += py-paho-mqtt,python3

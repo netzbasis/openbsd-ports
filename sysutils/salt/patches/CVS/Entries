@@ -1,6 +1,5 @@
-/patch-salt_client_ssh_shell_py/1.1/Wed Dec  6 12:24:02 2017//
-/patch-salt_modules_openbsd_sysctl_py/1.1/Tue Jan  2 18:54:22 2018//
-/patch-salt_modules_openbsdpkg_py/1.1/Wed Dec 20 16:21:46 2017//
-/patch-salt_modules_salt_proxy_py/1.1/Sat Jan 27 15:09:30 2018//
-/patch-salt_modules_status_py/1.2/Mon Dec 18 21:06:02 2017//
+/patch-salt_modules_openbsd_sysctl_py/1.2/Wed Apr 25 10:02:48 2018//
+/patch-salt_modules_openbsdpkg_py/1.2/Wed Apr 25 10:02:48 2018//
+/patch-salt_modules_salt_proxy_py/1.2/Wed Apr 25 10:02:48 2018//
+/patch-salt_returners_zabbix_return_py/1.1/Wed Apr 25 17:16:19 2018//
 D

@@ -1,5 +1,10 @@
-/patch-common_mk/1.1/Tue Apr 26 17:59:51 2016//
-/patch-lib_Makefile/1.6/Wed Aug 31 22:12:43 2016//
-/patch-lib_libpm_c/1.1/Tue Apr 26 17:59:51 2016//
+/patch-common_mk/1.2/Wed Apr 25 18:45:33 2018//
+/patch-converter_other_cameratopam_camera_c/1.1/Wed Apr 25 18:45:33 2018//
+/patch-converter_other_jpeg2000_pamtojpeg2k_c/1.1/Wed Apr 25 18:45:33 2018//
+/patch-converter_other_pamtotiff_c/1.1/Wed Apr 25 18:45:33 2018//
+/patch-generator_pbmtextps_c/1.1/Wed Apr 25 18:45:33 2018//
+/patch-lib_Makefile/1.7/Wed Apr 25 18:45:33 2018//
+/patch-lib_libpm_c/1.2/Wed Apr 25 18:45:33 2018//
+/patch-lib_libsystem_c/1.4/Wed Apr 25 18:45:33 2018//
 /patch-lib_util_Makefile/1.4/Tue Apr 26 17:59:51 2016//
 D
