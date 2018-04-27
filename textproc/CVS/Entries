@@ -1,4 +1,4 @@
-/Makefile/1.571/Tue Apr 24 10:10:31 2018//
+/Makefile/1.572/Thu Apr 26 12:26:05 2018//
 D/TclXML////
 D/antiword////
 D/apertium////
@@ -369,6 +369,7 @@ D/py-pykwalify////
 D/py-rdflib////
 D/py-rtf////
 D/py-ruamel.yaml////
+D/py-semver////
 D/py-snowballstemmer////
 D/py-spdx////
 D/py-spdx-lookup////

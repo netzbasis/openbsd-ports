@@ -1,4 +1,4 @@
-/Makefile/1.860/Tue Apr 24 12:45:20 2018//
+/Makefile/1.861/Thu Apr 26 15:08:56 2018//
 D/ajaxterm////
 D/analog////
 D/ap2-mod_dnssd////
@@ -330,15 +330,20 @@ D/pear-HTTP-WebDAV-Server////
 D/pear-SOAP////
 D/pecl-chroot////
 D/pecl-geoip////
-D/pecl-http////
 D/pecl-memcache////
 D/pecl-memcached////
+D/pecl-pecl_http////
 D/pecl-proctitle////
 D/pecl-propro////
 D/pecl-raphf////
 D/pecl-ssh2////
 D/pecl-swish////
 D/pecl-uploadprogress////
+D/pecl56-memcached////
+D/pecl56-pecl_http////
+D/pecl56-propro////
+D/pecl56-raphf////
+D/pecl56-ssh2////
 D/pelican////
 D/perlbal////
 D/phantomjs////

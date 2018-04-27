@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.363 2018/04/09 09:36:37 jca Exp $
+# $OpenBSD: Makefile,v 1.365 2018/04/26 20:21:41 solene Exp $
 
      SUBDIR =
      SUBDIR += abook
@@ -78,6 +78,7 @@
      SUBDIR += mailest
      SUBDIR += mailgraph
      SUBDIR += mailman
+     SUBDIR += mailpile
      SUBDIR += mailscanner
      SUBDIR += mairix
      SUBDIR += majordomo
@@ -171,7 +172,8 @@
      SUBDIR += pear-Mail-Mime
      SUBDIR += pear-Mail-mimeDecode
      SUBDIR += pear-Mime-Type
-     SUBDIR += pecl-mailparse
+     SUBDIR += pecl56-mailparse
+     SUBDIR += pecl-mailparse,php70
      SUBDIR += perdition
      SUBDIR += pflogsumm
      SUBDIR += pine-pgp-filters

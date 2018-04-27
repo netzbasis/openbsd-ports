@@ -1,4 +1,4 @@
-/Makefile/1.473/Thu Mar 29 23:06:51 2018//
+/Makefile/1.475/Thu Apr 26 17:34:59 2018//
 D/accountsservice////
 D/amazon-ecs-cli////
 D/amazon-ssm-agent////
@@ -22,6 +22,7 @@ D/bdfresize////
 D/beats////
 D/binwalk////
 D/bitrot////
+D/boar////
 D/borgbackup////
 D/borgmatic////
 D/bubblemon-dockapp////
@@ -79,6 +80,7 @@ D/firmware////
 D/flashrom////
 D/fleetctl////
 D/flock////
+D/fprintd////
 D/freedt////
 D/freeipmi////
 D/fsstress////

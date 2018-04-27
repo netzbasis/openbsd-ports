@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.473 2018/03/29 23:06:51 jeremy Exp $
+# $OpenBSD: Makefile,v 1.475 2018/04/26 17:34:59 solene Exp $
 
      SUBDIR =
      SUBDIR += accountsservice
@@ -24,6 +24,7 @@
      SUBDIR += beats
      SUBDIR += binwalk
      SUBDIR += bitrot
+     SUBDIR += boar
      SUBDIR += borgbackup
      SUBDIR += borgmatic
      SUBDIR += bubblemon-dockapp
@@ -84,6 +85,7 @@
      SUBDIR += flashrom
      SUBDIR += fleetctl
      SUBDIR += flock
+     SUBDIR += fprintd
      SUBDIR += freedt
      SUBDIR += freeipmi
      SUBDIR += fsstress

@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2017/01/03 19:19:49 landry Exp $
+# $OpenBSD: Makefile,v 1.8 2018/04/26 09:49:59 sthen Exp $
 
 COMMENT =		Python Build Reasonableness
 
-MODPY_EGG_VERSION =	1.8.1
+MODPY_EGG_VERSION =	4.0.2
 DISTNAME =		pbr-${MODPY_EGG_VERSION}
 PKGNAME =		${DISTNAME:S/^/py-/}
 CATEGORIES =		devel
-REVISION =		0
 
 HOMEPAGE =		https://github.com/openstack-dev/pbr
 
