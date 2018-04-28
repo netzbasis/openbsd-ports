@@ -1,0 +1,17 @@
+$OpenBSD: patch-timidity_options_h,v 1.1 2018/04/27 15:43:20 jasper Exp $
+
+Index: timidity/options.h
+--- timidity/options.h.orig
++++ timidity/options.h
+@@ -78,10 +78,7 @@
+ #if defined(__WIN32__) || defined(__OS2__)
+ #define DEFAULT_PATH	"C:\\TIMIDITY"
+ #else
+-#define DEFAULT_PATH	"/etc/timidity"
+-#define DEFAULT_PATH1	"/usr/share/timidity"
+-#define DEFAULT_PATH2	"/usr/local/share/timidity"
+-#define DEFAULT_PATH3	"/usr/local/lib/timidity"
++#define DEFAULT_PATH	"${SYSCONFDIR}"
+ #endif
+ 
+ /* These affect general volume */

@@ -1,4 +1,4 @@
-/Makefile/1.475/Thu Apr 26 17:34:59 2018//
+/Makefile/1.477/Fri Apr 27 16:35:04 2018//
 D/accountsservice////
 D/amazon-ecs-cli////
 D/amazon-ssm-agent////
@@ -69,6 +69,7 @@ D/e2fsprogs////
 D/ec2-api-tools////
 D/entr////
 D/eventlog////
+D/exa////
 D/exfat-fuse////
 D/fabric////
 D/facette////
@@ -315,6 +316,7 @@ D/uefitool////
 D/upobsd////
 D/upower////
 D/upsd////
+D/upt////
 D/uptimed////
 D/usbutil////
 D/usbutils////

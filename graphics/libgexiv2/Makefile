@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.30 2018/02/12 23:25:36 kili Exp $
+# $OpenBSD: Makefile,v 1.32 2018/04/27 11:21:17 ajacoutot Exp $
 
 COMMENT=		GObject wrapper around exiv2
 
 GNOME_VERSION=		0.10.8
 GNOME_PROJECT=		gexiv2
 PKGNAME=		lib${DISTNAME}
-REVISION=		0
+REVISION=		2
 
 CATEGORIES=		graphics
 
@@ -34,10 +34,13 @@ LIB_DEPENDS=		devel/glib2 \
 			graphics/exiv2
 
 # import gi
-BUILD_DEPENDS=		devel/py-gobject3${MODPY_FLAVOR}
 RUN_DEPENDS=		devel/py-gobject3${MODPY_FLAVOR}
 
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ENV=		ac_cv_path_PYTHON3_PATH=${MODPY_BIN}
+
+# we need support for both python2 and python3
+BUILD_DEPENDS +=	lang/python/${MODPY_DEFAULT_VERSION_2}
+RUN_DEPENDS +=		lang/python/${MODPY_DEFAULT_VERSION_2} \
+			devel/py-gobject3
 
 .include <bsd.port.mk>

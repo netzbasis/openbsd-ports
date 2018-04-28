@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.31 2018/04/22 13:31:48 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.33 2018/04/27 09:18:48 ajacoutot Exp $
+
+PORTROACH=		limit:^0\.3
 
 COMMENT=		graph based image processing framework (API version 0.3)
 
@@ -6,6 +8,7 @@ V=			0.3.34
 DISTNAME=		gegl-${V}
 PKGNAME=		gegl03-${V}
 EXTRACT_SUFX=		.tar.bz2
+REVISION=		0
 
 SHARED_LIBS +=  gegl-0.3             0.6      # 332.0
 
@@ -15,6 +18,8 @@ SUBST_VARS=		API_VERSION
 CATEGORIES=		graphics devel
 
 HOMEPAGE=		http://gegl.org/
+
+MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # GPLv3/LGPLv3
 PERMIT_PACKAGE_CDROM=	Yes
@@ -38,7 +43,7 @@ USE_GMAKE=		Yes
 BUILD_DEPENDS=		graphics/libgexiv2
 
 LIB_DEPENDS=		devel/json-glib \
-			graphics/babl>=0.1.42 \
+			graphics/babl \
 			graphics/lcms2 \
 			graphics/libraw \
 			graphics/libwebp \
@@ -73,7 +78,8 @@ CONFIGURE_ARGS +=	--enable-mmx \
 			--disable-sse
 
 post-install:
-	rm ${PREFIX}/lib/gegl-${API_VERSION}/*.{a,la}
+	rm ${PREFIX}/lib/gegl-${API_VERSION}/*.{a,la} \
+		${PREFIX}/lib/libgegl-{npd,sc}-${API_VERSION}.{a,la}
 # fix conflict with graphics/gegl; we currently only care about the libraries
 	rm -rf ${PREFIX}/bin/
 

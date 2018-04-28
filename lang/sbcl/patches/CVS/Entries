@@ -2,7 +2,10 @@
 /patch-src_runtime_Config_generic-openbsd/1.3/Thu Mar  8 15:17:39 2018//
 /patch-src_runtime_GNUmakefile/1.8/Thu Mar  8 15:17:39 2018//
 /patch-src_runtime_gc-common_c/1.2/Thu Mar  8 15:17:39 2018//
+/patch-src_runtime_ppc-arch_c/1.1/Fri Apr 27 16:25:12 2018//
 /patch-src_runtime_run-program_c/1.1/Thu Mar  8 15:17:39 2018//
 /patch-src_runtime_thread_c/1.1/Thu Mar  8 15:17:39 2018//
+/patch-src_runtime_x86-64-arch_c/1.1/Fri Apr 27 16:25:12 2018//
 /patch-src_runtime_x86-64-bsd-os_c/1.3/Thu Mar  8 15:17:39 2018//
+/patch-src_runtime_x86-arch_c/1.1/Fri Apr 27 16:25:12 2018//
 D

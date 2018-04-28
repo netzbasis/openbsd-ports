@@ -1,4 +1,4 @@
-/Makefile/1.1729/Thu Apr 26 20:31:10 2018//
+/Makefile/1.1730/Fri Apr 27 18:37:52 2018//
 D/ElectricFence////
 D/ORBit2////
 D/acpica////
@@ -385,6 +385,7 @@ D/lua-cliargs////
 D/lua-cmsgpack////
 D/lua-compat53////
 D/lua-lgi////
+D/lua-openbsd////
 D/lua-penlight////
 D/lua-term////
 D/lua-tz////

@@ -1,4 +1,4 @@
-/Makefile/1.373/Wed Apr 25 16:15:58 2018//
+/Makefile/1.375/Fri Apr 27 16:51:44 2018//
 D/0ad////
 D/2048-cli////
 D/abuse////
@@ -117,6 +117,7 @@ D/gnuchess////
 D/gnugo////
 D/gnurobbo////
 D/gnushogi////
+D/godot////
 D/golly////
 D/gottcode////
 D/grhino////
@@ -176,6 +177,7 @@ D/oilwar////
 D/omega////
 D/oolite////
 D/openarena////
+D/openfodder////
 D/openjk////
 D/openmw////
 D/openrct2////

@@ -51,7 +51,7 @@
 /patch-build_config_compiler_compiler_gni/1.11/Mon Apr 23 15:00:15 2018//
 /patch-build_config_features_gni/1.10/Sat Dec 16 15:34:39 2017//
 /patch-build_config_linux_pkg-config_py/1.1/Wed Aug 17 11:06:50 2016//
-/patch-build_gn_run_binary_py/1.5/Thu Apr 26 19:41:38 2018//
+/patch-build_gn_run_binary_py/1.6/Fri Apr 27 08:21:45 2018//
 /patch-build_toolchain_gcc_solink_wrapper_py/1.2/Sat Dec 10 15:35:25 2016//
 /patch-build_toolchain_gcc_toolchain_gni/1.13/Mon Apr 23 15:00:15 2018//
 /patch-build_toolchain_openbsd_BUILD_gn/1.2/Wed Oct 26 06:22:07 2016//
@@ -241,7 +241,6 @@
 /patch-content_utility_utility_main_cc/1.8/Tue Jan 30 07:57:25 2018//
 /patch-content_zygote_zygote_linux_cc/1.1/Thu Apr 26 19:41:38 2018//
 /patch-content_zygote_zygote_main_linux_cc/1.9/Thu Apr 26 19:41:38 2018//
-/patch-dbus_property_cc/1.9/Tue Jan 30 07:57:25 2018//
 /patch-device_bluetooth_BUILD_gn/1.12/Mon Mar 12 13:48:34 2018//
 /patch-device_gamepad_gamepad_provider_cc/1.6/Tue Jan 30 07:57:25 2018//
 /patch-device_geolocation_location_arbitrator_cc/1.4/Tue Jan 30 07:57:25 2018//
