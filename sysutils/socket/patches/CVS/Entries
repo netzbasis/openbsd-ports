@@ -1,9 +1,3 @@
-/patch-README/1.3/Fri Jul  8 11:19:35 2011//
-/patch-globals_h/1.2/Thu Mar 17 21:07:32 2016//
-/patch-io_c/1.2/Mon Aug  6 20:45:49 2012//
-/patch-siglist_c/1.1/Fri Jul  8 11:19:35 2011//
-/patch-socket_1/1.1/Fri Jul  8 11:19:35 2011//
-/patch-socket_c/1.1/Fri Jul  8 11:19:35 2011//
-/patch-socketp_c/1.2/Mon Aug  6 20:45:49 2012//
-/patch-utils_c/1.3/Thu Mar 17 21:07:32 2016//
+/patch-io_c/1.3/Sat Apr 28 16:25:36 2018//
+/patch-siglist_c/1.2/Sat Apr 28 16:25:36 2018//
 D

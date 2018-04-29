@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1390 2018/04/27 16:48:49 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1395 2018/04/28 14:22:05 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -1064,12 +1064,6 @@ PKG_ARGS${_S} += ${_substvars${_S}}
 PKG_ARGS${_S} += -DFULLPKGPATH=${FULLPKGPATH${_S}}
 PKG_ARGS${_S} += -DPERMIT_PACKAGE_CDROM=${PERMIT_PACKAGE_CDROM${_S}:Q}
 PKG_ARGS${_S} += -DPERMIT_PACKAGE_FTP=${PERMIT_PACKAGE_FTP${_S}:Q}
-.  if !empty(REVISION${_S})
-PKG_ARGS${_S} += -DREVISION=${REVISION${_S}}
-.  endif
-.  if !empty(EPOCH${_S})
-PKG_ARGS${_S} += -DEPOCH=${EPOCH${_S}}
-.  endif
 
 SUBST_CMD${_S} = ${_PERLSCRIPT}/pkg_subst ${_substvars${_S}}
 .  if ${FAKE_AS_ROOT:L} == "no"
@@ -2378,7 +2372,8 @@ _extra_info += DEPPATHS${_s}="$$(${SETENV} FLAVOR=${FLAVOR:Q} SUBPACKAGE=${_s} P
 .  endfor
 
 _update_plist = ${_cache_fragment}; \
-	${_UPDATE_PLIST_SETUP} ${SUDO} ${_PERLSCRIPT}/update-plist \
+	PORTSDIR=${PORTSDIR} \
+	${_UPDATE_PLIST_SETUP} ${_PERLSCRIPT}/update-plist \
 	-P ${PKGDIR} \
 	-X ${_FAKE_COOKIE} -X ${_INSTALL_PRE_COOKIE} -X ${WRKINST}/.saved_libs --
 .for i in ${BUILD_PACKAGES}

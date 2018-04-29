@@ -1,14 +1,15 @@
-# $OpenBSD: Makefile,v 1.8 2014/01/01 20:46:28 naddy Exp $
+# $OpenBSD: Makefile,v 1.11 2018/04/28 20:52:45 jca Exp $
 
 COMMENT=	test performance of a remote TCP service
 
 VERSION=	5.2.0
+REVISION=	2
 DISTNAME=	echoping-${VERSION}
 CATEGORIES=	net
 
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=echoping/}
 
-HOMEPAGE=	http://echoping.sourceforge.net/
+HOMEPAGE=	https://github.com/bortzmeyer/echoping
 
 MAINTAINER=     Jakob Schlyter <jakob@openbsd.org>
 

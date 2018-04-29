@@ -1,33 +1,33 @@
-# $OpenBSD: Makefile,v 1.7 2018/01/11 19:27:10 rpe Exp $
+# $OpenBSD: Makefile,v 1.10 2018/04/28 12:54:56 jasper Exp $
 
-COMMENT=	network event stream processing system
+COMMENT =	network event stream processing system
 
-V=		0.2.14
-DISTNAME=	riemann-${V}
-CATEGORIES=	sysutils
-REVISION=	0
+V =		0.3.0
+DISTNAME =	riemann-${V}
+CATEGORIES =	sysutils
+REVISION =	0
 
-HOMEPAGE=	http://riemann.io
+HOMEPAGE =	http://riemann.io
 
-MAINTAINER=	Pavel Korovin <p@tristero.se>
+MAINTAINER =	Pavel Korovin <pvk@openbsd.org>
 
 # Eclipse Public License Version 1.0 (http://www.eclipse.org/legal/epl-v10.html)
-PERMIT_PACKAGE_CDROM=	commercial distribution defend and indemnify clauses
-PERMIT_PACKAGE_FTP=	Yes
+PERMIT_PACKAGE_CDROM =	commercial distribution defend and indemnify clauses
+PERMIT_PACKAGE_FTP =	Yes
 
-MASTER_SITES=	https://github.com/riemann/riemann/releases/download/${V}/
+MASTER_SITES =	https://github.com/riemann/riemann/releases/download/${V}/
 
-EXTRACT_SUFX=	.tar.bz2
+EXTRACT_SUFX =	.tar.bz2
 
-MODULES=	java
-MODJAVA_VER=	1.8+
-MODJAVA_JRERUN=	yes
+MODULES =	java
+MODJAVA_VER =	1.8+
+MODJAVA_JRERUN = yes
 
-RUN_DEPENDS=	java/javaPathHelper \
+RUN_DEPENDS =	java/javaPathHelper \
 		lang/clojure
 
-NO_BUILD=	Yes
-NO_TEST=	Yes
+NO_BUILD =	Yes
+NO_TEST =	Yes
 
 do-install:
 	${SUBST_CMD} ${WRKSRC}/bin/riemann ${WRKSRC}/etc/riemann.config
