@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: update-plist,v 1.38 2018/04/28 22:00:53 espie Exp $
+# $OpenBSD: update-plist,v 1.47 2018/04/29 20:38:44 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -128,8 +128,10 @@ my $ignore = {
 
 my $special = {
 	FULLPKGNAME => 1,
+	FULLPKGPATH => 1,
 	MACHINE_ARCH => 1,
 	ARCH => 1,
+	BASE_PKGPATH => 1,
 };
 
 
@@ -176,17 +178,22 @@ sub parse_option
 sub do_backsubst
 {
 	my ($subst, $string, $self) = @_;
+	my $unsubst = $self->{unsubst};
 	for my $k (sort {$subst->value($b) cmp $subst->value($a)} @{$subst->{l}}) {
 		# don't add subst on THOSE variables
 		if ($subst->never_add($k)) {
-			next unless defined $self->{unsubst} &&
-			    $self->{unsubst} =~ m/\$\{\Q$k\E\}/;
+			unless (defined $unsubst &&
+			    $unsubst =~ m/\$\{\Q$k\E\}/) {
+			    	# add a magical location for FULLPKGNAME
+			    	next unless $k eq 'FULLPKGNAME' &&
+				    $string =~ m,^share/doc/pkg-readmes/,;
+			}
 		} else {
 			# Heuristics: if the variable is already known AND was 
 			# not used already, then we don't try to use it
-			next if defined $self->{unsubst} &&
+			next if defined $unsubst &&
 			    $subst->{used}{$k} &&
-			    $self->{unsubst} !~ m/\$\{$k\}/;
+			    $unsubst !~ m/\$\{$k\}/;
 		}
 		    	
 		if ($k =~ m/^\^(.*)$/) {
@@ -195,8 +202,8 @@ sub do_backsubst
 			# Empty variable at start of string
 			# if it was already there we do it again
 			if ($v eq '') {
-				if (defined $self->{unsubst} &&
-				    $self->{unsubst} =~ m/^\$\{$k2\}/) {
+				if (defined $unsubst &&
+				    $unsubst =~ m/^\$\{$k2\}/) {
 				    	$string =~ s/^/\$\{$k2\}/;
 				}
 			} else {
@@ -208,8 +215,8 @@ sub do_backsubst
 			# if it was already there, we try to locate
 			# the same prefix and apply it
 			if ($v eq '') {
-				if (defined $self->{unsubst} &&
-				    $self->{unsubst} =~ m/^(.*)\$\{$k\}/) {
+				if (defined $unsubst &&
+				    $unsubst =~ m/^(.*)\$\{$k\}/) {
 				    	my $prefix = $1;
 					# XXX hack around @keyword
 					$prefix =~ s/^\@\S+\s+//;
@@ -253,13 +260,14 @@ sub annotate
 # and more magic, we want to record fragments as pseudo-objects
 sub record_fragment
 {
-	my ($self, $plist, $not, $name) = @_;
+	my ($self, $plist, $not, $name, $file) = @_;
+	my $f;
 	if ($not) {
-		OpenBSD::PackingElement::NoFragment->add($plist, $name);
-		
+		$f = OpenBSD::PackingElement::NoFragment->add($plist, $name);
 	} else {
-		OpenBSD::PackingElement::Fragment->add($plist, $name);
+		$f = OpenBSD::PackingElement::Fragment->add($plist, $name);
 	}
+	$self->annotate($f, undef, $file);
 }
 
 
@@ -311,7 +319,8 @@ sub figure_out_dependencies
 		my $pkgpath = pop @solve;
 		if (!defined $cache->{$pkgpath}) {
 			$cache->{$pkgpath} = {};
-			$self->{state}->progress->message($pkgpath);
+			$self->{state}->say("Stripping directories from #1",
+			    $pkgpath);
 			my $plist = OpenBSD::Dependencies::CreateSolver->ask_tree(
 			    $self->{state}, $pkgpath, $portsdir,
 			    \&OpenBSD::PackingList::UpdatePlistOnly,
@@ -395,6 +404,43 @@ sub copy_extra
 {
 }
 
+sub tag_along
+{
+	my ($self, $n) = @_;
+
+	push(@{$self->{mytags}}, $n);
+}
+
+sub tie_objects
+{
+	my ($self, $plist) = @_;
+	if ($self->{found}) {
+		$self->bookmark($plist);
+	} else {
+		$self->may_tag_along($plist);
+	}
+}
+
+sub attach_to_lastobject
+{
+	my ($self, $plist) = @_;
+	if (defined $plist->{state}{lastobject}) {
+		$plist->{state}{lastobject}->tag_along($self);
+	}
+}
+
+sub bookmark
+{
+}
+
+sub may_tag_along
+{
+}
+
+sub count_directories
+{
+}
+
 # objects are (mostly) stuff with paths that can get substs...
 package OpenBSD::PackingElement::Object;
 sub perform_backsubst
@@ -420,6 +466,12 @@ sub process_dependency
 	$mtree->{dir}{$self->fullname} = 1;
 }
 
+sub count_directories
+{
+	my ($self, $count) = @_;
+	$$count++;
+}
+
 sub write_with_frags
 {
 	my ($o, $p) = @_;
@@ -436,6 +488,13 @@ sub perform_backsubst
 
 	$self->{name} = $s->do_backsubst($self->{name}.'/', $self);
 	$self->{name} =~ s/\/$//;
+}
+
+sub bookmark
+{
+	my ($self, $plist) = @_;
+	$plist->{state}{lastobject} = $self;
+	$plist->{state}{lastdir} = $self;
 }
 
 package OpenBSD::PackingElement::Meta;
@@ -497,6 +556,12 @@ sub fullname
 	return $path;
 }
 
+sub may_tag_along
+{
+	my ($self, $plist) = @_;
+	$self->attach_to_lastobject($plist);
+}
+
 sub known_object
 {
 	&OpenBSD::PackingElement::FileObject::known_object;
@@ -510,6 +575,21 @@ sub cwd
 sub copy_annotations
 {
 	# nope these are not normal annotations
+}
+
+package OpenBSD::PackingElement::Fragment;
+sub may_tag_along
+{
+	my ($self, $plist) = @_;
+	$self->attach_to_lastobject($plist);
+}
+
+package OpenBSD::PackingElement::Action;
+sub may_tag_along
+{
+	my ($self, $plist) = @_;
+	# for now, we might do something smarter later
+	$self->attach_to_lastobject($plist);
 }
 
 package OpenBSD::PackingElement::FileObject;
@@ -542,6 +622,14 @@ sub show_unknown
 	if (!$self->{found}) {
 		print "Not found: ", $self->fullname, "(in ", $self->{file}->name, ")\n";
 	}
+}
+
+package OpenBSD::PackingElement::FileBase;
+sub bookmark
+{
+	my ($self, $plist) = @_;
+	$plist->{state}{lastobject} = $self;
+	$plist->{state}{lastfile} = $self;
 }
 
 package OpenBSD::PackingElement::Lib;
@@ -607,6 +695,7 @@ while (@ARGV > 0) {
 
 	$r->olist->set_pkgname($pkg);
 	$r->nlist->set_pkgname($pkg);
+	$state->say("Reading existing plist for #1", $pkg);
 	$r->read_all_fragments($s, $r->olist);
 	# add the cwd to new list as well!!!
 	OpenBSD::PackingElement::Cwd->add($r->nlist, $s->{prefix});
@@ -617,17 +706,8 @@ while (@ARGV > 0) {
 # names.
 	$r->olist->known_directory($approximate, $r->olist);
 	$r->olist->known_object($exact, $approximate);
-	$state->say("Processed #1 as #2", $pkg, $r->olist->fullpkgpath);
 }
 
-
-# so we read everything, let's figure out common directories
-my $cache = {};
-my $portsdir = $ENV{PORTSDIR};
-$state->progress->set_header("Handling dependency");
-for my $p (@lists) {
-	$p->figure_out_dependencies($cache, $portsdir);
-}
 
 # XXX we assume all subpackage are under the same destdir (-B option)
 my $base = $lists[0]->{state}{base};
@@ -638,14 +718,25 @@ require OpenBSD::FS2;
 $state->say("Scanning #1", $base);
 my $objects = OpenBSD::FS2->fill($base, $state->{ignored});
 
-$state->say("Matching objects");
 
-# once we figured out existing object, we try to preserve @exec and similar
-# info as best as we can.
+# XXX this is different from the old code. First we figure out which objects
+# will get copied.
+$state->say("Figuring out tie points");
+for my $path (keys %$objects) {
+	my $o = $objects->{$path};
+	if ($exact->{$path}) {
+		for my $e (@{$exact->{$path}}) {
+			$e->{found} = 1;
+		}
+	}
+}
 
-#for my $s (@$states) {
-#	$s->plist->tie_objects;
-#}
+# THEN we attach annotations to the closest known object
+# This ought to work better if files vanish
+$state->say("Tieing loose objects");
+for my $p (@lists) {
+	$p->olist->tie_objects($p->olist);
+}
 
 $state->say("Copying objects");
 for my $i (1, 2) {
@@ -656,9 +747,13 @@ for my $i (1, 2) {
 			# this will be re-added to multiple paths if there are
 			# multiple matching plists
 			for my $e (@{$exact->{$path}}) {
-				$e->{found} = 1;
 				my $s = $e->{comesfrom};
 				$e->add_object($s->nlist);
+				if (defined $e->{mytags}) {
+					for my $tag (@{$e->{mytags}}) {
+						$tag->add_object($s->nlist);
+					}
+				}
 			}
 			next;
 		}
@@ -688,6 +783,19 @@ for my $i (1, 2) {
 		};
 	}
 }
+
+# so we read everything, let's figure out common directories
+my $cache = {};
+my $portsdir = $ENV{PORTSDIR};
+for my $p (@lists) {
+	my $count = 0;
+	$p->nlist->count_directories(\$count);
+	if ($count > 0) {
+		$p->figure_out_dependencies($cache, $portsdir);
+	}
+}
+
+# second pass stripping internal directories should go there
 
 for my $p (@lists) {
 	$p->nlist->{name}{DONT} = 1;
@@ -739,7 +847,7 @@ for my $p (@lists) {
 				}
 			}
 		} else {
-			print baseplist($k), "is new\n";
+			print baseplist($k), " is new\n";
 			push(@towrite, $k);
 		}
 	}

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2018/01/29 15:39:02 jca Exp $
+# $OpenBSD: Makefile,v 1.44 2018/04/29 07:55:02 rsadowski Exp $
 
 # Build dependency tree of main building blocks:
 # OUTSIDE: akonadi, attica, automoc, cagibi, phonon, qimageblitz,
@@ -83,14 +83,14 @@ SUBDIR += baloo
 SUBDIR += baloo-widgets
 SUBDIR += kactivities
 SUBDIR += kfilemetadata
-SUBDIR += kqtquickcharts
+#SUBDIR += kqtquickcharts	x11/kde-applications
 SUBDIR += nepomuk-core
 SUBDIR += nepomuk-widgets
 SUBDIR += runtime
 SUBDIR += pim-runtime
 SUBDIR += workspace
 SUBDIR += baseapps
-SUBDIR += kate
+#SUBDIR += kate			x11/kde-applications
 SUBDIR += konsole
 
 # bindings and wrappers
@@ -148,7 +148,7 @@ SUBDIR += kiten
 SUBDIR += klettres
 SUBDIR += kmplot
 SUBDIR += kstars
-SUBDIR += ktouch
+#SUBDIR += ktouch		x11/kde-applications
 SUBDIR += kturtle
 SUBDIR += kwordquiz
 SUBDIR += libkdeedu

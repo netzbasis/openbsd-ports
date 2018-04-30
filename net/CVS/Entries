@@ -1,4 +1,4 @@
-/Makefile/1.1070/Fri Apr 27 08:51:09 2018//
+/Makefile/1.1071/Sun Apr 29 11:20:53 2018//
 D/GeoIP////
 D/adns////
 D/adsuck////
@@ -629,6 +629,8 @@ D/toot////
 D/tor////
 D/torsocks////
 D/totd////
+D/toxcore////
+D/toxic////
 D/trafshow////
 D/transmission////
 D/trickle////
@@ -644,6 +646,7 @@ D/unifi////
 D/unison////
 D/unworkable////
 D/ushare////
+D/utox////
 D/uucp////
 D/uucpd////
 D/validns////

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.13 2018/02/13 06:18:19 bentley Exp $
+# $OpenBSD: Makefile,v 1.15 2018/04/29 18:19:33 bentley Exp $
 
 COMMENT =		simple utilities for manipulating HTML and XML files
 
-DISTNAME =		html-xml-utils-7.6
+DISTNAME =		html-xml-utils-7.7
 
 CATEGORIES =		textproc
 

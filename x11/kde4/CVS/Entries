@@ -1,4 +1,4 @@
-/Makefile/1.41/Mon Jan 29 15:39:02 2018//
+/Makefile/1.44/Sun Apr 29 07:55:02 2018//
 /Makefile.inc/1.20/Sat Nov  1 21:09:39 2014//
 /UPDATE/1.3/Mon Nov  3 08:13:29 2014//
 /kde-release-helper/1.9/Tue Dec 23 14:10:36 2014//
@@ -40,7 +40,6 @@ D/kamera////
 D/kanagram////
 D/kapman////
 D/kapptemplate////
-D/kate////
 D/katomic////
 D/kblackbox////
 D/kblocks////
@@ -92,7 +91,6 @@ D/kopete////
 D/korundum////
 D/kpat////
 D/kppp////
-D/kqtquickcharts////
 D/krdc////
 D/kremotecontrol////
 D/kreversi////
@@ -112,7 +110,6 @@ D/ksudoku////
 D/ksystemlog////
 D/kteatime////
 D/ktimer////
-D/ktouch////
 D/ktuberling////
 D/kturtle////
 D/ktux////
