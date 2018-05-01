@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: update-plist,v 1.47 2018/04/29 20:38:44 espie Exp $
+# $OpenBSD: update-plist,v 1.61 2018/04/30 21:58:04 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -131,7 +131,7 @@ my $special = {
 	FULLPKGPATH => 1,
 	MACHINE_ARCH => 1,
 	ARCH => 1,
-	BASE_PKGPATH => 1,
+	'^BASE_PKGPATH' => 1,
 };
 
 
@@ -181,6 +181,8 @@ sub do_backsubst
 	my $unsubst = $self->{unsubst};
 	for my $k (sort {$subst->value($b) cmp $subst->value($a)} @{$subst->{l}}) {
 		# don't add subst on THOSE variables
+		# XXX ARCH, MACHINE_ARCH could happen, but only with word
+		#  boundary contexts
 		if ($subst->never_add($k)) {
 			unless (defined $unsubst &&
 			    $unsubst =~ m/\$\{\Q$k\E\}/) {
@@ -210,6 +212,8 @@ sub do_backsubst
 				$string =~ s/^\Q$v\E/\$\{$k2\}/g;
 			}
 		} else {
+			# XXX on the other hand, numeric and version-like
+			# variables shouldn't substitute partial numbers
 			my $v = $subst->value($k);
 			# Empty variable somewhere in the string
 			# if it was already there, we try to locate
@@ -242,7 +246,7 @@ sub annotate
 {
 	my ($self, $e, $s, $file) = @_;
 	$e->{unsubst} = $s;
-	$e->{file} = $file;
+	$e->{file} = $file->name;
 	$e->{comesfrom} = $self;
 
 	# so we redo what subst does, but we mark it!
@@ -356,9 +360,13 @@ sub handle_options
 			my $path = shift;
 			$state->{ignored}{$path} = 1;
 		    },
+		'w' => sub {
+			my $warn = shift;
+			push(@{$state->{warn_suffix}}, $warn);
+		},
 	};
-	$state->SUPER::handle_options('X:P:', 
-	    '[mnx] [-P pkgdir] [-X path] -- pkg_create_args ...');
+	$state->SUPER::handle_options('X:P:w:', 
+	    '[mnx] [-P pkgdir] [-w suffix] [-X path] -- pkg_create_args ...');
     	$state->{pkgdir} = $state->opt('P');
 }
 
@@ -394,7 +402,7 @@ sub write_with_frags
 	return if $o->{DONT};
 	my $t = $p->{tracker};
 	if (defined $o->{file}) {
-		$o->write($t->open($o->{file}->name))
+		$o->write($t->open($o->{file}))
 	} else {
 		$o->write($t->default);
 	}
@@ -441,6 +449,18 @@ sub count_directories
 {
 }
 
+sub bad_suffixes
+{
+}
+
+sub find_existing_cvstags
+{
+	my ($self, $filenames, $existing) = @_;
+	if (defined $self->{file}) {
+		$filenames->{$self->{file}} = 1;
+	}
+}
+
 # objects are (mostly) stuff with paths that can get substs...
 package OpenBSD::PackingElement::Object;
 sub perform_backsubst
@@ -449,6 +469,30 @@ sub perform_backsubst
 
 	$self->{name} = $s->do_backsubst($self->{name}, $self);
 
+}
+
+sub bad_suffixes
+{
+	my ($self, $plist, $state) = @_;
+
+	# don't care if it's already in a PLIST
+	return if defined $self->{comesfrom};
+	my $s = $self->fullname;
+	my $error;
+	if ($s =~ m/\/\.[^\/]*\.swp$/) {
+		$error = "vim swap file";
+	} elsif ($s =~ m/\~$/) {
+		$error = "emacs temporary file";
+	} else {
+		for my $suf (@{$state->{warn_suffix}}) {
+			if ($s =~ m/\Q$suf\E$/) {
+				$error = "$suf suffix";
+				last;
+			}
+		}
+	}
+	print STDERR "Warning: ", $plist->pkgname, " contains $s ($error ?)\n"
+	    if defined $error;
 }
 
 package OpenBSD::PackingElement::Dependency;
@@ -521,6 +565,13 @@ sub copy_annotations
 	$self->clone->add_object($plist);
 }
 
+sub find_existing_cvstags
+{
+	my ($self, $filenames, $existing) = @_;
+	$existing->{$self->{file}} = 1;
+	$self->SUPER::find_existing_cvstags($filenames, $existing);
+}
+
 package OpenBSD::PackingElement::NewAuth;
 sub copy_annotations
 {
@@ -549,10 +600,14 @@ sub fullname
 	my $self = shift;
 	# let's pretend we're an object!!!
 	my $path = $self->name;
+	# XXX strip every keyword for matching, we may need to 
+	# be more particular
+	$path =~ s/^\@\w+\s+//;
 	if ($path !~ m|^/|o && $self->cwd ne '.') {
 		$path = $self->cwd."/".$path;
 		$path =~ s,^//,/,;
 	}
+	$path =~ s,/$,,;
 	return $path;
 }
 
@@ -575,6 +630,32 @@ sub cwd
 sub copy_annotations
 {
 	# nope these are not normal annotations
+}
+
+package OpenBSD::PackingElement::Sample;
+sub may_tag_along
+{
+	my ($self, $plist) = @_;
+	my $o = $self->{copyfrom};
+	if (!defined $o) {
+		print STDERR "Warning: bogus \@sample ", $self->stringize,
+		    " with no reference file\n";
+	} elsif (!$o->{found}) {
+		print STDERR "Warning: ", $self->stringize,
+		    " references a non-existing file ", $o->stringize, 
+		    " and will not be copied\n";
+	} else {
+		$o->tag_along($self);
+	}
+}
+
+package OpenBSD::PackingElement::Sampledir;
+
+# this is not really smart, but good enough for starters
+sub may_tag_along
+{
+	my ($self, $plist) = @_;
+	$self->attach_to_lastobject($plist);
 }
 
 package OpenBSD::PackingElement::Fragment;
@@ -620,7 +701,7 @@ sub show_unknown
 {
 	my $self = shift;
 	if (!$self->{found}) {
-		print "Not found: ", $self->fullname, "(in ", $self->{file}->name, ")\n";
+		print "Not found: ", $self->fullname, " (in ", $self->{file}, ")\n";
 	}
 }
 
@@ -636,7 +717,7 @@ package OpenBSD::PackingElement::Lib;
 sub perform_backsubst
 {
 	my ($self, $s) = @_;
-	if ($self->name =~ m,^(.*)lib([^\/]+)\.so\.(\d+)\.(\d+)$,) {
+	if ($self->name =~ m,^(.*?)lib([^\/]+)\.so\.(\d+)\.(\d+)$,) {
 		$self->{name} = $s->do_backsubst("$1lib$2.so.", $self).
 		    "\$\{LIB$2_VERSION\}";
 	} else {
@@ -669,6 +750,69 @@ sub baseplist
 		$n =~ s/\Q$state->{pkgdir}\E\///;
 	}
 	return $n;
+}
+
+sub add_missing_cvstags
+{
+	my ($list, $base) = @_;
+	my $filenames = {};
+	$filenames->{$base} = 1;
+	my $existing = {};
+	$list->find_existing_cvstags($filenames, $existing);
+	for my $name (keys %$filenames) {
+		next if $existing->{$name};
+		my $o = OpenBSD::PackingElement::CVSTag->add($list, 
+		    '$'.'OpenBSD'.'$');
+		$o->{file} = $name;
+	}
+}
+
+use UNIVERSAL;
+
+sub copy_from_old
+{
+	my ($e, $o) = @_;
+
+	my $s = $e->{comesfrom};
+	my $rebless = 0;
+	if ($o->element_class ne ref($e)) {
+		$rebless = 1;
+		# XXX do not touch commented out data
+		if ($e->isa("OpenBSD::PackingElement::Comment")) {
+			$rebless = 0;
+		# XXX and do not touch directory classes, we don't know
+		# enough from FS2 yet
+		} elsif ($e->isa("OpenBSD::PackingElement::DirlikeObject")
+		    && $o->element_class eq 'OpenBSD::PackingElement::Dir') {
+			$rebless = 0;
+		}
+	}
+	# XXX this should be safe for all our objects
+	bless $e, $o->element_class if $rebless;
+
+	$e->add_object($s->nlist);
+	if (defined $e->{mytags}) {
+		for my $tag (@{$e->{mytags}}) {
+			$tag->add_object($s->nlist);
+			$tag->{found} = 1;
+		}
+	}
+}
+
+sub copy_existing
+{
+	my ($exact, $path, $o) = @_;
+
+	if ($exact->{$path}) {
+		# this will be re-added to multiple paths if there are
+		# multiple matching plists
+		for my $e (@{$exact->{$path}}) {
+			copy_from_old($e, $o);
+		}
+		return 1;
+	} else {
+		return 0;
+	}
 }
 
 # this handles update-plist options proper, finished with --
@@ -743,21 +887,10 @@ for my $i (1, 2) {
 	for my $path (sort keys %$objects) {
 		my $o = $objects->{$path};
 		next unless $o->stage == $i;
-		if ($exact->{$path}) {
-			# this will be re-added to multiple paths if there are
-			# multiple matching plists
-			for my $e (@{$exact->{$path}}) {
-				my $s = $e->{comesfrom};
-				$e->add_object($s->nlist);
-				if (defined $e->{mytags}) {
-					for my $tag (@{$e->{mytags}}) {
-						$tag->add_object($s->nlist);
-					}
-				}
-			}
-			next;
-		}
+		next if copy_existing($exact, $path, $o);
+		my $c = $o->element_class;
 
+		my $found = 0;
 		# we didn't find it so we must create a new one
 		# go up dir until we find a matching approximate dir
 		my $d = $path;
@@ -769,18 +902,28 @@ for my $i (1, 2) {
 			# if we do, we only write non ambiguous names
 			if (@l == 1) {
 				my $s = $l[0]->{comesfrom};
-				my $a =$o->element_class->add($s->nlist, 
-				    $s->strip_prefix($path));
+				my $p2 = $s->strip_prefix($path);
+				my $a = $c->add($s->nlist, $p2);
 				# and match the file
 				$a->{file} = $s->{file};
+				$found = 1;
 				last;
 			}
 		}
-		# last resort
-		eval {
-		$o->element_class->add($lists[0]->nlist, 
-		    $lists[0]->strip_prefix($path));
-		};
+		next if $found;
+
+		# last resort for now
+		my $s = $lists[0];
+		my $p2 = $s->strip_prefix($path);
+		if ($p2 =~ m|^/| && !$c->absolute_okay) {
+			# XXX we should try to see if it fits with 
+			# other prefixes then
+			print STDERR "Warning: can't put $p2 in any plist\n";
+			next;
+		}
+		my $a = $c->add($s->nlist, $p2);
+		# and match the file
+		$a->{file} = $s->{file};
 	}
 }
 
@@ -795,7 +938,7 @@ for my $p (@lists) {
 	}
 }
 
-# second pass stripping internal directories should go there
+# XXX second pass stripping internal directories should go there
 
 for my $p (@lists) {
 	$p->nlist->{name}{DONT} = 1;
@@ -804,12 +947,10 @@ for my $p (@lists) {
 	$p->olist->copy_annotations($p->nlist);
 	# that stuff might have cwd, so we copy it late
 	$p->olist->copy_extra($p->nlist);
-}
-
-for my $p (@lists) {
+	add_missing_cvstags($p->nlist, $p->{base_plistname});
+	$p->nlist->bad_suffixes($p->nlist, $state);
 	$p->nlist->perform_backsubst($p->{state}{subst});
 }
-
 
 # let's show a quick summary of stuff we couldn't figure out
 for my $p (@lists) {
@@ -823,6 +964,9 @@ $> = $ports_uid;
 
 for my $p (@lists) {
 	$p->{tracker} = TrackFile->new($p->{base_plistname});
+	# XXX write_with_frags is the perfect place to track group/mode,
+	# create strings that change them when needed, and do_backsubst
+	# on them
 	$p->nlist->write_with_frags($p);
 	$p->{tracker}->finish;
 }
