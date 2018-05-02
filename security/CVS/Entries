@@ -1,4 +1,4 @@
-/Makefile/1.504/Sun Apr 29 08:56:56 2018//
+/Makefile/1.505/Tue May  1 13:48:52 2018//
 D/ADMsnmp////
 D/aescrypt////
 D/aide////
@@ -59,6 +59,7 @@ D/gpgme////
 D/gringotts////
 D/hatchet////
 D/heimdal////
+D/hitch////
 D/hlfl////
 D/hs-SHA////
 D/hs-crypto-api////

@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: update-plist,v 1.61 2018/04/30 21:58:04 espie Exp $
+# $OpenBSD: update-plist,v 1.66 2018/05/01 13:21:24 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -46,35 +46,34 @@ BEGIN {
 }
 use lib "$ports1/infrastructure/lib";
 
-# A small package that can switch files when needed
-# used by the writer that writes fragments
+package TrackedFile;
+sub new
+{
+	my $class = shift;
+	bless [], $class;
+}
+
+sub add
+{
+	my ($self, $item) = @_;
+	push(@$self, $item);
+}
+
 package TrackFile;
 
 sub new
 {
 	my ($class, $default) = @_;
-	my $o = bless {known => {}}, $class;
-	$o->{default} = $o->open($default);
-	return $o;
+	my $self = bless {}, $class;
+	$self->{known}{$default} = $self->{default} = TrackedFile->new;
+	return $self;
 }
 
-sub open
+sub file
 {
 	my ($self, $name) = @_;
-	if (!$self->{known}{$name}) {
-		my $full = $name.".new";
-		open(my $fh, '>', $full) or die "Can't open $full: $!";
-		$self->{known}{$name} = $fh;
-	}
+	$self->{known}{$name} //= TrackedFile->new;
 	return $self->{known}{$name};
-}
-
-sub finish
-{
-	my $self = shift;
-	for my $fh (values %{$self->{known}}) {
-		close($fh);
-	}
 }
 
 sub default
@@ -83,6 +82,21 @@ sub default
 	return $self->{default};
 }
 
+sub write_all
+{
+	my ($self, $p) = @_;
+	# XXX we should do them in a nicer order, like start from the
+	# main, figure out what frags we get
+	while (my ($name, $l) = each %{$self->{known}}) {
+		my $full = $name.".new";
+		open(my $fh, '>', $full) or die "Can't open $full: $!";
+		$p->{restate} = {};
+		for my $item (@$l) {
+			$item->write_restate($fh, $p);
+		}
+		close($fh);
+	}
+}
 
 package Forwarder;
 # perfect forwarding
@@ -177,8 +191,7 @@ sub parse_option
 
 sub do_backsubst
 {
-	my ($subst, $string, $self) = @_;
-	my $unsubst = $self->{unsubst};
+	my ($subst, $string, $unsubst) = @_;
 	for my $k (sort {$subst->value($b) cmp $subst->value($a)} @{$subst->{l}}) {
 		# don't add subst on THOSE variables
 		# XXX ARCH, MACHINE_ARCH could happen, but only with word
@@ -209,7 +222,7 @@ sub do_backsubst
 				    	$string =~ s/^/\$\{$k2\}/;
 				}
 			} else {
-				$string =~ s/^\Q$v\E/\$\{$k2\}/g;
+				$string =~ s/^\Q$v\E/\$\{$k2\}/;
 			}
 		} else {
 			# XXX on the other hand, numeric and version-like
@@ -396,16 +409,24 @@ sub perform_backsubst
 {
 }
 
-sub write_with_frags
+sub redistribute
 {
 	my ($o, $p) = @_;
 	return if $o->{DONT};
-	my $t = $p->{tracker};
 	if (defined $o->{file}) {
-		$o->write($t->open($o->{file}))
+		$p->{tracker}->file($o->{file})->add($o);
 	} else {
-		$o->write($t->default);
+		$p->{tracker}->default->add($o);
 	}
+}
+sub strip_directories
+{
+}
+
+sub write_restate
+{
+	my ($o, $file, $p) = @_;
+	$o->write($file);
 }
 
 sub copy_extra
@@ -467,13 +488,13 @@ sub perform_backsubst
 {
 	my ($self, $s) = @_;
 
-	$self->{name} = $s->do_backsubst($self->{name}, $self);
+	$self->{name} = $s->do_backsubst($self->{name}, $self->{unsubst});
 
 }
 
 sub bad_suffixes
 {
-	my ($self, $plist, $state) = @_;
+	my ($self, $p, $state) = @_;
 
 	# don't care if it's already in a PLIST
 	return if defined $self->{comesfrom};
@@ -483,6 +504,9 @@ sub bad_suffixes
 		$error = "vim swap file";
 	} elsif ($s =~ m/\~$/) {
 		$error = "emacs temporary file";
+	} elsif ($s eq '/usr/local/lib/charset.alias' && 
+	    $p->olist->fullpkgpath ne 'converters/libiconv') {
+		$error = "file from converters/libiconv";
 	} else {
 		for my $suf (@{$state->{warn_suffix}}) {
 			if ($s =~ m/\Q$suf\E$/) {
@@ -491,8 +515,8 @@ sub bad_suffixes
 			}
 		}
 	}
-	print STDERR "Warning: ", $plist->pkgname, " contains $s ($error ?)\n"
-	    if defined $error;
+	print STDERR "Warning: ", $p->nlist->pkgname, 
+	    " contains $s ($error ?)\n" if defined $error;
 }
 
 package OpenBSD::PackingElement::Dependency;
@@ -516,11 +540,11 @@ sub count_directories
 	$$count++;
 }
 
-sub write_with_frags
+sub strip_directories
 {
-	my ($o, $p) = @_;
-	if (!$p->{stripped}{$o->fullname}) {
-		$o->SUPER::write_with_frags($p);
+	my ($o, $stripped) = @_;
+	if ($stripped->{$o->fullname}) {
+		$o->{DONT} = 1;
 	}
 }
 
@@ -530,7 +554,7 @@ sub perform_backsubst
 {
 	my ($self, $s) = @_;
 
-	$self->{name} = $s->do_backsubst($self->{name}.'/', $self);
+	$self->{name} = $s->do_backsubst($self->{name}.'/', $self->{unsubst});
 	$self->{name} =~ s/\/$//;
 }
 
@@ -705,6 +729,32 @@ sub show_unknown
 	}
 }
 
+sub write_restate
+{
+	my ($self, $f, $p) = @_;
+	
+	# XXX there should be some more code matching the mode to the original
+	# file that was copied
+	for my $k (qw(mode owner group)) {
+		my $s = "\@$k";
+		if (defined $self->{$k}) {
+			if (defined $p->{restate}{$k}) {
+				if ($p->{restate}{$k} eq $self->{$k}) {
+					next;
+				}
+			}
+			$s .= " ".$p->{state}{subst}->do_backsubst($self->{$k}, undef);
+		} else {
+			if (!defined $p->{restate}{$k}) {
+				next;
+			}
+		}
+		$p->{restate}{$k} = $self->{$k};
+		print $f $s, "\n";
+	}
+	$self->write($f);
+}
+
 package OpenBSD::PackingElement::FileBase;
 sub bookmark
 {
@@ -718,8 +768,8 @@ sub perform_backsubst
 {
 	my ($self, $s) = @_;
 	if ($self->name =~ m,^(.*?)lib([^\/]+)\.so\.(\d+)\.(\d+)$,) {
-		$self->{name} = $s->do_backsubst("$1lib$2.so.", $self).
-		    "\$\{LIB$2_VERSION\}";
+		$self->{name} = $s->do_backsubst("$1lib$2.so.", 
+		    $self->{unsubst})."\$\{LIB$2_VERSION\}";
 	} else {
 		$self->SUPER::perform_backsubst($s);
 	}
@@ -948,7 +998,9 @@ for my $p (@lists) {
 	# that stuff might have cwd, so we copy it late
 	$p->olist->copy_extra($p->nlist);
 	add_missing_cvstags($p->nlist, $p->{base_plistname});
-	$p->nlist->bad_suffixes($p->nlist, $state);
+	$p->nlist->bad_suffixes($p, $state);
+	# XXX this has to happen *before* backsubst
+	$p->nlist->strip_directories($p->{stripped});
 	$p->nlist->perform_backsubst($p->{state}{subst});
 }
 
@@ -964,11 +1016,8 @@ $> = $ports_uid;
 
 for my $p (@lists) {
 	$p->{tracker} = TrackFile->new($p->{base_plistname});
-	# XXX write_with_frags is the perfect place to track group/mode,
-	# create strings that change them when needed, and do_backsubst
-	# on them
-	$p->nlist->write_with_frags($p);
-	$p->{tracker}->finish;
+	$p->nlist->redistribute($p);
+	$p->{tracker}->write_all($p);
 }
 
 my @towrite = ();
