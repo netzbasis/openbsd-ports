@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: update-plist,v 1.66 2018/05/01 13:21:24 espie Exp $
+# $OpenBSD: update-plist,v 1.73 2018/05/02 14:44:00 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -49,14 +49,40 @@ use lib "$ports1/infrastructure/lib";
 package TrackedFile;
 sub new
 {
-	my $class = shift;
-	bless [], $class;
+	my ($class, $name) = @_;
+	bless {name => $name, items => []}, $class;
 }
 
 sub add
 {
 	my ($self, $item) = @_;
-	push(@$self, $item);
+	push(@{$self->{items}}, $item);
+}
+
+sub fh
+{
+	my $self = shift;
+	if (!defined $self->{fh}) {
+		my $full = $self->name.".new";
+		open($self->{fh}, '>', $full) or die "Can't open $full: $!";
+	}
+	return $self->{fh};
+}
+
+sub name
+{
+	my $self = shift;
+	return $self->{name};
+}
+
+sub next_item
+{
+	my $self = shift;
+	if (@{$self->{items}} != 0) {
+		return shift @{$self->{items}};
+	} else {
+		return undef;
+	}
 }
 
 package TrackFile;
@@ -65,14 +91,15 @@ sub new
 {
 	my ($class, $default) = @_;
 	my $self = bless {}, $class;
-	$self->{known}{$default} = $self->{default} = TrackedFile->new;
+	$self->{known}{$default} = 
+	    $self->{default} = TrackedFile->new($default);
 	return $self;
 }
 
 sub file
 {
 	my ($self, $name) = @_;
-	$self->{known}{$name} //= TrackedFile->new;
+	$self->{known}{$name} //= TrackedFile->new($name);
 	return $self->{known}{$name};
 }
 
@@ -85,17 +112,26 @@ sub default
 sub write_all
 {
 	my ($self, $p) = @_;
-	# XXX we should do them in a nicer order, like start from the
-	# main, figure out what frags we get
-	while (my ($name, $l) = each %{$self->{known}}) {
-		my $full = $name.".new";
-		open(my $fh, '>', $full) or die "Can't open $full: $!";
-		$p->{restate} = {};
-		for my $item (@$l) {
-			$item->write_restate($fh, $p);
+
+	# we mimic the way pkg_create writes files
+	$p->{restate} = {};
+
+	my @stack = ();
+	push(@stack, $self->default);
+
+
+	while (my $file = pop @stack) {
+		while (my $i = $file->next_item) {
+			my $filename = $i->write_restate($file, $p);
+			if (defined $filename) {
+				push(@stack, $file);
+				$file = $self->file($filename);
+			}
 		}
-		close($fh);
+		close($file->fh);
 	}
+
+	# TODO we should check we got them all
 }
 
 package Forwarder;
@@ -122,7 +158,7 @@ sub new
 	    # count the number of times we see each value. More than once,
 	    # hard to figure out WHICH one to backsubst
 	    count => {}, 
-	    # note that a variable is actually used. Then if we see the
+	    # record that a variable is actually used. Then if we see the
 	    # string and no backsubst, it's probably intentional
 	    used => {}, 
 	    # list of actual variables we care about, e.g., ignored stuff
@@ -145,7 +181,7 @@ my $special = {
 	FULLPKGPATH => 1,
 	MACHINE_ARCH => 1,
 	ARCH => 1,
-	'^BASE_PKGPATH' => 1,
+	BASE_PKGPATH => 1,
 };
 
 
@@ -193,26 +229,27 @@ sub do_backsubst
 {
 	my ($subst, $string, $unsubst) = @_;
 	for my $k (sort {$subst->value($b) cmp $subst->value($a)} @{$subst->{l}}) {
+		my $k2 = $k;
+		$k2 =~ s/^\^//;
 		# don't add subst on THOSE variables
-		# XXX ARCH, MACHINE_ARCH could happen, but only with word
+		# TODO ARCH, MACHINE_ARCH could happen, but only with word
 		#  boundary contexts
-		if ($subst->never_add($k)) {
+		if ($subst->never_add($k2)) {
 			unless (defined $unsubst &&
-			    $unsubst =~ m/\$\{\Q$k\E\}/) {
+			    $unsubst =~ m/\$\{\Q$k2\E\}/) {
 			    	# add a magical location for FULLPKGNAME
-			    	next unless $k eq 'FULLPKGNAME' &&
+			    	next unless $k2 eq 'FULLPKGNAME' &&
 				    $string =~ m,^share/doc/pkg-readmes/,;
 			}
 		} else {
 			# Heuristics: if the variable is already known AND was 
 			# not used already, then we don't try to use it
 			next if defined $unsubst &&
-			    $subst->{used}{$k} &&
-			    $unsubst !~ m/\$\{$k\}/;
+			    $subst->{used}{$k2} &&
+			    $unsubst !~ m/\$\{$k2\}/;
 		}
 		    	
 		if ($k =~ m/^\^(.*)$/) {
-			my $k2 = $1;
 			my $v = $subst->value($k2);
 			# Empty variable at start of string
 			# if it was already there we do it again
@@ -225,7 +262,7 @@ sub do_backsubst
 				$string =~ s/^\Q$v\E/\$\{$k2\}/;
 			}
 		} else {
-			# XXX on the other hand, numeric and version-like
+			# TODO on the other hand, numeric and version-like
 			# variables shouldn't substitute partial numbers
 			my $v = $subst->value($k);
 			# Empty variable somewhere in the string
@@ -233,14 +270,14 @@ sub do_backsubst
 			# the same prefix and apply it
 			if ($v eq '') {
 				if (defined $unsubst &&
-				    $unsubst =~ m/^(.*)\$\{$k\}/) {
+				    $unsubst =~ m/^(.*)\$\{$k2\}/) {
 				    	my $prefix = $1;
 					# XXX hack around @keyword
 					$prefix =~ s/^\@\S+\s+//;
-				    	$string =~ s/\Q$prefix\E/$prefix\$\{$k\}/;
+				    	$string =~ s/\Q$prefix\E/$prefix\$\{$k2\}/;
 				}
 			} else {
-				$string =~ s/\Q$v\E/\$\{$k\}/g;
+				$string =~ s/\Q$v\E/\$\{$k2\}/g;
 			}
 		}
 	}
@@ -264,7 +301,8 @@ sub annotate
 
 	# so we redo what subst does, but we mark it!
 
-	return $s unless $s =~ m/\$/o;	# optimization
+	return unless defined $s;
+	return unless $s =~ m/\$/o;	# optimization
 	my $subst = $self->{state}{subst};
 	while ( my $k = ($s =~ m/\$\{([A-Za-z_][^\}]*)\}/o)[0] ) {
 		my $v = $subst->value($k);
@@ -379,7 +417,7 @@ sub handle_options
 		},
 	};
 	$state->SUPER::handle_options('X:P:w:', 
-	    '[mnx] [-P pkgdir] [-w suffix] [-X path] -- pkg_create_args ...');
+	    '[-mnx] [-P pkgdir] [-w suffix] [-X path] -- pkg_create_args ...');
     	$state->{pkgdir} = $state->opt('P');
 }
 
@@ -426,7 +464,8 @@ sub strip_directories
 sub write_restate
 {
 	my ($o, $file, $p) = @_;
-	$o->write($file);
+	$o->write($file->fh);
+	return undef;
 }
 
 sub copy_extra
@@ -624,7 +663,7 @@ sub fullname
 	my $self = shift;
 	# let's pretend we're an object!!!
 	my $path = $self->name;
-	# XXX strip every keyword for matching, we may need to 
+	# TODO strip every keyword for matching, we may need to 
 	# be more particular
 	$path =~ s/^\@\w+\s+//;
 	if ($path !~ m|^/|o && $self->cwd ne '.') {
@@ -689,6 +728,31 @@ sub may_tag_along
 	$self->attach_to_lastobject($plist);
 }
 
+sub write_restate
+{
+	my ($self, $file, $p) = @_;
+	$self->SUPER::write_restate($file, $p);
+	my $base = $file->name;
+	my $frag = $self->frag;
+	$base =~ s/PFRAG\./PFRAG.$frag-/ or
+	    $base =~ s/PLIST/PFRAG.$frag/;
+	return $base if $p->{tracker}{known}{$base};
+	return undef;
+}
+
+sub frag
+{
+	my $self = shift;
+	return "$self->{name}";
+}
+
+package OpenBSD::PackingElement::NoFragment;
+sub frag
+{
+	my $self = shift;
+	return "no-$self->{name}";
+}
+
 package OpenBSD::PackingElement::Action;
 sub may_tag_along
 {
@@ -733,8 +797,9 @@ sub write_restate
 {
 	my ($self, $f, $p) = @_;
 	
-	# XXX there should be some more code matching the mode to the original
+	# TODO there should be some more code matching the mode to the original
 	# file that was copied
+	my $fh = $f->fh;
 	for my $k (qw(mode owner group)) {
 		my $s = "\@$k";
 		if (defined $self->{$k}) {
@@ -750,9 +815,10 @@ sub write_restate
 			}
 		}
 		$p->{restate}{$k} = $self->{$k};
-		print $f $s, "\n";
+		print $fh $s, "\n";
 	}
-	$self->write($f);
+	$self->write($fh);
+	return undef;
 }
 
 package OpenBSD::PackingElement::FileBase;
@@ -830,7 +896,7 @@ sub copy_from_old
 		# XXX do not touch commented out data
 		if ($e->isa("OpenBSD::PackingElement::Comment")) {
 			$rebless = 0;
-		# XXX and do not touch directory classes, we don't know
+		# TODO and do not touch directory classes, we don't know
 		# enough from FS2 yet
 		} elsif ($e->isa("OpenBSD::PackingElement::DirlikeObject")
 		    && $o->element_class eq 'OpenBSD::PackingElement::Dir') {
@@ -871,6 +937,10 @@ $state->handle_options;
 my @lists;
 my $exact = {};
 my $approximate = {};
+
+if (@ARGV == 0) {
+	$state->usage;
+}
 
 # we read all plists using the exact same code as pkg_create
 # e.g., ARGV is all PKG_ARGS*  parameters concatenated together:
@@ -913,8 +983,7 @@ $state->say("Scanning #1", $base);
 my $objects = OpenBSD::FS2->fill($base, $state->{ignored});
 
 
-# XXX this is different from the old code. First we figure out which objects
-# will get copied.
+# First we figure out which objects will get copied.
 $state->say("Figuring out tie points");
 for my $path (keys %$objects) {
 	my $o = $objects->{$path};
@@ -962,18 +1031,25 @@ for my $i (1, 2) {
 		}
 		next if $found;
 
-		# last resort for now
-		my $s = $lists[0];
-		my $p2 = $s->strip_prefix($path);
-		if ($p2 =~ m|^/| && !$c->absolute_okay) {
-			# XXX we should try to see if it fits with 
-			# other prefixes then
-			print STDERR "Warning: can't put $p2 in any plist\n";
-			next;
+		# last resort:
+		# try all lists in order, until we find one with 
+		# the right prefix
+		for my $p (@lists) {
+			my $p2 = $p->strip_prefix($path);
+			if ($p2 =~ m|^/| && !$c->absolute_okay) {
+				next;
+			}
+			my $a = $c->add($p->nlist, $p2);
+			# and match the file
+			$a->{file} = $p->{file};
+			$found = 1;
+			last;
 		}
-		my $a = $c->add($s->nlist, $p2);
-		# and match the file
-		$a->{file} = $s->{file};
+		next if $found;
+		# TODO this is where we should figure @cwd stuff
+		# though it's generally better to have distinct plists
+		# for several prefixes
+		print STDERR "Warning: can't put $path in any plist\n";
 	}
 }
 
@@ -983,12 +1059,31 @@ my $portsdir = $ENV{PORTSDIR};
 for my $p (@lists) {
 	my $count = 0;
 	$p->nlist->count_directories(\$count);
-	if ($count > 0) {
+	$p->{count_directories} = $count;
+}
+
+for my $p (@lists) {
+	if ($p->{count_directories} > 0) {
 		$p->figure_out_dependencies($cache, $portsdir);
 	}
 }
 
-# XXX second pass stripping internal directories should go there
+# replace the cache entries from disk with cache entries from new plists
+for my $p (@lists) {
+	my $pkgpath = $p->olist->fullpkgpath;
+	# optimisation: it's not a dependency, so we don't care
+	next if !defined $cache->{$pkgpath};
+	$cache->{$pkgpath} = {};
+	$state->say("Stripping directories from #1 (trying harder)", $pkgpath);
+	$p->nlist->process_dependency($cache->{$pkgpath});
+}
+
+# and redo the zapping all over again
+for my $p (@lists) {
+	if ($p->{count_directories} > 0) {
+		$p->figure_out_dependencies($cache, $portsdir);
+	}
+}
 
 for my $p (@lists) {
 	$p->nlist->{name}{DONT} = 1;

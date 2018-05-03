@@ -1,4 +1,4 @@
-/Makefile/1.181/Mon Apr 16 00:32:24 2018//
+/Makefile/1.182/Wed May  2 21:10:05 2018//
 D/WordGenerator////
 D/astrolog////
 D/bible-kjv////
@@ -75,6 +75,7 @@ D/pdmenu////
 D/pfm////
 D/plan////
 D/portroach////
+D/posixtestsuite////
 D/py-imdb////
 D/py-memcached////
 D/pymissile////
