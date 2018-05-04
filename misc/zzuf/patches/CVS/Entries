@@ -1,5 +1,5 @@
-/patch-configure/1.1/Tue Mar 14 02:43:18 2017//
-/patch-src_libzzuf_lib-stream_c/1.1/Thu Nov 19 00:55:23 2015//
+/patch-configure/1.2/Thu May  3 11:02:57 2018//
 /patch-src_util_md5_c/1.1/Thu Nov 19 00:55:23 2015//
-/patch-test_bug-mmap_c/1.1/Thu Nov 19 00:55:23 2015//
+/patch-src_zzuf_c/1.1/Thu May  3 11:02:57 2018//
+/patch-test_bug-mmap_c/1.2/Thu May  3 11:02:57 2018//
 D
