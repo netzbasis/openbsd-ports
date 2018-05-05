@@ -1,4 +1,4 @@
-/Makefile/1.505/Tue May  1 13:48:52 2018//
+/Makefile/1.506/Fri May  4 05:32:28 2018//
 D/ADMsnmp////
 D/aescrypt////
 D/aide////
@@ -271,6 +271,7 @@ D/py-pbkdf2////
 D/py-pefile////
 D/py-pgpdump////
 D/py-potr////
+D/py-ropper////
 D/py-rsa////
 D/py-scp////
 D/py-secretstorage////

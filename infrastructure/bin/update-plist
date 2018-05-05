@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: update-plist,v 1.73 2018/05/02 14:44:00 espie Exp $
+# $OpenBSD: update-plist,v 1.90 2018/05/04 19:21:14 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -16,7 +16,6 @@
 
 use strict;
 use warnings;
-use OpenBSD::PkgCreate;
 
 my $ports1;
 my ($ports_uid, $ports_gid, $fake_uid, $fake_gid);
@@ -45,6 +44,8 @@ BEGIN {
 	$> = $fake_uid;
 }
 use lib "$ports1/infrastructure/lib";
+use OpenBSD::PkgCreate;
+use OpenBSD::FS2;
 
 package TrackedFile;
 sub new
@@ -227,7 +228,10 @@ sub parse_option
 
 sub do_backsubst
 {
-	my ($subst, $string, $unsubst) = @_;
+	my ($subst, $string, $unsubst, $context) = @_;
+
+	# set default context if needed
+	$context //= 'OpenBSD::PackingElement';
 	for my $k (sort {$subst->value($b) cmp $subst->value($a)} @{$subst->{l}}) {
 		my $k2 = $k;
 		$k2 =~ s/^\^//;
@@ -259,7 +263,7 @@ sub do_backsubst
 				    	$string =~ s/^/\$\{$k2\}/;
 				}
 			} else {
-				$string =~ s/^\Q$v\E/\$\{$k2\}/;
+				$string = $context->unsubst_at_start($string, $v, $k2);
 			}
 		} else {
 			# TODO on the other hand, numeric and version-like
@@ -366,11 +370,14 @@ sub figure_out_dependencies
 {
 	my ($self, $cache, $portsdir) = @_;
 	my @solve = ();
+	my $register = $self->{directory_register};
 	for my $full (keys %{$self->{state}{dependencies}}) {
 		next unless $full =~ m/^(.*?):/;
 		push(@solve, $1);
 	}
 	while (@solve != 0) {
+		# optimization: don't try if we don't have directories left
+		return if !%$register;
 		my $pkgpath = pop @solve;
 		if (!defined $cache->{$pkgpath}) {
 			$cache->{$pkgpath} = {};
@@ -383,7 +390,10 @@ sub figure_out_dependencies
 			$plist->process_dependency($cache->{$pkgpath});
 		}
 		for my $dir (keys %{$cache->{$pkgpath}{dir}}) {
-			$self->{stripped}{$dir} = 1;
+			if (defined $register->{$dir}) {
+				$register->{$dir}{DONT} = 1;
+				delete $register->{$dir};
+			}
 		}
 		push(@solve, keys %{$cache->{$pkgpath}{pkgpath}});
 	}
@@ -416,9 +426,10 @@ sub handle_options
 			push(@{$state->{warn_suffix}}, $warn);
 		},
 	};
-	$state->SUPER::handle_options('X:P:w:', 
-	    '[-mnx] [-P pkgdir] [-w suffix] [-X path] -- pkg_create_args ...');
+	$state->SUPER::handle_options('rX:P:w:', 
+	    '[-mnrx] [-P pkgdir] [-w suffix] [-X path] -- pkg_create_args ...');
     	$state->{pkgdir} = $state->opt('P');
+	$state->{scan_as_root} = $state->opt('r');
 }
 
 # copy_extra: stuff that can't be easily deduced but should be copied
@@ -432,10 +443,6 @@ sub process_dependency
 }
 
 sub known_directory
-{
-}
-
-sub show_unknown
 {
 }
 
@@ -456,9 +463,6 @@ sub redistribute
 	} else {
 		$p->{tracker}->default->add($o);
 	}
-}
-sub strip_directories
-{
 }
 
 sub write_restate
@@ -505,7 +509,7 @@ sub may_tag_along
 {
 }
 
-sub count_directories
+sub tag_directories
 {
 }
 
@@ -521,13 +525,51 @@ sub find_existing_cvstags
 	}
 }
 
+sub unsubst_at_start
+{
+	my ($self, $string, $v, $k) = @_;
+	$string =~ s/^\Q$v\E/\$\{$k\}/;
+	return $string;
+}
+
+sub show_unknown
+{
+	my $self = shift;
+	if (!$self->{found}) {
+		print "Not found: ", $self->fullstring, " (in ", 
+		    $self->{file}, ")\n";
+	}
+}
+
+sub copy_with_tags
+{
+	my ($self, $plist) = @_;
+
+	$self->{found} = 1;
+	$self->add_object($plist);
+	if (defined $self->{mytags}) {
+		for my $tag (@{$self->{mytags}}) {
+			$tag->add_object($plist);
+			$tag->{found} = 1;
+		}
+	}
+}
+
+package OpenBSD::PackingElement::State;
+
+# that stuff NEVER gets copied over, but interpolated from existing objects
+sub show_unknown
+{
+}
+
 # objects are (mostly) stuff with paths that can get substs...
 package OpenBSD::PackingElement::Object;
 sub perform_backsubst
 {
 	my ($self, $s) = @_;
 
-	$self->{name} = $s->do_backsubst($self->{name}, $self->{unsubst});
+	$self->{name} = $s->do_backsubst($self->{name}, $self->{unsubst}, 
+	    $self);
 
 }
 
@@ -573,18 +615,11 @@ sub process_dependency
 	$mtree->{dir}{$self->fullname} = 1;
 }
 
-sub count_directories
+sub tag_directories
 {
-	my ($self, $count) = @_;
-	$$count++;
-}
+	my ($self, $h) = @_;
 
-sub strip_directories
-{
-	my ($o, $stripped) = @_;
-	if ($stripped->{$o->fullname}) {
-		$o->{DONT} = 1;
-	}
+	$h->{$self->fullname} = $self;
 }
 
 # dir-like objects HAVE a / added at the end...
@@ -608,6 +643,7 @@ package OpenBSD::PackingElement::Meta;
 sub copy_annotations
 {
 	my ($self, $plist) = @_;
+	$self->{found} = 1;
 	$self->clone->add_object($plist);
 }
 
@@ -621,11 +657,13 @@ sub perform_backsubst
 {
 }
 
+# TODO CVSTags should be used as "initial placeholders" for objects such
+# as exec that will be orphaned otherwise
 package OpenBSD::PackingElement::CVSTag;
 sub copy_annotations
 {
 	my ($self, $plist) = @_;
-	$self->clone->add_object($plist);
+	$self->copy_with_tags($plist);
 }
 
 sub find_existing_cvstags
@@ -635,10 +673,10 @@ sub find_existing_cvstags
 	$self->SUPER::find_existing_cvstags($filenames, $existing);
 }
 
-package OpenBSD::PackingElement::NewAuth;
-sub copy_annotations
+sub tie_objects
 {
-	&OpenBSD::PackingElement::Meta::copy_annotations;
+	my ($self, $plist) = @_;
+	$plist->{state}{lastobject} = $self;
 }
 
 # these are not really in the plist on disk!
@@ -647,13 +685,30 @@ sub copy_annotations
 {
 }
 
+sub show_unknown
+{
+}
+
 package OpenBSD::PackingElement::SpecialFile;
 sub copy_annotations
 {
 }
 
+sub show_unknown
+{
+}
+
 package OpenBSD::PackingElement::ExtraInfo;
 sub copy_annotations
+{
+}
+
+sub show_unknown
+{
+}
+
+package OpenBSD::PackingElement::Cwd;
+sub show_unknown
 {
 }
 
@@ -754,11 +809,23 @@ sub frag
 }
 
 package OpenBSD::PackingElement::Action;
+
+# TODO old make-plist would check whether the substitutions didn't change
 sub may_tag_along
 {
 	my ($self, $plist) = @_;
 	# for now, we might do something smarter later
 	$self->attach_to_lastobject($plist);
+}
+
+sub unsubst_at_start
+{
+	my ($self, $string, $v, $k) = @_;
+
+	$string = $self->SUPER::unsubst_at_start($string, $v, $k);
+
+	$string =~ s/([\s:=])\Q$v\E/$1\$\{$k\}/g;
+	return $string;
 }
 
 package OpenBSD::PackingElement::FileObject;
@@ -830,12 +897,34 @@ sub bookmark
 }
 
 package OpenBSD::PackingElement::Lib;
+my $first_warn = 1;
+sub check_lib_version
+{
+	my ($self, $version, $name, $v) = @_;
+	if (defined $v) {
+		return if $v eq $version;
+		print STDERR "ERROR: version mismatch for lib: ", $name,
+		    " (", $version, " vs. ", $v, ")\n";
+	} else {
+		if ($first_warn) {
+			print STDERR "Warning: unregistered shared lib(s)\n";
+			$first_warn = 0;
+		}
+		print STDERR "SHARED_LIBS +=\t$name ",
+		    ' 'x (25-length $name), "0.0 # $version\n";
+	}
+}
+
 sub perform_backsubst
 {
 	my ($self, $s) = @_;
-	if ($self->name =~ m,^(.*?)lib([^\/]+)\.so\.(\d+)\.(\d+)$,) {
-		$self->{name} = $s->do_backsubst("$1lib$2.so.", 
-		    $self->{unsubst})."\$\{LIB$2_VERSION\}";
+	if ($self->name =~ m,^(.*?)lib([^\/]+)\.so\.(\d+\.\d+)$,) {
+		my ($path, $name, $version) = ($1, $2, $3);
+		my $k = "LIB${name}_VERSION";
+		$self->{name} = $s->do_backsubst("${path}lib$name.so.", 
+		    $self->{unsubst})."\$\{$k\}";
+		$self->check_lib_version($version, $name, 
+			$s->value($k));
 	} else {
 		$self->SUPER::perform_backsubst($s);
 	}
@@ -846,9 +935,6 @@ sub copy_extra
 {
 	my ($self, $plist) = @_;
 
-	if ($self->name !~ /^\// && $self->cwd ne $plist->{state}->cwd) {
-	    OpenBSD::PackingElement::Cwd->add($plist, $self->cwd);
-	}
 	$self->{found} = 1;
 	$self->clone->add_object($plist);
 }
@@ -896,23 +982,22 @@ sub copy_from_old
 		# XXX do not touch commented out data
 		if ($e->isa("OpenBSD::PackingElement::Comment")) {
 			$rebless = 0;
-		# TODO and do not touch directory classes, we don't know
-		# enough from FS2 yet
-		} elsif ($e->isa("OpenBSD::PackingElement::DirlikeObject")
-		    && $o->element_class eq 'OpenBSD::PackingElement::Dir') {
+		}
+		if ($e->isa("OpenBSD::PackingElement::Shell")) {
 			$rebless = 0;
 		}
 	}
+
 	# XXX this should be safe for all our objects
 	bless $e, $o->element_class if $rebless;
 
-	$e->add_object($s->nlist);
-	if (defined $e->{mytags}) {
-		for my $tag (@{$e->{mytags}}) {
-			$tag->add_object($s->nlist);
-			$tag->{found} = 1;
-		}
+	# mark it for later
+	if ($e->cwd ne $s->{state}{prefix}) {
+		push(@{$s->{badcwd}}, $e);
+		return;
 	}
+
+	$e->copy_with_tags($s->nlist);
 }
 
 sub copy_existing
@@ -978,10 +1063,13 @@ my $base = $lists[0]->{state}{base};
 
 # now we ask the file system what exists, and fill file objects according to
 # that.
-require OpenBSD::FS2;
 $state->say("Scanning #1", $base);
+if ($state->{scan_as_root}) {
+	$> = 0;
+}
 my $objects = OpenBSD::FS2->fill($base, $state->{ignored});
 
+$> = $fake_uid;
 
 # First we figure out which objects will get copied.
 $state->say("Figuring out tie points");
@@ -999,6 +1087,7 @@ for my $path (keys %$objects) {
 $state->say("Tieing loose objects");
 for my $p (@lists) {
 	$p->olist->tie_objects($p->olist);
+	$p->olist->copy_annotations($p->nlist);
 }
 
 $state->say("Copying objects");
@@ -1053,17 +1142,28 @@ for my $i (1, 2) {
 	}
 }
 
+# now we can handle stuff outside of cwd, if needed
+for my $p (@lists) {
+	my $cwd = $p->{state}{prefix};
+	for my $e (@{$p->{badcwd}}) {
+		if ($e->cwd ne $cwd) {
+			$cwd = $e->cwd;
+			OpenBSD::PackingElement::Cwd->add($p->nlist, $cwd);
+		}
+		$e->copy_with_tags($p->nlist);
+	}
+}
+
 # so we read everything, let's figure out common directories
 my $cache = {};
 my $portsdir = $ENV{PORTSDIR};
 for my $p (@lists) {
-	my $count = 0;
-	$p->nlist->count_directories(\$count);
-	$p->{count_directories} = $count;
+	$p->{directory_register} = {};
+	$p->nlist->tag_directories($p->{directory_register});
 }
 
 for my $p (@lists) {
-	if ($p->{count_directories} > 0) {
+	if (%{$p->{directory_register}}) {
 		$p->figure_out_dependencies($cache, $portsdir);
 	}
 }
@@ -1080,7 +1180,7 @@ for my $p (@lists) {
 
 # and redo the zapping all over again
 for my $p (@lists) {
-	if ($p->{count_directories} > 0) {
+	if (%{$p->{directory_register}}) {
 		$p->figure_out_dependencies($cache, $portsdir);
 	}
 }
@@ -1089,15 +1189,15 @@ for my $p (@lists) {
 	$p->nlist->{name}{DONT} = 1;
 	# CWD that we added manually... this sucks a bit!!!
 	$p->nlist->{items}[0]{DONT} = 1;
-	$p->olist->copy_annotations($p->nlist);
 	# that stuff might have cwd, so we copy it late
 	$p->olist->copy_extra($p->nlist);
 	add_missing_cvstags($p->nlist, $p->{base_plistname});
 	$p->nlist->bad_suffixes($p, $state);
-	# XXX this has to happen *before* backsubst
-	$p->nlist->strip_directories($p->{stripped});
 	$p->nlist->perform_backsubst($p->{state}{subst});
 }
+
+# TODO   old make-plist noticed libraries with a LIB*_VERSION but no
+# matching file
 
 # let's show a quick summary of stuff we couldn't figure out
 for my $p (@lists) {
@@ -1141,13 +1241,15 @@ for my $p (@lists) {
 	}
 }
 
-if (@towrite > 0 && !$cantmove) {
-	for my $k (@towrite) {
-		if (-f $k) {
-			rename($k, "$k.orig") or 
-			    die "can't rename $k to $k.orig: $!";
-		}
-		rename("$k.new", $k) or 
-			    die "can't rename $k.new to $k: $!";
+if ($cantmove) {
+	exit(2);
+}
+
+for my $k (@towrite) {
+	if (-f $k) {
+		rename($k, "$k.orig") or 
+		    die "can't rename $k to $k.orig: $!";
 	}
+	rename("$k.new", $k) or 
+		    die "can't rename $k.new to $k: $!";
 }
