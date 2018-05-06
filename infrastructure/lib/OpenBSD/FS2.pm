@@ -1,4 +1,4 @@
-# $OpenBSD: FS2.pm,v 1.13 2018/05/04 10:54:20 espie Exp $
+# $OpenBSD: FS2.pm,v 1.15 2018/05/05 22:42:30 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -179,8 +179,8 @@ sub recognize
 	my $tag2 = <$fh>;
 	$tag .= $tag2 if defined $tag2;
 	close $fh;
-	if ($tag =~ /^This\sis\s.*,\sproduced\sby\s[Mm]akeinfo(?:\sversion\s|\-)?.*[\d\s]from/s ||
-	    $tag =~ /^Dies\sist\s.*,\shergestellt\svon\s[Mm]akeinfo(?:\sVersion\s|\-)?.*[\d\s]aus/s) {
+	if ($tag =~ /^This\sis\s.*,\sproduced\sby\sg?[Mm]akeinfo(?:\sversion\s|\-)?.*[\d\s]from/s ||
+	    $tag =~ /^Dies\sist\s.*,\shergestellt\svon\sg?[Mm]akeinfo(?:\sVersion\s|\-)?.*[\d\s]aus/s) {
 		return 1;
 	} else {
 		return 0;
@@ -508,7 +508,7 @@ sub scan
 				return;
 			}
 			my $file = $self->create($path);
-			$files->{$path} = $file;
+			$files->{$file->path} = $file;
 			$file->tweak_other_paths($self, $files);
 		}, $self->destdir);
 	$self->zap_dirs($files, '/etc/X11/app-defaults');

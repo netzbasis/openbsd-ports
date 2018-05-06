@@ -1,4 +1,4 @@
-/Makefile/1.574/Fri May  4 11:42:06 2018//
+/Makefile/1.575/Sat May  5 15:08:00 2018//
 D/TclXML////
 D/antiword////
 D/apertium////
@@ -355,6 +355,7 @@ D/py-lxml////
 D/py-m2r////
 D/py-markdown////
 D/py-mistune////
+D/py-natsort////
 D/py-nltk////
 D/py-numpydoc////
 D/py-pandocfilters////
@@ -364,6 +365,7 @@ D/py-podcastparser////
 D/py-polib////
 D/py-prettytable////
 D/py-pyRFC3339////
+D/py-pygfm////
 D/py-pygments////
 D/py-pykwalify////
 D/py-rdflib////

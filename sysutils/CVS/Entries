@@ -1,4 +1,4 @@
-/Makefile/1.477/Fri Apr 27 16:35:04 2018//
+/Makefile/1.478/Sat May  5 12:50:06 2018//
 D/accountsservice////
 D/amazon-ecs-cli////
 D/amazon-ssm-agent////
@@ -82,6 +82,7 @@ D/flashrom////
 D/fleetctl////
 D/flock////
 D/fprintd////
+D/free////
 D/freedt////
 D/freeipmi////
 D/fsstress////

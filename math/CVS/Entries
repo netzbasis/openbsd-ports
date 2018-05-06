@@ -1,4 +1,4 @@
-/Makefile/1.146/Wed Feb 28 15:34:08 2018//
+/Makefile/1.147/Sat May  5 15:05:52 2018//
 D/R////
 D/aamath////
 D/abs////
@@ -100,6 +100,7 @@ D/prover9////
 D/py-Numeric////
 D/py-bottleneck////
 D/py-gnuplot////
+D/py-graphviz////
 D/py-mpmath////
 D/py-numexpr////
 D/py-numpy////
