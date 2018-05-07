@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: update-plist,v 1.106 2018/05/05 23:38:54 espie Exp $
+# $OpenBSD: update-plist,v 1.109 2018/05/06 16:14:20 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -569,8 +569,7 @@ sub copy_with_tags
 	if (defined $self->{mytags}) {
 		for my $tag (@{$self->{mytags}}) {
 			next if $tag->{found};
-			$tag->add_object($plist);
-			$tag->{found} = 1;
+			copy_with_tags($tag, $plist);
 		}
 	}
 }
@@ -836,16 +835,26 @@ sub may_tag_along
 package OpenBSD::PackingElement::Unexec;
 # TODO unexec's commands must be later in the plist, we should try to
 # identify them
+sub known_object
+{
+	my ($self, $exact, $approximate, $comes_after) = @_;
+	for my $i (split/\s+/, $self->{expanded}) {
+		next if $i eq "/usr/bin/env";
+		next if $i =~ m/^\-/;
+		next if $i =~ m/\=/;
+		$comes_after->{$i} = $self;
+	}
+}
 
 package OpenBSD::PackingElement::FileObject;
 use File::Basename;
 
 sub known_object
 {
-	my ($self, $h, $ap) = @_;
+	my ($self, $exact, $approximate, $comes_after) = @_;
 	my $f = $self->fullname;
-	push @{$h->{$f}}, $self;
-	delete $ap->{$f};
+	push @{$exact->{$f}}, $self;
+	delete $approximate->{$f};
 }
 
 sub known_directory
@@ -976,17 +985,16 @@ sub add_missing_cvstags
 	for my $name (keys %$filenames) {
 		next if $existing->{$name};
 		my $o = OpenBSD::PackingElement::CVSTag->add($list, 
-		    '$'.'OpenBSD'.'$');
+		    '$'.'OpenBSD: '.basename($name).',v$');
 		$o->{file} = $name;
 	}
 }
 
 sub copy_from_old
 {
-	my ($e, $o) = @_;
+	my ($e, $o, $unexec) = @_;
 
 	my $s = $e->{comesfrom};
-	my $rebless = 0;
 	if ($o->element_class ne ref($e) && $e->rebless_okay) {
 		bless $e, $o->element_class;
 	}
@@ -999,18 +1007,24 @@ sub copy_from_old
 		return;
 	}
 
-	$e->copy_with_tags($s->nlist);
+	if (defined $unexec) {
+		# XXX we need to unmark it so it can tag along
+		delete $e->{found};
+		$unexec->tag_along($e);
+	} else {
+		$e->copy_with_tags($s->nlist);
+	}
 }
 
 sub copy_existing
 {
-	my ($exact, $path, $o) = @_;
+	my ($exact, $path, $o, $comes_after) = @_;
 
 	if ($exact->{$path}) {
 		# this will be re-added to multiple paths if there are
 		# multiple matching plists
 		for my $e (@{$exact->{$path}}) {
-			copy_from_old($e, $o);
+			copy_from_old($e, $o, $comes_after->{$path});
 		}
 		return 1;
 	} else {
@@ -1024,6 +1038,7 @@ $state->handle_options;
 my @lists;
 my $exact = {};
 my $approximate = {};
+my $comes_after = {};
 
 if (@ARGV == 0) {
 	$state->usage;
@@ -1054,7 +1069,7 @@ while (@ARGV > 0) {
 # locations.  As a rule, "exact" information will supersede deduced directory
 # names.
 	$r->olist->known_directory($approximate, $r->olist);
-	$r->olist->known_object($exact, $approximate);
+	$r->olist->known_object($exact, $approximate, $comes_after);
 }
 
 
@@ -1095,7 +1110,7 @@ for my $i (1, 2) {
 	for my $path (sort keys %$objects) {
 		my $o = $objects->{$path};
 		next unless $o->stage == $i;
-		next if copy_existing($exact, $path, $o);
+		next if copy_existing($exact, $path, $o, $comes_after);
 		my $c = $o->element_class;
 
 		my $found = 0;
