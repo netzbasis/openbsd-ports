@@ -1,4 +1,4 @@
-/Makefile/1.220/Wed Apr 25 07:43:55 2018//
+/Makefile/1.221/Mon May  7 17:55:38 2018//
 D/STk////
 D/a60////
 D/abcl////
@@ -85,6 +85,7 @@ D/pypy////
 D/python////
 D/racket-minimal////
 D/rakudo////
+D/regina////
 D/ruby////
 D/rust////
 D/sbcl////

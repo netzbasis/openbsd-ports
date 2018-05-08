@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: update-plist,v 1.109 2018/05/06 16:14:20 espie Exp $
+# $OpenBSD: update-plist,v 1.112 2018/05/07 18:54:49 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -415,6 +415,7 @@ sub figure_out_dependencies
 		for my $dir (keys %{$cache->{$pkgpath}{dir}}) {
 			if (defined $register->{$dir}) {
 				$register->{$dir}{DONT} = 1;
+				$self->{stripped}{$dir} = $pkgpath;
 				delete $register->{$dir};
 			}
 		}
@@ -449,10 +450,11 @@ sub handle_options
 			push(@{$state->{warn_suffix}}, $warn);
 		},
 	};
-	$state->SUPER::handle_options('rX:P:w:', 
-	    '[-mnrx] [-P pkgdir] [-w suffix] [-X path] -- pkg_create_args ...');
+	$state->SUPER::handle_options('rvX:P:w:', 
+	    '[-mnrvx] [-P pkgdir] [-w suffix] [-X path] -- pkg_create_args ...');
     	$state->{pkgdir} = $state->opt('P');
 	$state->{scan_as_root} = $state->opt('r');
+	$state->{verbose} = $state->opt('v');
 }
 
 # copy_extra: stuff that can't be easily deduced but should be copied
@@ -833,8 +835,6 @@ sub may_tag_along
 }
 
 package OpenBSD::PackingElement::Unexec;
-# TODO unexec's commands must be later in the plist, we should try to
-# identify them
 sub known_object
 {
 	my ($self, $exact, $approximate, $comes_after) = @_;
@@ -892,7 +892,12 @@ sub write_restate
 					next;
 				}
 			}
-			$s .= " ".$p->subst->do_backsubst($self->{$k}, undef);
+			if ($k eq 'mode') {
+				$s .= " ".$self->{$k};
+			} else {
+				$s .= " ".
+				    $p->subst->do_backsubst($self->{$k}, undef);
+			}
 		} else {
 			if (!defined $p->{restate}{$k}) {
 				next;
@@ -1216,7 +1221,6 @@ for my $p (@lists) {
 		add_missing_cvstags($p->nlist, $i);
 	}
 	$p->nlist->bad_suffixes($p, $state);
-	# TODO rework backsubst into redistribute, based on fullstring
 }
 
 # TODO   old make-plist noticed libraries with a LIB*_VERSION but no
@@ -1249,17 +1253,18 @@ my $exitcode = 0;
 # let's see if we want to update things
 for my $p (@lists) {
 	for my $k (sort keys %{$p->{tracker}{known}}) {
+		my $name = $state->{verbose} ? $k : baseplist($k);
 		if (-f $k) {
 			if (!-f "$k.new") {
-				print STDERR "No $k.new written\n";
+				print STDERR "No $name.new written\n";
 				$exitcode = 1;
 			} elsif (compare($k, "$k.new") == 0) {
 				unlink("$k.new");
 			} else {
-				print baseplist($k), " changed";
+				print "$name changed";
 				push(@towrite, $k);
 				if (-f $k.".orig") {
-					print " but ", baseplist($k), ".orig exists\n";
+					print " but $name.orig exists\n";
 					$cantmove = 1;
 				} else {
 					print "\n";
@@ -1268,6 +1273,17 @@ for my $p (@lists) {
 		} else {
 			print baseplist($k), " is new\n";
 			push(@towrite, $k);
+		}
+	}
+}
+
+if ($state->{verbose}) {
+	for my $p (@lists) {
+		next unless exists $p->{stripped};
+		print "Directories stripped from ", $p->nlist->pkgname, ":\n";
+		for my $d (sort keys %{$p->{stripped}}) {
+			print " ", $p->strip_prefix($d), 
+			    " ($p->{stripped}{$d})\n";
 		}
 	}
 }
