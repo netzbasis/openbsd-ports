@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.24 2018/04/24 13:03:46 jasper Exp $
+# $OpenBSD: Makefile,v 1.26 2018/05/09 19:22:21 sthen Exp $
 
 COMMENT =		emulator for Nintendo Game Boy (Color/Advance)
 BROKEN-alpha =		ICE or OOM on hq_implementation.cpp
@@ -37,6 +37,9 @@ CONFIGURE_ARGS +=	-DENABLE_FFMPEG=OFF \
 			-DENABLE_SDL=ON
 # Creates unlinkable files ('data' according to file(1))
 CONFIGURE_ARGS +=	-DENABLE_LTO=OFF
+# Assembler autodetection fails on i386, can be worked around with
+# -DCMAKE_ASM_NASM_COMPILER=yasm, but then linking fails.
+CONFIGURE_ARGS +=	-DENABLE_ASM=OFF
 
 CXXFLAGS +=		-Wno-c++11-narrowing -I${X11BASE}/include
 

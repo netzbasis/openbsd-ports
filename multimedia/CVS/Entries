@@ -1,4 +1,4 @@
-/Makefile/1.103/Thu Mar 29 23:36:28 2018//
+/Makefile/1.104/Wed May  9 10:10:44 2018//
 D/assimp////
 D/atomicparsley////
 D/audiopreview////
@@ -59,6 +59,8 @@ D/p5-Storable-AMF////
 D/phonon////
 D/phonon-backend////
 D/phonon-qt5////
+D/py-caption////
+D/py-chromecast////
 D/py-pafy////
 D/qt-gstreamer////
 D/regionset////
