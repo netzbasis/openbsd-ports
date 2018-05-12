@@ -1,6 +1,6 @@
 /patch-browser_installer_Makefile_in/1.5/Tue Mar  7 15:36:45 2017//
 /patch-intl_icu_source_Makefile_in/1.3/Tue Mar  7 15:36:45 2017//
-/patch-js_src_jit_ProcessExecutableMemory_cpp/1.1/Mon Mar 20 19:37:06 2017//
+/patch-js_src_jit_ProcessExecutableMemory_h/1.1/Fri May 11 19:40:42 2018//
 /patch-security_manager_ssl_nsNSSComponent_cpp/1.1/Fri Mar 16 18:32:34 2018//
 /patch-storage_mozStorageConnection_cpp/1.2/Tue Mar  7 15:36:45 2017//
 D

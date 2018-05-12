@@ -452,8 +452,8 @@
 /patch-ui_native_theme_native_theme_h/1.1/Sun Jun 25 21:53:56 2017//
 /patch-ui_strings_app_locale_settings_grd/1.4/Sat Sep  9 19:16:43 2017//
 /patch-ui_views_bubble_bubble_dialog_delegate_cc/1.5/Mon Mar 12 13:48:34 2018//
-/patch-ui_views_controls_label_cc/1.11/Mon Apr 23 15:00:16 2018//
-/patch-ui_views_controls_textfield_textfield_cc/1.30/Mon Apr 23 15:00:16 2018//
+/patch-ui_views_controls_label_cc/1.12/Fri May 11 13:12:56 2018//
+/patch-ui_views_controls_textfield_textfield_cc/1.31/Fri May 11 13:12:56 2018//
 /patch-ui_views_corewm_tooltip_aura_cc/1.2/Sat Dec 10 15:35:25 2016//
 /patch-ui_views_examples_widget_example_cc/1.7/Mon Mar 12 13:48:34 2018//
 /patch-ui_views_mus_aura_init_cc/1.9/Sat Dec 16 15:34:40 2017//

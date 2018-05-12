@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: update-plist,v 1.128 2018/05/11 03:58:11 espie Exp $
+# $OpenBSD: update-plist,v 1.131 2018/05/11 15:07:23 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -385,6 +385,7 @@ sub tag_along
 	my ($self, $n) = @_;
 
 	push(@{$self->{mytags}}, $n);
+	$n->{tagged} = 1;
 }
 
 # this is the actual marking for later:
@@ -673,6 +674,9 @@ sub may_tag_along
 
 sub known_object
 {
+	my ($self, $o) = @_;
+	my $f = $self->fullname;
+	push @{$o->{sample}{$f}}, $self;
 }
 
 package OpenBSD::PackingElement::Sampledir;
@@ -872,10 +876,21 @@ sub copy_extra
 {
 	my ($self, $plist) = @_;
 
-	$self->{found} = 1;
-	$self->clone->add_object($plist);
+	if (!$self->{found}) {
+		$self->{found} = 1;
+		$self->clone->add_object($plist);
+	}
 }
 
+sub rebless_okay() { 0 }
+
+package OpenBSD::PackingElement::Extradir;
+sub rebless_okay() { 0 }
+
+sub copy_extra
+{
+	&OpenBSD::PackingElement::Extra::copy_extra;
+}
 
 # small class that runs pkglocate in batches
 package OpenBSD::Pkglocate;
@@ -913,6 +928,14 @@ sub run_command
 		$self->get_results;
 	}
 	my %h = map {($_, 1)} @{$self->{params}};
+	# XXX so this is slightly tricky, we do run a pipe, and don't
+	# look at the results just yet.
+	# *if* the pipe produces lots of results, it will be stuck,
+	# and when we grab the results, we will get stuff sequentially
+	# but we are gambling that pipes produce few results each,
+	# so they will just sit in the memory buffer when done
+	# (we could also move to non-blocking pipes, which is slightly
+	# crazy for such a small optimization)
 	open(my $cmd, '-|', 'pkg_locate', map {":$_"} @{$self->{params}});
 	push(@{$self->{queue}}, { h => \%h, pipe => $cmd});
 	$self->{params} = [];
@@ -1202,6 +1225,19 @@ sub last_resort
 	return 0;
 }
 
+# somewhat devious: that file was created by the fake install, BUT we
+# install a sample instead. Make sure the sample is copied over in some
+# plist, though
+sub is_a_sample
+{
+	my ($self, $path) = @_;
+	return 0 unless defined $self->{sample}{$path};
+	for my $e (@{$self->{sample}{$path}}) {
+		return 1 if $e->{tagged};
+	}
+	return 0;
+}
+
 sub copy_object
 {
 	my ($self, $stage, $path) = @_;
@@ -1214,6 +1250,7 @@ sub copy_object
 	return if $self->walk_up_directory($path, $c);
 	return if $self->last_resort($path, $c);
 
+	return if $self->is_a_sample($path);
 	# TODO this is where we should figure @cwd stuff
 	# though it's generally better to have distinct plists
 	# for several prefixes

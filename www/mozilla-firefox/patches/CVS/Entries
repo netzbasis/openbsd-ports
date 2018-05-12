@@ -1,7 +1,15 @@
+/patch-dom_ipc_ContentChild_cpp/1.1/Fri May 11 20:00:57 2018//
+/patch-gfx_thebes_gfxFcPlatformFontList_cpp/1.1/Fri May 11 20:00:57 2018//
+/patch-gfx_thebes_gfxFcPlatformFontList_h/1.1/Fri May 11 20:00:57 2018//
 /patch-intl_icu_source_Makefile_in/1.6/Tue Mar 13 19:29:35 2018//
 /patch-js_src_ctypes_libffi_src_dlmalloc_c/1.4/Tue Sep  2 16:43:04 2014//
 /patch-js_src_jit_ProcessExecutableMemory_h/1.1/Wed Jun 14 05:30:05 2017//
-/patch-security_manager_pki_resources_content_exceptionDialog_js/1.14/Tue Mar 13 19:29:35 2018//
-/patch-storage_mozStorageConnection_cpp/1.12/Tue Mar 13 19:29:35 2018//
+/patch-mozglue_misc_TimeStamp_posix_cpp/1.1/Fri May 11 20:00:57 2018//
+/patch-security_manager_pki_resources_content_exceptionDialog_js/1.15/Fri May 11 20:00:57 2018//
+/patch-storage_mozStorageConnection_cpp/1.13/Fri May 11 20:00:57 2018//
+/patch-toolkit_xre_nsAppRunner_cpp/1.1/Fri May 11 20:00:57 2018//
 /patch-widget_nsPrintSettingsImpl_cpp/1.4/Tue Mar 13 19:29:35 2018//
+/patch-widget_nsShmImage_cpp/1.1/Fri May 11 20:00:57 2018//
+/patch-xpcom_base_nsDebugImpl_cpp/1.1/Fri May 11 20:00:57 2018//
+/patch-xpcom_base_nsMemoryReporterManager_cpp/1.1/Fri May 11 20:00:57 2018//
 D
