@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: update-plist,v 1.131 2018/05/11 15:07:23 espie Exp $
+# $OpenBSD: update-plist,v 1.136 2018/05/12 11:57:43 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -271,7 +271,7 @@ sub figure_out_dependencies
 		if (!defined $cache->{$pkgpath}) {
 			$cache->{$pkgpath} = {};
 			$self->{state}->say("Stripping directories from #1",
-			    $pkgpath);
+			    $pkgpath) unless $self->{state}{quiet};
 			my $plist = $self->get_plist($pkgpath, $portsdir);
 			$plist->process_dependency($cache->{$pkgpath});
 		}
@@ -299,9 +299,24 @@ sub init
 	$self->{progressmeter} = $realstate->{progressmeter};
 	$self->{bad} = 0;
 	$self->{repo} = $realstate->{repo};
+	$self->{quiet} = $realstate->{quiet};
 	$self->{cache_dir} = $realstate->{cache_dir};
 }
 
+# if we're in quiet mode, get rid of status messages
+sub set_status
+{
+	my $self = shift;
+	return if $self->{quiet};
+	$self->SUPER::set_status(@_);
+}
+
+sub end_status
+{
+	my $self = shift;
+	return if $self->{quiet};
+	$self->SUPER::end_status(@_);
+}
 
 # Most of the heavy lifting is done by visitor methods, as always
 
@@ -363,12 +378,11 @@ sub write_restate
 	return undef;
 }
 
-# default backsubstitution and writing. Adequate for almost everything
-# but @libs
+# default backsubstitution and writing. 
 sub write_backsubst
 {
 	my ($o, $file, $p) = @_;
-	my $s = $p->subst->do_backsubst($o->fullstring, $o->{unsubst});
+	my $s = $p->subst->do_backsubst($o->fullstring, $o->{unsubst}, $o);
 	print {$file->fh} $s, "\n";
 }
 
@@ -827,6 +841,14 @@ sub locate_files
 	$locator->add_param($self->fullname);
 }
 
+sub write_backsubst
+{
+	my ($self, $f, $p) = @_;
+	if (defined $self->{nochecksum}) {
+		print {$f->fh} "\@comment no checksum\n";
+	}
+	$self->SUPER::write_backsubst($f, $p);
+}
 
 sub is_file { 1 }
 
@@ -859,10 +881,9 @@ sub write_backsubst
 	if ($self->name =~ m,^(.*?)lib([^\/]+)\.so\.(\d+\.\d+)$,) {
 		my ($path, $name, $version) = ($1, $2, $3);
 		my $k = "LIB${name}_VERSION";
-		# XXX do we want to do backsubst on the variable name ?
-		# there's one port that uses that "feature"
-		my $s = $p->subst->do_backsubst("${path}lib$name.so.", 
-		    $self->{unsubst})."\$\{$k\}";
+		# XXX redo backsubst on the variable name
+		my $s = $p->subst->do_backsubst("${path}lib$name.so.\$\{$k\}", 
+		    $self->{unsubst}, $self);
 		$self->check_lib_version($version, $name, 
 			$p->subst->value($k));
 		print {$f->fh} "\@", $self->keyword, " ", $s, "\n";
@@ -880,6 +901,12 @@ sub copy_extra
 		$self->{found} = 1;
 		$self->clone->add_object($plist);
 	}
+}
+
+sub may_tag_along
+{
+	my ($self, $plist) = @_;
+	$self->attach_to_lastobject($plist);
 }
 
 sub rebless_okay() { 0 }
@@ -1005,15 +1032,20 @@ sub handle_options
 			my $var = shift;
 			push(@{$state->{suffix_only}}, $var);
 		    },
+		'V' => sub {
+			my $var = shift;
+			push(@{$state->{no_version}}, $var);
+		    },
 
 	};
-	$state->SUPER::handle_options('rvFC:i:j:s:S:X:P:w:', 
+	$state->SUPER::handle_options('rvqV:FC:i:j:s:S:X:P:w:', 
 	    '[-Fmnrvx] [-C dir] [-i var] [-j jobs] [-P pkgdir] [-S var]',
-	    '[-s var] [-w suffix] [-X path] -- pkg_create_args ...');
+	    '[-s var] [-V var] [-w suffix] [-X path] -- pkg_create_args ...');
     	$state->{pkgdir} = $state->opt('P');
 	$state->{scan_as_root} = $state->opt('r');
 	$state->{verbose} = $state->opt('v');
 	$state->{cache_dir} = $state->opt('C');
+	$state->{quiet} = $state->opt('q');
 }
 
 package UpdatePlist;
@@ -1042,7 +1074,8 @@ sub process_next_subpackage
 
 	$r->olist->set_pkgname($pkg);
 	$r->nlist->set_pkgname($pkg);
-	$self->{state}->say("Reading existing plist for #1", $pkg);
+	$self->{state}->say("Reading existing plist for #1", $pkg) 
+	    unless $self->{state}{quiet};
 	$r->read_all_fragments($s, $r->olist);
 	# add the cwd to new list as well!!!
 	OpenBSD::PackingElement::Cwd->add($r->nlist, $s->{prefix});
@@ -1080,19 +1113,11 @@ sub scan_fake_dir
 
 	# now we ask the file system what exists, and fill file 
 	# objects according to that.
-	$self->{state}->say("Scanning #1", $base);
+	$self->{state}->say("Scanning #1", $base)
+	    unless $self->{state}{quiet};
 	local $> = 0 if $self->{state}{scan_as_root};
 
 	$self->{objects} = OpenBSD::FS2->fill($base, $self->{state}{ignored});
-}
-
-sub baseplist
-{
-	my ($self, $n) = @_;
-	if (!$self->{state}{verbose} && defined $self->{state}{pkgdir}) {
-		$n =~ s/\Q$self->{state}{pkgdir}\E\///;
-	}
-	return $n;
 }
 
 sub add_missing_cvstags
@@ -1156,7 +1181,8 @@ sub handle_annotations
 {
 	my $self = shift;
 	# First we figure out which objects will get copied.
-	$self->{state}->say("Figuring out tie points");
+	$self->{state}->say("Figuring out tie points")
+	    unless $self->{state}{quiet};
 	for my $path (keys %{$self->{objects}}) {
 		my $o = $self->{objects}{$path};
 		if ($self->{exact}{$path}) {
@@ -1169,7 +1195,8 @@ sub handle_annotations
 	# THEN we attach annotations to the closest known object
 	# This is sturdy when files vanish, as we tag along with
 	# the nearest file
-	$self->{state}->say("Tieing loose objects");
+	$self->{state}->say("Tieing loose objects")
+	    unless $self->{state}{quiet};
 	for my $p (@{$self->{lists}}) {
 		$p->olist->tie_objects($p->olist);
 		$p->olist->copy_annotations($p->nlist);
@@ -1260,7 +1287,8 @@ sub copy_object
 sub copy_objects
 {
 	my $self = shift;
-	$self->{state}->say("Copying objects");
+	$self->{state}->say("Copying objects")
+	    unless $self->{state}{quiet};
 	# XXX stage 2 is for rcscript, which are kind of special with
 	# their included cwd (why did I do things that way again?
 	# check why absolute_okay is not enough)
@@ -1315,7 +1343,7 @@ sub strip_dependency_directories
 		next if !defined $cache->{$pkgpath};
 		$cache->{$pkgpath} = {};
 		$self->{state}->say("Stripping directories from #1 (trying harder)", 
-		    $pkgpath);
+		    $pkgpath) unless $self->{state}{quiet};
 		$p->nlist->process_dependency($cache->{$pkgpath});
 	}
 
@@ -1334,7 +1362,6 @@ sub adjust_final
 		$p->nlist->{name}{DONT} = 1;
 		# CWD that we added manually... this sucks a bit!!!
 		$p->nlist->{items}[0]{DONT} = 1;
-		# that stuff might have cwd, so we copy it late
 		$p->olist->copy_extra($p->nlist);
 		for my $i (@{$p->{base_plists}}) {
 			add_missing_cvstags($p->nlist, $i);
@@ -1422,7 +1449,8 @@ sub try_pkglocate
 	my $self = shift;
 	# hardcode the location for now
 	if (-x '/usr/local/bin/pkg_locate') {
-		$self->{state}->say("Looking for unregistered conflicts");
+		$self->{state}->say("Looking for unregistered conflicts")
+		    unless $self->{state}{quiet};
 		for my $p (@{$self->{lists}}) {
 			$self->locate_list($p);
 		}
@@ -1470,25 +1498,24 @@ my $exitcode = 0;
 # let's see if we want to update things
 for my $p (@{$self->{lists}}) {
 	for my $k (sort keys %{$p->{tracker}{known}}) {
-		my $name = $self->baseplist($k);
 		if (-f $k) {
 			if (!-f "$k.new") {
-				print STDERR "No $name.new written\n";
+				print STDERR "No $k.new written\n";
 				$exitcode = 1;
 			} elsif (compare($k, "$k.new") == 0) {
 				unlink("$k.new") unless $self->{state}->not;
 			} else {
-				print "$name changed";
+				print "$k changed";
 				push(@towrite, $k);
 				if (-f $k.".orig") {
-					print " but $name.orig exists\n";
+					print " but $k.orig exists\n";
 					$cantmove = 1;
 				} else {
 					print "\n";
 				}
 			}
 		} else {
-			print "$name is new\n";
+			print "$k is new\n";
 			push(@towrite, $k);
 		}
 	}
