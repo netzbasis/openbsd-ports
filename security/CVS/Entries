@@ -1,4 +1,4 @@
-/Makefile/1.507/Fri May 11 20:11:57 2018//
+/Makefile/1.508/Sun May 13 13:38:40 2018//
 D/ADMsnmp////
 D/aescrypt////
 D/aide////
@@ -78,7 +78,6 @@ D/jailkit////
 D/john////
 D/john-jumbo////
 D/kc////
-D/kedpm////
 D/keepassx////
 D/keepassxc////
 D/keybase////
