@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: update-plist,v 1.136 2018/05/12 11:57:43 espie Exp $
+# $OpenBSD: update-plist,v 1.138 2018/05/15 16:32:10 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -507,9 +507,6 @@ sub bad_suffixes
 		$error = "vim swap file";
 	} elsif ($s =~ m/\~$/) {
 		$error = "emacs temporary file";
-	} elsif ($s eq '/usr/local/lib/charset.alias' && 
-	    $p->olist->fullpkgpath ne 'converters/libiconv') {
-		$error = "file from converters/libiconv";
 	} else {
 		for my $suf (@{$state->{warn_suffix}}) {
 			if ($s =~ m/\Q$suf\E$/) {
@@ -1469,6 +1466,9 @@ $self->copy_objects;
 $self->add_delayed_objects;
 $self->strip_dependency_directories;
 $self->adjust_final;
+
+# TODO we should try to match new items (with no unsubst) to the closest
+# directory with unsubst material, so that we get better hints at substitution
 
 
 

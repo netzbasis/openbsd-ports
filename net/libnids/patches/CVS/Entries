@@ -1,5 +1,8 @@
 /patch-configure/1.2/Tue Jul 15 16:11:02 2008//
 /patch-src_Makefile_in/1.1/Tue Aug 22 11:11:33 2017//
 /patch-src_checksum_c/1.1/Tue Aug 22 11:11:33 2017//
-/patch-src_libnids_c/1.6/Fri Apr  9 09:48:18 2010//
+/patch-src_libnids_c/1.7/Tue May 15 19:17:05 2018//
+/patch-src_nids_h/1.1/Tue May 15 19:17:05 2018//
+/patch-src_tcp_c/1.1/Tue May 15 19:17:05 2018//
+/patch-src_tcp_h/1.1/Tue May 15 19:17:05 2018//
 D
