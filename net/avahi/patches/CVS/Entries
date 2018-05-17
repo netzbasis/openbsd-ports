@@ -3,5 +3,11 @@
 /patch-avahi-core_fdutil_c/1.3/Thu May 23 13:40:38 2013//
 /patch-avahi-core_socket_c/1.5/Thu May 10 15:08:37 2018//
 /patch-avahi-daemon_main_c/1.10/Tue May 30 18:53:37 2017//
-/patch-configure_ac/1.5/Thu Jul 13 07:36:39 2017//
+/patch-avahi-python_avahi-discover_Makefile_am/1.1/Wed May 16 16:18:52 2018//
+/patch-avahi-python_avahi_Makefile_am/1.1/Wed May 16 16:18:52 2018//
+/patch-avahi-python_avahi_ServiceTypeDatabase_py_in/1.1/Wed May 16 16:18:52 2018//
+/patch-avahi-python_avahi___init___py/1.1/Wed May 16 16:18:52 2018//
+/patch-configure_ac/1.6/Wed May 16 16:18:52 2018//
+/patch-service-type-database_Makefile_am/1.1/Wed May 16 16:18:52 2018//
+/patch-service-type-database_build-db_in/1.1/Wed May 16 16:18:52 2018//
 D

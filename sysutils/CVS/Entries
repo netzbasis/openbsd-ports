@@ -1,4 +1,4 @@
-/Makefile/1.480/Tue May  8 10:49:49 2018//
+/Makefile/1.481/Wed May 16 12:25:48 2018//
 D/accountsservice////
 D/amazon-ecs-cli////
 D/amazon-ssm-agent////
@@ -32,6 +32,7 @@ D/cfengine////
 D/checkbashisms////
 D/checkrestart////
 D/cl-launch////
+D/cloud-agent////
 D/clusterit////
 D/collectd////
 D/colorls////
