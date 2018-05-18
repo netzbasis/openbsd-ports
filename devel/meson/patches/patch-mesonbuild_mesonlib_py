@@ -1,4 +1,4 @@
-$OpenBSD: patch-mesonbuild_mesonlib_py,v 1.7 2018/05/05 09:34:47 jasper Exp $
+$OpenBSD: patch-mesonbuild_mesonlib_py,v 1.9 2018/05/17 20:09:16 ajacoutot Exp $
 
 From e7218ae0ec92ac57dda4b9b572b24a9e39ba4b74 Mon Sep 17 00:00:00 2001
 From: Jasper Lievisse Adriaanse <jasper@humppa.nl>

@@ -1,4 +1,4 @@
-/Makefile/1.78/Fri Jan  5 07:15:31 2018//
+/Makefile/1.79/Thu May 17 23:22:49 2018//
 D/akonadi////
 D/aqbanking////
 D/attica////
@@ -39,6 +39,7 @@ D/taskd////
 D/taskwarrior////
 D/tdl////
 D/thinkingrock////
+D/timewarrior////
 D/tudu////
 D/vdirsyncer////
 D/vit////
