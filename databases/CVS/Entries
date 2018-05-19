@@ -1,5 +1,4 @@
-/Makefile/1.358/Thu Apr 26 15:08:56 2018//
-D/apache-couchdb////
+/Makefile/1.360/Fri May 18 20:26:33 2018//
 D/architect////
 D/barman////
 D/citus////
@@ -159,7 +158,6 @@ D/py-apsw////
 D/py-bsddb3////
 D/py-carbon////
 D/py-cdb////
-D/py-couchdb////
 D/py-flask-sqlalchemy////
 D/py-ldap////
 D/py-minidb////

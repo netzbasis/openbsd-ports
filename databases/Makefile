@@ -1,7 +1,6 @@
-# $OpenBSD: Makefile,v 1.358 2018/04/26 15:08:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.360 2018/05/18 20:26:33 jasper Exp $
 
      SUBDIR =
-     SUBDIR += apache-couchdb
      SUBDIR += architect
      SUBDIR += barman
      SUBDIR += citus
@@ -166,7 +165,6 @@
      SUBDIR += py-bsddb3,python3
      SUBDIR += py-carbon
      SUBDIR += py-cdb
-     SUBDIR += py-couchdb
      SUBDIR += py-flask-sqlalchemy
      SUBDIR += py-ldap
      SUBDIR += py-minidb

@@ -1,4 +1,4 @@
-/Makefile/1.221/Mon May  7 17:55:38 2018//
+/Makefile/1.222/Fri May 18 20:26:51 2018//
 D/STk////
 D/a60////
 D/abcl////
@@ -95,7 +95,6 @@ D/scheme48////
 D/scm////
 D/seed7////
 D/snobol4////
-D/spidermonkey////
 D/spin////
 D/squeak////
 D/swi-prolog////
