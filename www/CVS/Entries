@@ -1,4 +1,4 @@
-/Makefile/1.863/Wed May  9 10:08:22 2018//
+/Makefile/1.864/Mon May 21 10:01:16 2018//
 D/ajaxterm////
 D/analog////
 D/ap2-mod_dnssd////
@@ -22,7 +22,6 @@ D/cclive////
 D/cgicc////
 D/cgiparse////
 D/cgit////
-D/chive////
 D/chromium////
 D/cntlm////
 D/composer////
