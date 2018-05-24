@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.864 2018/05/21 10:01:16 sthen Exp $
+# $OpenBSD: Makefile,v 1.867 2018/05/23 13:44:06 jasper Exp $
 
      SUBDIR =
      SUBDIR += ajaxterm
@@ -105,7 +105,6 @@
      SUBDIR += nghttp2
      SUBDIR += nginx
      SUBDIR += nostromo
-     SUBDIR += opengroupware
      SUBDIR += otter-browser
      SUBDIR += owncloud
      SUBDIR += p5-Alien-Tidyp
@@ -466,6 +465,7 @@
      SUBDIR += py-urllib3
      SUBDIR += py-urllib3,python3
      SUBDIR += py-waitress
+     SUBDIR += py-waitress,python3
      SUBDIR += py-webdav
      SUBDIR += py-weberror
      SUBDIR += py-webhelpers
@@ -473,6 +473,7 @@
      SUBDIR += py-webob,python3
      SUBDIR += py-webpy
      SUBDIR += py-webtest
+     SUBDIR += py-webtest,python3
      SUBDIR += py-werkzeug
      SUBDIR += py-werkzeug,python3
      SUBDIR += py-wsgiproxy

@@ -1,4 +1,4 @@
-/Makefile/1.864/Mon May 21 10:01:16 2018//
+/Makefile/1.867/Wed May 23 13:44:06 2018//
 D/ajaxterm////
 D/analog////
 D/ap2-mod_dnssd////
@@ -95,7 +95,6 @@ D/nextcloud////
 D/nghttp2////
 D/nginx////
 D/nostromo////
-D/opengroupware////
 D/otter-browser////
 D/owncloud////
 D/p5-Alien-Tidyp////
