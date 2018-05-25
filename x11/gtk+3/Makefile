@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.191 2018/04/22 13:28:32 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.194 2018/05/24 15:53:37 ajacoutot Exp $
 
 # XXX add support for libcloudproviders?
 
@@ -20,6 +20,9 @@ PKGNAME-main=		gtk+3-${GNOME_VERSION}
 PKGNAME-cups=		gtk+3-cups-${GNOME_VERSION}
 PKGNAME-cloudprint=	gtk+3-cloudprint-${GNOME_VERSION}
 PKGNAME-guic=		gtk-update-icon-cache-${GNOME_VERSION}
+
+REVISION-cups=		main
+REVISION-cups=		0
 
 CATEGORIES=		x11 devel
 
@@ -104,11 +107,12 @@ TEST_IS_INTERACTIVE=	x11
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--disable-libcanberra
 
-# sync with devel/mozjs17: colord -> polkit -> mozjs17
-# not for mips64* since devel/mozjs17 does not compile there (OOM)
+# sync with devel/spidermonkey52: colord -> polkit -> spidermonkey52
+# not for mips64el since there seems to be no colord pkg for it
 .if ${MACHINE_ARCH} == "i386" || ${MACHINE_ARCH} == "amd64" || \
     ${MACHINE_ARCH} == "alpha" || ${MACHINE_ARCH} == "hppa" || \
-    ${MACHINE_ARCH} == "powerpc" || ${MACHINE_ARCH} == "sparc64"
+    ${MACHINE_ARCH} == "powerpc" || ${MACHINE_ARCH} == "sparc64" || \
+    ${MACHINE_ARCH} == "mips64"
 LIB_DEPENDS-cups +=	graphics/colord
 WANTLIB-cups +=	colordprivate colord lcms2
 .else

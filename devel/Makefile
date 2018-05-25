@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1732 2018/05/09 10:06:48 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.1734 2018/05/24 07:43:09 jasper Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -146,7 +146,6 @@
      SUBDIR += giggle
      SUBDIR += gindent
      SUBDIR += git
-     SUBDIR += git-bz
      SUBDIR += git-cola
      SUBDIR += git-cvs
      SUBDIR += git-lfs
@@ -1317,6 +1316,7 @@
      SUBDIR += py-docopt,python3
      SUBDIR += py-doit
      SUBDIR += py-dtopt
+     SUBDIR += py-dtopt,python3
      SUBDIR += py-dulwich
      SUBDIR += py-easyprocess
      SUBDIR += py-easyprocess,python3
