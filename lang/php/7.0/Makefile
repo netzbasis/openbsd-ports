@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.47 2018/05/23 06:51:14 martijn Exp $
-
-BROKEN-sparc64=	SIGBUS during phar generation
+# $OpenBSD: Makefile,v 1.51 2018/05/25 22:43:41 sthen Exp $
 
 PV=		7.0
-V=		${PV}.29
-REVISION=	1
-REVISION-main=	2
+V=		${PV}.30
+
+REVISION=	    0
+REVISION-mysqli=    1
+REVISION-pdo_mysql= 1
 
 BUILD_DEPENDS+=	devel/bison
 
