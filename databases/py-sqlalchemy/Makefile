@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.31 2016/09/02 09:57:44 edd Exp $
+# $OpenBSD: Makefile,v 1.34 2018/05/26 14:07:11 jasper Exp $
 
 COMMENT =		database toolkit for Python
 
-MODPY_EGG_VERSION =	1.0.14
+MODPY_EGG_VERSION =	1.2.7
 DISTNAME =		SQLAlchemy-${MODPY_EGG_VERSION}
 PKGNAME =		py-sqlalchemy-${MODPY_EGG_VERSION:S/p/./}
 
@@ -20,15 +20,18 @@ MODULES =		lang/python
 MODPY_SETUPTOOLS =	Yes
 MODPY_PI = 		Yes
 
+FLAVORS =		python3
+FLAVOR ?=
+
 MAKE_ENV +=		PYTHONPATH=.
 
-RUN_DEPENDS +=		devel/py-apipkg
-
 # Other DB connectors would work, too.
-TEST_DEPENDS =		${RUN_DEPENDS} \
-			databases/py-sqlite2>=2.8.3 \
-			devel/py-test-xdist \
-			devel/py-mock
+TEST_DEPENDS =		devel/py-test-xdist${MODPY_FLAVOR} \
+			devel/py-mock${MODPY_FLAVOR}
+# On python3, sqlite3 is used.
+.if ${FLAVOR} == ""
+TEST_DEPENDS +=		databases/py-sqlite2${MODPY_FLAVOR}>=2.8.3
+.endif
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/py-sqlalchemy
