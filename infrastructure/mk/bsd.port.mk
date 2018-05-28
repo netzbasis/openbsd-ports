@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1404 2018/05/26 14:21:40 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1407 2018/05/27 11:54:30 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -1011,10 +1011,10 @@ _lt_libs += LIB${_n}_LTVERSION='-version-info ${_v:S/./:/}:0'
 _lt_libs += lib${_n:S/+/_/g:S/-/_/g:S/./_/g}_ltversion=${_v}
 .endfor
 
-# Create the generic variable substitution list, from subst vars
-SUBST_VARS += MACHINE_ARCH ARCH HOMEPAGE ^PREFIX ^SYSCONFDIR FLAVOR_EXT \
-	FULLPKGNAME MAINTAINER ^BASE_PKGPATH ^LOCALBASE ^X11BASE ^TRUEPREFIX \
-	^RCDIR ^LOCALSTATEDIR
+# Create the generic variable substitution list
+SUBST_VARS += ARCH BASE_PKGPATH FLAVOR_EXT FULLPKGNAME HOMEPAGE \
+	LOCALBASE LOCALSTATEDIR MACHINE_ARCH MAINTAINER \
+	PREFIX RCDIR SYSCONFDIR TRUEPREFIX X11BASE
 
 _PKG_ADD_AUTO ?=
 .if !empty(_DEPENDENCY_STACK)
@@ -1057,7 +1057,7 @@ _substvars${_S} += -D${_v}=${${_v:S/^^//}:Q}
 PKG_ARGS${_S} += ${_PKG_ARGS_VERSION}
 .  endif
 
-PKG_ARGS${_S} += ${_substvars${_S}}
+PKG_ARGS${_S} += ${_substvars${_S}:N-D^TRUEPREFIX=*}
 PKG_ARGS${_S} += -DFULLPKGPATH=${FULLPKGPATH${_S}}
 PKG_ARGS${_S} += -DPERMIT_PACKAGE_CDROM=${PERMIT_PACKAGE_CDROM${_S}:Q}
 PKG_ARGS${_S} += -DPERMIT_PACKAGE_FTP=${PERMIT_PACKAGE_FTP${_S}:Q}
@@ -1861,6 +1861,11 @@ _update_plist = ${_cache_fragment}; \
 	PORTSDIR=${PORTSDIR} \
 	${_UPDATE_PLIST_SETUP} ${_PERLSCRIPT}/update-plist \
 	-w ${PATCHORIG} -w ${DISTORIG} -w .beforesubst \
+	-u ${PORTSDIR}/infrastructure/db/user.list \
+	-i ARCH -i BASE_PKGPATH -i FULLPKGNAME -i FULLPKGPATH \
+	-i LOCALSTATEDIR -i MACHINE_ARCH \
+	-s BASE_PKGPATH -s LOCALBASE -s LOCALSTATEDIR -s PREFIX \
+	-s RCDIR -s SYSCONFDIR -s X11BASE \
 	-X ${_FAKE_COOKIE} -X ${_INSTALL_PRE_COOKIE} -X ${WRKINST}/.saved_libs \
 	-P ${PKGDIR} ${UPDATE_PLIST_ARGS} ${UPDATE_PLIST_OPTS} --
 .for i in ${BUILD_PACKAGES}

@@ -6,6 +6,7 @@
 /patch-ext_gd_libgd_gdkanji_c/1.1.1.1/Mon Dec 14 17:58:45 2015//
 /patch-ext_iconv_iconv_c/1.1.1.1/Mon Dec 14 17:58:45 2015//
 /patch-ext_imap_config_m4/1.1.1.1/Mon Dec 14 17:58:45 2015//
+/patch-ext_mbstring_php_mbregex_c/1.1/Sun May 27 20:23:19 2018//
 /patch-ext_mysqlnd_config9_m4/1.1.1.1/Mon Dec 14 17:58:45 2015//
 /patch-ext_odbc_config_m4/1.1.1.1/Mon Dec 14 17:58:45 2015//
 /patch-ext_openssl_openssl_c/1.3/Thu Mar  1 10:15:02 2018//
