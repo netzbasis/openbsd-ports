@@ -1,4 +1,4 @@
-$OpenBSD: user.list,v 1.310 2018/05/01 23:06:46 danj Exp $
+$OpenBSD: user.list,v 1.317 2018/05/29 04:11:49 kspillner Exp $
 
 This file lists all users and groups that are created by ports or that
 users are encouraged to create after installing a port (these are marked
@@ -129,7 +129,7 @@ id  user		group		port options
 618 _ajaxterm		_ajaxterm	www/ajaxterm
 619 _ircd-ratbox	_ircd-ratbox	net/ircd-ratbox
 620 _adsuck		_adsuck		net/adsuck
-621 _couchdb		_couchdb	databases/apache-couchdb
+#621 _couchdb		_couchdb	databases/apache-couchdb
 622 _ngrep		_ngrep		net/ngrep
 623 _zabbix		_zabbix		net/zabbix
 624 _noip		_noip		net/no-ip
@@ -186,7 +186,7 @@ id  user		group		port options
 #675 _tryton		_tryton		productivity/tryton/trytond
 676 _gdm		_gdm		x11/gnome/gdm
 677 _scamper		_scamper	net/scamper
-678 _owamp		_owamp		net/owamp
+678 _owampd		_owampd		net/owamp
 679 _milter-checkrcpt	_milter-checkrcpt	mail/milter-checkrcpt
 680 _zeya		_zeya		audio/zeya
 681 _inadyn		_inadyn		net/inadyn
@@ -242,7 +242,7 @@ id  user		group		port options
 731 _geoclue		_geoclue	geo/geoclue2
 732 _unifi		_unifi		net/unifi
 733 _pop3d		_pop3d		mail/pop3d
-#734 			_icingacmd	net/icinga
+734 _taskd		_taskd		productivity/taskd
 735 			_wireshark	net/wireshark
 736 _conserver		_conserver	comms/conserver
 737 _popa3d		_popa3d		mail/popa3d
@@ -316,3 +316,7 @@ id  user		group		port options
 805 _nzbget		_nzbget		news/nzbget
 806 			_nethack36	games/nethack/3.6
 807 _hitch		_hitch		security/hitch
+808 _motion		_motion		multimedia/motion
+809 _ntopng		_ntopng		net/ntopng
+810 _sabnzbd		_sabnzbd	news/sabnzbd
+811 			_openvpnusers	net/openvpn_bsdauth
