@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1734 2018/05/24 07:43:09 jasper Exp $
+# $OpenBSD: Makefile,v 1.1736 2018/05/29 18:52:36 rpointel Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1255,6 +1255,8 @@
      SUBDIR += py-backports-ssl-match-hostname
      SUBDIR += py-bencode
      SUBDIR += py-binplist
+     SUBDIR += py-biplist
+     SUBDIR += py-biplist,python3
      SUBDIR += py-blessings
      SUBDIR += py-blessings,python3
      SUBDIR += py-blinker
@@ -1315,6 +1317,8 @@
      SUBDIR += py-docopt
      SUBDIR += py-docopt,python3
      SUBDIR += py-doit
+     SUBDIR += py-dtfabric
+     SUBDIR += py-dtfabric,python3
      SUBDIR += py-dtopt
      SUBDIR += py-dtopt,python3
      SUBDIR += py-dulwich

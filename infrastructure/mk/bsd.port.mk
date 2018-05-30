@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1408 2018/05/28 18:53:19 landry Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1410 2018/05/29 11:40:42 kn Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -2627,8 +2627,8 @@ ${_PATCH_COOKIE}: ${_EXTRACT_COOKIE}
 .if target(post-patch)
 	@${_PMAKE} post-patch
 .endif
-	@${_PMAKE} _post-patch-finalize
 .if ${PATCH_CHECK_ONLY:L} != "yes"
+	@${_PMAKE} _post-patch-finalize
 	@${_PMAKE_COOKIE} $@
 .endif
 
@@ -3431,23 +3431,12 @@ show:
 	@echo ${${_s}:Q}
 .endfor
 
-# avoid sudo and avoid modifying dir (if possible):
 # du fails if it can't access everything
 show-size:
-	@if du -ks ${WRKDIR} 2>/dev/null >${WRKDIR}/wrkdir-size; then \
-		cat ${WRKDIR}/wrkdir-size && rm -f ${WRKDIR}/wrkdir-size; \
-	else \
-		chmod -R u+rX ${WRKDIR}; \
-		du -ks ${WRKDIR}; \
-	fi
+	@${_PBUILD} du -ks ${WRKDIR}
 
 show-fake-size:
-	@if du -ks ${WRKINST} 2>/dev/null >${WRKINST}/wrkdir-size; then \
-		cat ${WRKINST}/wrkdir-size && rm -f ${WRKINST}/wrkdir-size; \
-	else \
-		chmod -R u+rX ${WRKINST}; \
-		du -ks ${WRKINST}; \
-	fi
+	@${_PBUILD} du -ks ${WRKINST}
 
 verbose-show:
 .for _s in ${verbose-show}
