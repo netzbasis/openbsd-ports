@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: update-plist,v 1.156 2018/05/31 09:33:38 espie Exp $
+# $OpenBSD: update-plist,v 1.159 2018/06/01 12:29:32 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -440,7 +440,7 @@ sub may_tag_along
 }
 
 # warn about files with a wrong name (.swp, ~, .orig)
-# or weird users/groups
+# or fuss with paths
 sub last_check
 {
 }
@@ -715,6 +715,10 @@ sub fullname
 sub may_tag_along
 {
 	my ($self, $plist) = @_;
+	if ($self->{name} =~ m/^intentional/i && 
+	    defined $plist->{state}{lastobject}) {
+		$plist->{state}{lastobject}{intentional} = 1;
+	}
 	$self->attach_to_lastobject($plist);
 }
 
@@ -852,11 +856,12 @@ sub last_check
 	my ($self, $p, $state) = @_;
 
 	$self->strip_redundant_absolute($p);
-	# don't care if it's already in a PLIST
-	return if defined $self->{comesfrom};
+	return if $self->{intentional};
 	my $error = $self->check_suffix($state);
+	return unless defined $error;
+	my $condition = defined $self->{comesfrom} ? "old" : "new";
 	print STDERR "Warning: ", $p->nlist->pkgname, " contains ", 
-	    $self->fullstring, " ($error ?)\n" if defined $error;
+	    $self->fullstring, " ($error ?, $condition in plist)\n";
 }
 
 sub known_object
@@ -1029,15 +1034,6 @@ sub check_suffix
 	return $error;
 }
 
-# we want to warn even if it's already present
-sub last_check
-{
-	my ($self, $p, $state) = @_;
-	my $error = $self->check_suffix($state);
-	print STDERR "Warning: ", $p->nlist->pkgname, " contains ", 
-	    $self->fullstring, " ($error ?)\n" if defined $error;
-}
-
 # small class that runs pkglocate in batches
 package OpenBSD::Pkglocate;
 sub new
@@ -1202,12 +1198,7 @@ sub process_next_subpackage
 	# add the cwd to new list as well!!!
 	OpenBSD::PackingElement::Cwd->add($r->nlist, $s->{prefix});
 	$r->add_extra_info($r->olist, $s);
-# except that we also record where each object live, including directory
-# locations.  As a rule, "exact" information will supersede deduced directory
-# names.
 	push(@{$self->{lists}}, $r);
-	$r->olist->known_directory($self, $r->olist);
-	$r->olist->known_object($self);
 }
 
 sub parse_args
@@ -1225,6 +1216,20 @@ sub parse_args
 		$self->process_next_subpackage;
 	}
 
+}
+
+sub known_objects
+{
+	# let's record where each object live, including directory
+	# locations.  As a rule, "exact" information will supersede 
+	# deduced directory names.
+	my $self = shift;
+	for my $p (@{$self->{lists}}) {
+		$p->olist->known_directory($self, $p->olist);
+	}
+	for my $p (@{$self->{lists}}) {
+		$p->olist->known_object($self);
+	}
 }
 
 sub scan_fake_dir
@@ -1405,7 +1410,7 @@ sub copy_object
 	# TODO this is where we should figure @cwd stuff
 	# though it's generally better to have distinct plists
 	# for several prefixes
-	print STDERR "Warning: can't put $path in any plist\n";
+	print STDERR "Can't put $path in any plist\n";
 }
 
 sub copy_objects
@@ -1425,6 +1430,8 @@ sub add_delayed_objects
 	for my $p (@{$self->{lists}}) {
 		my $cwd = $p->{state}{prefix};
 		# we destate the cwd to try to minimize dir changes
+		# note that these items are sorted, so it won't switch
+		# all over the place.
 		for my $e (@{$p->{badcwd}}) {
 			if ($e->cwd ne $cwd) {
 				$cwd = $e->cwd;
@@ -1581,6 +1588,7 @@ sub try_pkglocate
 
 my $self = UpdatePlist->new;
 $self->parse_args;
+$self->known_objects;
 $self->scan_fake_dir;
 $self->handle_annotations;
 $self->copy_objects;

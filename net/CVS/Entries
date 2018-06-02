@@ -1,4 +1,4 @@
-/Makefile/1.1072/Tue May 15 04:27:59 2018//
+/Makefile/1.1073/Fri Jun  1 17:57:43 2018//
 D/GeoIP////
 D/adns////
 D/adsuck////
@@ -667,10 +667,7 @@ D/wide-dhcpv6////
 D/wifind////
 D/wireless////
 D/wireshark////
-D/wmifinfo////
-D/wmnet////
 D/wmnetload////
-D/wmwave////
 D/wol////
 D/xl2tpd////
 D/xmlrpc-c////

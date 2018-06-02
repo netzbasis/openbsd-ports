@@ -1,4 +1,4 @@
-/Makefile/1.484/Thu May 31 14:58:59 2018//
+/Makefile/1.486/Fri Jun  1 17:57:43 2018//
 D/accountsservice////
 D/amazon-ecs-cli////
 D/amazon-ssm-agent////
@@ -104,7 +104,6 @@ D/grafana////
 D/grive2////
 D/grub////
 D/gsmartcontrol////
-D/hot-babe////
 D/hotplug-diskmount////
 D/htop////
 D/idled////
@@ -334,7 +333,6 @@ D/vmwh////
 D/waagent////
 D/whowatch////
 D/wmapm////
-D/wmcb////
 D/wmcube////
 D/wmmon////
 D/wmwlmon////

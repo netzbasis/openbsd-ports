@@ -1,4 +1,4 @@
-/Makefile/1.457/Mon May 28 05:14:45 2018//
+/Makefile/1.458/Fri Jun  1 17:57:43 2018//
 D/DevIL////
 D/GraphicsMagick////
 D/ImageMagick////
@@ -272,9 +272,7 @@ D/videod////
 D/viewnior////
 D/vigra////
 D/waffle////
-D/wmgrabimage////
 D/wmicons////
-D/wmphoto////
 D/xanim////
 D/xaos////
 D/xbmbrowser////
