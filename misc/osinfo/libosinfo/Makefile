@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2016/10/09 15:24:19 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2018/06/04 08:12:41 ajacoutot Exp $
 
 COMMENT=		library for managing information about operating systems
 
 DISTNAME=		libosinfo-${V}
 
-SHARED_LIBS +=  osinfo-1.0           1.0      # 1000.0
+SHARED_LIBS +=  osinfo-1.0           1.0      # 1001.0
 
 WANTLIB += c ffi gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 iconv
 WANTLIB += intl lzma m pcre pthread xml2 xslt z
@@ -27,7 +27,6 @@ RUN_DEPENDS=		misc/hwdata \
 CONFIGURE_ARGS=		--with-usb-ids-path=${LOCALBASE}/share/hwdata/usb.ids \
 			--with-pci-ids-path=${LOCALBASE}/share/hwdata/pnp.ids
 
-# https://fedorahosted.org/libosinfo/ticket/5
 MAKE_FLAGS=		NO_UNDEFINED_FLAGS=
 
 .include <bsd.port.mk>

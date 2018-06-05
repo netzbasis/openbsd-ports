@@ -1,4 +1,4 @@
-/Makefile/1.486/Fri Jun  1 17:57:43 2018//
+/Makefile/1.487/Sun Jun  3 15:55:36 2018//
 D/accountsservice////
 D/amazon-ecs-cli////
 D/amazon-ssm-agent////
@@ -313,6 +313,7 @@ D/tpb////
 D/tphdisk////
 D/tray-app////
 D/tree////
+D/truncate////
 D/ttyload////
 D/u-boot////
 D/u-boot-pinebook////
