@@ -53,7 +53,7 @@
 /patch-build_config_features_gni/1.10/Sat Dec 16 15:34:39 2017//
 /patch-build_config_linux_BUILD_gn/1.1/Mon Jun  4 14:04:23 2018//
 /patch-build_config_linux_pkg-config_py/1.1/Wed Aug 17 11:06:50 2016//
-/patch-build_gn_run_binary_py/1.7/Sat Jun  2 17:19:23 2018//
+/patch-build_gn_run_binary_py/1.8/Tue Jun  5 12:41:49 2018//
 /patch-build_toolchain_gcc_solink_wrapper_py/1.2/Sat Dec 10 15:35:25 2016//
 /patch-build_toolchain_gcc_toolchain_gni/1.14/Sat Jun  2 17:19:23 2018//
 /patch-build_toolchain_openbsd_BUILD_gn/1.2/Wed Oct 26 06:22:07 2016//
@@ -488,5 +488,5 @@
 /patch-v8_src_globals_h/1.23/Sat Jun  2 17:19:23 2018//
 /patch-v8_src_log-utils_h/1.5/Tue Jan 30 07:57:25 2018//
 /patch-v8_src_trap-handler_handler-inside_cc/1.1/Sun Jun 25 21:53:56 2017//
-/patch-v8_tools_run_py/1.2/Sat Jun  2 17:19:23 2018//
+/patch-v8_tools_run_py/1.3/Tue Jun  5 12:41:49 2018//
 D
