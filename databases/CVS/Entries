@@ -1,4 +1,4 @@
-/Makefile/1.361/Sat May 26 10:39:26 2018//
+/Makefile/1.362/Wed Jun  6 10:36:48 2018//
 D/architect////
 D/barman////
 D/citus////
@@ -26,6 +26,7 @@ D/libhiredis////
 D/libpqxx////
 D/libzdb////
 D/liquibase////
+D/lmdb////
 D/luadbi////
 D/lualdap////
 D/luasqlite3////
