@@ -1,4 +1,4 @@
-/Makefile/1.1736/Tue May 29 18:52:36 2018//
+/Makefile/1.1737/Fri Jun  8 14:25:26 2018//
 D/ElectricFence////
 D/ORBit2////
 D/acpica////
@@ -1443,6 +1443,7 @@ D/rebar////
 D/remake////
 D/reposurgeon////
 D/rgbds////
+D/riscv-elf////
 D/rlog////
 D/ruby-abstract////
 D/ruby-arrayfields////

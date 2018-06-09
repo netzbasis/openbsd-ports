@@ -1,4 +1,4 @@
-/Makefile/1.362/Wed Jun  6 10:36:48 2018//
+/Makefile/1.363/Fri Jun  8 12:38:28 2018//
 D/architect////
 D/barman////
 D/citus////
@@ -212,6 +212,7 @@ D/skytools////
 D/soprano////
 D/sqlite////
 D/sqlite3////
+D/sqlite3-odbc////
 D/sqlite3-tcl////
 D/sqlitebrowser////
 D/sqliteman////
