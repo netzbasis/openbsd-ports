@@ -1,4 +1,4 @@
-/Makefile/1.868/Thu May 31 06:45:50 2018//
+/Makefile/1.869/Mon Jun 11 21:19:44 2018//
 D/ajaxterm////
 D/analog////
 D/ap2-mod_dnssd////
@@ -50,6 +50,7 @@ D/hs-html////
 D/http_load////
 D/http_ping////
 D/httrack////
+D/hugo////
 D/icedtea-web////
 D/igal////
 D/igal2////

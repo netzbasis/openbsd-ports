@@ -1,4 +1,4 @@
-/Makefile/1.488/Tue Jun  5 17:27:33 2018//
+/Makefile/1.489/Tue Jun 12 00:10:45 2018//
 D/accountsservice////
 D/amazon-ecs-cli////
 D/amazon-ssm-agent////
@@ -89,6 +89,7 @@ D/freedt////
 D/freeipmi////
 D/fsstress////
 D/fwa////
+D/fzf////
 D/gamin////
 D/gdmap////
 D/ggrep////
