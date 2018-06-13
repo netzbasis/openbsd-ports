@@ -1,4 +1,4 @@
-/Makefile/1.10/Fri Jun  8 05:22:52 2018//
+/Makefile/1.11/Tue Jun 12 16:54:58 2018//
 /Makefile.inc/1.7/Tue Apr 24 17:39:56 2018//
 D/kate////
 D/kcalc////
@@ -9,3 +9,4 @@ D/ktouch////
 D/libkface////
 D/libkgeomap////
 D/libkipi////
+D/umbrello////

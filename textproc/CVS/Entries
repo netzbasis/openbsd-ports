@@ -1,4 +1,4 @@
-/Makefile/1.575/Sat May  5 15:08:00 2018//
+/Makefile/1.576/Tue Jun 12 15:47:38 2018//
 D/TclXML////
 D/antiword////
 D/apertium////
@@ -437,6 +437,7 @@ D/stringtemplate////
 D/svndumptool////
 D/swish-e////
 D/tcpdf////
+D/tdom////
 D/texi2html////
 D/texi2mdoc////
 D/the_silver_searcher////
