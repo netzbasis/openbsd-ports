@@ -1,4 +1,4 @@
-/Makefile/1.576/Tue Jun 12 15:47:38 2018//
+/Makefile/1.577/Thu Jun 14 12:59:21 2018//
 D/TclXML////
 D/antiword////
 D/apertium////
@@ -380,6 +380,7 @@ D/py-sphinx-intl////
 D/py-sphinx_guzzle_theme////
 D/py-sphinx_rtd_theme////
 D/py-stemmer////
+D/py-termcolor////
 D/py-textfsm////
 D/py-toml////
 D/py-unicodecsv////

@@ -1,27 +1,26 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/05/24 15:37:12 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.3 2018/06/14 14:08:30 ajacoutot Exp $
 
 COMMENT=		thin layer of graphic data types
 
-GH_ACCOUNT=		ebassi
-GH_PROJECT=		graphene
-GH_TAGNAME=		1.8.0
+GNOME_PROJECT=		graphene
+GNOME_VERSION=		1.8.2
+REVISION=		0
 
-SHARED_LIBS += graphene-1.0              0.0 # 0.800.0
+SHARED_LIBS += graphene-1.0              0.0 # 0.800.2
 
 CATEGORIES=		graphics
 
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
-
-HOMEPAGE=		https://ebassi.github.io/graphene/
 
 # MIT
 PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += glib-2.0 gobject-2.0 m
 
-MODULES=		devel/meson
+MODULES=		devel/meson \
+			x11/gnome
 
-BUILD_DEPENDS=		devel/gobject-introspection
+MODGNOME_TOOLS=		gobject-introspection
 
 LIB_DEPENDS=		devel/glib2
 

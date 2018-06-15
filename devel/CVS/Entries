@@ -1,4 +1,4 @@
-/Makefile/1.1739/Tue Jun 12 13:01:55 2018//
+/Makefile/1.1740/Thu Jun 14 21:15:46 2018//
 D/ElectricFence////
 D/ORBit2////
 D/acpica////
@@ -293,6 +293,7 @@ D/libaudiofile////
 D/libbfio////
 D/libbinio////
 D/libbio////
+D/libcoap////
 D/libconfig////
 D/libconfuse////
 D/libdaemon////
