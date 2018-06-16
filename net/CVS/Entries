@@ -1,4 +1,4 @@
-/Makefile/1.1074/Thu Jun  7 09:09:38 2018//
+/Makefile/1.1075/Fri Jun 15 09:29:03 2018//
 D/GeoIP////
 D/adns////
 D/adsuck////
@@ -207,6 +207,7 @@ D/loudmouth////
 D/lua-mmdb////
 D/lua-psl////
 D/luasocket////
+D/mac-telnet////
 D/maclookup////
 D/manubulon-snmp////
 D/maradns////
