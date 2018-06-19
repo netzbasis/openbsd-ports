@@ -1,4 +1,4 @@
-/Makefile/1.71/Tue Nov 14 20:27:36 2017//
+/Makefile/1.72/Mon Jun 18 23:55:38 2018//
 D/amtterm////
 D/birda////
 D/bottlerocket////
@@ -19,6 +19,7 @@ D/hylafax////
 D/jpilot////
 D/kermit////
 D/lcdproc////
+D/libhidapi////
 D/lrzsz////
 D/mgetty+sendfax////
 D/minicom////

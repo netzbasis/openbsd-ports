@@ -1,6 +1,7 @@
 /patch-configure/1.4/Thu Mar  8 13:42:31 2018//
 /patch-libntfs-3g_Makefile_in/1.4/Thu Mar  8 13:42:31 2018//
 /patch-libntfs-3g_mft_c/1.2/Fri Nov 20 05:32:02 2015//
+/patch-libntfs-3g_security_c/1.1/Mon Jun 18 12:39:57 2018//
 /patch-ntfsprogs_Makefile_in/1.5/Thu Mar  8 13:42:31 2018//
 /patch-ntfsprogs_ntfsclone_c/1.4/Thu Mar  8 13:42:31 2018//
 /patch-src_Makefile_in/1.6/Thu Mar  8 13:42:31 2018//
