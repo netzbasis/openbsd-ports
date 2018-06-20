@@ -1,4 +1,4 @@
-/Makefile/1.577/Thu Jun 14 12:59:21 2018//
+/Makefile/1.578/Tue Jun 19 05:39:08 2018//
 D/TclXML////
 D/antiword////
 D/apertium////
@@ -388,6 +388,7 @@ D/py-unidecode////
 D/py-vatnumber////
 D/py-vobject////
 D/py-webencodings////
+D/py-xlrd////
 D/py-xml////
 D/py-xmldiff////
 D/py-xmltodict////
