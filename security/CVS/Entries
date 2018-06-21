@@ -1,4 +1,4 @@
-/Makefile/1.509/Sat Jun  2 12:02:10 2018//
+/Makefile/1.510/Wed Jun 20 11:44:33 2018//
 D/ADMsnmp////
 D/aescrypt////
 D/aide////
@@ -247,6 +247,8 @@ D/py-PyNaCl////
 D/py-Rijndael////
 D/py-artifacts////
 D/py-asn1crypto////
+D/py-axolotl////
+D/py-axolotl-curve25519////
 D/py-bcrypt////
 D/py-crack////
 D/py-cryptkit////
