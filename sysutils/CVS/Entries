@@ -1,4 +1,4 @@
-/Makefile/1.489/Tue Jun 12 00:10:45 2018//
+/Makefile/1.490/Fri Jun 22 13:58:31 2018//
 D/accountsservice////
 D/amazon-ecs-cli////
 D/amazon-ssm-agent////
@@ -96,6 +96,7 @@ D/ggrep////
 D/gitolite////
 D/gkrellm////
 D/glastree////
+D/glide////
 D/go-cs////
 D/google-cloud-sdk////
 D/google-compute-engine////
