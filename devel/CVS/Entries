@@ -1,4 +1,4 @@
-/Makefile/1.1742/Sat Jun 23 21:48:36 2018//
+/Makefile/1.1743/Mon Jun 25 05:59:42 2018//
 D/ElectricFence////
 D/ORBit2////
 D/acpica////
@@ -1299,6 +1299,7 @@ D/py-kid////
 D/py-lazy-object-proxy////
 D/py-liblarch////
 D/py-libmagic////
+D/py-llvmlite////
 D/py-logilab-common////
 D/py-mccabe////
 D/py-minimock////
