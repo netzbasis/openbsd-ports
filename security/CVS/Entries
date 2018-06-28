@@ -1,4 +1,4 @@
-/Makefile/1.510/Wed Jun 20 11:44:33 2018//
+/Makefile/1.512/Wed Jun 27 14:33:13 2018//
 D/ADMsnmp////
 D/aescrypt////
 D/aide////
@@ -259,11 +259,13 @@ D/py-dfdatetime////
 D/py-dfvfs////
 D/py-dfwinreg////
 D/py-ecdsa////
+D/py-elfesteem////
 D/py-gnupg////
 D/py-josepy////
 D/py-keyczar////
 D/py-keyring////
 D/py-libnacl////
+D/py-miasm////
 D/py-oauthlib////
 D/py-openssl////
 D/py-paramiko////

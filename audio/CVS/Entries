@@ -1,4 +1,4 @@
-/Makefile/1.399/Thu Mar 29 23:06:50 2018//
+/Makefile/1.400/Wed Jun 27 17:48:20 2018//
 D/abcde////
 D/adplay////
 D/adplug////
@@ -194,6 +194,7 @@ D/py-tagpy////
 D/py-vorbis////
 D/pykaraoke////
 D/pympd////
+D/qsynth////
 D/quodlibet////
 D/radiotray////
 D/rgain////

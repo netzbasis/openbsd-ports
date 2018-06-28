@@ -1,6 +1,6 @@
 /patch-lib_googlecloudsdk_core_config_json/1.3/Fri Mar 30 10:37:56 2018//
-/patch-lib_googlecloudsdk_core_docker_client_lib_py/1.3/Wed Jun 20 11:11:59 2018//
-/patch-lib_googlecloudsdk_core_updater_local_state_py/1.9/Thu Apr 12 08:03:22 2018//
-/patch-lib_googlecloudsdk_core_util_platforms_py/1.9/Thu Apr 12 08:03:22 2018//
+/patch-lib_googlecloudsdk_core_docker_client_lib_py/1.4/Wed Jun 27 11:25:07 2018//
+/patch-lib_googlecloudsdk_core_updater_local_state_py/1.10/Wed Jun 27 11:25:07 2018//
+/patch-lib_googlecloudsdk_core_util_platforms_py/1.10/Wed Jun 27 11:25:07 2018//
 /patch-platform_gsutil_gslib_commands_config_py/1.11/Wed Jun 13 10:12:23 2018//
 D
