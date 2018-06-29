@@ -1,4 +1,4 @@
-/Makefile/1.45/Thu Mar  1 08:46:44 2018//
+/Makefile/1.46/Thu Jun 28 05:18:24 2018//
 D/abyssinica////
 D/adobe-fonts////
 D/amigafonts////
@@ -21,6 +21,7 @@ D/fantasque-sans////
 D/farsi-bfonts-ttf////
 D/farsifonts-ttf////
 D/fira-fonts////
+D/font-awesome////
 D/free3of9-ttf////
 D/freefarsi-ttf////
 D/freefont-ttf////

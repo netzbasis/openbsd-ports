@@ -1,4 +1,4 @@
-/Makefile/1.88/Thu Apr 26 15:08:56 2018//
+/Makefile/1.89/Thu Jun 28 14:32:04 2018//
 D/arc////
 D/brotli////
 D/bzip2////
@@ -45,6 +45,7 @@ D/par2cmdline////
 D/pecl-lzf////
 D/pecl-rar////
 D/pigz////
+D/py-libarchive-c////
 D/py-lzo////
 D/quazip////
 D/ripole////
