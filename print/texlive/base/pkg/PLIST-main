@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.33 2018/01/30 20:35:38 edd Exp $
+@comment $OpenBSD: PLIST-main,v 1.1 2018/07/01 08:59:32 espie Exp $
 @conflict teTeX_base-*
 @conflict pdfjam-*
 @conflict ht-<2
@@ -6,6 +6,7 @@
 @pkgpath print/teTeX/base
 @pkgpath print/pdfjam
 @pkgpath print/teTeX/base,-fmt
+@pkgpath print/texlive/base
 %%xindy%%
 bin/a2ping
 bin/a5toa4
@@ -146,13 +147,9 @@ bin/kanji-config-updmap-sys
 bin/kanji-config-updmap-user
 bin/kanji-fontmap-creator
 bin/komkindex
-@bin bin/kpseaccess
 bin/kpsepath
-@bin bin/kpsereadlink
-@bin bin/kpsestat
 bin/kpsetool
 bin/kpsewhere
-@bin bin/kpsewhich
 bin/kpsexpand
 @bin bin/lacheck
 bin/lamed
@@ -210,7 +207,6 @@ bin/mkofm
 bin/mkpic
 bin/mkt1font
 bin/mktexfmt
-bin/mktexlsr
 bin/mktexmf
 bin/mktexpk
 bin/mktextfm
@@ -395,53 +391,6 @@ bin/xelatex
 bin/xhlatex
 bin/xmltex
 bin/yplan
-include/kpathsea/
-include/kpathsea/absolute.h
-include/kpathsea/c-auto.h
-include/kpathsea/c-ctype.h
-include/kpathsea/c-dir.h
-include/kpathsea/c-errno.h
-include/kpathsea/c-fopen.h
-include/kpathsea/c-limits.h
-include/kpathsea/c-memstr.h
-include/kpathsea/c-minmax.h
-include/kpathsea/c-namemx.h
-include/kpathsea/c-pathch.h
-include/kpathsea/c-pathmx.h
-include/kpathsea/c-proto.h
-include/kpathsea/c-stat.h
-include/kpathsea/c-std.h
-include/kpathsea/c-unistd.h
-include/kpathsea/cnf.h
-include/kpathsea/concatn.h
-include/kpathsea/config.h
-include/kpathsea/debug.h
-include/kpathsea/expand.h
-include/kpathsea/getopt.h
-include/kpathsea/hash.h
-include/kpathsea/knj.h
-include/kpathsea/kpathsea.h
-include/kpathsea/lib.h
-include/kpathsea/line.h
-include/kpathsea/magstep.h
-include/kpathsea/mingw32.h
-include/kpathsea/paths.h
-include/kpathsea/pathsearch.h
-include/kpathsea/proginit.h
-include/kpathsea/progname.h
-include/kpathsea/readable.h
-include/kpathsea/simpletypes.h
-include/kpathsea/str-list.h
-include/kpathsea/str-llist.h
-include/kpathsea/systypes.h
-include/kpathsea/tex-file.h
-include/kpathsea/tex-glyph.h
-include/kpathsea/tex-hush.h
-include/kpathsea/tex-make.h
-include/kpathsea/types.h
-include/kpathsea/variable.h
-include/kpathsea/version.h
-include/kpathsea/win32lib.h
 include/ptexenc/
 include/ptexenc/ptexenc.h
 include/ptexenc/unicode.h
@@ -454,9 +403,6 @@ include/texlua52/lua.h
 include/texlua52/lua.hpp
 include/texlua52/luaconf.h
 include/texlua52/lualib.h
-lib/libkpathsea.a
-lib/libkpathsea.la
-@lib lib/libkpathsea.so.${LIBkpathsea_VERSION}
 lib/libptexenc.a
 lib/libptexenc.la
 @lib lib/libptexenc.so.${LIBptexenc_VERSION}
@@ -466,11 +412,10 @@ lib/libsynctex.la
 lib/libtexlua52.a
 lib/libtexlua52.la
 @lib lib/libtexlua52.so.${LIBtexlua52_VERSION}
-lib/pkgconfig/kpathsea.pc
 lib/pkgconfig/ptexenc.pc
 lib/pkgconfig/synctex.pc
 lib/pkgconfig/texlua52.pc
-@exec mktexlsr > /dev/null 2>&1
+@tag mktexlsr
 @unexec-delete rm -f %D/share/texmf-dist/ls-R
 @unexec-delete rm -f %D/share/texmf-var/ls-R
 @unexec-delete rm -f %D/share/texmf-var/luatex-cache/context/0399a8df3aef8d154781d0a9c2b8e28d/trees/*
