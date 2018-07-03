@@ -7,10 +7,10 @@
 /patch-runtime_flang_backspace_c/1.1.1.1/Sun Dec 31 18:06:38 2017//
 /patch-runtime_flang_flush_c/1.1.1.1/Sun Dec 31 18:06:38 2017//
 /patch-runtime_flang_inquire_c/1.1.1.1/Sun Dec 31 18:06:38 2017//
-/patch-runtime_flang_open_c/1.1.1.1/Sun Dec 31 18:06:38 2017//
+/patch-runtime_flang_open_c/1.2/Tue Jul  3 04:04:11 2018//
 /patch-runtime_flang_rewind_c/1.1.1.1/Sun Dec 31 18:06:38 2017//
 /patch-runtime_flang_stime3f_c/1.1.1.1/Sun Dec 31 18:06:38 2017//
-/patch-runtime_flang_unf_c/1.1.1.1/Sun Dec 31 18:06:38 2017//
+/patch-runtime_flang_unf_c/1.2/Tue Jul  3 04:04:11 2018//
 /patch-runtime_flang_utils3f_c/1.1.1.1/Sun Dec 31 18:06:38 2017//
 /patch-runtime_flang_utils_c/1.1.1.1/Sun Dec 31 18:06:38 2017//
 /patch-runtime_flang_wait_c/1.1.1.1/Sun Dec 31 18:06:38 2017//
