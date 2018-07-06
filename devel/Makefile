@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1744 2018/07/04 21:09:02 bcallah Exp $
+# $OpenBSD: Makefile,v 1.1746 2018/07/05 09:15:26 bentley Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1209,6 +1209,7 @@
      SUBDIR += promu
      SUBDIR += protobuf
      SUBDIR += protobuf-c
+     SUBDIR += protozero
      SUBDIR += pscan
      SUBDIR += pth
      SUBDIR += ptlib
@@ -1786,6 +1787,7 @@
      SUBDIR += subversion
      SUBDIR += swig
      SUBDIR += t1lib
+     SUBDIR += tbb
      SUBDIR += tclap
      SUBDIR += tclarc4random
      SUBDIR += tclcl

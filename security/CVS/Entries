@@ -1,4 +1,4 @@
-/Makefile/1.512/Wed Jun 27 14:33:13 2018//
+/Makefile/1.513/Thu Jul  5 19:19:27 2018//
 D/ADMsnmp////
 D/aescrypt////
 D/aide////
@@ -57,6 +57,7 @@ D/gopass////
 D/gpa////
 D/gpgme////
 D/gringotts////
+D/hashdeep////
 D/hatchet////
 D/heimdal////
 D/hitch////
