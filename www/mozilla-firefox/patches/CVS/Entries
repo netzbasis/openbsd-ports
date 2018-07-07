@@ -5,7 +5,6 @@
 /patch-js_src_ctypes_libffi_src_dlmalloc_c/1.4/Tue Sep  2 16:43:04 2014//
 /patch-js_src_jit_ProcessExecutableMemory_h/1.2/Wed Jun 27 05:05:20 2018//
 /patch-media_libcubeb_src_cubeb_sndio_c/1.7/Wed Jun 27 05:05:20 2018//
-/patch-mozglue_misc_TimeStamp_posix_cpp/1.1/Fri May 11 20:00:57 2018//
 /patch-security_manager_pki_resources_content_exceptionDialog_js/1.15/Fri May 11 20:00:57 2018//
 /patch-storage_mozStorageConnection_cpp/1.14/Wed Jun 27 05:05:20 2018//
 /patch-toolkit_xre_nsAppRunner_cpp/1.2/Wed Jun 27 05:05:20 2018//
