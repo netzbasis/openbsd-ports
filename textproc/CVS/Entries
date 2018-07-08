@@ -1,4 +1,4 @@
-/Makefile/1.578/Tue Jun 19 05:39:08 2018//
+/Makefile/1.579/Sat Jul  7 15:19:15 2018//
 D/TclXML////
 D/antiword////
 D/apertium////
@@ -334,6 +334,7 @@ D/py-ICU////
 D/py-MarkupSafe////
 D/py-PEG2////
 D/py-alabaster////
+D/py-black////
 D/py-chardet////
 D/py-colored////
 D/py-commonmark////
