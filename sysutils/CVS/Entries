@@ -1,4 +1,4 @@
-/Makefile/1.490/Fri Jun 22 13:58:31 2018//
+/Makefile/1.491/Sun Jul  8 11:26:51 2018//
 D/accountsservice////
 D/amazon-ecs-cli////
 D/amazon-ssm-agent////
@@ -239,6 +239,7 @@ D/rancid////
 D/ranger////
 D/ranval////
 D/raspberrypi-firmware////
+D/rclone////
 D/rcm////
 D/rdiff-backup////
 D/relayd-updateconf////
