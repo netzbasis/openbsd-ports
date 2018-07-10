@@ -1,4 +1,4 @@
-/Makefile/1.1746/Thu Jul  5 09:15:26 2018//
+/Makefile/1.1749/Mon Jul  9 14:08:59 2018//
 D/ElectricFence////
 D/ORBit2////
 D/acpica////
@@ -810,6 +810,7 @@ D/p5-MLDBM-Sync////
 D/p5-MRO-Compat////
 D/p5-Math-Base-Convert////
 D/p5-Memoize-ExpireLRU////
+D/p5-Mixin-Linewise////
 D/p5-Modern-Perl////
 D/p5-Module-Build////
 D/p5-Module-Build-Tiny////
@@ -1134,6 +1135,7 @@ D/p5-ZMQ-LibZMQ3////
 D/p5-accessors////
 D/p5-aliased////
 D/p5-autobox////
+D/p5-bareword-filehandles////
 D/p5-boolean////
 D/p5-capitalization////
 D/p5-common-sense////
@@ -1592,6 +1594,7 @@ D/vtags////
 D/vtcl////
 D/vte////
 D/vte3////
+D/xa////
 D/xdg-user-dirs////
 D/xdg-utils////
 D/xmake////

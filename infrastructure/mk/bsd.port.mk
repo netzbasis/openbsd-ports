@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1416 2018/06/19 19:04:58 kn Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1420 2018/07/09 15:24:04 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -1425,7 +1425,7 @@ _DEPENDS_TARGET ?= install
 
 # Various dependency styles
 _resolve_lib = LOCALBASE=${LOCALBASE} X11BASE=${X11BASE} \
-			${_PERLSCRIPT}/resolve-lib
+			${_PERLSCRIPT}/port-resolve-lib-helper
 
 PKG_CREATE_NO_CHECKS ?= No
 .if ${PKG_CREATE_NO_CHECKS:L} == "yes"
@@ -1628,7 +1628,7 @@ ERRORS += "Fatal: $w ends with a slash"
 # to remove locks handling, define LOCKDIR to an empty value
 LOCKDIR ?= ${WRKOBJDIR}/locks
 
-LOCK_CMD ?= ${_PBUILD} ${_PERLSCRIPT}/dolock
+LOCK_CMD ?= ${_PBUILD} ${_PERLSCRIPT}/portlock
 UNLOCK_CMD ?= ${_PBUILD} rm -f
 _LOCKS_HELD ?=
 LOCK_VERBOSE ?= No
@@ -3016,7 +3016,7 @@ describe:
 .  endif
 	@echo -n ${_COMMENT${_S}:S/^"//:S/"$//:S/^'//:S/'$//:Q}"|"; \
 	if [ -f ${DESCR${_S}} ]; then \
-		echo -n `PORTSDIR_PATH=${PORTSDIR_PATH} ${_PERLSCRIPT}/getpkgpath ${DESCR${_S}}`'|';  \
+		echo -n `PORTSDIR_PATH=${PORTSDIR_PATH} ${_PERLSCRIPT}/port-getpkgpath-helper ${DESCR${_S}}`'|';  \
 	else \
 		echo -n "/dev/null|"; \
 	fi; \
@@ -3391,7 +3391,7 @@ peek-ftp:
 	done
 
 show-required-by:
-	@cd ${PORTSDIR} && make all-dir-depends | ${_PERLSCRIPT}/extract-dependencies -r ${_ALLPKGPATHS}
+	@cd ${PORTSDIR} && make all-dir-depends | ${_PERLSCRIPT}/port-extract-dependencies-helper -r ${_ALLPKGPATHS}
 
 
 show:

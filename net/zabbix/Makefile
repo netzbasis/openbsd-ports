@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.142 2018/06/01 15:32:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.146 2018/07/09 20:15:04 gonzalo Exp $
 
 COMMENT-main =		network and application monitoring - agent
 COMMENT-server =	network and application monitoring - server
@@ -16,9 +16,10 @@ FULLPKGNAME-web =	zabbix-web-${VERSION}
 FULLPKGPATH-web =	net/zabbix,-web
 CATEGORIES =		net
 
-REVISION-proxy =	1
-REVISION-web =		1
-REVISION-main =		0
+REVISION-proxy =	2
+REVISION-web =		3
+REVISION-main =		1
+REVISION-server =	1
 
 MAJV =			${VERSION:C/^([0-9]+\.[0-9]+).*/\1/}
 
@@ -133,6 +134,8 @@ ERRORS +=		"Fatal: Conflicting flavors: ${FLAVOR}";
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/conf/zabbix_server.conf \
 		${WRKSRC}/conf/zabbix_proxy.conf
+	sed -i 's,sudo /usr/bin/nmap,doas ${LOCALBASE}/bin/nmap,' \
+		${WRKSRC}/database/*/data.sql
 
 post-install:
 	${INSTALL_DATA_DIR} ${DESTDIR}${PREFIX-web}/zabbix

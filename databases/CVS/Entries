@@ -152,7 +152,6 @@ D/postgresql-plr////
 D/postgresql-plv8////
 D/postgresql-previous////
 D/postgresql_autodoc////
-D/puppetdb////
 D/puppetdb4////
 D/puppetdb5////
 D/py-apsw////
@@ -190,7 +189,6 @@ D/redis////
 D/repmgr////
 D/riak////
 D/ruby-amalgalite////
-D/ruby-hiera////
 D/ruby-hiera-eyaml////
 D/ruby-hiera-eyaml-gpg////
 D/ruby-hiera-file////

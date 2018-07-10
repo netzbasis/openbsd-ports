@@ -1,4 +1,4 @@
-/Makefile/1.1075/Fri Jun 15 09:29:03 2018//
+/Makefile/1.1076/Mon Jul  9 12:27:24 2018//
 D/GeoIP////
 D/adns////
 D/adsuck////
@@ -23,6 +23,7 @@ D/bgpq3////
 D/bindgraph////
 D/bing////
 D/bird////
+D/bitcoin////
 D/bitlbee////
 D/bitlbee-facebook////
 D/blaeu////

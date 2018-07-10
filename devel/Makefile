@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1746 2018/07/05 09:15:26 bentley Exp $
+# $OpenBSD: Makefile,v 1.1749 2018/07/09 14:08:59 fcambus Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -847,6 +847,7 @@
      SUBDIR += p5-MRO-Compat
      SUBDIR += p5-Math-Base-Convert
      SUBDIR += p5-Memoize-ExpireLRU
+     SUBDIR += p5-Mixin-Linewise
      SUBDIR += p5-Modern-Perl
      SUBDIR += p5-Module-Build
      SUBDIR += p5-Module-Build-Tiny
@@ -1171,6 +1172,7 @@
      SUBDIR += p5-accessors
      SUBDIR += p5-aliased
      SUBDIR += p5-autobox
+     SUBDIR += p5-bareword-filehandles
      SUBDIR += p5-boolean
      SUBDIR += p5-capitalization
      SUBDIR += p5-common-sense
@@ -1818,6 +1820,7 @@
      SUBDIR += vtcl
      SUBDIR += vte
      SUBDIR += vte3
+     SUBDIR += xa
      SUBDIR += xdg-user-dirs
      SUBDIR += xdg-utils
      SUBDIR += xmake
