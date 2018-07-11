@@ -1,9 +1,16 @@
 /patch-bfd_coff-rs6000_c/1.3/Thu Aug 14 07:50:24 2014//
+/patch-bfd_config_bfd/1.3/Tue Jul 10 11:03:46 2018//
 /patch-bfd_elf_c/1.9/Sun Oct  9 11:39:20 2016//
 /patch-bfd_peXXigen_c/1.6/Sun Oct  9 11:39:20 2016//
+/patch-gdb_Makefile_in/1.3/Tue Jul 10 11:03:46 2018//
+/patch-gdb_aarch64obsd-nat_c/1.1/Tue Jul 10 11:03:46 2018//
+/patch-gdb_aarch64obsd-tdep_c/1.1/Tue Jul 10 11:03:46 2018//
 /patch-gdb_alphabsd-nat_c/1.1/Sat Sep  3 13:48:39 2016//
 /patch-gdb_armbsd-tdep_c/1.1/Mon Jun 18 14:53:12 2018//
 /patch-gdb_armnbsd-nat_c/1.2/Wed Jan 24 00:19:56 2018//
+/patch-gdb_config_aarch64_obsd_mh/1.1/Tue Jul 10 11:03:46 2018//
+/patch-gdb_configure_host/1.1/Tue Jul 10 11:03:46 2018//
+/patch-gdb_configure_tgt/1.1/Tue Jul 10 11:03:46 2018//
 /patch-gdb_data-directory_Makefile_in/1.9/Sun Oct  9 11:39:20 2016//
 /patch-gdb_hppaobsd-nat_c/1.1/Sat Sep  3 13:48:39 2016//
 /patch-gdb_m88kbsd-nat_c/1.1/Sat Sep  3 13:48:39 2016//

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2018/05/31 09:12:38 fcambus Exp $
+# $OpenBSD: Makefile,v 1.11 2018/07/10 17:29:07 fcambus Exp $
 
 ONLY_FOR_ARCHS = amd64 i386
 
@@ -6,7 +6,7 @@ USE_WXNEEDED =	Yes
 
 COMMENT =	Multiple Arcade Machine Emulator
 
-V =		198
+V =		199
 DISTNAME =	mame0${V}s
 PKGNAME =	mame-0.${V}
 
@@ -42,7 +42,7 @@ LIB_DEPENDS =	audio/flac \
 		graphics/jpeg
 
 CFLAGS +=	-I${PREFIX}/include -I${X11BASE}/include -I${MODLUA_INCL_DIR}
-CFLAGS +=	-Wno-ignored-qualifiers
+CFLAGS +=	-Wno-ignored-qualifiers -fno-ret-protector
 
 MAKE_ENV =	NOWERROR=1 TOOLS=1 verbose=1 \
 		OVERRIDE_CC="${CC}" OVERRIDE_CXX="${CXX}" OVERRIDE_LD="${CXX}" \

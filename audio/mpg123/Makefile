@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.95 2018/03/09 21:11:41 naddy Exp $
+# $OpenBSD: Makefile,v 1.97 2018/07/10 15:28:51 naddy Exp $
 
 COMMENT=	fast console MPEG audio player and decoder library
 
 DISTNAME=	mpg123-1.25.10
+REVISION=	0
 SHARED_LIBS=	mpg123		6.2	# 44.8
 SHARED_LIBS+=	out123		1.0	# 2.2
 CATEGORIES=	audio
@@ -32,10 +33,6 @@ MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/build
 # no support for AVX instructions in as(1)
 USE_GMAKE=	Yes
 BUILD_DEPENDS+=	devel/yasm
-
-.elif ${MACHINE_ARCH} == "arm"
-CONFIGURE_ARGS+=--with-cpu=arm_nofpu
-
 .endif
 
 # Do not build static modules
