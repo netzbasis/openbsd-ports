@@ -1,4 +1,4 @@
-/Makefile/1.1076/Mon Jul  9 12:27:24 2018//
+/Makefile/1.1078/Wed Jul 11 20:58:13 2018//
 D/GeoIP////
 D/adns////
 D/adsuck////
@@ -82,6 +82,7 @@ D/etherape////
 D/ettercap////
 D/exabgp////
 D/ezstream////
+D/fastnetmon////
 D/filezilla////
 D/firewalk////
 D/flickcurl////

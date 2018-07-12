@@ -1,4 +1,4 @@
-# $OpenBSD: FS2.pm,v 1.24 2018/07/08 19:39:33 espie Exp $
+# $OpenBSD: FS2.pm,v 1.26 2018/07/11 11:34:29 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -63,6 +63,9 @@ sub classes
 	return (qw(OpenBSD::FS::File::Directory OpenBSD::FS::File::Rc
 		OpenBSD::FS::File::Desktop
 		OpenBSD::FS::File::Glib2Schema
+		OpenBSD::FS::File::MimeInfo
+		OpenBSD::FS::File::Icon
+		OpenBSD::FS::File::IconTheme
 		OpenBSD::FS::File::Subinfo OpenBSD::FS::File::Info
 		OpenBSD::FS::File::Dirinfo OpenBSD::FS::File::Manpage
 		OpenBSD::FS::File::Library OpenBSD::FS::File::Plugin
@@ -167,6 +170,63 @@ sub recognize
 sub element_class
 {
 	'OpenBSD::PackingElement::Glib2Schema';
+}
+
+package OpenBSD::FS::File::MimeInfo;
+our @ISA = qw(OpenBSD::FS::File);
+sub recognize
+{
+	my ($class, $filename, $fs) = @_;
+	return $filename =~ m,share/mime/packages/.*\.xml$,;
+}
+
+sub element_class
+{
+	'OpenBSD::PackingElement::MimeInfo';
+}
+
+package OpenBSD::FS::File::IconThemeDirectory;
+our @ISA = qw(OpenBSD::FS::File::Directory);
+
+sub element_class
+{
+	'OpenBSD::PackingElement::IconThemeDirectory';
+}
+
+package OpenBSD::FS::File::IconTheme;
+our @ISA = qw(OpenBSD::FS::File);
+
+sub recognize
+{
+	my ($class, $filename, $fs) = @_;
+	return $filename =~ m,share/icons/[^/]+/theme\.cache$,;
+}
+
+sub element_class
+{
+	'OpenBSD::PackingElement::IconTheme';
+}
+
+package OpenBSD::FS::File::Icon;
+our @ISA = qw(OpenBSD::FS::File);
+
+sub recognize
+{
+	my ($class, $filename, $fs) = @_;
+	return $filename =~ m,share/icons/.*/.*\.(png|svg)$,;
+}
+
+sub tweak_other_paths
+{
+	my ($self, $fs, $files) = @_;
+	my $m = $self->path;
+	if ($self->path =~ m,(.*/share/icons/.*?)/,) {
+		my $m = $1;
+		if (exists $files->{$m}) {
+			bless $files->{$m}, 
+			    "OpenBSD::FS::File::IconThemeDirectory";
+		}
+	}
 }
 
 package OpenBSD::FS::File::Binary;

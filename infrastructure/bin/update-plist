@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: update-plist,v 1.166 2018/07/08 19:57:43 espie Exp $
+# $OpenBSD: update-plist,v 1.169 2018/07/11 11:37:03 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -588,6 +588,7 @@ sub rebless
 sub check_specific
 {
 }
+
 package OpenBSD::PackingElement::State;
 
 # that stuff NEVER gets copied over, but interpolated from existing objects
@@ -787,7 +788,7 @@ package OpenBSD::PackingElement::Tag;
 sub check_specific
 {
 	my ($self, $h) = @_;
-	$h->{has}{$self->name} = 1;
+	$h->{has}{$self->stringize} = 1;
 }
 
 package OpenBSD::PackingElement::Desktop;
@@ -804,6 +805,33 @@ sub check_specific
 {
 	my ($self, $h) = @_;
 	$h->{should}{'glib-compile-schemas'} = 1;
+}
+
+package OpenBSD::PackingElement::IconThemeDirectory;
+our @ISA=qw(OpenBSD::PackingElement::Dir);
+sub check_specific
+{
+	my ($self, $h) = @_;
+	$h->{should}{"gtk-update-icon-cache %D/".$self->name} = 1;
+}
+
+package OpenBSD::PackingElement::IconTheme;
+our @ISA=qw(OpenBSD::PackingElement::File);
+use File::Basename;
+
+sub check_specific
+{
+	my ($self, $h) = @_;
+	# XXX this works because the file happens *after* its parent directory
+	delete $h->{should}{"gtk-update-icon-cache %D/".dirname($self->name)};
+}
+
+package OpenBSD::PackingElement::MimeInfo;
+our @ISA=qw(OpenBSD::PackingElement::File);
+sub check_specific
+{
+	my ($self, $h) = @_;
+	$h->{should}{'update-mime-database'} = 1;
 }
 
 package OpenBSD::PackingElement::Sampledir;
@@ -1229,7 +1257,7 @@ sub new
 {
 	my $class = shift;
 	bless {
-	    state => UpdatePlist::State->new('update-plist'),
+	    state => UpdatePlist::State->new,
 	}, $class;
 }
 

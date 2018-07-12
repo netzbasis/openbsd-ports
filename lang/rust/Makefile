@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.71 2018/06/29 06:25:55 landry Exp $
+# $OpenBSD: Makefile,v 1.73 2018/07/11 09:16:53 landry Exp $
 
 # snapshots are only available these archs
 ONLY_FOR_ARCHS =	aarch64 amd64 i386
@@ -12,7 +12,7 @@ DPB_PROPERTIES =	parallel
 COMMENT-main =		compiler for Rust Language
 COMMENT-doc =		html documentation for rustc
 
-V =			1.27.0
+V =			1.27.1
 CARGO_V =		0.28.0
 DISTNAME =		rustc-${V}-src
 
@@ -82,10 +82,7 @@ BUILD_DEPENDS +=	devel/cmake
 BUILD_DEPENDS +=	shells/bash
 BUILD_DEPENDS +=	devel/llvm>=6.0,<6.1
 BUILD_DEPENDS +=	devel/ninja
-
-.if ${MACHINE_ARCH} != aarch64
-BUILD_DEPENDS +=		devel/gdb
-.endif
+BUILD_DEPENDS +=	devel/gdb
 
 LIB_DEPENDS +=		devel/libgit2/libgit2 \
 			net/curl \
@@ -137,9 +134,7 @@ do-configure:
 		>>${WRKBUILD}/config.toml
 .endif
 	echo 'python = "${MODPY_BIN}"' >>${WRKBUILD}/config.toml
-.if ${MACHINE_ARCH} != aarch64
 	echo 'gdb = "${LOCALBASE}/bin/egdb"' >>${WRKBUILD}/config.toml
-.endif
 	echo 'vendor = true' >>${WRKBUILD}/config.toml
 	echo 'extended = true' >>${WRKBUILD}/config.toml
 	echo 'verbose = 2' >>${WRKBUILD}/config.toml
