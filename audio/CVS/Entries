@@ -1,4 +1,4 @@
-/Makefile/1.400/Wed Jun 27 17:48:20 2018//
+/Makefile/1.401/Thu Jul 12 20:41:59 2018//
 D/abcde////
 D/adplay////
 D/adplug////
@@ -230,8 +230,6 @@ D/tap-plugins////
 D/tempest////
 D/timidity////
 D/tracker////
-D/tremor////
-D/tremor-tools////
 D/twolame////
 D/umurmur////
 D/vagalume////
