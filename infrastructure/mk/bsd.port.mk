@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1420 2018/07/09 15:24:04 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1423 2018/07/13 09:46:03 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -102,7 +102,7 @@ _ALL_VARIABLES_PER_ARCH =
 _ALL_VARIABLES += DISTFILES PATCHFILES SUPDISTFILES DIST_SUBDIR MASTER_SITES \
 	MASTER_SITES0 MASTER_SITES1 MASTER_SITES2 MASTER_SITES3 MASTER_SITES4 \
 	MASTER_SITES5 MASTER_SITES6 MASTER_SITES7 MASTER_SITES8 MASTER_SITES9 \
-	CHECKSUM_FILE FETCH_MANUALLY MISSING_FILES \
+	CHECKSUM_FILE FETCH_MANUALLY MISSING_FILES MASTER_SITE_BACKUP \
 	PERMIT_DISTFILES_FTP
 .endif
 .if ${DPB:L:Mtest} || ${DPB:L:Mall}
@@ -1137,8 +1137,6 @@ ECHO_MSG ?= echo
 
 # basic master sites configuration
 
-MASTER_SITE_OVERRIDE ?= No
-
 .if exists(${PORTSDIR}/infrastructure/db/network.conf)
 .include "${PORTSDIR}/infrastructure/db/network.conf"
 .else
@@ -1163,12 +1161,7 @@ MASTER_SITES ?=
 .endif
 
 # I guess we're in the master distribution business! :)  As we gain mirror
-# sites for distfiles, add them to this list.
-.if ${MASTER_SITE_OVERRIDE:L} == "no"
-MASTER_SITES := ${MASTER_SITES} ${MASTER_SITE_BACKUP}
-.else
-MASTER_SITES := ${MASTER_SITE_OVERRIDE} ${MASTER_SITES}
-.endif
+# sites for distfiles, add them to MASTER_SITE_BACKUP
 
 _warn_checksum = :
 .if !empty(MASTER_SITES:M*[^/])
@@ -1179,11 +1172,6 @@ _warn_checksum += ;echo ">>> MASTER_SITES not ending in /: ${MASTER_SITES:M*[^/]
 .  if defined(MASTER_SITES${_I})
 .    if !empty(MASTER_SITES${_I}:M*[^/])
 _warn_checksum += ;echo ">>> MASTER_SITES${_I} not ending in /: ${MASTER_SITES${_I}:M*[^/]}"
-.    endif
-.    if ${MASTER_SITE_OVERRIDE:L} == "no"
-MASTER_SITES${_I} := ${MASTER_SITES${_I}} ${MASTER_SITE_BACKUP}
-.    else
-MASTER_SITES${_I} := ${MASTER_SITE_OVERRIDE} ${MASTER_SITES${_I}}
 .    endif
 .  endif
 .endfor
@@ -2301,6 +2289,7 @@ _internal-checksum: _internal-fetch
 	  set --; \
 	  if ! $$OK; then \
 		if ${REFETCH}; then \
+		echo "$$list"; \
 		  cd ${.CURDIR} && PKGPATH=${PKGPATH} ${MAKE} _refetch _PROBLEMS="$$list"; \
 		else \
 		  echo "Make sure the Makefile and ${CHECKSUM_FILE}"; \
@@ -2313,12 +2302,20 @@ _internal-checksum: _internal-fetch
 .    endif
 .  endif
 
-_refetch:
 .  for file cipher value in ${_PROBLEMS}
-	@rm ${DISTDIR}/${file}
-	@${_MAKE} ${DISTDIR}/${file} \
-		MASTER_SITE_OVERRIDE="${MASTER_SITE_OPENBSD:=by_cipher/${cipher}/${value:C/(..).*/\1/}/${value}/} ${MASTER_SITE_OPENBSD:=${cipher}/${value}/}"
+_override_value = "${MASTER_SITE_OPENBSD:=by_cipher/${cipher}/${value:C/(..).*/\1/}/${value}/} ${MASTER_SITE_OPENBSD:=${cipher}/${value}/}"
+_override = MASTER_SITES=${_override_value}
+.    for _I in 0 1 2 3 4 5 6 7 8 9
+.      if defined(MASTER_SITES${_I})
+_override += MASTER_SITES${_I}=${_override_value}
+.      endif
+.    endfor
+_refetch_${_file}:
+	@${_PFETCH} rm ${DISTDIR}/${file}
+	@${_MAKE} ${DISTDIR}/${file} ${_override}
 .  endfor
+
+_refetch: _refetch_${file}
 	${_MAKE} _internal-checksum REFETCH=false
 
 
@@ -2892,35 +2889,46 @@ ${DISTDIR}/$p:
 	cd ${@:H}; \
 	test -f ${@:T} && exit 0; \
 	f=$f; \
-	if ! ${_MAKESUM} && test ! -f ${CHECKSUM_FILE}; then \
-		${ECHO_MSG} ">> Checksum file does not exist"; \
+	if ! ${_MAKESUM} && ! grep -q "SIZE ($p)" ${CHECKSUM_FILE} 2>/dev/null; then \
+		${ECHO_MSG} ">> No size recorded for $p"; \
 		exit 1; \
 	fi; \
+	file=$@.part; \
 	for site in ${$m}; do \
-		file=$@.part; \
 		${ECHO_MSG} ">> Fetch $${site}$u"; \
 		if ${_PFETCH} ${FETCH_CMD} -o $$file $${site}$u; then \
-				if ${_MAKESUM}; then \
+			if ${_MAKESUM}; then \
+				${_PFETCH} mv $$file $@; \
+				exit 0; \
+			else \
+				ck=`${_size_fragment} $$file $p`; \
+				if grep -q "^$$ck\$$" ${CHECKSUM_FILE}; then \
 					${_PFETCH} mv $$file $@; \
 					exit 0; \
 				else \
-					ck=`${_size_fragment} $$file $p`; \
-					if grep -q "^$$ck\$$" ${CHECKSUM_FILE}; then \
-						${_PFETCH} mv $$file $@; \
-						exit 0; \
-					else \
-						if grep -q "SIZE ($p)" ${CHECKSUM_FILE}; then \
-							${ECHO_MSG} ">> Size does not match for $p"; \
-							${_PFETCH} rm -f $$file; \
-						else \
-							${ECHO_MSG} ">> No size recorded for $p"; \
-							${_PFETCH} rm -f $$file; \
-							exit 1; \
-						fi; \
-					fi; \
+					${ECHO_MSG} ">> Size does not match for $p"; \
+					${_PFETCH} rm -f $$file; \
+				fi; \
+			fi; \
+		fi; \
+	done; \
+	if ${_MAKESUM}; then \
+		exit 1; \
+	fi; \
+	for site in ${MASTER_SITE_BACKUP}; do \
+		${ECHO_MSG} ">> Fetch $${site}$p"; \
+		if ${_PFETCH} ${FETCH_CMD} -o $$file $${site}$p; then \
+				ck=`${_size_fragment} $$file $p`; \
+				if grep -q "^$$ck\$$" ${CHECKSUM_FILE}; then \
+					${_PFETCH} mv $$file $@; \
+					exit 0; \
+				else \
+					${ECHO_MSG} ">> Size does not match for $p"; \
+					${_PFETCH} rm -f $$file; \
 				fi; \
 		fi; \
-	done; exit 1
+	done; \
+	exit 1
 .  endif
 .endfor
 
