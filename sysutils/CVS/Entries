@@ -1,4 +1,4 @@
-/Makefile/1.491/Sun Jul  8 11:26:51 2018//
+/Makefile/1.492/Wed Jul 18 09:29:21 2018//
 D/accountsservice////
 D/amazon-ecs-cli////
 D/amazon-ssm-agent////
@@ -178,6 +178,7 @@ D/multitime////
 D/ncdu////
 D/ndesk-dbus////
 D/ndesk-dbus-glib////
+D/neofetch////
 D/nnn////
 D/noice////
 D/ntfs-3g////

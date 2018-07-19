@@ -1,4 +1,4 @@
-/Makefile/1.1749/Mon Jul  9 14:08:59 2018//
+/Makefile/1.1751/Sun Jul 15 22:48:06 2018//
 D/ElectricFence////
 D/ORBit2////
 D/acpica////
@@ -832,6 +832,7 @@ D/p5-Module-Starter-Plugin-CGIApp////
 D/p5-Module-Versions-Report////
 D/p5-Module-Which////
 D/p5-Moo////
+D/p5-MooX-StrictConstructor////
 D/p5-MooX-Types-MooseLike////
 D/p5-Moose////
 D/p5-MooseX-Aliases////
@@ -1325,6 +1326,7 @@ D/py-olefile////
 D/py-optik////
 D/py-parsedatetime////
 D/py-parsing////
+D/py-parso////
 D/py-path.py////
 D/py-pathlib////
 D/py-pathspec////

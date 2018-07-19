@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.9 2018/07/02 10:00:41 kn Exp $
+@comment $OpenBSD: PLIST,v 1.11 2018/07/14 13:49:20 zhuk Exp $
 @newgroup _tor:566
 @newuser _tor:566:566:daemon:tor:/nonexistent:/sbin/nologin
 @rcscript ${RCDIR}/tor

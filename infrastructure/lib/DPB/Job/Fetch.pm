@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Fetch.pm,v 1.15 2018/07/13 09:11:28 espie Exp $
+# $OpenBSD: Fetch.pm,v 1.21 2018/07/16 13:23:05 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -26,6 +26,12 @@ sub new
 	bless {fetcher => $fetcher, fetch_status => $status}, $class;
 }
 
+sub want_frozen
+{ 0 }
+
+sub want_percent
+{ 0 }
+
 sub run
 {
 	my ($self, $core) = @_;
@@ -49,7 +55,7 @@ sub finalize
 				unlink($job->{file}->tempfilename);
 			    });
 		} else {
-			shift @{$job->{sites}} || shift @{$job->{bak}};
+			$job->next_site;
 		}
 		return $job->bad_file($self->{fetcher}, $core);
 	}
@@ -152,7 +158,8 @@ sub finalize
 	    	$job->new_checksum_task($self, $core->{status});
 	} else {
 		if ($job->{file}{sz} == 0) {
-			$job->{sites} = [];
+			$job->no_sites;
+			$job->{sites} = $job->{bak} = [];
 			return $job->bad_file($self, $core);
 		}
 		# Fetch exited okay, but the file is not the right size
@@ -164,11 +171,17 @@ sub finalize
 		}
 		# if we got suspended, well, might have to retry same site
 		if (!$self->{got_suspended}) {
-			shift @{$job->{sites}};
+			$job->next_site;
 		}
 		return $job->bad_file($self, $core);
 	}
 }
+
+sub want_frozen
+{ 1 }
+
+sub want_percent
+{ 1 }
 
 package DPB::Task::FetchFromBackup;
 our @ISA=qw(DPB::Task::Fetch);
@@ -181,7 +194,7 @@ sub filename
 
 
 package DPB::Job::Fetch;
-our @ISA = qw(DPB::Job::Normal);
+our @ISA = qw(DPB::Job::Watched);
 
 use File::Path;
 use File::Basename;
@@ -199,11 +212,18 @@ sub new_fetch_task
 	}
 }
 
+sub next_site
+{
+	my $self = shift;
+
+	shift @{$self->{sites}} || shift @{$self->{bak}};
+}
+
 sub bad_file
 {
 	my ($job, $task, $core) = @_;
 	my $fh = $job->{file}->logger->append("fetch/bad");
-	print $fh $task->{site}.$job->{file}->{short}, "\n";
+	print $fh $task->{site}.$job->{file}{short}, "\n";
 	if ($job->new_fetch_task) {
 		$core->{status} = 0;
 		return 1;
@@ -226,7 +246,8 @@ sub new
 		# need to copy those arrays because we're going to
 		# destroy them, and they are shared between distfiles
 		sites => [@{$file->{site}}],
-		bak => [@{$file->{bak}}],
+		bak => [@{$fetcher->{state}{backup_sites}}],
+		current => '',
 		file => $file,
 		tasks => [],
 		endcode => $e,
@@ -247,16 +268,8 @@ sub new
 sub name
 {
 	my $self = shift;
-	return '<'.$self->{file}->{name}."(#".$self->{tries}.")";
-}
-
-sub watched
-{
-	my ($self, $current, $core) = @_;
-	my $w = $self->{watched};
-	my $diff = $w->check_change($current);
-	my $msg = $w->percent_message . $w->frozen_message($diff);
-	return $self->kill_on_timeout($diff, $core, $msg);
+	my $extra = $self->{task}->want_percent ? "" : " cksum...";
+	return '<'.$self->{file}->{name}."(#".$self->{tries}.")".$extra;
 }
 
 sub get_timeout

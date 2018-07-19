@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1423 2018/07/13 09:46:03 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1427 2018/07/17 10:08:55 sthen Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -102,7 +102,7 @@ _ALL_VARIABLES_PER_ARCH =
 _ALL_VARIABLES += DISTFILES PATCHFILES SUPDISTFILES DIST_SUBDIR MASTER_SITES \
 	MASTER_SITES0 MASTER_SITES1 MASTER_SITES2 MASTER_SITES3 MASTER_SITES4 \
 	MASTER_SITES5 MASTER_SITES6 MASTER_SITES7 MASTER_SITES8 MASTER_SITES9 \
-	CHECKSUM_FILE FETCH_MANUALLY MISSING_FILES MASTER_SITE_BACKUP \
+	CHECKSUM_FILE FETCH_MANUALLY MISSING_FILES \
 	PERMIT_DISTFILES_FTP
 .endif
 .if ${DPB:L:Mtest} || ${DPB:L:Mall}
@@ -596,6 +596,16 @@ BUILD_DEPENDS += textproc/groff>=1.21
 _PKG_ARGS += -DUSE_GROFF=1
 .endif
 
+# github related variables
+GH_TAGNAME ?=
+GH_COMMIT ?=
+GH_ACCOUNT ?=
+GH_PROJECT ?=
+
+.if !empty(GH_PROJECT) && !empty(GH_TAGNAME)
+DISTNAME ?=	${GH_PROJECT}-${GH_TAGNAME:C/^v//}
+.endif
+
 PKGNAME ?= ${DISTNAME}
 FULLPKGNAME ?= ${PKGNAME}${FLAVOR_EXT}
 _MASTER ?=
@@ -818,12 +828,6 @@ _WRKDIRS = ${WRKOBJDIR_${PKGPATH}}/${_WRKDIR_STEM}
 _WRKDIRS += ${WRKOBJDIR}/${_WRKDIR_STEM}
 _WRKDIRS += ${WRKOBJDIR_MFS}/${_WRKDIR_STEM}
 
-# github related variables
-GH_TAGNAME ?=
-GH_COMMIT ?=
-GH_ACCOUNT ?=
-GH_PROJECT ?=
-
 .if !empty(GH_TAGNAME)
 WRKDIST ?= ${WRKDIR}/${GH_PROJECT}-${GH_TAGNAME:C/^v//}
 .elif !empty(GH_COMMIT)
@@ -834,10 +838,6 @@ WRKDIST ?= ${WRKDIR}
 .  else
 WRKDIST ?= ${WRKDIR}/${DISTNAME}
 .  endif
-.endif
-
-.if !empty(GH_PROJECT) && !empty(GH_TAGNAME)
-DISTNAME ?=	${GH_PROJECT}-${GH_TAGNAME:C/^v//}
 .endif
 
 WRKSRC ?= ${WRKDIST}
@@ -1137,11 +1137,7 @@ ECHO_MSG ?= echo
 
 # basic master sites configuration
 
-.if exists(${PORTSDIR}/infrastructure/db/network.conf)
 .include "${PORTSDIR}/infrastructure/db/network.conf"
-.else
-.include "${PORTSDIR}/infrastructure/templates/network.conf.template"
-.endif
 
 .if !empty(GH_ACCOUNT) && !empty(GH_PROJECT)
 .  if !empty(GH_COMMIT) && !empty(GH_TAGNAME)
@@ -2272,13 +2268,14 @@ _internal-checksum: _internal-fetch
 	  ${ECHO_MSG} 1>&2 ">> No ${CHECKSUM_FILE}."; \
 	  exit 1; \
 	fi
-	@cd ${DISTDIR}; OK=true; list=''; \
+	@cd ${DISTDIR}; OK=true; list=''; files=''; \
 	  for file in ${CHECKSUMFILES}; do \
 		if set -- $$(grep "^${_CIPHER:U} ($$file)" ${CHECKSUM_FILE}); \
 		then \
 			echo -n '>> '; \
 			if ! echo "$$@" | cksum -c; then \
 				list="$$list $$file ${_CIPHER} $$4"; \
+				files="$$files ${DISTDIR}/$$file"; \
 				OK=false; \
 			fi; \
 		else  \
@@ -2289,8 +2286,10 @@ _internal-checksum: _internal-fetch
 	  set --; \
 	  if ! $$OK; then \
 		if ${REFETCH}; then \
-		echo "$$list"; \
-		  cd ${.CURDIR} && PKGPATH=${PKGPATH} ${MAKE} _refetch _PROBLEMS="$$list"; \
+		  ${_PFETCH} rm -f $$files && \
+		  cd ${.CURDIR} && \
+			PKGPATH=${PKGPATH} ${MAKE} $$files _REFETCH_INFO="$$list" && \
+			PKGPATH=${PKGPATH} ${MAKE} _internal-checksum REFETCH=false; \
 		else \
 		  echo "Make sure the Makefile and ${CHECKSUM_FILE}"; \
 		  echo "are up to date.  If you want to fetch a good copy of this file"; \
@@ -2301,22 +2300,6 @@ _internal-checksum: _internal-fetch
 	  fi
 .    endif
 .  endif
-
-.  for file cipher value in ${_PROBLEMS}
-_override_value = "${MASTER_SITE_OPENBSD:=by_cipher/${cipher}/${value:C/(..).*/\1/}/${value}/} ${MASTER_SITE_OPENBSD:=${cipher}/${value}/}"
-_override = MASTER_SITES=${_override_value}
-.    for _I in 0 1 2 3 4 5 6 7 8 9
-.      if defined(MASTER_SITES${_I})
-_override += MASTER_SITES${_I}=${_override_value}
-.      endif
-.    endfor
-_refetch_${_file}:
-	@${_PFETCH} rm ${DISTDIR}/${file}
-	@${_MAKE} ${DISTDIR}/${file} ${_override}
-.  endfor
-
-_refetch: _refetch_${file}
-	${_MAKE} _internal-checksum REFETCH=false
 
 
 # The cookie's recipe hold the real rule for each of those targets.
@@ -2873,17 +2856,46 @@ _internal-subpackage: ${_PACKAGE_COOKIES${SUBPACKAGE}}
 
 # Separate target for each file fetch-all will retrieve
 
+# first we special case _REFETCH stuff, specifically get them from our mirrors
+# _REFETCH_INFO is set by _internal-checksum if REFETCH
+_REFETCH_INFO ?= 
+
+# list is pretty much self explanatory
+.for f cipher value in ${_REFETCH_INFO}
+${DISTDIR}/$f:
+	@lock=${@:T}.dist; ${_SIMPLE_LOCK}; \
+	${_PFETCH} install -d ${DISTDIR_MODE} ${@:H}; \
+	cd ${@:H}; \
+	file=$@.part; \
+	for site in ${MASTER_SITE_OPENBSD:=by_cipher/${cipher}/${value:C/(..).*/\1/}/${value}/} ${MASTER_SITE_OPENBSD:=${cipher}/${value}/}; do \
+		${ECHO_MSG} ">> Fetch $${site}$u"; \
+		if ${_PFETCH} ${FETCH_CMD} -o $$file $${site}$u; then \
+			ck=`${_size_fragment} $$file $p`; \
+			if grep -q "^$$ck\$$" ${CHECKSUM_FILE}; then \
+				${_PFETCH} mv $$file $@; \
+				exit 0; \
+			else \
+				${ECHO_MSG} ">> Size does not match for $p"; \
+				${_PFETCH} rm -f $$file; \
+			fi; \
+		fi; \
+	done;
+	exit 1
+.endfor
+
+# then we do normal files, just avoid the ones in _REFETCH_INFO
 .for p f m u in ${_FULL_FETCH_LIST}
+.  if empty(_REFETCH_INFO:M$f)
 ${DISTDIR}/$p:
-.  if ${FETCH_MANUALLY:L} != "no"
-.    if !empty(MISSING_FILES)
+.    if ${FETCH_MANUALLY:L} != "no"
+.      if !empty(MISSING_FILES)
 	@echo "*** You're missing files: ${MISSING_FILES}"
-.    endif
-.    for _M in ${FETCH_MANUALLY}
+.      endif
+.      for _M in ${FETCH_MANUALLY}
 	@echo "*** ${_M}"
-.    endfor
+.      endfor
 	@exit 1
-.  else
+.    else
 	@lock=${@:T}.dist; ${_SIMPLE_LOCK}; \
 	${_PFETCH} install -d ${DISTDIR_MODE} ${@:H}; \
 	cd ${@:H}; \
@@ -2929,6 +2941,7 @@ ${DISTDIR}/$p:
 		fi; \
 	done; \
 	exit 1
+.    endif
 .  endif
 .endfor
 
@@ -3436,7 +3449,7 @@ _all_phony = ${_recursive_depends_targets} \
 	_internal_install _license-check \
 	print-package-args _print-package-signature-lib \
 	_print-package-signature-run _print-packagename _recurse-all-dir-depends \
-	_recurse-test-dir-depends _recurse-run-dir-depends _refetch \
+	_recurse-test-dir-depends _recurse-run-dir-depends \
 	build-depends-list checkpatch clean clean-depends \
 	delete-package distpatch do-build do-configure do-distpatch \
 	do-extract do-install do-test fetch-all \

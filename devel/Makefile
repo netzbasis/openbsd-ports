@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1749 2018/07/09 14:08:59 fcambus Exp $
+# $OpenBSD: Makefile,v 1.1751 2018/07/15 22:48:06 shadchin Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -869,6 +869,7 @@
      SUBDIR += p5-Module-Versions-Report
      SUBDIR += p5-Module-Which
      SUBDIR += p5-Moo
+     SUBDIR += p5-MooX-StrictConstructor
      SUBDIR += p5-MooX-Types-MooseLike
      SUBDIR += p5-Moose
      SUBDIR += p5-MooseX-Aliases
@@ -1465,6 +1466,8 @@
      SUBDIR += py-parsedatetime,python3
      SUBDIR += py-parsing
      SUBDIR += py-parsing,python3
+     SUBDIR += py-parso
+     SUBDIR += py-parso,python3
      SUBDIR += py-path.py
      SUBDIR += py-path.py,python3
      SUBDIR += py-pathlib

@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Port.pm,v 1.179 2018/01/29 15:45:29 espie Exp $
+# $OpenBSD: Port.pm,v 1.181 2018/07/16 12:30:53 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -472,9 +472,6 @@ sub run
 		    $core->prop->{last_junk}->fullpkgpath, "\n";
 	}
 	my @cmd = ('/usr/sbin/pkg_add', '-aI');
-	if ($job->{builder}{state}{signer}) {
-		push(@cmd, $job->{builder}{state}{signer});
-	}
 	if ($job->{builder}{update}) {
 		push(@cmd, "-rqU", "-Dupdate", "-Dupdatedepends");
 	}
@@ -492,7 +489,7 @@ sub run
 	print "was: ", join(' ', @cmd, (sort keys %{$job->{depends}})), "\n";
 	print join(' ', @cmd, @l), "\n";
 	my $path = $job->{builder}{fullrepo}.'/';
-	$core->shell->env(PKG_PATH => $path)->as_root->exec(@cmd, @l);
+	$core->shell->env(TRUSTED_PKG_PATH => $path)->as_root->exec(@cmd, @l);
 	exit(1);
 }
 
@@ -753,9 +750,6 @@ sub run
 
 	$self->handle_output($job);
 	my @cmd = ('/usr/sbin/pkg_add', '-I');
-	if ($job->{builder}{state}{signer}) {
-		push(@cmd, $job->{builder}{state}{signer});
-	}
 	if ($job->{builder}->{update}) {
 		push(@cmd, "-rqU", "-Dupdate", "-Dupdatedepends");
 	}
@@ -767,8 +761,7 @@ sub run
 	}
 	print join(' ', @cmd, $v->fullpkgname, "\n");
 	my $path = $job->{builder}->{fullrepo}.'/';
-	$ENV{PKG_PATH} = $path;
-	$core->shell->nochroot->env(PKG_PATH => $path)->as_root
+	$core->shell->nochroot->env(TRUSTED_PKG_PATH => $path)->as_root
 	    ->exec(@cmd, $v->fullpkgname);
 	exit(1);
 }
@@ -867,7 +860,7 @@ sub create
 }
 
 package DPB::Job::BasePort;
-our @ISA = qw(DPB::Job::Normal);
+our @ISA = qw(DPB::Job::Watched);
 
 use Time::HiRes qw(time);
 
@@ -1065,22 +1058,6 @@ sub track_lock
 {
 	my $self = shift;
 	$self->{watched}->track_lock;
-}
-
-sub watched
-{
-	my ($self, $current, $core) = @_;
-	my $w = $self->{watched};
-	return "" unless defined $w;
-	my $diff = $w->check_change($current);
-	my $msg = '';
-	if ($self->{task}->want_percent) {
-		$msg .= $w->percent_message;
-	}
-	if ($self->{task}->want_frozen) {
-		$msg .= $w->frozen_message($diff);
-	}
-	return $self->kill_on_timeout($diff, $core, $msg);
 }
 
 sub get_timeout
@@ -1311,7 +1288,7 @@ sub new
 package DPB::Port::Watch;
 our @ISA = qw(DPB::Watch);
 
-# set things up so that we only trak Awaiting lock once.
+# set things up so that we only track Awaiting lock once.
 
 sub track_lock
 {

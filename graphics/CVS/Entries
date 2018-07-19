@@ -1,4 +1,4 @@
-/Makefile/1.458/Fri Jun  1 17:57:43 2018//
+/Makefile/1.459/Mon Jul 16 19:51:55 2018//
 D/DevIL////
 D/GraphicsMagick////
 D/ImageMagick////
@@ -255,6 +255,7 @@ D/shared-color-targets////
 D/shotwell////
 D/simgear////
 D/simple-scan////
+D/sk1////
 D/sketch////
 D/slop////
 D/sxiv////
