@@ -1,4 +1,4 @@
-/Makefile/1.617/Fri Jun  8 05:22:52 2018//
+/Makefile/1.618/Thu Jul 19 11:37:51 2018//
 D/2bwm////
 D/Xaw3d////
 D/XawMu////
@@ -221,6 +221,7 @@ D/py-qtawesome////
 D/py-qtpy////
 D/py-virtualdisplay////
 D/py-wxPython////
+D/py-xcbgen////
 D/qdirstat////
 D/qrfcview////
 D/qt3////
