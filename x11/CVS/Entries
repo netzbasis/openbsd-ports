@@ -1,4 +1,4 @@
-/Makefile/1.618/Thu Jul 19 11:37:51 2018//
+/Makefile/1.619/Sat Jul 21 09:50:44 2018//
 D/2bwm////
 D/Xaw3d////
 D/XawMu////
@@ -84,6 +84,7 @@ D/gob2////
 D/goggles////
 D/golem////
 D/grantlee////
+D/grantlee-qt5////
 D/gromit////
 D/gtk+2////
 D/gtk+3////
