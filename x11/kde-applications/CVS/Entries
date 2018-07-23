@@ -1,4 +1,4 @@
-/Makefile/1.14/Fri Jul 20 13:19:51 2018//
+/Makefile/1.15/Sun Jul 22 14:50:40 2018//
 /Makefile.inc/1.7/Tue Apr 24 17:39:56 2018//
 D/analitza////
 D/cantor////
@@ -13,5 +13,6 @@ D/ktouch////
 D/libkface////
 D/libkgeomap////
 D/libkipi////
+D/libkomparediff2////
 D/okteta////
 D/umbrello////
