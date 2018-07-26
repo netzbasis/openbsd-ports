@@ -1,4 +1,4 @@
-/Makefile/1.871/Sat Jun 23 21:48:36 2018//
+/Makefile/1.872/Wed Jul 25 09:06:19 2018//
 D/ajaxterm////
 D/analog////
 D/ap2-mod_dnssd////
@@ -512,7 +512,6 @@ D/w3mir////
 D/wApua////
 D/wbox////
 D/webalizer////
-D/webkit////
 D/webkitgtk4////
 D/weboob////
 D/wml////
