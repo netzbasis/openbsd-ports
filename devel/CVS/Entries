@@ -1,4 +1,4 @@
-/Makefile/1.1751/Sun Jul 15 22:48:06 2018//
+/Makefile/1.1752/Thu Jul 26 08:49:00 2018//
 D/ElectricFence////
 D/ORBit2////
 D/acpica////
@@ -1380,7 +1380,6 @@ D/py-symboltype////
 D/py-tabulate////
 D/py-test////
 D/py-test-benchmark////
-D/py-test-capturelog////
 D/py-test-cov////
 D/py-test-expect////
 D/py-test-httpbin////

@@ -1,11 +1,11 @@
-/patch-clamd_Makefile_in/1.23/Wed Apr 11 21:35:58 2018//
-/patch-database_Makefile_in/1.20/Wed Apr 11 21:35:58 2018//
+/patch-clamd_Makefile_in/1.24/Thu Jul 26 19:52:55 2018//
+/patch-database_Makefile_in/1.21/Thu Jul 26 19:52:55 2018//
 /patch-etc_clamd_conf_sample/1.6/Wed Apr 11 21:35:58 2018//
 /patch-etc_freshclam_conf_sample/1.2/Wed Apr 11 21:35:58 2018//
-/patch-libclamav_Makefile_in/1.30/Wed Apr 11 21:35:58 2018//
+/patch-libclamav_Makefile_in/1.31/Thu Jul 26 19:52:55 2018//
 /patch-libclamav_clamav_h/1.2/Wed Apr 11 21:35:58 2018//
 /patch-libclamav_ole2_extract_c/1.17/Wed Apr 11 21:35:58 2018//
-/patch-libclamav_str_c/1.13/Wed Apr 11 21:35:58 2018//
+/patch-libclamav_str_c/1.14/Thu Jul 26 19:52:55 2018//
 /patch-libclamav_vba_extract_c/1.11/Tue Dec  1 23:25:09 2015//
-/patch-unit_tests_Makefile_in/1.10/Wed Apr 11 21:35:58 2018//
+/patch-unit_tests_Makefile_in/1.11/Thu Jul 26 19:52:55 2018//
 D
