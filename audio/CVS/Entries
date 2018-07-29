@@ -1,4 +1,4 @@
-/Makefile/1.401/Thu Jul 12 20:41:59 2018//
+/Makefile/1.402/Sun Jul 29 03:56:32 2018//
 D/abcde////
 D/adplay////
 D/adplug////
@@ -234,6 +234,7 @@ D/twolame////
 D/umurmur////
 D/vagalume////
 D/vamp-plugin-sdk////
+D/vgmplay////
 D/vlorb////
 D/vorbis-tools////
 D/vorbisgain////

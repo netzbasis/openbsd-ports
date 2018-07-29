@@ -1,4 +1,4 @@
-/Makefile/1.380/Thu Jun 14 23:38:36 2018//
+/Makefile/1.381/Sun Jul 29 03:49:21 2018//
 D/0ad////
 D/2048-cli////
 D/abuse////
@@ -95,6 +95,7 @@ D/fotaq////
 D/freeblocks////
 D/freeciv////
 D/freecol////
+D/freedink////
 D/freedoom////
 D/freedroid////
 D/freedroidrpg////
