@@ -1,4 +1,4 @@
-/Makefile/1.17/Sun Jul 29 15:11:27 2018//
+/Makefile/1.18/Mon Jul 30 13:52:20 2018//
 /Makefile.inc/1.7/Tue Apr 24 17:39:56 2018//
 D/analitza////
 D/cantor////
@@ -9,6 +9,7 @@ D/kcalc////
 D/kcalcore////
 D/kdegraphics-mobipocket////
 D/kdenlive////
+D/kig////
 D/konsole////
 D/kqtquickcharts////
 D/ktouch////

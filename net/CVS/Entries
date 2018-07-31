@@ -1,4 +1,4 @@
-/Makefile/1.1079/Tue Jul 17 13:49:41 2018//
+/Makefile/1.1080/Mon Jul 30 14:43:52 2018//
 D/GeoIP////
 D/adns////
 D/adsuck////
@@ -171,6 +171,7 @@ D/kissd////
 D/knot////
 D/konversation////
 D/ktorrent////
+D/kurly////
 D/ladvd////
 D/ldns////
 D/lftp////

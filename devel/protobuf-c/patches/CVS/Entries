@@ -1,6 +1,4 @@
 /patch-Makefile_am/1.4/Tue Jul 10 10:49:43 2018//
-/patch-configure_ac/1.2/Tue Jul 10 10:49:43 2018//
-/patch-protobuf-c_protobuf-c_c/1.2/Tue Jul 10 10:49:43 2018//
 /patch-protoc-c_c_field_cc/1.1/Tue Jul 10 10:49:43 2018//
 /patch-protoc-c_c_field_h/1.1/Tue Jul 10 10:49:43 2018//
 /patch-protoc-c_c_file_cc/1.1/Tue Jul 10 10:49:43 2018//
@@ -9,6 +7,4 @@
 /patch-protoc-c_c_helpers_cc/1.1/Tue Jul 10 10:49:43 2018//
 /patch-protoc-c_c_message_cc/1.1/Tue Jul 10 10:49:43 2018//
 /patch-protoc-c_c_message_h/1.1/Tue Jul 10 10:49:43 2018//
-/patch-protoc-c_c_service_cc/1.2/Tue Jul 10 10:49:43 2018//
-/patch-t_test-full_proto/1.2/Tue Jul 10 10:49:43 2018//
 D
