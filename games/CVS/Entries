@@ -1,4 +1,4 @@
-/Makefile/1.381/Sun Jul 29 03:49:21 2018//
+/Makefile/1.382/Wed Aug  1 18:10:45 2018//
 D/0ad////
 D/2048-cli////
 D/abuse////
@@ -185,6 +185,7 @@ D/openarena////
 D/openfodder////
 D/openjk////
 D/openmw////
+D/openomf////
 D/openrct2////
 D/opensonic////
 D/openttd////
