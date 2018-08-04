@@ -1,4 +1,4 @@
-/Makefile/1.580/Thu Aug  2 16:30:40 2018//
+/Makefile/1.581/Fri Aug  3 05:14:53 2018//
 D/TclXML////
 D/antiword////
 D/apertium////
@@ -20,6 +20,7 @@ D/clit////
 D/clo++////
 D/cloc////
 D/clucene////
+D/cmark////
 D/dblatex////
 D/diction////
 D/diffstat////
