@@ -1,4 +1,4 @@
-/Makefile/1.60/Fri Jul  6 06:00:54 2018//
+/Makefile/1.61/Mon Aug  6 09:17:01 2018//
 D/emerillon////
 D/foxtrotgps////
 D/garmindev////
@@ -17,6 +17,7 @@ D/jeoip////
 D/josm////
 D/libchamplain////
 D/libosmium////
+D/libpostal////
 D/mapcache////
 D/mapproxy////
 D/mapserver////
