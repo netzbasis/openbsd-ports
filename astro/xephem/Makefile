@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.50 2016/05/05 19:52:28 naddy Exp $
+# $OpenBSD: Makefile,v 1.52 2018/08/07 10:20:23 espie Exp $
 
 COMMENT=	interactive astronomical ephemeris
 DISTNAME=	xephem-3.2.3
@@ -11,7 +11,7 @@ PERMIT_PACKAGE_CDROM=   no modifications, no fee
 PERMIT_PACKAGE_FTP=     no modifications
 PERMIT_DISTFILES_FTP=   Yes
 
-REVISION =	8
+REVISION =	9
 WANTLIB=	ICE SM X11 Xau Xdmcp Xext Xt c m Xm
 
 LIB_DEPENDS += x11/motif
@@ -20,8 +20,8 @@ MAKE_ENV+=MOTIFLIB='-L${LOCALBASE}/lib -lXm'
 CONFIGURE_STYLE= imake
 
 do-configure:
-	@cd ${WRKSRC}/libastro && ${SETENV} ${XMKMF}
-	@cd ${WRKSRC}/GUI/xephem && ${SETENV} ${XMKMF}
+	@cd ${WRKSRC}/libastro && ${SETENV} ${MAKE_ENV} ${XMKMF}
+	@cd ${WRKSRC}/GUI/xephem && ${SETENV} ${MAKE_ENV} ${XMKMF}
 
 do-build:
 	@cd ${WRKSRC}/libastro && \
