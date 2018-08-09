@@ -1,8 +1,6 @@
-# $OpenBSD: Makefile,v 1.76 2018/08/06 19:07:50 landry Exp $
+# $OpenBSD: Makefile,v 1.78 2018/08/08 19:18:58 naddy Exp $
 
-# snapshots are only available these archs;
-# sync with MACHINE_ARCH conditional in x11/gnome/librsvg (STABLE_VERSION)
-ONLY_FOR_ARCHS =	aarch64 amd64 i386
+ONLY_FOR_ARCHS =	${RUST_ARCHS}
 
 .if "${MACHINE_ARCH}" == "i386"
 DPB_PROPERTIES =	lonesome
@@ -57,6 +55,7 @@ BUILD_DEPENDS+=		lang/rust
 DISTFILES +=		${BOOTSTRAP}
 .endif
 
+.include <bsd.port.arch.mk>
 BOOTSTRAP =		${BOOTSTRAP-${MACHINE_ARCH}}
 .for m in ${ONLY_FOR_ARCHS}
 BOOTSTRAP-$m =		rustc-bootstrap-${m}-${BV-$m}${EXTRACT_SUFX}:0
