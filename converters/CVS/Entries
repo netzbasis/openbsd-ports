@@ -1,4 +1,4 @@
-/Makefile/1.94/Fri Jun 29 17:16:45 2018//
+/Makefile/1.95/Thu Aug  9 19:51:50 2018//
 D/base64////
 D/btoa////
 D/convmv////
@@ -66,6 +66,7 @@ D/py-amf////
 D/py-cjkcodecs////
 D/py-html2text////
 D/py-iconvcodec////
+D/py-mini-amf////
 D/qprint////
 D/recode////
 D/ripmime////

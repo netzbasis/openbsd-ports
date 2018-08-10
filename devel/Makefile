@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1752 2018/07/26 08:49:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.1756 2018/08/09 19:14:43 danj Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -687,6 +687,7 @@
      SUBDIR += p5-Devel-Leak-Object
      SUBDIR += p5-Devel-NYTProf
      SUBDIR += p5-Devel-PartialDump
+     SUBDIR += p5-Devel-Refcount
      SUBDIR += p5-Devel-SawAmpersand
      SUBDIR += p5-Devel-Size
      SUBDIR += p5-Devel-Size-Report
@@ -895,6 +896,7 @@
      SUBDIR += p5-MooseX-Role-Parameterized
      SUBDIR += p5-MooseX-Role-WithOverloading
      SUBDIR += p5-MooseX-SemiAffordanceAccessor
+     SUBDIR += p5-MooseX-StrictConstructor
      SUBDIR += p5-MooseX-Storage
      SUBDIR += p5-MooseX-Traits
      SUBDIR += p5-MooseX-Traits-Pluggable
@@ -1067,6 +1069,7 @@
      SUBDIR += p5-Test-File-ShareDir
      SUBDIR += p5-Test-Group
      SUBDIR += p5-Test-HTML-Tidy
+     SUBDIR += p5-Test-HexDifferences
      SUBDIR += p5-Test-Inline
      SUBDIR += p5-Test-Inter
      SUBDIR += p5-Test-JSON
@@ -1472,6 +1475,8 @@
      SUBDIR += py-path.py,python3
      SUBDIR += py-pathlib
      SUBDIR += py-pathlib,python3
+     SUBDIR += py-pathlib2
+     SUBDIR += py-pathlib2,python3
      SUBDIR += py-pathspec
      SUBDIR += py-pathspec,python3
      SUBDIR += py-pbr

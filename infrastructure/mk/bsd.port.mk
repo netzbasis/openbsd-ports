@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1436 2018/08/06 09:36:32 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1438 2018/08/09 19:53:41 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -272,6 +272,7 @@ NO_DEPENDS ?= No
 NO_BUILD ?= No
 NO_TEST ?= No
 INSTALL_TARGET ?= install
+USE_GROFF ?= No
 
 .if !defined(_ARCH_DEFINES_INCLUDED)
 _ARCH_DEFINES_INCLUDED = Done
@@ -594,7 +595,6 @@ ERRORS += "   (No flavors for this port)."
 .  endif
 .endif
 
-USE_GROFF ?= No
 .if ${USE_GROFF:L} == "yes"
 BUILD_DEPENDS += textproc/groff>=1.21
 _PKG_ARGS += -DUSE_GROFF=1
@@ -773,6 +773,14 @@ TAR ?= /bin/tar
 UNZIP ?= unzip
 BZIP2 ?= bzip2
 
+.if ${LOCALBASE} != "/usr/local"
+_perl_arch=`perl -e 'use Config; print $$Config{archname}, "\n";'`
+_EXTRA_ENV= \
+	PKG_CONFIG_PATH=${LOCALBASE}/share/pkgconfig:${LOCALBASE}/lib/pkgconfig \
+	PERL5LIB=${LOCALBASE}/libdata/perl5/site_perl/${_perl_arch}:${LOCALBASE}/libdata/perl5/site_perl
+CONFIGURE_ENV += ${_EXTRA_ENV}
+MAKE_ENV += ${_EXTRA_ENV}
+.endif
 
 # setup locations of compilers from the base system or environment variables.
 # MODULES for compilers (gcc4.port.mk, clang.port.mk) also append to this,

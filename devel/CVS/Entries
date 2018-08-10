@@ -1,4 +1,4 @@
-/Makefile/1.1752/Thu Jul 26 08:49:00 2018//
+/Makefile/1.1756/Thu Aug  9 19:14:43 2018//
 D/ElectricFence////
 D/ORBit2////
 D/acpica////
@@ -650,6 +650,7 @@ D/p5-Devel-Leak////
 D/p5-Devel-Leak-Object////
 D/p5-Devel-NYTProf////
 D/p5-Devel-PartialDump////
+D/p5-Devel-Refcount////
 D/p5-Devel-SawAmpersand////
 D/p5-Devel-Size////
 D/p5-Devel-Size-Report////
@@ -859,6 +860,7 @@ D/p5-MooseX-Role-Parameterized////
 D/p5-MooseX-Role-WithOverloading////
 D/p5-MooseX-SemiAffordanceAccessor////
 D/p5-MooseX-Storage////
+D/p5-MooseX-StrictConstructor////
 D/p5-MooseX-Traits////
 D/p5-MooseX-Traits-Pluggable////
 D/p5-MooseX-Types////
@@ -1030,6 +1032,7 @@ D/p5-Test-File-Contents////
 D/p5-Test-File-ShareDir////
 D/p5-Test-Group////
 D/p5-Test-HTML-Tidy////
+D/p5-Test-HexDifferences////
 D/p5-Test-Inline////
 D/p5-Test-Inter////
 D/p5-Test-JSON////
@@ -1329,6 +1332,7 @@ D/py-parsing////
 D/py-parso////
 D/py-path.py////
 D/py-pathlib////
+D/py-pathlib2////
 D/py-pathspec////
 D/py-pbr////
 D/py-peak-rules////

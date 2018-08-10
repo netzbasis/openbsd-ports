@@ -1,4 +1,4 @@
-/Makefile/1.367/Wed Jun 20 16:14:55 2018//
+/Makefile/1.368/Thu Aug  9 22:42:05 2018//
 D/abook////
 D/adcomplain////
 D/akpop3d////
@@ -184,6 +184,7 @@ D/ruby-mail////
 D/ruby-mime////
 D/ruby-mime-types////
 D/ruby-mime-types-data////
+D/ruby-mini_mime////
 D/s-nail////
 D/sendmail////
 D/sieve-connect////
