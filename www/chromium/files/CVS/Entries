@@ -2,8 +2,14 @@
 /audio_manager_openbsd.h/1.8/Wed Oct 25 13:47:07 2017//
 /chrome/1.15/Sat Dec 16 15:34:39 2017//
 /chromium-browser.desktop/1.2/Sat Dec 16 15:34:39 2017//
+/pledge.main/1.1/Fri Aug 10 14:57:53 2018//
 /sndio_input.cc/1.3/Mon Jul 30 15:28:28 2018//
 /sndio_input.h/1.3/Mon Jul 30 15:28:28 2018//
 /sndio_output.cc/1.6/Mon Jul 30 15:28:28 2018//
 /sndio_output.h/1.4/Sat Dec 10 15:35:25 2016//
+/unveil.gpu/1.1/Fri Aug 10 14:57:53 2018//
+/unveil.main/1.1/Fri Aug 10 14:57:53 2018//
+/unveil.plugin/1.1/Fri Aug 10 14:57:53 2018//
+/unveil.renderer/1.1/Fri Aug 10 14:57:53 2018//
+/unveil.utility/1.1/Fri Aug 10 14:57:53 2018//
 D

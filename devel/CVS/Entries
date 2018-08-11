@@ -1,4 +1,4 @@
-/Makefile/1.1756/Thu Aug  9 19:14:43 2018//
+/Makefile/1.1758/Fri Aug 10 19:49:21 2018//
 D/ElectricFence////
 D/ORBit2////
 D/acpica////
@@ -274,7 +274,6 @@ D/json-glib////
 D/jsoncpp////
 D/jsonrpc-glib////
 D/kdevelop////
-D/kdevplatform////
 D/kdiff3////
 D/keystone////
 D/kf5////

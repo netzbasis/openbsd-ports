@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1756 2018/08/09 19:14:43 danj Exp $
+# $OpenBSD: Makefile,v 1.1758 2018/08/10 19:49:21 sthen Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -280,7 +280,6 @@
      SUBDIR += jsoncpp
      SUBDIR += jsonrpc-glib
      SUBDIR += kdevelop
-     SUBDIR += kdevplatform
      SUBDIR += kdiff3
      SUBDIR += kproperty
      SUBDIR += kreport
@@ -1637,6 +1636,7 @@
      SUBDIR += py-yapf
      SUBDIR += py-yapf,python3
      SUBDIR += py-zopecomponent
+     SUBDIR += py-zopecomponent,python3
      SUBDIR += py-zopeevent
      SUBDIR += py-zopeevent,python3
      SUBDIR += py-zopeinterface

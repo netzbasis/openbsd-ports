@@ -1,4 +1,4 @@
-/Makefile/1.25/Wed Aug  8 15:25:20 2018//
+/Makefile/1.26/Fri Aug 10 19:40:29 2018//
 D/abc////
 D/fritzing////
 D/geda-gaf////
@@ -17,3 +17,4 @@ D/qucs////
 D/tkgate////
 D/xcircuit////
 D/xnecview////
+D/yosys////
