@@ -1,4 +1,4 @@
-/Makefile/1.183/Fri Jun  1 17:57:43 2018//
+/Makefile/1.185/Tue Aug 14 17:22:49 2018//
 D/WordGenerator////
 D/astrolog////
 D/bible-kjv////
@@ -40,6 +40,7 @@ D/impress////
 D/insult////
 D/jive////
 D/lfm////
+D/libdivecomputer////
 D/lifelines////
 D/logjam////
 D/magicpoint////
@@ -92,6 +93,7 @@ D/shared-desktop-ontologies////
 D/shared-mime-info////
 D/spdrs60////
 D/srcpd////
+D/subsurface////
 D/supercat////
 D/tapclean////
 D/teseq////
