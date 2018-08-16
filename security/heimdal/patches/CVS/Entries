@@ -3,6 +3,7 @@
 /patch-kuser_generate-requests_c/1.2/Sat Dec 17 14:58:31 2016//
 /patch-lib_hcrypto_test_rsa_c/1.2/Sat Dec 17 14:58:31 2016//
 /patch-lib_hx509_softp11_c/1.2/Sat Dec 17 14:58:31 2016//
+/patch-lib_kadm5_init_s_c/1.1/Wed Aug 15 14:21:29 2018//
 /patch-lib_krb5_crypto-rand_c/1.2/Sat Dec 17 14:58:31 2016//
 /patch-lib_krb5_krb5_h/1.2/Sat Dec 17 14:58:31 2016//
 /patch-lib_krb5_test_crypto_c/1.1/Sun Jul 13 14:10:14 2014//

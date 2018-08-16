@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.62 2018/07/30 08:34:07 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.64 2018/08/15 15:33:39 ajacoutot Exp $
 @conflict glib2-docs-*
 @conflict glib2-fam-*
 @pkgpath devel/glib2,-docs
