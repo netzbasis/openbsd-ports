@@ -1,4 +1,4 @@
-/Makefile/1.18/Mon Jul 30 13:52:20 2018//
+/Makefile/1.19/Sat Aug 18 18:38:12 2018//
 /Makefile.inc/1.7/Tue Apr 24 17:39:56 2018//
 D/analitza////
 D/cantor////
@@ -10,13 +10,19 @@ D/kcalcore////
 D/kdegraphics-mobipocket////
 D/kdenlive////
 D/kig////
+D/kimap////
+D/kmbox////
+D/kmime////
 D/konsole////
+D/kpimtextedit////
 D/kqtquickcharts////
 D/ktouch////
 D/libkexiv2////
 D/libkface////
 D/libkgeomap////
 D/libkipi////
+D/libkmahjongg////
 D/libkomparediff2////
 D/okteta////
+D/svgpart////
 D/umbrello////
