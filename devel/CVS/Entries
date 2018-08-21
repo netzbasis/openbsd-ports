@@ -1,4 +1,4 @@
-/Makefile/1.1759/Thu Aug 16 18:27:50 2018//
+/Makefile/1.1760/Mon Aug 20 21:31:17 2018//
 D/ElectricFence////
 D/ORBit2////
 D/acpica////
@@ -1280,6 +1280,7 @@ D/py-guppy////
 D/py-hachoir-core////
 D/py-hachoir-metadata////
 D/py-hachoir-parser////
+D/py-hamcrest////
 D/py-hg-git////
 D/py-hgnested////
 D/py-hgsubversion////

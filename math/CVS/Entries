@@ -1,4 +1,4 @@
-/Makefile/1.147/Sat May  5 15:05:52 2018//
+/Makefile/1.148/Tue Aug 21 02:04:27 2018//
 D/R////
 D/aamath////
 D/abs////
@@ -21,6 +21,7 @@ D/fftw3////
 D/foma////
 D/freemat////
 D/galculator////
+D/gbc////
 D/geogebra////
 D/ginac////
 D/gnumeric////
