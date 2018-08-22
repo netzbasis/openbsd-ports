@@ -1,4 +1,4 @@
-/Makefile/1.1760/Mon Aug 20 21:31:17 2018//
+/Makefile/1.1761/Tue Aug 21 19:17:24 2018//
 D/ElectricFence////
 D/ORBit2////
 D/acpica////
@@ -51,6 +51,7 @@ D/cargo-generate-vendor////
 D/catalyst////
 D/catalyst-tutorial////
 D/catch2////
+D/cbindgen////
 D/cbmc////
 D/ccache////
 D/ccrtp////
