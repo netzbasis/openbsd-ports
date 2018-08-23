@@ -1,4 +1,4 @@
-/Makefile/1.384/Wed Aug 15 22:15:21 2018//
+/Makefile/1.385/Thu Aug 23 02:38:26 2018//
 D/0ad////
 D/2048-cli////
 D/abuse////
@@ -239,6 +239,7 @@ D/snipe2d////
 D/solarus////
 D/spacehulk////
 D/spaceinvaders////
+D/spacetrader////
 D/spacezero////
 D/spatial////
 D/speeddreams////
