@@ -1,4 +1,4 @@
-/Makefile/1.581/Fri Aug  3 05:14:53 2018//
+/Makefile/1.582/Thu Aug 23 05:49:51 2018//
 D/TclXML////
 D/antiword////
 D/apertium////
@@ -361,6 +361,7 @@ D/py-mistune////
 D/py-natsort////
 D/py-nltk////
 D/py-numpydoc////
+D/py-ofxparse////
 D/py-pandocfilters////
 D/py-pdf////
 D/py-pdfminer////

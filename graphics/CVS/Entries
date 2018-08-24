@@ -1,4 +1,4 @@
-/Makefile/1.459/Mon Jul 16 19:51:55 2018//
+/Makefile/1.460/Thu Aug 23 05:38:24 2018//
 D/DevIL////
 D/GraphicsMagick////
 D/ImageMagick////
@@ -135,6 +135,7 @@ D/libiptcdata////
 D/liblqr////
 D/libmng////
 D/libmpeg2////
+D/libmypaint////
 D/libpano13////
 D/libpgf////
 D/libqrencode////
@@ -161,6 +162,7 @@ D/mpeg_play////
 D/mplex////
 D/mscgen////
 D/mtpaint////
+D/mypaint-brushes////
 D/netpbm////
 D/nomacs////
 D/ocrad////
