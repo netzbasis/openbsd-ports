@@ -1,4 +1,4 @@
-/Makefile/1.495/Thu Aug  9 19:09:19 2018//
+/Makefile/1.496/Fri Aug 24 05:25:17 2018//
 D/accountsservice////
 D/amazon-ecs-cli////
 D/amazon-ssm-agent////
@@ -119,7 +119,7 @@ D/ioping////
 D/ipmitool////
 D/iucode-tool////
 D/iwatch////
-D/krename-kde4////
+D/krename////
 D/ktsuss////
 D/libburn////
 D/libesedb////
