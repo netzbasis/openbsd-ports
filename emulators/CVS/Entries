@@ -1,4 +1,4 @@
-/Makefile/1.98/Sun Jul 22 16:58:29 2018//
+/Makefile/1.100/Sat Aug 25 06:46:59 2018//
 D/BasiliskII////
 D/advancemame////
 D/atari800////
@@ -37,8 +37,6 @@ D/pcsxr////
 D/ppsspp////
 D/qemu////
 D/retroarch////
-D/sdlmame////
-D/sdlmess////
 D/simh////
 D/snes9x////
 D/spim////
