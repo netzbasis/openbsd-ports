@@ -1,9 +1,10 @@
-/Makefile/1.26/Fri Aug 10 19:40:29 2018//
+/Makefile/1.28/Tue Aug 28 18:27:22 2018//
 D/abc////
 D/fritzing////
 D/geda-gaf////
 D/gerbv////
 D/gnucap////
+D/graywolf////
 D/gtkwave////
 D/kicad////
 D/kicad-library////
@@ -13,6 +14,7 @@ D/ngspice////
 D/openscad////
 D/pcb////
 D/qcad////
+D/qrouter////
 D/qucs////
 D/tkgate////
 D/xcircuit////
