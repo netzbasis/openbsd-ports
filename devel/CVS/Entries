@@ -1,4 +1,4 @@
-/Makefile/1.1763/Mon Aug 27 06:26:04 2018//
+/Makefile/1.1764/Wed Aug 29 23:17:43 2018//
 D/ElectricFence////
 D/ORBit2////
 D/acpica////
@@ -1564,6 +1564,7 @@ D/spe////
 D/spice-protocol////
 D/spidermonkey52////
 D/splint////
+D/spyder////
 D/src////
 D/srecord////
 D/startup-notification////

@@ -1,4 +1,4 @@
-/Makefile/1.402/Sun Jul 29 03:56:32 2018//
+/Makefile/1.403/Wed Aug 29 21:20:49 2018//
 D/abcde////
 D/adplay////
 D/adplug////
@@ -159,6 +159,7 @@ D/p5-MP4-Info////
 D/p5-MPEG-Audio-Frame////
 D/p5-Music-Audioscrobbler-MPD////
 D/p5-Music-Audioscrobbler-Submit////
+D/p5-MusicBrainz-DiscID////
 D/p5-Ogg-Vorbis-Header////
 D/p5-Ogg-Vorbis-Header-PurePerl////
 D/p5-POE-Component-Client-MPD////
