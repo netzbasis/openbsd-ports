@@ -1,4 +1,13 @@
 /patch-UPGRADING/1.4/Sat Sep 14 17:12:11 2013//
+/patch-man_dspam_1/1.1/Sat Sep  1 10:08:40 2018//
+/patch-man_dspam_admin_1/1.1/Sat Sep  1 10:08:40 2018//
+/patch-man_dspam_clean_1/1.1/Sat Sep  1 10:08:40 2018//
+/patch-man_dspam_crc_1/1.1/Sat Sep  1 10:08:40 2018//
+/patch-man_dspam_dump_1/1.1/Sat Sep  1 10:08:40 2018//
+/patch-man_dspam_logrotate_1/1.1/Sat Sep  1 10:08:40 2018//
+/patch-man_dspam_merge_1/1.1/Sat Sep  1 10:08:40 2018//
+/patch-man_dspam_stats_1/1.1/Sat Sep  1 10:08:40 2018//
+/patch-man_dspam_train_1/1.1/Sat Sep  1 10:08:40 2018//
 /patch-src_Makefile_in/1.4/Sat Sep 14 17:12:11 2013//
 /patch-src_base64_c/1.2/Thu Mar 23 17:17:40 2006//
 /patch-src_bnr_c/1.2/Sat Sep 14 17:12:11 2013//
