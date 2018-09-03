@@ -1,4 +1,5 @@
 /patch-Makefile/1.1/Tue Aug 25 11:04:39 2015//
+/patch-auth_auth_log_c/1.1/Sun Sep  2 16:41:56 2018//
 /patch-buildtools_wafsamba_samba_autoconf_py/1.9/Wed Aug 29 11:40:23 2018//
 /patch-buildtools_wafsamba_samba_conftests_py/1.3/Fri Apr 22 11:48:36 2016//
 /patch-buildtools_wafsamba_samba_install_py/1.3/Fri Apr 22 11:48:36 2016//
@@ -13,6 +14,7 @@
 /patch-source3_modules_vfs_acl_tdb_c/1.1/Mon Jun 11 11:59:51 2018//
 /patch-source3_torture_test_messaging_send_all_c/1.1/Mon Jun 11 11:59:51 2018//
 /patch-source3_wscript/1.7/Mon Jun 11 11:59:51 2018//
+/patch-source4_dsdb_samdb_ldb_modules_acl_c/1.1/Sun Sep  2 16:41:56 2018//
 /patch-source4_heimdal_build_wscript_build/1.2/Fri Apr 22 11:48:36 2016//
 /patch-source4_scripting_bin_samba_upgradedns/1.3/Mon Jun 11 11:59:51 2018//
 /patch-source4_torture_local_nss_tests_c/1.1/Tue Apr 12 17:42:09 2016//

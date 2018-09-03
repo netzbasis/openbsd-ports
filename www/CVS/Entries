@@ -1,4 +1,4 @@
-/Makefile/1.874/Tue Aug 21 09:29:00 2018//
+/Makefile/1.875/Sun Sep  2 19:32:57 2018//
 D/ajaxterm////
 D/analog////
 D/ap2-mod_dnssd////
@@ -289,6 +289,7 @@ D/p5-SOAP-Lite////
 D/p5-SOAP-WSDL////
 D/p5-Starlet////
 D/p5-Starman////
+D/p5-Test-HTTP-LocalServer////
 D/p5-Test-HTTP-Server-Simple////
 D/p5-Twiggy////
 D/p5-URI////
