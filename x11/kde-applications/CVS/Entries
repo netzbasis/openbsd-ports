@@ -1,4 +1,4 @@
-/Makefile/1.21/Sun Sep  2 15:33:41 2018//
+/Makefile/1.22/Tue Sep  4 05:31:36 2018//
 /Makefile.inc/1.7/Tue Apr 24 17:39:56 2018//
 D/analitza////
 D/ark////
@@ -20,6 +20,7 @@ D/konsole////
 D/kpimtextedit////
 D/kqtquickcharts////
 D/ktouch////
+D/libkdcraw////
 D/libkexiv2////
 D/libkface////
 D/libkgeomap////
