@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.224 2018/07/12 18:10:21 nayden Exp $
+# $OpenBSD: Makefile,v 1.226 2018/09/05 19:40:18 jasper Exp $
 
      SUBDIR =
      SUBDIR += STk
@@ -83,6 +83,7 @@
      SUBDIR += pcc
      SUBDIR += pfe
      SUBDIR += php
+     SUBDIR += ponyc
      SUBDIR += processing
      SUBDIR += pypy
      SUBDIR += python
@@ -99,6 +100,7 @@
      SUBDIR += scheme48
      SUBDIR += scm
      SUBDIR += scm,no_x11
+     SUBDIR += secularize
      SUBDIR += seed7
      SUBDIR += snobol4
      SUBDIR += spin

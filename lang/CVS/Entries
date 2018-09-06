@@ -1,4 +1,4 @@
-/Makefile/1.224/Thu Jul 12 18:10:21 2018//
+/Makefile/1.226/Wed Sep  5 19:40:18 2018//
 D/STk////
 D/a60////
 D/abcl////
@@ -82,6 +82,7 @@ D/parrot////
 D/pcc////
 D/pfe////
 D/php////
+D/ponyc////
 D/processing////
 D/pypy////
 D/python////
@@ -95,6 +96,7 @@ D/scala////
 D/scheme-report////
 D/scheme48////
 D/scm////
+D/secularize////
 D/seed7////
 D/snobol4////
 D/spin////
