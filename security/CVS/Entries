@@ -1,4 +1,4 @@
-/Makefile/1.515/Wed Jul 25 13:55:55 2018//
+/Makefile/1.516/Sun Sep  9 15:05:48 2018//
 D/ADMsnmp////
 D/aescrypt////
 D/aide////
@@ -162,6 +162,7 @@ D/p5-Crypt-Blowfish_PP////
 D/p5-Crypt-CAST5_PP////
 D/p5-Crypt-CBC////
 D/p5-Crypt-CipherSaber////
+D/p5-Crypt-Curve25519////
 D/p5-Crypt-DES////
 D/p5-Crypt-DES-EDE3////
 D/p5-Crypt-DH////
@@ -193,6 +194,7 @@ D/p5-Crypt-SmbHash////
 D/p5-Crypt-TripleDES////
 D/p5-Crypt-Twofish////
 D/p5-Crypt-X509////
+D/p5-CryptX////
 D/p5-Digest-BubbleBabble////
 D/p5-Digest-HMAC////
 D/p5-Digest-MD2////

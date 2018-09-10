@@ -1,4 +1,4 @@
-/Makefile/1.498/Fri Aug 31 19:05:25 2018//
+/Makefile/1.499/Sun Sep  9 13:32:24 2018//
 D/accountsservice////
 D/amazon-ecs-cli////
 D/amazon-ssm-agent////
@@ -176,6 +176,7 @@ D/moreutils////
 D/mtools////
 D/multitail////
 D/multitime////
+D/ncal////
 D/ncdu////
 D/ndesk-dbus////
 D/ndesk-dbus-glib////
