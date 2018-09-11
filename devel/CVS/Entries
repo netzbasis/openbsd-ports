@@ -1,4 +1,4 @@
-/Makefile/1.1765/Fri Sep  7 20:59:04 2018//
+/Makefile/1.1766/Mon Sep 10 19:30:17 2018//
 D/ElectricFence////
 D/ORBit2////
 D/acpica////
@@ -1533,6 +1533,7 @@ D/ruby-uuidtools////
 D/ruby-xdg////
 D/ruby-yajl////
 D/ruby-zentest////
+D/samurai////
 D/scons////
 D/sdcc////
 D/sdl////
