@@ -1,4 +1,4 @@
-/Makefile/1.79/Thu May 17 23:22:49 2018//
+/Makefile/1.80/Tue Sep 11 08:55:51 2018//
 D/akonadi////
 D/aqbanking////
 D/attica////
@@ -30,6 +30,7 @@ D/projectlibre////
 D/py-carddav////
 D/qhacc////
 D/radicale////
+D/radicale2////
 D/rednotebook////
 D/rubrica2////
 D/siag////
