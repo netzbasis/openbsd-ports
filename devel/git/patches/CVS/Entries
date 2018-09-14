@@ -1,8 +1,7 @@
-/patch-config_mak_uname/1.6/Fri Jul  6 20:15:42 2018//
+/patch-config_mak_uname/1.7/Thu Sep 13 05:59:22 2018//
 /patch-contrib_svn-fe_Makefile/1.1/Sat Feb  7 18:19:41 2015//
 /patch-gitweb_gitweb_perl/1.32/Thu Jun 14 17:43:48 2018//
-/patch-t_t1450-fsck_sh/1.5/Tue Oct 24 05:26:43 2017//
-/patch-t_t5310-pack-bitmaps_sh/1.1/Fri Jul  6 20:15:42 2018//
+/patch-t_t1450-fsck_sh/1.6/Thu Sep 13 05:59:22 2018//
 /patch-t_t9117-git-svn-init-clone_sh/1.2/Sat Jan 24 14:31:29 2009//
 /patch-t_test-lib_sh/1.28/Thu Jun 14 17:43:48 2018//
 D

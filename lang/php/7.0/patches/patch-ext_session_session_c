@@ -1,11 +1,11 @@
-$OpenBSD: patch-ext_session_session_c,v 1.2 2018/09/13 14:15:12 sthen Exp $
+$OpenBSD: patch-ext_session_session_c,v 1.1 2018/09/13 14:15:47 sthen Exp $
 
 use arc4random_buf rather than /dev/urandom to add entropy to session ids
 
 Index: ext/session/session.c
 --- ext/session/session.c.orig
 +++ ext/session/session.c
-@@ -346,7 +346,24 @@ PHPAPI char *php_session_create_id(PS_CREATE_SID_ARGS)
+@@ -360,7 +360,24 @@ PHPAPI zend_string *php_session_create_id(PS_CREATE_SI
  	efree(buf);
  
  	if (PS(entropy_length) > 0) {
