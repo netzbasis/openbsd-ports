@@ -1,10 +1,11 @@
-/Makefile/1.12/Thu Nov  2 21:42:11 2017//
+/Makefile/1.13/Fri Sep 14 15:24:48 2018//
 /Makefile.inc/1.3/Mon Nov  4 14:05:43 2013//
 D/avr////
 D/geda////
 D/gnome////
 D/gnustep////
 D/kde4////
+D/lxqt////
 D/msp430////
 D/mupen64plus////
 D/qt5////

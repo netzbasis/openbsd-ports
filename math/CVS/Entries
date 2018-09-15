@@ -1,4 +1,4 @@
-/Makefile/1.148/Tue Aug 21 02:04:27 2018//
+/Makefile/1.149/Fri Sep 14 08:10:14 2018//
 D/R////
 D/aamath////
 D/abs////
@@ -107,6 +107,7 @@ D/py-graphviz////
 D/py-mpmath////
 D/py-numexpr////
 D/py-numpy////
+D/py-pandas////
 D/py-patsy////
 D/py-probstat////
 D/py-scipy////
