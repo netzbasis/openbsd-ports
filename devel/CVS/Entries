@@ -1,4 +1,4 @@
-/Makefile/1.1766/Mon Sep 10 19:30:17 2018//
+/Makefile/1.1767/Sat Sep 15 13:17:31 2018//
 D/ElectricFence////
 D/ORBit2////
 D/acpica////
@@ -1155,6 +1155,7 @@ D/p5-strictures////
 D/pango////
 D/pangomm////
 D/pangox-compat////
+D/pasmo////
 D/pccts////
 D/pcre////
 D/pcre++////

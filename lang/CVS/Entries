@@ -1,4 +1,4 @@
-/Makefile/1.227/Wed Sep 12 05:00:50 2018//
+/Makefile/1.228/Sat Sep 15 18:03:49 2018//
 D/STk////
 D/a60////
 D/abcl////
@@ -43,6 +43,7 @@ D/ghc////
 D/gnucobol////
 D/go////
 D/go-bootstrap////
+D/gpc////
 D/gprolog////
 D/gravity////
 D/guile////
