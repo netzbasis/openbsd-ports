@@ -7,6 +7,7 @@
 /patch-include_vlc_playlist_h/1.1/Mon May 22 10:22:25 2017//
 /patch-modules_access_v4l2_lib_c/1.1/Sat Jan 23 08:09:50 2016//
 /patch-modules_access_v4l2_v4l2_h/1.1/Sat Jan 23 08:09:50 2016//
+/patch-modules_codec_x264_c/1.4/Sun Sep 16 06:05:00 2018//
 /patch-modules_demux_mkv_mkv_hpp/1.5/Sun May 24 07:16:31 2015//
 /patch-modules_demux_mp4_libmp4_h/1.1/Mon May 22 10:22:25 2017//
 /patch-modules_gui_qt4_dialogs_messages_cpp/1.2/Sat May 27 08:40:14 2017//

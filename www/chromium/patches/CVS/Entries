@@ -172,8 +172,8 @@
 /patch-chrome_common_chrome_switches_h/1.45/Wed Sep 12 17:08:22 2018//
 /patch-chrome_common_extensions_chrome_extensions_client_cc/1.8/Wed Sep 12 17:08:22 2018//
 /patch-chrome_common_extensions_command_cc/1.8/Mon Apr 23 15:00:16 2018//
-/patch-chrome_common_pref_names_cc/1.44/Wed Sep 12 17:08:22 2018//
-/patch-chrome_common_pref_names_h/1.44/Wed Sep 12 17:08:22 2018//
+/patch-chrome_common_pref_names_cc/1.45/Sun Sep 16 11:08:34 2018//
+/patch-chrome_common_pref_names_h/1.45/Sun Sep 16 11:08:34 2018//
 /patch-chrome_common_webui_url_constants_cc/1.6/Wed Sep 12 17:08:22 2018//
 /patch-chrome_common_webui_url_constants_h/1.4/Wed Sep 12 17:08:22 2018//
 /patch-chrome_renderer_pepper_pepper_flash_font_file_host_cc/1.1/Wed Sep 12 17:08:22 2018//
@@ -242,7 +242,7 @@
 /patch-content_public_common_content_switches_h/1.30/Wed Sep 12 17:08:22 2018//
 /patch-content_public_common_renderer_preferences_h/1.5/Wed Sep 12 17:08:22 2018//
 /patch-content_public_test_test_web_ui_h/1.1/Sat Jun  2 17:19:23 2018//
-/patch-content_renderer_render_thread_impl_cc/1.29/Wed Sep 12 17:08:22 2018//
+/patch-content_renderer_render_thread_impl_cc/1.30/Sun Sep 16 11:08:34 2018//
 /patch-content_renderer_renderer_blink_platform_impl_cc/1.10/Wed Sep 12 17:08:22 2018//
 /patch-content_renderer_renderer_blink_platform_impl_h/1.7/Wed Sep 12 17:08:22 2018//
 /patch-content_renderer_renderer_main_platform_delegate_linux_cc/1.18/Fri Aug 10 14:57:53 2018//
@@ -484,7 +484,9 @@
 /patch-tools_json_schema_compiler_model_py/1.2/Mon Apr 23 15:00:16 2018//
 /patch-tools_variations_fieldtrial_to_struct_py/1.4/Wed Sep 12 17:08:22 2018//
 /patch-ui_base_dragdrop_os_exchange_data_provider_factory_cc/1.5/Sat Jun  2 17:19:23 2018//
+/patch-ui_base_ime_ime_engine_handler_interface_h/1.6/Sun Sep 16 11:08:34 2018//
 /patch-ui_base_ime_input_method_initializer_cc/1.6/Sat Jun  2 17:19:23 2018//
+/patch-ui_base_material_design_material_design_controller_cc/1.1/Sun Sep 16 11:08:34 2018//
 /patch-ui_base_resource_resource_bundle_cc/1.28/Mon Jul 30 15:28:28 2018//
 /patch-ui_base_ui_base_features_cc/1.1/Wed Sep 12 17:08:22 2018//
 /patch-ui_base_ui_base_features_h/1.1/Wed Sep 12 17:08:22 2018//
@@ -516,6 +518,7 @@
 /patch-ui_gl_gl_implementation_cc/1.5/Wed Sep 12 17:08:22 2018//
 /patch-ui_gl_sync_control_vsync_provider_cc/1.9/Mon Mar 12 13:48:34 2018//
 /patch-ui_gl_sync_control_vsync_provider_h/1.8/Mon Apr 23 15:00:16 2018//
+/patch-ui_message_center_public_cpp_message_center_constants_h/1.1/Sun Sep 16 11:08:34 2018//
 /patch-ui_message_center_views_message_view_factory_cc/1.8/Mon Apr 23 15:00:16 2018//
 /patch-ui_message_center_views_toast_contents_view_cc/1.8/Sat Jun  2 17:19:23 2018//
 /patch-ui_native_theme_native_theme_base_cc/1.2/Sat Sep  9 19:16:43 2017//
