@@ -1,4 +1,4 @@
-/Makefile/1.1082/Wed Aug 22 16:33:08 2018//
+/Makefile/1.1083/Mon Sep 17 09:56:57 2018//
 D/GeoIP////
 D/adns////
 D/adsuck////
@@ -547,6 +547,7 @@ D/py-xmpppy////
 D/py-zeroconf////
 D/py-zmq////
 D/py-zsi////
+D/qbittorrent////
 D/qsyncthingtray////
 D/qsynergy////
 D/quagga////
