@@ -1,4 +1,4 @@
-/Makefile/1.499/Sun Sep  9 13:32:24 2018//
+/Makefile/1.500/Tue Sep 18 16:53:48 2018//
 D/accountsservice////
 D/amazon-ecs-cli////
 D/amazon-ssm-agent////
@@ -225,6 +225,7 @@ D/pscpug////
 D/psftools////
 D/pstree////
 D/pv////
+D/py-analyzemft////
 D/py-augeas////
 D/py-cef////
 D/py-croniter////
