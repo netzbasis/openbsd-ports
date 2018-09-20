@@ -1,4 +1,4 @@
-/Makefile/1.73/Mon Sep 10 06:59:01 2018//
+/Makefile/1.74/Wed Sep 19 05:51:42 2018//
 D/amtterm////
 D/birda////
 D/bottlerocket////
@@ -39,6 +39,7 @@ D/qtserialport////
 D/rtl-sdr////
 D/scmxx////
 D/seyon////
+D/sigrok////
 D/smstools////
 D/spisniffer////
 D/sredird////
