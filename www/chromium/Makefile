@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.389 2018/09/18 12:51:44 espie Exp $
+# $OpenBSD: Makefile,v 1.391 2018/09/20 10:28:17 robert Exp $
 
 .include <bsd.port.arch.mk>
 
 USE_WXNEEDED=		Yes
+USE_LLD=		Yes
 
 DPB_PROPERTIES=		parallel parallel2
 
 COMMENT=		Chromium browser
 
-V=			69.0.3497.92
-REVISION=		0
+V=			69.0.3497.100
 
 DISTNAME=		chromium-${V}
 
@@ -125,6 +125,7 @@ GN_ARGS=	enable_nacl=false \
 		use_cups=true \
 		use_gtk3=true \
 		use_system_libdrm=true \
+		use_jumbo_build=true \
 		is_clang=true \
 		use_sysroot=false \
 		treat_warnings_as_errors=false \
