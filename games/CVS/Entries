@@ -1,4 +1,4 @@
-/Makefile/1.388/Mon Sep 10 20:51:37 2018//
+/Makefile/1.389/Sun Sep 23 18:44:17 2018//
 D/0ad////
 D/2048-cli////
 D/abuse////
@@ -91,6 +91,7 @@ D/fillets-ng////
 D/fire////
 D/flare////
 D/flightgear////
+D/fnaify////
 D/foobillard////
 D/forcedattack////
 D/fotaq////
