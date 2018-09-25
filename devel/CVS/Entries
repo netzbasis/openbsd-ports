@@ -1,4 +1,4 @@
-/Makefile/1.1767/Sat Sep 15 13:17:31 2018//
+/Makefile/1.1768/Mon Sep 24 15:49:38 2018//
 D/ElectricFence////
 D/ORBit2////
 D/acpica////
@@ -755,6 +755,7 @@ D/p5-Heap////
 D/p5-Hook-LexWrap////
 D/p5-IO-AIO////
 D/p5-IO-All////
+D/p5-IO-BufferedSelect////
 D/p5-IO-Capture////
 D/p5-IO-CaptureOutput////
 D/p5-IO-Digest////
