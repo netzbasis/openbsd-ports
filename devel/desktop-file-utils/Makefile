@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.47 2018/07/30 08:34:07 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.49 2018/09/25 19:23:47 jasper Exp $
 
 COMMENT=	utilities for dot.desktop entries
 
 DISTNAME=	desktop-file-utils-0.23
-REVISION =	6
+REVISION =	8
 
 EXTRACT_SUFX=	.tar.xz
 
@@ -29,5 +29,8 @@ CONFIGURE_STYLE=gnu
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
 		ac_cv_prog_EMACS=no
+
+pre-configure:
+	${SUBST_CMD} ${WRKSRC}/src/update-desktop-database.c
 
 .include <bsd.port.mk>

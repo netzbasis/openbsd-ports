@@ -1,4 +1,4 @@
-/Makefile/1.403/Wed Aug 29 21:20:49 2018//
+/Makefile/1.404/Tue Sep 25 19:45:44 2018//
 D/abcde////
 D/adplay////
 D/adplug////
@@ -89,6 +89,7 @@ D/libmusicbrainz5////
 D/libnjb////
 D/libofa////
 D/libogg////
+D/libopusenc////
 D/libsamplerate////
 D/libsidplay////
 D/libsndfile////

@@ -1,4 +1,4 @@
-/Makefile/1.389/Sun Sep 23 18:44:17 2018//
+/Makefile/1.390/Tue Sep 25 08:53:44 2018//
 D/0ad////
 D/2048-cli////
 D/abuse////
@@ -50,6 +50,7 @@ D/circuit////
 D/clines////
 D/clonekeen////
 D/cmatrix////
+D/colobot////
 D/connect4////
 D/corewars////
 D/corsixth////
