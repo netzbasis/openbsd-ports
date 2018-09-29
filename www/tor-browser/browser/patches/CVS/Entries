@@ -1,7 +1,8 @@
 /patch-_mozconfig/1.2/Wed Jul 26 20:50:39 2017//
-/patch-browser_installer_Makefile_in/1.2/Wed Jul 26 20:50:39 2017//
+/patch-build_moz_configure_init_configure/1.1/Fri Sep 28 14:54:26 2018//
 /patch-intl_icu_source_Makefile_in/1.2/Wed Jul 26 20:50:39 2017//
-/patch-js_src_jit_ProcessExecutableMemory_cpp/1.2/Sun Aug 27 08:54:08 2017//
+/patch-js_src_jit_ProcessExecutableMemory_h/1.1/Fri Sep 28 14:54:26 2018//
+/patch-netwerk_cache_nsDiskCacheDeviceSQL_cpp/1.1/Fri Sep 28 14:54:26 2018//
 /patch-security_nss_Makefile/1.2/Wed Jul 26 20:50:39 2017//
 /patch-security_nss_coreconf_OpenBSD_mk/1.2/Wed Jul 26 20:50:39 2017//
 /patch-security_nss_coreconf_UNIX_mk/1.1.1.1/Sun Nov 13 21:15:43 2016//

@@ -1,4 +1,4 @@
-/Makefile/1.876/Mon Sep 10 06:50:54 2018//
+/Makefile/1.878/Fri Sep 28 22:25:46 2018//
 D/ajaxterm////
 D/analog////
 D/ap2-mod_dnssd////
@@ -41,6 +41,7 @@ D/firefox-esr////
 D/firefox-esr-i18n////
 D/firefox-i18n////
 D/gcap////
+D/geckodriver////
 D/gitea////
 D/goaccess////
 D/gumbo////

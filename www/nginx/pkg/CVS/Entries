@@ -1,6 +1,7 @@
 /DESCR-geoip/1.1/Fri Nov  4 22:13:43 2016//
 /DESCR-headers_more/1.1/Tue Nov 14 16:43:09 2017//
 /DESCR-image_filter/1.1/Fri Nov  4 22:13:43 2016//
+/DESCR-ldap_auth/1.1/Fri Sep 28 14:36:17 2018//
 /DESCR-lua/1.1/Fri Nov  4 22:13:43 2016//
 /DESCR-mailproxy/1.1/Fri Nov  4 22:13:43 2016//
 /DESCR-main/1.1/Fri Nov  4 22:13:43 2016//
@@ -12,12 +13,13 @@
 /PLIST-geoip/1.1/Fri Nov  4 22:13:43 2016//
 /PLIST-headers_more/1.1/Tue Nov 14 16:43:09 2017//
 /PLIST-image_filter/1.1/Fri Nov  4 22:13:43 2016//
+/PLIST-ldap_auth/1.1/Fri Sep 28 14:36:17 2018//
 /PLIST-lua/1.1/Fri Nov  4 22:13:43 2016//
 /PLIST-mailproxy/1.1/Fri Nov  4 22:13:43 2016//
 /PLIST-main/1.2/Tue Sep  4 12:46:25 2018//
 /PLIST-naxsi/1.1/Fri Nov  4 22:13:43 2016//
 /PLIST-passenger/1.1/Fri Nov  4 22:13:43 2016//
-/PLIST-perl/1.1/Fri Nov  4 22:13:43 2016//
+/PLIST-perl/1.2/Fri Sep 28 14:36:17 2018//
 /PLIST-stream/1.1/Fri Nov  4 22:13:43 2016//
 /PLIST-xslt/1.1/Fri Nov  4 22:13:43 2016//
 /README-main/1.2/Tue Sep  4 12:46:25 2018//
