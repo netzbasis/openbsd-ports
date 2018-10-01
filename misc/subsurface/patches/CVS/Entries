@@ -1,13 +1,10 @@
 /patch-CMakeLists_txt/1.1.1.1/Tue Aug 14 17:18:22 2018//
-/patch-core_CMakeLists_txt/1.1.1.1/Tue Aug 14 17:18:22 2018//
-/patch-core_downloadfromdcthread_cpp/1.1.1.1/Tue Aug 14 17:18:22 2018//
-/patch-core_linux_c/1.1.1.1/Tue Aug 14 17:18:22 2018//
 /patch-desktop-widgets_mainwindow_cpp/1.1.1.1/Tue Aug 14 17:18:22 2018//
 /patch-desktop-widgets_mainwindow_h/1.1.1.1/Tue Aug 14 17:18:22 2018//
 /patch-desktop-widgets_mainwindow_ui/1.1.1.1/Tue Aug 14 17:18:22 2018//
 /patch-libdivecomputer_src_Makefile_am/1.1.1.1/Tue Aug 14 17:18:22 2018//
 /patch-libdivecomputer_src_hw_ostc3_c/1.1.1.1/Tue Aug 14 17:18:22 2018//
 /patch-libdivecomputer_src_serial_posix_c/1.1.1.1/Tue Aug 14 17:18:22 2018//
-/patch-scripts_get-version/1.1.1.1/Tue Aug 14 17:18:22 2018//
+/patch-scripts_get-version/1.2/Sun Sep 30 14:32:59 2018//
 /patch-tests_CMakeLists_txt/1.1.1.1/Tue Aug 14 17:18:22 2018//
 D

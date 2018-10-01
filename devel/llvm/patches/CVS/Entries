@@ -71,6 +71,7 @@
 /patch-tools_clang_lib_Sema_SemaDeclAttr_cpp/1.8/Sat Apr  7 14:55:42 2018//
 /patch-tools_lld_ELF_DriverUtils_cpp/1.7/Sat Apr  7 14:55:42 2018//
 /patch-tools_lld_ELF_Driver_cpp/1.9/Sun Sep 16 06:09:16 2018//
+/patch-tools_lld_ELF_Relocations_cpp/1.1/Sun Sep 30 10:57:28 2018//
 /patch-tools_lld_ELF_SyntheticSections_cpp/1.6/Fri Jul  6 06:55:10 2018//
 /patch-tools_lld_ELF_Writer_cpp/1.7/Tue Aug 21 06:56:09 2018//
 /patch-tools_llvm-shlib_CMakeLists_txt/1.2/Sat Apr  7 14:55:42 2018//
