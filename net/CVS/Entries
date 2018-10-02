@@ -1,4 +1,4 @@
-/Makefile/1.1085/Sun Sep 23 17:03:55 2018//
+/Makefile/1.1086/Mon Oct  1 22:00:56 2018//
 D/GeoIP////
 D/adns////
 D/adsuck////
@@ -130,7 +130,6 @@ D/ices2////
 D/icinga////
 D/icli////
 D/icmpinfo////
-D/ifmcstat////
 D/ifstat////
 D/iftop////
 D/igmpproxy////
