@@ -1,4 +1,4 @@
-/Makefile/1.1768/Mon Sep 24 15:49:38 2018//
+/Makefile/1.1769/Tue Oct  2 10:49:01 2018//
 D/ElectricFence////
 D/ORBit2////
 D/acpica////
@@ -286,6 +286,7 @@ D/lam////
 D/lazarus////
 D/leatherman////
 D/legit////
+D/libHX////
 D/libIDL////
 D/libJudy////
 D/libaio_compat////

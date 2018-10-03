@@ -1,4 +1,4 @@
-/Makefile/1.28/Tue Aug 28 18:27:22 2018//
+/Makefile/1.29/Tue Oct  2 16:42:28 2018//
 D/abc////
 D/fritzing////
 D/geda-gaf////
@@ -14,6 +14,7 @@ D/ngspice////
 D/openscad////
 D/pcb////
 D/qcad////
+D/qelectrotech////
 D/qrouter////
 D/qucs////
 D/tkgate////
