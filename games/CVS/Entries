@@ -1,4 +1,4 @@
-/Makefile/1.390/Tue Sep 25 08:53:44 2018//
+/Makefile/1.391/Wed Oct  3 11:45:54 2018//
 D/0ad////
 D/2048-cli////
 D/abuse////
@@ -103,6 +103,7 @@ D/freedink////
 D/freedoom////
 D/freedroid////
 D/freedroidrpg////
+D/freeorion////
 D/freeserf////
 D/fretsonfire////
 D/frotz////
