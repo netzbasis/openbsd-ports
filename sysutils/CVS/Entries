@@ -1,4 +1,4 @@
-/Makefile/1.501/Wed Sep 26 14:38:11 2018//
+/Makefile/1.502/Sat Oct  6 17:17:50 2018//
 D/accountsservice////
 D/amazon-ecs-cli////
 D/amazon-ssm-agent////
@@ -76,6 +76,7 @@ D/entr////
 D/eventlog////
 D/exa////
 D/exfat-fuse////
+D/exoscale-cli////
 D/fabric////
 D/facette////
 D/facter////
