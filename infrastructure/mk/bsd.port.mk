@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1446 2018/10/09 09:47:28 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1449 2018/10/16 14:16:04 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -622,6 +622,7 @@ DISTNAME ?=	${GH_PROJECT}-${GH_TAGNAME:C/^v//}
 PKGNAME ?= ${DISTNAME}
 FULLPKGNAME ?= ${PKGNAME}${FLAVOR_EXT}
 _MASTER ?=
+_FETCH_RECURSE_HELPER ?= No
 _DEPENDENCY_STACK ?=
 
 .if ${MULTI_PACKAGES} == "-"
@@ -1989,7 +1990,7 @@ fix-permissions:
 ${_CACHE_REPO}${_PKGFILE${_S}}:
 	@install -d ${PACKAGE_REPOSITORY_MODE} ${@D}
 	@${ECHO_MSG} -n "===>  Looking for ${_PKGFILE${_S}} in \$$PKG_PATH - "
-	@if ${SETENV} ${_TERM_ENV} PKG_CACHE=${_CACHE_REPO} TRUSTED_PKG_PATH=${_CACHE_REPO}:${_PKG_REPO}:${PACKAGE_REPOSITORY}/${NO_ARCH}/:${TRUSTED_PKG_PATH} PKG_PATH=${_PKG_PATH} ${_PKG_ADD} -n -q ${_PKG_ADD_FORCE} -r -D installed -D downgrade ${_PKGFILE${_S}} >/dev/null 2>&1; then \
+	@if ${SETENV} ${_TERM_ENV} PKG_CACHE=${_CACHE_REPO} TRUSTED_PKG_PATH=${_CACHE_REPO}:${_PKG_REPO}:${PACKAGE_REPOSITORY}/${NO_ARCH}/:${TRUSTED_PKG_PATH} PKG_PATH=${_PKG_PATH} ${_PKG_ADD} -n -q ${_PKG_ADD_FORCE} -r -D installed -D downgrade ${FETCH_PACKAGES} ${_PKGFILE${_S}} >/dev/null 2>&1; then \
 		${ECHO_MSG} "found"; \
 		exit 0; \
 	else \
@@ -2002,12 +2003,12 @@ ${_CACHE_REPO}${_PKGFILE${_S}}:
 
 ${_PACKAGE_COOKIE${_S}}:
 	@${_PBUILD} install -d ${PACKAGE_REPOSITORY_MODE} ${@D} ${_TMP_REPO}
-.  if ${FETCH_PACKAGES:L} == "yes" && !defined(_TRIED_FETCHING_${_PACKAGE_COOKIE${_S}})
+.  if ${FETCH_PACKAGES:L} != "no" && !defined(_TRIED_FETCHING_${_PACKAGE_COOKIE${_S}})
 	@${_INSTALL_CACHE_REPO} ${_CACHE_REPO}
 	@f=${_CACHE_REPO}${_PKGFILE${_S}}; \
 	cd ${.CURDIR} && ${_PFETCH} ${MAKE} $$f && \
 		{ ${_PBUILD} ln $$f $@ 2>/dev/null || ${_PBUILD} cp -p $$f $@ ; } || \
-		cd ${.CURDIR} && ${MAKE} _TRIED_FETCHING_${_PACKAGE_COOKIE${_S}}=Yes _internal-package-only
+		cd ${.CURDIR} && ${MAKE} _TRIED_FETCHING_${_PACKAGE_COOKIE${_S}}=Yes _internal-package-only _FETCH_RECURSE_HELPER=No
 .  else
 	@${_MAKE} ${_PACKAGE_COOKIE_DEPS}
 # What PACKAGE normally does:
@@ -2037,7 +2038,7 @@ ${_PACKAGE_COOKIE${_S}}:
 # The real install
 
 ${_INSTALL_COOKIE${_S}}:
-.  if ${FETCH_PACKAGES:L} == "yes"
+.  if ${FETCH_PACKAGES:L} != "no"
 	@cd ${.CURDIR} && SUBPACKAGE=${_S} PKGPATH=${PKGPATH} exec ${MAKE} subpackage
 .  else
 
@@ -2194,7 +2195,7 @@ ${WRKDIR}/.dep-${_i:C,>=,ge-,g:C,<=,le-,g:C,<,lt-,g:C,>,gt-,g:C,\*,ANY,g:C,[|:/=
 				exit 1; \
 			fi; \
 			${ECHO_MSG} "===>  Verifying $$target for $$pkg in $$dir"; \
-			if (eval $$toset exec ${MAKE} $$target) && \
+			if (eval $$toset exec ${MAKE} _FETCH_RECURSE_HELPER=Yes $$target) && \
 				! test -e $${_ignore_cookie}; then \
 				if $$wantsub; then \
 					eval $$toset ${MAKE} show-prepare-results ${_PREDIR} $@; \
@@ -2230,7 +2231,7 @@ ${_DEPLIBSPECS_COOKIES}: ${_WRKDIR_COOKIE}
 .for _m in BUILD RUN
 .  if !empty(_DEP${_m}WANTLIB_COOKIE)
 ${_DEP${_m}WANTLIB_COOKIE}: ${_DEP${_m}LIBSPECS_COOKIES} \
-	${_DEP${_m}LIB_COOKIES} ${_DEPBUILD_COOKIES} ${_WRKDIR_COOKIE}
+	${_DEP${_m}LIB_COOKIES} ${_WRKDIR_COOKIE}
 .    if !empty(_DEP${_m}LIBS)
 	@${ECHO_MSG} "===>  Verifying specs: ${_DEP${_m}LIBS}"
 	@${_cache_fragment}; if found=`{ \
@@ -2258,6 +2259,9 @@ ${_DEP${_m}WANTLIB_COOKIE}: ${_DEP${_m}LIBSPECS_COOKIES} \
 	fi
 .    endif
 	@${_PMAKE_COOKIE} $@
+.      if ${FETCH_PACKAGES:L} == "no" || ${_FETCH_RECURSE_HELPER:L} == "no"
+${_DEP${_m}WANTLIB_COOKIE}: ${_DEPBUILD_COOKIES}
+.      endif
 .  endif
 
 .endfor

@@ -1,15 +1,13 @@
 /patch-CMakeLists_txt/1.3/Wed Jul 25 21:08:47 2018//
 /patch-lib_CMakeLists_txt/1.5/Tue Jul 31 03:34:42 2018//
-/patch-lib_common_CMakeLists_txt/1.4/Tue Jul 31 03:34:42 2018//
+/patch-lib_common_CMakeLists_txt/1.5/Tue Oct 16 14:56:38 2018//
 /patch-lib_common_acos_fma3_CMakeLists_txt/1.1.1.1/Wed May  9 22:26:14 2018//
 /patch-lib_common_asin_fma3_CMakeLists_txt/1.1.1.1/Wed May  9 22:26:14 2018//
-/patch-lib_common_cos_CMakeLists_txt/1.1.1.1/Wed May  9 22:26:14 2018//
 /patch-lib_common_dispatch_c/1.3/Wed Jul 25 21:08:47 2018//
 /patch-lib_common_exp_fma3_CMakeLists_txt/1.2/Tue Jul 31 03:34:42 2018//
 /patch-lib_common_log_fma3_CMakeLists_txt/1.2/Tue Jul 31 03:34:42 2018//
 /patch-lib_common_pow_fma3_CMakeLists_txt/1.2/Tue Jul 31 03:34:42 2018//
 /patch-lib_common_powi_CMakeLists_txt/1.2/Tue Jul 31 03:34:42 2018//
-/patch-lib_common_sin_CMakeLists_txt/1.1.1.1/Wed May  9 22:26:14 2018//
 /patch-lib_common_sincos_CMakeLists_txt/1.2/Wed Jul 25 21:08:47 2018//
 /patch-lib_x86_64_CMakeLists_txt/1.1.1.1/Wed May  9 22:26:14 2018//
 /patch-lib_x86_64_fast_CMakeLists_txt/1.2/Mon Jul  9 00:30:07 2018//
