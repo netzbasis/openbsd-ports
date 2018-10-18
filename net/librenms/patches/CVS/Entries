@@ -6,11 +6,11 @@
 /patch-daily_sh/1.24/Tue Feb 27 15:17:39 2018//
 /patch-discovery-wrapper_py/1.3/Sun Jul  1 21:49:17 2018//
 /patch-html_includes_output_capture_inc_php/1.2/Wed May  9 20:24:21 2018//
-/patch-html_install_php/1.24/Mon Sep 10 18:53:00 2018//
-/patch-html_pages_about_inc_php/1.11/Wed May  9 20:24:21 2018//
-/patch-includes_common_php/1.26/Mon Sep 10 18:53:00 2018//
-/patch-includes_defaults_inc_php/1.35/Mon Sep 10 18:53:00 2018//
-/patch-includes_functions_php/1.22/Mon Sep 10 18:53:00 2018//
+/patch-html_install_php/1.25/Wed Oct 17 20:24:38 2018//
+/patch-html_pages_about_inc_php/1.12/Wed Oct 17 20:24:38 2018//
+/patch-includes_common_php/1.27/Wed Oct 17 20:24:38 2018//
+/patch-includes_defaults_inc_php/1.36/Wed Oct 17 20:24:38 2018//
+/patch-includes_functions_php/1.23/Wed Oct 17 20:24:38 2018//
 /patch-poller-service_py/1.1/Wed Sep 26 22:51:28 2018//
 /patch-poller-wrapper_py/1.14/Sun Jul  1 21:49:17 2018//
 /patch-scripts_composer_wrapper_php/1.2/Mon Apr 23 11:00:08 2018//

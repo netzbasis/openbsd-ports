@@ -1,5 +1,5 @@
 /patch-configure/1.58/Wed Sep 12 19:59:04 2018//
-/patch-doc_encoders_texi/1.2/Thu Jan 14 06:09:43 2016//
+/patch-doc_encoders_texi/1.3/Wed Oct 17 08:25:07 2018//
 /patch-doc_muxers_texi/1.1/Mon Dec 26 09:29:21 2016//
 /patch-libavcodec_Makefile/1.22/Sun Dec  6 08:51:46 2015//
 /patch-libavcodec_aac_h/1.3/Sun Dec  6 08:51:46 2015//
@@ -7,8 +7,8 @@
 /patch-libavcodec_aaccoder_trellis_h/1.3/Sun Dec  6 08:51:46 2015//
 /patch-libavcodec_aaccoder_twoloop_h/1.4/Thu Apr  7 06:01:19 2016//
 /patch-libavcodec_aacdectab_h/1.1/Sat Oct 17 06:49:22 2015//
-/patch-libavcodec_aacenc_c/1.19/Mon Dec  5 09:02:29 2016//
-/patch-libavcodec_aacenc_h/1.9/Mon Dec  5 09:02:29 2016//
+/patch-libavcodec_aacenc_c/1.20/Wed Oct 17 08:25:07 2018//
+/patch-libavcodec_aacenc_h/1.10/Wed Oct 17 08:25:07 2018//
 /patch-libavcodec_aacenc_is_c/1.5/Mon Jan 18 15:34:45 2016//
 /patch-libavcodec_aacenc_is_h/1.1/Tue Oct 13 05:44:18 2015//
 /patch-libavcodec_aacenc_ltp_c/1.4/Thu Dec 10 06:53:38 2015//
@@ -20,7 +20,7 @@
 /patch-libavcodec_aacenc_tns_c/1.7/Fri Jan 22 07:05:01 2016//
 /patch-libavcodec_aacenc_tns_h/1.2/Sun Oct 25 08:46:41 2015//
 /patch-libavcodec_aacenc_utils_h/1.11/Mon Oct 17 07:51:00 2016//
-/patch-libavcodec_aacenctab_h/1.4/Sat Oct 17 06:49:22 2015//
+/patch-libavcodec_aacenctab_h/1.5/Wed Oct 17 08:25:07 2018//
 /patch-libavcodec_aacpsy_c/1.6/Thu Apr  7 06:01:19 2016//
 /patch-libavcodec_aacsbr_template_c/1.2/Thu Jan 14 06:09:43 2016//
 /patch-libavcodec_aactab_c/1.1/Sun Dec  6 08:51:46 2015//

@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile.inc,v 1.122 2018/10/08 10:38:46 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.124 2018/10/17 12:44:02 sthen Exp $
 
 BROKEN-hppa=	no __sync_bool_compare_and_swap support nor asm fallback
 
 COMMENT-main=		server-side HTML-embedded scripting language
 
 PKGNAME-main?=		php-${V}
+PKGSTEM-main=		php-${PV}
 
 DISTFILES+=		php-${V}.tar.bz2
 
@@ -12,7 +13,7 @@ DISTNAME?=		php-${V}
 CATEGORIES=		lang www
 
 MAINTAINER=		Stuart Henderson <sthen@openbsd.org>
-HOMEPAGE=		http://www.php.net/
+HOMEPAGE=		https://www.php.net/
 
 MASTER_SITES=		http://se.php.net/distributions/ \
 			http://us.php.net/distributions/ \
@@ -134,7 +135,7 @@ CONFIGURE_ARGS+=	--enable-cgi
 # apache
 COMMENT-apache=		php module for Apache httpd
 .if ${BUILD_PACKAGES:M-apache}
-CONFIGURE_ARGS+=	--with-apxs2=${LOCALBASE}/sbin/apxs2
+CONFIGURE_ARGS+=	--with-apxs2=${LOCALBASE}/sbin/apxs
 BUILD_DEPENDS+=		www/apache-httpd
 .endif
 
@@ -413,8 +414,10 @@ CONFIGURE_ARGS+=	--with-mssql=shared,${LOCALBASE}
 .endif
 
 # some variables to substitute
-SUBST_VARS+=	MODPHP_CONFIG_PATH SV PV
+SUBST_VARS+=	MODPHP_CONFIG_PATH SV PV MV
+UPDATE_PLIST_ARGS+= -i MV
 PHP_VERSION=	${V}
+MV=		${PV:R}
 SV=		${PV:S/.//}
 
 .for i in TRUEPREFIX MODULES_DIR PHP_VERSION APACHE_MODULE_DIR
@@ -472,15 +475,12 @@ post-install:
 	${INSTALL_MAN} ${WRKBUILD}/sapi/fpm/php-fpm.8 ${PREFIX}/man/man8/php-fpm-${PV}.8
 	${INSTALL_DATA} ${WRKBUILD}/sapi/fpm/php-fpm.conf \
 		${PREFIX}/share/examples/php-${PV}/php-fpm.conf
-.if ${PV} == "7.0"
+.if ${PV} != 5.6
 	cat ${WRKBUILD}/sapi/fpm/www.conf >> \
 		${PREFIX}/share/examples/php-${PV}/php-fpm.conf
 .endif
-
-	${INSTALL_DATA} ${.CURDIR}/../files/php.conf \
-		${PREFIX}/share/examples/php-${PV}/php.conf
-	@perl -pi -e "s,!!PREFIX!!,${TRUEPREFIX},g;s,!!PV!!,${PV},g;s,!!MV!!,${PV:R},g" \
-		${PREFIX}/share/examples/php-${PV}/php.conf
+	${SUBST_CMD} -m 644 -c ${.CURDIR}/../files/php.conf \
+		${PREFIX}/share/examples/php-${PV}/modphp.conf
 
 .for m in ${PHP_EXTENSIONS:S/-//g}
 .if ${BUILD_PACKAGES:M-$m}

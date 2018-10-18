@@ -1,5 +1,8 @@
 /patch-build_make_Makefile/1.12/Wed Sep 26 07:14:28 2018//
-/patch-configure/1.16/Wed Sep 26 07:14:28 2018//
+/patch-configure/1.17/Wed Oct 17 08:22:29 2018//
 /patch-examples_mk/1.7/Sun Jan 15 09:59:11 2017//
 /patch-libs_mk/1.16/Wed Sep 26 07:14:28 2018//
+/patch-vp8_common_postproc_c/1.1/Wed Oct 17 08:22:29 2018//
+/patch-vpx_ports_arm_cpudetect_c/1.1/Wed Oct 17 08:22:29 2018//
+/patch-vpx_ports_ppc_cpudetect_c/1.1/Wed Oct 17 08:22:29 2018//
 D

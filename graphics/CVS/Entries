@@ -1,4 +1,4 @@
-/Makefile/1.462/Fri Sep 28 22:24:24 2018//
+/Makefile/1.463/Wed Oct 17 16:16:15 2018//
 D/DevIL////
 D/GraphicsMagick////
 D/ImageMagick////
@@ -262,6 +262,7 @@ D/sk1////
 D/sketch////
 D/slop////
 D/sxiv////
+D/termtosvg////
 D/tesseract////
 D/tgif////
 D/tiff////

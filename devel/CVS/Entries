@@ -1,4 +1,4 @@
-/Makefile/1.1769/Tue Oct  2 10:49:01 2018//
+/Makefile/1.1771/Wed Oct 17 16:11:59 2018//
 D/ElectricFence////
 D/ORBit2////
 D/acpica////
@@ -302,6 +302,7 @@ D/libdaemon////
 D/libdisorder////
 D/libdockapp////
 D/libdshconfig////
+D/libdsm////
 D/libdvdread////
 D/libdwarf////
 D/libee////
@@ -1360,6 +1361,7 @@ D/py-py////
 D/py-pyinotify////
 D/py-pyprof2calltree////
 D/py-pyro////
+D/py-pyte////
 D/py-python2-pythondialog////
 D/py-radix////
 D/py-rcsparse////

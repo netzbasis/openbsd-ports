@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.85 2018/09/27 22:50:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.88 2018/10/17 12:44:02 sthen Exp $
 
 PV=		5.6
 V=		${PV}.38
-REVISION-main=	0
+REVISION=	1
+REVISION-main=	2
+REVISION-apache=2
 
 MASTER_SITES0=	https://download.suhosin.org/
 
@@ -10,7 +12,6 @@ FLAVORS=	no_suhosin
 FLAVOR?=
 
 SUHOSIN_V=	0.9.38
-PKGSTEM-main=	php-5.6
 
 SUPDISTFILES=	suhosin-${SUHOSIN_V}.tar.gz:0
 
