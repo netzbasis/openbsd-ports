@@ -1,4 +1,4 @@
-/Makefile/1.502/Sat Oct  6 17:17:50 2018//
+/Makefile/1.503/Thu Oct 18 06:52:27 2018//
 D/accountsservice////
 D/amazon-ecs-cli////
 D/amazon-ssm-agent////
@@ -327,6 +327,7 @@ D/tray-app////
 D/tree////
 D/truncate////
 D/ttyload////
+D/ttyplot////
 D/u-boot////
 D/u-boot-pinebook////
 D/udfclient////

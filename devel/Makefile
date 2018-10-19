@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1771 2018/10/17 16:11:59 fcambus Exp $
+# $OpenBSD: Makefile,v 1.1776 2018/10/19 00:08:13 danj Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1340,8 +1340,6 @@
      SUBDIR += py-doit
      SUBDIR += py-dtfabric
      SUBDIR += py-dtfabric,python3
-     SUBDIR += py-dtopt
-     SUBDIR += py-dtopt,python3
      SUBDIR += py-dulwich
      SUBDIR += py-easyprocess
      SUBDIR += py-easyprocess,python3
@@ -1435,6 +1433,8 @@
      SUBDIR += py-jupyter_core
      SUBDIR += py-jupyter_core,python3
      SUBDIR += py-kid
+     SUBDIR += py-kiwisolver
+     SUBDIR += py-kiwisolver,python3
      SUBDIR += py-lazy-object-proxy
      SUBDIR += py-lazy-object-proxy,python3
      SUBDIR += py-liblarch
@@ -1566,6 +1566,7 @@
      SUBDIR += py-spark-parser,python3
      SUBDIR += py-stdnum
      SUBDIR += py-stdnum,python3
+     SUBDIR += py-subprocess32
      SUBDIR += py-suds
      SUBDIR += py-symboltype
      SUBDIR += py-tabulate
@@ -1636,6 +1637,8 @@
      SUBDIR += py-wcwidth,python3
      SUBDIR += py-wheel
      SUBDIR += py-wheel,python3
+     SUBDIR += py-whichcraft
+     SUBDIR += py-whichcraft,python3
      SUBDIR += py-wrapt
      SUBDIR += py-wrapt,python3
      SUBDIR += py-wsgiutils
