@@ -1,4 +1,4 @@
-/Makefile/1.503/Thu Oct 18 06:52:27 2018//
+/Makefile/1.504/Mon Oct 22 20:27:44 2018//
 D/accountsservice////
 D/amazon-ecs-cli////
 D/amazon-ssm-agent////
@@ -167,7 +167,6 @@ D/lsyncd////
 D/mac-robber////
 D/mcollective////
 D/mcollective-plugins////
-D/memtest86+////
 D/memtester////
 D/mencal////
 D/menulibre////

@@ -2,6 +2,7 @@
 /patch-etc_luajit_pc/1.2/Fri May  5 10:21:47 2017//
 /patch-src_Makefile/1.6/Fri May  5 10:21:47 2017//
 /patch-src_host_buildvm_asm_c/1.4/Fri May  5 10:21:47 2017//
+/patch-src_jit_bcsave_lua/1.1/Mon Oct 22 19:16:25 2018//
 /patch-src_lj_arch_h/1.5/Fri May  5 10:21:47 2017//
 /patch-src_luaconf_h/1.2/Fri May  5 10:21:47 2017//
 D
