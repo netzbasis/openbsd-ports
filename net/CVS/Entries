@@ -1,4 +1,4 @@
-/Makefile/1.1086/Mon Oct  1 22:00:56 2018//
+/Makefile/1.1087/Tue Oct 23 18:57:22 2018//
 D/GeoIP////
 D/adns////
 D/adsuck////
@@ -525,7 +525,6 @@ D/py-oauth2////
 D/py-paho-mqtt////
 D/py-pcapy////
 D/py-pf////
-D/py-raet////
 D/py-ripe.atlas.cousteau////
 D/py-ripe.atlas.sagan////
 D/py-ripe.atlas.tools////

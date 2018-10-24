@@ -1,4 +1,4 @@
-/Makefile/1.150/Sun Oct 21 16:14:47 2018//
+/Makefile/1.151/Tue Oct 23 10:45:58 2018//
 D/R////
 D/aamath////
 D/abs////
@@ -49,6 +49,7 @@ D/maxima////
 D/mcl////
 D/mcsim////
 D/minisat////
+D/mlpack////
 D/moo////
 D/netcdf////
 D/nonogram////
