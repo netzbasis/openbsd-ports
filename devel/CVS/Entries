@@ -1,4 +1,4 @@
-/Makefile/1.1776/Fri Oct 19 00:08:13 2018//
+/Makefile/1.1777/Wed Oct 24 20:01:29 2018//
 D/ElectricFence////
 D/ORBit2////
 D/acpica////
@@ -766,6 +766,8 @@ D/p5-IO-Lambda////
 D/p5-IO-LockedFile////
 D/p5-IO-Multiplex////
 D/p5-IO-Pager////
+D/p5-IO-Pipely////
+D/p5-IO-Prompt-Tiny////
 D/p5-IO-SessionData////
 D/p5-IO-String////
 D/p5-IO-Tee////
@@ -849,6 +851,7 @@ D/p5-MooseX-Declare////
 D/p5-MooseX-Emulate-Class-Accessor-Fast////
 D/p5-MooseX-Getopt////
 D/p5-MooseX-Has-Sugar////
+D/p5-MooseX-InsideOut////
 D/p5-MooseX-LazyRequire////
 D/p5-MooseX-Log-Log4perl////
 D/p5-MooseX-LogDispatch////

@@ -1,4 +1,4 @@
-/Makefile/1.368/Fri Sep 28 22:24:24 2018//
+/Makefile/1.369/Wed Oct 24 20:31:25 2018//
 D/architect////
 D/barman////
 D/citus////
@@ -121,12 +121,6 @@ D/p5-Tie-DBI////
 D/p5-ldap////
 D/p5-pgsql////
 D/p5-sybperl////
-D/pear-DB////
-D/pear-DB_DataObject////
-D/pear-MDB2////
-D/pear-MDB2-mysql////
-D/pear-MDB2-mysqli////
-D/pear-MDB2-pgsql////
 D/pecl-redis////
 D/percona-toolkit////
 D/pg-toolbox////

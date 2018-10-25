@@ -6,7 +6,9 @@
 /patch-scripts_libtool_mk/1.2/Thu Dec 10 09:56:45 2015//
 /patch-src_main_detail_c/1.5/Tue May 30 13:12:30 2017//
 /patch-src_main_radsniff_c/1.4/Tue Jan 16 13:47:46 2018//
-/patch-src_main_tls_c/1.5/Thu Apr 19 20:48:31 2018//
-/patch-src_modules_rlm_realm_trustrouter_c/1.1/Tue Jan 16 13:47:46 2018//
+/patch-src_main_tls_c/1.6/Wed Oct 24 17:15:25 2018//
+/patch-src_modules_rlm_eap_types_rlm_eap_fast_eap_fast_c/1.1/Wed Oct 24 17:15:25 2018//
+/patch-src_modules_rlm_eap_types_rlm_eap_fast_rlm_eap_fast_c/1.1/Wed Oct 24 17:15:25 2018//
+/patch-src_modules_rlm_realm_trustrouter_c/1.2/Wed Oct 24 17:15:25 2018//
 /patch-src_modules_rlm_unix_rlm_unix_c/1.1/Thu Nov 19 14:19:05 2015//
 D
