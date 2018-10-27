@@ -1,4 +1,4 @@
-/Makefile/1.1777/Wed Oct 24 20:01:29 2018//
+/Makefile/1.1778/Fri Oct 26 15:00:22 2018//
 D/ElectricFence////
 D/ORBit2////
 D/acpica////
@@ -1180,6 +1180,7 @@ D/pkgconf////
 D/pkgconfig////
 D/plib////
 D/poedit////
+D/pony-stable////
 D/popt////
 D/premake4////
 D/proj////
