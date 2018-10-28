@@ -1,4 +1,4 @@
-/Makefile/1.1778/Fri Oct 26 15:00:22 2018//
+/Makefile/1.1779/Sun Oct 28 03:00:53 2018//
 D/ElectricFence////
 D/ORBit2////
 D/acpica////
@@ -1033,6 +1033,7 @@ D/p5-Test-DistManifest////
 D/p5-Test-Distribution////
 D/p5-Test-Exception////
 D/p5-Test-Expect////
+D/p5-Test-FailWarnings////
 D/p5-Test-Fatal////
 D/p5-Test-File////
 D/p5-Test-File-Contents////

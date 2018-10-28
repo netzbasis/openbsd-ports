@@ -1,4 +1,4 @@
-/Makefile/1.1087/Tue Oct 23 18:57:22 2018//
+/Makefile/1.1088/Sun Oct 28 03:00:53 2018//
 D/GeoIP////
 D/adns////
 D/adsuck////
@@ -350,6 +350,7 @@ D/p5-Net-IMP////
 D/p5-Net-IMP-HTTP////
 D/p5-Net-INET6Glue////
 D/p5-Net-IP////
+D/p5-Net-IP-Minimal////
 D/p5-Net-IP-XS////
 D/p5-Net-IPTrie////
 D/p5-Net-IPv4Addr////

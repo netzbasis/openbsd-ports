@@ -1,4 +1,4 @@
-/Makefile/1.504/Mon Oct 22 20:27:44 2018//
+/Makefile/1.505/Sat Oct 27 16:45:24 2018//
 D/accountsservice////
 D/amazon-ecs-cli////
 D/amazon-ssm-agent////
@@ -185,6 +185,7 @@ D/neofetch////
 D/netshot////
 D/nnn////
 D/noice////
+D/nomad////
 D/ntfs-3g////
 D/nut////
 D/od1000_firmware////
