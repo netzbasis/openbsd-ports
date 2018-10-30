@@ -64,8 +64,8 @@
 /patch-tools_clang_lib_Driver_ToolChains_Arch_Sparc_cpp/1.1/Fri Sep  1 06:40:28 2017//
 /patch-tools_clang_lib_Driver_ToolChains_Clang_cpp/1.6/Tue Aug 21 06:56:09 2018//
 /patch-tools_clang_lib_Driver_ToolChains_Gnu_cpp/1.4/Sun Jul  8 10:32:45 2018//
-/patch-tools_clang_lib_Driver_ToolChains_OpenBSD_cpp/1.5/Mon Jul 16 07:26:18 2018//
-/patch-tools_clang_lib_Driver_ToolChains_OpenBSD_h/1.1/Fri Sep  1 06:40:28 2017//
+/patch-tools_clang_lib_Driver_ToolChains_OpenBSD_cpp/1.6/Mon Oct 29 08:36:35 2018//
+/patch-tools_clang_lib_Driver_ToolChains_OpenBSD_h/1.2/Mon Oct 29 08:36:35 2018//
 /patch-tools_clang_lib_Frontend_CompilerInvocation_cpp/1.1/Fri Jul  6 06:55:10 2018//
 /patch-tools_clang_lib_Sema_SemaChecking_cpp/1.4/Sat Apr  7 14:55:42 2018//
 /patch-tools_clang_lib_Sema_SemaDeclAttr_cpp/1.8/Sat Apr  7 14:55:42 2018//

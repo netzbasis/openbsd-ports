@@ -1,7 +1,7 @@
+/patch-CMakeLists_txt/1.17/Mon Oct 29 08:25:30 2018//
 /patch-cmake_FindQCA_cmake/1.1/Fri Apr 20 20:52:39 2018//
-/patch-python_plugins_processing_gui_ConfigDialog_py/1.1/Sun Sep 16 16:47:59 2018//
-/patch-src_app_qgisapp_cpp/1.27/Sun Sep 16 16:47:59 2018//
-/patch-src_app_qgsoptions_cpp/1.1/Sun Sep 16 16:47:59 2018//
-/patch-src_server_CMakeLists_txt/1.7/Mon Jun 25 06:52:59 2018//
+/patch-i18n_CMakeLists_txt/1.1/Mon Oct 29 08:25:30 2018//
+/patch-src_app_qgisapp_cpp/1.28/Mon Oct 29 08:25:30 2018//
+/patch-src_server_CMakeLists_txt/1.8/Mon Oct 29 08:25:30 2018//
 /patch-src_server_qgsserverplugins_cpp/1.1/Mon Apr  9 12:40:34 2018//
 D
