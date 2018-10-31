@@ -1,4 +1,4 @@
-/patch-config_tests_openssl_openssl_cpp/1.1/Tue Oct 24 10:12:19 2017//
+/patch-config_tests_openssl_openssl_cpp/1.2/Tue Oct 30 08:08:40 2018//
 /patch-configure/1.4/Tue Oct 24 10:12:19 2017//
 /patch-mkspecs_features_create_cmake_prf/1.3/Wed Dec 27 16:27:06 2017//
 /patch-mkspecs_features_qt_module_prf/1.2/Mon Jul 17 08:34:37 2017//
@@ -17,16 +17,10 @@
 /patch-src_gui_image_qxbmhandler_cpp/1.2/Mon Jul 17 08:34:37 2017//
 /patch-src_network_kernel_qdnslookup_unix_cpp/1.3/Thu Jan 25 15:02:25 2018//
 /patch-src_network_socket_qnativesocketengine_unix_cpp/1.2/Mon Jul 17 08:34:37 2017//
-/patch-src_network_ssl_qsslcertificate_openssl_cpp/1.1/Mon Aug 27 11:06:29 2018//
-/patch-src_network_ssl_qsslcontext_openssl_cpp/1.3/Mon Jul 17 08:34:37 2017//
 /patch-src_network_ssl_qsslsocket_cpp/1.4/Wed Dec 27 16:27:06 2017//
-/patch-src_network_ssl_qsslsocket_openssl_symbols_cpp/1.4/Mon Aug 27 11:06:29 2018//
-/patch-src_network_ssl_qsslsocket_openssl_symbols_p_h/1.4/Mon Aug 27 11:06:29 2018//
 /patch-src_platformheaders_platformheaders_pro/1.2/Mon Jul 17 08:34:37 2017//
 /patch-src_platformsupport_themes_genericunix_genericunix_pri/1.1/Mon Jul 17 08:34:37 2017//
 /patch-src_plugins_sqldrivers_configure_json/1.2/Tue Oct 24 10:12:19 2017//
 /patch-src_testlib_qtestcase_cpp/1.3/Tue Oct 24 10:12:19 2017//
-/patch-src_widgets_widgets_qdockarealayout_cpp/1.1/Fri Aug 17 08:21:16 2018//
-/patch-src_widgets_widgets_qdockarealayout_p_h/1.1/Fri Aug 17 08:21:16 2018//
 /patch-tests_auto_corelib_tools_qbytearray_tst_qbytearray_cpp/1.2/Mon Jul 17 08:34:37 2017//
 D
