@@ -1,4 +1,4 @@
-/Makefile/1.505/Sat Oct 27 16:45:24 2018//
+/Makefile/1.506/Wed Oct 31 11:23:52 2018//
 D/accountsservice////
 D/amazon-ecs-cli////
 D/amazon-ssm-agent////
@@ -251,6 +251,7 @@ D/raspberrypi-firmware////
 D/rclone////
 D/rcm////
 D/rdiff-backup////
+D/reed-alert////
 D/relayd-updateconf////
 D/remotebox////
 D/resmon////

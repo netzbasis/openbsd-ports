@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.646 2018/10/29 14:43:06 jeremy Exp $
+# $OpenBSD: Quirks.pm,v 1.648 2018/10/31 23:01:55 juanfra Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1066,6 +1066,8 @@ my $obsolete_reason = {
 	'memtest86+' => 0,
 	'py-reat' => 5,
 	'dovecot-antispam' => 12,
+	'py-hgtools' => 3,
+	'py3-hgtools' => 3,
 };
 
 # reasons for obsolete packages

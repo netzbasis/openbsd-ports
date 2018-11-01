@@ -1,4 +1,4 @@
-/Makefile/1.1780/Sun Oct 28 15:29:49 2018//
+/Makefile/1.1781/Wed Oct 31 22:59:05 2018//
 D/ElectricFence////
 D/ORBit2////
 D/acpica////
@@ -1295,7 +1295,6 @@ D/py-hamcrest////
 D/py-hg-git////
 D/py-hgnested////
 D/py-hgsubversion////
-D/py-hgtools////
 D/py-html5lib////
 D/py-hypothesis////
 D/py-icalendar////
