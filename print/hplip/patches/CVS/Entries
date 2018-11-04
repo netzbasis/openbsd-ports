@@ -1,4 +1,4 @@
-/patch-Makefile_in/1.52/Wed Oct 31 14:14:30 2018//
+/patch-Makefile_in/1.53/Sat Nov  3 10:41:33 2018//
 /patch-base_codes_py/1.17/Wed Oct 31 14:14:30 2018//
 /patch-base_g_py/1.13/Wed Oct 31 14:14:30 2018//
 /patch-base_magic_py/1.3/Wed Oct 31 14:14:30 2018//
@@ -12,7 +12,7 @@
 /patch-common_utils_c/1.5/Wed Oct 31 14:14:30 2018//
 /patch-common_utils_h/1.4/Wed Oct 31 14:14:30 2018//
 /patch-configure/1.22/Wed Oct 31 14:14:30 2018//
-/patch-createPPD_sh/1.1/Wed Oct 31 14:14:30 2018//
+/patch-createPPD_sh/1.2/Sat Nov  3 10:41:33 2018//
 /patch-doc_troubleshooting_html/1.2/Wed Oct 31 14:14:30 2018//
 /patch-doc_uninstalling_html/1.2/Wed Oct 31 14:14:30 2018//
 /patch-doc_upgrading_html/1.2/Wed Oct 31 14:14:30 2018//
@@ -30,6 +30,7 @@
 /patch-prnt_filters_hpps/1.2/Wed Oct 31 14:14:30 2018//
 /patch-prnt_hpcups_CommonDefinitions_h/1.2/Mon Sep 19 09:17:45 2016//
 /patch-prnt_hpcups_ErnieFilter_cpp/1.4/Wed Oct 31 14:14:30 2018//
+/patch-prnt_hpcups_HPCupsFilter_cpp/1.15/Sat Nov  3 10:41:33 2018//
 /patch-prnt_hpcups_genJPEGStrips_cpp/1.1/Wed Oct 31 14:14:30 2018//
 /patch-prnt_hpijs_globals_cpp/1.4/Wed Oct 31 14:14:30 2018//
 /patch-prnt_hpijs_hpcupsfax_cpp/1.6/Mon Sep 19 09:17:45 2016//

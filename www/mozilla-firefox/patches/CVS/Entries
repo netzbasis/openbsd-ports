@@ -2,6 +2,7 @@
 /patch-js_src_ctypes_libffi_src_dlmalloc_c/1.4/Tue Sep  2 16:43:04 2014//
 /patch-js_src_jit_ProcessExecutableMemory_h/1.2/Wed Jun 27 05:05:20 2018//
 /patch-security_manager_pki_resources_content_exceptionDialog_js/1.16/Tue Oct 23 16:52:48 2018//
+/patch-servo_components_style_cbindgen_toml/1.1/Sat Nov  3 21:45:52 2018//
 /patch-storage_mozStorageConnection_cpp/1.15/Tue Oct 23 16:52:48 2018//
 /patch-widget_nsPrintSettingsImpl_cpp/1.4/Tue Mar 13 19:29:35 2018//
 D

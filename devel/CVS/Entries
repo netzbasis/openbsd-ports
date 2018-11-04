@@ -1,4 +1,4 @@
-/Makefile/1.1783/Thu Nov  1 16:59:18 2018//
+/Makefile/1.1784/Sat Nov  3 06:00:43 2018//
 D/ElectricFence////
 D/ORBit2////
 D/acpica////
@@ -318,6 +318,7 @@ D/libffi////
 D/libfirm////
 D/libfmt////
 D/libftdi////
+D/libftdi1////
 D/libgdata////
 D/libgee////
 D/libgit2////
