@@ -1,4 +1,4 @@
-/Makefile/1.520/Fri Oct 26 21:22:01 2018//
+/Makefile/1.521/Sun Nov  4 21:38:37 2018//
 D/ADMsnmp////
 D/acme-client////
 D/aescrypt////
@@ -267,7 +267,6 @@ D/py-ecdsa////
 D/py-elfesteem////
 D/py-gnupg////
 D/py-josepy////
-D/py-keyczar////
 D/py-keyring////
 D/py-libnacl////
 D/py-miasm////
