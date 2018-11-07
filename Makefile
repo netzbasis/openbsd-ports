@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.77 2018/07/09 13:48:16 espie Exp $
+# $OpenBSD: Makefile,v 1.80 2018/11/06 11:13:44 espie Exp $
 
 .if !defined(BSD_OWN_MK)
 .  include <bsd.own.mk>
 .endif
 
 PKGPATH =
-MIRROR_MK ?= ${.CURDIR}/distfiles/Makefile
 DISTFILES_DB ?= ${.CURDIR}/infrastructure/db/locate.database
 
 .if defined(SUBDIR)
@@ -103,6 +102,15 @@ search:	${.CURDIR}/INDEX
 .  endif
 .endif
 
+fix-permissions:
+	@{ echo "COMMENT=test"; \
+	echo "CATEGORIES=test"; \
+	echo "PKGPATH=test/a"; \
+	echo "DISTNAME=test"; \
+	echo "PERMIT_PACKAGE_CDROM=Yes"; \
+	echo "ECHO_MSG=:"; \
+	echo ".include <bsd.port.mk>"; }|${MAKE} -f - fix-permissions
+
 homepages.html:
 	@echo '<html><ul>' >$@
 	@${_MAKE} homepage-links ECHO_MSG='echo >&2' >>$@
@@ -116,4 +124,4 @@ pkglocatedb:
 	    >${.CURDIR}/packages/${MACHINE_ARCH}/ftp/pkglocatedb
 
 .PHONY: index search distfiles-update-locatedb \
-	pkglocatedb print-licenses print-index
+	pkglocatedb print-licenses print-index fix-permissions
