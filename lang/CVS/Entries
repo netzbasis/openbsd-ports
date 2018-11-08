@@ -1,4 +1,4 @@
-/Makefile/1.229/Sun Sep 16 13:33:11 2018//
+/Makefile/1.230/Thu Nov  8 04:27:58 2018//
 D/STk////
 D/a60////
 D/abcl////
@@ -80,6 +80,7 @@ D/ocaml-camlp5////
 D/otcl////
 D/p5-Language-Ook////
 D/parrot////
+D/pcbasic////
 D/pcc////
 D/pfe////
 D/php////

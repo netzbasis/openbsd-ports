@@ -1,4 +1,4 @@
-/Makefile/1.1785/Tue Nov  6 12:20:35 2018//
+/Makefile/1.1788/Thu Nov  8 04:27:58 2018//
 D/ElectricFence////
 D/ORBit2////
 D/acpica////
@@ -11,7 +11,9 @@ D/apktool////
 D/appstream-glib////
 D/apr////
 D/apr-util////
+D/arduboy2////
 D/arduino////
+D/arduino-makefile////
 D/argp-standalone////
 D/argtable////
 D/arm-elf////
@@ -1339,6 +1341,7 @@ D/py-nosexcover////
 D/py-notify////
 D/py-olefile////
 D/py-optik////
+D/py-parallel////
 D/py-parsedatetime////
 D/py-parsing////
 D/py-parso////
@@ -1513,6 +1516,7 @@ D/ruby-minitest////
 D/ruby-mocha////
 D/ruby-narray////
 D/ruby-ncurses////
+D/ruby-nio4r////
 D/ruby-ole////
 D/ruby-open4////
 D/ruby-polyglot////
