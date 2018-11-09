@@ -1,11 +1,17 @@
-/Makefile/1.23/Wed Nov  7 07:40:41 2018//
+/Makefile/1.27/Thu Nov  8 17:43:33 2018//
 /Makefile.inc/1.8/Mon Oct 22 20:30:43 2018//
 D/analitza////
 D/ark////
+D/artikulate////
+D/audiocd-kio////
+D/blinken////
+D/bovo////
 D/cantor////
+D/cervisia////
 D/dolphin////
 D/dolphin-plugins////
 D/dragon////
+D/ffmpegthumbs////
 D/kalgebra////
 D/kate////
 D/kcalc////
@@ -14,13 +20,17 @@ D/kdegraphics-mobipocket////
 D/kdenlive////
 D/kig////
 D/kimap////
+D/kio-extras////
 D/kmbox////
 D/kmime////
 D/konsole////
 D/kpimtextedit////
 D/kqtquickcharts////
 D/ktouch////
+D/libkcddb////
+D/libkcompactdisc////
 D/libkdcraw////
+D/libkdegames////
 D/libkexiv2////
 D/libkface////
 D/libkgeomap////
