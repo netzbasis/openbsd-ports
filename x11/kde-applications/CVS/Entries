@@ -1,10 +1,11 @@
-/Makefile/1.27/Thu Nov  8 17:43:33 2018//
+/Makefile/1.28/Fri Nov  9 07:09:20 2018//
 /Makefile.inc/1.8/Mon Oct 22 20:30:43 2018//
 D/analitza////
 D/ark////
 D/artikulate////
 D/audiocd-kio////
 D/blinken////
+D/bomber////
 D/bovo////
 D/cantor////
 D/cervisia////
@@ -12,8 +13,14 @@ D/dolphin////
 D/dolphin-plugins////
 D/dragon////
 D/ffmpegthumbs////
+D/granatier////
 D/kalgebra////
+D/kapman////
 D/kate////
+D/katomic////
+D/kblackbox////
+D/kblocks////
+D/kbounce////
 D/kcalc////
 D/kcalcore////
 D/kdegraphics-mobipocket////
@@ -21,6 +28,7 @@ D/kdenlive////
 D/kig////
 D/kimap////
 D/kio-extras////
+D/kmahjongg////
 D/kmbox////
 D/kmime////
 D/konsole////
