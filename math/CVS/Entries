@@ -1,4 +1,4 @@
-/Makefile/1.152/Thu Nov  8 04:27:58 2018//
+/Makefile/1.153/Mon Nov 12 21:30:52 2018//
 D/R////
 D/aamath////
 D/abs////
@@ -103,6 +103,7 @@ D/p5-Statistics-Descriptive////
 D/pari////
 D/plplot////
 D/prover9////
+D/pspp////
 D/py-Numeric////
 D/py-bottleneck////
 D/py-gnuplot////
@@ -119,6 +120,7 @@ D/py-sympy////
 D/qhull////
 D/qrupdate////
 D/sc////
+D/spread-sheet-widget////
 D/suitesparse////
 D/udunits////
 D/veusz////
