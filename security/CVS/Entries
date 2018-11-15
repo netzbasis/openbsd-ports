@@ -1,4 +1,4 @@
-/Makefile/1.521/Sun Nov  4 21:38:37 2018//
+/Makefile/1.523/Wed Nov 14 22:25:20 2018//
 D/ADMsnmp////
 D/acme-client////
 D/aescrypt////
@@ -31,6 +31,7 @@ D/cyrus-sasl2////
 D/dante////
 D/despoof////
 D/dicepassc////
+D/dirb////
 D/distorm3////
 D/dropbear////
 D/dsniff////
@@ -317,6 +318,7 @@ D/smtpscan////
 D/smurflog////
 D/snort2pf////
 D/softhsm////
+D/softhsm2////
 D/spiped////
 D/sqlmap////
 D/ssdeep////
