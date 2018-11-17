@@ -8,6 +8,8 @@
 /patch-deps_npm_node_modules_node-gyp_lib_build_js/1.7/Wed Sep 19 19:10:27 2018//
 /patch-deps_npm_node_modules_node-gyp_lib_configure_js/1.6/Sat Feb 10 14:50:35 2018//
 /patch-deps_npm_node_modules_node-gyp_lib_install_js/1.10/Wed Sep 19 19:10:27 2018//
+/patch-deps_openssl_asm_Makefile/1.1/Fri Nov 16 21:18:15 2018//
+/patch-deps_openssl_openssl_gypi/1.1/Fri Nov 16 21:18:15 2018//
 /patch-deps_uv_src_unix_openbsd_c/1.6/Wed Sep 19 19:10:27 2018//
 /patch-deps_uv_src_unix_tcp_c/1.1/Wed Sep 19 19:10:27 2018//
 /patch-deps_v8_Makefile/1.5/Thu Jun 21 23:13:28 2018//

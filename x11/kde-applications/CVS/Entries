@@ -1,4 +1,4 @@
-/Makefile/1.28/Fri Nov  9 07:09:20 2018//
+/Makefile/1.30/Fri Nov 16 21:43:32 2018//
 /Makefile.inc/1.8/Mon Oct 22 20:30:43 2018//
 D/analitza////
 D/ark////
@@ -21,19 +21,36 @@ D/katomic////
 D/kblackbox////
 D/kblocks////
 D/kbounce////
+D/kbreakout////
 D/kcalc////
 D/kcalcore////
 D/kdegraphics-mobipocket////
 D/kdenlive////
+D/kdiamond////
+D/kfourinline////
+D/kgoldrunner////
 D/kig////
+D/kigo////
+D/killbots////
 D/kimap////
 D/kio-extras////
+D/kiriki////
+D/kjumpingcube////
+D/klickety////
+D/klines////
 D/kmahjongg////
 D/kmbox////
 D/kmime////
+D/knavalbattle////
+D/knetwalk////
+D/kolf////
+D/kollision////
+D/konquest////
 D/konsole////
 D/kpimtextedit////
 D/kqtquickcharts////
+D/kreversi////
+D/ksirk////
 D/ktouch////
 D/libkcddb////
 D/libkcompactdisc////
