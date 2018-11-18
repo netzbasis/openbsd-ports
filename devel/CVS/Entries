@@ -1,4 +1,4 @@
-/Makefile/1.1788/Thu Nov  8 04:27:58 2018//
+/Makefile/1.1789/Sat Nov 17 22:26:15 2018//
 D/ElectricFence////
 D/ORBit2////
 D/acpica////
@@ -1296,7 +1296,6 @@ D/py-hachoir-core////
 D/py-hachoir-metadata////
 D/py-hachoir-parser////
 D/py-hamcrest////
-D/py-hg-git////
 D/py-html5lib////
 D/py-hypothesis////
 D/py-icalendar////

@@ -31,6 +31,11 @@
 /patch-lib_Target_AArch64_CMakeLists_txt/1.1/Tue Aug 21 06:56:09 2018//
 /patch-lib_Target_ARM_ARMISelLowering_cpp/1.1/Sat Apr  7 14:55:42 2018//
 /patch-lib_Target_Mips_MCTargetDesc_MipsMCAsmInfo_cpp/1.7/Mon Jul 16 07:26:18 2018//
+/patch-lib_Target_PowerPC_PPCAsmPrinter_cpp/1.4/Sat Nov 17 08:32:38 2018//
+/patch-lib_Target_PowerPC_PPCISelDAGToDAG_cpp/1.5/Sat Nov 17 08:32:38 2018//
+/patch-lib_Target_PowerPC_PPCMCInstLower_cpp/1.3/Sat Nov 17 08:32:38 2018//
+/patch-lib_Target_PowerPC_PPCSubtarget_h/1.3/Sat Nov 17 08:32:38 2018//
+/patch-lib_Target_PowerPC_PPC_td/1.1/Sat Nov 17 08:32:38 2018//
 /patch-lib_Target_Sparc_AsmParser_SparcAsmParser_cpp/1.5/Wed Nov 14 09:07:41 2018//
 /patch-lib_Target_Sparc_InstPrinter_SparcInstPrinter_cpp/1.3/Wed Nov 14 09:07:41 2018//
 /patch-lib_Target_Sparc_InstPrinter_SparcInstPrinter_h/1.3/Wed Nov 14 09:07:41 2018//
@@ -56,7 +61,7 @@
 /patch-lib_Transforms_Scalar_LoopIdiomRecognize_cpp/1.3/Sat Apr  7 14:55:42 2018//
 /patch-tools_clang_include_clang_Basic_DiagnosticSemaKinds_td/1.5/Wed Jul  4 09:53:49 2018//
 /patch-tools_clang_include_clang_Driver_CC1Options_td/1.1/Fri Jul  6 06:55:10 2018//
-/patch-tools_clang_include_clang_Driver_Options_td/1.12/Fri Jul  6 06:55:10 2018//
+/patch-tools_clang_include_clang_Driver_Options_td/1.13/Sat Nov 17 08:32:38 2018//
 /patch-tools_clang_include_clang_Frontend_CodeGenOptions_def/1.1/Fri Jul  6 06:55:10 2018//
 /patch-tools_clang_include_clang_Sema_Sema_h/1.3/Sat Apr  7 14:55:42 2018//
 /patch-tools_clang_lib_CodeGen_CGCall_cpp/1.1/Fri Jul  6 06:55:10 2018//
@@ -65,6 +70,8 @@
 /patch-tools_clang_lib_Driver_ToolChains_Arch_AArch64_cpp/1.2/Sat Apr  7 14:55:42 2018//
 /patch-tools_clang_lib_Driver_ToolChains_Arch_AArch64_h/1.1/Fri Sep  1 06:40:28 2017//
 /patch-tools_clang_lib_Driver_ToolChains_Arch_ARM_cpp/1.1/Mon May  7 06:42:54 2018//
+/patch-tools_clang_lib_Driver_ToolChains_Arch_PPC_cpp/1.1/Sat Nov 17 08:32:38 2018//
+/patch-tools_clang_lib_Driver_ToolChains_Arch_PPC_h/1.1/Sat Nov 17 08:32:38 2018//
 /patch-tools_clang_lib_Driver_ToolChains_Arch_Sparc_cpp/1.1/Fri Sep  1 06:40:28 2017//
 /patch-tools_clang_lib_Driver_ToolChains_Clang_cpp/1.6/Tue Aug 21 06:56:09 2018//
 /patch-tools_clang_lib_Driver_ToolChains_Gnu_cpp/1.5/Wed Nov 14 09:07:41 2018//
