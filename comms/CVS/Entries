@@ -1,4 +1,4 @@
-/Makefile/1.74/Wed Sep 19 05:51:42 2018//
+/Makefile/1.75/Tue Nov 20 12:46:51 2018//
 D/amtterm////
 D/birda////
 D/bottlerocket////
@@ -15,6 +15,7 @@ D/gammu////
 D/gmfsk////
 D/gnuradio////
 D/gpsk31////
+D/hackrf////
 D/hamlib////
 D/hylafax////
 D/jpilot////

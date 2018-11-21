@@ -1,4 +1,4 @@
-/Makefile/1.882/Thu Nov 15 12:17:23 2018//
+/Makefile/1.884/Tue Nov 20 10:58:40 2018//
 D/ajaxterm////
 D/analog////
 D/ap2-mod_dnssd////
@@ -6,6 +6,7 @@ D/ap2-mod_jk////
 D/ap2-mod_perl////
 D/ap2-mod_wsgi////
 D/apache-httpd////
+D/apertium-apy////
 D/aria2////
 D/asql////
 D/awl////
@@ -335,6 +336,7 @@ D/pecl-geoip////
 D/pecl-memcache////
 D/pecl-memcached////
 D/pecl-pecl_http////
+D/pecl-pledge////
 D/pecl-proctitle////
 D/pecl-propro////
 D/pecl-raphf////
