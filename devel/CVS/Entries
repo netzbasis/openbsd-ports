@@ -1,4 +1,4 @@
-/Makefile/1.1789/Sat Nov 17 22:26:15 2018//
+/Makefile/1.1790/Fri Nov 23 17:16:27 2018//
 D/ElectricFence////
 D/ORBit2////
 D/acpica////
@@ -1234,6 +1234,7 @@ D/py-cached-property////
 D/py-cairocffi////
 D/py-certifi////
 D/py-cffi////
+D/py-chai////
 D/py-cheetah////
 D/py-click////
 D/py-click-log////
