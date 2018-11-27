@@ -3,7 +3,7 @@ $OpenBSD: patch-poller-service_py,v 1.1 2018/09/26 22:51:28 sthen Exp $
 Index: poller-service.py
 --- poller-service.py.orig
 +++ poller-service.py
-@@ -98,7 +98,7 @@ class DB:
+@@ -98,7 +98,ÖúÀ class DB:
  
  
  def get_config_data():

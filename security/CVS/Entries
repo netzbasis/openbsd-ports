@@ -1,4 +1,4 @@
-/Makefile/1.523/Wed Nov 14 22:25:20 2018//
+/Makefile/1.524/Mon Nov 26 21:47:01 2018//
 D/ADMsnmp////
 D/acme-client////
 D/aescrypt////
@@ -167,12 +167,10 @@ D/p5-Crypt-CipherSaber////
 D/p5-Crypt-Curve25519////
 D/p5-Crypt-DES////
 D/p5-Crypt-DES-EDE3////
-D/p5-Crypt-DH////
 D/p5-Crypt-DSA////
 D/p5-Crypt-Eksblowfish////
 D/p5-Crypt-GpgME////
 D/p5-Crypt-IDEA////
-D/p5-Crypt-OpenPGP////
 D/p5-Crypt-OpenSSL-Bignum////
 D/p5-Crypt-OpenSSL-DSA////
 D/p5-Crypt-OpenSSL-EC////
@@ -182,12 +180,9 @@ D/p5-Crypt-OpenSSL-RSA////
 D/p5-Crypt-OpenSSL-Random////
 D/p5-Crypt-OpenSSL-X509////
 D/p5-Crypt-PasswdMD5////
-D/p5-Crypt-Primes////
 D/p5-Crypt-RC4////
 D/p5-Crypt-RC5////
 D/p5-Crypt-RIPEMD160////
-D/p5-Crypt-RSA////
-D/p5-Crypt-Random////
 D/p5-Crypt-Rijndael////
 D/p5-Crypt-SSLeay////
 D/p5-Crypt-SaltedHash////

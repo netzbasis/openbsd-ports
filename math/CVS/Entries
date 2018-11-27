@@ -1,4 +1,4 @@
-/Makefile/1.153/Mon Nov 12 21:30:52 2018//
+/Makefile/1.154/Mon Nov 26 21:47:01 2018//
 D/R////
 D/aamath////
 D/abs////
@@ -78,7 +78,6 @@ D/p5-Math-Base85////
 D/p5-Math-BaseCnv////
 D/p5-Math-Bezier////
 D/p5-Math-BigInt-GMP////
-D/p5-Math-BigInt-Pari////
 D/p5-Math-Calc-Units////
 D/p5-Math-Derivative////
 D/p5-Math-FFT////
@@ -88,7 +87,6 @@ D/p5-Math-GMP////
 D/p5-Math-Int128////
 D/p5-Math-Int64////
 D/p5-Math-MatrixReal////
-D/p5-Math-Pari////
 D/p5-Math-Random-ISAAC////
 D/p5-Math-Round////
 D/p5-Math-Spline////
