@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.662 2018/11/25 20:35:18 danj Exp $
+# $OpenBSD: Quirks.pm,v 1.665 2018/11/27 15:24:15 sthen Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -286,6 +286,8 @@ my $stem_extensions = {
 	'ValyriaTear' => 'valyriatear',
 	'apertium-es-ast_NO-PN' => 'apertium-es-ast',
 	'py-pafy' => 'py3-pafy',
+	'py-libmagic' => 'py-magic',
+	'py3-libmagic' => 'py3-magic',
 };
 
 my $obsolete_reason = {
@@ -1074,6 +1076,14 @@ my $obsolete_reason = {
 	'py-hgnested' => 5,
 	'py-keyczar' => 6,
 	'py-hg-git' => 5,
+	'py-czmq' => 3,
+	'p5-Math-Pari' => 13,
+	'p5-Math-BigInt-Pari' => 13,
+	'p5-Crypt-Random' => 13,
+	'p5-Crypt-DH' => 13,
+	'p5-Crypt-Primes' => 13,
+	'p5-Crypt-RSA' => 13,
+	'p5-Crypt-OpenPGP' => 13,
 };
 
 # reasons for obsolete packages
@@ -1091,6 +1101,7 @@ my @msg = (
 	"has been replaced by opendkim", #10
 	"no longer packageable", #11
 	"replace with IMAPSieve, see https://wiki.dovecot.org/HowTo/AntispamWithSieve", #12
+	"has a dependency on obsolete software", #13
 );
 
 # ->is_base_system($handle, $state):

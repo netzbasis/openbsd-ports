@@ -1,25 +1,21 @@
-# $OpenBSD: Makefile,v 1.12 2018/01/20 14:03:39 jsg Exp $
-
-BROKEN-hppa =		undefined reference to __sync atomic ops
+# $OpenBSD: Makefile,v 1.18 2018/11/27 12:04:36 jca Exp $
 
 COMMENT =		user-level RCU implementation
 
-GH_ACCOUNT =		urcu
-GH_PROJECT =		userspace-rcu
-GH_TAGNAME =		v0.8.9
-DISTNAME =		liburcu-${GH_TAGNAME:S/^v//}
+DISTNAME =		userspace-rcu-0.10.1
+PKGNAME =		liburcu-0.10.1
 
-SHARED_LIBS +=  urcu-bp                   0.0 # 2.0
-SHARED_LIBS +=  urcu-cds                  0.0 # 2.0
-SHARED_LIBS +=  urcu-common               0.0 # 2.0
-SHARED_LIBS +=  urcu-mb                   0.0 # 2.0
-SHARED_LIBS +=  urcu-qsbr                 0.0 # 2.0
-SHARED_LIBS +=  urcu-signal               0.0 # 2.0
-SHARED_LIBS +=  urcu                      0.0 # 2.0
+SHARED_LIBS +=  urcu-bp                   1.0 # 6.0
+SHARED_LIBS +=  urcu-cds                  1.0 # 6.0
+SHARED_LIBS +=  urcu-common               1.0 # 6.0
+SHARED_LIBS +=  urcu-mb                   1.0 # 6.0
+SHARED_LIBS +=  urcu-qsbr                 1.0 # 6.0
+SHARED_LIBS +=  urcu-signal               1.0 # 6.0
+SHARED_LIBS +=  urcu                      1.0 # 6.0
 
 CATEGORIES =		devel
 
-HOMEPAGE =		http://liburcu.org/
+HOMEPAGE =		https://liburcu.org/
 
 MAINTAINER = 		Jeremie Courreges-Anglas <jca@wxcvbn.org>
 
@@ -28,31 +24,18 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB =		pthread
 
+MASTER_SITES =		https://lttng.org/files/urcu/
+EXTRACT_SUFX =		.tar.bz2
+
 # For atomic builtins
 MODULES+=		gcc4
-MODGCC4_ARCHS=		alpha
-.if ${MACHINE_ARCH} == "alpha"
-MODGCC4_VERSION=	4.6
-.endif
-# Thread-local storage emulation from clang or lang/gcc doesn't work in
-# regress tests.
-CONFIGURE_ENV =		ac_cv_tls=none
-
-BUILD_DEPENDS =		${MODGNU_AUTOCONF_DEPENDS} \
-			${MODGNU_AUTOMAKE_DEPENDS} \
-			devel/libtool,-main
+MODGCC4_ARCHS=		alpha hppa
 
 USE_GMAKE =		Yes
 
 CONFIGURE_STYLE =	gnu
-
-AUTOCONF_VERSION =	2.69
-AUTOMAKE_VERSION =	1.11
-
-pre-configure:
-	cd ${WRKSRC} && env ${MAKE_ENV} \
-	    AUTOCONF_VERSION=${AUTOCONF_VERSION} \
-	    AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
-	    autoreconf -vif
+# Thread-local storage emulation from clang or lang/gcc doesn't work in
+# regress tests.
+CONFIGURE_ENV =		ac_cv_tls=none
 
 .include <bsd.port.mk>

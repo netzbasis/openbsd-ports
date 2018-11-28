@@ -1,4 +1,4 @@
-/Makefile/1.1089/Sat Nov 10 12:34:24 2018//
+/Makefile/1.1090/Tue Nov 27 08:30:15 2018//
 D/GeoIP////
 D/adns////
 D/adsuck////
@@ -495,7 +495,6 @@ D/py-botocore////
 D/py-cares////
 D/py-curl////
 D/py-cymruwhois////
-D/py-czmq////
 D/py-dns////
 D/py-dnslib////
 D/py-dnspython////

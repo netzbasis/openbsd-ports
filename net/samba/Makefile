@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.262 2018/11/17 00:20:50 jca Exp $
+# $OpenBSD: Makefile,v 1.264 2018/11/27 11:10:30 jca Exp $
 
-VERSION =		4.8.6
+VERSION =		4.8.7
 DISTNAME =		samba-${VERSION}
 
 COMMENT-main =		SMB and CIFS client and server for UNIX
@@ -21,8 +21,8 @@ LDB_V =			1.3.6
 TEVENT_V =		0.9.36
 
 REVISION-main =		0
-REVISION-ldb =		2
-REVISION-tevent =	3
+REVISION-ldb =		4
+REVISION-tevent =	4
 
 SHARED_LIBS =		asn1-samba4		0.0 \
 			com_err-samba4		0.0 \
@@ -84,11 +84,11 @@ WANTLIB-main =		${WANTLIB-common} ${MODPY_WANTLIB}
 WANTLIB-main +=		z
 WANTLIB-main +=		avahi-client avahi-common cups dbus-1 execinfo fam
 WANTLIB-main +=		iconv intl jansson lber ldap pam popt gnutls
-WANTLIB-main +=		ldb pyldb-util pytalloc-util tdb talloc tevent
+WANTLIB-main +=		ldb pyldb-util pytalloc-util readline tdb talloc tevent
 WANTLIB-main +=		${UTIL_WANTLIB}
 
 WANTLIB-ldb =		${WANTLIB-common} ${MODPY_WANTLIB}
-WANTLIB-ldb +=		popt talloc tevent
+WANTLIB-ldb +=		lber ldap talloc tdb tevent
 
 WANTLIB-tevent =	${WANTLIB-common} ${MODPY_WANTLIB}
 WANTLIB-tevent +=	talloc
@@ -123,6 +123,7 @@ LIB_DEPENDS-main =	${BUILD_PKGPATH},-ldb>=${LDB_V} \
 			devel/jansson \
 			devel/libexecinfo \
 			devel/libtalloc>=2.1.9 \
+			devel/popt \
 			net/avahi \
 			print/cups,-libs \
 			security/gnutls \
@@ -130,8 +131,9 @@ LIB_DEPENDS-main =	${BUILD_PKGPATH},-ldb>=${LDB_V} \
 			sysutils/gamin
 
 LIB_DEPENDS-ldb =	${BUILD_PKGPATH},-tevent>=${TEVENT_V} \
-			devel/libtalloc>=2.1.9 \
-			devel/popt
+			databases/openldap \
+			databases/tdb>=1.3.14 \
+			devel/libtalloc>=2.1.9
 
 LIB_DEPENDS-tevent =	devel/libtalloc>=2.1.9
 
