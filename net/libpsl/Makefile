@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.10 2017/02/27 23:32:15 jca Exp $
+# $OpenBSD: Makefile,v 1.12 2018/11/28 13:45:43 jca Exp $
 
 COMMENT =		public suffix list library
 
-DISTNAME =		libpsl-0.17.0
+DISTNAME =		libpsl-0.20.2
 
-SHARED_LIBS +=		psl	1.1	# 6.1
+SHARED_LIBS +=		psl	1.2	# 8.1
 
 CATEGORIES =		net www
 
@@ -15,7 +15,7 @@ MAINTAINER =		Jeremie Courreges-Anglas <jca@wxcvbn.org>
 # MIT
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB += c iconv idn2 unistring
+WANTLIB += c iconv idn2 intl unistring
 
 MASTER_SITES =		${HOMEPAGE}/releases/download/${DISTNAME}/
 
@@ -24,6 +24,7 @@ MODULES =		lang/python
 MODPY_RUNDEP =		No
 
 LIB_DEPENDS =		converters/libunistring \
+			devel/gettext \
 			devel/libidn2
 
 BUILD_DEPENDS =		sysutils/coreutils
@@ -33,9 +34,9 @@ CONFIGURE_STYLE = gnu
 CONFIGURE_ARGS +=	--enable-builtin=libidn2 \
 			--enable-runtime=libidn2
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib"
+			LDFLAGS="-L${LOCALBASE}/lib ${LDFLAGS}"
 
 pre-configure:
-	@ln -s ${MODPY_BIN} ${WRKDIR}/bin/python
+	@ln -sf ${MODPY_BIN} ${WRKDIR}/bin/python
 
 .include <bsd.port.mk>
