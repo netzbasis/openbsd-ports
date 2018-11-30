@@ -1,4 +1,4 @@
-/Makefile/1.884/Tue Nov 20 10:58:40 2018//
+/Makefile/1.885/Fri Nov 30 01:35:14 2018//
 D/ajaxterm////
 D/analog////
 D/ap2-mod_dnssd////
@@ -238,6 +238,7 @@ D/p5-HTML-Widget////
 D/p5-HTTP-Async////
 D/p5-HTTP-Body////
 D/p5-HTTP-BrowserDetect////
+D/p5-HTTP-CookieJar////
 D/p5-HTTP-Cookies////
 D/p5-HTTP-DAV////
 D/p5-HTTP-Daemon////
