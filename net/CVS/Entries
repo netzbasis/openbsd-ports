@@ -1,4 +1,4 @@
-/Makefile/1.1090/Tue Nov 27 08:30:15 2018//
+/Makefile/1.1091/Fri Nov 30 07:58:28 2018//
 D/GeoIP////
 D/adns////
 D/adsuck////
@@ -529,6 +529,7 @@ D/py-ripe.atlas.cousteau////
 D/py-ripe.atlas.sagan////
 D/py-ripe.atlas.tools////
 D/py-s3transfer////
+D/py-simplesoap////
 D/py-slixmpp////
 D/py-smbc////
 D/py-snmp////

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.265 2018/11/28 16:36:05 jca Exp $
+# $OpenBSD: Makefile,v 1.267 2018/11/30 15:17:31 jca Exp $
 
 VERSION =		4.8.7
 DISTNAME =		samba-${VERSION}
@@ -20,7 +20,7 @@ PKG_ARCH-docs =		*
 LDB_V =			1.3.6
 TEVENT_V =		0.9.36
 
-REVISION-main =		1
+REVISION-main =		2
 REVISION-ldb =		5
 REVISION-tevent =	4
 
@@ -176,6 +176,8 @@ WAF =			${WRKSRC}/buildtools/bin/waf
 WAF_ARGS =		-v -j ${MAKE_JOBS}
 
 CONFIGURE_ENV =		LC_ALL=en_US.UTF-8 \
+			CFLAGS="${CFLAGS}" \
+			LDFLAGS="${LDFLAGS}" \
 			CPP="/usr/libexec/cpp"
 
 MAKE_ENV =		LC_ALL=en_US.UTF-8 \
