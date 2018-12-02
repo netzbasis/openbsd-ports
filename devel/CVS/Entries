@@ -1,4 +1,4 @@
-/Makefile/1.1791/Tue Nov 27 13:53:43 2018//
+/Makefile/1.1792/Sun Dec  2 01:16:38 2018//
 D/ElectricFence////
 D/ORBit2////
 D/acpica////
@@ -898,6 +898,7 @@ D/p5-POE-Component-IKC////
 D/p5-POE-Component-Pluggable////
 D/p5-POE-Component-PubSub////
 D/p5-POE-Component-Supervisor////
+D/p5-POE-Component-Syndicator////
 D/p5-POE-Loop-Event////
 D/p5-POE-Loop-Tk////
 D/p5-POE-Test-Loops////
