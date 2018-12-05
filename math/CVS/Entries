@@ -1,4 +1,4 @@
-/Makefile/1.154/Mon Nov 26 21:47:01 2018//
+/Makefile/1.155/Tue Dec  4 22:02:50 2018//
 D/R////
 D/aamath////
 D/abs////
@@ -99,6 +99,7 @@ D/p5-Statistics-CaseResampling////
 D/p5-Statistics-Contingency////
 D/p5-Statistics-Descriptive////
 D/pari////
+D/pcalc////
 D/plplot////
 D/prover9////
 D/pspp////

@@ -127,7 +127,9 @@
 /patch-chrome_browser_renderer_preferences_util_cc/1.14/Tue Nov 20 19:10:32 2018//
 /patch-chrome_browser_resources_plugin_metadata_plugins_linux_json/1.18/Tue Nov 20 19:10:32 2018//
 /patch-chrome_browser_resources_safe_browsing_gen_file_type_proto_py/1.4/Fri May  4 07:14:57 2018//
+/patch-chrome_browser_resources_settings_appearance_page_appearance_browser_proxy_js/1.1/Tue Dec  4 09:55:08 2018//
 /patch-chrome_browser_resources_settings_appearance_page_appearance_page_html/1.5/Mon Nov  5 22:04:39 2018//
+/patch-chrome_browser_resources_settings_appearance_page_appearance_page_js/1.1/Tue Dec  4 09:55:08 2018//
 /patch-chrome_browser_safe_browsing_incident_reporting_incident_reporting_service_cc/1.12/Wed Jun  6 07:50:54 2018//
 /patch-chrome_browser_speech_tts_controller_impl_cc/1.11/Tue Nov 20 19:10:32 2018//
 /patch-chrome_browser_ssl_ssl_error_controller_client_cc/1.2/Mon Nov  5 22:04:39 2018//
