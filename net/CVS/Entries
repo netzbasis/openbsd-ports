@@ -1,4 +1,4 @@
-/Makefile/1.1092/Sun Dec  2 01:23:31 2018//
+/Makefile/1.1093/Thu Dec  6 08:53:34 2018//
 D/GeoIP////
 D/adns////
 D/adsuck////
@@ -177,7 +177,6 @@ D/libbgpdump////
 D/libbind////
 D/libcares////
 D/libdnet////
-D/libepc////
 D/libgadu////
 D/libircclient////
 D/libktorrent////
