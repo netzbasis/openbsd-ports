@@ -1,4 +1,4 @@
-/Makefile/1.81/Mon Oct  1 10:40:34 2018//
+/Makefile/1.82/Thu Dec  6 16:01:32 2018//
 D/akonadi////
 D/aqbanking////
 D/attica////
@@ -40,6 +40,7 @@ D/slideml////
 D/taskd////
 D/taskwarrior////
 D/tdl////
+D/teapot////
 D/thinkingrock////
 D/timewarrior////
 D/tryton////
