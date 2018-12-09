@@ -1,4 +1,4 @@
-/Makefile/1.1093/Thu Dec  6 08:53:34 2018//
+/Makefile/1.1094/Sat Dec  8 18:15:26 2018//
 D/GeoIP////
 D/adns////
 D/adsuck////
@@ -71,7 +71,6 @@ D/dnstracer////
 D/doc////
 D/dsocks////
 D/dxpc////
-D/dysnomia////
 D/echoping////
 D/ejabberd////
 D/ekg////

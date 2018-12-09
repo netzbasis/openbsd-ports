@@ -1,4 +1,4 @@
-/Makefile/1.621/Sat Dec  1 13:32:38 2018//
+/Makefile/1.622/Sat Dec  8 16:36:27 2018//
 D/2bwm////
 D/Xaw3d////
 D/XawMu////
@@ -144,6 +144,7 @@ D/klavaro////
 D/krusader////
 D/lablgtk2////
 D/lemonbar////
+D/libdbusmenu////
 D/libdnd////
 D/libfm////
 D/libgdiplus////

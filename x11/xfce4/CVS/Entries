@@ -1,4 +1,4 @@
-/Makefile/1.48/Thu Nov  3 10:21:26 2016//
+/Makefile/1.49/Sat Dec  8 16:48:43 2018//
 /Makefile.inc/1.11/Wed Mar 16 20:02:12 2016//
 /xfce4.port.mk/1.26/Sat Nov 10 12:39:11 2018//
 D/exo////
@@ -38,10 +38,12 @@ D/xfce4-panel////
 D/xfce4-places////
 D/xfce4-power-manager////
 D/xfce4-pulseaudio////
+D/xfce4-screensaver////
 D/xfce4-screenshooter////
 D/xfce4-session////
 D/xfce4-settings////
 D/xfce4-smartbookmark////
+D/xfce4-statusnotifier////
 D/xfce4-systemload////
 D/xfce4-taskmanager////
 D/xfce4-time-out////
