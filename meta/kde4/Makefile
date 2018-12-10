@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.48 2018/11/16 08:35:56 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.52 2018/12/09 15:34:43 ajacoutot Exp $
 
 PKGNAME =		kde4-${MODKDE4_VERSION}
 
@@ -26,13 +26,14 @@ PKGSPEC-network =	kdenetwork-${MODKDE4_SPEC}
 PKGSPEC-sdk =		kdesdk-${MODKDE4_SPEC}
 PKGSPEC-toys =		kdetoys-${MODKDE4_SPEC}
 
-REVISION-minimal =	8
+REVISION-minimal =	9
 REVISION-games = 2
 REVISION-sdk = 2
-REVISION-edu = 1
+REVISION-edu = 3
 REVISION-multimedia = 0
 REVISION-extras = 8
-REVISION-main =		10
+REVISION-main =		13
+REVISION-admin =	0
 
 MAINTAINER =		KDE porting team <openbsd-kde@googlegroups.com>
 
@@ -57,13 +58,11 @@ KDE4_ONLY =		No
 KDE4-accessibility = \
 	${MODKDE4_DEP_DIR}/jovie	\
 	${MODKDE4_DEP_DIR}/kaccessible	\
-	${MODKDE4_DEP_DIR}/kmag		\
 	${MODKDE4_DEP_DIR}/kmousetool	\
 	${MODKDE4_DEP_DIR}/kmouth
 
 RUN_DEPENDS-admin = \
 	${MODKDE4_DEP_DIR}/kcron	\
-	${MODKDE4_DEP_DIR}/ksystemlog	\
 	${MODKDE4_DEP_DIR}/kuser
 
 KDE4-bindings = \
@@ -79,13 +78,7 @@ KDE4-bindings = \
 	${MODKDE4_DEP_DIR}/kimono
 
 KDE4-edu = \
-	${MODKDE4_DEP_DIR}/kanagram	\
-	${MODKDE4_DEP_DIR}/kbruch	\
 	${MODKDE4_DEP_DIR}/kgeography	\
-	${MODKDE4_DEP_DIR}/khangman	\
-	${MODKDE4_DEP_DIR}/kiten	\
-	${MODKDE4_DEP_DIR}/klettres	\
-	${MODKDE4_DEP_DIR}/kmplot	\
 	${MODKDE4_DEP_DIR}/kstars	\
 	${MODKDE4_DEP_DIR}/kturtle	\
 	${MODKDE4_DEP_DIR}/kwordquiz	\

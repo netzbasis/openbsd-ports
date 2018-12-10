@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.885 2018/11/30 01:35:14 bluhm Exp $
+# $OpenBSD: Makefile,v 1.887 2018/12/09 13:48:17 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += ajaxterm
@@ -20,7 +20,6 @@
      SUBDIR += c-icap
      SUBDIR += calamaris
      SUBDIR += canto
-     SUBDIR += casperjs
      SUBDIR += cclive
      SUBDIR += cgicc
      SUBDIR += cgiparse
@@ -110,7 +109,6 @@
      SUBDIR += nginx
      SUBDIR += nostromo
      SUBDIR += otter-browser
-     SUBDIR += owncloud
      SUBDIR += p5-Alien-Tidyp
      SUBDIR += p5-Any-URI-Escape
      SUBDIR += p5-Apache-DB
@@ -372,7 +370,6 @@
      SUBDIR += pecl-uploadprogress,php56	# 5.6-only
      SUBDIR += pelican
      SUBDIR += perlbal
-     SUBDIR += phantomjs
      SUBDIR += php-markdown
      SUBDIR += php-predis
      SUBDIR += phpldapadmin

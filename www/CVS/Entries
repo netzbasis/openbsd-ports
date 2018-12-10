@@ -1,4 +1,4 @@
-/Makefile/1.885/Fri Nov 30 01:35:14 2018//
+/Makefile/1.887/Sun Dec  9 13:48:17 2018//
 D/ajaxterm////
 D/analog////
 D/ap2-mod_dnssd////
@@ -18,7 +18,6 @@ D/buku////
 D/c-icap////
 D/calamaris////
 D/canto////
-D/casperjs////
 D/cclive////
 D/cgicc////
 D/cgiparse////
@@ -100,7 +99,6 @@ D/nghttp2////
 D/nginx////
 D/nostromo////
 D/otter-browser////
-D/owncloud////
 D/p5-Alien-Tidyp////
 D/p5-Any-URI-Escape////
 D/p5-Apache-DB////
@@ -351,7 +349,6 @@ D/pecl56-raphf////
 D/pecl56-ssh2////
 D/pelican////
 D/perlbal////
-D/phantomjs////
 D/php-markdown////
 D/php-predis////
 D/phpldapadmin////

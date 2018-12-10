@@ -1,24 +1,24 @@
-# $OpenBSD: Makefile,v 1.33 2018/12/07 14:22:33 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.37 2018/12/09 17:18:52 rsadowski Exp $
 
      SUBDIR =
 
      # accessibility
-     #SUBDIR += kmag
+     SUBDIR += kmag
      #SUBDIR += kmousetool
      #SUBDIR += kmouth
 
      # admin
      #SUBDIR += kcron
-     #SUBDIR += ksystemlog
+     SUBDIR += ksystemlog
 
      # base
      SUBDIR += dolphin
      SUBDIR += dolphin-plugins
      SUBDIR += kate
      #SUBDIR += kdialog
-     #SUBDIR += keditbookmarks
-     #SUBDIR += kfind
-     #SUBDIR += khelpcenter
+     SUBDIR += keditbookmarks
+     SUBDIR += kfind
+     SUBDIR += khelpcenter
      #SUBDIR += konqueror
      SUBDIR += konsole
 
@@ -29,14 +29,14 @@
      SUBDIR += cantor
      SUBDIR += kalgebra
      #SUBDIR += kalzium
-     #SUBDIR += kanagram
-     #SUBDIR += kbruch
+     SUBDIR += kanagram
+     SUBDIR += kbruch
      #SUBDIR += kgeography
-     #SUBDIR += khangman
+     SUBDIR += khangman
      SUBDIR += kig
-     #SUBDIR += kiten
-     #SUBDIR += klettres
-     #SUBDIR += kmplot
+     SUBDIR += kiten
+     SUBDIR += klettres
+     SUBDIR += kmplot
      SUBDIR += ktouch
      #SUBDIR += kturtle
      #SUBDIR += kwordquiz
@@ -98,7 +98,7 @@
      #SUBDIR += kolourpaint
      #SUBDIR += kruler
      #SUBDIR += okular
-     #SUBDIR += spectacle
+     SUBDIR += spectacle
      SUBDIR += svgpart
 
      # multimedia
@@ -120,7 +120,7 @@
      #SUBDIR += kopete
      #SUBDIR += krdc
      #SUBDIR += krfb
-     #SUBDIR += zeroconf-ioslave
+     SUBDIR += zeroconf-ioslave
 
      # pim
      #SUBDIR += akregator
@@ -207,11 +207,11 @@
      #SUBDIR += kcalutils
      #SUBDIR += kcontacts
      #SUBDIR += kdav
-     #SUBDIR += kdeedu-data
+     SUBDIR += kdeedu-data
      #SUBDIR += kidentitymanagement
      SUBDIR += kimap
      #SUBDIR += kitinerary
-     #SUBDIR += kldap
+     SUBDIR += kldap
      SUBDIR += kmbox
      SUBDIR += kmime
      #SUBDIR += kontactinterface
@@ -227,7 +227,7 @@
      SUBDIR += libkdcraw
      SUBDIR += libkdegames
      #SUBDIR += libkdepim
-     #SUBDIR += libkeduvocdocument
+     SUBDIR += libkeduvocdocument
      SUBDIR += libkexiv2
      #SUBDIR += libkgapi
      SUBDIR += libkgeomap
@@ -235,7 +235,7 @@
      #SUBDIR += libkleo
      #SUBDIR += libkmahjongg
      SUBDIR += libkomparediff2
-     #SUBDIR += libksane
+     SUBDIR += libksane
      #SUBDIR += libksieve
      #SUBDIR += mailcommon
      #SUBDIR += mailimporter
