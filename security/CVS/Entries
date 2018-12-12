@@ -1,4 +1,4 @@
-/Makefile/1.524/Mon Nov 26 21:47:01 2018//
+/Makefile/1.526/Tue Dec 11 12:07:47 2018//
 D/ADMsnmp////
 D/acme-client////
 D/aescrypt////
@@ -230,7 +230,6 @@ D/pear-Auth////
 D/pear-Auth-HTTP////
 D/pear-Auth-SASL////
 D/pecl-libsodium////
-D/pecl56-libsodium////
 D/pgp5////
 D/pgpdump////
 D/pidgin-otr////

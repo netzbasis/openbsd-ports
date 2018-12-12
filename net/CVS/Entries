@@ -1,4 +1,4 @@
-/Makefile/1.1094/Sat Dec  8 18:15:26 2018//
+/Makefile/1.1095/Tue Dec 11 12:07:47 2018//
 D/GeoIP////
 D/adns////
 D/adsuck////
@@ -245,7 +245,6 @@ D/napalm////
 D/natpmpd////
 D/nbtscan////
 D/ncftp////
-D/nedi////
 D/nemesis////
 D/neon////
 D/nepim////

@@ -1,4 +1,4 @@
-/Makefile/1.887/Sun Dec  9 13:48:17 2018//
+/Makefile/1.889/Tue Dec 11 20:55:28 2018//
 D/ajaxterm////
 D/analog////
 D/ap2-mod_dnssd////
@@ -342,11 +342,6 @@ D/pecl-raphf////
 D/pecl-ssh2////
 D/pecl-swish////
 D/pecl-uploadprogress////
-D/pecl56-memcached////
-D/pecl56-pecl_http////
-D/pecl56-propro////
-D/pecl56-raphf////
-D/pecl56-ssh2////
 D/pelican////
 D/perlbal////
 D/php-markdown////
@@ -526,5 +521,4 @@ D/www6to4////
 D/wwwcount////
 D/wwwoffle////
 D/xapian-omega////
-D/xcache////
 D/youtube-dl////
