@@ -3,8 +3,8 @@
 /arch-defines.mk/1.56/Wed Nov 21 08:03:54 2018//
 /automake.dep/1.3/Sat Feb  3 17:08:59 2007//
 /bsd.port.arch.mk/1.13/Tue Mar 15 21:45:16 2016//
-/bsd.port.mk/1.1457/Sun Nov 25 11:51:25 2018//
-/bsd.port.subdir.mk/1.109/Wed Oct 10 10:55:33 2012//
+/bsd.port.mk/1.1459/Wed Dec 12 16:17:30 2018//
+/bsd.port.subdir.mk/1.110/Wed Dec 12 12:04:56 2018//
 /compiler.port.mk/1.5/Fri Nov 17 00:24:01 2017//
 /cpan.port.mk/1.20/Sun Mar 20 19:56:44 2016//
 /font.port.mk/1.4/Fri Nov  4 15:44:14 2016//
@@ -15,5 +15,5 @@
 /java.port.mk/1.1/Fri Jun 17 14:59:27 2005//
 /modules.port.mk/1.14/Tue Aug 22 10:27:33 2017//
 /perl.port.mk/1.30/Sun Dec  3 11:10:10 2017//
-/pkgpath.mk/1.80/Sat Dec  8 10:25:05 2018//
+/pkgpath.mk/1.81/Wed Dec 12 12:04:56 2018//
 D

@@ -4,7 +4,7 @@ COMMENT=	system statistics gathering library
 
 DISTNAME=	libstatgrab-0.91
 REVISION=	3
-CATEGORIES=	sysutils
+CATEGORIES=	syÖúÀls
 
 HOMEPAGE=	http://www.i-scream.org/libstatgrab/
 

@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1457 2018/11/25 11:51:25 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1459 2018/12/12 16:17:30 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -231,22 +231,11 @@ _MAKEFILE_INC_DONE = Yes
 .    include "${.CURDIR}/../Makefile.inc"
 .  endif
 .endif
-# XXX default target varies, so that make show=... and make clean=... work
-.if defined(verbose-show)
-.MAIN: verbose-show
-.elif defined(show)
-.MAIN: show
-.elif defined(clean)
-.MAIN: clean
-.elif defined(_internal-clean)
-clean = ${_internal-clean}
-.MAIN: _internal-clean
-.else
-.MAIN: all
-.endif
 
-# XXX clean is set in stone on the cmdline.
-_clean = ${clean}
+
+# XXX clean may be set in stone on the cmdline, so we need to define _clean
+# instead, if not already set while recursing
+_clean ?= ${clean}
 .if empty(_clean) || ${_clean} == "depends"
 _clean += work
 .endif
@@ -3486,6 +3475,15 @@ show-required-by:
 show:
 .for _s in ${show}
 	@echo ${${_s}:Q}
+.endfor
+
+show-indexed:
+.for _s in ${show-indexed}
+.  if defined(${_s}${SUBPACKAGE})
+	@echo ${${_s}${SUBPACKAGE}:Q}
+.  else
+	@echo ${${_s}:Q}
+.  endif
 .endfor
 
 # du fails if it can't access everything
