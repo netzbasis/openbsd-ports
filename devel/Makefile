@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1794 2018/12/12 23:05:35 danj Exp $
+# $OpenBSD: Makefile,v 1.1796 2018/12/13 21:41:36 jca Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1255,6 +1255,8 @@
      SUBDIR += py-argcomplete,python3
      SUBDIR += py-argh
      SUBDIR += py-argh,python3
+     SUBDIR += py-arrow
+     SUBDIR += py-arrow,python3
      SUBDIR += py-asn1
      SUBDIR += py-asn1,python3
      SUBDIR += py-asn1-modules
@@ -1405,6 +1407,7 @@
      SUBDIR += py-hachoir-metadata
      SUBDIR += py-hachoir-parser
      SUBDIR += py-hamcrest
+     SUBDIR += py-hamcrest,python3
      SUBDIR += py-html5lib
      SUBDIR += py-html5lib,python3
      SUBDIR += py-hypothesis

@@ -1,4 +1,4 @@
-/Makefile/1.155/Tue Dec  4 22:02:50 2018//
+/Makefile/1.156/Thu Dec 13 09:37:16 2018//
 D/R////
 D/aamath////
 D/abs////
@@ -53,6 +53,7 @@ D/minisat////
 D/mlpack////
 D/moo////
 D/netcdf////
+D/nlopt////
 D/nonogram////
 D/nonolib////
 D/ntl////

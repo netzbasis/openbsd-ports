@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/12/09 09:25:06 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.3 2018/12/13 19:07:25 rsadowski Exp $
 
 COMMENT =	KDE help center
 DISTNAME =	khelpcenter-${VERSION}
@@ -16,7 +16,8 @@ WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Widgets Qt5Xml
 WANTLIB += c m xapian xml2
 
 BUILD_DEPENDS +=devel/gettext-tools \
-		devel/kf5/kdoctools
+		devel/kf5/kdoctools \
+		devel/kf5/kinit
 
 RUN_DEPENDS =	devel/desktop-file-utils \
 		devel/kf5/kdoctools \
