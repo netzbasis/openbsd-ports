@@ -46,7 +46,7 @@
 /patch-gcc_config_arm_openbsd1_h/1.1/Fri Sep  9 20:51:03 2016//
 /patch-gcc_config_arm_openbsd_h/1.4/Thu Nov  1 22:09:30 2018//
 /patch-gcc_config_exec-stack_h/1.1.1.1/Sun Sep  4 16:20:17 2016//
-/patch-gcc_config_gcc/1.5/Thu Nov  1 22:09:30 2018//
+/patch-gcc_config_gcc/1.6/Fri Dec 14 17:58:03 2018//
 /patch-gcc_config_i386_i386_c/1.5/Wed Jul 19 09:23:16 2017//
 /patch-gcc_config_i386_openbsd_h/1.1.1.1/Sun Sep  4 16:20:17 2016//
 /patch-gcc_config_i386_openbsdelf_h/1.2/Thu Nov  1 22:09:30 2018//
@@ -67,6 +67,7 @@
 /patch-gcc_config_sparc_openbsd64_h/1.1.1.1/Sun Sep  4 16:20:17 2016//
 /patch-gcc_config_sparc_openbsd_h/1.1.1.1/Sun Sep  4 16:20:18 2016//
 /patch-gcc_config_sparc_sparc_c/1.2/Wed Jul 19 09:23:16 2017//
+/patch-gcc_config_t-openbsd/1.1/Fri Dec 14 17:58:03 2018//
 /patch-gcc_configure/1.2/Wed Dec 28 21:48:21 2016//
 /patch-gcc_cp_g++spec_c/1.1.1.1/Sun Sep  4 16:20:18 2016//
 /patch-gcc_defaults_h/1.1.1.1/Sun Sep  4 16:20:18 2016//
