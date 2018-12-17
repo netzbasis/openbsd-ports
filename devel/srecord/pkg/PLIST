@@ -3,7 +3,8 @@
 @bin bin/srec_cmp
 @bin bin/srec_info
 include/srecord/
-include/srecord/adler16.ÖúÀclude/srecord/adler32.h
+include/srecord/adler16.h
+include/srecord/adler32.h
 include/srecord/crc16.h
 include/srecord/crc32.h
 include/srecord/defcon.h

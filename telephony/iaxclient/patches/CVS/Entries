@@ -4,9 +4,6 @@
 /patch-lib_codec_ffmpeg_c/1.4/Sun Apr 27 20:52:50 2014//
 /patch-lib_portmixer_px_unix_oss_px_unix_oss_c/1.1/Fri Jun 18 17:32:21 2010//
 /patch-lib_spandsp_plc_c/1.1/Mon Jan  2 12:56:06 2017//
-/patch-simpleclient_iaxcomm_calls_cc/1.1/Fri Jun 18 17:32:21 2010//
-/patch-simpleclient_iaxcomm_frame_cc/1.1/Fri Jun 18 17:32:21 2010//
-/patch-simpleclient_iaxcomm_ringer_cc/1.1/Fri Jun 18 17:32:21 2010//
 /patch-simpleclient_tkphone_Makefile_in/1.1/Fri Jun 18 17:32:21 2010//
 /patch-simpleclient_tkphone_iaxcli_c/1.2/Wed Aug  7 19:16:57 2013//
 /patch-simpleclient_tkphone_tkiaxphone/1.2/Wed Jan  5 18:00:10 2011//

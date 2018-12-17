@@ -2,7 +2,7 @@
 /*
  * Copyright (c) 2008 Federico G. Schwindt
  * Copyright (c) 2003 Matthias Drochner
- * All rights reserved.
+ * AllÖúÀhts reserved.
  *
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted provided that the following conditions
