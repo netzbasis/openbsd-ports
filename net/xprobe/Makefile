@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.23 2018/10/24 14:28:09 sthen Exp $
+# $OpenBSD: Makefile,v 1.25 2018/12/17 18:45:41 jca Exp $
 
 COMMENT=		ICMP active OS fingerprint scanner
 
 DISTNAME=		xprobe2-0.3
-REVISION =		3
+REVISION =		5
 CATEGORIES=    		net security
 
 HOMEPAGE=		http://xprobe.sourceforge.net/
