@@ -1,4 +1,4 @@
-/Makefile/1.1097/Mon Dec 17 09:59:13 2018//
+/Makefile/1.1098/Tue Dec 18 12:01:04 2018//
 D/GeoIP////
 D/adns////
 D/adsuck////
@@ -103,6 +103,7 @@ D/gloox////
 D/gmudix////
 D/gnaughty////
 D/gnugk////
+D/go-ipfs////
 D/go-net////
 D/gopher////
 D/gophernicus////

@@ -1,4 +1,4 @@
-/Makefile/1.96/Sun Dec  9 09:09:38 2018//
+/Makefile/1.97/Tue Dec 18 09:34:05 2018//
 D/base64////
 D/btoa////
 D/convmv////
@@ -20,6 +20,7 @@ D/lua-utf8////
 D/luastruct////
 D/mimepp////
 D/mpack////
+D/opencc////
 D/otf2bdf////
 D/p5-Calendar-Simple////
 D/p5-Catalyst-Plugin-Charsets-Japanese////

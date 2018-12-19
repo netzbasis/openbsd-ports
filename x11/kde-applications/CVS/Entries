@@ -1,5 +1,6 @@
-/Makefile/1.38/Mon Dec 10 16:06:54 2018//
-/Makefile.inc/1.8/Mon Oct 22 20:30:43 2018//
+/Makefile/1.39/Tue Dec 18 09:39:17 2018//
+/Makefile.inc/1.9/Tue Dec 18 09:39:17 2018//
+/kde-applications.port.mk/1.1/Tue Dec 18 09:39:17 2018//
 D/analitza////
 D/ark////
 D/artikulate////
@@ -53,6 +54,7 @@ D/kmag////
 D/kmahjongg////
 D/kmbox////
 D/kmime////
+D/kmousetool////
 D/kmplot////
 D/knavalbattle////
 D/knetwalk////
@@ -64,8 +66,13 @@ D/kpimtextedit////
 D/kqtquickcharts////
 D/kreversi////
 D/ksirk////
+D/kspaceduel////
+D/ksquares////
+D/ksudoku////
 D/ksystemlog////
 D/ktouch////
+D/ktuberling////
+D/kubrick////
 D/libkcddb////
 D/libkcompactdisc////
 D/libkdcraw////
@@ -78,8 +85,10 @@ D/libkipi////
 D/libkmahjongg////
 D/libkomparediff2////
 D/libksane////
+D/lskat////
 D/marble////
 D/okteta////
+D/palapeli////
 D/spectacle////
 D/step////
 D/svgpart////
