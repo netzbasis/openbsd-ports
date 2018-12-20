@@ -1,4 +1,4 @@
-/Makefile/1.622/Sat Dec  8 16:36:27 2018//
+/Makefile/1.624/Wed Dec 19 15:19:04 2018//
 D/2bwm////
 D/Xaw3d////
 D/XawMu////
@@ -67,7 +67,6 @@ D/flwm////
 D/freerdp////
 D/fsv////
 D/fvwm2////
-D/gaia////
 D/gammapage////
 D/gbdfed////
 D/gcolor2////
@@ -210,7 +209,6 @@ D/pekwm////
 D/pidgin-guifications////
 D/pidgin-libnotify////
 D/piewm////
-D/pinot////
 D/podbrowser////
 D/polkit-qt////
 D/pwm////

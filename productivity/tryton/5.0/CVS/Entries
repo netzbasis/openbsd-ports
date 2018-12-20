@@ -1,4 +1,4 @@
-/Makefile/1.2/Sat Dec  8 19:08:01 2018//
+/Makefile/1.3/Wed Dec 19 08:28:57 2018//
 /Makefile.inc/1.1.1.1/Mon Dec  3 12:28:12 2018//
 D/account////
 D/account_asset////
@@ -34,18 +34,48 @@ D/analytic_account////
 D/analytic_invoice////
 D/analytic_purchase////
 D/analytic_sale////
+D/authentication_sms////
 D/bank////
+D/carrier////
+D/carrier_percentage////
+D/carrier_weight////
+D/commission////
+D/commission_waiting////
 D/company////
+D/company_work_time////
 D/country////
 D/currency////
+D/customs////
+D/dashboard////
+D/edocument_uncefact////
+D/edocument_unece////
+D/google_maps////
+D/notification_email////
 D/party////
+D/party_relationship////
 D/party_siret////
 D/product////
+D/product_attribute////
+D/product_classification////
+D/product_classification_taxonomic////
+D/product_cost_fifo////
+D/product_cost_history////
 D/product_measurements////
+D/product_price_list////
+D/product_price_list_dates////
+D/product_price_list_parent////
+D/production////
+D/production_outsourcing////
+D/production_routing////
+D/production_split////
+D/production_work////
+D/production_work_timesheet////
 D/proteus////
 D/purchase////
 D/purchase_request////
+D/purchase_shipment_cost////
 D/sale////
+D/sale_shipment_cost////
 D/sale_supply////
 D/sale_supply_drop_shipment////
 D/sao////
@@ -53,5 +83,7 @@ D/stock////
 D/stock_package////
 D/stock_shipment_measurements////
 D/stock_supply////
+D/timesheet////
 D/tryton////
 D/trytond////
+D/web_user////

@@ -1,4 +1,4 @@
-/Makefile/1.39/Tue Dec 18 09:39:17 2018//
+/Makefile/1.41/Wed Dec 19 08:52:16 2018//
 /Makefile.inc/1.9/Tue Dec 18 09:39:17 2018//
 /kde-applications.port.mk/1.1/Tue Dec 18 09:39:17 2018//
 D/analitza////
@@ -15,6 +15,7 @@ D/dolphin-plugins////
 D/dragon////
 D/ffmpegthumbs////
 D/granatier////
+D/kajongg////
 D/kalgebra////
 D/kalzium////
 D/kanagram////
@@ -54,6 +55,7 @@ D/kmag////
 D/kmahjongg////
 D/kmbox////
 D/kmime////
+D/kmines////
 D/kmousetool////
 D/kmplot////
 D/knavalbattle////
@@ -65,7 +67,9 @@ D/konsole////
 D/kpimtextedit////
 D/kqtquickcharts////
 D/kreversi////
+D/kshisen////
 D/ksirk////
+D/ksnakeduel////
 D/kspaceduel////
 D/ksquares////
 D/ksudoku////

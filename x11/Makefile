@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.622 2018/12/08 16:36:27 landry Exp $
+# $OpenBSD: Makefile,v 1.624 2018/12/19 15:19:04 solene Exp $
 
      SUBDIR =
      SUBDIR += 2bwm
@@ -73,7 +73,6 @@
      SUBDIR += freerdp
      SUBDIR += fsv
      SUBDIR += fvwm2
-     SUBDIR += gaia
      SUBDIR += gammapage
      SUBDIR += gbdfed
      SUBDIR += gcolor2
@@ -217,7 +216,6 @@
      SUBDIR += pidgin-guifications
      SUBDIR += pidgin-libnotify
      SUBDIR += piewm
-     SUBDIR += pinot
      SUBDIR += podbrowser
      SUBDIR += polkit-qt
      SUBDIR += polkit-qt,qt5
