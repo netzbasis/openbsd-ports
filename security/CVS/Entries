@@ -1,4 +1,4 @@
-/Makefile/1.526/Tue Dec 11 12:07:47 2018//
+/Makefile/1.527/Fri Dec 21 22:04:03 2018//
 D/ADMsnmp////
 D/acme-client////
 D/aescrypt////
@@ -141,6 +141,7 @@ D/openssl////
 D/ophcrack////
 D/opmsg////
 D/origami////
+D/ossec-hids////
 D/otpcalc////
 D/outguess////
 D/p0f////
