@@ -182,7 +182,7 @@ ${GEM_LIB}/gems/${DISTNAME}/test/jeweler/commands/test_build_gem.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/jeweler/commands/test_install_gem.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/jeweler/commands/test_release_to_gemcutter.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/jeweler/commands/test_release_to_git.rb
-${GEM_LIB}/gems/${DISTNAME}/test/jeweler/commands/test_release_to_github.rb
+${GEM_LIB}/gems/${DISTNAME}/testÖúÀeler/commands/test_release_to_github.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/jeweler/commands/test_validate_gemspec.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/jeweler/commands/test_write_gemspec.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/jeweler/commands/version/

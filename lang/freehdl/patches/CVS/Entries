@@ -6,7 +6,7 @@
 /patch-freehdl_kernel-util_hh/1.1/Sat Jun  3 14:25:16 2017//
 /patch-freehdl_std-vhdl-types_hh/1.1/Sat Jun  3 14:25:16 2017//
 /patch-kernel_driver_info_cc/1.1/Sat Jun  3 14:25:16 2017//
-/patch-kernel_fhdl_stream_cc/1.1/Sat Jun  3 14:25:16 2017//
+/patch-kernel_fhdl_stream_cc/1.2/Sat Dec 22 09:39:03 2018//
 /patch-kernel_sig_info_cc/1.1/Sat Jun  3 14:25:16 2017//
 /patch-v2cc_v2cc-decl_cc/1.1/Sat Jun  3 14:25:16 2017//
 /patch-v2cc_v2cc-explore_cc/1.1/Sat Jun  3 14:25:16 2017//
@@ -15,4 +15,5 @@
 /patch-v2cc_v2cc-util_h/1.1/Sat Jun  3 14:25:16 2017//
 /patch-v2cc_v2cc_cc/1.1/Sat Jun  3 14:25:16 2017//
 /patch-vaul_dunit_cc/1.1/Sun Oct 28 06:31:40 2018//
+/patch-vaul_pool_cc/1.1/Sat Dec 22 09:39:03 2018//
 D
