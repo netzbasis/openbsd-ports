@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.76 2018/12/13 19:52:46 sthen Exp $
+# $OpenBSD: Makefile,v 1.79 2018/12/24 23:34:27 jca Exp $
 
 COMMENT-main=	free peer-reviewed portable C++ source libraries
 COMMENT-md=	machine-dependent libraries for boost
@@ -97,6 +97,7 @@ BUILD_PACKAGES=	${MULTI_PACKAGES:N-md}
 TOOLSET=	clang
 .else
 TOOLSET=	gcc
+CXXFLAGS+=	-std=gnu++11
 .endif
 
 MAKE_ENV=	GCC="${CC}" GXX="${CXX}"
@@ -105,6 +106,7 @@ BJAM_CONFIG=	-sICU_PATH=${LOCALBASE} \
 		-sBZIP2_INCLUDE=${LOCALBASE}/include \
 		-sBZIP2_LIBPATH=${LOCALBASE}/lib \
 		-q \
+		-d+2 \
 		-j${MAKE_JOBS} \
 		--layout=tagged \
 		pch=off \
@@ -157,6 +159,7 @@ do-configure:
 # b2 doesn't seem to respect python parameter, we need to run twice with
 # separate python environments
 do-build:
+	export ${MAKE_ENV}; \
 	cd ${WRKSRC} && chmod -R a+x ./ && \
 	/bin/sh ./bootstrap.sh ${BOOTSTRAP} ${PY2_BOOTSTRAP} && \
 	./b2 ${BJAM_CONFIG} python=${MODPY_DEFAULT_VERSION_2} && \
