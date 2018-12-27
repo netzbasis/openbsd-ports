@@ -1,4 +1,4 @@
-/Makefile/1.50/Thu Dec 20 08:29:04 2018//
+/Makefile/1.52/Wed Dec 26 10:05:37 2018//
 D/abyssinica////
 D/adobe-fonts////
 D/alkalami////
@@ -50,7 +50,6 @@ D/linuxlibertine-fonts-otf////
 D/linuxlibertine-fonts-ttf////
 D/lohit-fonts////
 D/mada////
-D/mftrace////
 D/migmix////
 D/migu////
 D/mixfont-mplus-ipa////
@@ -77,8 +76,6 @@ D/ubuntu-fonts////
 D/un-fonts////
 D/vlgothic////
 D/zh-arphicttf////
-D/zh-bg5pdf////
-D/zh-bg5ps////
 D/zh-kcfonts////
 D/zh-taipeifonts////
 D/zh-wqy-bitmapfont////

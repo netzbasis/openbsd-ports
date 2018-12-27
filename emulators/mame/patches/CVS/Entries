@@ -1,9 +1,9 @@
-/patch-3rdparty_bgfx_examples_common_nanovg_fontstash_h/1.1.1.1/Wed Jan 24 20:56:12 2018//
+/patch-3rdparty_bgfx_examples_common_nanovg_fontstash_h/1.2/Wed Dec 26 11:29:18 2018//
 /patch-3rdparty_bx_include_bx_bx_h/1.1.1.1/Wed Jan 24 20:56:12 2018//
 /patch-3rdparty_bx_src_allocator_cpp/1.1.1.1/Wed Jan 24 20:56:12 2018//
-/patch-3rdparty_bx_src_mutex_cpp/1.1.1.1/Wed Jan 24 20:56:12 2018//
-/patch-3rdparty_bx_src_thread_cpp/1.1.1.1/Wed Jan 24 20:56:12 2018//
+/patch-3rdparty_bx_src_mutex_cpp/1.2/Wed Dec 26 11:29:18 2018//
+/patch-3rdparty_bx_src_thread_cpp/1.2/Wed Dec 26 11:29:18 2018//
 /patch-3rdparty_genie_build_gmake_bsd_genie_make/1.1.1.1/Wed Jan 24 20:56:12 2018//
-/patch-makefile/1.6/Fri Aug 31 16:19:01 2018//
-/patch-scripts_genie_lua/1.7/Thu Sep 27 10:43:14 2018//
+/patch-makefile/1.7/Wed Dec 26 11:29:18 2018//
+/patch-scripts_genie_lua/1.8/Wed Dec 26 11:29:18 2018//
 D
