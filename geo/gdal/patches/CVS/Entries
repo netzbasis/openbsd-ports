@@ -1,4 +1,6 @@
-/patch-swig_perl_GNUmakefile/1.5/Mon Jul  2 06:14:43 2018//
-/patch-swig_python_GNUmakefile/1.6/Sun May 13 06:26:35 2018//
-/patch-swig_python_setup_py/1.11/Sun May 13 06:26:35 2018//
+/patch-autotest_conftest.py/1.1/Fri Dec 28 08:53:59 2018//
+/patch-port_cpl_vsisimple_cpp/1.1/Fri Dec 28 08:53:59 2018//
+/patch-swig_perl_GNUmakefile/1.6/Fri Dec 28 08:53:59 2018//
+/patch-swig_python_GNUmakefile/1.7/Fri Dec 28 08:53:59 2018//
+/patch-swig_python_setup_py/1.12/Fri Dec 28 08:53:59 2018//
 D
