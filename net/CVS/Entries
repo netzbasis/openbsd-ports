@@ -1,4 +1,4 @@
-/Makefile/1.1101/Mon Dec 24 23:41:37 2018//
+/Makefile/1.1102/Sat Dec 29 14:29:54 2018//
 D/GeoIP////
 D/adns////
 D/adsuck////
@@ -478,6 +478,7 @@ D/poink////
 D/pop3gwd////
 D/poptop////
 D/powerdns////
+D/powerdns_recursor////
 D/profanity////
 D/prosody////
 D/proxy-suite////
