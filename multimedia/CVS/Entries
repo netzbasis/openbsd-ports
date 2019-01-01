@@ -1,4 +1,4 @@
-/Makefile/1.108/Tue Sep 11 04:32:30 2018//
+/Makefile/1.109/Sun Dec 30 12:10:04 2018//
 D/assimp////
 D/atomicparsley////
 D/audiopreview////
@@ -10,6 +10,7 @@ D/dvdauthor////
 D/dvdbackup////
 D/dvdstyler////
 D/ffmpeg2theora////
+D/frei0r-plugins////
 D/get_flash_videos////
 D/get_iplayer////
 D/gnome-twitch////
