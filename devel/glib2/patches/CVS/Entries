@@ -1,14 +1,5 @@
-/gcc3-patch-glib_tests_Makefile_am/1.1/Thu Aug 23 07:16:36 2018//
-/gcc3-patch-glib_tests_Makefile_in/1.6/Thu Oct 26 08:48:59 2017//
-/patch-configure_ac/1.22/Sat Sep 22 08:39:31 2018//
-/patch-gio_glib-compile-schemas_c/1.10/Fri Nov  3 13:16:06 2017//
+/gcc3-patch-glib_tests_meson_build/1.1/Tue Jan  1 11:32:15 2019//
+/patch-gio_glib-compile-schemas_c/1.11/Tue Jan  1 11:32:15 2019//
 /patch-gio_gunixmount_c/1.14/Fri Oct 28 13:40:04 2016//
-/patch-gio_kqueue_Makefile_am/1.1/Sun Apr 22 13:27:25 2018//
-/patch-gio_kqueue_gkqueuefilemonitor_c/1.6/Mon Apr 23 19:51:21 2018//
-/patch-gio_kqueue_kqueue-helper_c/1.6/Sun Apr 22 13:27:25 2018//
-/patch-gio_kqueue_kqueue-helper_h/1.1/Sun Apr 22 13:27:25 2018//
-/patch-gio_kqueue_kqueue-missing_c/1.4/Sun Apr 22 13:27:25 2018//
-/patch-gio_kqueue_meson_build/1.1/Sun Apr 22 13:27:25 2018//
-/patch-gio_tests_file_c/1.9/Sun Apr 22 13:27:25 2018//
-/patch-glib_gutils_c/1.4/Mon Sep 24 20:00:59 2018//
+/patch-glib_gutils_c/1.5/Tue Jan  1 11:32:15 2019//
 D
