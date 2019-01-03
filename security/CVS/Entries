@@ -1,4 +1,4 @@
-/Makefile/1.527/Fri Dec 21 22:04:03 2018//
+/Makefile/1.528/Wed Jan  2 20:31:00 2019//
 D/ADMsnmp////
 D/acme-client////
 D/aescrypt////
@@ -101,7 +101,6 @@ D/libgcrypt////
 D/libgpg-error////
 D/libgringotts////
 D/libgsasl////
-D/libhttpseverywhere////
 D/libident////
 D/libksba////
 D/libmcrypt////

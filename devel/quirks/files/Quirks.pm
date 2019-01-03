@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.693 2018/12/29 13:52:27 solene Exp $
+# $OpenBSD: Quirks.pm,v 1.696 2019/01/02 20:32:12 jasper Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -315,6 +315,7 @@ my $stem_extensions = {
 	'pecl70-ssh2' => 'pecl71-ssh2',
 	'zh-bg5ps' => 'bg5ps',
 	'zh-bg5pdf' => 'bg5pdf',
+	'wxWidgets-gtk2' => 'wxWidgets-gtk3',
 };
 
 my $obsolete_reason = {
@@ -1135,6 +1136,8 @@ my $obsolete_reason = {
 	'emerillon' => 3,
 	'mplex' => 5,
 	'gromit' => 0,
+	'discwrapper' => 3,
+	'libhttpseverywhere' => 6,
 };
 
 # reasons for obsolete packages

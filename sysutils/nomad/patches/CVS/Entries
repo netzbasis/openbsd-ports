@@ -1,4 +1,5 @@
 /patch-client_allocdir_fs_openbsd_go/1.1.1.1/Sat Oct 27 16:44:55 2018//
 /patch-vendor_github_com_fsouza_go-dockerclient_external_github_com_docker_docker_pkg_system_stat_openbsd_go/1.1.1.1/Sat Oct 27 16:44:55 2018//
 /patch-vendor_github_com_mitchellh_go-ps_process_openbsd_go/1.1.1.1/Sat Oct 27 16:44:55 2018//
+/patch-vendor_github_com_shirou_gopsutil_cpu_cpu_openbsd_go/1.1/Wed Jan  2 16:13:21 2019//
 D
