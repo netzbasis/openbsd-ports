@@ -1,4 +1,4 @@
-/Makefile/1.41/Wed Dec 19 08:52:16 2018//
+/Makefile/1.42/Fri Jan  4 14:57:02 2019//
 /Makefile.inc/1.9/Tue Dec 18 09:39:17 2018//
 /kde-applications.port.mk/1.1/Tue Dec 18 09:39:17 2018//
 D/analitza////
@@ -92,6 +92,7 @@ D/libksane////
 D/lskat////
 D/marble////
 D/okteta////
+D/okular////
 D/palapeli////
 D/spectacle////
 D/step////

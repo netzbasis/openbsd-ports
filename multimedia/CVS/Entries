@@ -1,4 +1,4 @@
-/Makefile/1.109/Sun Dec 30 12:10:04 2018//
+/Makefile/1.110/Fri Jan  4 14:44:59 2019//
 D/assimp////
 D/atomicparsley////
 D/audiopreview////
@@ -73,6 +73,7 @@ D/swftools////
 D/synfig////
 D/synfigstudio////
 D/transcode////
+D/upplay////
 D/vitunes////
 D/x264////
 D/x265////

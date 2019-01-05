@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.54 2018/12/19 08:51:13 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.56 2019/01/04 22:43:59 rsadowski Exp $
 
 PKGNAME =		kde4-${MODKDE4_VERSION}
 
@@ -32,8 +32,9 @@ REVISION-sdk = 2
 REVISION-edu = 4
 REVISION-multimedia = 0
 REVISION-extras = 8
-REVISION-main =		15
+REVISION-main =		17
 REVISION-admin =	0
+REVISION-graphics =	1
 
 MAINTAINER =		KDE porting team <openbsd-kde@googlegroups.com>
 
@@ -104,7 +105,6 @@ KDE4-graphics = \
 	${MODKDE4_DEP_DIR}/libkexiv2		\
 	${MODKDE4_DEP_DIR}/libkipi		\
 	${MODKDE4_DEP_DIR}/libksane		\
-	${MODKDE4_DEP_DIR}/okular		\
 	${MODKDE4_DEP_DIR}/svgpart
 
 RUN_DEPENDS-games = \

@@ -1,4 +1,4 @@
-/Makefile/1.1102/Sat Dec 29 14:29:54 2018//
+/Makefile/1.1103/Fri Jan  4 14:30:58 2019//
 D/GeoIP////
 D/adns////
 D/adsuck////
@@ -202,6 +202,7 @@ D/libtorrent////
 D/libtorrent-rasterbar////
 D/libunbound////
 D/libupnp////
+D/libupnpp////
 D/libvncserver////
 D/livemedia////
 D/lldpd////
@@ -284,7 +285,6 @@ D/oinkmaster////
 D/olsrd////
 D/onioncat////
 D/onionshare////
-D/openafs////
 D/openconnect////
 D/openfire////
 D/openmdns////
