@@ -1,4 +1,4 @@
-/Makefile/1.1798/Sun Dec 30 07:16:44 2018//
+/Makefile/1.1800/Sat Jan  5 10:51:20 2019//
 D/ElectricFence////
 D/ORBit2////
 D/acpica////
@@ -651,6 +651,7 @@ D/p5-Devel-FastProf////
 D/p5-Devel-FindRef////
 D/p5-Devel-Gladiator////
 D/p5-Devel-GlobalDestruction////
+D/p5-Devel-Hide////
 D/p5-Devel-Leak////
 D/p5-Devel-Leak-Object////
 D/p5-Devel-NYTProf////
@@ -1097,6 +1098,7 @@ D/p5-Test-Without-Module////
 D/p5-Test-XML////
 D/p5-Test-YAML////
 D/p5-Test-YAML-Valid////
+D/p5-Test-utf8////
 D/p5-Text-FixEOL////
 D/p5-Text-vFile-asData////
 D/p5-Throwable////
