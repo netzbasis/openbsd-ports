@@ -1,4 +1,4 @@
-/Makefile/1.1104/Sat Jan  5 23:09:44 2019//
+/Makefile/1.1105/Sun Jan  6 10:32:38 2019//
 D/GeoIP////
 D/adns////
 D/adsuck////
@@ -651,7 +651,6 @@ D/uhttpmock////
 D/unifi////
 D/unison////
 D/unworkable////
-D/ushare////
 D/utox////
 D/uucp////
 D/uucpd////
