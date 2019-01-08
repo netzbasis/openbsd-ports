@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.183 2019/01/03 13:36:23 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.185 2019/01/07 15:04:47 sthen Exp $
 
 COMMENT-main=		GNOME Virtual File System
 COMMENT-smb=		GVFS mount module for samba
@@ -14,6 +14,12 @@ PKGNAME-smb=		${GNOME_PROJECT}-smb-${GNOME_VERSION}
 PKGNAME-goa=		${GNOME_PROJECT}-goa-${GNOME_VERSION}
 PKGNAME-nfs=		${GNOME_PROJECT}-nfs-${GNOME_VERSION}
 PKGNAME-google=		${GNOME_PROJECT}-google-${GNOME_VERSION}
+
+REVISION-main=		0
+REVISION-smb=		0
+REVISION-goa=		0
+REVISION-nfs=		0
+REVISION-google=	0
 
 # LGPLv2
 PERMIT_PACKAGE_CDROM=	Yes
@@ -77,7 +83,7 @@ CONFIGURE_ARGS +=	-Dafc=false \
 			-Dlogind=false \
 			-Dsystemduserunitdir=no \
 			-Dtmpfilesdir=no
-			
+
 # needs libcap
 CONFIGURE_ARGS +=	-Dadmin=false
 
@@ -90,6 +96,12 @@ PSEUDO_FLAVORS=		no_smb no_goa no_nfs no_google bootstrap
 FLAVOR?=		no_smb no_goa no_nfs no_google bootstrap
 
 .include <bsd.port.arch.mk>
+
+# disable meson's default of using "-Wl,--as-needed" on ld.bfd arches;
+# build failures due to undefined references are often seen.
+.if !${PROPERTIES:Mlld}
+CONFIGURE_ARGS +=	-Db_asneeded=false
+.endif
 
 .if !${BUILD_PACKAGES:M-smb}
 CONFIGURE_ARGS +=	-Dsmb=false
