@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.52 2018/11/02 18:48:39 naddy Exp $
+# $OpenBSD: Makefile,v 1.54 2019/01/10 17:54:14 jca Exp $
 
 # uses gcj which is only supported on select archs
 ONLY_FOR_ARCHS=	amd64 i386 sparc64

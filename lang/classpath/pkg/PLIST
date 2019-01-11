@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2016/03/27 20:53:15 naddy Exp $
+@comment $OpenBSD: PLIST,v 1.8 2019/01/10 17:54:14 jca Exp $
 bin/gappletviewer
 bin/gjar
 bin/gjarsigner
