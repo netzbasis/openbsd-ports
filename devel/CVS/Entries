@@ -1,4 +1,4 @@
-/Makefile/1.1802/Tue Jan  8 19:01:55 2019//
+/Makefile/1.1803/Sat Jan 12 21:48:14 2019//
 D/ElectricFence////
 D/ORBit2////
 D/acpica////
@@ -824,6 +824,7 @@ D/p5-MRO-Compat////
 D/p5-Math-Base-Convert////
 D/p5-Memoize-ExpireLRU////
 D/p5-Mixin-Linewise////
+D/p5-Mock-Config////
 D/p5-Modern-Perl////
 D/p5-Module-Build////
 D/p5-Module-Build-Tiny////
