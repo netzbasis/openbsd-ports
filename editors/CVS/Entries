@@ -1,4 +1,4 @@
-/Makefile/1.131/Tue Nov  6 23:55:39 2018//
+/Makefile/1.132/Sun Jan 13 19:10:26 2019//
 D/TeXmacs////
 D/abiword////
 D/axe////
@@ -25,6 +25,7 @@ D/ht////
 D/jed////
 D/joe////
 D/jove////
+D/kile////
 D/kile-kde4////
 D/ktikz////
 D/ldapvi////

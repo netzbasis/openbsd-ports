@@ -1,4 +1,4 @@
-/Makefile/1.1803/Sat Jan 12 21:48:14 2019//
+/Makefile/1.1804/Sun Jan 13 14:52:14 2019//
 D/ElectricFence////
 D/ORBit2////
 D/acpica////
@@ -1032,6 +1032,7 @@ D/p5-Test-ClassAPI////
 D/p5-Test-Cmd////
 D/p5-Test-Command////
 D/p5-Test-Command-Simple////
+D/p5-Test-Compile////
 D/p5-Test-Corpus-Audio-MPD////
 D/p5-Test-Deep////
 D/p5-Test-Deep-JSON////
