@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.46 2019/01/05 14:02:12 bket Exp $
+# $OpenBSD: Makefile,v 1.48 2019/01/16 14:47:22 sthen Exp $
 
 COMMENT=	client for Cisco AnyConnect SSL VPN
 
-DISTNAME=	openconnect-8.01
+DISTNAME=	openconnect-8.02
+REVISION=	0
 
 SHARED_LIBS +=  openconnect               4.4 # 5.5
 
@@ -64,7 +65,7 @@ LIB_DEPENDS+=	net/libproxy>=0.4.6p7 \
 .endif
 
 post-install:
-	rm -rf ${PREFIX}/libexec/openconnect
+	rm -r ${PREFIX}/libexec/openconnect
 
 pre-test:
 	perl -pi -e s,/usr/sbin/ocserv,${LOCALBASE}/sbin/ocserv,g \

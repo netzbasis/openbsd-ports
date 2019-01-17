@@ -1,15 +1,16 @@
-# $OpenBSD: Makefile,v 1.184 2018/12/19 13:34:14 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.186 2019/01/16 22:02:13 sthen Exp $
 
 COMMENT=		image processing tools
 
 VER=			6.9.10
-DASHVER=		14
+DASHVER=		23
+REVISION=		0
 DISTNAME=		ImageMagick-${VER}-${DASHVER}
 PKGNAME=		ImageMagick-${VER}.${DASHVER}
 PORTROACH=		site:https://www.imagemagick.org/download/ limit:6.*
 EXTRACT_SUFX=		.tar.xz
 
-SHARED_LIBS +=	MagickCore-6.Q16     6.2      # 6.0
+SHARED_LIBS +=	MagickCore-6.Q16     6.3      # 6.0
 SHARED_LIBS +=	MagickWand-6.Q16     4.0      # 6.0
 SHARED_LIBS +=	Magick++-6.Q16       5.2      # 8.0
 
@@ -27,7 +28,7 @@ PERMIT_PACKAGE_CDROM=	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} ICE SM X11 Xau Xdmcp Xext Xt bz2
 WANTLIB += c djvulibre expat fftw3 fontconfig freetype iconv jasper
-WANTLIB += jbig jpeg lcms2 lzma m openjp2 perl png raw_r tiff webp
+WANTLIB += jbig jpeg lcms2 lzma m openjp2 perl png16 raw_r tiff webp
 WANTLIB += webpmux xcb xml2 z
 
 COMPILER =		base-clang ports-gcc base-gcc
