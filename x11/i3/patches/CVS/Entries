@@ -1,15 +1,25 @@
 /patch-Makefile_in/1.5/Sun Jan 13 12:48:10 2019//
 /patch-configure/1.3/Sun Jan 13 12:48:10 2019//
+/patch-docs_ipc/1.1/Fri Jan 18 11:34:20 2019//
 /patch-etc_config/1.1/Sun Nov 13 20:46:23 2016//
 /patch-etc_config_keycodes/1.2/Thu Mar 29 21:05:32 2018//
 /patch-i3-dmenu-desktop/1.7/Mon Sep  4 14:33:07 2017//
 /patch-i3-nagbar_main_c/1.14/Sun Jan 13 12:48:10 2019//
+/patch-include_config_directives_h/1.1/Fri Jan 18 11:34:20 2019//
+/patch-include_ipc_h/1.5/Fri Jan 18 11:57:36 2019//
+/patch-include_libi3_h/1.3/Fri Jan 18 11:57:36 2019//
 /patch-libi3_get_exe_path_c/1.3/Sun Nov 13 20:46:23 2016//
+/patch-libi3_safewrappers_c/1.1/Fri Jan 18 11:57:36 2019//
 /patch-man_i3-config-wizard_man/1.2/Sun Jan 13 12:48:10 2019//
 /patch-man_i3-dump-log_man/1.1/Sun Nov 13 20:46:23 2016//
 /patch-man_i3-nagbar_man/1.2/Sun Jan 13 12:48:10 2019//
 /patch-man_i3_man/1.3/Sun Jan 13 12:48:10 2019//
+/patch-parser-specs_config_spec/1.7/Fri Jan 18 11:57:36 2019//
 /patch-src_bindings_c/1.8/Sun Jan 13 12:48:10 2019//
+/patch-src_config_directives_c/1.5/Fri Jan 18 11:57:36 2019//
 /patch-src_config_parser_c/1.11/Thu Mar 29 21:05:32 2018//
+/patch-src_ipc_c/1.18/Fri Jan 18 11:57:36 2019//
 /patch-src_manage_c/1.22/Sun Jan 13 12:48:10 2019//
+/patch-testcases_t_201-config-parser_t/1.1/Fri Jan 18 11:57:36 2019//
+/patch-testcases_t_298-ipc-misbehaving-connection_t/1.1/Fri Jan 18 11:57:36 2019//
 D

@@ -1,4 +1,4 @@
-/Makefile/1.468/Wed Jan  2 12:58:11 2019//
+/Makefile/1.469/Fri Jan 18 11:37:12 2019//
 D/DevIL////
 D/GraphicsMagick////
 D/ImageMagick////
@@ -123,6 +123,7 @@ D/lcms////
 D/lcms2////
 D/lensfun////
 D/leptonica////
+D/libansilove////
 D/libart////
 D/libcaca////
 D/libdmtx////
