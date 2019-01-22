@@ -22,6 +22,7 @@
 /patch-kdecore_kconfig_compiler_CMakeLists_txt/1.1/Mon Aug 12 01:29:03 2013//
 /patch-kdecore_kernel_kstandarddirs_cpp/1.3/Fri Jul 11 11:13:10 2014//
 /patch-kdecore_kernel_kstandarddirs_unix_cpp/1.1/Wed Apr 24 19:45:29 2013//
+/patch-kdecore_localization_klocale_kde_cpp/1.1/Mon Jan 21 20:54:48 2019//
 /patch-kdecore_localization_kuitsemantics_cpp/1.1/Tue Apr 17 13:32:05 2018//
 /patch-kdecore_network_ConfigureChecks_cmake/1.3/Wed Apr 24 19:45:29 2013//
 /patch-kdecore_network_klocalsocket_unix_cpp/1.1/Wed Apr 24 19:45:29 2013//
@@ -49,7 +50,8 @@
 /patch-kinit_kinit_cpp/1.2/Tue Apr 17 13:50:35 2018//
 /patch-kinit_klauncher_cpp/1.3/Fri Jul 18 08:17:12 2014//
 /patch-kinit_lnusertemp_c/1.3/Tue Jan 20 21:58:43 2015//
-/patch-kio_kfile_kpropertiesdialog_cpp/1.2/Fri Jul 11 11:13:10 2014//
+/patch-kio_kfile_kopenwithdialog_cpp/1.1/Mon Jan 21 20:54:48 2019//
+/patch-kio_kfile_kpropertiesdialog_cpp/1.3/Mon Jan 21 20:54:48 2019//
 /patch-kio_kio_kautomount_h/1.1/Sat Jun 17 21:58:59 2017//
 /patch-kio_kio_kfileshare_cpp/1.1/Wed Apr 24 19:45:29 2013//
 /patch-kio_kio_kmimetypechooser_cpp/1.1/Fri Jan 10 08:12:11 2014//
