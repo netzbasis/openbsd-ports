@@ -1,4 +1,4 @@
-/Makefile/1.510/Tue Dec 18 19:32:01 2018//
+/Makefile/1.511/Wed Jan 23 03:48:59 2019//
 D/accountsservice////
 D/amazon-ecs-cli////
 D/amazon-ssm-agent////
@@ -324,6 +324,7 @@ D/tkdvd////
 D/tmate////
 D/tmux-mem-cpu-load////
 D/tmuxinator////
+D/toad////
 D/torture////
 D/tpb////
 D/tphdisk////
