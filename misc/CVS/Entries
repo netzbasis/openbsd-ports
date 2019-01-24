@@ -1,4 +1,4 @@
-/Makefile/1.186/Fri Aug 17 00:47:11 2018//
+/Makefile/1.187/Wed Jan 23 15:24:53 2019//
 D/WordGenerator////
 D/astrolog////
 D/bible-kjv////
@@ -22,6 +22,7 @@ D/dtcltiny////
 D/dvtm////
 D/ent////
 D/fasd////
+D/feathernotes////
 D/figlet////
 D/findutils////
 D/ftdi-eeprom////
