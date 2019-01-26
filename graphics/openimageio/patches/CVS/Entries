@@ -1,7 +1,9 @@
 /patch-src_cmake_platform_cmake/1.4/Tue Dec 26 19:19:04 2017//
+/patch-src_include_OpenImageIO_simd_h/1.1/Fri Jan 25 20:09:43 2019//
 /patch-src_include_tbb_machine_gcc_generic_h/1.1/Wed Jun 13 11:32:39 2012//
 /patch-src_include_tbb_machine_sunos_sparc_h/1.1/Wed Jun 13 11:32:39 2012//
 /patch-src_libtexture_texture_pvt_h/1.2/Sun Oct  4 12:59:15 2015//
+/patch-src_libutil_simd_test_cpp/1.1/Fri Jan 25 20:09:43 2019//
 /patch-src_libutil_sysutil_cpp/1.6/Tue Dec 26 19:19:04 2017//
 /patch-src_make_detectplatform_mk/1.1.1.1/Wed May  9 12:42:06 2012//
 D
