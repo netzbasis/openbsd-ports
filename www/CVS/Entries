@@ -1,4 +1,4 @@
-/Makefile/1.890/Wed Jan 23 15:16:41 2019//
+/Makefile/1.891/Sat Jan 26 14:42:55 2019//
 D/ajaxterm////
 D/analog////
 D/ap2-mod_dnssd////
@@ -299,7 +299,6 @@ D/p5-URI-Find////
 D/p5-WWW-Bugzilla////
 D/p5-WWW-Curl////
 D/p5-WWW-Ebay////
-D/p5-WWW-Google-SiteMap////
 D/p5-WWW-IndexParser////
 D/p5-WWW-Mechanize////
 D/p5-WWW-Mechanize-FormFiller////
