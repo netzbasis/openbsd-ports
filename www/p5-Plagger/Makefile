@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.9 2016/03/20 19:57:21 naddy Exp $
+# $OpenBSD: Makefile,v 1.11 2019/01/28 01:00:21 sthen Exp $
 
 COMMENT=	pluggable RSS/Atom aggregator
 
 MODULES=	cpan
 PKG_ARCH=	*
 DISTNAME=	Plagger-0.7.17
-REVISION=	1
+REVISION=	3
 CATEGORIES=	www textproc
 
 CPAN_AUTHOR=	MIYAGAWA
