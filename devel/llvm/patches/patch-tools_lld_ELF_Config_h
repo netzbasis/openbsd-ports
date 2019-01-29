@@ -1,15 +1,15 @@
-$OpenBSD: patch-tools_lld_ELF_Config_h,v 1.4 2018/10/25 09:25:38 ajacoutot Exp $
+$OpenBSD: patch-tools_lld_ELF_Config_h,v 1.6 2019/01/28 15:34:22 jca Exp $
 
-Add support for -z initfirst.
+lld: add -z interpose support
 
 Index: tools/lld/ELF/Config.h
 --- tools/lld/ELF/Config.h.orig
 +++ tools/lld/ELF/Config.h
-@@ -151,6 +151,7 @@ struct Configuration {
-   bool WarnMissingEntry;
-   bool ZCombreloc;
+@@ -182,6 +182,7 @@ struct Configuration {
    bool ZExecstack;
-+  bool ZInitfirst;
    bool ZHazardplt;
-   bool ZNocopyreloc;
+   bool ZInitfirst;
++  bool ZInterpose;
+   bool ZKeepTextSectionPrefix;
    bool ZNodelete;
+   bool ZNodlopen;

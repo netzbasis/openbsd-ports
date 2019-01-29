@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.39 2019/01/13 10:20:18 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.42 2019/01/28 06:20:44 ajacoutot Exp $
 
 COMMENT=		next-generation build system
 
 MODPY_EGG_VERSION=	${GH_TAGNAME}
 GH_ACCOUNT=		mesonbuild
 GH_PROJECT=		meson
-GH_TAGNAME=		0.49.0
+GH_TAGNAME=		0.49.1
 EPOCH=			0
 REVISION=		0
 
@@ -26,7 +26,9 @@ MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
 RUN_DEPENDS=		devel/ninja
 
 pre-configure:
-	sed -ui "s,share/man,man," ${WRKSRC}/setup.py
+	sed -i "s,share/man,man," ${WRKSRC}/setup.py
+	sed -i "s,/usr/bin,${PREFIX}/bin,g" \
+		${WRKSRC}/data/com.mesonbuild.install.policy
 
 do-test:
 	cd ${WRKSRC} && ${MODPY_BIN} ./run_tests.py
