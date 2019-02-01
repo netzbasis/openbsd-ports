@@ -1,4 +1,4 @@
-/Makefile/1.1809/Wed Jan 30 08:04:07 2019//
+/Makefile/1.1810/Thu Jan 31 17:47:55 2019//
 D/ElectricFence////
 D/ORBit2////
 D/acpica////
@@ -1391,6 +1391,7 @@ D/py-setproctitle////
 D/py-setuptools////
 D/py-setuptools_git////
 D/py-setuptools_scm////
+D/py-setuptools_scm_git_archive////
 D/py-setuptools_trial////
 D/py-sh////
 D/py-silc////
