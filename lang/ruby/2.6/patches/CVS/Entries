@@ -1,6 +1,6 @@
 /patch-common_mk/1.1.1.1/Mon Jan 14 16:13:05 2019//
 /patch-compile_c/1.1.1.1/Mon Jan 14 16:13:05 2019//
-/patch-configure/1.1.1.1/Mon Jan 14 16:13:05 2019//
+/patch-configure/1.2/Fri Feb  1 16:24:59 2019//
 /patch-ext_etc_etc_c/1.1.1.1/Mon Jan 14 16:13:05 2019//
 /patch-ext_extmk_rb/1.1.1.1/Mon Jan 14 16:13:05 2019//
 /patch-ext_openssl_extconf_rb/1.1.1.1/Mon Jan 14 16:13:05 2019//
@@ -11,7 +11,6 @@
 /patch-lib_rubygems_commands_install_command_rb/1.1.1.1/Mon Jan 14 16:13:05 2019//
 /patch-lib_rubygems_dependency_installer_rb/1.1.1.1/Mon Jan 14 16:13:05 2019//
 /patch-lib_rubygems_ext_ext_conf_builder_rb/1.1.1.1/Mon Jan 14 16:13:05 2019//
-/patch-mjit_worker_c/1.1.1.1/Mon Jan 14 16:13:05 2019//
 /patch-test_ruby_test_process_rb/1.1.1.1/Mon Jan 14 16:13:05 2019//
 /patch-test_ruby_test_thread_rb/1.1.1.1/Mon Jan 14 16:13:05 2019//
 D
