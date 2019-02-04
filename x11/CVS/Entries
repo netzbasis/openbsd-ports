@@ -1,4 +1,4 @@
-/Makefile/1.627/Wed Jan 23 15:16:41 2019//
+/Makefile/1.628/Sun Feb  3 15:47:28 2019//
 D/2bwm////
 D/Xaw3d////
 D/XawMu////
@@ -131,6 +131,7 @@ D/irrlicht////
 D/isomaster////
 D/itk////
 D/iwidgets////
+D/jgmenu////
 D/jwm////
 D/kde////
 D/kde-applications////
