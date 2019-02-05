@@ -1,4 +1,9 @@
 /patch-Makefile_tool_am/1.1/Thu May 25 19:19:41 2017//
 /patch-configure_ac/1.1/Thu Oct 12 08:07:11 2017//
-/patch-coregrind_m_main_c/1.1/Fri May 26 22:07:16 2017//
+/patch-coregrind_launcher-openbsd_c/1.1/Mon Feb  4 23:34:10 2019//
+/patch-coregrind_m_coredump_coredump-elf_c/1.1/Mon Feb  4 23:34:10 2019//
+/patch-coregrind_m_debuginfo_readelf_c/1.1/Mon Feb  4 23:34:10 2019//
+/patch-coregrind_m_initimg_initimg-openbsd_c/1.1/Mon Feb  4 23:34:10 2019//
+/patch-coregrind_m_main_c/1.2/Mon Feb  4 23:34:10 2019//
+/patch-coregrind_m_ume_elf_c/1.1/Mon Feb  4 23:34:10 2019//
 D

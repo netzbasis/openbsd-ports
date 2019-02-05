@@ -1,4 +1,4 @@
-/Makefile/1.1810/Thu Jan 31 17:47:55 2019//
+/Makefile/1.1811/Mon Feb  4 23:36:27 2019//
 D/ElectricFence////
 D/ORBit2////
 D/acpica////
@@ -309,7 +309,6 @@ D/libdsm////
 D/libdvdread////
 D/libdwarf////
 D/libee////
-D/libelf////
 D/libestr////
 D/libev////
 D/libevent2////
