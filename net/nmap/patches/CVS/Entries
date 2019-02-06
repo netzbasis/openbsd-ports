@@ -3,6 +3,7 @@
 /patch-libnetutil_netutil_cc/1.10/Thu Dec 22 21:58:40 2016//
 /patch-libpcap_pcap-bpf_c/1.2/Thu Jan  7 13:23:47 2016//
 /patch-ndiff_setup_py/1.3/Thu Jan  7 13:23:47 2016//
+/patch-nping_EchoServer_cc/1.5/Tue Feb  5 21:12:07 2019//
 /patch-nping_configure_ac/1.2/Sun Apr  8 21:02:45 2018//
 /patch-scan-engine_cc/1.11/Wed Sep 27 09:50:00 2017//
 /patch-service_scan_cc/1.4/Sun Apr  8 21:02:45 2018//

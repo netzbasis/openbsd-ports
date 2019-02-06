@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.166 2019/01/07 23:10:13 sthen Exp $
+# $OpenBSD: Makefile,v 1.168 2019/02/05 20:35:57 sthen Exp $
 
 DPB_PROPERTIES =	parallel
 
@@ -6,6 +6,7 @@ COMMENT-main =		open-source LDAP software (client)
 COMMENT-server =	open-source LDAP software (server)
 
 DISTNAME =		openldap-2.4.47
+REVISION =		0
 PKGNAME-main =		${DISTNAME:S/-/-client-/}
 PKGNAME-server =	${DISTNAME:S/-/-server-/}
 
@@ -23,7 +24,7 @@ SHARED_LIBS +=	ldap_r-2.4           13.1
 
 CATEGORIES =	databases net
 
-HOMEPAGE =	http://www.openldap.org/
+HOMEPAGE =	https://www.openldap.org/
 
 MAINTAINER =	Stuart Henderson <sthen@openbsd.org>
 
@@ -32,10 +33,10 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += c crypto ssl
 
-MASTER_SITES =	http://mirror.switch.ch/ftp/mirror/OpenLDAP/openldap-release/ \
-		http://mirror.aarnet.edu.au/pub/openldap/openldap-release/ \
-		ftp://ftp.OpenLDAP.org/pub/OpenLDAP/openldap-release/ \
-		http://ftp.ntua.gr/mirror/OpenLDAP/openldap-release/
+MASTER_SITES =	https://openldap.org/software/download/OpenLDAP/openldap-release/ \
+		https://mirror.eu.oneandone.net/software/openldap/ \
+		https://mirror.aarnet.edu.au/pub/openldap/openldap-release/ \
+		ftp://ftp.OpenLDAP.org/pub/OpenLDAP/openldap-release/
 
 COMPILER =		base-clang ports-gcc base-gcc
 
