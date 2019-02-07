@@ -1,4 +1,6 @@
 /patch-Jamroot/1.6/Wed Jan 31 21:54:49 2018//
+/patch-boost_asio_detail_config_hpp/1.1/Wed Feb  6 11:43:35 2019//
+/patch-boost_asio_detail_string_view_hpp/1.1/Wed Feb  6 11:43:35 2019//
 /patch-boost_config_compiler_clang_hpp/1.4/Wed Jan 31 21:54:49 2018//
 /patch-boost_config_compiler_gcc_hpp/1.2/Tue Dec 26 19:18:49 2017//
 /patch-boost_config_platform_bsd_hpp/1.1/Tue Dec 26 19:18:49 2017//

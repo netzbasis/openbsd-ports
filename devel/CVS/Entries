@@ -1,4 +1,4 @@
-/Makefile/1.1811/Mon Feb  4 23:36:27 2019//
+/Makefile/1.1813/Wed Feb  6 15:40:29 2019//
 D/ElectricFence////
 D/ORBit2////
 D/acpica////
@@ -882,6 +882,8 @@ D/p5-MooseX-Types-Common////
 D/p5-MooseX-Types-DateTime////
 D/p5-MooseX-Types-LoadableClass////
 D/p5-MooseX-Types-Path-Class////
+D/p5-MooseX-Types-Path-Tiny////
+D/p5-MooseX-Types-Stringlike////
 D/p5-MooseX-Types-Structured////
 D/p5-Mouse////
 D/p5-MouseX-Types////

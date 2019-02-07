@@ -1,4 +1,4 @@
-/Makefile/1.628/Sun Feb  3 15:47:28 2019//
+/Makefile/1.629/Wed Feb  6 11:35:00 2019//
 D/2bwm////
 D/Xaw3d////
 D/XawMu////
@@ -159,6 +159,7 @@ D/lxqt////
 D/lxrandr////
 D/mate////
 D/menu-cache////
+D/menumaker////
 D/mlterm////
 D/moka-icon-theme////
 D/mono-gtk2////

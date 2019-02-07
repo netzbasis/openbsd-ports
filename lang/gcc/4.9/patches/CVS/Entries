@@ -114,6 +114,7 @@
 /patch-libgcc_config_host/1.6/Thu Sep 15 10:22:10 2016//
 /patch-libgcc_config_t-hardfp/1.1/Fri Sep 11 08:07:44 2015//
 /patch-libgcc_libgcc2_c/1.1.1.1/Thu Jun 26 16:30:17 2014//
+/patch-libgcc_unwind-dw2_c/1.1/Wed Feb  6 06:48:02 2019//
 /patch-libgfortran_Makefile_in/1.1.1.1/Thu Jun 26 16:30:17 2014//
 /patch-libgo_Makefile_in/1.1.1.1/Thu Jun 26 16:30:17 2014//
 /patch-libgo_config_libtool_m4/1.1.1.1/Thu Jun 26 16:30:17 2014//

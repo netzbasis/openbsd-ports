@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.710 2019/02/04 23:36:28 jca Exp $
+# $OpenBSD: Quirks.pm,v 1.712 2019/02/06 18:22:15 naddy Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1271,7 +1271,7 @@ my $cve = {
 	'mail/p5-Mail-SpamAssassin' => 'p5-Mail-SpamAssassin-<3.4.2',
 	'mail/roundcubemail' => 'roundcubemail-<1.3.8',
 	'math/hdf5' => 'hdf5-<1.8.21',
-	'net/curl' => 'curl-<7.62.0',
+	'net/curl' => 'curl-<7.64.0',
 	'net/haproxy' => 'haproxy-<1.8.17',
 	'net/icecast' => 'icecast-<2.4.4',
 	'net/isc-bind' => 'isc-bind-<9.11.4pl2',
@@ -1312,6 +1312,7 @@ my $cve = {
 	'www/ruby-rack,ruby25' => 'ruby25-rack-<2.0.6',
 	'www/webkitgtk4' => 'webkitgtk4-<2.20.5',
 	'x11/gnome/gdm' => 'gdm-<3.28.3',
+	'x11/rdesktop' => 'rdesktop-<1.8.4',
 };
 # please maintain sort order in above $cve list, future updates need to
 # replace existing entries
