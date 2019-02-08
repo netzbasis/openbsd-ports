@@ -1,4 +1,4 @@
-/Makefile/1.512/Wed Jan 23 15:16:41 2019//
+/Makefile/1.513/Thu Feb  7 20:52:57 2019//
 D/accountsservice////
 D/amazon-ecs-cli////
 D/amazon-ssm-agent////
@@ -9,7 +9,6 @@ D/apachetop////
 D/apcd////
 D/apcupsd////
 D/arm-trusted-firmware////
-D/atf-allwinner////
 D/augeas////
 D/autossh////
 D/awless////
@@ -334,7 +333,6 @@ D/truncate////
 D/ttyload////
 D/ttyplot////
 D/u-boot////
-D/u-boot-pinebook////
 D/udfclient////
 D/uefitool////
 D/upobsd////

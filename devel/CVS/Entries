@@ -1,4 +1,4 @@
-/Makefile/1.1813/Wed Feb  6 15:40:29 2019//
+/Makefile/1.1815/Thu Feb  7 18:17:52 2019//
 D/ElectricFence////
 D/ORBit2////
 D/acpica////
@@ -565,6 +565,7 @@ D/p5-Class-WhiteHole////
 D/p5-Class-XPath////
 D/p5-Class-XSAccessor////
 D/p5-Clone////
+D/p5-Clone-Choose////
 D/p5-Clone-PP////
 D/p5-Config-Any////
 D/p5-Config-Auto////
@@ -1530,6 +1531,7 @@ D/ruby-ncurses////
 D/ruby-nio4r////
 D/ruby-ole////
 D/ruby-open4////
+D/ruby-optimist////
 D/ruby-polyglot////
 D/ruby-prof////
 D/ruby-puppet_forge////

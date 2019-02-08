@@ -1,4 +1,4 @@
-/Makefile/1.1107/Mon Jan 28 14:38:21 2019//
+/Makefile/1.1108/Thu Feb  7 07:30:07 2019//
 D/GeoIP////
 D/adns////
 D/adsuck////
@@ -414,6 +414,7 @@ D/p5-Nmap-Parser////
 D/p5-Nmap-Scanner////
 D/p5-OSPF-LSDB////
 D/p5-POE-Component-Client-DNS////
+D/p5-POE-Component-Client-DNS-Recursive////
 D/p5-POE-Component-Client-HTTP////
 D/p5-POE-Component-Client-Keepalive////
 D/p5-POE-Component-IRC////
@@ -421,7 +422,9 @@ D/p5-POE-Component-IRC-Plugin-RSS-Headlines////
 D/p5-POE-Component-Jabber////
 D/p5-POE-Component-Pcap////
 D/p5-POE-Component-Resolver////
+D/p5-POE-Component-Server-DNS////
 D/p5-POE-Component-Server-FTP////
+D/p5-POE-Filter-DNS-TCP////
 D/p5-POE-Filter-IRCD////
 D/p5-PlRPC////
 D/p5-RPC-XML////
