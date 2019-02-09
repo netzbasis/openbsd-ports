@@ -3,6 +3,9 @@
 /patch-src_AIModel_AIFlightPlanCreatePushBack_cxx/1.1/Mon Jan 21 23:21:19 2019//
 /patch-src_FDM_JSBSim_FGFDMExec_cpp/1.1/Mon Aug 21 17:57:01 2017//
 /patch-src_FDM_JSBSim_input_output_FGInputSocket_cpp/1.1/Mon Aug 21 17:57:01 2017//
+/patch-src_FDM_UIUCModel_uiuc_aircraft_h/1.1/Fri Feb  8 18:53:42 2019//
+/patch-src_FDM_UIUCModel_uiuc_parsefile_h/1.1/Fri Feb  8 18:53:42 2019//
+/patch-src_FDM_UIUCModel_uiuc_recorder_cpp/1.1/Fri Feb  8 18:53:42 2019//
 /patch-src_Network_ATC-Main_cxx/1.1/Sat Mar 21 01:02:11 2015//
 /patch-src_Network_native_ctrls_cxx/1.1/Mon Aug 21 17:57:01 2017//
 /patch-utils_GPSsmooth_MIDG_main_cxx/1.1.1.1/Sun Nov 24 22:04:08 2013//

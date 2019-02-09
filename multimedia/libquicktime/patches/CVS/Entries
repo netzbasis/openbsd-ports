@@ -1,5 +1,11 @@
 /patch-configure/1.13/Sun Apr 22 12:12:30 2012//
+/patch-include_lqt_funcprotos_h/1.1/Fri Feb  8 10:57:01 2019//
 /patch-plugins_ffmpeg_audio_c/1.1/Sun Apr  6 20:24:01 2014//
 /patch-plugins_ffmpeg_params_c/1.3/Sun Apr  6 20:24:01 2014//
 /patch-plugins_ffmpeg_video_c/1.3/Sun Apr  6 20:24:01 2014//
+/patch-src_atom_c/1.1/Fri Feb  8 10:57:01 2019//
+/patch-src_lqt_quicktime_c/1.1/Fri Feb  8 10:57:01 2019//
+/patch-src_moov_c/1.1/Fri Feb  8 10:57:01 2019//
+/patch-src_trak_c/1.1/Fri Feb  8 10:57:01 2019//
+/patch-src_util_c/1.1/Fri Feb  8 10:57:01 2019//
 D
