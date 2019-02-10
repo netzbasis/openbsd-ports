@@ -1,4 +1,4 @@
-/Makefile/1.529/Wed Jan 23 15:16:41 2019//
+/Makefile/1.530/Sat Feb  9 22:48:36 2019//
 D/ADMsnmp////
 D/acme-client////
 D/aescrypt////
@@ -39,6 +39,7 @@ D/easy-rsa////
 D/emldump////
 D/encfs////
 D/erl-bcrypt////
+D/exploitdb////
 D/fcrackzip////
 D/fierce////
 D/flasm////
