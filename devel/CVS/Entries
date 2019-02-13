@@ -1,4 +1,4 @@
-/Makefile/1.1816/Sun Feb 10 18:47:26 2019//
+/Makefile/1.1817/Tue Feb 12 17:48:06 2019//
 D/ElectricFence////
 D/ORBit2////
 D/acpica////
@@ -992,6 +992,7 @@ D/p5-String-Scanf////
 D/p5-String-Truncate////
 D/p5-Sub-Attribute////
 D/p5-Sub-Exporter////
+D/p5-Sub-Exporter-ForMethods////
 D/p5-Sub-Exporter-Progressive////
 D/p5-Sub-Identify////
 D/p5-Sub-Info////

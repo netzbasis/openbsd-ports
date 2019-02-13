@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.719 2019/02/11 16:50:33 jasper Exp $
+# $OpenBSD: Quirks.pm,v 1.722 2019/02/12 21:57:34 juanfra Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -267,6 +267,7 @@ my $stem_extensions = {
 	'sdlmame' => 'mame',
 	'sdlmame-tools' => 'mame',
 	'sdlmess' => 'mame',
+	'suricata-update' => 'suricata',
 # 6.5
 	'ValyriaTear' => 'valyriatear',
 	'apertium-es-ast_NO-PN' => 'apertium-es-ast',
@@ -320,6 +321,7 @@ my $stem_extensions = {
 	'wxWidgets-gtk2' => 'wxWidgets-gtk3',
 	'atf-allwinner' => 'arm-trusted-firmware',
 	'u-boot-pinebook' => 'u-boot-aarch64',
+	'suricata-update' => 'suricata',
 };
 
 my $obsolete_reason = {
@@ -1093,6 +1095,7 @@ my $obsolete_reason = {
 	'corebird' => 3,
 	'py-pcs' => 5,
 	'ifmcstat' => 5,
+	'suricata-update' => 6,
 # 6.5
 	'py-dtopt' => 5,
 	'py3-dtopt' => 5,
@@ -1148,6 +1151,7 @@ my $obsolete_reason = {
 	'p5-YAML-Perl' => 3,
 	'py-nevow' => 5,
 	'gupnp-ui' => 3,
+	'suricata-update' => 6,
 };
 
 # reasons for obsolete packages
@@ -1321,6 +1325,8 @@ my $cve = {
 	'x11/rdesktop' => 'rdesktop-<1.8.4',
 	'www/py-django/stable' => 'py-django-<2.1.6',
 	'www/py-django/lts' => 'py-django-lts-<1.11.19',
+	'net/mosquitto' => 'mosquitto-<1.5.6',
+	'www/hiawatha' => 'hiawatha-<10.8.4',
 };
 # please maintain sort order in above $cve list, future updates need to
 # replace existing entries

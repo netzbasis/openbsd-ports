@@ -1,4 +1,4 @@
-/Makefile/1.530/Sat Feb  9 22:48:36 2019//
+/Makefile/1.531/Tue Feb 12 09:29:44 2019//
 D/ADMsnmp////
 D/acme-client////
 D/aescrypt////
@@ -331,7 +331,6 @@ D/strobe////
 D/stunnel////
 D/sudo////
 D/suricata////
-D/suricata-update////
 D/swatch////
 D/tclgpg////
 D/tcltls////

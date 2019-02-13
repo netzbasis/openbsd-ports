@@ -1,4 +1,4 @@
-/Makefile/1.25/Fri Aug  5 05:21:14 2016//
+/Makefile/1.26/Tue Feb 12 09:59:43 2019//
 D/AsteriskGuide////
 D/AsteriskTFOT////
 D/JLS////
@@ -9,6 +9,7 @@ D/cvs-guide////
 D/diveintopython////
 D/diveintopython3////
 D/docbook-guide////
+D/exploitdb-papers////
 D/grokking-the-gimp////
 D/haskell-report////
 D/man-pages-posix////

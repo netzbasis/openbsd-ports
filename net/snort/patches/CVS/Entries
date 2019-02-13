@@ -2,6 +2,7 @@
 /patch-src_decode_h/1.11/Sun Jan 28 03:09:12 2018//
 /patch-src_dynamic-plugins_sf_engine_Makefile_in/1.11/Sun Jan 28 03:09:12 2018//
 /patch-src_dynamic-preprocessors_Makefile_in/1.17/Sun Jan 28 03:09:12 2018//
+/patch-src_dynamic-preprocessors_appid_Makefile_in/1.1/Tue Feb 12 22:19:52 2019//
 /patch-src_dynamic-preprocessors_dcerpc2_Makefile_in/1.14/Sun Jan 28 03:09:12 2018//
 /patch-src_dynamic-preprocessors_dnp3_Makefile_in/1.12/Sun Jan 28 03:09:12 2018//
 /patch-src_dynamic-preprocessors_dns_Makefile_in/1.16/Sun Jan 28 03:09:12 2018//
@@ -19,8 +20,9 @@
 /patch-src_log_c/1.7/Sat Jan 24 03:52:53 2015//
 /patch-src_log_text_c/1.6/Thu Jan 30 03:23:48 2014//
 /patch-src_ppm_c/1.10/Sat Jan 24 03:52:53 2015//
-/patch-src_preprocessors_Stream6_snort_stream_tcp_c/1.5/Sun Jan 28 03:09:12 2018//
+/patch-src_preprocessors_Stream6_snort_stream_tcp_c/1.6/Tue Feb 12 22:19:52 2019//
 /patch-src_preprocessors_spp_sfportscan_c/1.12/Sun Jan 28 03:09:12 2018//
 /patch-src_util_c/1.9/Sat Jan 24 03:52:53 2015//
 /patch-src_util_h/1.7/Thu Jan 30 03:23:48 2014//
+/patch-tools_appid_detector_builder_sh/1.1/Tue Feb 12 22:19:52 2019//
 D
