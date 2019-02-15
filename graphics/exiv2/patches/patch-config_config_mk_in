@@ -1,4 +1,4 @@
-$OpenBSD: patch-config_config_mk_in,v 1.2 2015/11/21 15:33:56 jca Exp $
+$OpenBSD: patch-config_config_mk_in,v 1.4 2019/02/14 16:03:34 jca Exp $
 
 - warnings about c++locale.h clutter the build
 

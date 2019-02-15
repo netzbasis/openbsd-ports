@@ -1,13 +1,14 @@
-# $OpenBSD: Makefile,v 1.28 2018/10/24 14:28:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.30 2019/02/14 16:03:34 jca Exp $
 
 COMMENT=	manipulate image meta-data such as exif and ipct
 
 DISTNAME=	exiv2-0.26-trunk
 PKGNAME=	exiv2-0.26
 CATEGORIES=	graphics devel
+EPOCH=		0
 REVISION=	0
 
-SHARED_LIBS +=  exiv2                9.0      # 14.0
+SHARED_LIBS +=  exiv2                11.0      # 14.0
 
 HOMEPAGE=	http://www.exiv2.org/
 

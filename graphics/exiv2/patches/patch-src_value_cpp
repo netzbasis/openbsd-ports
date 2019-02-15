@@ -1,4 +1,4 @@
-$OpenBSD: patch-src_value_cpp,v 1.7 2015/11/21 15:33:56 jca Exp $
+$OpenBSD: patch-src_value_cpp,v 1.9 2019/02/14 16:03:34 jca Exp $
 --- src/value.cpp.orig	Sat May  2 13:55:40 2015
 +++ src/value.cpp	Thu Nov 19 19:30:30 2015
 @@ -982,7 +982,7 @@ namespace Exiv2 {
