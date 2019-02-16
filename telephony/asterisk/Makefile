@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.292 2019/02/12 22:56:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.294 2019/02/15 22:52:15 sthen Exp $
 
 COMMENT-main=	open source multi-protocol PBX and telephony toolkit
 
-VER=		16.1.1
+VER=		16.2.0
 PJ_V=		2.8
 DISTNAME=	asterisk-${VER:S/beta/-beta/:S/rc/-rc/}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} pjproject-${PJ_V}.tar.bz2:0
 PKGNAME-main=	asterisk-${VER}
-REVISION=	0
 
 CATEGORIES=	telephony
 
@@ -26,7 +25,7 @@ WANTLIB-main += ${MODGCC4_CPPWANTLIB}
 # XXX somehow COMPILER_LIBCXX doesn't get set to gcc libs?
 WANTLIB-main += c crypto curl curses edit execinfo gsm iconv iksemel
 WANTLIB-main += jansson lzma m nghttp2 ogg portaudio pthread radcli
-WANTLIB-main += spandsp sqlite3 ssl tiff uriparser unbound uuid
+WANTLIB-main += spandsp sqlite3 srtp2 ssl tiff uriparser unbound uuid
 WANTLIB-main += vorbis vorbisenc vorbisfile xml2 xslt z
 
 # Asterisk requires either nested functions (gcc extension), or -fblocks (clang).
@@ -67,6 +66,7 @@ LIB_DEPENDS-main=	${MODGCC4_CPPLIBDEP} \
 			net/curl \
 			net/libunbound \
 			net/radcli \
+			security/libsrtp \
 			sysutils/e2fsprogs \
 			telephony/spandsp \
 			textproc/iksemel \
@@ -75,7 +75,6 @@ LIB_DEPENDS-main=	${MODGCC4_CPPLIBDEP} \
 			www/uriparser
 RUN_DEPENDS-main=	telephony/asterisk-sounds/core-sounds/en,gsm>=1.4.25 \
 			telephony/asterisk-sounds/moh-opsound,wav
-BUILD_DEPENDS=		security/libsrtp>=1.4.4 # statically linked
 
 MASTER_SITES=	https://downloads.asterisk.org/pub/telephony/asterisk/releases/ \
 		https://downloads.asterisk.org/pub/telephony/asterisk/old-releases/
