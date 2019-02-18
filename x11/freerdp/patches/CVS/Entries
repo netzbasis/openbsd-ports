@@ -1,6 +1,8 @@
 /patch-CMakeLists_txt/1.6/Sat Apr 28 19:20:17 2018//
+/patch-channels_tsmf_client_ffmpeg_tsmf_ffmpeg_c/1.1/Sun Feb 17 21:34:01 2019//
 /patch-client_X11_CMakeLists_txt/1.3/Sat Apr 28 19:20:17 2018//
 /patch-client_common_CMakeLists_txt/1.1/Sat Apr 28 19:20:17 2018//
+/patch-libfreerdp_codec_h264_ffmpeg_c/1.1/Sun Feb 17 21:34:01 2019//
 /patch-libfreerdp_core_nla_c/1.1/Fri Jun  8 20:32:16 2018//
 /patch-libfreerdp_crypto_tls_c/1.3/Wed Oct 24 17:10:22 2018//
 /patch-winpr_include_winpr_crt_h/1.2/Sat Apr 28 19:20:17 2018//

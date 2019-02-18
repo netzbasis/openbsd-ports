@@ -1,4 +1,4 @@
-/Makefile/1.1109/Wed Feb 13 15:16:13 2019//
+/Makefile/1.1110/Sun Feb 17 19:25:43 2019//
 D/GeoIP////
 D/adns////
 D/adsuck////
@@ -157,7 +157,6 @@ D/ircd-ratbox////
 D/irrtoolset////
 D/irssi////
 D/irssi-icb////
-D/irssi-otr////
 D/irssi-xmpp////
 D/isc-bind////
 D/isc-dhcp////
