@@ -1,4 +1,4 @@
-/Makefile/1.1819/Sat Feb 16 13:18:59 2019//
+/Makefile/1.1821/Mon Feb 18 13:05:07 2019//
 D/ElectricFence////
 D/ORBit2////
 D/acpica////
@@ -597,6 +597,7 @@ D/p5-Data-HexDump////
 D/p5-Data-Hierarchy////
 D/p5-Data-ICal////
 D/p5-Data-ICal-TimeZone////
+D/p5-Data-IEEE754////
 D/p5-Data-Lazy////
 D/p5-Data-Munge////
 D/p5-Data-OptList////
@@ -1031,6 +1032,7 @@ D/p5-Term-Size////
 D/p5-Term-Table////
 D/p5-Test-Assertions////
 D/p5-Test-Base////
+D/p5-Test-Bits////
 D/p5-Test-CPAN-Meta////
 D/p5-Test-CheckManifest////
 D/p5-Test-Class////

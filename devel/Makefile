@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1819 2019/02/16 13:18:59 fcambus Exp $
+# $OpenBSD: Makefile,v 1.1821 2019/02/18 13:05:07 fcambus Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -634,6 +634,7 @@
      SUBDIR += p5-Data-Hierarchy
      SUBDIR += p5-Data-ICal
      SUBDIR += p5-Data-ICal-TimeZone
+     SUBDIR += p5-Data-IEEE754
      SUBDIR += p5-Data-Lazy
      SUBDIR += p5-Data-Munge
      SUBDIR += p5-Data-OptList
@@ -1068,6 +1069,7 @@
      SUBDIR += p5-Term-Table
      SUBDIR += p5-Test-Assertions
      SUBDIR += p5-Test-Base
+     SUBDIR += p5-Test-Bits
      SUBDIR += p5-Test-CPAN-Meta
      SUBDIR += p5-Test-CheckManifest
      SUBDIR += p5-Test-Class
