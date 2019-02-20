@@ -1,4 +1,4 @@
-/Makefile/1.1111/Mon Feb 18 11:27:00 2019//
+/Makefile/1.1113/Tue Feb 19 09:06:06 2019//
 D/GeoIP////
 D/adns////
 D/adsuck////
@@ -317,6 +317,8 @@ D/p5-IO-Socket-Timeout////
 D/p5-IP-Country////
 D/p5-IP-Country-DB_File////
 D/p5-IRC-Utils////
+D/p5-MaxMind-DB-Common////
+D/p5-MaxMind-DB-Reader////
 D/p5-Net-Amazon////
 D/p5-Net-BGP////
 D/p5-Net-CIDR////

@@ -83,7 +83,7 @@
 /patch-chrome_browser_browser_resources_grd/1.48/Wed Feb  6 16:41:55 2019//
 /patch-chrome_browser_chrome_browser_main_cc/1.29/Wed Feb  6 16:41:55 2019//
 /patch-chrome_browser_chrome_browser_main_linux_cc/1.10/Fri Dec  7 11:07:35 2018//
-/patch-chrome_browser_chrome_content_browser_client_cc/1.51/Wed Feb  6 16:41:55 2019//
+/patch-chrome_browser_chrome_content_browser_client_cc/1.52/Tue Feb 19 14:57:53 2019//
 /patch-chrome_browser_chrome_content_browser_client_h/1.40/Wed Feb  6 16:41:55 2019//
 /patch-chrome_browser_custom_handlers_protocol_handler_registry_cc/1.10/Fri Dec  7 11:07:35 2018//
 /patch-chrome_browser_defaults_cc/1.9/Sun Nov  4 12:33:24 2018//
@@ -93,7 +93,7 @@
 /patch-chrome_browser_download_download_commands_cc/1.18/Fri Dec  7 11:07:35 2018//
 /patch-chrome_browser_download_download_commands_h/1.6/Fri Dec  7 11:07:35 2018//
 /patch-chrome_browser_download_download_item_model_cc/1.1/Wed Feb  6 16:41:55 2019//
-/patch-chrome_browser_download_download_prefs_cc/1.15/Wed Feb  6 16:41:55 2019//
+/patch-chrome_browser_download_download_prefs_cc/1.16/Tue Feb 19 14:57:53 2019//
 /patch-chrome_browser_download_download_prefs_h/1.10/Fri Dec  7 11:07:35 2018//
 /patch-chrome_browser_download_download_shelf_context_menu_cc/1.8/Fri Dec  7 11:07:35 2018//
 /patch-chrome_browser_download_download_status_updater_cc/1.4/Mon Apr 23 15:00:16 2018//
@@ -128,6 +128,7 @@
 /patch-chrome_browser_process_singleton_posix_cc/1.16/Fri Dec  7 11:07:35 2018//
 /patch-chrome_browser_profiles_chrome_browser_main_extra_parts_profiles_cc/1.4/Wed Feb  6 16:41:55 2019//
 /patch-chrome_browser_profiles_profile_attributes_entry_cc/1.1/Wed Feb  6 16:41:55 2019//
+/patch-chrome_browser_profiles_profile_impl_cc/1.1/Tue Feb 19 14:57:53 2019//
 /patch-chrome_browser_profiles_profile_io_data_cc/1.5/Wed Feb  6 16:41:55 2019//
 /patch-chrome_browser_renderer_preferences_util_cc/1.24/Fri Dec  7 11:07:35 2018//
 /patch-chrome_browser_resources_plugin_metadata_plugins_linux_json/1.28/Wed Feb  6 16:41:55 2019//
