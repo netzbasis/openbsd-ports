@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1113 2019/02/19 09:06:06 fcambus Exp $
+# $OpenBSD: Makefile,v 1.1115 2019/02/20 09:05:00 fcambus Exp $
 
      SUBDIR =
      SUBDIR += GeoIP
@@ -335,6 +335,7 @@
      SUBDIR += p5-Filesys-Virtual-DAAP
      SUBDIR += p5-GRID-Machine
      SUBDIR += p5-Geo-IP
+     SUBDIR += p5-GeoIP2
      SUBDIR += p5-IO-Interface
      SUBDIR += p5-IO-Socket-INET6
      SUBDIR += p5-IO-Socket-Multicast
@@ -345,6 +346,7 @@
      SUBDIR += p5-IRC-Utils
      SUBDIR += p5-MaxMind-DB-Common
      SUBDIR += p5-MaxMind-DB-Reader
+     SUBDIR += p5-MaxMind-DB-Reader-XS
      SUBDIR += p5-Net-Amazon
      SUBDIR += p5-Net-BGP
      SUBDIR += p5-Net-CIDR

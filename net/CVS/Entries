@@ -1,4 +1,4 @@
-/Makefile/1.1113/Tue Feb 19 09:06:06 2019//
+/Makefile/1.1115/Wed Feb 20 09:05:00 2019//
 D/GeoIP////
 D/adns////
 D/adsuck////
@@ -309,6 +309,7 @@ D/p5-Event-RPC////
 D/p5-Filesys-Virtual-DAAP////
 D/p5-GRID-Machine////
 D/p5-Geo-IP////
+D/p5-GeoIP2////
 D/p5-IO-Interface////
 D/p5-IO-Socket-INET6////
 D/p5-IO-Socket-Multicast////
@@ -319,6 +320,7 @@ D/p5-IP-Country-DB_File////
 D/p5-IRC-Utils////
 D/p5-MaxMind-DB-Common////
 D/p5-MaxMind-DB-Reader////
+D/p5-MaxMind-DB-Reader-XS////
 D/p5-Net-Amazon////
 D/p5-Net-BGP////
 D/p5-Net-CIDR////
