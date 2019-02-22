@@ -1,4 +1,4 @@
-/Makefile/1.1822/Thu Feb 21 04:48:22 2019//
+/Makefile/1.1824/Thu Feb 21 23:21:01 2019//
 D/ElectricFence////
 D/ORBit2////
 D/acpica////
@@ -1029,6 +1029,8 @@ D/p5-Term-ScreenColor////
 D/p5-Term-Shell////
 D/p5-Term-ShellUI////
 D/p5-Term-Size////
+D/p5-Term-Size-Any////
+D/p5-Term-Size-Perl////
 D/p5-Term-Table////
 D/p5-Test-Assertions////
 D/p5-Test-Base////

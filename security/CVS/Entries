@@ -1,4 +1,4 @@
-/Makefile/1.532/Thu Feb 14 07:19:11 2019//
+/Makefile/1.533/Fri Feb 22 03:25:10 2019//
 D/ADMsnmp////
 D/acme-client////
 D/aescrypt////
@@ -209,6 +209,7 @@ D/p5-GnuPG-Interface////
 D/p5-IO-Socket-SSL////
 D/p5-MD5////
 D/p5-Module-Signature////
+D/p5-Mojolicious-Plugin-Authentication////
 D/p5-Mozilla-CA-Fake////
 D/p5-Net-SSL-ExpireDate////
 D/p5-Net-SSLGlue////

@@ -1,4 +1,4 @@
-/patch-configure/1.19/Sun Mar  4 19:03:00 2018//
+/patch-configure/1.20/Thu Feb 21 23:32:23 2019//
 /patch-include_Makefile_in/1.9/Sun Mar  4 19:03:00 2018//
 /patch-sample_sample-config-files_client_conf/1.1/Sat Apr 20 16:22:55 2013//
 /patch-sample_sample-config-files_server_conf/1.4/Tue Nov 29 09:22:02 2016//
@@ -9,5 +9,7 @@
 /patch-sample_sample-config-files_xinetd-client-config/1.1/Sat Apr 20 16:22:55 2013//
 /patch-sample_sample-config-files_xinetd-server-config/1.1/Sat Apr 20 16:22:55 2013//
 /patch-src_openvpn_route_c/1.12/Fri Sep 29 16:36:23 2017//
-/patch-src_openvpn_tun_c/1.16/Sun Mar  4 19:03:00 2018//
+/patch-src_openvpn_ssl_c/1.1/Thu Feb 21 23:32:23 2019//
+/patch-src_openvpn_ssl_openssl_c/1.5/Thu Feb 21 23:32:23 2019//
+/patch-src_openvpn_tun_c/1.17/Thu Feb 21 23:41:12 2019//
 D
