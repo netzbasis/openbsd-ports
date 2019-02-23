@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1824 2019/02/21 23:21:01 bluhm Exp $
+# $OpenBSD: Makefile,v 1.1828 2019/02/22 21:41:18 cwen Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -763,6 +763,7 @@
      SUBDIR += p5-File-RsyncP
      SUBDIR += p5-File-ShareDir
      SUBDIR += p5-File-ShareDir-Install
+     SUBDIR += p5-File-ShareDir-PathClass
      SUBDIR += p5-File-Slurp
      SUBDIR += p5-File-Slurper
      SUBDIR += p5-File-Sync
@@ -1027,6 +1028,7 @@
      SUBDIR += p5-Stream-Buffered
      SUBDIR += p5-String-CRC32
      SUBDIR += p5-String-Format
+     SUBDIR += p5-String-Formatter
      SUBDIR += p5-String-Scanf
      SUBDIR += p5-String-Truncate
      SUBDIR += p5-Sub-Attribute
@@ -1395,11 +1397,15 @@
      SUBDIR += py-faulthandler
      SUBDIR += py-filebytes
      SUBDIR += py-filebytes,python3
+     SUBDIR += py-flaky
+     SUBDIR += py-flaky,python3
      SUBDIR += py-flexmock
      SUBDIR += py-flexmock,python3
      SUBDIR += py-fpconst
      SUBDIR += py-freezegun
      SUBDIR += py-freezegun,python3
+     SUBDIR += py-frozendict
+     SUBDIR += py-frozendict,python3
      SUBDIR += py-funcsigs
      SUBDIR += py-funcsigs,python3
      SUBDIR += py-functools32

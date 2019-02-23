@@ -1,4 +1,4 @@
-/Makefile/1.515/Thu Feb 21 04:55:28 2019//
+/Makefile/1.517/Fri Feb 22 16:43:27 2019//
 D/accountsservice////
 D/amazon-ecs-cli////
 D/amazon-ssm-agent////
@@ -232,6 +232,7 @@ D/py-augeas////
 D/py-cef////
 D/py-croniter////
 D/py-daemon////
+D/py-daemonize////
 D/py-elasticsearch-curator////
 D/py-ghmi////
 D/py-lockfile////

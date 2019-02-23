@@ -1,4 +1,4 @@
-/Makefile/1.1824/Thu Feb 21 23:21:01 2019//
+/Makefile/1.1828/Fri Feb 22 21:41:18 2019//
 D/ElectricFence////
 D/ORBit2////
 D/acpica////
@@ -726,6 +726,7 @@ D/p5-File-Remove////
 D/p5-File-RsyncP////
 D/p5-File-ShareDir////
 D/p5-File-ShareDir-Install////
+D/p5-File-ShareDir-PathClass////
 D/p5-File-Slurp////
 D/p5-File-Slurper////
 D/p5-File-Sync////
@@ -990,6 +991,7 @@ D/p5-Spiffy////
 D/p5-Stream-Buffered////
 D/p5-String-CRC32////
 D/p5-String-Format////
+D/p5-String-Formatter////
 D/p5-String-Scanf////
 D/p5-String-Truncate////
 D/p5-Sub-Attribute////
@@ -1296,9 +1298,11 @@ D/py-fasteners////
 D/py-fastimport////
 D/py-faulthandler////
 D/py-filebytes////
+D/py-flaky////
 D/py-flexmock////
 D/py-fpconst////
 D/py-freezegun////
+D/py-frozendict////
 D/py-funcsigs////
 D/py-functools32////
 D/py-funcy////

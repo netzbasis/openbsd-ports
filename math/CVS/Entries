@@ -1,4 +1,4 @@
-/Makefile/1.156/Thu Dec 13 09:37:16 2018//
+/Makefile/1.157/Fri Feb 22 11:12:27 2019//
 D/R////
 D/aamath////
 D/abs////
@@ -105,6 +105,7 @@ D/plplot////
 D/prover9////
 D/pspp////
 D/py-Numeric////
+D/py-affine////
 D/py-bottleneck////
 D/py-gnuplot////
 D/py-graphviz////
@@ -115,6 +116,7 @@ D/py-pandas////
 D/py-patsy////
 D/py-probstat////
 D/py-scipy////
+D/py-snuggs////
 D/py-statistics////
 D/py-sympy////
 D/qhull////
