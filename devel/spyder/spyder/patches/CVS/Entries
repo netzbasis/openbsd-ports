@@ -1,11 +1,11 @@
-/patch-setup_py/1.1.1.1/Wed Aug 29 23:17:16 2018//
-/patch-spyder___init___py/1.1.1.1/Wed Aug 29 23:17:16 2018//
-/patch-spyder_app_mainwindow_py/1.1.1.1/Wed Aug 29 23:17:16 2018//
+/patch-setup_py/1.2/Sat Feb 23 17:57:43 2019//
+/patch-spyder___init___py/1.2/Sat Feb 23 17:57:43 2019//
+/patch-spyder_app_mainwindow_py/1.2/Sat Feb 23 17:57:43 2019//
 /patch-spyder_config_base_py/1.1.1.1/Wed Aug 29 23:17:16 2018//
-/patch-spyder_config_utils_py/1.1.1.1/Wed Aug 29 23:17:16 2018//
-/patch-spyder_plugins_ipythonconsole_py/1.1.1.1/Wed Aug 29 23:17:16 2018//
+/patch-spyder_config_utils_py/1.2/Sat Feb 23 17:57:43 2019//
+/patch-spyder_plugins_ipythonconsole_py/1.2/Sat Feb 23 17:57:43 2019//
 /patch-spyder_utils_sourcecode_py/1.1.1.1/Wed Aug 29 23:17:16 2018//
-/patch-spyder_widgets_github_backend_py/1.1.1.1/Wed Aug 29 23:17:16 2018//
-/patch-spyder_widgets_github_gh_login_py/1.1.1.1/Wed Aug 29 23:17:16 2018//
+/patch-spyder_widgets_github_backend_py/1.2/Sat Feb 23 17:57:43 2019//
+/patch-spyder_widgets_github_gh_login_py/1.2/Sat Feb 23 17:57:43 2019//
 /patch-spyder_widgets_sourcecode_base_py/1.1.1.1/Wed Aug 29 23:17:16 2018//
 D
