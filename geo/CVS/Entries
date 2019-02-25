@@ -1,4 +1,4 @@
-/Makefile/1.65/Fri Feb 22 13:53:23 2019//
+/Makefile/1.66/Sun Feb 24 20:52:25 2019//
 D/foxtrotgps////
 D/garmindev////
 D/gdal////
@@ -54,6 +54,7 @@ D/py-owslib////
 D/py-planet////
 D/py-proj////
 D/py-rasterio////
+D/py-rio-cogeo////
 D/py-shapely////
 D/qgis////
 D/qlandkartegt////
