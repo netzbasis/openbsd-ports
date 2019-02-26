@@ -1,10 +1,11 @@
-/Makefile/1.97/Tue Dec 18 09:34:05 2018//
+/Makefile/1.98/Mon Feb 25 11:25:38 2019//
 D/base64////
 D/btoa////
 D/convmv////
 D/d1489////
 D/dos2unix////
 D/enca////
+D/fondu////
 D/html2text////
 D/html2wml////
 D/ish////

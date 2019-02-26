@@ -1,4 +1,4 @@
-/Makefile/1.1115/Wed Feb 20 09:05:00 2019//
+/Makefile/1.1116/Mon Feb 25 10:01:51 2019//
 D/GeoIP////
 D/adns////
 D/adsuck////
@@ -321,6 +321,7 @@ D/p5-IRC-Utils////
 D/p5-MaxMind-DB-Common////
 D/p5-MaxMind-DB-Reader////
 D/p5-MaxMind-DB-Reader-XS////
+D/p5-MaxMind-DB-Writer////
 D/p5-Net-Amazon////
 D/p5-Net-BGP////
 D/p5-Net-CIDR////
