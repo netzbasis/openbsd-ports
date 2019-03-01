@@ -1,4 +1,5 @@
 /patch-RepositoryExternal_mk/1.8/Sat Feb  9 15:23:07 2019//
+/patch-basic_source_classes_sbxmod_cxx/1.1/Thu Feb 28 22:09:41 2019//
 /patch-basic_source_runtime_methods_cxx/1.8/Sat Feb  9 15:23:07 2019//
 /patch-bean_Library_officebean_mk/1.1/Mon Feb  5 17:15:05 2018//
 /patch-bridges_Library_cpp_uno_mk/1.3/Tue Sep 11 18:51:00 2018//
@@ -48,12 +49,14 @@
 /patch-external_pdfium_UnpackedTarball_pdfium_mk/1.3/Sat Feb  9 15:23:07 2019//
 /patch-external_pdfium_pdfium-openbsd_patch/1.2/Sat Aug 18 07:07:17 2018//
 /patch-i18npool_source_collator_data_ko_charset_txt/1.1/Wed Apr  9 06:16:05 2014//
+/patch-idl_source_objects_types_cxx/1.1/Thu Feb 28 22:09:41 2019//
 /patch-include_osl_endian_h/1.3/Thu Nov 15 22:19:09 2018//
 /patch-libexttextcat_openbsd_patch/1.1/Tue Nov 12 07:57:23 2013//
 /patch-libxmlsec_openbsd_patch/1.2/Fri Oct 10 17:13:10 2014//
 /patch-lpsolve_lp_solve-timeb_patch/1.2/Fri Oct 10 17:13:10 2014//
 /patch-oox_Library_oox_mk/1.7/Sat Feb  9 15:23:07 2019//
 /patch-sal_cppunittester_cppunittester_cxx/1.8/Sat Feb  9 15:23:07 2019//
+/patch-sal_osl_unx_sockimpl_hxx/1.1/Thu Feb 28 22:09:41 2019//
 /patch-sal_osl_unx_system_hxx/1.3/Sat Feb  9 15:23:07 2019//
 /patch-sal_osl_unx_uunxapi_cxx/1.1/Sat Feb  9 15:23:07 2019//
 /patch-sc_source_core_data_column3_cxx/1.7/Sat Feb  9 15:23:07 2019//
@@ -73,6 +76,7 @@
 /patch-vcl_Library_vclplug_gtk_mk/1.3/Sat Aug 18 07:07:17 2018//
 /patch-vcl_Library_vclplug_kde4_mk/1.3/Sat Aug 18 07:07:17 2018//
 /patch-vcl_StaticLibrary_glxtest_mk/1.1/Sun May  3 11:30:33 2015//
+/patch-vcl_source_app_svapp_cxx/1.1/Thu Feb 28 22:09:41 2019//
 /patch-vcl_source_salmain_salmain_cxx/1.3/Sat Aug 18 07:07:17 2018//
 /patch-vcl_unx_generic_app_wmadaptor_cxx/1.3/Mon Feb  5 17:15:05 2018//
 /patch-writerfilter_source_rtftok_rtfsprm_hxx/1.6/Sat Aug 18 07:07:17 2018//
