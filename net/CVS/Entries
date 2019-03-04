@@ -1,4 +1,4 @@
-/Makefile/1.1116/Mon Feb 25 10:01:51 2019//
+/Makefile/1.1117/Sun Mar  3 19:40:44 2019//
 D/GeoIP////
 D/adns////
 D/adsuck////
@@ -183,6 +183,7 @@ D/libircclient////
 D/libktorrent////
 D/libkvkontakte////
 D/libmaxminddb////
+D/libmesode////
 D/libmygpo-qt////
 D/libnet////
 D/libnids////

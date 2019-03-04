@@ -29,9 +29,11 @@ D/kbreakout////
 D/kbruch////
 D/kcalc////
 D/kcalcore////
+D/kcron////
 D/kdeedu-data////
 D/kdegraphics-mobipocket////
 D/kdenlive////
+D/kdialog////
 D/kdiamond////
 D/keditbookmarks////
 D/kfind////
@@ -57,11 +59,13 @@ D/kmbox////
 D/kmime////
 D/kmines////
 D/kmousetool////
+D/kmouth////
 D/kmplot////
 D/knavalbattle////
 D/knetwalk////
 D/kolf////
 D/kollision////
+D/kompare////
 D/konquest////
 D/konsole////
 D/kpimtextedit////
