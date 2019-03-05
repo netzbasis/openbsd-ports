@@ -1,4 +1,4 @@
-/Makefile/1.1117/Sun Mar  3 19:40:44 2019//
+/Makefile/1.1118/Tue Mar  5 03:41:37 2019//
 D/GeoIP////
 D/adns////
 D/adsuck////
@@ -59,6 +59,7 @@ D/dhcdrop////
 D/dhcpcd////
 D/dhcpdump////
 D/dhcping////
+D/dico////
 D/dictd////
 D/dleyna////
 D/dlint////
