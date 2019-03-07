@@ -1,4 +1,4 @@
-/Makefile/1.53/Thu Jan 17 22:07:09 2019//
+/Makefile/1.55/Wed Mar  6 15:06:47 2019//
 D/abyssinica////
 D/adobe-fonts////
 D/alkalami////
@@ -12,6 +12,7 @@ D/artwiz-aleczapka////
 D/blockzone////
 D/cantarell-fonts////
 D/charis////
+D/chivo////
 D/clearsans////
 D/comic-neue////
 D/dai-banna////
@@ -76,6 +77,7 @@ D/terminus-font////
 D/ubuntu-fonts////
 D/un-fonts////
 D/vlgothic////
+D/work-sans////
 D/zh-arphicttf////
 D/zh-kcfonts////
 D/zh-taipeifonts////

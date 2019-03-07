@@ -1,13 +1,11 @@
-/patch-doc_example-config_Makefile_in/1.18/Wed Oct 24 19:42:36 2018//
+/patch-doc_example-config_Makefile_in/1.19/Wed Mar  6 21:53:07 2019//
 /patch-doc_example-config_conf_d_10-mail_conf/1.9/Wed Oct 24 19:42:36 2018//
 /patch-doc_example-config_conf_d_10-master_conf/1.2/Sat Jan  7 12:14:21 2012//
 /patch-doc_example-config_conf_d_10-ssl_conf/1.1/Mon May 23 22:54:38 2011//
-/patch-doc_example-config_conf_d_Makefile_in/1.18/Wed Oct 24 19:42:36 2018//
+/patch-doc_example-config_conf_d_Makefile_in/1.19/Wed Mar  6 21:53:07 2019//
 /patch-doc_example-config_conf_d_auth-system_conf_ext/1.2/Wed Oct 24 19:42:36 2018//
 /patch-doc_example-config_dovecot_conf/1.4/Tue Aug 13 00:29:58 2013//
 /patch-doc_mkcert_sh/1.8/Sun Dec  4 21:36:02 2016//
 /patch-src_auth_password-scheme-crypt_c/1.5/Wed Oct 24 19:42:36 2018//
-/patch-src_imap_imap-client_h/1.1/Sun Sep 11 20:54:13 2016//
-/patch-src_lib-master_test-event-stats_c/1.2/Wed Jan 16 10:25:46 2019//
 /patch-src_master_master-settings_c/1.20/Wed Oct 24 19:42:36 2018//
 D
