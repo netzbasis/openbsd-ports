@@ -1,4 +1,4 @@
-/Makefile/1.630/Sat Feb 16 10:10:35 2019//
+/Makefile/1.631/Thu Mar  7 19:37:27 2019//
 D/2bwm////
 D/Xaw3d////
 D/XawMu////
@@ -119,6 +119,7 @@ D/hs-dbus////
 D/hs-xmonad-contrib////
 D/human-icon-theme////
 D/i3////
+D/i3-gaps////
 D/i3-mousedrag////
 D/i3lock////
 D/i3status////
