@@ -1,4 +1,4 @@
-/Makefile/1.405/Wed Jan 23 15:16:41 2019//
+/Makefile/1.406/Fri Mar  8 16:40:58 2019//
 D/abcde////
 D/adplay////
 D/adplug////
@@ -168,6 +168,7 @@ D/p5-cddb////
 D/p5-gnupod////
 D/p5-libvorbis////
 D/pacpl////
+D/parlatype////
 D/paulstretch////
 D/pavucontrol////
 D/pianobar////

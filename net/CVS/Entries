@@ -1,4 +1,4 @@
-/Makefile/1.1119/Thu Mar  7 07:28:17 2019//
+/Makefile/1.1120/Fri Mar  8 05:58:06 2019//
 D/GeoIP////
 D/adns////
 D/adsuck////
@@ -206,6 +206,7 @@ D/libunbound////
 D/libupnp////
 D/libupnpp////
 D/libvncserver////
+D/litecoin////
 D/livemedia////
 D/lldpd////
 D/loudmouth////
