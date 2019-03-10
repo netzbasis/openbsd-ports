@@ -1,4 +1,4 @@
-/Makefile/1.535/Fri Mar  8 17:02:44 2019//
+/Makefile/1.536/Sat Mar  9 18:06:13 2019//
 D/ADMsnmp////
 D/acme-client////
 D/aescrypt////
@@ -62,6 +62,7 @@ D/gpgme////
 D/gringotts////
 D/hashdeep////
 D/hatchet////
+D/hcxtools////
 D/heimdal////
 D/hitch////
 D/hlfl////
