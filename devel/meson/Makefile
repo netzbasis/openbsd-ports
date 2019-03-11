@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2019/03/05 09:32:26 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.48 2019/03/10 17:46:33 ajacoutot Exp $
 
 COMMENT=		next-generation build system
 
@@ -7,7 +7,7 @@ GH_ACCOUNT=		mesonbuild
 GH_PROJECT=		meson
 GH_TAGNAME=		0.49.2
 EPOCH=			0
-REVISION=		0
+REVISION=		2
 
 CATEGORIES=		devel
 
@@ -31,6 +31,6 @@ pre-configure:
 		${WRKSRC}/data/com.mesonbuild.install.policy
 
 do-test:
-	cd ${WRKSRC} && ${MODPY_BIN} ./run_tests.py
+	cd ${WRKSRC} && ./run_tests.py --failfast
 
 .include <bsd.port.mk>

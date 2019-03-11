@@ -1,12 +1,13 @@
-/patch-Makefile/1.5/Wed Jun 17 09:51:48 2015//
+/patch-Makefile/1.6/Mon Mar 11 04:06:37 2019//
 /patch-asyncsendto_c/1.1/Sat Sep 10 13:03:42 2016//
-/patch-minissdp_c/1.1/Sat Sep 10 13:03:42 2016//
-/patch-miniupnpd_8/1.1/Fri May 17 10:59:31 2013//
-/patch-miniupnpd_conf/1.4/Wed Jun 17 09:51:48 2015//
+/patch-genconfig_sh/1.4/Mon Mar 11 04:06:37 2019//
+/patch-minissdp_c/1.2/Mon Mar 11 04:06:37 2019//
+/patch-miniupnpd_8/1.2/Mon Mar 11 04:06:37 2019//
+/patch-miniupnpd_conf/1.5/Mon Mar 11 04:06:37 2019//
 /patch-natpmp_c/1.1/Sat Sep 10 13:03:42 2016//
-/patch-portinuse_c/1.1/Sat Sep 10 13:03:42 2016//
-/patch-testasyncsendto_c/1.1/Wed Jun 17 09:51:48 2015//
-/patch-upnpevents_c/1.1/Sat Sep 10 13:03:42 2016//
+/patch-portinuse_c/1.2/Mon Mar 11 04:06:37 2019//
+/patch-testasyncsendto_c/1.2/Mon Mar 11 04:06:37 2019//
+/patch-upnpevents_c/1.2/Mon Mar 11 04:06:37 2019//
 /patch-upnppinhole_c/1.1/Sat Sep 10 13:03:42 2016//
-/patch-upnpredirect_c/1.1/Sat Sep 10 13:03:42 2016//
+/patch-upnpredirect_c/1.2/Mon Mar 11 04:06:37 2019//
 D

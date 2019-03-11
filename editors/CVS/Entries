@@ -1,4 +1,4 @@
-/Makefile/1.133/Fri Mar  8 01:55:36 2019//
+/Makefile/1.134/Mon Mar 11 03:49:17 2019//
 D/TeXmacs////
 D/abiword////
 D/axe////
@@ -60,6 +60,7 @@ D/vile////
 D/vim////
 D/vim-spell////
 D/vis////
+D/wordgrinder////
 D/xemacs21////
 D/xemacs21-sumo////
 D/xwpe////
