@@ -7,6 +7,8 @@
 /patch-security_nss_coreconf_OpenBSD_mk/1.2/Wed Jul 26 20:50:39 2017//
 /patch-security_nss_coreconf_UNIX_mk/1.1.1.1/Sun Nov 13 21:15:43 2016//
 /patch-security_nss_lib_freebl_blapi_h/1.3/Wed Oct  3 14:55:36 2018//
+/patch-servo_components_style_lib_rs/1.1/Mon Mar 11 19:04:38 2019//
+/patch-servo_components_style_traits_lib_rs/1.1/Mon Mar 11 19:04:38 2019//
 /patch-storage_mozStorageConnection_cpp/1.3/Wed Oct  3 14:55:36 2018//
 /patch-xpcom_io_TorFileUtils_cpp/1.3/Wed Oct  3 14:55:36 2018//
 D

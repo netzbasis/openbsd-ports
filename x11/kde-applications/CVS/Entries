@@ -1,4 +1,4 @@
-/Makefile/1.44/Sun Mar 10 22:33:30 2019//
+/Makefile/1.45/Mon Mar 11 21:57:09 2019//
 /Makefile.inc/1.9/Tue Dec 18 09:39:17 2018//
 /kde-applications.port.mk/1.1/Tue Dec 18 09:39:17 2018//
 D/analitza////
@@ -15,6 +15,7 @@ D/dolphin-plugins////
 D/dragon////
 D/ffmpegthumbs////
 D/granatier////
+D/gwenview////
 D/kajongg////
 D/kalgebra////
 D/kalzium////
@@ -29,6 +30,7 @@ D/kbreakout////
 D/kbruch////
 D/kcalc////
 D/kcalcore////
+D/kcalutils////
 D/kcron////
 D/kdeedu-data////
 D/kdegraphics-mobipocket////
@@ -42,6 +44,7 @@ D/kgeography////
 D/kgoldrunner////
 D/khangman////
 D/khelpcenter////
+D/kidentitymanagement////
 D/kig////
 D/kigo////
 D/killbots////
@@ -51,6 +54,7 @@ D/kiriki////
 D/kiten////
 D/kjumpingcube////
 D/kldap////
+D/kleopatra////
 D/klettres////
 D/klickety////
 D/klines////
@@ -91,6 +95,7 @@ D/libkexiv2////
 D/libkface////
 D/libkgeomap////
 D/libkipi////
+D/libkleo////
 D/libkmahjongg////
 D/libkomparediff2////
 D/libksane////

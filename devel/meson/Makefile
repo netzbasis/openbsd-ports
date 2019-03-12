@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.48 2019/03/10 17:46:33 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.52 2019/03/11 16:08:25 ajacoutot Exp $
 
 COMMENT=		next-generation build system
 
 MODPY_EGG_VERSION=	${GH_TAGNAME}
 GH_ACCOUNT=		mesonbuild
 GH_PROJECT=		meson
-GH_TAGNAME=		0.49.2
+GH_TAGNAME=		0.50.0
 EPOCH=			0
-REVISION=		2
 
 CATEGORIES=		devel
 
@@ -25,12 +24,43 @@ MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
 
 RUN_DEPENDS=		devel/ninja
 
+# XXX hand rolled patch (space file names)
+# patch-test_cases_common_137_get_define_meson_build
+BUILD_DEPENDS +=	devel/gpatch
+PATCH=			gpatch
+
+# test_objc_cpp_detection (__main__.FailureTests) ... skipped "objc and objcpp found, can't test detection failure"
+# test_d_compiler (__main__.NativeFileTests) ... skipped 'No d compiler found.'
+# test_swift_compiler (__main__.NativeFileTests) ... skipped 'No swift compiler found.'
+TEST_DEPENDS=		${RUN_DEPENDS} \
+			devel/git \
+			devel/jdk/1.8 \
+			devel/mercurial \
+			devel/sdl2 \
+			g95->=8,<9:lang/gcc/8,-f95 \
+			lang/mono \
+			lang/rust \
+			lang/vala \
+			shells/bash \
+			x11/wxWidgets
+
+# FAIL: test_testsetups (__main__.AllPlatformTests)
+#    self.assertTrue('TEST_ENV is set' in vg_log)
+#TEST_DEPENDS +=		devel/valgrind
+
 pre-configure:
 	sed -i "s,share/man,man," ${WRKSRC}/setup.py
 	sed -i "s,/usr/bin,${PREFIX}/bin,g" \
 		${WRKSRC}/data/com.mesonbuild.install.policy
 
+# gfortran: test_fortran_compiler; XXX hardcoded
+# XXX test_fortran_compiler ... skipped 'No alternate Fortran implementation.'
+# javac: test_java_compiler; XXX hardcoded
+# python: test cases/unit/46 native file binary
 do-test:
-	cd ${WRKSRC} && ./run_tests.py --failfast
+	ln -sf ${LOCALBASE}/jdk-1.8.0/bin/javac ${WRKDIR}/bin/javac
+	ln -sf ${LOCALBASE}/bin/egfortran ${WRKDIR}/bin/gfortran
+	ln -sf ${MODPY_BIN} ${WRKDIR}/bin/python
+	cd ${WRKSRC} && PATH=${PORTPATH} && ./run_tests.py --failfast
 
 .include <bsd.port.mk>
