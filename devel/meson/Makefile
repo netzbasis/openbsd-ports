@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.52 2019/03/11 16:08:25 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.54 2019/03/13 13:57:00 ajacoutot Exp $
 
 COMMENT=		next-generation build system
 
@@ -28,6 +28,10 @@ RUN_DEPENDS=		devel/ninja
 # patch-test_cases_common_137_get_define_meson_build
 BUILD_DEPENDS +=	devel/gpatch
 PATCH=			gpatch
+PATCH_STRIP=		-p0 -b
+
+# regression tests need to run as root
+TEST_IS_INTERACTIVE=	Yes
 
 # test_objc_cpp_detection (__main__.FailureTests) ... skipped "objc and objcpp found, can't test detection failure"
 # test_d_compiler (__main__.NativeFileTests) ... skipped 'No d compiler found.'

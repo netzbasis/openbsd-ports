@@ -1,4 +1,4 @@
-/Makefile/1.66/Sun Feb 24 20:52:25 2019//
+/Makefile/1.67/Thu Mar 14 18:33:36 2019//
 D/foxtrotgps////
 D/garmindev////
 D/gdal////
@@ -20,6 +20,7 @@ D/libpostal////
 D/mapcache////
 D/mapproxy////
 D/mapserver////
+D/mdal////
 D/merkaartor////
 D/openbsd-developers////
 D/osm-gps-map////

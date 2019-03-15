@@ -1,4 +1,4 @@
-/Makefile/1.631/Thu Mar  7 19:37:27 2019//
+/Makefile/1.633/Thu Mar 14 14:49:18 2019//
 D/2bwm////
 D/Xaw3d////
 D/XawMu////
@@ -146,6 +146,7 @@ D/klavaro////
 D/krusader////
 D/lablgtk2////
 D/lemonbar////
+D/libdbus-c++////
 D/libdbusmenu////
 D/libdnd////
 D/libfm////
@@ -274,6 +275,7 @@ D/tango-icon-theme////
 D/tango-icon-theme-extras////
 D/tellico////
 D/terminator////
+D/textsuggest////
 D/thewidgetfactory////
 D/tilda////
 D/tint2////
