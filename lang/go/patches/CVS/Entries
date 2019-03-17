@@ -1,5 +1,4 @@
-/patch-src_cmd_link_internal_ld_lib_go/1.9/Sat Jan  5 12:59:25 2019//
 /patch-src_cmd_link_internal_loadelf_ldelf_go/1.1/Sat Jan  5 12:59:25 2019//
-/patch-src_os_signal_signal_cgo_test_go/1.1/Thu Apr  5 18:38:38 2018//
+/patch-src_os_signal_signal_cgo_test_go/1.2/Sat Mar 16 13:37:29 2019//
 /patch-src_runtime_os_openbsd_go/1.3/Sat Feb  9 15:09:19 2019//
 D
