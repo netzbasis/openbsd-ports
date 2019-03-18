@@ -1,26 +1,30 @@
-# $OpenBSD: Makefile,v 1.24 2016/08/30 06:21:31 benoit Exp $
+# $OpenBSD: Makefile,v 1.26 2019/03/18 00:03:10 sthen Exp $
 
 COMMENT=		Advanced Intrusion Detection Environment
 
-DISTNAME=		aide-0.16
+V=			0.16.1
+REVISION=		0
+DISTNAME=		aide-${V}
 CATEGORIES=		security
-REVISION =		0
 
-HOMEPAGE=		http://sourceforge.net/projects/aide
+HOMEPAGE=		https://github.com/aide/aide
 
 # GPLv2
 PERMIT_PACKAGE_CDROM=	Yes
 
-MASTER_SITES=		${MASTER_SITE_SOURCEFORGE:=aide/}
+WANTLIB += c m mhash pcre z
 
-BUILD_DEPENDS=		devel/bison \
-			devel/pcre \
+MASTER_SITES=		https://github.com/aide/aide/releases/download/v${V}/
+
+BUILD_DEPENDS=		devel/bison
+LIB_DEPENDS=		devel/pcre \
 			security/mhash
 
 USE_GMAKE=		Yes
 
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS+=	--with-mhash
+CONFIGURE_ARGS+=	--disable-static \
+			--with-mhash
 CONFIGURE_ENV+=		YACC="bison -y" \
 			CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
