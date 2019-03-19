@@ -1,4 +1,4 @@
-# $OpenBSD: python.port.mk,v 1.100 2018/12/04 05:57:31 martijn Exp $
+# $OpenBSD: python.port.mk,v 1.102 2019/03/18 21:30:48 remi Exp $
 #
 #	python.port.mk - Xavier Santolaria <xavier@santolaria.net>
 #	This file is in the public domain.
@@ -68,6 +68,7 @@ MODPY_WANTLIB = python${MODPY_VERSION}${MODPY_LIB_SUFFIX}
 MODPY_RUN_DEPENDS =	lang/python/${MODPY_VERSION}
 MODPY_LIB_DEPENDS =	lang/python/${MODPY_VERSION}
 _MODPY_BUILD_DEPENDS =	lang/python/${MODPY_VERSION}
+MODPY_TEST_DEPENDS =	# empty, appended by MODPY_PYTEST
 
 .if ${NO_BUILD:L} == "no"
 MODPY_BUILDDEP ?=	Yes
@@ -75,6 +76,7 @@ MODPY_BUILDDEP ?=	Yes
 MODPY_BUILDDEP ?=	No
 .endif
 MODPY_RUNDEP ?=		Yes
+MODPY_TESTDEP ?=	Yes
 
 .if ${MODPY_BUILDDEP:L} == "yes"
 BUILD_DEPENDS +=	${_MODPY_BUILD_DEPENDS}
@@ -82,6 +84,10 @@ BUILD_DEPENDS +=	${_MODPY_BUILD_DEPENDS}
 
 .if ${MODPY_RUNDEP:L} == "yes"
 RUN_DEPENDS +=		${MODPY_RUN_DEPENDS}
+.endif
+
+.if ${MODPY_TESTDEP:L} == "yes"
+TEST_DEPENDS +=		${MODPY_TEST_DEPENDS}
 .endif
 
 _MODPY_PRE_BUILD_STEPS = :
@@ -158,6 +164,10 @@ MODPY_CMD =	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} \
 MODPY_TEST_CMD = cd ${WRKSRC} && ${SETENV} ${ALL_TEST_ENV} \
 			${MODPY_BIN} ./${MODPY_SETUP} \
 			${MODPY_SETUP_ARGS}
+
+MODPY_TEST_LOCALE ?=	LC_CTYPE=en_US.UTF-8
+
+TEST_ENV +=		${MODPY_TEST_LOCALE}
 
 SUBST_VARS :=	MODPY_PYCACHE MODPY_COMMENT MODPY_ABI3SO MODPY_PYC_MAGIC_TAG \
 		MODPY_BIN MODPY_EGG_VERSION MODPY_VERSION MODPY_BIN_SUFFIX \

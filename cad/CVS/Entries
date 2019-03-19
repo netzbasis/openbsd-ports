@@ -1,4 +1,4 @@
-/Makefile/1.30/Fri Jan  4 20:38:18 2019//
+/Makefile/1.31/Mon Mar 18 08:36:20 2019//
 D/abc////
 D/fritzing////
 D/geda-gaf////
@@ -9,6 +9,7 @@ D/gtkwave////
 D/kicad////
 D/kicad-library////
 D/klogic////
+D/magic////
 D/necpp////
 D/ngspice////
 D/openscad////
