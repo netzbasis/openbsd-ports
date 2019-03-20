@@ -2,9 +2,9 @@
 /patch-intl_icu_source_Makefile_in/1.7/Tue Jan 29 21:03:19 2019//
 /patch-js_src_ctypes_libffi_src_dlmalloc_c/1.4/Tue Sep  2 16:43:04 2014//
 /patch-js_src_jit_ProcessExecutableMemory_h/1.2/Wed Jun 27 05:05:20 2018//
-/patch-security_manager_pki_resources_content_exceptionDialog_js/1.19/Wed Feb 13 12:33:40 2019//
+/patch-security_manager_pki_resources_content_exceptionDialog_js/1.20/Tue Mar 19 19:21:21 2019//
 /patch-servo_components_style_lib_rs/1.1/Mon Mar 11 19:04:38 2019//
 /patch-servo_components_style_traits_lib_rs/1.1/Mon Mar 11 19:04:38 2019//
-/patch-storage_mozStorageConnection_cpp/1.16/Tue Jan 29 21:03:19 2019//
+/patch-storage_mozStorageConnection_cpp/1.17/Tue Mar 19 19:21:21 2019//
 /patch-widget_nsPrintSettingsImpl_cpp/1.5/Tue Jan 29 21:03:19 2019//
 D

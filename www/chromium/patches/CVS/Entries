@@ -595,9 +595,12 @@
 /patch-ui_webui_resources_js_icon_js/1.2/Sat Dec 10 15:35:25 2016//
 /patch-v8_BUILD_gn/1.22/Wed Feb  6 16:41:55 2019//
 /patch-v8_src_api_cc/1.1/Wed Feb  6 16:41:55 2019//
-/patch-v8_src_base_platform_platform-openbsd_cc/1.5/Fri Aug 10 14:57:53 2018//
+/patch-v8_src_base_platform_platform-openbsd_cc/1.6/Tue Mar 19 08:48:24 2019//
 /patch-v8_src_base_utils_random-number-generator_cc/1.2/Wed Feb  6 16:41:55 2019//
+/patch-v8_src_globals_h/1.25/Tue Mar 19 08:48:24 2019//
+/patch-v8_src_heap_spaces_h/1.1/Tue Mar 19 08:48:23 2019//
 /patch-v8_src_log-utils_h/1.6/Sun Nov  4 12:33:24 2018//
+/patch-v8_src_objects_hash-table_h/1.1/Tue Mar 19 08:48:23 2019//
 /patch-v8_src_trap-handler_handler-inside-posix_cc/1.1/Wed Feb  6 16:41:55 2019//
 /patch-v8_src_trap-handler_handler-inside-posix_h/1.1/Wed Feb  6 16:41:55 2019//
 /patch-v8_src_trap-handler_trap-handler_h/1.1/Wed Feb  6 16:41:55 2019//
