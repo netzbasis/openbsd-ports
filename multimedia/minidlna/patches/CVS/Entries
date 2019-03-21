@@ -1,10 +1,5 @@
-/patch-configure_ac/1.1/Sun Jan  6 10:09:04 2019//
 /patch-icons_c/1.3/Sun Mar  9 21:04:05 2014//
-/patch-minidlna_c/1.9/Sun Jan  6 10:09:04 2019//
-/patch-minidlna_conf/1.7/Sun Jan  6 10:25:57 2019//
-/patch-monitor_c/1.1/Sun Jan  6 10:09:04 2019//
-/patch-monitor_h/1.1/Sun Jan  6 10:09:04 2019//
-/patch-upnpevents_c/1.1/Sun Jan  6 10:09:04 2019//
-/patch-upnphttp_c/1.6/Sun May 21 14:52:54 2017//
+/patch-kqueue_c/1.1/Wed Mar 20 11:47:45 2019//
+/patch-minidlna_conf/1.8/Wed Mar 20 11:47:46 2019//
 /patch-utils_c/1.7/Tue Aug 29 11:42:22 2017//
 D
