@@ -1,5 +1,5 @@
 /patch-Makedefs_in/1.17/Sat Nov 10 13:02:52 2018//
-/patch-backend_ipp_c/1.20/Sat Nov 10 13:02:52 2018//
+/patch-backend_ipp_c/1.21/Sat Mar 23 12:19:54 2019//
 /patch-config-scripts_cups-common_m4/1.18/Sat Oct 14 10:22:03 2017//
 /patch-config-scripts_cups-compiler_m4/1.10/Sat Nov 10 13:02:52 2018//
 /patch-config-scripts_cups-sharedlibs_m4/1.12/Sat Nov 10 13:02:52 2018//
@@ -9,6 +9,6 @@
 /patch-notifier_Makefile/1.4/Sat Nov 10 13:02:52 2018//
 /patch-scheduler_Makefile/1.16/Sat Nov 10 13:02:52 2018//
 /patch-scheduler_auth_c/1.11/Wed Jun  6 08:23:30 2018//
-/patch-scheduler_ipp_c/1.26/Sat Nov 10 13:02:52 2018//
-/patch-test_run-stp-tests_sh/1.21/Sat Nov 10 13:02:52 2018//
+/patch-scheduler_ipp_c/1.27/Sat Mar 23 12:19:54 2019//
+/patch-test_run-stp-tests_sh/1.22/Sat Mar 23 12:19:54 2019//
 D

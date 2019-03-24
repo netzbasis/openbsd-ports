@@ -1,13 +1,16 @@
-# $OpenBSD: Makefile,v 1.12 2019/03/13 09:34:42 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2019/03/23 10:54:59 jca Exp $
 
 BROKEN-i386 =	ld: error: undefined symbol: ml_as_z_pred, etc
+
+FIX_EXTRACT_PERMISSIONS =	Yes
 
 COMMENT =		an extensible platform for analysis of C software
 
 DISTNAME =		frama-c-18.0-Argon
 PKGNAME =		frama-c-18.0
+REVISION =		1
 CATEGORIES =		devel
-HOMEPAGE =		http://www.frama-c.com/
+HOMEPAGE =		https://frama-c.com/
 
 # LGPLv2
 PERMIT_PACKAGE_CDROM =	Yes
@@ -22,9 +25,15 @@ MASTER_SITES =		https://frama-c.com/download/
 
 MODULES =		lang/ocaml
 
-BUILD_DEPENDS =		x11/lablgtk2 devel/ocaml-graph \
-			math/graphviz math/ocaml-zarith sysutils/findlib
-RUN_DEPENDS =		x11/lablgtk2 math/graphviz math/ocaml-zarith
+BUILD_DEPENDS =		x11/lablgtk2 \
+			devel/ocaml-graph \
+			math/graphviz \
+			math/ocaml-zarith \
+			sysutils/findlib
+RUN_DEPENDS =		x11/lablgtk2 \
+			math/graphviz \
+			math/ocaml-zarith \
+			sysutils/findlib
 
 LIB_DEPENDS =		x11/gnome/libgnomecanvas \
 			x11/gtksourceview
@@ -36,7 +45,5 @@ CONFIGURE_STYLE =	gnu autoconf no-autoheader
 AUTOCONF_VERSION =	2.69
 CONFIGURE_ARGS +=	MAKE=${MAKE_PROGRAM} \
 			--docdir=${PREFIX}/share/doc/frama-c/
-
-DPB_PROPERTIES +=	parallel
 
 .include <bsd.port.mk>
