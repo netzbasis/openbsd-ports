@@ -122,8 +122,6 @@
 /patch-libssp_configure/1.1.1.1/Sun Sep  4 16:20:19 2016//
 /patch-libstdc++-v3_configure/1.4/Wed Dec 26 17:10:00 2018//
 /patch-libstdc++-v3_include_bits_stl_pair_h/1.1/Thu Dec 27 15:49:44 2018//
-/patch-libstdc++-v3_include_c_global_cstddef/1.1.1.1/Sun Sep  4 16:20:19 2016//
-/patch-libstdc++-v3_include_c_std_cstddef/1.1.1.1/Sun Sep  4 16:20:19 2016//
 /patch-libstdc++-v3_libsupc++_Makefile_in/1.1.1.1/Sun Sep  4 16:20:19 2016//
 /patch-libstdc++-v3_src_Makefile_in/1.1.1.1/Sun Sep  4 16:20:19 2016//
 /patch-libstdc++-v3_src_c++11_debug_cc/1.1/Thu Nov 22 18:05:22 2018//
