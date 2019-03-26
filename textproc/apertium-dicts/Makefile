@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2017/11/04 00:08:22 bentley Exp $
+# $OpenBSD: Makefile,v 1.7 2019/03/25 06:13:44 bentley Exp $
 
      SUBDIR += af-nl
      SUBDIR += arg
@@ -48,6 +48,10 @@
      SUBDIR += nob
      SUBDIR += oc-ca
      SUBDIR += oc-es
+     SUBDIR += oci
+     SUBDIR += oci-fra
+     SUBDIR += pol
+     SUBDIR += pol-szl
      SUBDIR += pt-ca
      SUBDIR += pt-gl
      SUBDIR += rus
@@ -56,7 +60,10 @@
      SUBDIR += spa-ita
      SUBDIR += srd
      SUBDIR += srd-ita
-     SUBDIR += sv-da
+     SUBDIR += swe
+     SUBDIR += swe-dan
+     SUBDIR += swe-nor
+     SUBDIR += szl
      SUBDIR += rus-ukr
      SUBDIR += tur
      SUBDIR += ukr

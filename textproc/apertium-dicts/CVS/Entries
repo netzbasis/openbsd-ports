@@ -1,4 +1,4 @@
-/Makefile/1.5/Sat Nov  4 00:08:22 2017//
+/Makefile/1.7/Mon Mar 25 06:13:44 2019//
 /Makefile.inc/1.2/Tue Jan 19 03:03:18 2016//
 D/af-nl////
 D/arg////
@@ -48,6 +48,10 @@ D/nno-nob////
 D/nob////
 D/oc-ca////
 D/oc-es////
+D/oci////
+D/oci-fra////
+D/pol////
+D/pol-szl////
 D/pt-ca////
 D/pt-gl////
 D/rus////
@@ -57,7 +61,10 @@ D/spa-arg////
 D/spa-ita////
 D/srd////
 D/srd-ita////
-D/sv-da////
+D/swe////
+D/swe-dan////
+D/swe-nor////
+D/szl////
 D/tur////
 D/ukr////
 D/urd////

@@ -1,4 +1,4 @@
-/Makefile/1.1830/Thu Mar 14 07:50:55 2019//
+/Makefile/1.1831/Mon Mar 25 09:34:11 2019//
 D/ElectricFence////
 D/ORBit2////
 D/acpica////
@@ -84,6 +84,7 @@ D/cryptopp////
 D/cscope////
 D/csmith////
 D/ctftools////
+D/cudd////
 D/cudf////
 D/cunit////
 D/cutils////

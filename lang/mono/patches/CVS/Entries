@@ -2,6 +2,8 @@
 /patch-external_corefx_src_System_Runtime_Extensions_src_System_Environment_Unix_cs/1.1/Thu Mar 29 19:33:18 2018//
 /patch-mcs_class_Mono_Security_Mono_Security_Cryptography_KeyPairPersistence_cs/1.1/Thu Mar 29 19:33:18 2018//
 /patch-mcs_class_Mono_Security_Mono_Security_X509_X509StoreManager_cs/1.1/Thu Mar 29 19:33:18 2018//
+/patch-mcs_class_System_System_Net_NetworkInformation_NetworkInterface_cs/1.1/Mon Mar 25 13:05:39 2019//
+/patch-mcs_class_System_System_Platform_cs/1.1/Mon Mar 25 13:05:39 2019//
 /patch-mcs_class_corlib_System_Environment_cs/1.1/Thu Mar 29 19:33:18 2018//
 /patch-mcs_jay_Makefile/1.1/Fri Oct 24 07:06:01 2008//
 /patch-mcs_tools_mono-configuration-crypto_lib_Mono_Configuration_Crypto_KeyContainerCollection_cs/1.1/Thu Mar 29 19:33:18 2018//

@@ -511,6 +511,9 @@
 /patch-third_party_swiftshader_src_OpenGL_libEGL_libEGL_hpp/1.4/Wed Sep 12 17:08:22 2018//
 /patch-third_party_swiftshader_src_OpenGL_libGLES_CM_libGLES_CM_hpp/1.4/Wed Sep 12 17:08:22 2018//
 /patch-third_party_swiftshader_src_OpenGL_libGLESv2_libGLESv2_hpp/1.4/Wed Sep 12 17:08:22 2018//
+/patch-third_party_swiftshader_src_Reactor_BUILD_gn/1.1/Mon Mar 25 22:41:12 2019//
+/patch-third_party_swiftshader_third_party_llvm-7_0_BUILD_gn/1.1/Mon Mar 25 22:41:12 2019//
+/patch-third_party_swiftshader_third_party_llvm-7_0_configs_linux_include_llvm_Config_config_h/1.1/Mon Mar 25 22:41:12 2019//
 /patch-third_party_swiftshader_third_party_llvm-subzero_build_Linux_include_llvm_Config_config_h/1.2/Wed Jul 25 06:53:36 2018//
 /patch-third_party_unrar_src_crypt_cpp/1.2/Sun Mar 24 12:24:45 2019//
 /patch-third_party_usrsctp_BUILD_gn/1.3/Tue Jan 30 07:57:25 2018//
