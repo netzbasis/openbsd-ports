@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1831 2019/03/25 09:34:11 bentley Exp $
+# $OpenBSD: Makefile,v 1.1833 2019/03/26 18:10:14 chrisz Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -89,7 +89,6 @@
      SUBDIR += csmith
      SUBDIR += ctftools
      SUBDIR += cudd
-     SUBDIR += cudf
      SUBDIR += cunit
      SUBDIR += cutils
      SUBDIR += cvs-fast-export
@@ -358,6 +357,7 @@
      SUBDIR += liboil
      SUBDIR += liboop
      SUBDIR += libopensync
+     SUBDIR += libotf
      SUBDIR += libowfat
      SUBDIR += libpeas
      SUBDIR += libplist
@@ -477,27 +477,19 @@
      SUBDIR += ninja
      SUBDIR += npth
      SUBDIR += nspr
-     SUBDIR += ocaml-cmdliner
-     SUBDIR += ocaml-cppo
-     SUBDIR += ocaml-dose
-     SUBDIR += ocaml-extlib
      SUBDIR += ocaml-graph
-     SUBDIR += ocaml-jsonm
      SUBDIR += ocaml-menhir
      SUBDIR += ocaml-ocamlbuild
      SUBDIR += ocaml-parmap
      SUBDIR += ocaml-pcre
-     SUBDIR += ocaml-re
      SUBDIR += ocaml-uutf
      SUBDIR += ode
      SUBDIR += ois
-     SUBDIR += omake
      SUBDIR += open-ath9k-htc-firmware
      SUBDIR += openmpi
      SUBDIR += openocd
      SUBDIR += ophis
      SUBDIR += orc
-     SUBDIR += ounit
      SUBDIR += p5-Acme-Damn
      SUBDIR += p5-Algorithm-Annotate
      SUBDIR += p5-Algorithm-C3

@@ -1,4 +1,4 @@
-/Makefile/1.187/Wed Jan 23 15:24:53 2019//
+/Makefile/1.188/Tue Mar 26 16:47:29 2019//
 D/WordGenerator////
 D/astrolog////
 D/bible-kjv////
@@ -45,6 +45,7 @@ D/lfm////
 D/libdivecomputer////
 D/lifelines////
 D/logjam////
+D/m17n////
 D/magicpoint////
 D/mc////
 D/memcached////
