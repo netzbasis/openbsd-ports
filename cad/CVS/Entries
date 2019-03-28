@@ -1,4 +1,4 @@
-/Makefile/1.32/Wed Mar 20 10:05:57 2019//
+/Makefile/1.33/Wed Mar 27 08:45:54 2019//
 D/abc////
 D/fritzing////
 D/geda-gaf////
@@ -14,6 +14,7 @@ D/necpp////
 D/netgen////
 D/ngspice////
 D/openscad////
+D/opensta////
 D/pcb////
 D/qcad////
 D/qelectrotech////

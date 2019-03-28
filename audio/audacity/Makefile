@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.59 2019/03/26 18:26:45 rapha Exp $
+# $OpenBSD: Makefile,v 1.64 2019/03/28 00:34:14 jca Exp $
 
 COMMENT=	free audio editor
 
 V=		2.3.1
+REVISION=	2
 DISTNAME=	Audacity-${V}
 PKGNAME=	audacity-${V}
 CATEGORIES=	audio
@@ -26,7 +27,7 @@ WANTLIB += samplerate sndfile sndio soxr tiff usbhid vorbis vorbisenc
 WANTLIB += vorbisfile wx_baseu-3.0 wx_baseu_net-3.0 wx_baseu_xml-3.0
 WANTLIB += wx_gtk3u_adv-3.0 wx_gtk3u_core-3.0 wx_gtk3u_html-3.0
 WANTLIB += wx_gtk3u_qa-3.0 wx_gtk3u_xrc-3.0 xcb xcb-render xcb-shm
-WANTLIB += z db jack
+WANTLIB += z
 
 COMPILER =		base-clang ports-gcc base-gcc
 
@@ -35,12 +36,13 @@ MODPY_RUNDEP=	No
 
 BUILD_DEPENDS=	${MODGNU_AUTOCONF_DEPENDS} \
 		${MODGNU_AUTOMAKE_DEPENDS} \
-		archivers/zip \
 		devel/gettext-tools \
 		devel/libtool \
 		shells/bash
+# Used to build suild, not installed by default
+# See ${WRKSRC}/lib-src/lv2/suil and https://drobilla.net/software/suil
+BUILD_DEPENDS+=	x11/gtk+2
 LIB_DEPENDS=	x11/wxWidgets>=3.0.4 \
-		audio/jack \
 		audio/libsoxr \
 		audio/flac \
 		audio/libvorbis \
@@ -86,14 +88,21 @@ CONFIGURE_ARGS=		--enable-unicode \
 			--with-midi=yes \
 			--with-portaudio=system \
 			--with-portmidi=system \
+			--with-sbsms=local \
 			--with-soundtouch=system \
+			--with-widgetextra=local \
 			--without-libtwolame \
 			--without-ffmpeg \
 			--without-redland \
 			--without-liblrdf \
+			--without-lame \
 			--without-portmixer
 # XXX libtool/ld(1) fail to find libvamp-hostsdk.so
 CONFIGURE_ARGS+= 	--without-libvamp
+
+.if ${MACHINE_ARCH} != "amd64"
+CONFIGURE_ARGS+=	--disable-sse
+.endif
 
 WRKDIST=		${WRKDIR}/audacity-${DISTNAME}
 
