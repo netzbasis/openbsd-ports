@@ -1,7 +1,8 @@
-# $OpenBSD: Makefile,v 1.536 2019/03/09 18:06:13 sebastia Exp $
+# $OpenBSD: Makefile,v 1.538 2019/03/31 00:45:50 jasper Exp $
 
      SUBDIR =
      SUBDIR += ADMsnmp
+     SUBDIR += ROPgadget
      SUBDIR += acme-client
      SUBDIR += aescrypt
      SUBDIR += aide
@@ -405,6 +406,7 @@
      SUBDIR += volatility
      SUBDIR += vpnc
      SUBDIR += wapiti
+     SUBDIR += wesng
      SUBDIR += wpa_supplicant
      SUBDIR += wycheproof-testvectors
      SUBDIR += xca

@@ -1,4 +1,4 @@
-/Makefile/1.518/Wed Mar 20 17:47:34 2019//
+/Makefile/1.519/Sun Mar 31 01:05:24 2019//
 D/accountsservice////
 D/amazon-ecs-cli////
 D/amazon-ssm-agent////
@@ -339,7 +339,6 @@ D/udfclient////
 D/uefitool////
 D/upobsd////
 D/upower////
-D/upsd////
 D/upt////
 D/uptimed////
 D/usbutil////
