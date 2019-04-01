@@ -1,4 +1,4 @@
-/Makefile/1.396/Sun Feb 10 14:04:25 2019//
+/Makefile/1.397/Sun Mar 31 05:14:23 2019//
 D/0ad////
 D/1oom////
 D/2048-cli////
@@ -195,6 +195,7 @@ D/openfodder////
 D/openjk////
 D/openmw////
 D/openomf////
+D/openra////
 D/openrct2////
 D/opensonic////
 D/openttd////

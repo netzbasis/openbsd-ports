@@ -1,9 +1,10 @@
-/Makefile/1.24/Mon Jul 17 21:02:08 2017//
+/Makefile/1.25/Mon Apr  1 04:31:33 2019//
 D/c2t////
 D/cconv////
 D/cless////
 D/hc////
 D/libchewing////
+D/libpinyin////
 D/libtabe////
 D/lunar////
 D/py-zhCodecs////

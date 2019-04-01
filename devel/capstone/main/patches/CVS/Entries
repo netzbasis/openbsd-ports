@@ -1,6 +1,8 @@
-/patch-Makefile/1.1/Mon Nov  6 08:54:28 2017//
-/patch-arch_Mips_MipsInstPrinter_c/1.1/Mon Nov  6 08:54:28 2017//
-/patch-cs_c/1.1/Mon Nov  6 08:54:28 2017//
-/patch-include_capstone_h/1.1/Mon Nov  6 08:54:28 2017//
-/patch-tests_test_mips_c/1.1/Mon Nov  6 08:54:28 2017//
+/patch-Makefile/1.2/Mon Apr  1 02:28:20 2019//
+/patch-arch_Mips_MipsDisassembler_c/1.1/Mon Apr  1 02:28:20 2019//
+/patch-arch_Mips_MipsInstPrinter_c/1.2/Mon Apr  1 02:28:20 2019//
+/patch-cs_c/1.2/Mon Apr  1 02:28:20 2019//
+/patch-cstool_cstool_mips_c/1.1/Mon Apr  1 02:28:20 2019//
+/patch-include_capstone_capstone_h/1.1/Mon Apr  1 02:28:20 2019//
+/patch-tests_test_mips_c/1.2/Mon Apr  1 02:28:20 2019//
 D
