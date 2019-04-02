@@ -1,4 +1,4 @@
-/Makefile/1.409/Sat Mar 30 13:50:50 2019//
+/Makefile/1.410/Mon Apr  1 10:46:42 2019//
 D/abcde////
 D/adplay////
 D/adplug////
@@ -237,7 +237,6 @@ D/timidity////
 D/tracker////
 D/twolame////
 D/umurmur////
-D/vagalume////
 D/vamp-plugin-sdk////
 D/vgmplay////
 D/vlorb////
