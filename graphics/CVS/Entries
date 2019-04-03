@@ -1,4 +1,4 @@
-/Makefile/1.472/Sat Mar 16 12:34:46 2019//
+/Makefile/1.473/Tue Apr  2 10:00:46 2019//
 D/DevIL////
 D/GraphicsMagick////
 D/ImageMagick////
@@ -35,6 +35,7 @@ D/dcraw////
 D/delaboratory////
 D/dia////
 D/dibuja////
+D/digikam////
 D/digikam-kde4////
 D/displaz////
 D/djview4////

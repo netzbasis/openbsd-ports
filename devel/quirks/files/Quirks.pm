@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.738 2019/04/01 10:48:40 solene Exp $
+# $OpenBSD: Quirks.pm,v 1.741 2019/04/02 14:05:46 bentley Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1174,6 +1174,16 @@ my $obsolete_reason = {
 	'mlbviewer' => 3,
 	'upsd' => 3,
 	'vagalume' => 0,
+	'ocaml-uutf' => 7,
+	'xbat' => 3,
+	'xripple' => 3,
+	'sliderule' => 3,
+	'swisswatch' => 3,
+	'xaniroc' => 3,
+	'xmascot' => 3,
+	'xmold' => 3,
+	'xsnow' => 3,
+	'xtattr' => 3,
 };
 
 # reasons for obsolete packages
@@ -1350,6 +1360,7 @@ my $cve = {
 	'www/py-django/lts' => 'py-django-lts-<1.11.19',
 	'net/mosquitto' => 'mosquitto-<1.5.6',
 	'www/hiawatha' => 'hiawatha-<10.8.4',
+	'net/libssh2' => 'libssh2-<1.8.2',
 };
 # please maintain sort order in above $cve list, future updates need to
 # replace existing entries

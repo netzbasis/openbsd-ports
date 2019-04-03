@@ -1,10 +1,10 @@
 /patch-Makefile_in/1.8/Sun Feb 18 20:38:15 2018//
 /patch-config_layout/1.9/Thu Mar 29 19:30:53 2018//
-/patch-configure/1.17/Mon Oct  1 15:21:24 2018//
+/patch-configure/1.18/Tue Apr  2 08:17:08 2019//
 /patch-docs_conf_httpd_conf_in/1.8/Fri Mar 17 07:36:35 2017//
 /patch-docs_man_htpasswd_1/1.7/Mon Oct  1 15:21:24 2018//
 /patch-docs_man_httpd_8/1.8/Mon Oct  1 15:21:24 2018//
-/patch-modules_ssl_ssl_engine_init_c/1.13/Thu Nov  1 18:05:01 2018//
+/patch-modules_ssl_ssl_engine_init_c/1.14/Tue Apr  2 08:17:08 2019//
 /patch-modules_ssl_ssl_private_h/1.6/Wed Oct 24 13:23:59 2018//
 /patch-server_mpm_unix_c/1.2/Fri Mar 17 07:36:35 2017//
 /patch-support_apachectl_in/1.5/Mon Oct  1 15:21:24 2018//

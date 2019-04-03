@@ -1,4 +1,4 @@
-/Makefile/1.633/Thu Mar 14 14:49:18 2019//
+/Makefile/1.634/Tue Apr  2 14:05:45 2019//
 D/2bwm////
 D/Xaw3d////
 D/XawMu////
@@ -254,7 +254,6 @@ D/sclock////
 D/sct////
 D/sisctrl////
 D/skippy////
-D/sliderule////
 D/slim////
 D/slim-themes////
 D/slock////
@@ -267,7 +266,6 @@ D/st////
 D/stalonetray////
 D/stumpwm////
 D/swarp////
-D/swisswatch////
 D/sxhkd////
 D/tabbed////
 D/tangerine-icon-theme////
@@ -332,7 +330,6 @@ D/x11vnc////
 D/x2goclient////
 D/x2vnc////
 D/x2x////
-D/xaniroc////
 D/xantfarm////
 D/xarchive////
 D/xarchiver////
@@ -371,9 +368,7 @@ D/xkbset////
 D/xkeycaps////
 D/xli////
 D/xloadimage////
-D/xmascot////
 D/xmobar////
-D/xmold////
 D/xmonad////
 D/xosd////
 D/xpad////
@@ -390,9 +385,7 @@ D/xscreensaver////
 D/xscribble////
 D/xsel////
 D/xsettingsd////
-D/xsnow////
 D/xtacy////
-D/xtattr////
 D/xtermset////
 D/xtestpicture////
 D/xtoolwait////

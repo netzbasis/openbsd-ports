@@ -1,4 +1,4 @@
-/Makefile/1.589/Wed Jan 30 17:02:00 2019//
+/Makefile/1.590/Wed Apr  3 02:32:16 2019//
 D/TclXML////
 D/antiword////
 D/apertium////
@@ -354,6 +354,7 @@ D/py-elementtidy////
 D/py-enchant////
 D/py-epydoc////
 D/py-feedparser////
+D/py-humanize////
 D/py-iso8601////
 D/py-jaxml////
 D/py-jellyfish////
