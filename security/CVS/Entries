@@ -1,4 +1,4 @@
-/Makefile/1.538/Sun Mar 31 00:45:50 2019//
+/Makefile/1.539/Wed Apr  3 05:03:35 2019//
 D/ADMsnmp////
 D/ROPgadget////
 D/acme-client////
@@ -299,7 +299,6 @@ D/regripper////
 D/reop////
 D/rhash////
 D/routersploit////
-D/ruby-akami////
 D/ruby-bcrypt////
 D/ruby-gpgme////
 D/ruby-hmac////

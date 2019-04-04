@@ -1,4 +1,4 @@
-/Makefile/1.473/Tue Apr  2 10:00:46 2019//
+/Makefile/1.475/Wed Apr  3 07:45:04 2019//
 D/DevIL////
 D/GraphicsMagick////
 D/ImageMagick////
@@ -26,7 +26,6 @@ D/colord////
 D/colord-gtk////
 D/colorexplorer////
 D/comix////
-D/compface////
 D/cstitch////
 D/ctl////
 D/darktable////
@@ -161,7 +160,6 @@ D/mirage////
 D/mojoshader////
 D/mpeg-lib////
 D/mpeg_encode////
-D/mpeg_play////
 D/mscgen////
 D/mtpaint////
 D/mypaint-brushes////

@@ -1,4 +1,4 @@
-/Makefile/1.1124/Sun Mar 31 19:48:02 2019//
+/Makefile/1.1125/Wed Apr  3 07:29:51 2019//
 D/GeoIP////
 D/adns////
 D/adsuck////
@@ -231,7 +231,6 @@ D/mininet////
 D/minio////
 D/miniupnp////
 D/mirmon////
-D/mirror////
 D/mktorrent////
 D/mldonkey////
 D/mlvpn////

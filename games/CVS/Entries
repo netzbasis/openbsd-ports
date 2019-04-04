@@ -1,11 +1,10 @@
-/Makefile/1.398/Tue Apr  2 14:05:45 2019//
+/Makefile/1.399/Wed Apr  3 07:29:51 2019//
 D/0ad////
 D/1oom////
 D/2048-cli////
 D/abuse////
 D/ace////
 D/afternoonstalker////
-D/agm////
 D/alephone////
 D/allegro////
 D/amoebax////
@@ -52,7 +51,6 @@ D/clines////
 D/clonekeen////
 D/cmatrix////
 D/colobot////
-D/connect4////
 D/corewars////
 D/corsixth////
 D/cosmosmash////
@@ -313,10 +311,8 @@ D/xboing////
 D/xbomber////
 D/xbreaky////
 D/xbubble////
-D/xchomp////
 D/xcowsay////
 D/xcubes////
-D/xdeblock////
 D/xdino////
 D/xevil////
 D/xgalaga-sdl////
@@ -347,7 +343,6 @@ D/xsoldier////
 D/xteddy////
 D/xwelltris////
 D/xye////
-D/xzip////
 D/yquake2////
 D/zangband////
 D/zaz////

@@ -1,4 +1,4 @@
-/Makefile/1.410/Mon Apr  1 10:46:42 2019//
+/Makefile/1.412/Wed Apr  3 07:29:50 2019//
 D/abcde////
 D/adplay////
 D/adplug////
@@ -204,9 +204,7 @@ D/quodlibet////
 D/radiotray////
 D/rgain////
 D/rhythmbox////
-D/rsynth////
 D/rtunes////
-D/ruby-sonos////
 D/ruby-taglib////
 D/ruby-vorbis_comment////
 D/schismtracker////

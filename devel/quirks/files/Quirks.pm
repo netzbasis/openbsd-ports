@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.741 2019/04/02 14:05:46 bentley Exp $
+# $OpenBSD: Quirks.pm,v 1.748 2019/04/03 15:02:19 danj Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1184,6 +1184,28 @@ my $obsolete_reason = {
 	'xmold' => 3,
 	'xsnow' => 3,
 	'xtattr' => 3,
+	'ruby25-akami' => 1,
+	'ruby25-gyoku' => 1,
+	'ruby25-httpclient' => 1,
+	'ruby25-httpi' => 1,
+	'ruby25-nori' => 1,
+	'ruby25-savon' => 1,
+	'ruby25-sonos' => 1,
+	'ruby25-wasabi' => 1,
+	'linuxdoc' => 6,
+	'luna' => 3,
+	'rsynth' => 3,
+	'agm' => 3,
+	'connect4' => 3,
+	'xchomp' => 3,
+	'xdeblock' => 3,
+	'xzip' => 3,
+	'jive' => 3,
+	'compface' => 3,
+	'mirror' => 3,
+	'dclock' => 3,
+	'xfishtank' => 3,
+	'mpeg_play' => 6,
 };
 
 # reasons for obsolete packages
@@ -1303,7 +1325,8 @@ my $cve = {
 	'lang/php/5.6,-main' => 'php-<5.6.38',
 	'lang/php/7.0,-main' => 'php->7.0,<7.0.32',
 	'lang/php/7.1,-main' => 'php->7.1,<7.1.22',
-	'lang/php/7.2,-main' => 'php-7.2->7.2,<7.2.10',
+	'lang/php/7.2,-main' => 'php->7.2,<7.2.10',
+	'lang/python/2.7,-main' => 'python->2.7,<2.7.16',
 	'lang/ruby/2.3,-main' => 'ruby-<2.3.8',
 	'lang/ruby/2.4,-main' => 'ruby->2.4,<2.4.5p2',
 	'lang/ruby/2.5,-main' => 'ruby->2.5,<2.5.5',
@@ -1318,7 +1341,9 @@ my $cve = {
 	'net/haproxy' => 'haproxy-<1.8.17',
 	'net/icecast' => 'icecast-<2.4.4',
 	'net/isc-bind' => 'isc-bind-<9.11.5pl4v0',
+	'net/libssh2' => 'libssh2-<1.8.2',
 	'net/lldpd' => 'lldpd-<0.7.18p0',
+	'net/mosquitto' => 'mosquitto-<1.5.6',
 	'net/ntp' => 'ntp-<4.2.8pl7',
 	'net/openconnect' => 'openconnect-<8.01',
 	'net/powerdns,-main' => 'powerdns-<4.1.5',
@@ -1344,11 +1369,14 @@ my $cve = {
 	'www/chromium' => 'chromium-<69.0.3497.100',
 	'www/drupal7/core7' => 'drupal->=7.0,<7.60',
 	'www/drupal7/theme-newsflash' => 'drupal7-theme-newsflash-<2.5',
+	'www/hiawatha' => 'hiawatha-<10.8.4',
 	'www/iridium' => 'iridium-<2018.5.67',
 	'www/mozilla-firefox' => 'firefox-<62.0.2p0',
 	'www/nginx' => 'nginx-<1.4.1',
 	'www/p5-CGI-Application' => 'p5-CGI-Application-<4.50p0',
 	'www/p5-Catalyst-Plugin-Static-Simple' => 'p5-Catalyst-Plugin-Static-Simple-<0.36',
+	'www/py-django/lts' => 'py-django-lts-<1.11.19',
+	'www/py-django/stable' => 'py-django-<2.1.6',
 	'www/py-requests' => 'py-requests-<2.20.0',
 	'www/py-requests,python3' => 'py3-requests-<2.20.0',
 	'www/ruby-rack,ruby24' => 'ruby24-rack-<2.0.6',
@@ -1356,11 +1384,6 @@ my $cve = {
 	'www/webkitgtk4' => 'webkitgtk4-<2.20.5',
 	'x11/gnome/gdm' => 'gdm-<3.28.3',
 	'x11/rdesktop' => 'rdesktop-<1.8.4',
-	'www/py-django/stable' => 'py-django-<2.1.6',
-	'www/py-django/lts' => 'py-django-lts-<1.11.19',
-	'net/mosquitto' => 'mosquitto-<1.5.6',
-	'www/hiawatha' => 'hiawatha-<10.8.4',
-	'net/libssh2' => 'libssh2-<1.8.2',
 };
 # please maintain sort order in above $cve list, future updates need to
 # replace existing entries

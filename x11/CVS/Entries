@@ -1,4 +1,4 @@
-/Makefile/1.634/Tue Apr  2 14:05:45 2019//
+/Makefile/1.635/Wed Apr  3 07:29:51 2019//
 D/2bwm////
 D/Xaw3d////
 D/XawMu////
@@ -40,7 +40,6 @@ D/dbus-intf////
 D/dbus-python////
 D/dbus-tcl////
 D/dbusmenu-qt////
-D/dclock////
 D/dmenu////
 D/driconf////
 D/driftnet////
@@ -360,7 +359,6 @@ D/xdu////
 D/xfce4////
 D/xfe////
 D/xfed////
-D/xfishtank////
 D/xforms////
 D/xglobe////
 D/xkbcommon////

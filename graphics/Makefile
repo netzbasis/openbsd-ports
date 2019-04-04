@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.473 2019/04/02 10:00:46 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.475 2019/04/03 07:45:04 bentley Exp $
 
      SUBDIR =
      SUBDIR += DevIL
@@ -28,7 +28,6 @@
      SUBDIR += colord-gtk
      SUBDIR += colorexplorer
      SUBDIR += comix
-     SUBDIR += compface
      SUBDIR += cstitch
      SUBDIR += ctl
      SUBDIR += darktable
@@ -164,7 +163,6 @@
      SUBDIR += mojoshader
      SUBDIR += mpeg-lib
      SUBDIR += mpeg_encode
-     SUBDIR += mpeg_play
      SUBDIR += mscgen
      SUBDIR += mtpaint
      SUBDIR += mypaint-brushes

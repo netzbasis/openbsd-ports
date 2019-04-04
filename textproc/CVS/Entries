@@ -1,4 +1,4 @@
-/Makefile/1.590/Wed Apr  3 02:32:16 2019//
+/Makefile/1.592/Wed Apr  3 05:37:33 2019//
 D/TclXML////
 D/antiword////
 D/apertium////
@@ -110,7 +110,6 @@ D/libxml++3////
 D/libxmlbird////
 D/libxslt////
 D/link-grammar////
-D/linuxdoc////
 D/loccount////
 D/lowdown////
 D/lq-sp////
@@ -414,7 +413,6 @@ D/ruby-builder////
 D/ruby-erubis////
 D/ruby-fast-stemmer////
 D/ruby-fast_xs////
-D/ruby-gyoku////
 D/ruby-haml////
 D/ruby-hpricot////
 D/ruby-hyperestraier////
@@ -424,7 +422,6 @@ D/ruby-liquid////
 D/ruby-maruku////
 D/ruby-mustache////
 D/ruby-nokogiri////
-D/ruby-nori////
 D/ruby-pygments.rb////
 D/ruby-rdiscount////
 D/ruby-redcarpet////
