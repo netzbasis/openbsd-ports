@@ -2,4 +2,6 @@
 /patch-app_core_gimptagcache_c/1.1/Tue Aug  9 12:00:00 2016//
 /patch-etc_Makefile_in/1.16/Thu Jun  1 22:26:08 2017//
 /patch-plug-ins_common_Makefile_in/1.5/Thu Jun  1 22:26:08 2017//
+/patch-tools_gimp-mkenums/1.1/Thu Apr  4 06:26:36 2019//
+/patch-tools_pdbgen_enumgen_pl/1.1/Thu Apr  4 06:26:36 2019//
 D
