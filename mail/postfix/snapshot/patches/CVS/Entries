@@ -1,5 +1,6 @@
-/patch-conf_main_cf/1.5/Sat Sep  3 15:39:23 2016//
-/patch-conf_master_cf/1.11/Sat Feb 10 21:19:23 2018//
-/patch-src_tls_tls_server_c/1.5/Thu Nov 29 14:03:02 2018//
+/patch-conf_main_cf/1.6/Mon Apr 15 21:10:01 2019//
+/patch-conf_master_cf/1.12/Mon Apr 15 21:10:01 2019//
+/patch-src_tls_tls_certkey_c/1.1/Mon Apr 15 21:10:01 2019//
+/patch-src_tls_tls_server_c/1.6/Mon Apr 15 21:10:01 2019//
 /patch-src_util_sys_defs_h/1.10/Sat May 19 01:10:49 2018//
 D

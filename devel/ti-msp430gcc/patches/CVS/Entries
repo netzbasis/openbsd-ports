@@ -1,5 +1,23 @@
 /patch-sources_tools_Makefile_def/1.1.1.1/Tue Jul 21 15:51:37 2015//
 /patch-sources_tools_gcc_Makefile_in/1.1.1.1/Tue Jul 21 15:51:37 2015//
+/patch-sources_tools_gcc_bitmap_c/1.1/Mon Apr 15 21:20:06 2019//
+/patch-sources_tools_gcc_cgraph_c/1.1/Mon Apr 15 21:20:06 2019//
+/patch-sources_tools_gcc_config_elfos_h/1.1/Mon Apr 15 21:20:06 2019//
+/patch-sources_tools_gcc_config_msp430_msp430_c/1.1/Mon Apr 15 21:20:06 2019//
+/patch-sources_tools_gcc_cppbuiltin_c/1.1/Mon Apr 15 21:20:06 2019//
+/patch-sources_tools_gcc_dwarf2cfi_c/1.1/Mon Apr 15 21:20:06 2019//
+/patch-sources_tools_gcc_dwarf2out_c/1.1/Mon Apr 15 21:20:06 2019//
+/patch-sources_tools_gcc_ipa-devirt_c/1.1/Mon Apr 15 21:20:06 2019//
+/patch-sources_tools_gcc_ipa-inline_c/1.1/Mon Apr 15 21:20:06 2019//
+/patch-sources_tools_gcc_ipa-profile_c/1.1/Mon Apr 15 21:20:06 2019//
+/patch-sources_tools_gcc_ipa-prop_c/1.1/Mon Apr 15 21:20:06 2019//
+/patch-sources_tools_gcc_loop-iv_c/1.1/Mon Apr 15 21:20:06 2019//
+/patch-sources_tools_gcc_profile_c/1.1/Mon Apr 15 21:20:06 2019//
+/patch-sources_tools_gcc_stor-layout_c/1.1/Mon Apr 15 21:20:06 2019//
+/patch-sources_tools_gcc_system_h/1.1/Mon Apr 15 21:20:06 2019//
+/patch-sources_tools_gcc_toplev_c/1.1/Mon Apr 15 21:20:06 2019//
+/patch-sources_tools_gcc_tree-ssa-reassoc_c/1.1/Mon Apr 15 21:20:06 2019//
+/patch-sources_tools_gcc_value-prof_c/1.1/Mon Apr 15 21:20:06 2019//
 /patch-sources_tools_libgloss_msp430_Makefile_in/1.1.1.1/Tue Jul 21 15:51:37 2015//
 /patch-sources_tools_mpfr_src_mpfr_h/1.1/Fri Nov 11 19:43:52 2016//
 D
