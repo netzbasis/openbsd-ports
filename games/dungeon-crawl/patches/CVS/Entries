@@ -1,6 +1,7 @@
 /patch-docs_crawl_6/1.2/Tue Feb 17 19:47:01 2015//
 /patch-source_AppHdr_h/1.1.1.1/Sat Oct 22 15:20:28 2005//
 /patch-source_describe_cc/1.1/Sun Nov 25 21:06:38 2018//
+/patch-source_direct_cc/1.1/Tue Apr 16 16:09:45 2019//
 /patch-source_effects_cc/1.1/Mon May  1 21:00:15 2017//
 /patch-source_files_cc/1.1.1.1/Sat Oct 22 15:20:28 2005//
 /patch-source_hiscores_cc/1.1/Sun Nov 25 21:06:38 2018//
@@ -10,6 +11,7 @@
 /patch-source_liblinux_cc/1.1/Mon Apr  9 16:45:05 2018//
 /patch-source_libutil_cc/1.1.1.1/Sat Oct 22 15:20:28 2005//
 /patch-source_macro_cc/1.1/Sun Nov 25 21:06:38 2018//
+/patch-source_mon-util_h/1.1/Tue Apr 16 16:09:45 2019//
 /patch-source_monplace_cc/1.1/Sun Nov 25 21:06:38 2018//
 /patch-source_newgame_cc/1.2/Mon Apr  9 16:45:05 2018//
 /patch-source_ouch_h/1.2/Tue Feb 17 19:47:01 2015//

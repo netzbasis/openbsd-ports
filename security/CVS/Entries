@@ -1,4 +1,4 @@
-/Makefile/1.539/Wed Apr  3 05:03:35 2019//
+/Makefile/1.540/Tue Apr 16 20:48:28 2019//
 D/ADMsnmp////
 D/ROPgadget////
 D/acme-client////
@@ -239,6 +239,7 @@ D/pgp5////
 D/pgpdump////
 D/pidgin-otr////
 D/pinentry////
+D/pixiewps////
 D/plaso////
 D/polarssl////
 D/portscanner////
@@ -294,6 +295,7 @@ D/qtkeychain////
 D/radiusniff////
 D/rarcrack////
 D/rdp////
+D/reaver////
 D/recon-ng////
 D/regripper////
 D/reop////
