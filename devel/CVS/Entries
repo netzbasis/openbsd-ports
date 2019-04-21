@@ -1,4 +1,4 @@
-/Makefile/1.1837/Tue Apr  2 13:38:26 2019//
+/Makefile/1.1838/Fri Apr 19 14:43:55 2019//
 D/ElectricFence////
 D/ORBit2////
 D/acpica////
@@ -1109,6 +1109,7 @@ D/p5-Test-XML////
 D/p5-Test-YAML////
 D/p5-Test-YAML-Valid////
 D/p5-Test-utf8////
+D/p5-Test2-Suite////
 D/p5-Text-FixEOL////
 D/p5-Text-vFile-asData////
 D/p5-Throwable////

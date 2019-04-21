@@ -1,4 +1,4 @@
-/Makefile/1.592/Wed Apr  3 05:37:33 2019//
+/Makefile/1.593/Fri Apr 19 13:25:11 2019//
 D/TclXML////
 D/antiword////
 D/apertium////
@@ -239,6 +239,7 @@ D/p5-Text-Autoformat////
 D/p5-Text-CSV////
 D/p5-Text-CSV-Hashify////
 D/p5-Text-CSV_XS////
+D/p5-Text-CharWidth////
 D/p5-Text-Diff////
 D/p5-Text-Diff-HTML////
 D/p5-Text-DoubleMetaphone////

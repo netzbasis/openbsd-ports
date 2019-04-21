@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.37 2019/02/14 12:54:23 jca Exp $
+# $OpenBSD: Makefile,v 1.40 2019/04/20 16:48:32 jca Exp $
 
 COMMENT =		authoritative DNS server
 
-DISTNAME =		knot-2.7.4
+DISTNAME =		knot-2.8.1
 
-SHARED_LIBS +=	zscanner             1.0      # .1.0
-SHARED_LIBS +=	knot                 4.0      # .7.0
-SHARED_LIBS +=	dnssec               1.0      # .5.0
+SHARED_LIBS +=	dnssec               2.0      # .7.0
+SHARED_LIBS +=	knot                 5.0      # .9.0
+SHARED_LIBS +=	zscanner             1.1      # .3.0
 
 CATEGORIES =		net
 
@@ -19,7 +19,7 @@ PERMIT_PACKAGE_CDROM =	Yes
 
 WANTLIB += c curses edit ffi gmp gnutls hogweed iconv idn2 intl
 WANTLIB += lmdb m nettle p11-kit pthread tasn1 unistring urcu
-WANTLIB += urcu-common z
+WANTLIB += urcu-common
 
 MASTER_SITES =		https://secure.nic.cz/files/knot-dns/
 EXTRACT_SUFX =		.tar.xz
@@ -51,11 +51,6 @@ CONFIGURE_ENV =		ac_cv_path_PDFLATEX="false" \
 .if ${MACHINE_ARCH} == "i386"
 CFLAGS += -march=i586
 .endif
-
-post-extract:
-	# Workaround symbol conflict somehow avoided by GNU libtool
-	sed -i 's/net_send/contrib_&/g' ${WRKSRC}/tests/contrib/test_net.c
-	sed -i 's/net_send/contrib_&/g' ${WRKSRC}/src/contrib/net.[ch]
 
 post-install:
 	mv ${WRKINST}/etc/knot/ ${PREFIX}/share/examples/knot/
