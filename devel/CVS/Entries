@@ -1,4 +1,4 @@
-/Makefile/1.1838/Fri Apr 19 14:43:55 2019//
+/Makefile/1.1839/Sun Apr 21 12:29:34 2019//
 D/ElectricFence////
 D/ORBit2////
 D/acpica////
@@ -1225,7 +1225,6 @@ D/py-arrow////
 D/py-asn1////
 D/py-asn1-modules////
 D/py-astroid////
-D/py-async////
 D/py-async-timeout////
 D/py-atomicwrites////
 D/py-attrs////
