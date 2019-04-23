@@ -1,4 +1,4 @@
-/Makefile/1.475/Wed Apr  3 07:45:04 2019//
+/Makefile/1.476/Mon Apr 22 08:59:14 2019//
 D/DevIL////
 D/GraphicsMagick////
 D/ImageMagick////
@@ -16,6 +16,7 @@ D/babl////
 D/barcode////
 D/birdfont////
 D/blender////
+D/bonzomatic////
 D/cadubi////
 D/cairo////
 D/cairomm////

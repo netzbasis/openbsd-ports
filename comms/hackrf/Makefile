@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2018/11/20 12:46:09 bentley Exp $
+# $OpenBSD: Makefile,v 1.3 2019/04/22 19:56:51 cwen Exp $
 
 COMMENT =	host software for the HackRF One SDR
 
 V =		2018.01.1
+REVISION =	0
 DISTNAME =	hackrf-$V
 
 SHARED_LIBS +=  hackrf                    0.0 # 0.5
@@ -21,6 +22,8 @@ WANTLIB += c fftw3f m pthread usb-1.0
 MASTER_SITES =		https://github.com/mossmann/hackrf/releases/download/v$V/
 
 EXTRACT_SUFX =		.tar.xz
+
+COMPILER =		base-clang ports-gcc
 
 MODULES =		devel/cmake
 LIB_DEPENDS =		devel/libusb1 \

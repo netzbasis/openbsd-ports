@@ -105,5 +105,6 @@
 /patch-tools_lldb_source_Host_openbsd_HostInfoOpenBSD_cpp/1.1/Mon Jan 28 06:27:28 2019//
 /patch-tools_lldb_source_Plugins_UnwindAssembly_x86_x86AssemblyInspectionEngine_cpp/1.1/Wed Feb 20 00:24:11 2019//
 /patch-tools_lldb_source_Plugins_UnwindAssembly_x86_x86AssemblyInspectionEngine_h/1.1/Wed Feb 20 00:24:11 2019//
+/patch-unittests_ADT_OptionalTest_cpp/1.1/Mon Apr 22 17:24:26 2019//
 /patch-utils_TableGen_X86RecognizableInstr_cpp/1.1/Wed Feb 20 00:24:11 2019//
 D
