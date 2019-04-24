@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1840 2019/04/22 21:39:51 kmos Exp $
+# $OpenBSD: Makefile,v 1.1842 2019/04/23 11:40:18 sebastia Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1728,6 +1728,7 @@
      SUBDIR += riscv-elf
      SUBDIR += rlog
      SUBDIR += ruby-abstract
+     SUBDIR += ruby-activesupport
      SUBDIR += ruby-arrayfields
      SUBDIR += ruby-atomic,ruby24
      SUBDIR += ruby-atomic,ruby25
@@ -1783,6 +1784,7 @@
      SUBDIR += ruby-nio4r,ruby26
      SUBDIR += ruby-ole
      SUBDIR += ruby-open4
+     SUBDIR += ruby-opt_parse_validator
      SUBDIR += ruby-optimist
      SUBDIR += ruby-polyglot
      SUBDIR += ruby-prof,ruby24
@@ -1805,6 +1807,7 @@
      SUBDIR += ruby-rspec
      SUBDIR += ruby-ruby2ruby
      SUBDIR += ruby-ruby_parser
+     SUBDIR += ruby-ruby-progressbar
      SUBDIR += ruby-rubyinline
      SUBDIR += ruby-safe_yaml
      SUBDIR += ruby-semantic_puppet
@@ -1817,6 +1820,7 @@
      SUBDIR += ruby-therubyracer,ruby25
      SUBDIR += ruby-therubyracer,ruby26
      SUBDIR += ruby-thor
+     SUBDIR += ruby-thread_safe
      SUBDIR += ruby-tilt
      SUBDIR += ruby-transaction-simple
      SUBDIR += ruby-trollop

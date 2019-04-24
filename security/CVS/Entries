@@ -1,4 +1,4 @@
-/Makefile/1.540/Tue Apr 16 20:48:28 2019//
+/Makefile/1.541/Tue Apr 23 11:46:06 2019//
 D/ADMsnmp////
 D/ROPgadget////
 D/acme-client////
@@ -302,6 +302,7 @@ D/reop////
 D/rhash////
 D/routersploit////
 D/ruby-bcrypt////
+D/ruby-cms_scanner////
 D/ruby-gpgme////
 D/ruby-hmac////
 D/ruby-openid////
@@ -349,6 +350,7 @@ D/vpnc////
 D/wapiti////
 D/wesng////
 D/wpa_supplicant////
+D/wpscan////
 D/wycheproof-testvectors////
 D/xca////
 D/xmlsec////
