@@ -1,13 +1,14 @@
-# $OpenBSD: Makefile,v 1.44 2019/03/30 14:46:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.46 2019/04/24 16:31:06 sthen Exp $
 
 COMMENT-main =	Java servlet 2.5 and Java server pages 2.1 server
-REVISION-main =	4
+PKGSPEC-main =	tomcat->=6,<7
+REVISION =	6
 
 MAJ_VER =	6
 MIN_VER =	0
 MICRO_VER =	53
 
-RUN_DEPENDS-examples =www/tomcat/v${MAJ_VER},-main>=${MAJ_VER},<7
+RUN_DEPENDS-examples =www/tomcat/v6
 
 pre-patch:
 	perl -pi -e "s/\r$$//" ${WRKSRC}/webapps/ROOT/index.*

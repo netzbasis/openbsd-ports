@@ -1,4 +1,4 @@
-/Makefile/1.476/Mon Apr 22 08:59:14 2019//
+/Makefile/1.478/Thu Apr 25 06:05:43 2019//
 D/DevIL////
 D/GraphicsMagick////
 D/ImageMagick////
@@ -283,6 +283,7 @@ D/wmicons////
 D/xanim////
 D/xaos////
 D/xbmbrowser////
+D/xdot////
 D/xfig////
 D/xmedcon////
 D/xoris////

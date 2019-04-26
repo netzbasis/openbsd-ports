@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.520 2019/04/23 11:27:38 sebastia Exp $
+# $OpenBSD: Makefile,v 1.522 2019/04/24 23:33:49 jeremy Exp $
 
      SUBDIR =
      SUBDIR += accountsservice
@@ -263,6 +263,7 @@
      SUBDIR += radiusreport
      SUBDIR += radmind
      SUBDIR += rancid
+     SUBDIR += random_run
      SUBDIR += ranger
      SUBDIR += ranval
      SUBDIR += raspberrypi-firmware
@@ -281,22 +282,18 @@
      SUBDIR += rpl
      SUBDIR += rsyslog
      SUBDIR += rtty
-     SUBDIR += ruby-augeas,ruby24
      SUBDIR += ruby-augeas,ruby25
      SUBDIR += ruby-augeas,ruby26
      SUBDIR += ruby-capistrano
      SUBDIR += ruby-directory_watcher
-     SUBDIR += ruby-libvirt,ruby24
      SUBDIR += ruby-libvirt,ruby25
      SUBDIR += ruby-libvirt,ruby26
-     SUBDIR += ruby-posix-spawn,ruby24
      SUBDIR += ruby-posix-spawn,ruby25
      SUBDIR += ruby-posix-spawn,ruby26
      SUBDIR += ruby-puppet
      SUBDIR += ruby-puppet-lint
      SUBDIR += ruby-puppet-syntax
      SUBDIR += ruby-r10k
-     SUBDIR += ruby-shadow,ruby24
      SUBDIR += ruby-shadow,ruby25
      SUBDIR += ruby-shadow,ruby26
      SUBDIR += ruby-tzinfo

@@ -1,12 +1,10 @@
-# $OpenBSD: Makefile,v 1.15 2017/09/14 13:00:54 phessler Exp $
+# $OpenBSD: Makefile,v 1.19 2019/04/25 11:28:38 sthen Exp $
 
 COMMENT =		network library for easy and scalable concurrency
 
-MODPY_EGG_VERSION =	1.2.2
+MODPY_EGG_VERSION =	1.4.0
 DISTNAME =		gevent-${MODPY_EGG_VERSION}
 PKGNAME =		${MODPY_PY_PREFIX}${DISTNAME}
-MAINTAINER =		Dmitrij D. Czarkoff <czarkoff@openbsd.org>
-REVISION =		1
 
 CATEGORIES =		devel
 HOMEPAGE =		http://www.gevent.org/
@@ -32,12 +30,8 @@ BUILD_DEPENDS =		devel/libev:configure \
 LIB_DEPENDS =		devel/libev \
 			net/libcares
 RUN_DEPENDS =		devel/py-greenlet${MODPY_FLAVOR}
-TEST_DEPENDS =		${RUN_DEPENDS} \
-			lang/python/${MODPY_VERSION},-tests \
-			sysutils/py-psutil${MODPY_FLAVOR}
 
 MAKE_ENV =		CARES_EMBED=0 LIBEV_EMBED=0
-TEST_ENV =		PYTHONPATH="${WRKBUILD}"
 CFLAGS +=		-I${LOCALBASE}/include
 LDFLAGS +=		-L${LOCALBASE}/lib
 
@@ -52,8 +46,23 @@ post-build:
 post-install:
 	rm -Rf ${PREFIX}/lib/python${MODPY_VERSION}/site-packages/greentest
 
+# depends on self for now, but upstream intends to pass PYTHONPATH
+# to subproc's in the future which should obviate the need for this
+TEST_DEPENDS =		${BASE_PKGPATH}=${MODPY_EGG_VERSION} \
+			${RUN_DEPENDS} \
+			devel/py-coverage${MODPY_FLAVOR} \
+			devel/py-coveralls${MODPY_FLAVOR} \
+			devel/py-objgraph${MODPY_FLAVOR} \
+			devel/py-zopeevent${MODPY_FLAVOR} \
+			devel/py-zopeinterface${MODPY_FLAVOR} \
+			sysutils/py-psutil${MODPY_FLAVOR} \
+			www/py-requests${MODPY_FLAVOR}
+.if !${FLAVOR:Mpython3}
+TEST_DEPENDS +=		devel/py-futures \
+			devel/py-mock
+.endif
+
 do-test:
-	cd ${WRKBUILD}/greentest && ${SETENV} ${ALL_TEST_ENV} ${MODPY_BIN} \
-		testrunner.py --config known_failures.py
+	cd ${WRKSRC}; env PYTHONPATH=src ${MODPY_BIN} -m gevent.tests
 
 .include <bsd.port.mk>

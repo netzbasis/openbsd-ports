@@ -1,4 +1,4 @@
-/Makefile/1.896/Tue Apr 23 11:20:31 2019//
+/Makefile/1.898/Wed Apr 24 23:33:49 2019//
 D/ajaxterm////
 D/analog////
 D/ap2-mod_dnssd////
@@ -460,7 +460,6 @@ D/ruby-unicorn////
 D/ruby-vegas////
 D/ruby-websocket-driver////
 D/ruby-websocket-extensions////
-D/ruby-xmlrpc////
 D/ruby-xpath////
 D/sabredav////
 D/sarg////
