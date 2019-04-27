@@ -1,4 +1,4 @@
-/Makefile/1.594/Wed Apr 24 23:33:49 2019//
+/Makefile/1.595/Fri Apr 26 18:27:26 2019//
 D/TclXML////
 D/antiword////
 D/apertium////
@@ -351,6 +351,7 @@ D/py-dicttoxml////
 D/py-docutils////
 D/py-elasticsearch////
 D/py-elementtidy////
+D/py-emoji////
 D/py-enchant////
 D/py-epydoc////
 D/py-feedparser////

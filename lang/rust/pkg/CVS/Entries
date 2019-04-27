@@ -1,17 +1,10 @@
 /DESCR-clippy/1.1/Sun Dec 16 09:19:57 2018//
 /DESCR-doc/1.1.1.1/Mon Apr  6 16:01:05 2015//
 /DESCR-gdb/1.1/Sun Dec 16 09:19:57 2018//
-/DESCR-main/1.1.1.1/Mon Apr  6 16:01:05 2015//
+/DESCR-main/1.2/Fri Apr 26 15:08:33 2019//
 /DESCR-rustfmt/1.1/Sun Dec 16 09:19:57 2018//
-/PFRAG.aarch64-doc/1.6/Wed Apr 17 06:55:59 2019//
-/PFRAG.aarch64-main/1.17/Wed Apr 17 06:55:59 2019//
-/PFRAG.amd64-doc/1.4/Wed Apr 17 06:55:59 2019//
-/PFRAG.amd64-main/1.30/Wed Apr 17 06:55:59 2019//
-/PFRAG.i386-doc/1.6/Wed Apr 17 06:55:59 2019//
-/PFRAG.i386-main/1.31/Wed Apr 17 06:55:59 2019//
 /PLIST-clippy/1.1/Sun Dec 16 09:19:57 2018//
-/PLIST-doc/1.37/Wed Apr 17 06:55:59 2019//
 /PLIST-gdb/1.2/Wed Apr 17 06:56:00 2019//
-/PLIST-main/1.16/Mon Mar 11 19:13:40 2019//
+/PLIST-main/1.17/Fri Apr 26 15:08:33 2019//
 /PLIST-rustfmt/1.1/Sun Dec 16 09:19:57 2018//
 D
