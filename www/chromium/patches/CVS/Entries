@@ -64,6 +64,7 @@
 /patch-build_toolchain_openbsd_BUILD_gn/1.3/Wed Sep 12 19:10:34 2018//
 /patch-cc_BUILD_gn/1.23/Fri Apr 26 09:38:19 2019//
 /patch-chrome_app_chrome_command_ids_h/1.7/Sun Nov  4 12:33:24 2018//
+/patch-chrome_app_chrome_content_browser_overlay_manifest_cc/1.1/Sat Apr 27 12:12:05 2019//
 /patch-chrome_app_chrome_main_cc/1.8/Fri Apr 26 09:38:19 2019//
 /patch-chrome_app_chrome_main_delegate_cc/1.51/Fri Apr 26 09:38:19 2019//
 /patch-chrome_app_chromium_strings_grd/1.38/Fri Apr 26 09:38:19 2019//
@@ -82,6 +83,7 @@
 /patch-chrome_browser_browser_resources_grd/1.50/Fri Apr 26 09:38:19 2019//
 /patch-chrome_browser_chrome_browser_main_cc/1.31/Fri Apr 26 09:38:19 2019//
 /patch-chrome_browser_chrome_browser_main_linux_cc/1.11/Fri Apr 26 09:38:19 2019//
+/patch-chrome_browser_chrome_browser_main_posix_cc/1.14/Sat Apr 27 12:12:05 2019//
 /patch-chrome_browser_chrome_content_browser_client_cc/1.54/Fri Apr 26 09:38:19 2019//
 /patch-chrome_browser_chrome_content_browser_client_h/1.42/Fri Apr 26 09:38:19 2019//
 /patch-chrome_browser_custom_handlers_protocol_handler_registry_cc/1.11/Sun Mar 24 12:24:44 2019//
@@ -100,9 +102,12 @@
 /patch-chrome_browser_extensions_api_image_writer_private_removable_storage_provider_cc/1.2/Fri Apr 26 09:38:19 2019//
 /patch-chrome_browser_extensions_api_input_ime_input_ime_api_h/1.5/Wed Sep 12 17:08:22 2018//
 /patch-chrome_browser_extensions_api_settings_private_prefs_util_cc/1.14/Fri Apr 26 09:38:19 2019//
+/patch-chrome_browser_extensions_api_webrtc_logging_private_webrtc_logging_private_api_cc/1.1/Sat Apr 27 12:12:05 2019//
 /patch-chrome_browser_extensions_bookmark_app_extension_util_cc/1.1/Fri Apr 26 09:38:19 2019//
 /patch-chrome_browser_extensions_browser_context_keyed_service_factories_cc/1.15/Sun Mar 24 12:24:45 2019//
 /patch-chrome_browser_extensions_external_provider_impl_cc/1.14/Fri Apr 26 09:38:20 2019//
+/patch-chrome_browser_first_run_first_run_dialog_h/1.1/Sat Apr 27 12:12:05 2019//
+/patch-chrome_browser_first_run_first_run_internal_h/1.1/Sat Apr 27 12:12:05 2019//
 /patch-chrome_browser_first_run_first_run_internal_posix_cc/1.5/Wed Feb  6 16:41:55 2019//
 /patch-chrome_browser_flag_descriptions_cc/1.17/Fri Apr 26 09:38:20 2019//
 /patch-chrome_browser_flag_descriptions_h/1.17/Fri Apr 26 09:38:20 2019//
@@ -112,15 +117,18 @@
 /patch-chrome_browser_media_router_discovery_discovery_network_list_wifi_linux_cc/1.3/Mon Jul 30 15:28:28 2018//
 /patch-chrome_browser_media_webrtc_webrtc_event_log_uploader_cc/1.4/Fri Dec  7 11:07:35 2018//
 /patch-chrome_browser_media_webrtc_webrtc_log_uploader_cc/1.10/Fri Apr 26 09:38:20 2019//
+/patch-chrome_browser_media_webrtc_webrtc_logging_handler_host_cc/1.1/Sat Apr 27 12:12:05 2019//
+/patch-chrome_browser_media_webrtc_webrtc_logging_handler_host_h/1.1/Sat Apr 27 12:12:05 2019//
 /patch-chrome_browser_memory_details_cc/1.42/Fri Dec  7 11:07:35 2018//
 /patch-chrome_browser_metrics_chrome_browser_main_extra_parts_metrics_cc/1.12/Fri Apr 26 09:38:20 2019//
 /patch-chrome_browser_metrics_chrome_metrics_service_client_cc/1.6/Fri Apr 26 09:38:20 2019//
-/patch-chrome_browser_net_system_network_context_manager_cc/1.5/Fri Apr 26 09:38:20 2019//
+/patch-chrome_browser_net_system_network_context_manager_cc/1.6/Sat Apr 27 12:12:05 2019//
+/patch-chrome_browser_notifications_notification_display_service_impl_cc/1.1/Sat Apr 27 12:12:05 2019//
 /patch-chrome_browser_password_manager_password_store_factory_cc/1.4/Fri Apr 26 09:38:20 2019//
 /patch-chrome_browser_platform_util_h/1.1/Sun Jul 31 13:11:44 2016//
 /patch-chrome_browser_platform_util_linux_cc/1.4/Fri Apr 28 14:21:00 2017//
 /patch-chrome_browser_plugins_plugins_resource_service_cc/1.11/Fri Dec  7 11:07:35 2018//
-/patch-chrome_browser_policy_configuration_policy_handler_list_factory_cc/1.3/Fri Apr 26 09:38:20 2019//
+/patch-chrome_browser_policy_configuration_policy_handler_list_factory_cc/1.4/Sat Apr 27 12:12:05 2019//
 /patch-chrome_browser_policy_machine_level_user_cloud_policy_controller_cc/1.1/Wed Feb  6 16:41:55 2019//
 /patch-chrome_browser_prefs_browser_prefs_cc/1.6/Fri Apr 26 09:38:20 2019//
 /patch-chrome_browser_prefs_pref_service_incognito_whitelist_cc/1.4/Wed Feb  6 16:41:55 2019//
@@ -135,6 +143,7 @@
 /patch-chrome_browser_resources_settings_appearance_page_appearance_page_html/1.10/Fri Apr 26 09:38:20 2019//
 /patch-chrome_browser_resources_settings_appearance_page_appearance_page_js/1.2/Sun Mar 24 12:24:45 2019//
 /patch-chrome_browser_safe_browsing_incident_reporting_incident_reporting_service_cc/1.17/Fri Apr 26 09:38:20 2019//
+/patch-chrome_browser_send_tab_to_self_receiving_ui_handler_registry_cc/1.1/Sat Apr 27 12:12:05 2019//
 /patch-chrome_browser_signin_signin_util_cc/1.2/Sun Mar 24 12:24:45 2019//
 /patch-chrome_browser_speech_tts_message_filter_cc/1.1/Wed Feb  6 16:41:55 2019//
 /patch-chrome_browser_ssl_ssl_error_controller_client_cc/1.5/Fri Apr 26 09:38:20 2019//
@@ -173,7 +182,7 @@
 /patch-chrome_browser_ui_views_tabs_new_tab_button_cc/1.12/Fri Apr 26 09:38:20 2019//
 /patch-chrome_browser_ui_views_tabs_tab_drag_controller_cc/1.31/Fri Apr 26 09:38:20 2019//
 /patch-chrome_browser_ui_webui_about_ui_cc/1.51/Sun Mar 24 12:24:45 2019//
-/patch-chrome_browser_ui_webui_chrome_web_ui_controller_factory_cc/1.33/Fri Apr 26 09:38:20 2019//
+/patch-chrome_browser_ui_webui_chrome_web_ui_controller_factory_cc/1.34/Sat Apr 27 12:12:05 2019//
 /patch-chrome_browser_ui_webui_settings_appearance_handler_cc/1.5/Sat Jun  2 17:19:23 2018//
 /patch-chrome_browser_ui_webui_settings_appearance_handler_h/1.2/Mon Apr 23 15:00:16 2018//
 /patch-chrome_browser_ui_webui_settings_md_settings_localized_strings_provider_cc/1.23/Fri Apr 26 09:38:20 2019//
@@ -187,8 +196,8 @@
 /patch-chrome_common_chrome_switches_cc/1.45/Fri Apr 26 09:38:20 2019//
 /patch-chrome_common_chrome_switches_h/1.50/Fri Apr 26 09:38:20 2019//
 /patch-chrome_common_extensions_command_cc/1.10/Fri Apr 26 09:38:20 2019//
-/patch-chrome_common_pref_names_cc/1.51/Fri Apr 26 09:38:20 2019//
-/patch-chrome_common_pref_names_h/1.50/Fri Apr 26 09:38:20 2019//
+/patch-chrome_common_pref_names_cc/1.52/Sat Apr 27 12:12:05 2019//
+/patch-chrome_common_pref_names_h/1.51/Sat Apr 27 12:12:05 2019//
 /patch-chrome_common_webui_url_constants_cc/1.11/Fri Apr 26 09:38:20 2019//
 /patch-chrome_common_webui_url_constants_h/1.9/Fri Apr 26 09:38:20 2019//
 /patch-chrome_renderer_chrome_content_renderer_client_cc/1.5/Fri Apr 26 09:38:20 2019//
@@ -256,6 +265,8 @@
 /patch-content_browser_scheduler_responsiveness_native_event_observer_cc/1.3/Wed Feb  6 16:41:55 2019//
 /patch-content_browser_scheduler_responsiveness_native_event_observer_h/1.3/Wed Feb  6 16:41:55 2019//
 /patch-content_browser_service_manager_service_manager_context_cc/1.6/Fri Apr 26 09:38:20 2019//
+/patch-content_browser_storage_partition_impl_cc/1.1/Sat Apr 27 12:12:05 2019//
+/patch-content_browser_storage_partition_impl_map_cc/1.1/Sat Apr 27 12:12:05 2019//
 /patch-content_browser_webui_shared_resources_data_source_cc/1.3/Fri Apr 26 09:38:20 2019//
 /patch-content_common_common_sandbox_support_linux_cc/1.1/Mon Jul 30 15:28:28 2018//
 /patch-content_common_sandbox_init_linux_cc/1.1/Thu Apr 26 19:41:38 2018//
@@ -298,7 +309,7 @@
 /patch-gpu_command_buffer_common_gpu_memory_buffer_support_cc/1.3/Wed Feb  6 16:41:55 2019//
 /patch-gpu_ipc_common_gpu_memory_buffer_support_cc/1.10/Sun Mar 24 12:24:45 2019//
 /patch-gpu_ipc_common_gpu_memory_buffer_support_h/1.4/Sun Mar 24 12:24:45 2019//
-/patch-gpu_ipc_service_gpu_init_cc/1.17/Fri Apr 26 09:38:20 2019//
+/patch-gpu_ipc_service_gpu_init_cc/1.18/Sat Apr 27 12:12:05 2019//
 /patch-gpu_ipc_service_gpu_memory_buffer_factory_cc/1.2/Tue Jan 30 07:57:25 2018//
 /patch-gpu_ipc_service_gpu_watchdog_thread_cc/1.5/Sun Mar 24 12:24:45 2019//
 /patch-gpu_ipc_service_gpu_watchdog_thread_h/1.3/Wed Feb  6 16:41:55 2019//
@@ -336,6 +347,7 @@
 /patch-media_capture_video_video_capture_buffer_pool_impl_cc/1.2/Fri Dec  7 11:07:35 2018//
 /patch-media_capture_video_video_capture_device_client_cc/1.16/Fri Apr 26 09:38:20 2019//
 /patch-media_media_options_gni/1.17/Fri Apr 26 09:38:20 2019//
+/patch-media_mojo_services_gpu_mojo_media_client_cc/1.1/Sat Apr 27 12:12:05 2019//
 /patch-media_video_gpu_memory_buffer_video_frame_pool_cc/1.2/Fri Apr 26 09:38:20 2019//
 /patch-mojo_public_c_system_thunks_cc/1.2/Wed Feb  6 16:41:55 2019//
 /patch-mojo_public_js_mojo_bindings_resources_grd/1.2/Fri Apr 26 09:38:20 2019//
@@ -355,6 +367,7 @@
 /patch-net_socket_udp_socket_posix_cc/1.17/Fri Apr 26 09:38:20 2019//
 /patch-net_third_party_quic_platform_impl_quic_ip_address_impl_cc/1.1/Mon Jul 30 15:28:28 2018//
 /patch-net_tools_cert_verify_tool_cert_verify_tool_cc/1.3/Fri Apr 26 09:38:20 2019//
+/patch-net_tools_quic_quic_http_proxy_backend_cc/1.1/Sat Apr 27 12:12:05 2019//
 /patch-net_url_request_url_request_context_builder_cc/1.29/Fri Apr 26 09:38:20 2019//
 /patch-pdf_pdfium_pdfium_engine_cc/1.33/Fri Apr 26 09:38:20 2019//
 /patch-printing_backend_print_backend_cups_h/1.1/Mon Sep 19 09:17:45 2016//
@@ -580,6 +593,8 @@
 /patch-ui_views_style_platform_style_cc/1.8/Wed Feb  6 16:41:55 2019//
 /patch-ui_views_views_delegate_cc/1.13/Fri Dec  7 11:07:35 2018//
 /patch-ui_views_views_delegate_h/1.14/Wed Feb  6 16:41:55 2019//
+/patch-ui_views_widget_desktop_aura_desktop_window_tree_host_platform_cc/1.1/Sat Apr 27 12:12:05 2019//
+/patch-ui_views_widget_desktop_aura_desktop_window_tree_host_platform_h/1.1/Sat Apr 27 12:12:05 2019//
 /patch-ui_views_window_custom_frame_view_cc/1.9/Sun Nov  4 12:33:24 2018//
 /patch-ui_views_window_dialog_delegate_cc/1.18/Wed Feb  6 16:41:55 2019//
 /patch-ui_views_window_frame_background_cc/1.2/Wed Sep 12 17:08:22 2018//

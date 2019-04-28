@@ -1,4 +1,4 @@
-/Makefile/1.542/Wed Apr 24 23:33:49 2019//
+/Makefile/1.543/Sat Apr 27 17:24:35 2019//
 D/ADMsnmp////
 D/ROPgadget////
 D/acme-client////
@@ -50,7 +50,6 @@ D/fragroute////
 D/fragrouter////
 D/fwbuilder////
 D/fwknop////
-D/glib-openssl////
 D/gnupg////
 D/gnupg2////
 D/gnutls////
