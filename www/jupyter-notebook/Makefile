@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.7 2017/05/23 17:44:39 shadchin Exp $
+# $OpenBSD: Makefile,v 1.9 2019/04/28 20:51:58 sthen Exp $
 
 COMMENT =		web-based notebook for interactive computing
 
 MODPY_EGG_VERSION =	5.0.0
+REVISION =		1
 DISTNAME =		notebook-${MODPY_EGG_VERSION}
 PKGNAME =		jupyter-notebook-${MODPY_EGG_VERSION}
 
