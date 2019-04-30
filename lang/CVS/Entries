@@ -1,4 +1,4 @@
-/Makefile/1.235/Wed Mar 27 22:55:25 2019//
+/Makefile/1.236/Mon Apr 29 15:10:15 2019//
 D/STk////
 D/a60////
 D/abcl////
@@ -13,7 +13,6 @@ D/chibi-scheme////
 D/chicken////
 D/cim////
 D/clang////
-D/classpath////
 D/clazy////
 D/clisp////
 D/clojure////
@@ -52,7 +51,6 @@ D/guile2////
 D/icon////
 D/intel2gas////
 D/iverilog////
-D/jamvm////
 D/janet////
 D/jikes////
 D/jimtcl////

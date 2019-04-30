@@ -1,4 +1,4 @@
-/Makefile/1.275/Thu Feb 28 09:58:58 2019//
+/Makefile/1.277/Mon Apr 29 17:46:56 2019//
 /Makefile.inc/1.15/Thu Apr 13 07:38:44 2017//
 /gnome.port.mk/1.115/Sat Dec  1 13:04:41 2018//
 D/adwaita-icon-theme////
@@ -17,7 +17,6 @@ D/caribou////
 D/characters////
 D/chrome-gnome-shell////
 D/clocks////
-D/code-assistance////
 D/color-manager////
 D/contacts////
 D/control-center////
@@ -37,7 +36,6 @@ D/gcr////
 D/gdl////
 D/gdm////
 D/gedit////
-D/gedit-code-assistance////
 D/gedit-plugins////
 D/getting-started-docs////
 D/gfbgraph////

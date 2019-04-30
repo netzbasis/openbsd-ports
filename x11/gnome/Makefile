@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.275 2019/02/28 09:58:58 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.277 2019/04/29 17:46:56 jasper Exp $
 
      SUBDIR =
      SUBDIR += adwaita-icon-theme
@@ -17,7 +17,6 @@
      SUBDIR += characters
      SUBDIR += chrome-gnome-shell 
      SUBDIR += clocks
-     SUBDIR += code-assistance
      SUBDIR += color-manager
      SUBDIR += contacts
      SUBDIR += control-center
@@ -37,7 +36,6 @@
      SUBDIR += gdl
      SUBDIR += gdm
      SUBDIR += gedit
-     SUBDIR += gedit-code-assistance
      SUBDIR += gedit-plugins
      SUBDIR += getting-started-docs
      SUBDIR += gfbgraph

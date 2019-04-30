@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2019/02/03 21:26:40 benno Exp $
+# $OpenBSD: Makefile,v 1.4 2019/04/29 16:28:45 sthen Exp $
 
   SUBDIR =
   SUBDIR += yubico-c
