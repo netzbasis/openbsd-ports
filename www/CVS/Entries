@@ -1,4 +1,4 @@
-/Makefile/1.898/Wed Apr 24 23:33:49 2019//
+/Makefile/1.899/Tue Apr 30 08:00:14 2019//
 D/ajaxterm////
 D/analog////
 D/ap2-mod_dnssd////
@@ -48,6 +48,7 @@ D/gumbo////
 D/haserl////
 D/havp////
 D/hiawatha////
+D/honk////
 D/hs-html////
 D/http_load////
 D/http_ping////
