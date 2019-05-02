@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.185 2019/04/29 00:42:08 jeremy Exp $
+# $OpenBSD: Makefile,v 1.188 2019/05/02 01:03:11 sthen Exp $
 
 COMMENT-main=	vi clone, many additional features
 COMMENT-lang=	vi clone, NLS subpackage
 
-V=		8.1.1048
+V=		8.1.1244
 GH_ACCOUNT=	vim
 GH_PROJECT=	vim
 GH_TAGNAME=	v$V
@@ -15,8 +15,6 @@ FULLPKGNAME-lang= vim-lang-$T
 FULLPKGPATH-lang= ${PKGPATH},-lang
 P=		vim${V:R:S/.//}
 CATEGORIES=	editors
-REVISION-lang=    0
-REVISION-main=	1
 
 HOMEPAGE=	https://www.vim.org/
 
@@ -25,14 +23,15 @@ MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 # donation-ware
 PERMIT_PACKAGE_CDROM=	Yes
 
-WANTLIB +=	c curses iconv intl
+WANTLIB +=	c curses iconv intl m
 
-LIB_DEPENDS-main= ${LIB_DEPENDS} devel/gettext
+LIB_DEPENDS-main= ${LIB_DEPENDS} \
+		devel/gettext
 
 MULTI_PACKAGES=	-main -lang
 
 # UI flavours (pick one only)
-FLAVORS+=	gtk2 gtk3 athena motif no_x11
+FLAVORS+=	gtk2 gtk3 no_x11
 # others
 FLAVORS+=	lua perl python python3 ruby
 # bump deps if changing (RUN_DEPENDS in dependent ports picks this up)
@@ -44,6 +43,7 @@ BUILD_PACKAGES := ${BUILD_PACKAGES:N-lang}
 .endif
 
 CONFIGURE_STYLE=gnu
+USE_GMAKE=	Yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
 		ac_cv_lib_elf_main=no
@@ -63,33 +63,36 @@ MAKE_FLAGS+= STRIP=:
 MODULES+=	lang/lua
 MODLUA_VERSION=	5.1
 CONFIGURE_ENV+=	vi_cv_path_plain_lua=${MODLUA_BIN}
-CONFIGURE_ARGS+= --enable-luainterp --with-lua-prefix=${LOCALBASE}
+CONFIGURE_ARGS+= --enable-luainterp \
+		--with-lua-prefix=${LOCALBASE}
 LIB_DEPENDS+=	${MODLUA_LIB_DEPENDS}
-WANTLIB+=	m ${MODLUA_WANTLIB}
+WANTLIB+=	${MODLUA_WANTLIB}
 .endif
 
 .if ${FLAVOR:Mperl}
 CONFIGURE_ARGS+= --enable-perlinterp
-WANTLIB+=	m perl util
+WANTLIB+=	perl util
 .endif
 
 .if ${FLAVOR:Mpython}
 MODULES+=	lang/python
 CONFIGURE_ENV+=	vi_cv_path_python=${MODPY_BIN}
-CONFIGURE_ARGS+= --enable-pythoninterp=yes --enable-python3interp=no \
-	--with-python-config-dir=${MODPY_LIBDIR}/config
+CONFIGURE_ARGS+= --enable-pythoninterp=yes \
+		--enable-python3interp=no \
+		--with-python-config-dir=${MODPY_LIBDIR}/config
 LIB_DEPENDS+=	${MODPY_LIB_DEPENDS}
-WANTLIB+=	m pthread util ${MODPY_WANTLIB}
+WANTLIB+=	pthread util ${MODPY_WANTLIB}
 .endif
 
 .if ${FLAVOR:Mpython3}
 MODULES+=	lang/python
 MODPY_MAJOR_VERSION = 3
 CONFIGURE_ENV+=	vi_cv_path_python3=${MODPY_BIN}
-CONFIGURE_ARGS+= --enable-python3interp=yes --enable-pythoninterp=no \
-	--with-python3-config-dir=${MODPY_LIBDIR}/config-${MODPY_VERSION}m
+CONFIGURE_ARGS+= --enable-python3interp=yes \
+		--enable-pythoninterp=no \
+		--with-python3-config-dir=${MODPY_LIBDIR}/config-${MODPY_VERSION}m
 LIB_DEPENDS+=	${MODPY_LIB_DEPENDS}
-WANTLIB+=	m pthread util ${MODPY_WANTLIB}
+WANTLIB+=	pthread util ${MODPY_WANTLIB}
 .endif
 
 # Some parts of vim (like python autocompletion) require a version of vim
@@ -102,9 +105,10 @@ ERRORS=		"Fatal: You only can select one python flavor"
 
 .if ${FLAVOR:Mruby}
 MODULES+=	lang/ruby
-CONFIGURE_ARGS+= --enable-rubyinterp --with-ruby-command=${RUBY}
+CONFIGURE_ARGS+= --enable-rubyinterp \
+		--with-ruby-command=${RUBY}
 LIB_DEPENDS+=	${MODRUBY_LIB_DEPENDS}
-WANTLIB+=	m ${MODRUBY_WANTLIB}
+WANTLIB+=	${MODRUBY_WANTLIB}
 .endif
 
 # GUI options, only one is allowed
@@ -112,28 +116,6 @@ WANTLIB+=	m ${MODRUBY_WANTLIB}
 _GUISET+=	ok
 CONFIGURE_ARGS+= --disable-gui \
 		--without-x
-WANTLIB+=	m
-.endif
-
-.if ${FLAVOR:Mmotif}
-_GUISET+=	ok
-CONFIGURE_ARGS+= --enable-gui="motif" \
-		--enable-fontset \
-		--enable-xim \
-		--with-x
-CONFIGURE_ENV+=	MOTIFHOME=${X11BASE}
-LIB_DEPENDS+=	x11/motif
-WANTLIB +=	m ICE SM X11 Xmu Xpm Xt Xm
-MAKE_ENV+=	MOTIFLIB='-L${LOCALBASE}/lib -lXm'
-.endif
-
-.if ${FLAVOR:Mathena}
-_GUISET+=	ok
-CONFIGURE_ARGS+= --enable-gui="athena" \
-		--enable-fontset \
-		--enable-xim \
-		--with-x
-WANTLIB +=	m ICE SM X11 Xaw Xmu Xpm Xt
 .endif
 
 .if ${FLAVOR:Mgtk2}
@@ -145,7 +127,7 @@ CONFIGURE_ARGS+= --enable-gui="gtk2" \
 WANTLIB += ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi
 WANTLIB += Xinerama Xrandr Xrender Xt atk-1.0 cairo fontconfig
 WANTLIB += freetype gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0
-WANTLIB += gobject-2.0 gtk-x11-2.0 m pango-1.0 pangocairo-1.0
+WANTLIB += gobject-2.0 gtk-x11-2.0 pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 z
 .endif
 
@@ -156,11 +138,11 @@ CONFIGURE_ARGS+= --enable-gui="gtk3" \
 		--enable-xim \
 		--with-x
 WANTLIB += ICE SM X11 Xt atk-1.0 cairo cairo-gobject gdk-3 gdk_pixbuf-2.0
-WANTLIB += gio-2.0 glib-2.0 gobject-2.0 gtk-3 m pango-1.0 pangocairo-1.0
+WANTLIB += gio-2.0 glib-2.0 gobject-2.0 gtk-3 pango-1.0 pangocairo-1.0
 .endif
 
 .if "${_GUISET}" != ok
-ERRORS=		"Fatal: You must select one (and only one) GUI interface: no_x11, gtk2, gtk3, athena or motif"
+ERRORS=		"Fatal: You must select one (and only one) GUI interface: no_x11, gtk2 or gtk3"
 .endif
 
 RUN_DEPENDS-lang=	editors/vim,-main

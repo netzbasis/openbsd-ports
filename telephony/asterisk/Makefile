@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.297 2019/04/28 21:08:27 naddy Exp $
+# $OpenBSD: Makefile,v 1.299 2019/05/01 23:04:59 sthen Exp $
 
 COMMENT-main=	open source multi-protocol PBX and telephony toolkit
 
@@ -7,7 +7,13 @@ PJ_V=		2.8
 DISTNAME=	asterisk-${VER:S/beta/-beta/:S/rc/-rc/}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} pjproject-${PJ_V}.tar.bz2:0
 PKGNAME-main=	asterisk-${VER}
-REVISION=	0
+REVISION=	1
+
+.if ${MACHINE_ARCH} == i386
+# i386 issue linking libasteriskpj.so.0.0:
+# ld: error: cli_telnet.c:(.debug_info+0x1DF087): has non-ABS relocation R_386_GOTOFF against symbol 'CR_LF.6215'
+USE_LLD=		No
+.endif
 
 CATEGORIES=	telephony
 
@@ -45,7 +51,7 @@ WANTLIB-main += vorbis vorbisenc vorbisfile xml2 xslt z
 # So, as things stand, this requires building with gcc.
 #
 # If changing this, keep telephony/asterisk-g729 in sync.
-COMPILER=		base-gcc ports-gcc
+COMPILER=		ports-gcc
 
 SHARED_LIBS+=		asteriskssl 0.0		# 1
 SHARED_LIBS+=		asteriskpj 0.0		# 2
