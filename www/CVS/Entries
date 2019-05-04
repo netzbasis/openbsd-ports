@@ -1,4 +1,4 @@
-/Makefile/1.900/Thu May  2 22:01:00 2019//
+/Makefile/1.901/Sat May  4 01:41:27 2019//
 D/ajaxterm////
 D/analog////
 D/ap2-mod_dnssd////
@@ -272,6 +272,8 @@ D/p5-Maypole////
 D/p5-Maypole-Authentication-UserSessionCookie////
 D/p5-Mojo////
 D/p5-MojoX-Session////
+D/p5-Mojolicious-Plugin-AccessLog////
+D/p5-Mojolicious-Plugin-Thumbnail////
 D/p5-Object-eBay////
 D/p5-PHP-Serialization////
 D/p5-PHP-Session////

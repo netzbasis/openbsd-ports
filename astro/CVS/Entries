@@ -1,9 +1,10 @@
-/Makefile/1.32/Wed Apr  3 07:29:50 2019//
+/Makefile/1.33/Fri May  3 16:35:46 2019//
 D/ansiweather////
 D/celestia////
 D/dgpsip////
 D/gcal////
 D/jday////
+D/kstars////
 D/libnova////
 D/phoon////
 D/py-astral////

@@ -1,4 +1,4 @@
-/Makefile/1.399/Wed Apr  3 07:29:51 2019//
+/Makefile/1.400/Sat May  4 02:00:51 2019//
 D/0ad////
 D/1oom////
 D/2048-cli////
@@ -122,6 +122,7 @@ D/gnome-mastermind////
 D/gnubg////
 D/gnuchess////
 D/gnugo////
+D/gnukem////
 D/gnurobbo////
 D/gnushogi////
 D/godot////

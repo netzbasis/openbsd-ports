@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.75 2019/05/01 11:38:52 bket Exp $
+# $OpenBSD: Makefile,v 1.77 2019/05/03 07:35:59 bket Exp $
 
 COMMENT=	Python charting and plotting API
 
 MODPY_EGG_VERSION =	2.2.4
 DISTNAME =		matplotlib-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		graphics devel math
 
@@ -80,6 +81,10 @@ pre-configure:
 post-install:
 	${INSTALL_DATA_DIR} ${EXAMPLESDIR}
 	cd ${WRKSRC}/examples && pax -rw * ${EXAMPLESDIR}
+
+	${INSTALL_DATA_DIR} ${WRKINST}${MODPY_SITEPKG}/matplotlib/backends/web_backend/jquery-ui-1.12.1
+	cp -r ${WRKSRC}/lib/matplotlib/backends/web_backend/jquery-ui-1.12.1/* \
+		${WRKINST}${MODPY_SITEPKG}/matplotlib/backends/web_backend/jquery-ui-1.12.1
 
 do-test: fake
 	cd ${WRKSRC} && ${MAKE_ENV} PYTHONPATH=${WRKINST}${MODPY_SITEPKG} \
