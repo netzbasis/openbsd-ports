@@ -1,4 +1,4 @@
-/Makefile/1.595/Fri Apr 26 18:27:26 2019//
+/Makefile/1.596/Sat May  4 14:05:25 2019//
 D/TclXML////
 D/antiword////
 D/apertium////
@@ -327,6 +327,7 @@ D/pear-XML-Parser////
 D/pear-XML-RSS////
 D/pear-XML-Serializer////
 D/pear-XML-Tree////
+D/pecl-yaml////
 D/pinfo////
 D/pod2mdoc////
 D/podofo////
