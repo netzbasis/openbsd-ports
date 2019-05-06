@@ -1,4 +1,4 @@
-/Makefile/1.902/Sat May  4 14:12:39 2019//
+/Makefile/1.903/Sun May  5 18:11:20 2019//
 D/ajaxterm////
 D/analog////
 D/ap2-mod_dnssd////
@@ -511,7 +511,6 @@ D/wbox////
 D/webalizer////
 D/webkitgtk4////
 D/weboob////
-D/wml////
 D/wp-cli////
 D/wslay////
 D/www6to4////

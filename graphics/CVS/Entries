@@ -1,4 +1,4 @@
-/Makefile/1.478/Thu Apr 25 06:05:43 2019//
+/Makefile/1.479/Sun May  5 18:54:30 2019//
 D/DevIL////
 D/GraphicsMagick////
 D/ImageMagick////
@@ -54,6 +54,7 @@ D/farbfeld////
 D/feh////
 D/ffmpeg////
 D/ffmpegthumbnailer////
+D/flameshot////
 D/fotowall////
 D/freeglut////
 D/freeimage////
