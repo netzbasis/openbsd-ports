@@ -1,4 +1,4 @@
-/Makefile/1.1129/Sun May  5 06:55:06 2019//
+/Makefile/1.1130/Wed May  8 01:46:00 2019//
 D/GeoIP////
 D/adns////
 D/adsuck////
@@ -103,7 +103,6 @@ D/geomyidae////
 D/glib2-networking////
 D/gloox////
 D/gmudix////
-D/gnaughty////
 D/gnugk////
 D/go-ipfs////
 D/go-net////

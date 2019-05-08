@@ -1,14 +1,11 @@
-/Makefile/1.18/Tue Jul  7 01:24:04 2015//
+/Makefile/1.19/Tue May  7 07:33:53 2019//
 D/9libs////
 D/9menu////
-D/9wm////
 D/devdrawserver////
 D/drawterm////
-D/larswm////
 D/plan9port////
 D/rc////
 D/sam////
 D/tcs////
 D/u9fs////
-D/w9wm////
 D/wily////

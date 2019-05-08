@@ -1,4 +1,4 @@
-/Makefile/1.67/Thu Mar 14 18:33:36 2019//
+/Makefile/1.68/Tue May  7 22:55:34 2019//
 D/foxtrotgps////
 D/garmindev////
 D/gdal////
@@ -12,7 +12,6 @@ D/gmapcatcher////
 D/gpsbabel////
 D/gpstk////
 D/gpx-viewer////
-D/jeoip////
 D/josm////
 D/libchamplain////
 D/libosmium////

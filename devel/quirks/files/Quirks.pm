@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.767 2019/05/05 23:48:01 danj Exp $
+# $OpenBSD: Quirks.pm,v 1.770 2019/05/08 01:49:20 robert Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1225,6 +1225,9 @@ my $obsolete_reason = {
 	'libkgeomap' => 0,
 	'piwik' => 1,
 	'wml' => 5,
+	'junit' => 1,
+	'jeoip' => 6,
+	'gnaughty' => 0,
 };
 
 # reasons for obsolete packages
