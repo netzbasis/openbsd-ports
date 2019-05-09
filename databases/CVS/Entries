@@ -1,4 +1,4 @@
-/Makefile/1.376/Wed Apr 24 23:33:48 2019//
+/Makefile/1.377/Wed May  8 22:29:13 2019//
 D/architect////
 D/barman////
 D/citus////
@@ -37,7 +37,6 @@ D/mydumper////
 D/mysql-utilities////
 D/mysql-zrm////
 D/mysql2pgsql////
-D/mysqlcc////
 D/mytop////
 D/openldap////
 D/openldap23////

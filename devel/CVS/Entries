@@ -1,4 +1,4 @@
-/Makefile/1.1849/Wed May  1 13:49:52 2019//
+/Makefile/1.1851/Wed May  8 20:42:57 2019//
 D/ElectricFence////
 D/ORBit2////
 D/acpica////
@@ -432,7 +432,6 @@ D/msgpack////
 D/msp430////
 D/mspdebug////
 D/mygui////
-D/mysql++////
 D/nagelfar////
 D/naken430asm////
 D/nasm////
@@ -1389,6 +1388,7 @@ D/py-pyprof2calltree////
 D/py-pyro////
 D/py-pyte////
 D/py-python2-pythondialog////
+D/py-r2pipe////
 D/py-radix////
 D/py-rcsparse////
 D/py-robotframework////

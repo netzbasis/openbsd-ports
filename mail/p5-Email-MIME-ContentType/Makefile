@@ -1,17 +1,14 @@
-# $OpenBSD: Makefile,v 1.12 2016/03/20 19:56:45 naddy Exp $
+# $OpenBSD: Makefile,v 1.14 2019/05/08 15:44:46 danj Exp $
 
-COMMENT=	parses a MIME Content-Type Header
+COMMENT=	parse MIME Content-Type or Content-Disposition headers
 
 MODULES=	cpan
 PKG_ARCH=	*
-DISTNAME =	Email-MIME-ContentType-1.018
+DISTNAME=	Email-MIME-ContentType-1.022
 CATEGORIES=	mail
-
-MAINTAINER=	Sam Smith <s@msmith.net>
+REVISION =	0
 
 # GPL
 PERMIT_PACKAGE_CDROM=	Yes
-
-TEST_DEPENDS=	sysutils/p5-Capture-Tiny
 
 .include <bsd.port.mk>

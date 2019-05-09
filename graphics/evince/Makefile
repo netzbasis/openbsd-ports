@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.167 2019/02/13 18:15:55 edd Exp $
+# $OpenBSD: Makefile,v 1.169 2019/05/08 18:52:17 ajacoutot Exp $
 
 COMMENT=		GNOME document viewer
 
 GNOME_PROJECT=		evince
-GNOME_VERSION=		3.30.2
+GNOME_VERSION=		3.32.0
+REVISION=		0
 
 MAJ_V=			3.0
 SUBST_VARS=		MAJ_V
-
-REVISION =		0
 
 SHARED_LIBS +=  evdocument3               0.2 # 4.0
 SHARED_LIBS +=  evview3                   0.0 # 3.0
@@ -28,7 +27,7 @@ WANTLIB += fribidi gcrypt gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0
 WANTLIB += gmodule-2.0 gobject-2.0 gpg-error graphite2 gstbase-1.0
 WANTLIB += gstreamer-1.0 gstvideo-1.0 gthread-2.0 gtk-3 harfbuzz
 WANTLIB += iconv intl jpeg lcms2 lzma m openjp2 orc-0.4 pango-1.0
-WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png16 poppler
+WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png poppler
 WANTLIB += poppler-glib secret-1 tiff xcb xcb-render xcb-shm xml2
 WANTLIB += z aspell enchant-2 gspell-1 synctex
 
@@ -41,6 +40,9 @@ MODGNOME_TOOLS +=	desktop-file-utils gobject-introspection
 MODGNOME_TOOLS +=	gtk-update-icon-cache shared-mime-info
 
 BUILD_DEPENDS=		devel/gsettings-desktop-schemas
+
+# msgfmt: cannot locate ITS rules for evince-pdfdocument.metainfo.xml.in
+BUILD_DEPENDS +=	devel/appstream-glib
 
 LIB_DEPENDS=		multimedia/gstreamer1/plugins-base \
 			print/poppler \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1849 2019/05/01 13:49:52 kmos Exp $
+# $OpenBSD: Makefile,v 1.1851 2019/05/08 20:42:57 jca Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -469,7 +469,6 @@
      SUBDIR += msp430
      SUBDIR += mspdebug
      SUBDIR += mygui
-     SUBDIR += mysql++
      SUBDIR += nagelfar
      SUBDIR += naken430asm
      SUBDIR += nasm
@@ -1557,6 +1556,7 @@
      SUBDIR += py-pyte
      SUBDIR += py-pyte,python3
      SUBDIR += py-python2-pythondialog
+     SUBDIR += py-r2pipe,python3
      SUBDIR += py-radix
      SUBDIR += py-radix,python3
      SUBDIR += py-rcsparse

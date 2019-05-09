@@ -1,4 +1,4 @@
-/Makefile/1.135/Mon Mar 18 15:13:16 2019//
+/Makefile/1.136/Wed May  8 07:27:36 2019//
 D/TeXmacs////
 D/abiword////
 D/axe////
@@ -45,6 +45,7 @@ D/qscintilla////
 D/scintilla////
 D/scite////
 D/se////
+D/sigil////
 D/subtitleeditor////
 D/tea////
 D/teaqt////
