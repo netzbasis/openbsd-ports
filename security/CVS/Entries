@@ -1,4 +1,4 @@
-/Makefile/1.544/Wed May  8 21:16:54 2019//
+/Makefile/1.545/Thu May  9 14:16:10 2019//
 D/ADMsnmp////
 D/ROPgadget////
 D/acme-client////
@@ -10,6 +10,7 @@ D/apg////
 D/argon2////
 D/arirang////
 D/bfbtester////
+D/boofuzz////
 D/botan////
 D/botan2////
 D/bounix////

@@ -1,0 +1,17 @@
+$OpenBSD: patch-gtk_tools_updateiconcache_c,v 1.1 2019/05/09 13:42:05 ajacoutot Exp $
+
+Index: gtk/tools/updateiconcache.c
+--- gtk/tools/updateiconcache.c.orig
++++ gtk/tools/updateiconcache.c
+@@ -1721,6 +1721,11 @@ main (int argc, char **argv)
+   path = g_locale_to_utf8 (path, -1, NULL, NULL, NULL);
+ #endif
+ 
++  if (pledge("stdio rpath wpath cpath fattr", NULL) == -1) {
++	  g_printerr (_("pledge\n"));
++	  exit (1);
++  }
++
+   if (validate)
+     {
+        gchar *file = g_build_filename (path, CACHE_NAME, NULL);

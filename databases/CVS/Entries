@@ -1,4 +1,4 @@
-/Makefile/1.377/Wed May  8 22:29:13 2019//
+/Makefile/1.378/Thu May  9 11:50:20 2019//
 D/architect////
 D/barman////
 D/citus////
@@ -153,6 +153,7 @@ D/py-cdb////
 D/py-flask-sqlalchemy////
 D/py-influxdb////
 D/py-ldap////
+D/py-ldap3////
 D/py-minidb////
 D/py-mongo////
 D/py-mysql////
