@@ -1,5 +1,5 @@
 /patch-Makefile_in/1.1.1.1/Sat Jul 19 13:52:22 2008//
-/patch-configure_in/1.1.1.1/Sat Jul 19 13:52:22 2008//
+/patch-configure_in/1.2/Fri May 10 21:13:28 2019//
 /patch-etc_95_php/1.1.1.1/Sat Jul 19 13:52:22 2008//
 /patch-etc_Makefile_in/1.1.1.1/Sat Jul 19 13:52:22 2008//
 /patch-etc_common_php_in/1.1.1.1/Sat Jul 19 13:52:22 2008//
@@ -11,5 +11,6 @@
 /patch-src_rtg_h/1.1.1.1/Sat Jul 19 13:52:22 2008//
 /patch-src_rtgmysql_c/1.1.1.1/Sat Jul 19 13:52:22 2008//
 /patch-src_rtgplot_c/1.1.1.1/Sat Jul 19 13:52:22 2008//
+/patch-src_rtgsnmp_c/1.1/Fri May 10 21:13:28 2019//
 /patch-src_rtgutil_c/1.2/Thu Aug 15 14:58:45 2013//
 D
