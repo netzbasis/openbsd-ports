@@ -1,4 +1,4 @@
-# $OpenBSD: PyPI.pm,v 1.7 2019/05/11 02:51:04 afresh1 Exp $
+# $OpenBSD: PyPI.pm,v 1.11 2019/05/11 19:36:27 afresh1 Exp $
 #
 # Copyright (c) 2015 Giannis Tsaraias <tsg@openbsd.org>
 #
@@ -54,9 +54,11 @@ sub name_new_port
 
 	my $name = ref $di ? $di->{info}{name} : $di;
 	$name =~ s/^python-/py-/;
-	$name = "py-$name" unless $name =~ /^py-/;
 
-	return "pypi/$name";
+	$name = $self->SUPER::name_new_port($name);
+	$name = "pypi/$name" unless $name =~ m{/};
+
+	return $name;
 }
 
 sub fill_in_makefile
@@ -69,16 +71,14 @@ sub fill_in_makefile
 	$self->set_other( 'MODPY_EGG_VERSION', $di->{info}{version} );
 	$self->set_distname( "$di->{info}{name}" . '-${MODPY_EGG_VERSION}' );
 	my $pkgname = $di->{info}->{name};
-	my $to_lower = $pkgname =~ /[[:upper:]]/ ? ':L' : '';
+	my $to_lower = $pkgname =~ /\p{Upper}/ ? ':L' : '';
 	if ($pkgname =~ /^python-/) {
-		$self->set_other( 'PKGNAME',
-		    "\${DISTNAME:S/^python-/py-/$to_lower}" );
+		$self->set_pkgname("\${DISTNAME:S/^python-/py-/$to_lower}");
 	}
 	elsif ($pkgname !~ /^py-/) {
-		$self->set_other( 'PKGNAME', "py-\${DISTNAME$to_lower}" );
+		$self->set_pkgname("py-\${DISTNAME$to_lower}");
 	}
 	$self->set_modules('lang/python');
-	$self->set_categories('pypi');
 	$self->set_other( 'HOMEPAGE', $di->{info}{home_page} );
 	$self->set_license( $di->{info}{license} );
 	$self->set_descr( $di->{info}{summary} );
@@ -158,6 +158,7 @@ sub get_deps
 		my $port = module_in_ports( $name, 'py-' )
 		    || $self->name_new_port($name);
 
+		my $base_port = $port;
 		$port .= '${MODPY_FLAVOR}';
 
 		if ( $phase eq 'build' ) {
@@ -166,11 +167,13 @@ sub get_deps
 			$deps->add_test( $port, $req );
 		} elsif ( $phase eq 'dev' ) {
 			# switch this to "ne 'run'" to avoid optional deps
-			warn "Not adding '$phase' dep on $port\n";
+			$self->add_notice(
+				"Didn't add $base_port as '$phase' dep");
 			next;
 		} else {
-			warn "Adding '$phase' dep on $port as run dep\n"
-				unless $phase eq 'run';
+			$self->add_notice(
+				"Added $base_port as 'run' dep, wanted '$phase'")
+			    unless $phase eq 'run';
 			$deps->add_run( $port, $req );
 		}
 
@@ -178,6 +181,7 @@ sub get_deps
 		if ( $port =~ m{^pypi/} ) {
 			my $o = OpenBSD::PortGen::Port::PyPI->new();
 			$o->port($name);
+			$self->add_notice( $o->notices );
 		}
 	}
 

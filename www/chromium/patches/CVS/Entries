@@ -51,7 +51,7 @@
 /patch-build_config_BUILD_gn/1.17/Fri May 10 21:55:39 2019//
 /patch-build_config_allocator_gni/1.9/Fri Apr 26 09:38:19 2019//
 /patch-build_config_c++_c++_gni/1.5/Fri May 10 21:55:39 2019//
-/patch-build_config_compiler_BUILD_gn/1.29/Fri May 10 21:55:39 2019//
+/patch-build_config_compiler_BUILD_gn/1.30/Sat May 11 20:37:14 2019//
 /patch-build_config_compiler_compiler_gni/1.19/Fri Apr 26 09:38:19 2019//
 /patch-build_config_features_gni/1.12/Fri May 10 21:55:39 2019//
 /patch-build_config_linux_BUILD_gn/1.1/Mon Jun  4 14:04:23 2018//
@@ -126,6 +126,7 @@
 /patch-chrome_browser_password_manager_password_store_factory_cc/1.4/Fri Apr 26 09:38:20 2019//
 /patch-chrome_browser_platform_util_h/1.2/Fri May 10 21:55:39 2019//
 /patch-chrome_browser_platform_util_linux_cc/1.4/Fri Apr 28 14:21:00 2017//
+/patch-chrome_browser_plugins_plugin_info_host_impl_cc/1.1/Sat May 11 20:37:14 2019//
 /patch-chrome_browser_plugins_plugins_resource_service_cc/1.11/Fri Dec  7 11:07:35 2018//
 /patch-chrome_browser_policy_configuration_policy_handler_list_factory_cc/1.5/Fri May 10 21:55:39 2019//
 /patch-chrome_browser_prefs_browser_prefs_cc/1.7/Fri May 10 21:55:40 2019//
@@ -177,6 +178,7 @@
 /patch-chrome_browser_ui_views_frame_opaque_browser_frame_view_platform_specific_cc/1.2/Fri Apr 26 09:38:20 2019//
 /patch-chrome_browser_ui_views_frame_system_menu_model_builder_cc/1.9/Sun Mar 24 12:24:45 2019//
 /patch-chrome_browser_ui_views_frame_system_menu_model_delegate_cc/1.3/Fri Apr 26 09:38:20 2019//
+/patch-chrome_browser_ui_views_hung_renderer_view_cc/1.1/Sat May 11 20:37:14 2019//
 /patch-chrome_browser_ui_views_tabs_new_tab_button_cc/1.13/Fri May 10 21:55:40 2019//
 /patch-chrome_browser_ui_views_tabs_tab_drag_controller_cc/1.32/Fri May 10 21:55:40 2019//
 /patch-chrome_browser_ui_webui_about_ui_cc/1.51/Sun Mar 24 12:24:45 2019//
@@ -208,6 +210,7 @@
 /patch-chromecast_browser_cast_browser_main_parts_cc/1.17/Fri May 10 21:55:40 2019//
 /patch-chromecast_browser_cast_content_browser_client_cc/1.26/Fri May 10 21:55:40 2019//
 /patch-components_autofill_core_browser_autofill_experiments_cc/1.22/Fri May 10 21:55:40 2019//
+/patch-components_autofill_core_browser_personal_data_manager_cc/1.1/Sat May 11 20:37:14 2019//
 /patch-components_autofill_core_common_autofill_util_cc/1.3/Fri Apr 26 09:38:20 2019//
 /patch-components_content_settings_core_browser_website_settings_registry_cc/1.6/Fri Dec  7 11:07:35 2018//
 /patch-components_cookie_config_cookie_store_util_cc/1.2/Sun Mar  6 10:51:14 2016//
@@ -215,6 +218,7 @@
 /patch-components_crash_content_app_crashpad_cc/1.5/Fri Apr 26 09:38:20 2019//
 /patch-components_crash_content_browser_BUILD_gn/1.8/Sun Mar 24 12:24:45 2019//
 /patch-components_crash_core_common_BUILD_gn/1.6/Fri Apr 26 09:38:20 2019//
+/patch-components_discardable_memory_service_discardable_shared_memory_manager_cc/1.1/Sat May 11 20:37:14 2019//
 /patch-components_download_internal_common_base_file_cc/1.2/Fri Apr 26 09:38:20 2019//
 /patch-components_feature_engagement_public_event_constants_cc/1.4/Wed Feb  6 16:41:55 2019//
 /patch-components_feature_engagement_public_event_constants_h/1.4/Wed Feb  6 16:41:55 2019//
@@ -299,6 +303,7 @@
 /patch-extensions_common_feature_switch_cc/1.4/Mon Jul 30 15:28:28 2018//
 /patch-extensions_common_features_feature_cc/1.1/Mon Dec 25 00:17:32 2017//
 /patch-extensions_shell_app_shell_main_delegate_cc/1.1/Sun Nov  4 12:33:24 2018//
+/patch-google_apis_gcm_engine_heartbeat_manager_cc/1.1/Sat May 11 20:37:14 2019//
 /patch-gpu_command_buffer_common_gpu_memory_buffer_support_cc/1.4/Fri May 10 21:55:40 2019//
 /patch-gpu_command_buffer_service_external_vk_image_backing_cc/1.1/Fri May 10 21:55:40 2019//
 /patch-gpu_command_buffer_service_external_vk_image_gl_representation_cc/1.1/Fri May 10 21:55:40 2019//
@@ -346,10 +351,11 @@
 /patch-media_video_gpu_memory_buffer_video_frame_pool_cc/1.2/Fri Apr 26 09:38:20 2019//
 /patch-mojo_public_c_system_thunks_cc/1.2/Wed Feb  6 16:41:55 2019//
 /patch-mojo_public_js_mojo_bindings_resources_grd/1.3/Fri May 10 21:55:40 2019//
-/patch-net_BUILD_gn/1.24/Fri May 10 21:55:40 2019//
+/patch-net_BUILD_gn/1.25/Sat May 11 20:37:14 2019//
 /patch-net_base_address_tracker_linux_cc/1.10/Fri May 10 21:55:40 2019//
 /patch-net_base_address_tracker_linux_h/1.3/Mon Dec 25 00:17:32 2017//
-/patch-net_base_network_change_notifier_cc/1.29/Fri May 10 21:55:40 2019//
+/patch-net_base_network_change_notifier_cc/1.30/Sat May 11 20:37:14 2019//
+/patch-net_base_network_change_notifier_posix_cc/1.1/Sat May 11 20:37:14 2019//
 /patch-net_base_network_interfaces_posix_h/1.2/Sat Sep  9 19:16:43 2017//
 /patch-net_disk_cache_blockfile_disk_format_h/1.3/Sun Mar  6 10:51:14 2016//
 /patch-net_dns_address_sorter_posix_cc/1.4/Sun Jul 31 13:11:44 2016//
@@ -411,6 +417,7 @@
 /patch-services_service_manager_zygote_zygote_host_linux_h/1.1/Mon Jul 30 15:28:28 2018//
 /patch-services_service_manager_zygote_zygote_linux_cc/1.2/Fri May 10 21:55:40 2019//
 /patch-services_service_manager_zygote_zygote_main_linux_cc/1.2/Fri Aug 10 14:57:53 2018//
+/patch-services_video_capture_broadcasting_receiver_cc/1.1/Sat May 11 20:37:14 2019//
 /patch-skia_ext_SkMemory_new_handler_cpp/1.7/Wed Sep 12 17:08:22 2018//
 /patch-third_party_angle_BUILD_gn/1.22/Fri May 10 21:55:40 2019//
 /patch-third_party_angle_src_common_platform_h/1.2/Fri Apr 26 09:38:20 2019//

@@ -1,4 +1,4 @@
-# $OpenBSD: CPAN.pm,v 1.4 2017/07/20 20:42:41 sthen Exp $
+# $OpenBSD: CPAN.pm,v 1.7 2019/05/11 19:36:27 afresh1 Exp $
 #
 # Copyright (c) 2015 Giannis Tsaraias <tsg@openbsd.org>
 #
@@ -63,11 +63,12 @@ sub name_new_port
 {
 	my ( $self, $di ) = @_;
 
-	my $name = ref $di ? $di->{metadata}->{name} : $di;
-	$name = "p5-$name";
+	my $name = $self->SUPER::name_new_port(
+	    ref $di ? $di->{metadata}->{name} : $di );
 	$name =~ s/::/-/g;
+	$name = "cpan/$name" unless $name =~ m{/};
 
-	return "cpan/$name";
+	return $name;
 }
 
 sub needs_author
@@ -149,6 +150,7 @@ sub get_deps
 					my $o =
 					    OpenBSD::PortGen::Port::CPAN->new();
 					$o->port($module);
+					$self->add_notice( $o->notices );
 				}
 			}
 		}
@@ -164,11 +166,11 @@ sub read_descr
 	open my $readme, '<', "$path/README" or return;
 	my $descr = do { local $/ = undef; <$readme> };
 
-	if ( $descr =~ /^DESCRIPTION\n(.+?)^[A-Z]+/ms ) {
+	if ( $descr =~ /^DESCRIPTION\n(.+?)^\p{Upper}+/ms ) {
 		return $1 unless $1 =~ /^\s+$/;
 	}
 
-	if ( $descr =~ /^SYNOPSIS\n(.+?)^[A-Z]+/ms ) {
+	if ( $descr =~ /^SYNOPSIS\n(.+?)^\p{Upper}+/ms ) {
 		return $1 unless $1 =~ /^\s+$/;
 	}
 
@@ -187,7 +189,6 @@ sub fill_in_makefile
 		: $di->{metadata}->{license}[0]
 	);
 	$self->set_modules('cpan');
-	$self->set_categories('cpan');
 
 	$self->set_other( 'CPAN_AUTHOR', $di->{author} )
 	    if $self->needs_author($di);
@@ -268,7 +269,8 @@ sub _test_skips
 
 	while (<$fh>) {
 		if (/plan skip_all/) {
-			warn "Possible hidden test dependency in: $file\n";
+			$self->add_notice(
+				"Possible hidden test dependency in: $file");
 			return;
 		}
 	}

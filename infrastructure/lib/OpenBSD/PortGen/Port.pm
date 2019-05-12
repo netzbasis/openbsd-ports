@@ -1,6 +1,7 @@
-# $OpenBSD: Port.pm,v 1.5 2019/04/21 03:47:40 afresh1 Exp $
+# $OpenBSD: Port.pm,v 1.13 2019/05/11 19:48:06 afresh1 Exp $
 #
 # Copyright (c) 2015 Giannis Tsaraias <tsg@openbsd.org>
+# Copyright (c) 2019 Andrew Hewus Fresh <afresh1@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
 # purpose with or without fee is hereby granted, provided that the above
@@ -25,7 +26,18 @@ use JSON::PP;
 use Text::Wrap;
 
 use OpenBSD::PortGen::License qw( is_good pretty_license );
-use OpenBSD::PortGen::Utils qw( add_to_new_ports base_dir fetch ports_dir );
+use OpenBSD::PortGen::Utils qw(
+    add_to_new_ports
+    module_in_ports
+    fetch
+    base_dir
+    ports_dir
+);
+
+sub _cp {
+    my (@args) = @_;
+    system('/bin/cp', @args) == 0;
+}
 
 sub new
 {
@@ -108,7 +120,16 @@ sub set_comment
 
 	$comment =~ s/\n/ /g;
 	$self->{full_comment} = $comment if length $comment > 60;
-	$self->{COMMENT} = $self->_format_comment($comment);
+	$comment = $self->_format_comment($comment);
+	$self->add_notice( "Comment starts with an uppercase letter" )
+	    if $comment =~ /^\p{Upper}/;
+	$self->{COMMENT} = $comment;
+}
+
+sub set_pkgname {
+	my ( $self, $pkgname ) = @_;
+
+	$self->{PKGNAME} = $pkgname;
 }
 
 sub set_distname
@@ -184,77 +205,178 @@ sub get_other
 	return $self->{$var};
 }
 
+sub name_new_port
+{
+	my ( $self, $name ) = @_;
+
+	my $prefix = $self->ecosystem_prefix;
+
+	if ( my $in_ports = module_in_ports( $name, $prefix ) ) {
+		return $in_ports;
+	}
+
+	# If the port name has uppercase letters
+	# and we didn't find it that way in the ports tree already
+	# we really want a lowercase name, so try again like that.
+	if ( $name =~ /\p{Upper}/ ) {
+		return $self->name_new_port( lc $name );
+	}
+
+	$name = "$prefix$name" unless $name =~ /^\Q$prefix/;
+
+	return $name;
+}
+
+sub parse_makefile
+{
+	my ( $self, $path ) = @_;
+
+	return unless -e $path;
+
+	my @makefile;
+
+	my $parse = sub {
+		state $line = '';
+		$line .= shift;
+		return if /\\\n$/x;
+
+		chomp $line;
+
+		if ( $line =~ /^
+		    (?<comment> \#?       ) \s*
+		    (?<key>     (?<name>[\p{Upper}_]+) (?<package>-\w+)? )
+		    (?<equal>   \s* \?? = )
+		    (?<spaces>  \s*       )
+		    (?<value>   .*        )
+		/xms ) {
+			my %line   = %+;
+			my $spaces = delete $line{spaces};
+			$line{tabs}      = $spaces =~ tr/\t/\t/;
+			$line{commented} = $line{comment} ? 1 : 0;
+
+			push @makefile, \%line;
+		} else {
+			push @makefile, $line;
+		}
+		$line = '';
+	};
+
+	open my $fh, '<', $path or croak("Couldn't open $path: $!");
+	$parse->($_) while <$fh>;
+	close $fh;
+
+	return @makefile;
+}
+
 sub write_makefile
 {
-	my $self = shift;
+	my ( $self, $di ) = @_;
 
-	open my $tmpl, '<',
-	    ports_dir() . '/infrastructure/templates/Makefile.template'
-	    or die $!;
-	open my $mk, '>', 'Makefile' or die $!;
+	my %configs = %{$self};
+	my $license = delete $configs{license};
 
-	my $output = "# \$OpenBSD\$\n";
-	my %vars_found;
+	my @template = $self->parse_makefile("Makefile.orig");
+	my %copy_values;
 
-	# such a mess, should fix
-	while ( defined( my $line = <$tmpl> ) ) {
-		my ( $value, $other_stuff );
+	if (@template) {
+		%copy_values = map { $_->{key} => 1 }
+		    grep { $_->{name} ne 'REVISION' }
+		    grep { ref } @template;
+	} else {
+		my $tag = 'OpenBSD';
+		my $template =
+		    ports_dir() . '/infrastructure/templates/Makefile.template';
 
-		# copy MAINTAINER line as is
-		if ( $line =~ /^MAINTAINER/ ) {
-			$output .= $line and next;
+		@template = (
+		    "# \$$tag\$",
+		    grep { $_ !~ /^\#/x } $self->parse_makefile($template)
+		);
+	}
+
+        # Some folks prefer no space before the equal sign,
+	# so lets default to whatever was most used in the template.
+	# If they have a lot of ?= this could go terribly wrong.
+	my ($default_equal) = do {
+		my %equals;
+		$equals{$_}++ for map { $_->{equal} } grep { ref } @template;
+		sort { $equals{$b} <=> $equals{$a} } keys %equals;
+	};
+	$default_equal ||= ' =';
+
+	my @makefile;
+	foreach my $line (@template) {
+		next    # no more than one blank line
+		    if @makefile
+		    && !ref $line
+		    && $line         =~ /^[\s\n]*$/xms
+		    && $makefile[-1] =~ /^[\s\n]*$/xms;
+
+		if ( $line =~ /\.include \s+ <bsd.port.mk>/x ) {
+			my @additions;
+			foreach my $key ( sort keys %configs ) {
+				next if $key !~ /^[\p{Upper}_]+(?:-\w+)?$/;
+				my $value = $configs{$key};
+				next unless defined $value;
+
+				my $print_key = "$key$default_equal";
+				$print_key .= "\t" if length $value;
+				push @additions, "$print_key$value";
+			}
+			if (@additions) {
+				push @makefile,
+				    "# Lines below not in the template";
+				push @makefile, @additions;
+			}
 		}
 
-		if ( $line =~ /(^#?([A-Z_]+)\s+\??=\s+)/ ) {
-			next unless defined $self->{$2};
-			$vars_found{$2} = 1;
+		if ( ref $line eq 'HASH' ) {
+			my $key = $line->{key};
 
-			( $value, $other_stuff ) = ( $self->{$2}, $1 );
+			my $value = delete $configs{$key};
 
-			$other_stuff =~ s/^#//;
-			$other_stuff =~ s/(\?\?\?|$)/$value\n/;
-
-			# handle cases where replacing '???' isn't enough
-			if ( $other_stuff =~ /^PERMIT_PACKAGE_CDROM/ ) {
-				$output .= "# $self->{license}\n";
-			} elsif ( $other_stuff =~ /_DEPENDS/ ) {
-				$other_stuff = "\n" . $other_stuff;
-			} elsif ( $other_stuff =~ /^COMMENT/ ) {
-				$output .= "# original: $self->{full_comment}\n"
-				    if $self->{full_comment};
-			} elsif ( $other_stuff =~ /^WANTLIB/ ) {
-				$other_stuff =~ s/=/+=/;
+			# if we inherited a PKGNAME, someone decided it was
+			# right, so just use that.
+			if ( $key eq 'PKGNAME' and $copy_values{$key} ) {
+				$value = $line->{value};
 			}
 
-			$output .= $other_stuff;
+			# If we didn't get a value, copy from the template
+			# if we know we should and if so, also copy:
+			# * MULTI_PACKAGES until we understand them
+			# * any _DEPENDS that we didn't find
+			# * plus any MODPY_* variables
+			if ( not $value and %copy_values ) {
+				my $name = $line->{name};
+				my $copy =
+				       $copy_values{$key}
+				    || $name =~ /_DEPENDS$/
+				    || $name =~ /^MODPY_/;
+				$value = $line->{value} if $copy;
+			}
+
+			next unless defined $value;
+
+			my $equal = $line->{equal} || $default_equal;
+			my $tabs      = "\t" x ( $line->{tabs} || 1 );
+			my $print_key = "$key$equal";
+			$print_key .= $tabs if length $value;
+
+			if ( $key eq 'PERMIT_PACKAGE_CDROM' && $license ) {
+				# guess that the comment before this was
+				# the license marker.
+				pop @makefile if $makefile[-1] =~ /^#/;
+				push @makefile, "# $license";
+			}
+
+			push @makefile, "$print_key$value";
+		} else {
+			push @makefile, $line;
 		}
-
-		$output .= $line if $line =~ /^\s+$/;
 	}
 
-	# also write variables not found in the template
-	my @unwritten_vars;
-
-	for my $var ( keys %{$self} ) {
-		next unless $self->{$var};
-		next unless $var eq uc $var;
-		push @unwritten_vars, $var unless $vars_found{$var};
-	}
-
-	# the ordering should be consistent between runs
-	@unwritten_vars = sort @unwritten_vars;
-
-	for my $var (@unwritten_vars) {
-
-		# temp fix, should make saner
-		my $tabs = length $var > 11 ? "\t" : "\t\t";
-		$output .= "\n$var =$tabs$self->{$var}\n";
-	}
-
-	$output .= "\n.include <bsd.port.mk>\n";
-	$output =~ s/\n{2,}/\n\n/g;
-
-	print $mk $output;
+	open my $fh, '>', 'Makefile' or die "Couldn't open Makefile: $!";
+	print $fh map { "$_\n" } @makefile;
+	close $fh;
 }
 
 sub _format_comment
@@ -315,7 +437,7 @@ sub make_fake
 
 sub make_plist
 {
-	shift->_make('plist');
+	shift->_make('update-plist');
 }
 
 sub make_show
@@ -329,10 +451,27 @@ sub make_portdir
 {
 	my ( $self, $name ) = @_;
 
-	my $portdir = base_dir() . "/$name";
-	make_path($portdir) unless -e $portdir;
+	my $old = ports_dir() . "/$name";
+	my $new = base_dir()  . "/$name";
 
-	return $portdir;
+	if ( -e $old ) {
+		my ($dst) = $new =~ m{^(.*)/[^/]+$};
+		make_path($dst) unless -e $dst;
+		_cp( '-a', $old, $dst )
+		    or die "Unable to copy $old to $new: $!";
+
+		unlink glob("$new/pkg/PLIST*.orig");
+
+		foreach my $file ( 'Makefile', 'pkg/DESCR' ) {
+			next unless -e "$new/$file";
+			rename "$new/$file", "$new/$file.orig"
+			    or die "Unable to rename $file.orig: $!";
+		}
+	}
+
+	make_path($new) unless -e $new;
+
+	return $new;
 }
 
 sub make_port
@@ -341,8 +480,21 @@ sub make_port
 
 	my $old_cwd  = getcwd();
 	my $portname = $self->name_new_port($di);
-	my $portdir  = $self->make_portdir($portname);
+
+	if ( -e base_dir() . "/$portname" ) {
+		$self->add_notice(
+			"Not porting $portname, already exists in " . base_dir() );
+		return;
+	}
+
+	my $portdir = $self->make_portdir($portname);
 	chdir $portdir or die "couldn't chdir to $portdir: $!";
+
+	if ( my ( $category, $name ) = split qr{/}, $portname, 2 ) {
+		# Set the category to the subdir the port lives in by default
+		$self->set_categories($category);
+		$self->{name} = $name;
+	}
 
 	$self->fill_in_makefile( $di, $vi );
 	$self->write_makefile();
@@ -386,18 +538,49 @@ sub port
 	my $di = eval { $self->get_dist_info($module) };
 
 	unless ($di) {
-		warn "couldn't find dist for $module";
+		$self->add_notice("couldn't find dist for $module");
 		return;
 	}
 
 	my $vi = eval { $self->get_ver_info($module) };
 
 	unless ($vi) {
-		warn "couldn't get version info for $module";
+		$self->add_notice("couldn't get version info for $module");
 		return;
 	}
 
 	return $self->make_port( $di, $vi );
+}
+
+sub add_notice
+{
+	my ( $self, @messages ) = @_;
+
+	# Store the message and who generated it so we can display
+	# all that info at the end.
+	push @{ $self->{_notices} }, map { ref $_ ? $_ : {
+	    name    => $self->{name},
+	    message => $_,
+	} } @messages;
+
+	return 1;
+}
+
+sub notices
+{
+	my ($self) = @_;
+	my $messages = delete $self->{_notices};
+	return @{ $messages || [] };
+}
+
+sub DESTROY
+{
+	my ($self) = @_;
+
+	for ( $self->notices ) {
+		my $n = $_->{name} ? "[$_->{name}] " : '';
+		print "$n$_->{message}\n";
+	}
 }
 
 1;
