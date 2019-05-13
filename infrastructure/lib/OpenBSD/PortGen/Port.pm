@@ -1,4 +1,4 @@
-# $OpenBSD: Port.pm,v 1.13 2019/05/11 19:48:06 afresh1 Exp $
+# $OpenBSD: Port.pm,v 1.15 2019/05/13 01:30:05 cwen Exp $
 #
 # Copyright (c) 2015 Giannis Tsaraias <tsg@openbsd.org>
 # Copyright (c) 2019 Andrew Hewus Fresh <afresh1@openbsd.org>
@@ -218,7 +218,9 @@ sub name_new_port
 	# If the port name has uppercase letters
 	# and we didn't find it that way in the ports tree already
 	# we really want a lowercase name, so try again like that.
-	if ( $name =~ /\p{Upper}/ ) {
+	# The exception is for Perl that has traditionally
+	# camel-cased names.
+	if ( $name =~ /\p{Upper}/ and $prefix ne 'p5-' ) {
 		return $self->name_new_port( lc $name );
 	}
 
@@ -502,22 +504,21 @@ sub make_port
 	$self->make_makesum();
 	$self->make_checksum();
 	$self->make_extract();
+
 	my $wrksrc = $self->make_show('WRKSRC');
 
 	# children can override this to set any variables
 	# that require extracted distfiles
 	$self->postextract( $di, $wrksrc );
 
-	$self->set_other( 'CONFIGURE_STYLE',
-		$self->get_config_style( $di, $wrksrc ) );
-	$self->write_makefile();
-
-	$self->make_configure();
-
 	my $deps = $self->get_deps( $di, $wrksrc );
 	$self->set_build_deps( $deps->{build} );
 	$self->set_run_deps( $deps->{run} );
 	$self->set_test_deps( $deps->{test} );
+
+	$self->set_other( 'CONFIGURE_STYLE',
+		$self->get_config_style( $di, $wrksrc ) );
+
 	$self->write_makefile();
 
 	# sometimes a make_fake() is not enough, need to run it more than

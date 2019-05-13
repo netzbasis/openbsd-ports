@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1462 2019/04/04 02:28:06 naddy Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1465 2019/05/12 07:46:35 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -211,7 +211,7 @@ PKG_DELETE ?= /usr/sbin/pkg_delete
 
 _PKG_ADD = ${PKG_ADD} ${_PROGRESS} -I
 _PKG_CREATE = ${PKG_CREATE} ${_PROGRESS}
-_PKG_ADD_LOCAL = TRUSTED_PKG_PATH=${_PKG_REPO} ${_PKG_ADD}
+_SUDO_PKG_ADD_LOCAL = TRUSTED_PKG_PATH=${_PKG_REPO} ${SUDO} ${_PKG_ADD}
 _PKG_DELETE = ${PKG_DELETE} ${_PROGRESS}
 
 .if defined(PKG_PATH)
@@ -724,7 +724,7 @@ _ALL_COOKIES = ${_EXTRACT_COOKIE} ${_PATCH_COOKIE} ${_GEN_COOKIE} \
 	${_DEPBUILDLIB_COOKIES} ${_DEPRUNLIB_COOKIES} \
 	${_DEPBUILDWANTLIB_COOKIE} ${_DEPRUNWANTLIB_COOKIE} ${_DEPLIBSPECS_COOKIES}
 
-_MAKE_COOKIE = touch
+_MAKE_COOKIE = /usr/bin/touch
 _PMAKE_COOKIE = ${_PBUILD} ${_MAKE_COOKIE}
 
 GMAKE ?= gmake
@@ -2007,7 +2007,7 @@ fix-permissions:
 ${_CACHE_REPO}${_PKGFILE${_S}}:
 	@install -d ${PACKAGE_REPOSITORY_MODE} ${@D}
 	@${ECHO_MSG} -n "===>  Looking for ${_PKGFILE${_S}} in \$$PKG_PATH - "
-	@if ${SETENV} ${_TERM_ENV} PKG_CACHE=${_CACHE_REPO} TRUSTED_PKG_PATH=${_CACHE_REPO}:${_PKG_REPO}:${PACKAGE_REPOSITORY}/${NO_ARCH}/:${TRUSTED_PKG_PATH} PKG_PATH=${_PKG_PATH} ${_PKG_ADD} -n -q ${_PKG_ADD_FORCE} -r -D installed -D downgrade ${FETCH_PACKAGES} ${_PKGFILE${_S}} >/dev/null 2>&1; then \
+	@if ${SETENV} ${_TERM_ENV} PKG_CACHE=${_CACHE_REPO} TRUSTED_PKG_PATH=${_CACHE_REPO}:${_PKG_REPO}:${PACKAGE_REPOSITORY}/${NO_ARCH}/:${TRUSTED_PKG_PATH} PKG_PATH=${_PKG_PATH} ${PKG_ADD} -I -x -n -q ${_PKG_ADD_FORCE} -r -D installed -D downgrade ${FETCH_PACKAGES} ${_PKGFILE${_S}}; then \
 		${ECHO_MSG} "found"; \
 		exit 0; \
 	else \
@@ -2064,7 +2064,7 @@ ${_INSTALL_COOKIE${_S}}:
 	@cd ${.CURDIR} && SUBPACKAGE=${_S} _DEPENDS_TARGET=install PKGPATH=${PKGPATH} \
 		exec ${MAKE} _internal-install-depends
 	@${ECHO_MSG} "===>  Installing ${FULLPKGNAME${_S}} from ${_PKG_REPO}"
-	@${SUDO} ${SETENV} ${_TERM_ENV} ${_PKG_ADD_LOCAL} ${_PKG_ADD_AUTO} ${PKGFILE${_S}};
+	@${SETENV} ${_TERM_ENV} ${_SUDO_PKG_ADD_LOCAL} ${_PKG_ADD_AUTO} ${PKGFILE${_S}};
 	@-${SUDO} ${_MAKE_COOKIE} $@
 
 
@@ -2083,7 +2083,7 @@ ${_UPDATE_COOKIE${_S}}:
 		*) cd ${.CURDIR} && SUBPACKAGE=${_S} _DEPENDS_TARGET=package PKGPATH=${PKGPATH} \
 		     ${MAKE} _internal-install-depends; \
 		   ${ECHO_MSG} "Upgrading from $$a"; \
-		   ${SUDO} ${SETENV} ${_TERM_ENV} ${_PKG_ADD_LOCAL} ${_PKG_ADD_AUTO} -r ${_PKG_ADD_FORCE} ${PKGFILE${_S}};; \
+		   ${SETENV} ${_TERM_ENV} ${_SUDO_PKG_ADD_LOCAL} ${_PKG_ADD_AUTO} -r ${_PKG_ADD_FORCE} ${PKGFILE${_S}};; \
 	esac
 	@${_MAKE_COOKIE} $@
 
@@ -2097,7 +2097,7 @@ ${_FUPDATE_COOKIE${_S}}:
 	@mkdir -p ${UPDATE_COOKIES_DIR}
 .  endif
 	@${ECHO_MSG} "===> Updating/installing for ${FULLPKGNAME${_S}}"
-	@${SUDO} ${SETENV} ${_TERM_ENV} ${_PKG_ADD_LOCAL} ${_PKG_ADD_AUTO} -r ${_PKG_ADD_FORCE} ${PKGFILE${_S}}
+	@${SETENV} ${_TERM_ENV} ${_SUDO_PKG_ADD_LOCAL} ${_PKG_ADD_AUTO} -r ${_PKG_ADD_FORCE} ${PKGFILE${_S}}
 	@${_MAKE_COOKIE} $@
 .endfor
 
@@ -3120,7 +3120,8 @@ _internal-clean:
 .endif
 .if ${_clean:Mpackages} || ${_clean:Mpackage} && ${_clean:Msub}
 	${_PBUILD} rm -f ${_PACKAGE_COOKIES}
-	rm -f ${_UPDATE_COOKIES} ${_CACHE_PACKAGE_COOKIES}
+	${_PFETCH} rm -f ${_CACHE_PACKAGE_COOKIES}
+	rm -f ${_UPDATE_COOKIES} 
 .elif ${_clean:Mpackage}
 	${_PBUILD} rm -f ${_PACKAGE_COOKIES${SUBPACKAGE}}
 	rm -f ${_UPDATE_COOKIE${SUBPACKAGE}}

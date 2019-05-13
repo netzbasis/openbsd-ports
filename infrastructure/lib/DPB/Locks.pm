@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Locks.pm,v 1.47 2019/05/11 15:31:12 espie Exp $
+# $OpenBSD: Locks.pm,v 1.51 2019/05/12 16:37:52 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -50,6 +50,12 @@ sub new
 	bless { filename => $filename, logger => $logger}, $class;
 }
 
+sub fullpkgpath
+{
+	my $self = shift;
+	return $self->{locked};
+}
+
 sub is_host
 {
 	my $self = shift;
@@ -93,7 +99,7 @@ sub set_bad
 	my ($i, $error) = @_;
 	bless $i, 'DPB::LockInfo::Bad';
 	$i->{parseerror} = $error;
-	print {$i->{logger}->append($i->{logger}->logfile("locks"))}
+	print {$i->{logger}->append($i->{logger}->logfile("debug"))}
 	    "Problem in lock $i->{filename}: $i->{parseerror}\n";
 }
 
@@ -120,7 +126,7 @@ sub parse_file
 			$i->set_field($1, $2);
 		} elsif (m/^(error|status|todo)\=(.*)$/) {
 			$i->set_field($1, $2);
-			$i->{finished} = 1;
+			$i->{errored} = 1;
 		} elsif (m/^(host|tag|parent|locked|path)\=(.+)$/) {
 			$i->set_field($1, $2);
 		} elsif (m/^(wanted|needed)\=(.*)$/) {
@@ -220,13 +226,13 @@ sub clean_old_locks
 			push @problems, $i->{filename};
 			return;
 		}
-		if (!$i->{same_host} || defined $i->{finished}) {
+		if (!$i->{same_host} || defined $i->{errored}) {
 			return;
 		}
 		# on the way, let's retaint cores
 		if (defined $i->{tag}) {
 			DPB::Core::Init->taint($i->{host}, $i->{tag}, 
-			    $i->{locked});
+			    $i->fullpkgpath);
 		}
 		push(@{$locks->{$i->{dpb_pid}}}, $i);
 	    });
@@ -249,8 +255,8 @@ sub clean_old_locks
 			for my $i (@$list) {
 				# there might be stale host locks in there
 				# make sure to clean them as well
-				push(@{$hostpaths->{$i->{host}}}, $i->{locked})
-				    if defined $i->{locked};
+				push(@{$hostpaths->{$i->{host}}}, 
+				    $i->fullpkgpath) if defined $i->fullpkgpath;
 				$self->unlink($i->{filename});
 			}
 		}
@@ -355,7 +361,7 @@ sub find_dependencies
 			}
 		}
 		# XXX we don't need to do anything more
-		$nojunk = $i->{path} if $i->{nojunk};
+		$nojunk = $i->fullpkgpath if $i->{nojunk};
 	    });
 	return ($nojunk, $h);
 }
@@ -371,7 +377,7 @@ sub find_tag
 		return if $i->{cleaned};
 		if (defined $i->{host} && $i->{host} eq $hostname) {
 			$tag //= $i->{tag};
-			$tagowner //= $i->{path};
+			$tagowner //= $i->fullpkgpath;
 		}
 	    });
 	if (wantarray) {
