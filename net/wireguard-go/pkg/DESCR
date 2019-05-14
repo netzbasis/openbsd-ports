@@ -1,0 +1,2 @@
+wireguard-go is a userland implementation of WireGuard in Go; WireGuard
+is simple yet fast modern VPN.
