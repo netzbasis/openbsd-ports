@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.166 2019/05/13 21:20:00 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.168 2019/05/15 18:57:19 ajacoutot Exp $
 
 COMMENT=		AWS SDK for Python
 
-MODPY_EGG_VERSION=	1.9.147
+MODPY_EGG_VERSION=	1.9.148
 DISTNAME=		boto3-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
 
@@ -31,7 +31,5 @@ RUN_DEPENDS=		devel/py-jmespath${MODPY_FLAVOR} \
 .if !${FLAVOR:Mpython3}
 RUN_DEPENDS +=		devel/py-futures
 .endif
-
-TEST_DEPENDS=		${RUN_DEPENDS}
 
 .include <bsd.port.mk>
