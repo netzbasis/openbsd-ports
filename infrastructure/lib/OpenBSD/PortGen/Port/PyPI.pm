@@ -1,4 +1,4 @@
-# $OpenBSD: PyPI.pm,v 1.13 2019/05/14 15:00:01 afresh1 Exp $
+# $OpenBSD: PyPI.pm,v 1.16 2019/05/16 16:01:10 afresh1 Exp $
 #
 # Copyright (c) 2015 Giannis Tsaraias <tsg@openbsd.org>
 #
@@ -21,8 +21,10 @@ use warnings;
 
 use parent 'OpenBSD::PortGen::Port';
 
+use Cwd;
+
 use OpenBSD::PortGen::Dependency;
-use OpenBSD::PortGen::Utils qw( module_in_ports );
+use OpenBSD::PortGen::Utils qw( base_dir ports_dir module_in_ports );
 
 sub ecosystem_prefix
 {
@@ -65,54 +67,54 @@ sub fill_in_makefile
 {
 	my ( $self, $di, $vi ) = @_;
 
-	$self->set_other( 'MODPY_PI',         'Yes' );
-	$self->set_other( 'MODPY_SETUPTOOLS', 'Yes' );
-	$self->set_comment( $di->{info}{summary} );
-
 	my $pkgname  = $di->{info}->{name};
 	my $version  = $di->{info}->{version};
-	my $distname = $self->pick_distfile(
-	     map { $_->{filename} } @{ $di->{urls} || [] } );
+	my $distname = $self->pick_distfile( map { $_->{filename} }
+		    @{ $di->{urls} || [] } );
 
 	$self->add_notice("distname $distname does not match pkgname $pkgname")
 	    unless $distname =~ /^\Q$pkgname/;
 
-	$self->set_other( 'MODPY_EGG_VERSION', $version );
 	$distname =~ s/-\Q$version\E$/-\$\{MODPY_EGG_VERSION\}/
-	    or $self->add_notice("Didn't set distname version to \${MODPY_EGG_VERSION}");
+	    or $self->add_notice(
+		"Didn't set distname version to \${MODPY_EGG_VERSION}");
 
+	$self->set_other( 'MODPY_PI',         'Yes' );
+	$self->set_other( 'MODPY_SETUPTOOLS', 'Yes' );
+	$self->set_comment( $di->{info}{summary} );
+	$self->set_other( 'MODPY_EGG_VERSION', $version );
 	$self->set_distname($distname);
-
-	# TODO: These assume the PKGNAME is the DISTNAME
-	my $to_lower = $pkgname =~ /\p{Upper}/ ? ':L' : '';
-	if ($pkgname =~ /^python-/) {
-		$self->set_pkgname("\${DISTNAME:S/^python-/py-/$to_lower}");
-	}
-	elsif ($pkgname !~ /^py-/) {
-		$self->set_pkgname("py-\${DISTNAME$to_lower}");
-	}
-
 	$self->set_modules('lang/python');
 	$self->set_other( 'HOMEPAGE', $di->{info}{home_page} );
 	$self->set_license( $di->{info}{license} );
 	$self->set_descr( $di->{info}{summary} );
 
+	# TODO: These assume the PKGNAME is the DISTNAME
+	my $to_lower = $pkgname =~ /\p{Upper}/ ? ':L' : '';
+	if ( $pkgname =~ /^python-/ ) {
+		$self->set_pkgname("\${DISTNAME:S/^python-/py-/$to_lower}");
+	} elsif ( $pkgname !~ /^py-/ ) {
+		$self->set_pkgname("py-\${DISTNAME$to_lower}");
+	}
+
 	my @versions = do {
 		my %seen;
-		sort { $a <=> $b } grep { !$seen{$_}++ } map {
-			/^Programming Language :: Python :: (\d+)/ ? $1 : ()
-		} @{ $di->{info}{classifiers} }
+		sort     { $a <=> $b }
+		    grep { !$seen{$_}++ }
+		    map { /^Programming Language :: Python :: (\d+)/ ? $1 : () }
+		    @{ $di->{info}{classifiers} };
 	};
 
 	if ( @versions > 1 ) {
-		shift @versions; # remove default, lowest
+		shift @versions;    # remove default, lowest
+		$self->{reset_values}{MODPY_VERSION} = 1;
 		$self->set_other( 'FLAVORS', "python$_" ) for @versions;
-		$self->set_other( 'FLAVOR',  '' );
-	}
-	elsif ( @versions && $versions[0] != 2 ) {
+		$self->set_other( 'FLAVOR', '' );
+	} elsif ( @versions && $versions[0] != 2 ) {
+		$self->{reset_values}{$_} = 1 for qw( FLAVORS FLAVOR );
 		$self->set_other(
-		    MODPY_VERSION => "\${MODPY_DEFAULT_VERSION_$_}" )
-		        for @versions;
+			MODPY_VERSION => "\${MODPY_DEFAULT_VERSION_$_}" )
+		    for @versions;
 	}
 }
 
@@ -169,11 +171,32 @@ sub get_deps
 
 		next if @plat and join( " ", @plat ) !~ /OpenBSD/i;
 
-		my $port = module_in_ports( $name, 'py-' )
-		    || $self->name_new_port($name);
+		my $port = module_in_ports( $name, 'py-' );
+		my $dep_dir;
+
+		if ($port) {
+			$dep_dir = ports_dir() . '/' . $port;
+		} else {
+			$port    = $self->name_new_port($name);
+			$dep_dir = base_dir() . '/' . $port;
+
+			# don't have it in tree, port it
+			my $o = OpenBSD::PortGen::Port::PyPI->new();
+			$o->port($name);
+			$self->add_notice( $o->notices );
+		}
 
 		my $base_port = $port;
-		$port .= '${MODPY_FLAVOR}';
+
+		{
+			my $old_cwd = getcwd();
+			chdir $dep_dir || die "Unable to chdir $dep_dir: $!";
+			my $flavors = $self->make_show('FLAVORS');
+			chdir $old_cwd || die "Unable to chdir $old_cwd: $!";
+
+			# Attach the flavor if the dependency has one
+			$port .= '${MODPY_FLAVOR}' if $flavors =~ /\bpython3\b/;
+		}
 
 		if ( $phase eq 'build' ) {
 			$deps->add_build( $port, $req );
@@ -189,13 +212,6 @@ sub get_deps
 				"Added $base_port as 'run' dep, wanted '$phase'")
 			    unless $phase eq 'run';
 			$deps->add_run( $port, $req );
-		}
-
-		# don't have it in tree, port it
-		if ( $port =~ m{^pypi/} ) {
-			my $o = OpenBSD::PortGen::Port::PyPI->new();
-			$o->port($name);
-			$self->add_notice( $o->notices );
 		}
 	}
 
