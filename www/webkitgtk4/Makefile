@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.100 2019/04/16 08:55:22 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.102 2019/05/17 16:56:20 ajacoutot Exp $
 
 # patches/patch-Source_JavaScriptCore_javascriptcoregtk_pc_in
 # patches/patch-Source_WebKit_gtk_webkit2gtk-web-extension_pc_in
@@ -12,7 +12,7 @@ PORTROACH =		limitw:1,even
 
 COMMENT =		GTK+ port of the WebKit rendering engine
 
-V =			2.24.1
+V =			2.24.2
 DISTNAME =		webkitgtk-${V}
 PKGNAME =		webkitgtk4-${V}
 EXTRACT_SUFX =		.tar.xz
@@ -39,7 +39,7 @@ WANTLIB += gmodule-2.0 gobject-2.0 gstapp-1.0 gstaudio-1.0 gstbase-1.0
 WANTLIB += gstfft-1.0 gstgl-1.0 gstpbutils-1.0 gstreamer-1.0 gsttag-1.0
 WANTLIB += gstvideo-1.0 gtk-3 harfbuzz harfbuzz-icu hyphen icudata
 WANTLIB += icui18n icuuc intl jpeg m notify pango-1.0 pangocairo-1.0
-WANTLIB += openjp2 png16 secret-1 soup-2.4 sqlite3 tasn1 webp
+WANTLIB += openjp2 png secret-1 soup-2.4 sqlite3 tasn1 webp
 WANTLIB += webpdemux woff2dec xml2 xslt z
 
 MASTER_SITES =		https://webkitgtk.org/releases/
@@ -106,10 +106,10 @@ CONFIGURE_ARGS +=	-DENABLE_LLINT_C_LOOP=ON
 LDFLAGS +=		-Wl,--no-keep-memory
 .endif
 
-# __sync_add_and_fetch_8, SSE2
+# __sync_add_and_fetch_8
 .if ${MACHINE_ARCH} == "i386"
-CFLAGS +=		-march=i686 -msse2
-CXXFLAGS +=		-march=i686 -msse2
+CFLAGS +=		-march=i686
+CXXFLAGS +=		-march=i686
 .endif
 
 .if ${MACHINE_ARCH} == "powerpc"
