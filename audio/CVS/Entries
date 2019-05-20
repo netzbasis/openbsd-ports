@@ -1,4 +1,4 @@
-/Makefile/1.414/Sat May 11 12:47:17 2019//
+/Makefile/1.415/Mon May 20 04:29:51 2019//
 D/abcde////
 D/adplay////
 D/adplug////
@@ -37,6 +37,7 @@ D/easytag////
 D/espeak////
 D/exaile////
 D/faad////
+D/faudio////
 D/fdk-aac////
 D/flac////
 D/flac123////

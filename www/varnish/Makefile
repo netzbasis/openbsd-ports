@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.44 2019/05/13 22:06:00 kn Exp $
+# $OpenBSD: Makefile,v 1.46 2019/05/19 13:14:56 kn Exp $
 
 COMMENT =		high-performance HTTP accelerator
 
@@ -27,10 +27,7 @@ MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 MODPY_RUNDEP =		No
 MODPY_ADJ_FILES =	lib/libvcc/{vsc,vmod}tool.py
 
-BUILD_DEPENDS =		${MODGNU_AUTOCONF_DEPENDS} \
-			${MODGNU_AUTOMAKE_DEPENDS} \
-			devel/libtool \
-			textproc/py-docutils${MODPY_FLAVOR} \
+BUILD_DEPENDS =		textproc/py-docutils${MODPY_FLAVOR} \
 			textproc/py-sphinx${MODPY_FLAVOR}
 LIB_DEPENDS =		devel/pcre
 # The internal backtrace implementation fails to build with -Werror on arm/hppa
@@ -38,9 +35,10 @@ LIB_DEPENDS +=		devel/libexecinfo
 
 USE_GMAKE =		Yes
 SEPARATE_BUILD =	Yes
-CONFIGURE_STYLE =	gnu
+CONFIGURE_STYLE =	autoreconf
 AUTOCONF_VERSION =	2.69
 AUTOMAKE_VERSION =	1.15
+AUTORECONF =		./autogen.sh
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib ${LDFLAGS}" \
 			PYTHON="${MODPY_BIN}"
@@ -49,8 +47,9 @@ CONFIGURE_ARGS =	--with-rst2man=rst2man${MODPY_BIN_SUFFIX} \
 
 TEST_TARGET =		check
 
-do-gen:
-	cd ${WRKSRC} && ${AUTOCONF_ENV} ./autogen.sh
+.ifdef DEBUG
+CONFIGURE_ARGS +=	--enable-debugging-symbols
+.endif
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/varnish

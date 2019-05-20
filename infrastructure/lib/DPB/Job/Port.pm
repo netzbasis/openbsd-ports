@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Port.pm,v 1.188 2019/05/12 14:09:11 espie Exp $
+# $OpenBSD: Port.pm,v 1.191 2019/05/19 21:26:03 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -160,8 +160,7 @@ sub finalize
 	}
 	$core->job->{failed} = $core->{status};
 	if ($core->prop->{always_clean}) {
-		$core->job->replace_tasks(DPB::Task::Port::Clean->new(
-			'clean'));
+		$core->job->replace_tasks(DPB::Port::TaskFactory->create('clean'));
 		return 1;
 	}
 	# XXX in case we taint the core, we will mark ourselves as cleaned
@@ -892,6 +891,7 @@ my $repo = {
 	junk => 'DPB::Task::Port::Uninstall',
 	inbetween => 'DPB::Task::Port::InBetween',
 	fake => 'DPB::Task::Port::Fake',
+	signature => 'DPB::Task::Port::Signature',
 };
 
 sub create
@@ -1056,8 +1056,7 @@ sub finalize
 {
 	my $self = shift;
 	if ($self->{stuck}) {
-		open my $fh, ">>", $self->{log};
-		print $fh $self->{stuck}, "\n";
+		print {$self->{logfh}} $self->{stuck}, "\n";
 	}
 	$self->SUPER::finalize(@_);
 }
@@ -1167,8 +1166,7 @@ sub new
 	}
 
 	if ($builder->checks_rebuild($v)) {
-		push(@{$job->{tasks}},
-		    DPB::Task::Port::Signature->new('signature'));
+		$job->add_tasks(DPB::Port::TaskFactory->create('signature'));
 	} else {
 		$job->add_normal_tasks($builder->{dontclean}{$v->pkgpath},
 		    $core);
@@ -1203,7 +1201,7 @@ sub add_normal_tasks
 		$small = 1;
 	}
 	if ($builder->{clean}) {
-		$self->insert_tasks(DPB::Task::Port::Clean->new('clean'));
+		push(@todo, 'clean');
 	}
 	$hostprop->{junk_count} //= 0;
 	$hostprop->{depends_count} //= 0;

@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.34 2019/05/15 12:04:43 kmos Exp $
+# $OpenBSD: Makefile,v 1.36 2019/05/20 02:30:22 danj Exp $
 
 COMMENT=		elegant and simple HTTP library for Python
 
-MODPY_EGG_VERSION=	2.21.0
+MODPY_EGG_VERSION=	2.22.0
 DISTNAME=		requests-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
-REVISION=		0
 
 CATEGORIES=		www
 
@@ -17,6 +16,10 @@ MAINTAINER=		Daniel Jakots <obsd@chown.me>
 PERMIT_PACKAGE_CDROM=	Yes
 
 MODULES=		lang/python
+
+MODPY_PI=		Yes
+MODPY_PYTEST =		Yes
+MODPY_SETUPTOOLS=	Yes
 
 RUN_DEPENDS=		devel/py-certifi${MODPY_FLAVOR} \
 			net/py-idna${MODPY_FLAVOR} \
@@ -30,10 +33,6 @@ TEST_DEPENDS=		devel/py-test-cov${MODPY_FLAVOR} \
 
 FLAVORS=		python3
 FLAVOR?=
-
-MODPY_PI=		Yes
-MODPY_SETUPTOOLS=	Yes
-MODPY_PYTEST =		Yes
 
 WRKDIST=		${WRKDIR}/requests-${MODPY_EGG_VERSION}
 
