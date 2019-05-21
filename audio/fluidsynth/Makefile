@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.26 2018/08/10 10:19:18 espie Exp $
+# $OpenBSD: Makefile,v 1.29 2019/05/20 22:15:01 naddy Exp $
 
 COMMENT =		SoundFont2 software synthesizer
 DISTNAME =		fluidsynth-1.1.6
-REVISION =		4
+REVISION =		5
 
 SHARED_LIBS +=	fluidsynth           1.0      # 6.2
 
@@ -12,7 +12,7 @@ HOMEPAGE =		http://www.fluidsynth.org/
 # LGPLv2+
 PERMIT_PACKAGE_CDROM =	Yes
 
-WANTLIB =  FLAC c glib-2.0 gthread-2.0 iconv intl m ncurses ogg pcre
+WANTLIB =  FLAC c glib-2.0 gthread-2.0 iconv intl m curses ogg pcre
 WANTLIB += pthread readline sndfile sndio vorbis vorbisenc
 
 MASTER_SITES =		${MASTER_SITE_SOURCEFORGE:=fluidsynth/}
@@ -22,15 +22,12 @@ LIB_DEPENDS =		audio/libsndfile \
 
 AUTOCONF_VERSION =	2.61
 AUTOMAKE_VERSION =	1.9
+AUTORECONF =		./autogen.sh
 
-BUILD_DEPENDS +=	${MODGNU_AUTOCONF_DEPENDS} \
-			${MODGNU_AUTOMAKE_DEPENDS}
-# autogen.sh needs libtoolize
-BUILD_DEPENDS +=        devel/libtool
 # autogen.sh needs aclocal/lib-ld.m4
-BUILD_DEPENDS +=	devel/gettext-tools
+BUILD_DEPENDS +=	devel/gettext,-tools
 
-CONFIGURE_STYLE =	gnu
+CONFIGURE_STYLE =	autoreconf
 CONFIGURE_ARGS +=	--disable-coreaudio \
 			--disable-coremidi \
 			--disable-dart \
@@ -47,8 +44,5 @@ CONFIGURE_ARGS +=	--disable-jack-support
 
 post-patch:
 	cp ${FILESDIR}/fluid_sndio.c ${WRKSRC}/src/drivers/
-
-pre-configure:
-	cd ${WRKSRC} && ${AUTOCONF_ENV} ./autogen.sh
 
 .include <bsd.port.mk>
