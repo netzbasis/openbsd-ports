@@ -1,4 +1,4 @@
-/Makefile/1.908/Fri May 17 03:33:21 2019//
+/Makefile/1.909/Sun May 26 12:38:31 2019//
 D/ajaxterm////
 D/analog////
 D/ap2-mod_dnssd////
@@ -46,6 +46,7 @@ D/geckodriver////
 D/gitea////
 D/goaccess////
 D/gumbo////
+D/h2o////
 D/haserl////
 D/havp////
 D/hiawatha////
