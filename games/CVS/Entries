@@ -1,4 +1,4 @@
-/Makefile/1.400/Sat May  4 02:00:51 2019//
+/Makefile/1.401/Mon May 27 20:05:36 2019//
 D/0ad////
 D/1oom////
 D/2048-cli////
@@ -255,6 +255,7 @@ D/speyes////
 D/spider////
 D/starfighter////
 D/starlanes////
+D/steamworks-nosteam////
 D/stepmania////
 D/stockfish////
 D/stone-soup////
