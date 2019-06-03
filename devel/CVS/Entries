@@ -1,4 +1,4 @@
-/Makefile/1.1861/Sat Jun  1 20:00:01 2019//
+/Makefile/1.1863/Sun Jun  2 22:55:29 2019//
 D/ElectricFence////
 D/ORBit2////
 D/acpica////
@@ -1221,6 +1221,7 @@ D/py-SOAPpy////
 D/py-addons////
 D/py-algorithm-munkres////
 D/py-altgraph////
+D/py-ana////
 D/py-anytree////
 D/py-apipkg////
 D/py-appdirs////
@@ -1244,6 +1245,7 @@ D/py-bencode////
 D/py-binaryornot////
 D/py-binplist////
 D/py-biplist////
+D/py-bitstring////
 D/py-blessings////
 D/py-blinker////
 D/py-blist////

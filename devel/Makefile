@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1861 2019/06/01 20:00:01 kn Exp $
+# $OpenBSD: Makefile,v 1.1863 2019/06/02 22:55:29 kn Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1263,6 +1263,8 @@
      SUBDIR += py-algorithm-munkres,python3
      SUBDIR += py-altgraph
      SUBDIR += py-altgraph,python3
+     SUBDIR += py-ana
+     SUBDIR += py-ana,python3
      SUBDIR += py-anytree
      SUBDIR += py-anytree,python3
      SUBDIR += py-apipkg
@@ -1301,6 +1303,8 @@
      SUBDIR += py-binplist
      SUBDIR += py-biplist
      SUBDIR += py-biplist,python3
+     SUBDIR += py-bitstring
+     SUBDIR += py-bitstring,python3
      SUBDIR += py-blessings
      SUBDIR += py-blessings,python3
      SUBDIR += py-blinker
