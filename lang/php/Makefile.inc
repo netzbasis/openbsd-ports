@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.137 2019/05/20 22:15:15 naddy Exp $
+# $OpenBSD: Makefile.inc,v 1.139 2019/06/03 16:06:51 sthen Exp $
 
 BROKEN-hppa=	no __sync_bool_compare_and_swap support nor asm fallback
 
@@ -22,7 +22,7 @@ MASTER_SITES=		http://se.php.net/distributions/ \
 
 # UPGRADERS: please read BOTH the PHP and Zend licenses
 # and make sure they are safe before an upgrade
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=		Yes
 
 MODPHP_CONFIG_PATH=	/var/www/conf
 
@@ -80,6 +80,7 @@ CONFIGURE_ARGS+=	--with-gettext=${LOCALBASE} \
 			--with-iconv=${LOCALBASE} \
 			--with-onig=${LOCALBASE} \
 			--with-openssl \
+			--with-password-argon2=${LOCALBASE} \
 			--with-pcre-regex \
 			--with-sodium=${LOCALBASE} \
 			--with-zlib \
@@ -158,8 +159,9 @@ LIB_DEPENDS$i +=	devel/gettext,-runtime \
 			textproc/libxml \
 			textproc/oniguruma
 .if ${PV} != "7.1"
-WANTLIB$i +=		sodium
-LIB_DEPENDS$i +=	security/libsodium
+WANTLIB$i +=		argon2 sodium
+LIB_DEPENDS$i +=	security/argon2 \
+			security/libsodium
 .endif
 .endfor
 

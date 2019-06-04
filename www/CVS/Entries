@@ -1,4 +1,4 @@
-/Makefile/1.911/Fri May 31 06:58:36 2019//
+/Makefile/1.913/Mon Jun  3 23:08:01 2019//
 D/ajaxterm////
 D/analog////
 D/ap2-mod_dnssd////
@@ -67,7 +67,6 @@ D/kcaldav////
 D/kcgi////
 D/kibana////
 D/kore////
-D/kwebapp////
 D/kwebkitpart////
 D/larbin////
 D/libcroco////
@@ -101,6 +100,7 @@ D/nextcloud////
 D/nghttp2////
 D/nginx////
 D/nostromo////
+D/openradtool////
 D/otter-browser////
 D/p5-Alien-Tidyp////
 D/p5-Any-URI-Escape////
