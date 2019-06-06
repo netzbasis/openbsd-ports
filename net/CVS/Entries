@@ -1,4 +1,4 @@
-/Makefile/1.1134/Sun Jun  2 06:24:26 2019//
+/Makefile/1.1135/Wed Jun  5 11:43:48 2019//
 D/GeoIP////
 D/adns////
 D/adsuck////
@@ -63,6 +63,7 @@ D/dico////
 D/dictd////
 D/dleyna////
 D/dlint////
+D/dnscontrol////
 D/dnscrypt-proxy////
 D/dnsdist////
 D/dnsmasq////

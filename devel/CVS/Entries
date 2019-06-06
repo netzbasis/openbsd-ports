@@ -1,4 +1,4 @@
-/Makefile/1.1863/Sun Jun  2 22:55:29 2019//
+/Makefile/1.1864/Wed Jun  5 19:49:40 2019//
 D/ElectricFence////
 D/ORBit2////
 D/acpica////
@@ -1271,6 +1271,7 @@ D/py-configparser////
 D/py-constantly////
 D/py-construct////
 D/py-contextlib2////
+D/py-cooldict////
 D/py-country////
 D/py-coverage////
 D/py-coveralls////
@@ -1376,6 +1377,7 @@ D/py-pathlib2////
 D/py-pathspec////
 D/py-pbr////
 D/py-peak-rules////
+D/py-pefile////
 D/py-pexpect////
 D/py-pip////
 D/py-pluggy////
