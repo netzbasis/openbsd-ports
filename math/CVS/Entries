@@ -1,4 +1,4 @@
-/Makefile/1.160/Sat May 18 18:13:15 2019//
+/Makefile/1.162/Thu Jun  6 22:37:09 2019//
 D/R////
 D/aamath////
 D/abs////
@@ -113,6 +113,7 @@ D/py-bottleneck////
 D/py-gnuplot////
 D/py-graphviz////
 D/py-mpmath////
+D/py-networkx////
 D/py-numexpr////
 D/py-numpy////
 D/py-pandas////
