@@ -1,4 +1,4 @@
-/Makefile/1.162/Thu Jun  6 22:37:09 2019//
+/Makefile/1.163/Fri Jun  7 08:00:15 2019//
 D/R////
 D/aamath////
 D/abs////
@@ -119,6 +119,7 @@ D/py-numpy////
 D/py-pandas////
 D/py-patsy////
 D/py-probstat////
+D/py-pysmt////
 D/py-scipy////
 D/py-snuggs////
 D/py-statistics////

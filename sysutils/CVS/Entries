@@ -1,4 +1,4 @@
-/Makefile/1.525/Tue May 14 18:55:53 2019//
+/Makefile/1.526/Fri Jun  7 15:02:54 2019//
 D/accountsservice////
 D/amazon-ecs-cli////
 D/amazon-ssm-agent////
@@ -57,6 +57,7 @@ D/dep////
 D/detox////
 D/dfc////
 D/diffoscope////
+D/dinit////
 D/direvent////
 D/diskrescue////
 D/dmassage////
