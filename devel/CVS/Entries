@@ -1,4 +1,4 @@
-/Makefile/1.1866/Thu Jun  6 20:16:39 2019//
+/Makefile/1.1867/Sat Jun  8 12:02:59 2019//
 D/ElectricFence////
 D/ORBit2////
 D/acpica////
@@ -1378,7 +1378,6 @@ D/py-pathlib2////
 D/py-pathspec////
 D/py-pbr////
 D/py-peak-rules////
-D/py-pefile////
 D/py-pexpect////
 D/py-pip////
 D/py-pluggy////
