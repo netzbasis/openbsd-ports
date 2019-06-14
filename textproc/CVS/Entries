@@ -1,4 +1,4 @@
-/Makefile/1.596/Sat May  4 14:05:25 2019//
+/Makefile/1.597/Thu Jun 13 08:55:09 2019//
 D/TclXML////
 D/antiword////
 D/apertium////
@@ -126,6 +126,7 @@ D/mdp////
 D/meld////
 D/mgdiff////
 D/miller////
+D/misspell////
 D/mozilla-dicts////
 D/multimarkdown////
 D/mupdf////
