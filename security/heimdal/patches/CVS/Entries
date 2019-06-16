@@ -3,6 +3,7 @@
 /patch-kuser_generate-requests_c/1.2/Sat Dec 17 14:58:31 2016//
 /patch-lib_gssapi_ntlm_acquire_cred_c/1.1/Tue Sep 18 11:39:08 2018//
 /patch-lib_hcrypto_test_rsa_c/1.2/Sat Dec 17 14:58:31 2016//
+/patch-lib_hdb_hdb-mitdb_c/1.1/Sat Jun 15 10:24:37 2019//
 /patch-lib_hx509_softp11_c/1.2/Sat Dec 17 14:58:31 2016//
 /patch-lib_krb5_context_c/1.1/Tue Sep 18 11:39:08 2018//
 /patch-lib_krb5_crypto-rand_c/1.2/Sat Dec 17 14:58:31 2016//

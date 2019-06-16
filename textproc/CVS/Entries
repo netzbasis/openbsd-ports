@@ -1,4 +1,4 @@
-/Makefile/1.597/Thu Jun 13 08:55:09 2019//
+/Makefile/1.600/Sat Jun 15 14:33:53 2019//
 D/TclXML////
 D/antiword////
 D/apertium////
@@ -340,6 +340,7 @@ D/py-HappyDoc////
 D/py-ICU////
 D/py-MarkupSafe////
 D/py-PEG2////
+D/py-PyPDF2////
 D/py-alabaster////
 D/py-black////
 D/py-chardet////
