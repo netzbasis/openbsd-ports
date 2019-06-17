@@ -1,4 +1,4 @@
-/Makefile/1.1136/Sat Jun 15 21:43:34 2019//
+/Makefile/1.1137/Sun Jun 16 22:14:18 2019//
 D/GeoIP////
 D/adns////
 D/adsuck////
@@ -124,6 +124,7 @@ D/hpodder////
 D/hs-HTTP////
 D/hs-hostname////
 D/httptunnel////
+D/i2pd////
 D/icbd////
 D/icbirc////
 D/icecast////
