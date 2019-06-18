@@ -1,3 +1,6 @@
 /patch-src_hotspot_share_runtime_globals_hpp/1.1.1.1/Thu Mar 28 17:47:53 2019//
-/patch-src_java_base_unix_native_libjava_childproc_c/1.1/Tue May 28 17:39:55 2019//
+/patch-src_java_base_bsd_native_libjava_ProcessHandleImpl_bsd_c/1.1/Mon Jun 17 19:23:40 2019//
+/patch-src_java_base_unix_native_libjava_ProcessHandleImpl_unix_c/1.1/Mon Jun 17 19:23:40 2019//
+/patch-src_java_base_unix_native_libjava_ProcessHandleImpl_unix_h/1.1/Mon Jun 17 19:23:40 2019//
+/patch-src_java_base_unix_native_libjava_childproc_c/1.2/Mon Jun 17 19:23:40 2019//
 D
