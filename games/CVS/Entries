@@ -1,4 +1,4 @@
-/Makefile/1.402/Sat Jun 15 20:54:03 2019//
+/Makefile/1.403/Wed Jun 19 00:05:13 2019//
 D/0ad////
 D/1oom////
 D/2048-cli////
@@ -105,6 +105,7 @@ D/freedroid////
 D/freedroidrpg////
 D/freeorion////
 D/freeserf////
+D/freesynd////
 D/fretsonfire////
 D/frotz////
 D/frozen-bubble////
