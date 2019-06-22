@@ -17,6 +17,7 @@
 /patch-source_blender_blenlib_intern_storage_c/1.11/Tue Sep 22 18:48:40 2015//
 /patch-source_blender_blenloader_intern_writefile_c/1.15/Sun Oct  9 13:23:34 2016//
 /patch-source_blender_imbuf_intern_indexer_c/1.1/Mon Feb 25 22:22:13 2019//
+/patch-source_blender_python_intern_bpy_rna_c/1.1/Fri Jun 21 22:44:14 2019//
 /patch-source_blender_render_intern_source_shadbuf_c/1.9/Sat Jan 10 00:30:49 2015//
 /patch-source_gameengine_Expressions_intern_InputParser_cpp/1.1/Mon Oct 12 12:29:02 2015//
 D
