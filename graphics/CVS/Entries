@@ -1,4 +1,4 @@
-/Makefile/1.480/Wed May 29 11:43:28 2019//
+/Makefile/1.481/Sat Jun 22 15:40:43 2019//
 D/DevIL////
 D/GraphicsMagick////
 D/ImageMagick////
@@ -80,6 +80,7 @@ D/glew////
 D/glfw////
 D/glm////
 D/glpng////
+D/glslang////
 D/gmt////
 D/gnofract4d////
 D/gocr////
@@ -265,6 +266,8 @@ D/simple-scan////
 D/sk1////
 D/sketch////
 D/slop////
+D/spirv-headers////
+D/spirv-tools////
 D/sxiv////
 D/termtosvg////
 D/tesseract////
@@ -280,6 +283,10 @@ D/vid////
 D/videod////
 D/viewnior////
 D/vigra////
+D/vulkan-headers////
+D/vulkan-loader////
+D/vulkan-tools////
+D/vulkan-validation-layers////
 D/waffle////
 D/wmicons////
 D/xanim////

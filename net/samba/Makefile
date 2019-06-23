@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.273 2019/05/20 22:15:20 naddy Exp $
+# $OpenBSD: Makefile,v 1.275 2019/06/22 23:58:23 jca Exp $
 
 VERSION =		4.8.12
 DISTNAME =		samba-${VERSION}
@@ -20,7 +20,7 @@ PKG_ARCH-docs =		*
 LDB_V =			1.3.8
 TEVENT_V =		0.9.36
 
-REVISION-main =		0
+REVISION-main =		1
 REVISION-ldb =		0
 REVISION-tevent =	6
 
@@ -71,7 +71,7 @@ MAINTAINER =		Ian McWilliam <kaosagnt@gmail.com>, \
 			Jeremie Courreges-Anglas <jca@wxcvbn.org>
 
 # GPLv3, LGPLv3
-PERMIT_PACKAGE_CDROM =	Yes
+PERMIT_PACKAGE =	Yes
 
 UTIL_LIBS =		replace util-setid
 # TODO WAF scripts link to those without version info, but those are

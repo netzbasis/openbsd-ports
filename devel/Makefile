@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1868 2019/06/21 20:49:25 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.1870 2019/06/22 18:23:34 jca Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -292,7 +292,6 @@
      SUBDIR += kf5
      SUBDIR += kyua-cli
      SUBDIR += kyua-testers
-     SUBDIR += lam
      SUBDIR += lazarus
      SUBDIR += leatherman
      SUBDIR += legit
@@ -1912,6 +1911,7 @@
      SUBDIR += vtcl
      SUBDIR += vte
      SUBDIR += vte3
+     SUBDIR += woboq_codebrowser
      SUBDIR += xa
      SUBDIR += xdg-user-dirs
      SUBDIR += xdg-utils
