@@ -1,4 +1,4 @@
-/Makefile/1.600/Sat Jun 15 14:33:53 2019//
+/Makefile/1.601/Sun Jun 23 06:51:24 2019//
 D/TclXML////
 D/antiword////
 D/apertium////
@@ -39,6 +39,7 @@ D/ebook-tools////
 D/elasticsearch////
 D/enchant////
 D/enchant2////
+D/epubcheck////
 D/exempi////
 D/extract_url////
 D/fcbanner////
