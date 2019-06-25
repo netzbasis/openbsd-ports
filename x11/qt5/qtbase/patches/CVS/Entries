@@ -5,7 +5,7 @@
 /patch-mkspecs_features_qt_module_prf/1.2/Mon Jul 17 08:34:37 2017//
 /patch-mkspecs_openbsd-g++_qmake_conf/1.2/Mon Jul 17 08:34:37 2017//
 /patch-qmake_generators_makefile_cpp/1.2/Mon Jul 17 08:34:37 2017//
-/patch-qmake_generators_unix_unixmake2_cpp/1.3/Thu Jul  5 09:49:13 2018//
+/patch-qmake_generators_unix_unixmake2_cpp/1.4/Mon Jun 24 20:50:41 2019//
 /patch-qmake_generators_unix_unixmake_cpp/1.2/Mon Jul 17 08:34:37 2017//
 /patch-qmake_generators_unix_unixmake_h/1.2/Mon Jul 17 08:34:37 2017//
 /patch-src_3rdparty_forkfd_forkfd_c/1.2/Tue Oct 24 10:12:19 2017//

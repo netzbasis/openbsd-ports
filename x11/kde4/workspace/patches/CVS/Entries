@@ -25,6 +25,8 @@
 /patch-kdm_kfrontend_sessions_kde-plasma-safe_desktop_cmake/1.2/Tue Apr 29 08:42:57 2014//
 /patch-kdm_kfrontend_sessions_kde-plasma_desktop_cmake/1.2/Tue Apr 29 08:42:57 2014//
 /patch-khotkeys_libkhotkeysprivate_windows_helper_window_selection_rules_cpp/1.1/Wed Jan 23 18:45:21 2019//
+/patch-kinfocenter_CMakeLists_txt/1.1/Mon Jun 24 12:26:34 2019//
+/patch-kinfocenter_Modules_base_CMakeLists_txt/1.1/Mon Jun 24 12:26:34 2019//
 /patch-kinfocenter_Modules_base_info_openbsd_cpp/1.2/Tue Jan 28 14:49:26 2014//
 /patch-kinfocenter_Modules_pci_CMakeLists_txt/1.1.1.1/Wed Apr 24 19:17:42 2013//
 /patch-kinfocenter_infocenter_cpp/1.1/Fri Jan 10 08:12:11 2014//
