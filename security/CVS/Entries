@@ -1,4 +1,4 @@
-/Makefile/1.546/Tue May 14 07:06:34 2019//
+/Makefile/1.547/Tue Jun 25 10:51:36 2019//
 D/ADMsnmp////
 D/ROPgadget////
 D/acme-client////
@@ -320,6 +320,7 @@ D/slurpie////
 D/smbsniff////
 D/smtpscan////
 D/smurflog////
+D/sn0int////
 D/snort2pf////
 D/softhsm////
 D/softhsm2////
