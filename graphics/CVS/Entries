@@ -1,4 +1,4 @@
-/Makefile/1.481/Sat Jun 22 15:40:43 2019//
+/Makefile/1.482/Wed Jun 26 12:10:26 2019//
 D/DevIL////
 D/GraphicsMagick////
 D/ImageMagick////
@@ -10,6 +10,7 @@ D/animorph////
 D/ansilove////
 D/aqsis////
 D/argyll////
+D/aspect-crop////
 D/asymptote////
 D/autopano-sift-c////
 D/babl////
