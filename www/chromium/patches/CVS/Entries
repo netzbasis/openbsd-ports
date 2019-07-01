@@ -53,11 +53,12 @@
 /patch-build_config_BUILD_gn/1.17/Fri May 10 21:55:39 2019//
 /patch-build_config_allocator_gni/1.9/Fri Apr 26 09:38:19 2019//
 /patch-build_config_c++_c++_gni/1.5/Fri May 10 21:55:39 2019//
-/patch-build_config_compiler_BUILD_gn/1.30/Sat May 11 20:37:14 2019//
+/patch-build_config_compiler_BUILD_gn/1.31/Sun Jun 30 18:46:23 2019//
 /patch-build_config_compiler_compiler_gni/1.19/Fri Apr 26 09:38:19 2019//
 /patch-build_config_features_gni/1.12/Fri May 10 21:55:39 2019//
 /patch-build_config_linux_BUILD_gn/1.1/Mon Jun  4 14:04:23 2018//
 /patch-build_config_linux_pkg-config_py/1.1/Wed Aug 17 11:06:50 2016//
+/patch-build_config_v8_target_cpu_gni/1.1/Sun Jun 30 18:46:23 2019//
 /patch-build_detect_host_arch_py/1.1/Wed Sep 12 19:10:34 2018//
 /patch-build_gn_run_binary_py/1.14/Sun Apr 28 08:41:35 2019//
 /patch-build_toolchain_gcc_solink_wrapper_py/1.2/Sat Dec 10 15:35:25 2016//
@@ -479,6 +480,7 @@
 /patch-third_party_crashpad_crashpad_util_posix_signals_cc/1.2/Sun Mar 24 12:24:45 2019//
 /patch-third_party_crashpad_crashpad_util_posix_symbolic_constants_posix_cc/1.3/Sun Mar 24 12:24:45 2019//
 /patch-third_party_crc32c_BUILD_gn/1.3/Fri May 10 21:55:40 2019//
+/patch-third_party_crc32c_src_src_crc32c_arm64_linux_check_h/1.1/Sun Jun 30 18:46:23 2019//
 /patch-third_party_ffmpeg_BUILD_gn/1.12/Sun Mar 24 12:24:45 2019//
 /patch-third_party_ffmpeg_chromium_config_Chrome_openbsd_arm64_config_h/1.2/Sun Mar 24 12:24:45 2019//
 /patch-third_party_ffmpeg_chromium_config_Chrome_openbsd_ia32_config_asm/1.31/Sun Mar 24 13:05:34 2019//
@@ -531,6 +533,7 @@
 /patch-third_party_swiftshader_src_OpenGL_libEGL_libEGL_hpp/1.4/Wed Sep 12 17:08:22 2018//
 /patch-third_party_swiftshader_src_OpenGL_libGLES_CM_libGLES_CM_hpp/1.4/Wed Sep 12 17:08:22 2018//
 /patch-third_party_swiftshader_src_OpenGL_libGLESv2_libGLESv2_hpp/1.4/Wed Sep 12 17:08:22 2018//
+/patch-third_party_swiftshader_third_party_llvm-7_0_configs_linux_include_llvm_Config_config_h/1.3/Sun Jun 30 18:46:23 2019//
 /patch-third_party_swiftshader_third_party_llvm-subzero_build_Linux_include_llvm_Config_config_h/1.2/Wed Jul 25 06:53:36 2018//
 /patch-third_party_unrar_src_crypt_cpp/1.2/Sun Mar 24 12:24:45 2019//
 /patch-third_party_usrsctp_BUILD_gn/1.3/Tue Jan 30 07:57:25 2018//
@@ -553,7 +556,7 @@
 /patch-tools_gn_base_files_scoped_file_cc/1.1/Wed Sep 12 17:08:22 2018//
 /patch-tools_gn_build_build_linux_ninja_template/1.1/Wed Sep 12 17:08:22 2018//
 /patch-tools_gn_build_gen_py/1.5/Sat Jun  1 18:03:30 2019//
-/patch-tools_gn_tools_gn_args_cc/1.5/Sat Jun  1 18:03:30 2019//
+/patch-tools_gn_tools_gn_args_cc/1.6/Sun Jun 30 18:46:23 2019//
 /patch-tools_json_schema_compiler_feature_compiler_py/1.3/Fri May 10 21:55:40 2019//
 /patch-tools_json_schema_compiler_model_py/1.3/Fri May 10 21:55:40 2019//
 /patch-tools_protoc_wrapper_protoc_wrapper_py/1.2/Thu Jun  6 11:36:00 2019//
