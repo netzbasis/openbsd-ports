@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Core.pm,v 1.96 2019/05/19 17:34:18 espie Exp $
+# $OpenBSD: Core.pm,v 1.98 2019/07/01 12:03:41 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -312,6 +312,22 @@ sub cleanup
 	}
 }
 
+sub wipehost
+{
+	my ($class, $h) = @_;
+	my @pids;
+	my $r = $class->repository;
+	$class->walk_host_jobs($h, sub {
+		my ($pid, $job) = @_;
+		push @pids, $pid;
+	    });
+	for my $pid (@pids) { 
+		local $> = 0;
+		$class->kill('KILL', $pid);
+		delete $r->{$pid};
+	}
+}
+
 sub debug_dump
 {
 	my $self = shift;
@@ -494,15 +510,21 @@ sub repository
 }
 
 
-sub walk_same_host_jobs
+sub walk_host_jobs
 {
-	my ($self, $sub) = @_;
+	my ($self, $h, $sub) = @_;
 	while (my ($pid, $core) = each %{$self->repository}) {
-		next if $core->hostname ne $self->hostname;
+		next if $core->hostname ne $h;
 		# XXX only interested in "real" jobs now
 		next if !defined $core->job->{v};
 		&$sub($pid, $core->job);
 	}
+}
+
+sub walk_same_host_jobs
+{
+	my ($self, $sub) = @_;
+	return $self->walk_host_jobs($self->hostname, $sub);
 }
 
 sub same_host_jobs
@@ -828,13 +850,22 @@ sub repository
 package DPB::Core::Local;
 our @ISA = qw(DPB::Core);
 
-my $host;
+my ($host, $shorthost);
 sub hostname
 {
 	if (!defined $host) {
 		chomp($host = `hostname`);
+		$shorthost = $host;
+		$shorthost =~ s/\..*//;
 	}
 	return $host;
+}
+
+sub short_hostname
+{
+	my $class = shift;
+	$class->hostname;
+	return $shorthost;
 }
 
 package DPB::Core::Fetcher;
