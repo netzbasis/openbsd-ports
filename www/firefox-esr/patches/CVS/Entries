@@ -1,6 +1,7 @@
 /patch-intl_icu_source_Makefile_in/1.4/Wed Jun 27 05:11:34 2018//
 /patch-js_src_jit_ProcessExecutableMemory_h/1.2/Wed Jun 27 05:11:34 2018//
 /patch-netwerk_cache_nsDiskCacheDeviceSQL_cpp/1.2/Mon Mar 11 19:04:37 2019//
+/patch-servo_components_style_build_gecko_rs/1.1/Tue Jul  2 16:51:49 2019//
 /patch-servo_components_style_lib_rs/1.1/Mon Mar 11 19:04:37 2019//
 /patch-servo_components_style_traits_lib_rs/1.1/Mon Mar 11 19:04:37 2019//
 /patch-storage_mozStorageConnection_cpp/1.4/Mon Mar 11 19:04:37 2019//

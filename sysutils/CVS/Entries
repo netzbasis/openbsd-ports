@@ -1,4 +1,4 @@
-/Makefile/1.526/Fri Jun  7 15:02:54 2019//
+/Makefile/1.527/Tue Jul  2 09:18:44 2019//
 D/accountsservice////
 D/amazon-ecs-cli////
 D/amazon-ssm-agent////
@@ -295,6 +295,7 @@ D/shmux////
 D/shunt////
 D/simple-mtpfs////
 D/skill////
+D/slant////
 D/sleuthkit////
 D/smartmontools////
 D/smbldap-tools////
