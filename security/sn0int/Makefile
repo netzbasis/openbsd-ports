@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/06/25 10:50:02 sebastia Exp $
+# $OpenBSD: Makefile,v 1.3 2019/07/04 06:58:28 sthen Exp $
+
+BROKEN-i386 =	error[E0428]: the name `U1024` is defined multiple times
 
 COMMENT =	semi-automatic OSINT framework and package manager
 
@@ -407,6 +409,7 @@ MODCARGO_CRATES +=	yansi	0.5.0	# MIT/Apache-2.0
 
 CONFIGURE_STYLE =	cargo
 SEPARATE_BUILD =	Yes
+PATCHORIG =		.openbsd.orig
 
 MODCARGO_RUSTFLAGS =	-C debuginfo=0
 
