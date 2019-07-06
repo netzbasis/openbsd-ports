@@ -1,4 +1,4 @@
-/Makefile/1.1871/Fri Jun 28 06:47:02 2019//
+/Makefile/1.1872/Fri Jul  5 18:38:47 2019//
 D/ElectricFence////
 D/ORBit2////
 D/acpica////
@@ -618,6 +618,7 @@ D/p5-DateTime-Cron-Simple////
 D/p5-DateTime-Event-ICal////
 D/p5-DateTime-Event-Recurrence////
 D/p5-DateTime-Format-Builder////
+D/p5-DateTime-Format-Flexible////
 D/p5-DateTime-Format-HTTP////
 D/p5-DateTime-Format-ICal////
 D/p5-DateTime-Format-ISO8601////
@@ -841,6 +842,7 @@ D/p5-Module-Runtime////
 D/p5-Module-ScanDeps////
 D/p5-Module-Starter////
 D/p5-Module-Starter-Plugin-CGIApp////
+D/p5-Module-Util////
 D/p5-Module-Versions-Report////
 D/p5-Module-Which////
 D/p5-Moo////

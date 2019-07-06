@@ -4,4 +4,6 @@
 /patch-src_plugins_projectexplorer_gcctoolchain_cpp/1.8/Sat Dec  8 15:08:58 2018//
 /patch-src_plugins_qmakeprojectmanager_qmakebuildconfiguration_cpp/1.6/Sat Dec  8 15:08:58 2018//
 /patch-src_tools_clangpchmanagerbackend_source_collectbuilddependencypreprocessorcallbacks_h/1.1/Sat Dec  8 15:08:58 2018//
+/patch-src_tools_clangrefactoringbackend_source_findcursorusr_h/1.1/Fri Jul  5 17:01:45 2019//
+/patch-src_tools_clangrefactoringbackend_source_symbolscollector_cpp/1.1/Fri Jul  5 17:01:45 2019//
 D
