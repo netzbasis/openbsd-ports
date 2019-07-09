@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.227 2019/06/22 22:44:06 jca Exp $
+# $OpenBSD: Makefile,v 1.229 2019/07/08 07:56:52 jca Exp $
 
 # XXX If broken on an architecture, remove the arch from LLVM_ARCHS.
 ONLY_FOR_ARCHS = ${LLVM_ARCHS}
@@ -11,21 +11,21 @@ COMMENT-python =	Python bindings for Clang
 
 # XXX: Remember to bump MODCLANG_VERSION in lang/clang/clang.port.mk when
 # updating this port.
-LLVM_V =	7.0.1
+LLVM_V =	8.0.0
 DISTNAME =	llvm-${LLVM_V}.src
 PKGNAME =	llvm-${LLVM_V}
 PKGSPEC-main =	llvm-=${LLVM_V}
 PKGNAME-main =	llvm-${LLVM_V}
 PKGNAME-python =	py-llvm-${LLVM_V}
 PKGNAME-lldb =	lldb-${LLVM_V}
-REVISION-main =	13
-REVISION-lldb =	3
+REVISION =	0
 
 CATEGORIES =	devel
 
 SHARED_LIBS =	clang		8.0 \
 		lldb		1.0 \
-		LTO		5.0
+		LTO		5.0 \
+		OptRemarks	0.0
 
 # packager notes in http://llvm.org/docs/Packaging.html
 HOMEPAGE =	https://www.llvm.org/
@@ -51,7 +51,8 @@ MODULES =		devel/cmake \
 TEST_DEPENDS =		devel/dejagnu \
 			shells/bash
 BUILD_DEPENDS +=	devel/swig \
-			textproc/py-sphinx
+			textproc/py-sphinx \
+			textproc/py-recommonmark
 RUN_DEPENDS +=		devel/gtest
 
 .include <bsd.port.arch.mk>
@@ -84,6 +85,7 @@ CONFIGURE_ARGS =	-DLLVM_ENABLE_FFI:Bool=False \
 			-DLLVM_ENABLE_TERMINFO:Bool=False \
 			-DLLVM_ENABLE_RTTI:Bool=True \
 			-DCMAKE_DISABLE_FIND_PACKAGE_LibXml2:Bool=True \
+			-DCMAKE_DISABLE_FIND_PACKAGE_Z3:Bool=True \
 			-DLLVM_LINK_LLVM_DYLIB:Bool=True \
 			-DLLVM_BUILD_LLVM_DYLIB:Bool=True \
 			-DGO_EXECUTABLE=GO_EXECUTABLE-NOTFOUND \

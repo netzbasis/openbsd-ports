@@ -1,43 +1,35 @@
-# $OpenBSD: Makefile,v 1.54 2019/02/18 19:50:32 jasper Exp $
+# $OpenBSD: Makefile,v 1.56 2019/07/07 15:21:31 ajacoutot Exp $
 
 ONLY_FOR_ARCHS=		${APM_ARCHS}
 
 COMMENT=		generate a statusbar for use with i3/xmobar/dzen2
 
-DISTNAME=		i3status-2.12
+DISTNAME=		i3status-2.13
 CATEGORIES=		x11 sysutils
-REVISION=		4
 
 HOMEPAGE=		https://i3wm.org/i3status/
 
 MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
 # BSD
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE =	Yes
 
 MASTER_SITES=		${HOMEPAGE}
 EXTRACT_SUFX=		.tar.bz2
 
-WANTLIB += c confuse m pthread yajl
+WANTLIB += c confuse m pthread yajl iconv intl
 
 USE_GMAKE=		Yes
 
-BUILD_DEPENDS=		textproc/asciidoc>=8.6.8
+BUILD_DEPENDS=		textproc/asciidoc>=8.6.8 \
+			textproc/xmlto
+
 LIB_DEPENDS=		devel/libconfuse \
 			devel/libyajl
 
-NO_TEST=		Yes
+CONFIGURE_STYLE =	gnu
+SEPARATE_BUILD =	Yes
 
-MAKE_ENV+=		V=1 SYSCONFDIR=${PREFIX}/share/examples/i3status/
-
-pre-configure:
-	${SUBST_CMD} ${WRKSRC}/Makefile
-
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/i3status ${PREFIX}/bin/
-	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/i3status
-	${INSTALL_DATA} ${WRKSRC}/i3status.conf \
-		${PREFIX}/share/examples/i3status/
-	${INSTALL_MAN} ${WRKSRC}/man/i3status.1 ${PREFIX}/man/man1/
+FAKE_FLAGS +=		sysconfdir=${PREFIX}/share/examples/i3status/
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-/Makefile/1.1872/Fri Jul  5 18:38:47 2019//
+/Makefile/1.1874/Mon Jul  8 09:49:59 2019//
 D/ElectricFence////
 D/ORBit2////
 D/acpica////
@@ -1105,6 +1105,7 @@ D/p5-Test-Trap////
 D/p5-Test-URI////
 D/p5-Test-Unit////
 D/p5-Test-UseAllModules////
+D/p5-Test-Version////
 D/p5-Test-WWW-Mechanize////
 D/p5-Test-WWW-Mechanize-Catalyst////
 D/p5-Test-Warn////
@@ -1359,6 +1360,7 @@ D/py-monotonic////
 D/py-monthdelta////
 D/py-more-itertools////
 D/py-mox////
+D/py-mulpyplexer////
 D/py-munch////
 D/py-mxDateTime////
 D/py-nbconvert////
