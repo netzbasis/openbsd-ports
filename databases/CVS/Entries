@@ -1,4 +1,4 @@
-/Makefile/1.378/Thu May  9 11:50:20 2019//
+/Makefile/1.379/Thu Jul 11 10:44:38 2019//
 D/architect////
 D/barman////
 D/citus////
@@ -66,6 +66,7 @@ D/p5-CouchDB-View////
 D/p5-DBD-CSV////
 D/p5-DBD-Chart////
 D/p5-DBD-LDAP////
+D/p5-DBD-MariaDB////
 D/p5-DBD-Mock////
 D/p5-DBD-Pg////
 D/p5-DBD-SQLite////
