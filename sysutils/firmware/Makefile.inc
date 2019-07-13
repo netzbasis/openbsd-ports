@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.5 2019/05/14 20:04:14 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.7 2019/07/12 22:55:20 naddy Exp $
 
 COMMENT ?=	firmware binary images for ${FW_DRIVER}(4) driver
 
@@ -8,9 +8,8 @@ PKGNAME ?=	${FW_DRIVER}-firmware-${FW_VER}
 
 CATEGORIES +=	sysutils/firmware
 
-PERMIT_PACKAGE_CDROM ?=	  proprietary
-PERMIT_PACKAGE_FTP ?=	  proprietary
-PERMIT_DISTFILES_FTP ?=	  proprietary
+PERMIT_PACKAGE ?=   proprietary
+PERMIT_DISTFILES ?= proprietary
 
 .if !defined(GH_ACCOUNT)
 MASTER_SITES ?=	http://firmware.openbsd.org/firmware-dist/
@@ -21,7 +20,7 @@ PREFIX ?=	/etc
 NO_BUILD ?=	Yes
 NO_TEST ?=	Yes
 
-.if ${PERMIT_PACKAGE_FTP:L:Myes} || ${PERMIT_PACKAGE_CDROM:L:Myes}
+.if ${PERMIT_PACKAGE:L:Myes}
 #
 # This is a special-purpose directory. Packages produced from this should
 # not be included in package directories on normal mirrors, but only on

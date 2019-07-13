@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2019/05/20 13:24:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2019/07/12 21:05:06 sthen Exp $
 
 COMMENT=	dependency manager for PHP
 
@@ -6,7 +6,7 @@ CATEGORIES=	www devel
 
 PORTROACH=	site:https://github.com/composer/composer/releases
 
-V=		1.8.5
+V=		1.8.6
 EPOCH=		0
 MASTER_SITES=	https://getcomposer.org/download/$V/
 DISTNAME=	composer-$V
@@ -20,7 +20,7 @@ MODULES=	lang/php
 MODPHP_VERSION=	7.3
 
 # MIT
-PERMIT_PACKAGE_CDROM= Yes
+PERMIT_PACKAGE=	Yes
 
 NO_BUILD=	Yes
 NO_TEST=	Yes

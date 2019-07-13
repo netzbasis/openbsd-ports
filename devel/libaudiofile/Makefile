@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.59 2019/07/11 17:16:59 tj Exp $
+# $OpenBSD: Makefile,v 1.61 2019/07/12 20:44:37 sthen Exp $
 
 # -fvisibility
 NOT_FOR_ARCHS=	${GCC3_ARCHS}
@@ -10,7 +10,7 @@ SUBST_VARS=	V
 
 DISTNAME=	audiofile-${V}
 PKGNAME=	lib${DISTNAME}
-REVISION=	5
+REVISION=	6
 
 SHARED_LIBS +=  audiofile            1.0      # 1.0
 
@@ -21,7 +21,7 @@ MASTER_SITES=	${HOMEPAGE}
 HOMEPAGE=	https://www.68k.org/~michael/audiofile/
 
 # LGPLv2.1
-PERMIT_PACKAGE_CDROM=	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += FLAC c m ogg ${COMPILER_LIBCXX}
 
