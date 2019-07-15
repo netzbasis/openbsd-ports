@@ -1,4 +1,4 @@
-/Makefile/1.416/Thu Jun  6 12:13:16 2019//
+/Makefile/1.417/Sun Jul 14 23:05:05 2019//
 D/abcde////
 D/adplay////
 D/adplug////
@@ -186,6 +186,7 @@ D/py-acoustid////
 D/py-ao////
 D/py-audio////
 D/py-cddb////
+D/py-discid////
 D/py-discogs-client////
 D/py-eyed3////
 D/py-id3////
