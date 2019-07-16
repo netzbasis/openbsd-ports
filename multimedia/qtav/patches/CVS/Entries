@@ -10,6 +10,7 @@
 /patch-src_QtAV_FilterContext_h/1.1.1.1/Thu May  2 12:26:15 2019//
 /patch-src_QtAV_private_AVCompat_h/1.1.1.1/Thu May  2 12:26:15 2019//
 /patch-src_codec_audio_AudioEncoderFFmpeg_cpp/1.1.1.1/Thu May  2 12:26:15 2019//
+/patch-src_codec_video_SurfaceInteropCUDA_cpp/1.1/Mon Jul 15 21:50:18 2019//
 /patch-src_codec_video_VideoEncoderFFmpeg_cpp/1.1.1.1/Thu May  2 12:26:15 2019//
 /patch-src_filter_LibAVFilter_cpp/1.1.1.1/Thu May  2 12:26:15 2019//
 /patch-src_libQtAV_pri/1.1.1.1/Thu May  2 12:26:15 2019//
