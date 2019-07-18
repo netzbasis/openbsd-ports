@@ -1,4 +1,4 @@
-/Makefile/1.547/Tue Jun 25 10:51:36 2019//
+/Makefile/1.548/Wed Jul 17 08:24:42 2019//
 D/ADMsnmp////
 D/ROPgadget////
 D/acme-client////
@@ -126,6 +126,7 @@ D/lxnb////
 D/lynis////
 D/mcrypt////
 D/mhash////
+D/minisign////
 D/nbaudit////
 D/netpgp////
 D/nfsshell////

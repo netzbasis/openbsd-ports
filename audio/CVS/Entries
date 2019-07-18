@@ -1,4 +1,4 @@
-/Makefile/1.417/Sun Jul 14 23:05:05 2019//
+/Makefile/1.418/Wed Jul 17 08:08:13 2019//
 D/abcde////
 D/adplay////
 D/adplug////
@@ -91,6 +91,7 @@ D/libmusicbrainz5////
 D/libnjb////
 D/libofa////
 D/libogg////
+D/libopenmpt////
 D/libopusenc////
 D/libsamplerate////
 D/libsidplay////

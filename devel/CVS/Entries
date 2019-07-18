@@ -1,4 +1,4 @@
-/Makefile/1.1874/Mon Jul  8 09:49:59 2019//
+/Makefile/1.1875/Wed Jul 17 15:31:18 2019//
 D/ElectricFence////
 D/ORBit2////
 D/acpica////
@@ -1060,6 +1060,7 @@ D/p5-Test-File-Contents////
 D/p5-Test-File-ShareDir////
 D/p5-Test-Group////
 D/p5-Test-HTML-Tidy////
+D/p5-Test-HasVersion////
 D/p5-Test-HexDifferences////
 D/p5-Test-Inline////
 D/p5-Test-Inter////
