@@ -6,6 +6,7 @@
 /patch-boost_context_fixedsize_stack_hpp/1.1/Thu Dec 13 19:52:46 2018//
 /patch-boost_context_pooled_fixedsize_stack_hpp/1.1/Thu Dec 13 19:52:46 2018//
 /patch-boost_context_posix_protected_fixedsize_stack_hpp/1.1/Thu Dec 13 19:52:46 2018//
+/patch-boost_coroutine_standard_stack_allocator_hpp/1.1/Thu Jul 18 20:27:25 2019//
 /patch-boost_functional_hash_detail_limits_hpp/1.2/Wed Jul  1 08:41:59 2015//
 /patch-boost_log_detail_event_hpp/1.1/Fri Jun  2 02:21:06 2017//
 /patch-boost_predef_other_endian_h/1.1/Wed Jul  1 08:41:59 2015//
