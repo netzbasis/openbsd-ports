@@ -1,4 +1,4 @@
-/Makefile/1.1138/Thu Jul 18 13:12:55 2019//
+/Makefile/1.1139/Fri Jul 19 12:22:21 2019//
 D/GeoIP////
 D/adns////
 D/adsuck////
@@ -533,6 +533,7 @@ D/py-junos-eznc////
 D/py-libcloud////
 D/py-libpcap////
 D/py-medusa////
+D/py-minimalmodbus////
 D/py-msgpack////
 D/py-nbxmpp////
 D/py-ncclient////

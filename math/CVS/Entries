@@ -1,4 +1,4 @@
-/Makefile/1.163/Fri Jun  7 08:00:15 2019//
+/Makefile/1.164/Fri Jul 19 19:49:03 2019//
 D/R////
 D/aamath////
 D/abs////
@@ -96,6 +96,7 @@ D/p5-Math-Round////
 D/p5-Math-Spline////
 D/p5-Math-Symbolic////
 D/p5-Math-SymbolicX-ParserExtensionFactory////
+D/p5-Math-Utils////
 D/p5-Math-VecStat////
 D/p5-Number-WithError////
 D/p5-Set-IntSpan////
