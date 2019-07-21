@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.15 2019/07/12 20:45:16 sthen Exp $
+# $OpenBSD: Makefile,v 1.17 2019/07/20 21:45:04 sthen Exp $
 
 COMMENT =		c protocol buffers
 
-V =			1.3.0
+V =			1.3.2
 DISTNAME =		protobuf-c-$V
 
-SHARED_LIBS =		protobuf-c 2.0	# 2.0
+SHARED_LIBS =		protobuf-c 2.0	# 1.0
 
 CATEGORIES =		devel
 
@@ -25,10 +25,7 @@ CXXFLAGS +=		-std=gnu++11
 
 LIB_DEPENDS =		devel/protobuf
 
-AUTOCONF_VERSION =	2.69
-AUTOMAKE_VERSION =	1.15
-
-CONFIGURE_STYLE =	autoreconf
+CONFIGURE_STYLE =	gnu
 
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
