@@ -1,13 +1,5 @@
 /patch-Makefile/1.18/Sun Sep 16 06:37:15 2018//
 /patch-common_arm_asm_S/1.1/Sun Sep 16 06:37:15 2018//
 /patch-common_osdep_h/1.11/Sun Sep 16 06:37:15 2018//
-/patch-common_x86_cabac-a_asm/1.1/Sun Sep 16 06:37:15 2018//
-/patch-common_x86_cpu-a_asm/1.1/Sun Sep 16 06:37:15 2018//
-/patch-common_x86_mc-a_asm/1.3/Sun Sep 16 06:37:15 2018//
-/patch-common_x86_pixel-a_asm/1.1/Sun Sep 16 06:37:15 2018//
-/patch-common_x86_predict-a_asm/1.1/Sun Sep 16 06:37:15 2018//
-/patch-common_x86_quant-a_asm/1.1/Sun Sep 16 06:37:15 2018//
-/patch-common_x86_sad-a_asm/1.1/Sun Sep 16 06:37:15 2018//
-/patch-common_x86_trellis-64_asm/1.1/Sun Sep 16 06:37:15 2018//
-/patch-configure/1.25/Sun Sep 16 06:37:15 2018//
+/patch-configure/1.26/Mon Jul 22 06:56:33 2019//
 D
