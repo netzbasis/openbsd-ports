@@ -1,4 +1,4 @@
-/Makefile/1.638/Tue May 28 11:33:42 2019//
+/Makefile/1.639/Sat Jul 27 02:07:52 2019//
 D/2bwm////
 D/Xaw3d////
 D/XawMu////
@@ -236,6 +236,7 @@ D/qt4////
 D/qt5////
 D/qt5ct////
 D/qt5styleplugins////
+D/qtfm////
 D/qwt////
 D/ratmen////
 D/ratpoison////
