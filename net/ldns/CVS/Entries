@@ -1,6 +1,4 @@
-/Makefile/1.9/Mon Feb  1 17:00:13 2010//
-/Makefile.inc/1.32/Fri Jul 12 20:48:30 2019//
-/distinfo/1.8/Thu Jun 29 10:31:05 2017//
-D/drill////
-D/libldns////
-D/utils////
+/Makefile/1.10/Sat Jul 27 13:54:13 2019//
+/distinfo/1.9/Sat Jul 27 13:54:13 2019//
+D/patches////
+D/pkg////
