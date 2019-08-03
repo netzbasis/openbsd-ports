@@ -1,4 +1,4 @@
-/Makefile/1.1876/Tue Jul 23 19:25:30 2019//
+/Makefile/1.1877/Fri Aug  2 15:32:29 2019//
 D/ElectricFence////
 D/ORBit2////
 D/acpica////
@@ -1454,8 +1454,6 @@ D/py-tox////
 D/py-tpg////
 D/py-traitlets////
 D/py-trollius////
-D/py-turbocheetah////
-D/py-turbokid////
 D/py-twisted////
 D/py-txaio////
 D/py-typing////

@@ -1,4 +1,4 @@
-/Makefile/1.380/Fri Jun  7 20:17:55 2019//
+/Makefile/1.381/Fri Aug  2 22:00:54 2019//
 D/abook////
 D/adcomplain////
 D/akpop3d////
@@ -23,6 +23,7 @@ D/cucipop////
 D/cue////
 D/cyrus-imapd////
 D/dkimproxy////
+D/dma////
 D/dovecot////
 D/dovecot-pigeonhole////
 D/dspam////

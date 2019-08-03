@@ -1,4 +1,4 @@
-/Makefile/1.482/Wed Jun 26 12:10:26 2019//
+/Makefile/1.483/Fri Aug  2 15:26:18 2019//
 D/DevIL////
 D/GraphicsMagick////
 D/ImageMagick////
@@ -228,6 +228,7 @@ D/pinta////
 D/png////
 D/png2ico////
 D/pngcrush////
+D/posterazor////
 D/potrace////
 D/povray////
 D/pqiv////
