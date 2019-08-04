@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2019/07/22 16:10:27 robert Exp $
+# $OpenBSD: Makefile,v 1.43 2019/08/03 10:24:09 robert Exp $
 
 # undefined ref's to libicon*, libintl*
 USE_LLD=	Yes
@@ -8,6 +8,8 @@ COMMENT-mapi=	kopano MAPI extensions for PHP
 
 PKGNAME-main=	kopano-core-${V}.${BUILD}
 PKGNAME-mapi=	kopano-mapi-${V}.${BUILD}
+
+REVISION-main=	0
 
 CATEGORIES=	mail www productivity
 
@@ -54,7 +56,7 @@ WANTLIB-main += curl nghttp2 ical icalss
 WANTLIB-main += mariadb curses ssl xml2
 WANTLIB-main += gsoapssl++ tidy
 WANTLIB-main += ${LIBCXX}
-WANTLIB-main += icalvcal ldap_r-2.4 HX jsoncpp
+WANTLIB-main += icalvcal ldap_r HX jsoncpp
 WANTLIB-main += db_cxx uuid xapian
 
 # Do not substitute MODULE_NAME
