@@ -1,4 +1,4 @@
-/Makefile/1.1877/Fri Aug  2 15:32:29 2019//
+/Makefile/1.1878/Sun Aug  4 19:47:21 2019//
 D/ElectricFence////
 D/ORBit2////
 D/acpica////
@@ -439,11 +439,16 @@ D/netbeans////
 D/ninja////
 D/npth////
 D/nspr////
+D/ocaml-biniou////
+D/ocaml-configurator////
+D/ocaml-cppo////
+D/ocaml-easy-format////
 D/ocaml-graph////
 D/ocaml-menhir////
 D/ocaml-ocamlbuild////
 D/ocaml-parmap////
 D/ocaml-pcre////
+D/ocaml-yojson////
 D/ode////
 D/ois////
 D/open-ath9k-htc-firmware////
