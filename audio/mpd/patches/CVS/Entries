@@ -1,5 +1,4 @@
-/patch-Makefile_in/1.25/Wed Jan  2 21:32:32 2019//
-/patch-doc_mpdconf_example/1.18/Thu Nov  2 19:22:40 2017//
-/patch-src_Main_cxx/1.6/Wed Jan  2 21:32:32 2019//
-/patch-src_command_CommandError_cxx/1.2/Sun Mar 12 10:13:49 2017//
+/patch-doc_meson_build/1.1/Tue Aug  6 17:28:12 2019//
+/patch-doc_mpdconf_example/1.19/Tue Aug  6 17:28:12 2019//
+/patch-src_net_meson_build/1.1/Tue Aug  6 17:28:12 2019//
 D
