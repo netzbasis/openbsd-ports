@@ -1,4 +1,4 @@
-/Makefile/1.1878/Sun Aug  4 19:47:21 2019//
+/Makefile/1.1879/Wed Aug  7 12:51:09 2019//
 D/ElectricFence////
 D/ORBit2////
 D/acpica////
@@ -1228,7 +1228,6 @@ D/ptlib////
 D/pudb////
 D/py-Checker////
 D/py-SOAPpy////
-D/py-addons////
 D/py-algorithm-munkres////
 D/py-altgraph////
 D/py-ana////
@@ -1389,14 +1388,12 @@ D/py-pathlib////
 D/py-pathlib2////
 D/py-pathspec////
 D/py-pbr////
-D/py-peak-rules////
 D/py-pexpect////
 D/py-pip////
 D/py-pluggy////
 D/py-plugnplay////
 D/py-ply////
 D/py-pretend////
-D/py-prioritized_methods////
 D/py-progress////
 D/py-progressbar////
 D/py-prompt_toolkit////
