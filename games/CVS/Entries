@@ -1,4 +1,4 @@
-/Makefile/1.406/Fri Jul 19 13:42:53 2019//
+/Makefile/1.407/Thu Aug  8 23:08:43 2019//
 D/0ad////
 D/1oom////
 D/2048-cli////
@@ -195,6 +195,7 @@ D/oolite////
 D/openarena////
 D/openclonk////
 D/openfodder////
+D/openjazz////
 D/openjk////
 D/openmw////
 D/openomf////

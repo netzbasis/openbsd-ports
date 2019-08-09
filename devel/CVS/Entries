@@ -1,4 +1,4 @@
-/Makefile/1.1879/Wed Aug  7 12:51:09 2019//
+/Makefile/1.1880/Thu Aug  8 13:56:34 2019//
 D/ElectricFence////
 D/ORBit2////
 D/acpica////
@@ -1305,7 +1305,6 @@ D/py-entrypoints////
 D/py-enum34////
 D/py-execnet////
 D/py-extras////
-D/py-extremes////
 D/py-fasteners////
 D/py-fastimport////
 D/py-faulthandler////
@@ -1351,7 +1350,6 @@ D/py-jsonrpclib////
 D/py-jsonschema////
 D/py-jupyter_client////
 D/py-jupyter_core////
-D/py-kid////
 D/py-kiwisolver////
 D/py-lazy-object-proxy////
 D/py-liblarch////
