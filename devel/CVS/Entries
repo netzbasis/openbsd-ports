@@ -1,4 +1,4 @@
-/Makefile/1.1880/Thu Aug  8 13:56:34 2019//
+/Makefile/1.1881/Fri Aug  9 13:17:41 2019//
 D/ElectricFence////
 D/ORBit2////
 D/acpica////
@@ -168,6 +168,7 @@ D/gobject-introspection////
 D/goffice////
 D/goffice08////
 D/goopy////
+D/got////
 D/gpatch////
 D/gperf////
 D/gputils////

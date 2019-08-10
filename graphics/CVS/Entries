@@ -1,4 +1,4 @@
-/Makefile/1.484/Sun Aug  4 19:47:21 2019//
+/Makefile/1.485/Sat Aug 10 03:56:39 2019//
 D/DevIL////
 D/GraphicsMagick////
 D/ImageMagick////
@@ -247,6 +247,7 @@ D/py-pygal////
 D/py-pyx////
 D/py-qrcode////
 D/py-sane////
+D/py-seaborn////
 D/pycha////
 D/qimageblitz////
 D/qiv////
