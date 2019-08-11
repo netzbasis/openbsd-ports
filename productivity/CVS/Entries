@@ -1,4 +1,4 @@
-/Makefile/1.85/Sun Jun 16 07:39:13 2019//
+/Makefile/1.86/Sat Aug 10 21:27:47 2019//
 D/akonadi////
 D/aqbanking////
 D/attica////
@@ -27,6 +27,7 @@ D/libkfbapi////
 D/libkgapi////
 D/librcps////
 D/mcds////
+D/novprog////
 D/osmo////
 D/p5-Business-Tax-VAT-Validation////
 D/projectlibre////

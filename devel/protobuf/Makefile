@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.26 2019/08/09 06:01:21 tb Exp $
+# $OpenBSD: Makefile,v 1.28 2019/08/10 22:23:11 phessler Exp $
 
 COMMENT =		c++ protocol buffers
 
-V =			3.9.0
+V =			3.9.1
 DISTNAME =		protobuf-cpp-$V
 PKGNAME =		protobuf-$V
 REVISION =		0
@@ -36,6 +36,7 @@ CONFIGURE_ARGS +=	--with-zlib
 # e.g. as seen while building dnsdist and mosh.
 # https://marc.info/?l=openbsd-ports&m=156363469501634&w=2
 CFLAGS := ${CFLAGS:S/-O2/-O1/}
+CXXFLAGS := ${CXXFLAGS:S/-O2/-O1/}
 .endif
 
 .include <bsd.port.mk>
