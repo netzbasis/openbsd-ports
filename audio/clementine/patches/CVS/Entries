@@ -1,4 +1,5 @@
 /patch-3rdparty_gmock_gtest_include_gtest_internal_gtest-port_h/1.1/Sat Oct  4 22:34:27 2014//
+/patch-3rdparty_libechonest_CMakeLists_txt/1.1/Sun Aug 11 20:42:44 2019//
 /patch-3rdparty_libprojectm_CMakeLists_txt/1.2/Sat Jun 15 07:12:41 2019//
 /patch-3rdparty_libprojectm_MilkdropPresetFactory_Parser_cpp/1.1/Tue Apr 17 14:06:03 2018//
 /patch-3rdparty_libprojectm_Renderer_VideoEcho_cpp/1.1/Tue Apr 17 14:06:03 2018//
@@ -10,9 +11,11 @@
 /patch-src_config_h_in/1.2/Thu Sep 11 09:02:13 2014//
 /patch-src_core_mergedproxymodel_h/1.1/Sat Oct  4 22:34:27 2014//
 /patch-src_core_utilities_cpp/1.4/Wed Oct  1 20:52:48 2014//
+/patch-src_devices_giolister_cpp/1.1/Sun Aug 11 20:42:44 2019//
 /patch-src_engines_gstenginepipeline_cpp/1.1/Sun Oct  5 00:07:33 2014//
 /patch-src_internet_spotifyblobdownloader_cpp/1.2/Thu Sep 11 09:02:13 2014//
 /patch-src_library_groupbydialog_h/1.1/Wed May 24 08:07:32 2017//
+/patch-src_musicbrainz_chromaprinter_cpp/1.1/Sun Aug 11 20:42:44 2019//
 /patch-tests_CMakeLists_txt/1.1/Tue Jul 10 10:55:07 2018//
 /patch-tests_closure_test_cpp/1.1/Sat Oct  4 22:34:27 2014//
 /patch-tests_concurrentrun_test_cpp/1.1/Sat Oct  4 22:34:27 2014//

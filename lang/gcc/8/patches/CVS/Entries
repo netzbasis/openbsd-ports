@@ -80,7 +80,8 @@
 /patch-libffi_src_closures_c/1.1.1.1/Fri Jan  4 15:50:39 2019//
 /patch-libgcc_Makefile_in/1.1.1.1/Fri Jan  4 15:50:39 2019//
 /patch-libgcc_config_arm_unwind-arm_h/1.1.1.1/Fri Jan  4 15:50:39 2019//
-/patch-libgcc_config_host/1.1.1.1/Fri Jan  4 15:50:39 2019//
+/patch-libgcc_config_host/1.2/Sun Aug 11 20:53:07 2019//
+/patch-libgcc_config_rs6000_t-openbsd/1.1/Sun Aug 11 20:53:07 2019//
 /patch-libgcc_config_t-hardfp/1.1.1.1/Fri Jan  4 15:50:39 2019//
 /patch-libgcc_libgcc2_c/1.1.1.1/Fri Jan  4 15:50:39 2019//
 /patch-libgcc_unwind-dw2_c/1.1/Tue Feb 12 18:37:17 2019//
