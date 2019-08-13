@@ -1,4 +1,4 @@
-/Makefile/1.916/Sat Jul  6 20:38:09 2019//
+/Makefile/1.917/Mon Aug 12 23:58:50 2019//
 D/ajaxterm////
 D/analog////
 D/ap2-mod_dnssd////
@@ -418,6 +418,7 @@ D/py-requests-toolbelt////
 D/py-routes////
 D/py-selenium////
 D/py-sockjs-tornado////
+D/py-soupsieve////
 D/py-tempita////
 D/py-terminado////
 D/py-tornado////

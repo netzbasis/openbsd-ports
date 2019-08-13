@@ -1,4 +1,4 @@
-/Makefile/1.604/Thu Jul 25 05:19:25 2019//
+/Makefile/1.605/Mon Aug 12 15:19:16 2019//
 D/TclXML////
 D/antiword////
 D/apertium////
@@ -335,7 +335,6 @@ D/podofo////
 D/pplatex////
 D/pugixml////
 D/pup////
-D/py-Chart////
 D/py-HappyDoc////
 D/py-ICU////
 D/py-MarkupSafe////
