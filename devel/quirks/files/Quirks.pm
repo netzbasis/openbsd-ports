@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.795 2019/08/13 13:07:11 kmos Exp $
+# $OpenBSD: Quirks.pm,v 1.797 2019/08/14 19:16:09 kmos Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1268,6 +1268,41 @@ my $obsolete_reason = {
 	'py-extremes' => 3,
 	'py-kid' => 3,
 	'py-Chart' => 3,
+	'py-id3' => 3,
+	'py-tagger' => 3,
+	'py-zhCodecs' => 3,
+	'py-iconvcodec' => 3,
+	'py-cjkcodecs' => 3,
+	'py-cdb' => 3,
+	'py-pgsql' => 3,
+	'pgworksheet' => 3,
+	'py-HappyDoc' => 3,
+	'py-Rijndael' => 3,
+	'py-adns' => 3,
+	'py-cherrypy2' => 3,
+	'py-clientform' => 3,
+	'py-crack' => 3,
+	'py-cryptkit' => 3,
+	'py-epydoc' => 3,
+	'py-flowd' => 3,
+	'py-flowtools' => 3,
+	'py-gnuplot' => 3,
+	'py-htmltmpl' => 3,
+	'py-jaxml' => 3,
+	'py-kiwi' => 3,
+	'py-medusa' => 3,
+	'py-monthdelta' => 3,
+	'py-optik' => 3,
+	'py-osd' => 3,
+	'py-probstat' => 3,
+	'py-protocols' => 3,
+	'py-rtf' => 3,
+	'py-ruledispatch' => 3,
+	'py-silc' => 3,
+	'py-tpg' => 3,
+	'py-unit' => 3,
+	'pybugz' => 3,
+	'pymissile' => 3,
 };
 
 # reasons for obsolete packages

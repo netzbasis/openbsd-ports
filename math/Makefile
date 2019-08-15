@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.166 2019/08/13 08:31:17 pirofti Exp $
+# $OpenBSD: Makefile,v 1.168 2019/08/14 18:43:01 kmos Exp $
 
      SUBDIR =
      SUBDIR += R
@@ -59,6 +59,7 @@
      SUBDIR += mlpack
      SUBDIR += mlpack,
      SUBDIR += moo
+     SUBDIR += muparser
      SUBDIR += netcdf
      SUBDIR += nlopt
      SUBDIR += nonogram
@@ -119,7 +120,6 @@
      SUBDIR += py-affine,python3
      SUBDIR += py-bottleneck
      SUBDIR += py-bottleneck,python3
-     SUBDIR += py-gnuplot
      SUBDIR += py-graphviz
      SUBDIR += py-graphviz,python3
      SUBDIR += py-mpmath
@@ -133,7 +133,6 @@
      SUBDIR += py-pandas,python3
      SUBDIR += py-patsy
      SUBDIR += py-patsy,python3
-     SUBDIR += py-probstat
      SUBDIR += py-scikit-learn
      SUBDIR += py-scipy
      SUBDIR += py-scipy,python3

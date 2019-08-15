@@ -1,4 +1,4 @@
-/Makefile/1.166/Tue Aug 13 08:31:17 2019//
+/Makefile/1.168/Wed Aug 14 18:43:01 2019//
 D/R////
 D/aamath////
 D/abs////
@@ -54,6 +54,7 @@ D/mcsim////
 D/minisat////
 D/mlpack////
 D/moo////
+D/muparser////
 D/netcdf////
 D/nlopt////
 D/nonogram////
@@ -112,7 +113,6 @@ D/pspp////
 D/py-Numeric////
 D/py-affine////
 D/py-bottleneck////
-D/py-gnuplot////
 D/py-graphviz////
 D/py-mpmath////
 D/py-networkx////
@@ -120,7 +120,6 @@ D/py-numexpr////
 D/py-numpy////
 D/py-pandas////
 D/py-patsy////
-D/py-probstat////
 D/py-pysmt////
 D/py-scikit-learn////
 D/py-scipy////

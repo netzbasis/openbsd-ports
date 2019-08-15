@@ -1,4 +1,4 @@
-/Makefile/1.1881/Fri Aug  9 13:17:41 2019//
+/Makefile/1.1882/Wed Aug 14 18:39:05 2019//
 D/ElectricFence////
 D/ORBit2////
 D/acpica////
@@ -1362,7 +1362,6 @@ D/py-minimock////
 D/py-mock////
 D/py-modulegraph////
 D/py-monotonic////
-D/py-monthdelta////
 D/py-more-itertools////
 D/py-mox////
 D/py-mulpyplexer////
@@ -1377,7 +1376,6 @@ D/py-nosexcover////
 D/py-notify////
 D/py-objgraph////
 D/py-olefile////
-D/py-optik////
 D/py-parallel////
 D/py-parsedatetime////
 D/py-parsing////
@@ -1397,7 +1395,6 @@ D/py-progress////
 D/py-progressbar////
 D/py-prompt_toolkit////
 D/py-protobuf////
-D/py-protocols////
 D/py-ptyprocess////
 D/py-py////
 D/py-pyinotify////
@@ -1411,7 +1408,6 @@ D/py-rcsparse////
 D/py-robotframework////
 D/py-rope////
 D/py-ruamel.ordereddict////
-D/py-ruledispatch////
 D/py-selectors2////
 D/py-send2trash////
 D/py-serial////
@@ -1422,7 +1418,6 @@ D/py-setuptools_scm////
 D/py-setuptools_scm_git_archive////
 D/py-setuptools_trial////
 D/py-sh////
-D/py-silc////
 D/py-simpleeval////
 D/py-simplegeneric////
 D/py-simplejson////
@@ -1452,7 +1447,6 @@ D/py-testpath////
 D/py-testtools////
 D/py-texscythe////
 D/py-tox////
-D/py-tpg////
 D/py-traitlets////
 D/py-trollius////
 D/py-twisted////
@@ -1462,7 +1456,6 @@ D/py-tz////
 D/py-tzlocal////
 D/py-uncompyle6////
 D/py-unicorn////
-D/py-unit////
 D/py-unittest2////
 D/py-urwid////
 D/py-uv////
@@ -1486,7 +1479,6 @@ D/py-zopecomponent////
 D/py-zopeevent////
 D/py-zopeinterface////
 D/py-zopetesting////
-D/pybugz////
 D/pycdc////
 D/pycharm////
 D/pyflakes////

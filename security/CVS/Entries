@@ -1,4 +1,4 @@
-/Makefile/1.549/Tue Jul 23 19:27:40 2019//
+/Makefile/1.550/Wed Aug 14 18:57:44 2019//
 D/ADMsnmp////
 D/ROPgadget////
 D/acme-client////
@@ -253,15 +253,12 @@ D/pwntools////
 D/pwsafe////
 D/py-M2Crypto////
 D/py-PyNaCl////
-D/py-Rijndael////
 D/py-aes////
 D/py-artifacts////
 D/py-asn1crypto////
 D/py-axolotl////
 D/py-axolotl-curve25519////
 D/py-bcrypt////
-D/py-crack////
-D/py-cryptkit////
 D/py-cryptodome////
 D/py-cryptography////
 D/py-cryptography_vectors////

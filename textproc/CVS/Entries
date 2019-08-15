@@ -1,4 +1,4 @@
-/Makefile/1.605/Mon Aug 12 15:19:16 2019//
+/Makefile/1.606/Wed Aug 14 19:00:33 2019//
 D/TclXML////
 D/antiword////
 D/apertium////
@@ -335,7 +335,6 @@ D/podofo////
 D/pplatex////
 D/pugixml////
 D/pup////
-D/py-HappyDoc////
 D/py-ICU////
 D/py-MarkupSafe////
 D/py-PEG2////
@@ -355,11 +354,9 @@ D/py-elasticsearch////
 D/py-elementtidy////
 D/py-emoji////
 D/py-enchant////
-D/py-epydoc////
 D/py-feedparser////
 D/py-humanize////
 D/py-iso8601////
-D/py-jaxml////
 D/py-jellyfish////
 D/py-lxml////
 D/py-m2r////
@@ -382,7 +379,6 @@ D/py-pygments////
 D/py-pykwalify////
 D/py-rdflib////
 D/py-recommonmark////
-D/py-rtf////
 D/py-ruamel.yaml////
 D/py-semver////
 D/py-snowballstemmer////

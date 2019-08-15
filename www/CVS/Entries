@@ -1,4 +1,4 @@
-/Makefile/1.917/Mon Aug 12 23:58:50 2019//
+/Makefile/1.918/Wed Aug 14 19:04:22 2019//
 D/ajaxterm////
 D/analog////
 D/ap2-mod_dnssd////
@@ -372,8 +372,6 @@ D/py-bleach////
 D/py-bokeh////
 D/py-bottle////
 D/py-cheroot////
-D/py-cherrypy2////
-D/py-clientform////
 D/py-django////
 D/py-feedgenerator////
 D/py-flask////
@@ -385,7 +383,6 @@ D/py-formencode////
 D/py-frozen-flask////
 D/py-genshi////
 D/py-gunicorn////
-D/py-htmltmpl////
 D/py-http_ece////
 D/py-httpbin////
 D/py-httpie////

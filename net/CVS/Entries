@@ -1,4 +1,4 @@
-/Makefile/1.1139/Fri Jul 19 12:22:21 2019//
+/Makefile/1.1140/Wed Aug 14 18:50:22 2019//
 D/GeoIP////
 D/adns////
 D/adsuck////
@@ -506,7 +506,6 @@ D/putty////
 D/py-GeoIP////
 D/py-IOSXR////
 D/py-IP////
-D/py-adns////
 D/py-aiodns////
 D/py-boto////
 D/py-boto3////
@@ -519,8 +518,6 @@ D/py-dnslib////
 D/py-dnspython////
 D/py-dpkt////
 D/py-eapi////
-D/py-flowd////
-D/py-flowtools////
 D/py-ftpdlib////
 D/py-geventhttpclient////
 D/py-idna////
@@ -532,7 +529,6 @@ D/py-irclib////
 D/py-junos-eznc////
 D/py-libcloud////
 D/py-libpcap////
-D/py-medusa////
 D/py-minimalmodbus////
 D/py-msgpack////
 D/py-nbxmpp////

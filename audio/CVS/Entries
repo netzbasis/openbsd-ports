@@ -1,4 +1,4 @@
-/Makefile/1.418/Wed Jul 17 08:08:13 2019//
+/Makefile/1.419/Wed Aug 14 12:43:52 2019//
 D/abcde////
 D/adplay////
 D/adplug////
@@ -190,14 +190,12 @@ D/py-cddb////
 D/py-discid////
 D/py-discogs-client////
 D/py-eyed3////
-D/py-id3////
 D/py-last////
 D/py-mpd////
 D/py-mpd2////
 D/py-musicbrainzngs////
 D/py-mutagen////
 D/py-ogg////
-D/py-tagger////
 D/py-tagpy////
 D/py-vorbis////
 D/pykaraoke////
