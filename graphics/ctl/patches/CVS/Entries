@@ -3,6 +3,7 @@
 /patch-configure_cmake/1.1/Tue Sep 22 18:38:10 2015//
 /patch-ctlrender_tiff_file_cc/1.1/Mon Aug  8 07:35:38 2016//
 /patch-doc_CMakeLists_txt/1.1/Tue Sep 22 18:38:10 2015//
+/patch-lib_IlmCtlSimd_CtlSimdInst_cpp/1.1/Sun Aug 18 20:44:12 2019//
 /patch-lib_IlmCtl_CtlExc_cpp/1.1/Mon Aug  8 07:35:38 2016//
 /patch-lib_IlmCtl_CtlTypeStorage_cpp/1.1/Mon Aug  8 07:35:38 2016//
 /patch-lib_IlmImfCtl_CMakeLists_txt/1.1/Tue Sep 22 18:38:10 2015//
