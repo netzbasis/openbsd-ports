@@ -1,4 +1,4 @@
-/Makefile/1.1882/Wed Aug 14 18:39:05 2019//
+/Makefile/1.1883/Mon Aug 19 21:09:39 2019//
 D/ElectricFence////
 D/ORBit2////
 D/acpica////
@@ -17,7 +17,6 @@ D/arduino////
 D/arduino-makefile////
 D/argp-standalone////
 D/argtable////
-D/arm-elf////
 D/arm-none-eabi////
 D/armips////
 D/asm6////
