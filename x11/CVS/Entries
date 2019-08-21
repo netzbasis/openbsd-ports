@@ -1,4 +1,4 @@
-/Makefile/1.641/Wed Aug 14 19:08:22 2019//
+/Makefile/1.642/Tue Aug 20 08:37:39 2019//
 D/2bwm////
 D/Xaw3d////
 D/XawMu////
@@ -150,6 +150,7 @@ D/lemonbar////
 D/libdbus-c++////
 D/libdbusmenu////
 D/libdnd////
+D/libfakekey////
 D/libfm////
 D/libgdiplus////
 D/libhandy////
