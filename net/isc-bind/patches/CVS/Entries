@@ -1,8 +1,8 @@
-/patch-bin_dig_dig_c/1.10/Fri Mar  1 17:17:08 2019//
-/patch-bin_dig_host_c/1.8/Fri Mar  1 17:17:08 2019//
-/patch-bin_dig_nslookup_c/1.9/Fri Mar  1 17:17:08 2019//
-/patch-bin_named_include_named_globals_h/1.10/Sun Dec  2 13:25:44 2018//
-/patch-lib_isc_Makefile_in/1.3/Thu Jul 12 10:12:30 2018//
-/patch-lib_isc_unix_net_c/1.7/Fri Mar  1 17:17:08 2019//
-/patch-lib_isc_unix_socket_c/1.13/Fri May 17 12:52:46 2019//
+/patch-bin_dig_dig_c/1.11/Thu Aug 22 16:16:46 2019//
+/patch-bin_dig_host_c/1.9/Thu Aug 22 16:16:46 2019//
+/patch-bin_dig_nslookup_c/1.10/Thu Aug 22 16:16:46 2019//
+/patch-bin_named_include_named_globals_h/1.11/Thu Aug 22 16:16:46 2019//
+/patch-lib_isc_Makefile_in/1.4/Thu Aug 22 16:16:46 2019//
+/patch-lib_isc_unix_net_c/1.8/Thu Aug 22 16:16:46 2019//
+/patch-lib_isc_unix_socket_c/1.14/Thu Aug 22 16:16:46 2019//
 D
