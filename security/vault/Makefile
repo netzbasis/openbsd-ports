@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.27 2019/07/12 20:49:37 sthen Exp $
+# $OpenBSD: Makefile,v 1.29 2019/08/23 10:04:19 ajacoutot Exp $
 
 COMMENT=		secure secret storage
 
-GH_TAGNAME=		v1.1.2
+GH_TAGNAME=		v1.2.2
 GH_ACCOUNT=		hashicorp
 GH_PROJECT=		vault
-REVISION=		0
 
 ### Vault UI
 MODGO_FLAGS +=		-tags=ui
-MASTER_SITES0=		https://github.com/swills/vaultui/raw/${GH_TAGNAME}/http/
+#MASTER_SITES0=		https://github.com/swills/vaultui/raw/${GH_TAGNAME}/http/
+MASTER_SITES0=		https://github.com/swills/vaultui/raw/v1.1.2/http/
 EXTRACT_ONLY=		${DISTNAME}${EXTRACT_SUFX}
 DISTFILES=		${DISTNAME}${EXTRACT_SUFX} \
 			bindata_assetfs.go:0
