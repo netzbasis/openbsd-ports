@@ -52,7 +52,7 @@
 /epatch-electron_spec_api-shell-spec_js/1.1/Thu Aug 22 19:20:04 2019//
 /epatch-electron_spec_chromium-spec_js/1.1/Thu Aug 22 19:20:04 2019//
 /epatch-electron_spec_version-bump-spec_js/1.1/Thu Aug 22 19:20:04 2019//
-/epatch-third_party_electron_node_BUILD_gn/1.1/Thu Aug 22 19:20:04 2019//
+/epatch-third_party_electron_node_BUILD_gn/1.2/Sat Aug 24 11:36:32 2019//
 /epatch-third_party_electron_node_deps_cares_config_linux_ares_config_h/1.1/Thu Aug 22 19:20:04 2019//
 /epatch-third_party_electron_node_deps_uv_BUILD_gn/1.1/Thu Aug 22 19:20:04 2019//
 /patch-BUILD_gn/1.26/Thu Aug  1 08:31:59 2019//
@@ -61,7 +61,7 @@
 /patch-base_BUILD_gn/1.30/Thu Aug  1 08:31:59 2019//
 /patch-base_allocator_allocator_shim_cc/1.9/Thu Aug  1 08:31:59 2019//
 /patch-base_atomicops_h/1.16/Thu Aug  1 08:31:59 2019//
-/patch-base_base_paths_posix_cc/1.4/Thu Aug 22 19:20:04 2019//
+/patch-base_base_paths_posix_cc/1.5/Sat Aug 24 11:22:17 2019//
 /patch-base_debug_debugger_posix_cc/1.24/Mon May 13 18:21:30 2019//
 /patch-base_debug_elf_reader_cc/1.2/Fri May 10 21:55:39 2019//
 /patch-base_debug_proc_maps_linux_cc/1.5/Fri Apr 28 14:21:00 2017//

@@ -1,14 +1,12 @@
-/patch-Makefile_in/1.20/Sun Apr  8 21:02:45 2018//
+/patch-Makefile_in/1.21/Sat Aug 24 06:37:13 2019//
 /patch-libnetutil_Makefile_in/1.1/Mon Jul 16 07:39:31 2012//
-/patch-libnetutil_netutil_cc/1.10/Thu Dec 22 21:58:40 2016//
-/patch-libpcap_pcap-bpf_c/1.2/Thu Jan  7 13:23:47 2016//
+/patch-libnetutil_netutil_cc/1.11/Sat Aug 24 06:37:13 2019//
 /patch-ndiff_setup_py/1.3/Thu Jan  7 13:23:47 2016//
 /patch-nping_EchoServer_cc/1.5/Tue Feb  5 21:12:07 2019//
 /patch-nping_configure_ac/1.2/Sun Apr  8 21:02:45 2018//
-/patch-scan-engine_cc/1.11/Wed Sep 27 09:50:00 2017//
-/patch-service_scan_cc/1.4/Sun Apr  8 21:02:45 2018//
+/patch-scan-engine_cc/1.12/Sat Aug 24 06:37:13 2019//
 /patch-timing_cc/1.9/Wed Sep 27 09:50:00 2017//
 /patch-zenmap_install_scripts_unix_zenmap-root_desktop/1.3/Thu Dec 22 21:58:40 2016//
 /patch-zenmap_install_scripts_unix_zenmap_desktop/1.3/Thu Dec 22 21:58:40 2016//
-/patch-zenmap_setup_py/1.15/Wed Sep 27 09:50:00 2017//
+/patch-zenmap_setup_py/1.16/Sat Aug 24 06:37:13 2019//
 D

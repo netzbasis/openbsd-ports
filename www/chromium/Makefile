@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.455 2019/08/22 19:20:03 robert Exp $
+# $OpenBSD: Makefile,v 1.458 2019/08/24 15:39:26 robert Exp $
 
 .include <bsd.port.arch.mk>
 
@@ -125,14 +125,15 @@ FULLPKGPATH=		www/chromium,electron
 ALL_TARGET=		electron
 DIST_TARGET=		dist.zip chromedriver.zip mksnapshot.zip
 DIST_TARGET_DIR=	electron
-PLIST=			pkg/PLIST-electron
-DESCR=			pkg/DESCR-electron
+PLIST=			${PKGDIR}/PLIST-electron
+DESCR=			${PKGDIR}/DESCR-electron
 PATCH_LIST=		patch-* epatch-*
 
+BUILD_DEPENDS+=		devel/libnotify
 LIB_DEPENDS+=		www/nghttp2
 WANTLIB+=		nghttp2
 .else
-REVISION=		0
+REVISION=		1
 EXTRACT_ONLY=		${DISTFILES:C/electron.*//}
 ALL_TARGET=		chrome chromedriver
 TEST_TARGET=		base_unittests
