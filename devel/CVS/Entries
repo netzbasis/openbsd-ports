@@ -1,4 +1,4 @@
-/Makefile/1.1885/Sat Aug 24 20:40:05 2019//
+/Makefile/1.1887/Sun Aug 25 23:10:03 2019//
 D/ElectricFence////
 D/ORBit2////
 D/acpica////
@@ -680,6 +680,7 @@ D/p5-Eval-Closure////
 D/p5-Event////
 D/p5-Event-ExecFlow////
 D/p5-Exception-Class////
+D/p5-Exception-Class-TryCatch////
 D/p5-Expect////
 D/p5-Expect-Simple////
 D/p5-Exporter-Lite////
@@ -932,6 +933,7 @@ D/p5-Params-Classify////
 D/p5-Params-Coerce////
 D/p5-Params-Util////
 D/p5-Params-Validate////
+D/p5-Params-ValidationCompiler////
 D/p5-Paranoid////
 D/p5-Parse-Method-Signatures////
 D/p5-Parse-PlainConfig////
@@ -990,6 +992,7 @@ D/p5-Signal-Mask////
 D/p5-Smart-Comments////
 D/p5-Sort-Key////
 D/p5-Sort-Naturally////
+D/p5-Specio////
 D/p5-Spiffy////
 D/p5-Stream-Buffered////
 D/p5-String-CRC32////
@@ -1123,6 +1126,7 @@ D/p5-Test-XML////
 D/p5-Test-YAML////
 D/p5-Test-YAML-Valid////
 D/p5-Test-utf8////
+D/p5-Test2-Plugin-NoWarnings////
 D/p5-Test2-Suite////
 D/p5-Text-FixEOL////
 D/p5-Text-vFile-asData////

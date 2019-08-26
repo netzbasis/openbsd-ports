@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1885 2019/08/24 20:40:05 remi Exp $
+# $OpenBSD: Makefile,v 1.1887 2019/08/25 23:10:03 afresh1 Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -718,6 +718,7 @@
      SUBDIR += p5-Event
      SUBDIR += p5-Event-ExecFlow
      SUBDIR += p5-Exception-Class
+     SUBDIR += p5-Exception-Class-TryCatch
      SUBDIR += p5-Expect
      SUBDIR += p5-Expect-Simple
      SUBDIR += p5-Exporter-Lite
@@ -970,6 +971,7 @@
      SUBDIR += p5-Params-Coerce
      SUBDIR += p5-Params-Util
      SUBDIR += p5-Params-Validate
+     SUBDIR += p5-Params-ValidationCompiler
      SUBDIR += p5-Paranoid
      SUBDIR += p5-Parse-Method-Signatures
      SUBDIR += p5-Parse-PlainConfig
@@ -1009,6 +1011,7 @@
      SUBDIR += p5-Role-Basic
      SUBDIR += p5-Role-Tiny
      SUBDIR += p5-SDL
+     SUBDIR += p5-Specio
      SUBDIR += p5-SUPER
      SUBDIR += p5-SVN-Notify
      SUBDIR += p5-SVN-Simple
@@ -1161,6 +1164,7 @@
      SUBDIR += p5-Test-YAML
      SUBDIR += p5-Test-YAML-Valid
      SUBDIR += p5-Test-utf8
+     SUBDIR += p5-Test2-Plugin-NoWarnings
      SUBDIR += p5-Test2-Suite
      SUBDIR += p5-Text-FixEOL
      SUBDIR += p5-Text-vFile-asData
