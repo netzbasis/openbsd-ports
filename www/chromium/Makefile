@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.458 2019/08/24 15:39:26 robert Exp $
+# $OpenBSD: Makefile,v 1.460 2019/08/27 19:59:38 robert Exp $
 
 .include <bsd.port.arch.mk>
 
@@ -12,7 +12,7 @@ DPB_PROPERTIES=		lonesome
 
 COMMENT=		Chromium browser
 
-V=			76.0.3809.100
+V=			76.0.3809.132
 ELECTRON_V=		6.0.3
 
 DISTNAME=		chromium-${V}
@@ -114,9 +114,10 @@ BUILDTYPE=	Debug
 BUILDTYPE=	Release
 .endif
 
-SUBST_VARS+=	WRKSRC WRKDIR
+SUBST_VARS+=	WRKSRC WRKDIR ELECTRON_ARCH
 
 .if ${FLAVOR:Melectron}
+REVISION=		0
 ELECTRON_V=		6.0.3
 DISTNAME=		electron-${ELECTRON_V}
 WRKDIST=		${WRKDIR}/chromium-${V}
@@ -133,7 +134,6 @@ BUILD_DEPENDS+=		devel/libnotify
 LIB_DEPENDS+=		www/nghttp2
 WANTLIB+=		nghttp2
 .else
-REVISION=		1
 EXTRACT_ONLY=		${DISTFILES:C/electron.*//}
 ALL_TARGET=		chrome chromedriver
 TEST_TARGET=		base_unittests
@@ -168,12 +168,15 @@ GN_ARGS=	enable_nacl=false \
 		extra_cppflags=\"-idirafter ${LOCALBASE}/include -idirafter ${X11BASE}/include\"
 
 .if ${MACHINE_ARCH} == "i386"
+ELECTRON_ARCH=	ia32
 GN_ARGS+=	extra_ldflags=\"-L${LOCALBASE}/lib -L${X11BASE}/lib -Wl,--no-keep-memory\"
 .else
+ELECTRON_ARCH=	x64
 GN_ARGS+=	extra_ldflags=\"-L${LOCALBASE}/lib -L${X11BASE}/lib\"
 .endif
 
 .if ${MACHINE_ARCH} == "aarch64"
+ELECTRON_ARCH=	arm64
 PKG_ARGS+=	-Dswiftshader=0
 .else
 PKG_ARGS+=	-Dswiftshader=1
