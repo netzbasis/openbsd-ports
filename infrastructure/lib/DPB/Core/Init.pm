@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Init.pm,v 1.37 2019/05/08 12:59:33 espie Exp $
+# $OpenBSD: Init.pm,v 1.39 2019/09/02 13:22:34 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -153,7 +153,7 @@ sub alive_hosts
 		if ($c->is_alive) {
 			push(@l, $host.$c->shell->stringize_master_pid);
 		} else {
-			push(@l, $host.'-');
+			push(@l, $c->prop->{socket}.'-');
 		}
 	}
 	return "Hosts: ".join(' ', sort(@l))."\n";
@@ -224,6 +224,12 @@ sub init_cores
 		$state->fatal("configuration error: no job runner");
 	}
 	for my $core (values %$init) {
+		if (defined $core->prop->{socket}) {
+			my $fh = $logger->open('>>',
+			    $logger->logfile("init.".$core->hostname));
+			print {$fh} "Socket name: ", 
+			    $core->prop->{socket}, "\n";
+		}
 		my $job = DPB::Job::Init->new($logger);
 		my $t = DPB::Task::WhoAmI->new;
 		# XXX can't get these before I know who I am
