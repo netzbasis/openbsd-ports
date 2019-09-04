@@ -1,17 +1,15 @@
-/Makefile/1.5/Tue Mar  7 15:36:46 2017//
-/Makefile.inc/1.78/Fri Jul 12 20:50:46 2019//
-/distinfo/1.73/Tue Jul  9 18:05:15 2019//
+/Makefile/1.6/Tue Sep  3 16:31:12 2019//
+/Makefile.inc/1.79/Tue Sep  3 16:31:12 2019//
+/distinfo/1.74/Tue Sep  3 16:31:12 2019//
 D/ach////
 D/af////
 D/ak////
 D/an////
 D/ar////
-D/as////
 D/ast////
 D/az////
 D/bg////
-D/bn-BD////
-D/bn-IN////
+D/bn////
 D/br////
 D/bs////
 D/ca////
@@ -24,7 +22,6 @@ D/dsb////
 D/el////
 D/en-GB////
 D/en-US////
-D/en-ZA////
 D/eo////
 D/es-AR////
 D/es-CL////
@@ -40,7 +37,6 @@ D/fy-NL////
 D/ga-IE////
 D/gd////
 D/gl////
-D/gn////
 D/gu-IN////
 D/he////
 D/hi-IN////
@@ -59,16 +55,13 @@ D/ko////
 D/lij////
 D/lt////
 D/lv////
-D/mai////
 D/mk////
-D/ml////
 D/mr////
 D/ms////
 D/nb-NO////
 D/nl////
 D/nn-NO////
 D/nso////
-D/or////
 D/pa-IN////
 D/pkg////
 D/pl////
@@ -89,7 +82,6 @@ D/te////
 D/th////
 D/tr////
 D/uk////
-D/uz////
 D/vi////
 D/xh////
 D/zh-CN////
