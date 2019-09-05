@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.120 2019/08/31 13:55:44 sthen Exp $
+# $OpenBSD: Makefile,v 1.122 2019/09/04 20:25:48 sthen Exp $
 
 COMMENT =	improved dynamic tiling window manager
 
 DISTNAME =	i3-4.17.1
+REVISION =	1
 
 CATEGORIES =	x11
 
