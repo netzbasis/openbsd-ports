@@ -1,4 +1,4 @@
-$OpenBSD: patch-os_h,v 1.1 2019/08/15 21:01:49 naddy Exp $
+$OpenBSD: patch-os_h,v 1.1.1.1 2019/09/05 11:49:08 sthen Exp $
 
 Index: os.h
 --- os.h.orig

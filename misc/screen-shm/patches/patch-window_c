@@ -1,10 +1,29 @@
-$OpenBSD: shmpatch-window_c,v 1.1 2003/11/22 00:56:58 espie Exp $
---- window.c.orig	2003-09-08 16:27:21.000000000 +0200
-+++ window.c	2003-11-17 23:37:54.000000000 +0100
-@@ -1993,6 +1993,59 @@ char *data;
-     }
+$OpenBSD: patch-window_c,v 1.1.1.1 2019/09/05 11:49:08 sthen Exp $
+
+Index: window.c
+--- window.c.orig
++++ window.c
+@@ -1387,6 +1387,7 @@ char **args, *ttyn;
+   return pid;
  }
  
++#if 0
+ void
+ execvpe(prog, args, env)
+ char *prog, **args, **env;
+@@ -1432,6 +1433,7 @@ char *prog, **args, **env;
+   if (eaccess)
+     errno = EACCES;
+ }
++#endif
+ 
+ #ifdef PSEUDOS
+ 
+@@ -1992,6 +1994,59 @@ char *data;
+       Msg(0, "Window %d: silence for %d seconds", p->w_number, p->w_silencewait);
+     }
+ }
++
 +
 +#ifdef IPC_EXPORT_IMAGE
 +
@@ -57,7 +76,6 @@ $OpenBSD: shmpatch-window_c,v 1.1 2003/11/22 00:56:58 espie Exp $
 +
 +#endif	/* IPC_EXPORT_IMAGE */
 + 
-+
+ 
  #ifdef ZMODEM
  
- static int

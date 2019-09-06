@@ -1,6 +1,8 @@
-$OpenBSD: shmpatch-Makefile_in,v 1.1 2003/11/22 00:56:58 espie Exp $
---- Makefile.in.orig	2003-09-18 18:13:02.000000000 +0200
-+++ Makefile.in	2003-11-17 23:37:54.000000000 +0100
+$OpenBSD: patch-Makefile_in,v 1.1.1.1 2019/09/05 11:49:08 sthen Exp $
+
+Index: Makefile.in
+--- Makefile.in.orig
++++ Makefile.in
 @@ -46,7 +46,12 @@ AWK = @AWK@
  # -DDUMPSHADOW
  #	With shadow-pw screen would never dump core. Use this option if

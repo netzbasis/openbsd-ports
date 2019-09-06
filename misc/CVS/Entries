@@ -1,4 +1,4 @@
-/Makefile/1.190/Wed Aug 14 18:43:48 2019//
+/Makefile/1.191/Thu Sep  5 11:50:47 2019//
 D/WordGenerator////
 D/astrolog////
 D/bible-kjv////
@@ -89,6 +89,7 @@ D/rlwrap////
 D/rocrail////
 D/rpm////
 D/screen////
+D/screen-shm////
 D/sent////
 D/shared-desktop-ontologies////
 D/shared-mime-info////
