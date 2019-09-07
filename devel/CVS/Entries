@@ -1,4 +1,4 @@
-/Makefile/1.1889/Wed Sep  4 09:37:49 2019//
+/Makefile/1.1890/Fri Sep  6 17:06:47 2019//
 D/ElectricFence////
 D/ORBit2////
 D/acpica////
@@ -1575,6 +1575,7 @@ D/ruby-rubyinline////
 D/ruby-safe_yaml////
 D/ruby-semantic_puppet////
 D/ruby-sexp_processor////
+D/ruby-shims////
 D/ruby-subset_sum////
 D/ruby-systemu////
 D/ruby-therubyracer////

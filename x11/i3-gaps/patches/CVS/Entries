@@ -3,7 +3,8 @@
 /patch-etc_config/1.2/Sun Aug 18 17:45:48 2019//
 /patch-etc_config_keycodes/1.2/Sun Aug 18 17:45:48 2019//
 /patch-i3-dmenu-desktop/1.1.1.1/Thu Mar  7 19:34:32 2019//
-/patch-i3-nagbar_main_c/1.1.1.1/Thu Mar  7 19:34:32 2019//
+/patch-i3-msg_main_c/1.1/Fri Sep  6 18:54:56 2019//
+/patch-i3-nagbar_main_c/1.2/Fri Sep  6 18:54:56 2019//
 /patch-libi3_get_exe_path_c/1.1.1.1/Thu Mar  7 19:34:32 2019//
 /patch-man_i3-config-wizard_man/1.1.1.1/Thu Mar  7 19:34:32 2019//
 /patch-man_i3-dump-log_man/1.1.1.1/Thu Mar  7 19:34:32 2019//
@@ -11,4 +12,5 @@
 /patch-man_i3_man/1.1.1.1/Thu Mar  7 19:34:32 2019//
 /patch-src_bindings_c/1.1.1.1/Thu Mar  7 19:34:32 2019//
 /patch-src_config_parser_c/1.1.1.1/Thu Mar  7 19:34:32 2019//
+/patch-src_main_c/1.1/Fri Sep  6 18:54:56 2019//
 D
