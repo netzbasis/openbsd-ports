@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.53 2019/08/17 12:58:04 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.55 2019/09/07 17:48:15 ajacoutot Exp $
 
 COMMENT=		network analysis and security monitoring framework
 
-DISTNAME=		bro-2.6.3
-PKGNAME=		zeek-2.6.3
+V=			2.6.4
+DISTNAME=		bro-${V}
+PKGNAME=		zeek-${V}
 REVISION=		0
 
 SHARED_LIBS +=  broccoli                  6.0 # 5.1

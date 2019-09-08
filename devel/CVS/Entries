@@ -1,4 +1,4 @@
-/Makefile/1.1890/Fri Sep  6 17:06:47 2019//
+/Makefile/1.1891/Sat Sep  7 15:52:14 2019//
 D/ElectricFence////
 D/ORBit2////
 D/acpica////
@@ -357,6 +357,7 @@ D/libplist////
 D/libproplist////
 D/libregexp9////
 D/libsigc++-2////
+D/libsigc++30////
 D/libsigsegv////
 D/libslang////
 D/libsoup////
