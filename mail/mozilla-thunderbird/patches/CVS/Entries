@@ -1,5 +1,6 @@
 /patch-mozilla_js_src_ctypes_libffi_src_dlmalloc_c/1.4/Wed Oct  3 06:43:10 2018//
-/patch-mozilla_js_src_jit_ProcessExecutableMemory_h/1.4/Wed Oct  3 06:43:10 2018//
-/patch-mozilla_security_manager_pki_resources_content_exceptionDialog_js/1.8/Wed Oct  3 06:43:10 2018//
-/patch-mozilla_storage_mozStorageConnection_cpp/1.4/Tue Jan 29 20:56:22 2019//
+/patch-mozilla_js_src_jit_ProcessExecutableMemory_h/1.5/Fri Sep 13 15:05:17 2019//
+/patch-mozilla_security_manager_pki_resources_content_exceptionDialog_js/1.9/Fri Sep 13 15:05:17 2019//
+/patch-mozilla_storage_mozStorageConnection_cpp/1.5/Fri Sep 13 15:05:17 2019//
+/patch-storage_mozStorageService_cpp/1.1/Fri Sep 13 15:05:17 2019//
 D
