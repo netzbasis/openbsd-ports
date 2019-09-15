@@ -1,4 +1,4 @@
-/Makefile/1.1141/Tue Aug 20 08:51:21 2019//
+/Makefile/1.1142/Sat Sep 14 23:42:13 2019//
 D/GeoIP////
 D/adns////
 D/adsuck////
@@ -72,6 +72,7 @@ D/dnsreflector////
 D/dnstop////
 D/dnstracer////
 D/doc////
+D/doh////
 D/dsocks////
 D/dxpc////
 D/echoping////
