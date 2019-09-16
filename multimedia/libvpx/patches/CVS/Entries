@@ -1,7 +1,7 @@
-/patch-build_make_Makefile/1.13/Thu Feb 14 09:44:26 2019//
-/patch-configure/1.18/Thu Feb 14 09:44:26 2019//
-/patch-examples_mk/1.8/Thu Feb 14 09:44:26 2019//
-/patch-libs_mk/1.17/Thu Feb 14 09:44:26 2019//
-/patch-vpx_ports_arm_cpudetect_c/1.1/Wed Oct 17 08:22:29 2018//
+/patch-build_make_Makefile/1.14/Sun Sep 15 16:03:31 2019//
+/patch-configure/1.19/Sun Sep 15 16:03:31 2019//
+/patch-examples_mk/1.9/Sun Sep 15 16:03:31 2019//
+/patch-libs_mk/1.18/Sun Sep 15 16:03:31 2019//
+/patch-vpx_ports_arm_cpudetect_c/1.2/Sun Sep 15 16:03:31 2019//
 /patch-vpx_ports_ppc_cpudetect_c/1.1/Wed Oct 17 08:22:29 2018//
 D
