@@ -1,4 +1,4 @@
-/Makefile/1.923/Fri Sep 13 09:54:46 2019//
+/Makefile/1.924/Wed Sep 18 16:34:51 2019//
 D/ajaxterm////
 D/analog////
 D/ap2-mod_dnssd////
@@ -32,6 +32,7 @@ D/dillo////
 D/dokuwiki////
 D/drupal7////
 D/drush////
+D/e2guardian////
 D/edbrowse////
 D/epiphany////
 D/erl-mochiweb////
