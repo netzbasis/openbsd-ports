@@ -4,7 +4,7 @@
 /patch-boost_config_compiler_gcc_hpp/1.2/Tue Dec 26 19:18:49 2017//
 /patch-boost_config_platform_bsd_hpp/1.1/Tue Dec 26 19:18:49 2017//
 /patch-boost_context_fixedsize_stack_hpp/1.1/Thu Dec 13 19:52:46 2018//
-/patch-boost_context_pooled_fixedsize_stack_hpp/1.1/Thu Dec 13 19:52:46 2018//
+/patch-boost_context_pooled_fixedsize_stack_hpp/1.2/Thu Sep 19 07:38:14 2019//
 /patch-boost_context_posix_protected_fixedsize_stack_hpp/1.1/Thu Dec 13 19:52:46 2018//
 /patch-boost_coroutine_standard_stack_allocator_hpp/1.1/Thu Jul 18 20:27:25 2019//
 /patch-boost_functional_hash_detail_limits_hpp/1.2/Wed Jul  1 08:41:59 2015//
@@ -12,9 +12,13 @@
 /patch-boost_predef_other_endian_h/1.1/Wed Jul  1 08:41:59 2015//
 /patch-boost_test_impl_execution_monitor_ipp/1.3/Tue Dec 26 19:18:49 2017//
 /patch-boost_type_traits_is_convertible_hpp/1.1/Tue May 30 18:00:53 2017//
+/patch-libs_context_build_Jamfile_v2/1.1/Thu Sep 19 07:38:14 2019//
 /patch-libs_context_src_asm_jump_i386_sysv_elf_gas_S/1.1/Thu Dec 13 19:52:46 2018//
+/patch-libs_context_src_asm_jump_ppc32_sysv_elf_gas_S/1.1/Thu Sep 19 07:38:14 2019//
 /patch-libs_context_src_asm_make_i386_sysv_elf_gas_S/1.1/Thu Dec 13 19:52:46 2018//
+/patch-libs_context_src_asm_make_ppc32_sysv_elf_gas_S/1.1/Thu Sep 19 07:38:14 2019//
 /patch-libs_context_src_asm_ontop_i386_sysv_elf_gas_S/1.1/Thu Dec 13 19:52:46 2018//
+/patch-libs_context_src_asm_ontop_ppc32_sysv_elf_gas_S/1.1/Thu Sep 19 07:38:14 2019//
 /patch-libs_filesystem_src_operations_cpp/1.3/Wed Jul  1 08:41:59 2015//
 /patch-libs_locale_build_Jamfile_v2/1.1/Thu Aug 23 16:38:10 2018//
 /patch-tools_build_src_engine_Jambase/1.1/Thu Jan  3 07:29:58 2019//
