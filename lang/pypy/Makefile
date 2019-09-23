@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.33 2019/07/12 20:47:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.35 2019/09/22 20:15:51 kn Exp $
 
 ONLY_FOR_ARCHS =	amd64
 
@@ -11,16 +11,18 @@ COMMENT =		fast implementation of the Python language
 #   * make plist (fix anything along the way)
 #   * make package
 #   * Set BOOTSTRAP_V back to ${V} in the port Makefile
-#   * make bootstrap && make makesum
-#   * Try the build using the bootstrap
+#   * make bootstrap && make makesum (which will put a new PyPy bootstrap
+#     into ${FULLDISTDIR} such that subsequent builds will use it)
+#   * make clean && make clean=packages
+#   * make package (using the new bootstrap build)
 #
 # If the old bootstrap no longer works (e.g. due to an ABI change), then
 # You can use the no_bootstrap FLAVOR to make a new bootstrap. This uses
 # CPython to build PyPy instead. Note this is slower.
 
-V =			6.0.0
+V =			7.1.1
 BOOTSTRAP_V =		${V}
-DISTNAME =		pypy2-v${V}-src
+DISTNAME =		pypy2.7-v${V}-src
 PKGNAME =		pypy-${V}
 BOOTSTRAP-amd64 =	pypy-bootstrap-amd64-${BOOTSTRAP_V}.tar.xz
 
@@ -119,22 +121,21 @@ do-install:
 	cp -rp ${WRKSRC}/lib-python/2.7/* ${PREFIX}/pypy/lib-python/2.7
 	${PYPY_LD_LIBRARY_PATH} ${PREFIX}/pypy/bin/pypy \
 		-m compileall ${PREFIX}/pypy/lib_pypy
-	${PYPY_LD_LIBRARY_PATH} sh -c \
-		'find ${PREFIX}/pypy/lib-python/2.7 -name "*.py" | grep -v test \
-		  | xargs ${PREFIX}/pypy/bin/pypy -m compileall'
+	${PYPY_LD_LIBRARY_PATH} ${PREFIX}/pypy/bin/pypy \
+		-m compileall -x test ${PREFIX}/pypy/lib-python/2.7
 	# make cffi shared objects
 	cd ${WRKSRC} && ${PYPY_LD_LIBRARY_PATH} \
 		LDFLAGS=-L${LOCALBASE}/lib \
 		CPPFLAGS=-I${LOCALBASE}/include \
 		PYTHONPATH=`pwd` \
 		${PREFIX}/pypy/bin/pypy pypy/tool/build_cffi_imports.py
-	find ${PREFIX}/pypy/lib_pypy/ -name '*.c' -or -name '*.o' | xargs rm
+	find ${PREFIX}/pypy/lib_pypy/ -name '*.[co]' -delete
 	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/pypy/lib_pypy
 	chown -R ${SHAREOWN}:${SHAREGRP}  ${PREFIX}/pypy/lib-python/2.7
 	cd ${PREFIX}/bin && ln -s ../pypy/bin/pypy
 	cd ${PREFIX}/lib && ln -s ../pypy/lib/libpypy-c.so
 	# remove patch orig files so they dont appear in the plist
-	find ${PREFIX} -name '*.py.orig' | xargs rm
+	find ${PREFIX} -name '*.py.orig' -delete
 
 PYPY_PKG = ${PACKAGE_REPOSITORY}/${MACHINE_ARCH}/all/${FULLPKGNAME}.tgz
 

@@ -1,4 +1,4 @@
-#	$OpenBSD: Makefile,v 1.56 2019/09/05 16:23:49 jsing Exp $
+#	$OpenBSD: Makefile,v 1.58 2019/09/22 09:39:28 kn Exp $
 
 BROKEN-sparc64=	Error: the specified option is not accepted in ISB at operand 1 -- isb sy
 
@@ -7,12 +7,12 @@ FLAVOR?=	arm
 
 COMMENT=	U-Boot firmware
 VERSION=	2019.07
-REVISION=	1
+REVISION=	2
 DISTNAME=	u-boot-${VERSION}
 PKGNAME=	u-boot-${FLAVOR}-${VERSION:S/-//}
 FULLPKGNAME=	${PKGNAME}
 CATEGORIES=	sysutils
-HOMEPAGE=	http://www.denx.de/wiki/U-Boot
+HOMEPAGE=	https://www.denx.de/wiki/U-Boot
 MAINTAINER=	Jonathan Gray <jsg@openbsd.org>
 
 # GPLv2
@@ -143,11 +143,6 @@ FILES=\
 	u-boot.itb \
 	idbloader.img \
 	spl/sunxi-spl.bin \
-
-pre-build:
-.for f in ${MODPY_ADJ_FILES}
-	${MODPY_BIN_ADJ} ${WRKSRC}/${f}
-.endfor
 
 do-build:
 .for BOARD in ${BOARDS}
