@@ -1,4 +1,4 @@
-/Makefile/1.1892/Mon Sep 23 20:45:00 2019//
+/Makefile/1.1894/Thu Sep 26 21:52:48 2019//
 D/ElectricFence////
 D/ORBit2////
 D/acpica////
@@ -1259,6 +1259,7 @@ D/py-bencode////
 D/py-binaryornot////
 D/py-binplist////
 D/py-biplist////
+D/py-bitcoinlib////
 D/py-bitstring////
 D/py-blessings////
 D/py-blinker////
@@ -1589,6 +1590,7 @@ D/ruby-uuid////
 D/ruby-uuidtools////
 D/ruby-xdg////
 D/ruby-yajl////
+D/ruby-zeitwerk////
 D/ruby-zentest////
 D/samurai////
 D/scons////

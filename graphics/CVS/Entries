@@ -1,4 +1,4 @@
-/Makefile/1.485/Sat Aug 10 03:56:39 2019//
+/Makefile/1.486/Thu Sep 26 09:46:10 2019//
 D/DevIL////
 D/GraphicsMagick////
 D/ImageMagick////
@@ -170,6 +170,7 @@ D/mypaint-brushes////
 D/netpbm////
 D/nomacs////
 D/ocaml-cairo////
+D/ocaml-graphics////
 D/ocrad////
 D/openbsd-backgrounds////
 D/opencolorio////
