@@ -1,4 +1,4 @@
-/Makefile/1.63/Thu Sep 19 13:59:39 2019//
+/Makefile/1.64/Sat Sep 28 23:08:34 2019//
 D/abyssinica////
 D/adobe-fonts////
 D/alkalami////
@@ -61,6 +61,7 @@ D/mplus-fonts////
 D/msctfonts////
 D/msttcorefonts////
 D/noto////
+D/opendyslexic////
 D/overpass////
 D/pkfonts////
 D/powerline-fonts////
