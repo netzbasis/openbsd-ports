@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.15 2019/09/18 17:49:36 chrisz Exp $
+# $OpenBSD: Makefile,v 1.17 2019/10/03 05:28:31 chrisz Exp $
 
 COMMENT =		OCaml source-based package manager
 
 CATEGORIES =		sysutils devel
 
 V =			2.0.5
-REVISION =		0
+REVISION =		1
 PKGNAME =		opam-${V}
 DISTNAME =		opam-full-${V}
 
@@ -20,9 +20,10 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB =		${COMPILER_LIBCXX} c m
 
-#MODULES =		lang/ocaml
-
-BUILD_DEPENDS =		lang/ocaml
+BUILD_DEPENDS =		lang/ocaml \
+			sysutils/findlib \
+			devel/dune \
+			devel/ocaml-cppo
 
 RUN_DEPENDS =		archivers/unzip \
 			archivers/bzip2 \
@@ -34,8 +35,7 @@ RUN_DEPENDS =		archivers/unzip \
 USE_GMAKE =		Yes
 
 CONFIGURE_ENV +=	CFLAGS="${CFLAGS}" \
-			LDFLAGS="${LDFLAGS}" \
-			CC=cc
+			LDFLAGS="${LDFLAGS}"
 CONFIGURE_STYLE =	gnu
 
 ALL_TARGET =		lib-ext all man #doc requires odoc
