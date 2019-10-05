@@ -1,4 +1,4 @@
-/Makefile/1.530/Wed Sep 11 21:05:19 2019//
+/Makefile/1.531/Fri Oct  4 10:31:13 2019//
 D/accountsservice////
 D/amazon-ecs-cli////
 D/amazon-ssm-agent////
@@ -364,6 +364,7 @@ D/wmwlmon////
 D/xbatt////
 D/xbattbar////
 D/xbattmon////
+D/xe////
 D/xjobs////
 D/xps////
 D/xstatbar////
