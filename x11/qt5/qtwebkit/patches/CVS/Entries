@@ -8,6 +8,9 @@
 /patch-Source_WTF_wtf_RandomNumberSeed_h/1.1.1.1/Sun Dec 25 14:13:13 2016//
 /patch-Source_WTF_wtf_TypeTraits_h/1.1/Sun Dec  9 21:01:03 2018//
 /patch-Source_WebCore_Target_pri/1.1.1.1/Sun Dec 25 14:13:13 2016//
+/patch-Source_WebCore_dom_Document_cpp/1.1/Sat Oct  5 09:51:36 2019//
+/patch-Source_WebCore_platform_graphics_SegmentedFontData_cpp/1.1/Sat Oct  5 09:51:36 2019//
+/patch-Source_WebCore_platform_mac_WebCoreNSURLExtras_mm/1.1/Sat Oct  5 09:51:36 2019//
 /patch-Source_WebCore_plugins_qt_PluginPackageQt_cpp/1.1.1.1/Sun Dec 25 14:13:13 2016//
 /patch-Source_WebCore_plugins_qt_PluginViewQt_cpp/1.1.1.1/Sun Dec 25 14:13:13 2016//
 /patch-Source_WebKit2_PluginProcess_qt_PluginProcessMainQt_cpp/1.1.1.1/Sun Dec 25 14:13:13 2016//
