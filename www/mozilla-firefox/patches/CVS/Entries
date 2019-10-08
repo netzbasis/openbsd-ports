@@ -1,5 +1,6 @@
 /patch-intl_icu_source_Makefile_in/1.7/Tue Jan 29 21:03:19 2019//
 /patch-js_src_ctypes_libffi_src_dlmalloc_c/1.4/Tue Sep  2 16:43:04 2014//
+/patch-js_src_jit_ProcessExecutableMemory_cpp/1.4/Mon Oct  7 13:40:43 2019//
 /patch-js_src_jit_ProcessExecutableMemory_h/1.3/Tue Jul  9 18:04:16 2019//
 /patch-old-configure/1.3/Thu Sep 19 05:29:26 2019//
 /patch-security_manager_pki_resources_content_exceptionDialog_js/1.23/Tue Sep  3 16:27:04 2019//
