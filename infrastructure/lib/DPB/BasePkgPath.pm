@@ -1,7 +1,7 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: BasePkgPath.pm,v 1.6 2014/12/07 15:18:50 espie Exp $
+# $OpenBSD: BasePkgPath.pm,v 1.8 2019/10/15 13:45:04 espie Exp $
 #
-# Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
+# Copyright (c) 2010-2019 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
 # purpose with or without fee is hereby granted, provided that the above
@@ -23,6 +23,12 @@ use DPB::Util;
 # everything is done to normalize PkgPaths, so that we have
 # one pkgpath object for each distinct flavor/subpackage combination
 
+# this is the base abstract class that is shared by dpb and sqlports so they
+# both normalize paths the same way
+
+
+# see also dump-vars in bsd.port.mk(5)
+
 package DPB::BasePkgPath;
 my $cache = {};
 
@@ -39,6 +45,7 @@ sub create
 		if ($v =~ m/^\-/) {
 			DPB::Util->die("$fullpkgpath has >1 multi") 
 			    if exists $o->{m};
+			# XXX micro-optimization, don't save -main. Worth it ?
 			if ($v eq '-main') {
 				$o->{m} = undef;
 			} else {
@@ -151,9 +158,20 @@ sub add_to_subdirlist
 }
 
 # XXX
-# in the ports tree, when you build with SUBDIR=n/value, you'll
-# get all the -multi packages, but with the default flavor.
-# we have to strip the flavor part to match the SUBDIR we asked for.
+# dump-vars shows the actual pkgpaths with multi,
+# but with pseudo-flavors stripped.
+# we have to reconstitute pseudo-flavors from the
+# subdir line
+# for instance, if SUBDIR=devel/gmp,no_cxx
+# you'll see
+# ===> devel/gmp,no_cxx
+# devel/gmp,-main.VAR=value
+
+# so:
+# with $subdir = PkgPath->new('devel/gmp,no_cxx');
+# $actual = PkgPath->compose('devel/gmp,-main', $subdir);
+# yields devel/gmp,no_cxx,-main
+# as wanted.
 
 sub compose
 {
@@ -187,6 +205,8 @@ sub may_create
 # subdirs, we have to deal with them.
 # so, create $h that holds all paths, and selectively copy the ones from
 # todo, along with the set in $want that corresponds to the subdirlist.
+
+# (also, in the above case, we get devel/gmp,-cxx as IGNORE'd)
 
 sub handle_equivalences
 {
