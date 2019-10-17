@@ -1,4 +1,4 @@
-/Makefile/1.1896/Thu Oct  3 09:29:26 2019//
+/Makefile/1.1897/Wed Oct 16 20:10:57 2019//
 D/ElectricFence////
 D/ORBit2////
 D/acpica////
@@ -672,7 +672,6 @@ D/p5-Devel-Trace////
 D/p5-Devel-TraceUse////
 D/p5-Devel-ebug////
 D/p5-Devel-ptkdb////
-D/p5-Device-USB////
 D/p5-Dir-Self////
 D/p5-Directory-Scratch////
 D/p5-Dist-CheckConflicts////

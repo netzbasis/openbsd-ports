@@ -1,4 +1,4 @@
-/Makefile/1.552/Sat Oct  5 18:53:56 2019//
+/Makefile/1.553/Wed Oct 16 20:10:57 2019//
 D/ADMsnmp////
 D/ROPgadget////
 D/acme-client////
@@ -176,7 +176,6 @@ D/p5-Crypt-DES////
 D/p5-Crypt-DES-EDE3////
 D/p5-Crypt-DSA////
 D/p5-Crypt-Eksblowfish////
-D/p5-Crypt-GpgME////
 D/p5-Crypt-IDEA////
 D/p5-Crypt-OpenSSL-Bignum////
 D/p5-Crypt-OpenSSL-DSA////

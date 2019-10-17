@@ -1,11 +1,10 @@
-/patch-source_common_Makefile_in/1.12/Mon Jun 10 08:07:50 2019//
-/patch-source_common_putil_cpp/1.3/Mon Jun 10 08:07:50 2019//
-/patch-source_common_putilimp_h/1.12/Sun Dec  9 21:00:26 2018//
-/patch-source_common_unicode_uconfig_h/1.1/Wed May 24 15:44:42 2017//
-/patch-source_config_icu-config-bottom/1.9/Mon Dec  5 16:15:56 2016//
-/patch-source_config_mh-bsd-gcc/1.8/Sun Dec  9 21:00:26 2018//
+/patch-source_common_Makefile_in/1.13/Wed Oct 16 13:42:58 2019//
+/patch-source_common_putil_cpp/1.4/Wed Oct 16 13:42:58 2019//
+/patch-source_common_unicode_uconfig_h/1.2/Wed Oct 16 13:42:58 2019//
+/patch-source_config_icu-config-bottom/1.10/Wed Oct 16 13:42:58 2019//
+/patch-source_config_mh-bsd-gcc/1.9/Wed Oct 16 13:42:58 2019//
 /patch-source_data_Makefile_in/1.3/Sat Jul  6 12:11:01 2019//
-/patch-source_i18n_Makefile_in/1.5/Sun Dec  9 21:00:26 2018//
+/patch-source_i18n_Makefile_in/1.6/Wed Oct 16 13:42:59 2019//
 /patch-source_io_Makefile_in/1.4/Wed May 24 15:44:42 2017//
 /patch-source_layoutex_Makefile_in/1.4/Wed May 24 15:44:42 2017//
 /patch-source_stubdata_Makefile_in/1.9/Wed May 24 15:44:42 2017//
