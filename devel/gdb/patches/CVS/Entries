@@ -3,8 +3,8 @@
 /patch-bfd_elf_c/1.9/Sun Oct  9 11:39:20 2016//
 /patch-bfd_peXXigen_c/1.6/Sun Oct  9 11:39:20 2016//
 /patch-gdb_Makefile_in/1.3/Tue Jul 10 11:03:46 2018//
-/patch-gdb_aarch64obsd-nat_c/1.1/Tue Jul 10 11:03:46 2018//
-/patch-gdb_aarch64obsd-tdep_c/1.1/Tue Jul 10 11:03:46 2018//
+/patch-gdb_aarch64obsd-nat_c/1.2/Thu Oct 17 17:10:26 2019//
+/patch-gdb_aarch64obsd-tdep_c/1.2/Thu Oct 17 17:10:26 2019//
 /patch-gdb_alphabsd-nat_c/1.1/Sat Sep  3 13:48:39 2016//
 /patch-gdb_armbsd-tdep_c/1.1/Mon Jun 18 14:53:12 2018//
 /patch-gdb_armnbsd-nat_c/1.2/Wed Jan 24 00:19:56 2018//

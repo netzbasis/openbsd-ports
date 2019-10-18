@@ -1,4 +1,4 @@
-/Makefile/1.168/Wed Aug 14 18:43:01 2019//
+/Makefile/1.169/Thu Oct 17 19:55:35 2019//
 D/R////
 D/aamath////
 D/abs////
@@ -13,6 +13,7 @@ D/cfitsio////
 D/cgal////
 D/coq////
 D/dieharder////
+D/double-conversion////
 D/ebc////
 D/ecm////
 D/eigen////
