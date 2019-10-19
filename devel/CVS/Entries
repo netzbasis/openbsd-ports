@@ -1,4 +1,4 @@
-/Makefile/1.1897/Wed Oct 16 20:10:57 2019//
+/Makefile/1.1898/Fri Oct 18 11:06:41 2019//
 D/ElectricFence////
 D/ORBit2////
 D/acpica////
@@ -498,6 +498,7 @@ D/p5-Best////
 D/p5-Bit-Vector-Minimal////
 D/p5-C-Scan////
 D/p5-CLASS////
+D/p5-CLI-Framework////
 D/p5-CPAN-Meta-Check////
 D/p5-Cache-Cache////
 D/p5-Cache-FastMmap////
@@ -1636,6 +1637,7 @@ D/stm32loader////
 D/stp////
 D/subversion////
 D/swig////
+D/sysutils////
 D/t1lib////
 D/tbb////
 D/tclap////
