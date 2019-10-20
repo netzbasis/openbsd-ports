@@ -1,4 +1,4 @@
-/Makefile/1.535/Fri Oct 18 21:10:04 2019//
+/Makefile/1.536/Sat Oct 19 07:45:46 2019//
 D/accountsservice////
 D/amazon-ecs-cli////
 D/amazon-ssm-agent////
@@ -11,7 +11,6 @@ D/apcupsd////
 D/arm-trusted-firmware////
 D/augeas////
 D/autossh////
-D/awless////
 D/aws-shell////
 D/awscli////
 D/backuppc////
@@ -212,6 +211,7 @@ D/p5-Quota////
 D/p5-Rex////
 D/p5-Schedule-At////
 D/p5-Set-Crontab////
+D/p5-Sys-MemInfo////
 D/p5-Sys-Syscall////
 D/p5-Sys-Virt////
 D/p5-UPS-Nut////
