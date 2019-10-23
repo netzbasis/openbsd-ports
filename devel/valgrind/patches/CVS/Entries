@@ -18,10 +18,13 @@
 /patch-coregrind_m_libcproc_c/1.1/Wed Oct  2 17:19:29 2019//
 /patch-coregrind_m_main_c/1.3/Wed Oct  2 17:19:29 2019//
 /patch-coregrind_m_scheduler_scheduler_c/1.1/Wed Oct  2 17:19:29 2019//
+/patch-coregrind_m_syswrap_priv_syswrap_openbsd_h/1.1/Wed Oct 23 02:35:05 2019//
+/patch-coregrind_m_syswrap_syswrap_openbsd_c/1.1/Wed Oct 23 02:35:05 2019//
 /patch-coregrind_m_transtab_c/1.1/Wed Oct  2 17:19:29 2019//
 /patch-coregrind_m_ume_elf_c/1.1/Mon Feb  4 23:34:10 2019//
 /patch-coregrind_pub_core_aspacemgr_h/1.1/Wed Oct  2 17:19:29 2019//
 /patch-coregrind_pub_core_transtab_h/1.1/Wed Oct  2 17:19:29 2019//
 /patch-include_vki_vki-openbsd_h/1.1/Wed Oct  2 17:19:29 2019//
+/patch-include_vki_vki_scnums_openbsd_h/1.1/Wed Oct 23 02:35:05 2019//
 /patch-memcheck_mc_translate_c/1.1/Wed Oct  2 17:19:29 2019//
 D

@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: dpb,v 1.131 2019/09/29 12:57:51 espie Exp $
+# $OpenBSD: dpb,v 1.136 2019/10/22 16:02:08 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -48,8 +48,6 @@ use DPB::Trace;
 
 my $keep_going = 1;
 
-my $starttime = time();
-
 sub show_days
 {
 	my $days = shift;
@@ -62,7 +60,7 @@ sub show_days
 	}
 }
 
-sub show_time
+sub show_duration
 {
 	my $secs = int(shift);
 
@@ -76,11 +74,13 @@ sub show_time
 	return show_days($days).sprintf("%02d:%02d:%02d", $hours, $mn, $secs);
 }
 
-sub report
+sub report_tty
 {
-	return DPB::Util->time2string(time)." [$$]".
+	my ($self, $state) = @_;
+	my $t = CORE::time();
+	return DPB::Util->time2string($t)." [$$]".
 		($keep_going ? "" : " STOPPED!").
-		" running for ".show_time(time-$starttime)."\n";
+		" running for ".show_duration($t-$state->{starttime})."\n";
 }
 
 sub affinityclass
@@ -97,30 +97,28 @@ sub affinityclass
 
 my $subdirlist = {};
 
-my $master_pid = $$;
-my $state;
+my $state = DPB::State->new;
 
 my $cleanup = 
     sub {
-    	my $S = shift;
-	if ($$ == $master_pid) {
+    	my $sig = shift;
+	if ($$ == $state->{master_pid}) {
 		$> = 0;
-		DPB::Core->cleanup($S // "INT", 0);
+		DPB::Core->cleanup($sig // "INT", 0);
 	}
 	eval { $state->{external}->cleanup; };
     };
 
-for my $S (qw(INT HUP TERM QUIT)) {
-	$SIG{$S} = sub {
-	    &$cleanup($S);
-	    $SIG{$S} = 'DEFAULT';
-	    kill $S => $$;
+for my $sig (qw(INT HUP TERM QUIT)) {
+	$SIG{$sig} = sub {
+	    &$cleanup($sig);
+	    $SIG{$sig} = 'DEFAULT';
+	    kill $sig => $$;
 	};
 }
 
 my $trace = DPB::Trace->new($cleanup);
 
-$state = DPB::State->new;
 $state->handle_options;
 my $reporter = DPB::Reporter->new($state, "main", "DPB::Core");
 $trace->set_reporter($reporter);
@@ -241,7 +239,7 @@ sub handle_non_waiting_jobs
 			last;
 		}
 	}
-	DPB::Core->log_concurrency(time(), $state->{concurrent});
+	DPB::Core->log_concurrency(CORE::time(), $state->{concurrent});
 	DPB::Core->wake_jobs;
 	$reporter->report($force_report);
 }
@@ -345,7 +343,7 @@ if ($state->{scan_only}) {
 $reporter->reset;
 DPB::Core->cleanup;
 $state->{external}->cleanup;
-print "Elapsed time=", show_time(time-$starttime),"\n";
-print $state->engine->report;
+print "Elapsed time=", show_duration(CORE::time()-$state->{starttime}),"\n";
+print $state->engine->report_tty($state);
 $state->engine->end_dump($state->logger->append('dump'));
 $state->engine->smart_dump($state->logger->append('summary'));
