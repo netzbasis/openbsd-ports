@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.470 2019/10/22 18:35:43 robert Exp $
+# $OpenBSD: Makefile,v 1.472 2019/10/24 12:51:41 sthen Exp $
 
 .include <bsd.port.arch.mk>
 
@@ -33,6 +33,9 @@ EXTRACT_SUFX=		.tar.xz
 
 FLAVORS=		debug component electron
 FLAVOR?=
+.if ${FLAVOR:Melectron}
+REVISION=		2
+.endif
 
 # BSD-like
 PERMIT_PACKAGE =	Yes
@@ -119,7 +122,6 @@ BUILDTYPE=	Release
 SUBST_VARS+=	WRKSRC WRKDIR ELECTRON_ARCH
 
 .if ${FLAVOR:Melectron}
-REVISION=		1
 DISTNAME=		electron-${ELECTRON_V}
 WRKDIST=		${WRKDIR}/chromium-${ECV}
 FULLPKGNAME=		${DISTNAME}

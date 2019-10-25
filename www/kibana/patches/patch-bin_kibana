@@ -1,0 +1,14 @@
+$OpenBSD: patch-bin_kibana,v 1.4 2019/10/24 13:28:56 pvk Exp $
+
+Index: bin/kibana
+--- bin/kibana.orig
++++ bin/kibana
+@@ -14,7 +14,7 @@ while [ -h "$SCRIPT" ] ; do
+ done
+ 
+ DIR="$(dirname "${SCRIPT}")/.."
+-NODE="${DIR}/node/bin/node"
++NODE="${TRUEPREFIX}/bin/node"
+ test -x "$NODE"
+ if [ ! -x "$NODE" ]; then
+   echo "unable to find usable node.js executable."
