@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.36 2019/06/03 16:06:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.38 2019/10/26 21:50:19 sthen Exp $
 
 COMMENT=	tty-based e-mail client, Mutt with patches
 
 GH_ACCOUNT=	neomutt
 GH_PROJECT=	neomutt
-GH_TAGNAME=	neomutt-20180716
-REVISION=	1
-DISTNAME=	${GH_TAGNAME}
+GH_TAGNAME=	2019-10-25
+DISTNAME=	neomutt-${GH_TAGNAME:S/-//g}
+REVISION=	0
 
 CATEGORIES=	mail
 HOMEPAGE=	https://neomutt.org/
@@ -52,7 +52,7 @@ DEBUG+=		-g
 .if ${FLAVOR:Mgpgme}
 CONFIGURE_ARGS+= --gpgme
 LIB_DEPENDS+=	security/gpgme
-WANTLIB+=	gpgme
+WANTLIB+=	assuan gpg-error gpgme
 .endif
 
 .if ${FLAVOR:Msasl}
@@ -75,7 +75,8 @@ CONFIGURE_ARGS+= --kyotocabinet
 
 post-install:
 	@mv -f ${PREFIX}/share/doc/neomutt/samples/* ${PREFIX}/share/examples/neomutt
-	@perl -pi -e "s,/usr/bin/gpg,${LOCALBASE}/bin/gpg," \
+	@sed -i -e "s,/usr/bin/gpg,${LOCALBASE}/bin/gpg," \
+		-e "s,/usr/libexec/neomutt,${TRUEPREFIX}/libexec/neomutt," \
 		${PREFIX}/share/examples/neomutt/gpg.rc
 
 .include <bsd.port.mk>
