@@ -1,16 +1,14 @@
-/patch-CMakeLists_txt/1.22/Thu Apr 18 16:12:15 2019//
 /patch-contrib_aho-corasick_CMakeLists_txt/1.2/Wed Mar  8 17:02:13 2017//
 /patch-contrib_hiredis_CMakeLists_txt/1.2/Wed Mar  8 17:02:13 2017//
 /patch-contrib_http-parser_CMakeLists_txt/1.2/Wed Mar  8 17:02:13 2017//
 /patch-contrib_lc-btrie_CMakeLists_txt/1.2/Wed Mar  8 17:02:13 2017//
 /patch-contrib_libottery_CMakeLists_txt/1.4/Wed May  2 15:19:52 2018//
-/patch-contrib_linenoise_CMakeLists_txt/1.2/Wed Mar  8 17:02:13 2017//
 /patch-contrib_lua-lpeg_CMakeLists_txt/1.1/Sun Jun 17 10:41:04 2018//
-/patch-contrib_lua-torch_torch7_lib_TH_THGeneral_c/1.2/Sun Jul  8 14:13:56 2018//
 /patch-contrib_xxhash_CMakeLists_txt/1.2/Wed Mar  8 17:02:13 2017//
 /patch-contrib_zstd_CMakeLists_txt/1.5/Mon Mar 19 15:36:13 2018//
 /patch-interface_README_md/1.1.1.1/Fri Oct  9 16:09:17 2015//
-/patch-src_CMakeLists_txt/1.11/Sun May 26 12:49:36 2019//
+/patch-src_CMakeLists_txt/1.12/Tue Oct 29 22:50:14 2019//
 /patch-src_client_CMakeLists_txt/1.6/Wed Mar 13 14:46:10 2019//
-/patch-src_rspamadm_CMakeLists_txt/1.10/Wed Mar 13 14:46:10 2019//
+/patch-src_libutil_util_c/1.1/Tue Oct 29 22:50:14 2019//
+/patch-src_rspamadm_CMakeLists_txt/1.11/Tue Oct 29 22:50:14 2019//
 D

@@ -1,4 +1,4 @@
-/Makefile/1.927/Wed Oct 16 20:10:57 2019//
+/Makefile/1.928/Tue Oct 29 10:53:18 2019//
 D/ajaxterm////
 D/analog////
 D/ap2-mod_dnssd////
@@ -525,3 +525,4 @@ D/wwwcount////
 D/wwwoffle////
 D/xapian-omega////
 D/youtube-dl////
+D/zola////
