@@ -1,4 +1,4 @@
-/Makefile/1.1898/Fri Oct 18 11:06:41 2019//
+/Makefile/1.1899/Thu Oct 31 03:15:59 2019//
 D/ElectricFence////
 D/ORBit2////
 D/acpica////
@@ -1163,6 +1163,7 @@ D/p5-Tree-Simple-View////
 D/p5-Tree-Simple-VisitorFactory////
 D/p5-Try-Tiny////
 D/p5-Type-Tiny////
+D/p5-USB-LibUSB////
 D/p5-UUID-Tiny////
 D/p5-Universal-can////
 D/p5-Universal-exports////
