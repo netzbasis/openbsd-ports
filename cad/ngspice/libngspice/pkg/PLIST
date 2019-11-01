@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST,v 1.7 2019/01/08 07:34:37 bentley Exp $
-@bin bin/ngspice
+@comment $OpenBSD: PLIST,v 1.1.1.1 2019/10/31 06:01:34 bentley Exp $
+@conflict ngspice-<30p0
 include/ngspice/
 include/ngspice/1-f-code.h
 include/ngspice/FastNorm3.h
@@ -125,9 +125,7 @@ include/ngspice/typedefs.h
 include/ngspice/wallace.h
 include/ngspice/wordlist.h
 include/ngspice/wstdio.h
-@man man/man1/ngspice.1
-share/ngspice/
-share/ngspice/scripts/
-share/ngspice/scripts/setplot
-share/ngspice/scripts/spectrum
-share/ngspice/scripts/spinit
+lib/libngspice.a
+lib/libngspice.la
+@lib lib/libngspice.so.${LIBngspice_VERSION}
+lib/pkgconfig/ngspice.pc

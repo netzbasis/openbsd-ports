@@ -6,5 +6,6 @@
 /patch-security_manager_pki_resources_content_exceptionDialog_js/1.23/Tue Sep  3 16:27:04 2019//
 /patch-storage_mozStorageConnection_cpp/1.19/Wed Oct 23 19:38:08 2019//
 /patch-storage_mozStorageService_cpp/1.1/Tue May 21 16:51:12 2019//
+/patch-taskcluster_docker_firefox-snap_firefox_desktop/1.1/Thu Oct 31 22:52:20 2019//
 /patch-widget_nsPrintSettingsImpl_cpp/1.7/Tue Sep  3 16:27:04 2019//
 D

@@ -1,4 +1,4 @@
-/Makefile/1.1144/Sun Oct  6 20:34:22 2019//
+/Makefile/1.1145/Thu Oct 31 06:21:33 2019//
 D/GeoIP////
 D/adns////
 D/adsuck////
@@ -413,6 +413,7 @@ D/p5-Net-Twitter////
 D/p5-Net-Twitter-Lite////
 D/p5-Net-UPnP////
 D/p5-Net-Wake////
+D/p5-Net-WebSocket-Server////
 D/p5-Net-Whois////
 D/p5-Net-Whois-RIPE////
 D/p5-Net-Whois-Raw////
@@ -441,6 +442,7 @@ D/p5-POE-Component-Server-FTP////
 D/p5-POE-Filter-DNS-TCP////
 D/p5-POE-Filter-IRCD////
 D/p5-PlRPC////
+D/p5-Protocol-WebSocket////
 D/p5-RPC-XML////
 D/p5-Regexp-Common-net-CIDR////
 D/p5-SNMP-BridgeQuery////
