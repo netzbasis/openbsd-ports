@@ -301,6 +301,7 @@ D/libaudiofile////
 D/libbfio////
 D/libbinio////
 D/libbio////
+D/libcbor////
 D/libcoap////
 D/libconfig////
 D/libconfuse////
