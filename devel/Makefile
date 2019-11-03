@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1899 2019/10/31 03:15:59 afresh1 Exp $
+# $OpenBSD: Makefile,v 1.1901 2019/11/02 17:10:49 jasper Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -845,6 +845,7 @@
      SUBDIR += p5-List-Cycle
      SUBDIR += p5-List-MoreUtils
      SUBDIR += p5-List-MoreUtils-XS
+     SUBDIR += p5-Locale-Codes
      SUBDIR += p5-Locale-Hebrew
      SUBDIR += p5-Locale-Maketext-Fuzzy
      SUBDIR += p5-Locale-Maketext-Gettext
@@ -1465,8 +1466,6 @@
      SUBDIR += py-iniparse
      SUBDIR += py-intervaltree
      SUBDIR += py-intervaltree,python3
-     SUBDIR += py-ioflo
-     SUBDIR += py-ioflo,python3
      SUBDIR += py-ipykernel
      SUBDIR += py-ipykernel,python3
      SUBDIR += py-ipython_genutils
