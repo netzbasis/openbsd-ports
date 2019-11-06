@@ -1,4 +1,4 @@
-/Makefile/1.380/Wed Aug 14 13:26:51 2019//
+/Makefile/1.381/Tue Nov  5 09:13:00 2019//
 D/architect////
 D/barman////
 D/citus////
@@ -141,7 +141,6 @@ D/postgresql////
 D/postgresql-odbc////
 D/postgresql-pllua////
 D/postgresql-plr////
-D/postgresql-plv8////
 D/postgresql-previous////
 D/postgresql_autodoc////
 D/puppetdb4////

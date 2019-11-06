@@ -1,4 +1,4 @@
-/Makefile/1.607/Mon Sep 30 13:07:09 2019//
+/Makefile/1.608/Tue Nov  5 18:01:51 2019//
 D/TclXML////
 D/antiword////
 D/apertium////
@@ -477,5 +477,6 @@ D/xmlwf////
 D/xpdf////
 D/xxdiff////
 D/yould////
+D/yq////
 D/zathura////
 D/zoem////
