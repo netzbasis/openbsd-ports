@@ -345,6 +345,7 @@
 /patch-content_browser_scheduler_responsiveness_watcher_cc/1.1/Mon Sep 23 07:18:04 2019//
 /patch-content_browser_utility_process_host_cc/1.1/Tue Nov  5 22:30:27 2019//
 /patch-content_browser_webui_shared_resources_data_source_cc/1.7/Tue Nov  5 22:30:27 2019//
+/patch-content_child_child_process_sandbox_support_impl_linux_cc/1.1/Wed Nov  6 10:24:55 2019//
 /patch-content_common_common_sandbox_support_linux_cc/1.1/Mon Jul 30 15:28:28 2018//
 /patch-content_common_sandbox_init_linux_cc/1.1/Thu Apr 26 19:41:38 2018//
 /patch-content_common_user_agent_cc/1.8/Mon Sep 23 07:18:04 2019//

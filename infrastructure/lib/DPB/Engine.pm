@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Engine.pm,v 1.137 2019/11/03 10:17:54 espie Exp $
+# $OpenBSD: Engine.pm,v 1.139 2019/11/06 14:47:25 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -134,7 +134,10 @@ sub log_same_ts
 	my $ts = DPB::Util->ts2string($self->{ts});
 	print $fh "$$\@$ts: $kind";
 	if (defined $v) {
-		print $fh ": ", $v->logname, $extra;
+		print $fh ": ", $v->logname;
+		if (defined $extra) {
+			print $fh " ", $extra;
+		}
 	}
 	print $fh "\n";
 }
@@ -160,7 +163,7 @@ sub flush_log
 sub fetchcount
 {
 	my ($self, $q)= @_;
-	return () unless defined $self->{tofetch};
+	return () if $self->{tofetch}->is_dummy;
 	if ($self->{state}{fetch_only}) {
 		$self->{tofetch}{queue}->set_fetchonly;
 	} elsif ($q < 30) {
@@ -462,7 +465,7 @@ sub check_buildable
 sub new_roach
 {
 	my ($self, $r) = @_;
-	$self->{toroach}->new_roach($r);
+	$self->{toroach}->add($r);
 }
 
 sub new_path
@@ -470,12 +473,12 @@ sub new_path
 	my ($self, $v) = @_;
 	if (defined $v->{info}{IGNORE} && 
 	    !$self->{state}{fetch_only}) {
-		$self->log('!', $v, " ".$v->{info}{IGNORE}->string);
+		$self->log('!', $v, $v->{info}{IGNORE}->string);
 		$self->stub_out($v);
 		return;
 	}
 	if (defined $v->{info}{MISSING_FILES}) {
-		$self->add_fatal($v, "fetch manually", 
+		$self->add_fatal($v, ["fetch manually"], 
 		    "Missing distfiles: ".
 		    $v->{info}{MISSING_FILES}->string, 
 		    $v->{info}{FETCH_MANUALLY}->string);
@@ -531,9 +534,13 @@ sub rescan
 
 sub add_fatal
 {
-	my ($self, $v, $error, @messages) = @_;
+	my ($self, $v, $l, @messages) = @_;
 	push(@{$self->{errors}}, $v);
-	$self->log('!', $v, " $error");
+	my $error = join(' ', @$l);
+	if (length $error > 60) {
+		$error = substr($error, 0, 58)."...";
+	}
+	$self->log('!', $v, $error);
 	if ($self->{heldlocks}{$v}) {
 		print {$self->{heldlocks}{$v}} "error=$error\n";
 		delete $self->{heldlocks}{$v};
@@ -541,7 +548,7 @@ sub add_fatal
 		my $lock = $self->{locker}->lock($v);
 		$lock->write("error", $error) if $lock;
 	}
-	$self->{logger}->log_error($v, $error, @messages);
+	$self->{logger}->log_error($v, @$l, @messages);
 	$self->stub_out($v);
 }
 
@@ -592,7 +599,10 @@ sub start_new_fetch
 
 sub start_new_roach
 {
-	return;
+	my $self = shift;
+	my $r = $self->{toroach}->start;
+	$self->flush_log;
+	return $r;
 }
 
 sub can_build

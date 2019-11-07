@@ -3,4 +3,5 @@
 /patch-man_nginx_8/1.4/Fri Jun 19 05:41:35 2015//
 /patch-nginx-auth-ldap_config/1.1/Fri Sep 28 14:36:16 2018//
 /patch-nginx-auth-ldap_ngx_http_auth_ldap_module_c/1.1/Fri Sep 28 14:36:16 2018//
+/patch-ngx_http_geoip2_module_config/1.1/Wed Nov  6 13:05:49 2019//
 D

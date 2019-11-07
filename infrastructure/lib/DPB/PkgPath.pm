@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: PkgPath.pm,v 1.55 2019/05/11 15:31:12 espie Exp $
+# $OpenBSD: PkgPath.pm,v 1.57 2019/11/06 14:47:25 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -345,11 +345,7 @@ sub break
 {
 
 	my ($self, $why) = @_;
-	if (defined $self->{broken}) {
-		$self->{broken} .= " $why";
-	} else {
-		$self->{broken} = $why;
-	}
+	push @{$self->{broken}}, $why;
 }
 
 1;

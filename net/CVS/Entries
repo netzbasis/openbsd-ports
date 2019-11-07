@@ -1,4 +1,4 @@
-/Makefile/1.1145/Thu Oct 31 06:21:33 2019//
+/Makefile/1.1147/Wed Nov  6 15:01:54 2019//
 D/GeoIP////
 D/adns////
 D/adsuck////
@@ -75,6 +75,7 @@ D/dnstracer////
 D/doc////
 D/doh////
 D/dsocks////
+D/dsvpn////
 D/dxpc////
 D/echoping////
 D/ejabberd////
@@ -508,7 +509,6 @@ D/ptpd////
 D/pure-ftpd////
 D/purple-rocketchat////
 D/putty////
-D/py-GeoIP////
 D/py-IOSXR////
 D/py-IP////
 D/py-aiodns////

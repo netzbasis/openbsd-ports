@@ -1,4 +1,5 @@
 /DESCR-geoip/1.1/Fri Nov  4 22:13:43 2016//
+/DESCR-geoip2/1.1/Wed Nov  6 13:05:49 2019//
 /DESCR-headers_more/1.1/Tue Nov 14 16:43:09 2017//
 /DESCR-image_filter/1.1/Fri Nov  4 22:13:43 2016//
 /DESCR-ldap_auth/1.1/Fri Sep 28 14:36:17 2018//
@@ -12,6 +13,7 @@
 /DESCR-stream/1.1/Fri Nov  4 22:13:43 2016//
 /DESCR-xslt/1.1/Fri Nov  4 22:13:43 2016//
 /PLIST-geoip/1.1/Fri Nov  4 22:13:43 2016//
+/PLIST-geoip2/1.1/Wed Nov  6 13:05:49 2019//
 /PLIST-headers_more/1.1/Tue Nov 14 16:43:09 2017//
 /PLIST-image_filter/1.1/Fri Nov  4 22:13:43 2016//
 /PLIST-ldap_auth/1.1/Fri Sep 28 14:36:17 2018//
