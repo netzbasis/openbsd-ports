@@ -1,4 +1,4 @@
-/Makefile/1.73/Sun Aug 18 14:40:31 2019//
+/Makefile/1.74/Thu Nov  7 10:52:51 2019//
 /Makefile.inc/1.21/Fri Jul 12 20:51:14 2019//
 /UPDATE/1.3/Mon Nov  3 08:13:29 2014//
 /kde-release-helper/1.9/Tue Dec 23 14:10:36 2014//
@@ -14,19 +14,15 @@ D/baseapps////
 D/dev-scripts////
 D/dev-utils////
 D/ffmpegthumbs////
-D/filelight////
 D/graphics-mobipocket////
 D/graphics-strigi-analyzer////
 D/graphics-thumbnailers////
 D/jovie////
-D/juk////
 D/kaccessible////
 D/kactivities////
-D/kamera////
 D/kapptemplate////
 D/kcachegrind////
 D/kcharselect////
-D/kcolorchooser////
 D/kdf////
 D/kfilemetadata////
 D/kfloppy////
@@ -35,7 +31,6 @@ D/kget////
 D/kgpg////
 D/kimono////
 D/kmix////
-D/kolourpaint////
 D/kopete////
 D/korundum////
 D/kpat////
@@ -44,16 +39,12 @@ D/krdc////
 D/kremotecontrol////
 D/krfb////
 D/kross-interpreters////
-D/kruler////
 D/kscd////
 D/ksnapshot////
 D/kteatime////
 D/ktimer////
-D/kturtle////
 D/ktux////
 D/kuser////
-D/kwalletmanager////
-D/kwordquiz////
 D/l10n////
 D/libkcddb////
 D/libkcompactdisc////
@@ -74,7 +65,6 @@ D/p5-kde////
 D/p5-qt////
 D/pairs////
 D/parley////
-D/picmi////
 D/pim////
 D/pim-runtime////
 D/pimlibs////
@@ -83,7 +73,6 @@ D/poxml////
 D/print-manager////
 D/py-kde////
 D/qyoto////
-D/rocs////
 D/ruby-qt////
 D/runtime////
 D/sdk-kioslaves////
@@ -94,7 +83,6 @@ D/smokekde////
 D/smokeqt////
 D/superkaramba////
 D/svgpart////
-D/sweeper////
 D/wallpapers////
 D/webdev////
 D/workspace////

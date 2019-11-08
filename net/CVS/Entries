@@ -1,4 +1,4 @@
-/Makefile/1.1147/Wed Nov  6 15:01:54 2019//
+/Makefile/1.1148/Thu Nov  7 10:16:26 2019//
 D/GeoIP////
 D/adns////
 D/adsuck////
@@ -48,7 +48,6 @@ D/cppzmq////
 D/crawl////
 D/ctrace////
 D/curl////
-D/cvsync////
 D/czmq////
 D/daq////
 D/darkstat////

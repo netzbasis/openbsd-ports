@@ -1,4 +1,4 @@
-/Makefile/1.1903/Wed Nov  6 10:10:48 2019//
+/Makefile/1.1904/Thu Nov  7 11:00:54 2019//
 D/ElectricFence////
 D/ORBit2////
 D/acpica////
@@ -1442,6 +1442,7 @@ D/py-smmap////
 D/py-sortedcontainers////
 D/py-spark-parser////
 D/py-stdnum////
+D/py-straight.plugin////
 D/py-subprocess32////
 D/py-suds////
 D/py-symboltype////

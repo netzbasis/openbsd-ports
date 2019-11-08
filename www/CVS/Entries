@@ -1,4 +1,4 @@
-/Makefile/1.930/Wed Nov  6 16:01:41 2019//
+/Makefile/1.933/Thu Nov  7 21:56:19 2019//
 D/ajaxterm////
 D/analog////
 D/ap2-mod_dnssd////
@@ -342,7 +342,6 @@ D/pear-HTML-Template-IT////
 D/pear-HTTP-WebDAV-Server////
 D/pear-SOAP////
 D/pecl-chroot////
-D/pecl-geoip////
 D/pecl-memcached////
 D/pecl-pecl_http////
 D/pecl-pledge////
@@ -374,6 +373,7 @@ D/py-bleach////
 D/py-bokeh////
 D/py-bottle////
 D/py-cheroot////
+D/py-cookies////
 D/py-django////
 D/py-feedgenerator////
 D/py-flask////
@@ -414,6 +414,7 @@ D/py-requests-futures////
 D/py-requests-mock////
 D/py-requests-oauthlib////
 D/py-requests-toolbelt////
+D/py-responses////
 D/py-routes////
 D/py-selenium////
 D/py-sockjs-tornado////

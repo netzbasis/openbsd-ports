@@ -1,4 +1,4 @@
-/Makefile/1.48/Mon Apr 15 18:43:35 2019//
+/Makefile/1.49/Thu Nov  7 10:52:51 2019//
 /Makefile.inc/1.10/Sun Jun 23 05:24:00 2019//
 /kde-applications.port.mk/1.3/Mon May 20 22:15:28 2019//
 D/analitza////
@@ -14,11 +14,15 @@ D/dolphin////
 D/dolphin-plugins////
 D/dragon////
 D/ffmpegthumbs////
+D/filelight////
 D/granatier////
+D/grantleetheme////
 D/gwenview////
+D/juk////
 D/kajongg////
 D/kalgebra////
 D/kalzium////
+D/kamera////
 D/kanagram////
 D/kapman////
 D/kate////
@@ -31,6 +35,7 @@ D/kbruch////
 D/kcalc////
 D/kcalcore////
 D/kcalutils////
+D/kcolorchooser////
 D/kcron////
 D/kdeedu-data////
 D/kdegraphics-mobipocket////
@@ -70,12 +75,14 @@ D/knavalbattle////
 D/knetwalk////
 D/kolf////
 D/kollision////
+D/kolourpaint////
 D/kompare////
 D/konquest////
 D/konsole////
 D/kpimtextedit////
 D/kqtquickcharts////
 D/kreversi////
+D/kruler////
 D/kshisen////
 D/ksirk////
 D/ksnakeduel////
@@ -85,7 +92,10 @@ D/ksudoku////
 D/ksystemlog////
 D/ktouch////
 D/ktuberling////
+D/kturtle////
 D/kubrick////
+D/kwalletmanager////
+D/kwordquiz////
 D/libkcddb////
 D/libkcompactdisc////
 D/libkdcraw////
@@ -99,11 +109,15 @@ D/libkomparediff2////
 D/libksane////
 D/lskat////
 D/marble////
+D/minuet////
 D/okteta////
 D/okular////
 D/palapeli////
+D/picmi////
+D/rocs////
 D/spectacle////
 D/step////
 D/svgpart////
+D/sweeper////
 D/umbrello////
 D/zeroconf-ioslave////

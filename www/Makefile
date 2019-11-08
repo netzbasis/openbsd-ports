@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.930 2019/11/06 16:01:41 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.933 2019/11/07 21:56:19 kmos Exp $
 
      SUBDIR =
      SUBDIR += ajaxterm
@@ -358,9 +358,6 @@
      SUBDIR += pecl-chroot,php71
      SUBDIR += pecl-chroot,php72
      SUBDIR += pecl-chroot,php73
-     SUBDIR += pecl-geoip,php71
-     SUBDIR += pecl-geoip,php72
-     SUBDIR += pecl-geoip,php73
      SUBDIR += pecl-memcached,php71
      SUBDIR += pecl-memcached,php72
      SUBDIR += pecl-memcached,php73
@@ -412,6 +409,8 @@
      SUBDIR += py-bottle,python3
      SUBDIR += py-cheroot
      SUBDIR += py-cheroot,python3
+     SUBDIR += py-cookies
+     SUBDIR += py-cookies,python3
      SUBDIR += py-django
      SUBDIR += py-feedgenerator
      SUBDIR += py-feedgenerator,python3
@@ -476,6 +475,8 @@
      SUBDIR += py-requests-oauthlib,python3
      SUBDIR += py-requests-toolbelt
      SUBDIR += py-requests-toolbelt,python3
+     SUBDIR += py-responses
+     SUBDIR += py-responses,python3
      SUBDIR += py-routes
      SUBDIR += py-selenium
      SUBDIR += py-selenium,python3

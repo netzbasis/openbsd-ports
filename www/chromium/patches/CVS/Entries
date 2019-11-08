@@ -188,6 +188,7 @@
 /patch-chrome_browser_memory_details_cc/1.42/Fri Dec  7 11:07:35 2018//
 /patch-chrome_browser_metrics_chrome_browser_main_extra_parts_metrics_cc/1.15/Tue Nov  5 22:30:26 2019//
 /patch-chrome_browser_metrics_chrome_metrics_service_client_cc/1.10/Tue Nov  5 22:30:26 2019//
+/patch-chrome_browser_native_file_system_chrome_native_file_system_permission_context_cc/1.1/Thu Nov  7 10:47:41 2019//
 /patch-chrome_browser_net_system_network_context_manager_cc/1.10/Tue Nov  5 22:30:27 2019//
 /patch-chrome_browser_notifications_notification_display_service_impl_cc/1.4/Tue Nov  5 22:30:27 2019//
 /patch-chrome_browser_password_manager_password_store_factory_cc/1.6/Tue Nov  5 22:30:27 2019//

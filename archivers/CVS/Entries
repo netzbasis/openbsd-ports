@@ -1,4 +1,4 @@
-/Makefile/1.94/Sun Jul 14 20:00:38 2019//
+/Makefile/1.95/Thu Nov  7 21:47:11 2019//
 D/arc////
 D/brotli////
 D/bzip2////
@@ -46,6 +46,7 @@ D/pecl-rar////
 D/pigz////
 D/py-libarchive-c////
 D/py-lzo////
+D/py-rarfile////
 D/quazip////
 D/ripole////
 D/ruby-minitar////
