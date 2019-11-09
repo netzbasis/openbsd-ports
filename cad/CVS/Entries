@@ -1,4 +1,4 @@
-/Makefile/1.36/Wed Nov  6 17:23:54 2019//
+/Makefile/1.38/Fri Nov  8 16:07:49 2019//
 D/abc////
 D/fritzing////
 D/geda-gaf////
@@ -7,7 +7,6 @@ D/gnucap////
 D/graywolf////
 D/gtkwave////
 D/kicad////
-D/kicad-library////
 D/kicad-share////
 D/klogic////
 D/librecad////

@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Engine.pm,v 1.140 2019/11/07 16:02:54 espie Exp $
+# $OpenBSD: Engine.pm,v 1.142 2019/11/08 13:06:00 espie Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -152,8 +152,9 @@ sub log
 sub log_as_built
 {
 	my ($self, $v) = @_;
+	my $n = $v->fullpkgname;
 	my $fh = $self->{logger}->append("built-packages");
-	print $fh $v->fullpkgname, ".tgz\n";
+	print $fh "$n.tgz\n";
 }
 
 sub flush_log

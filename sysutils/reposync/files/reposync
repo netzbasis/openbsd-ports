@@ -1,6 +1,6 @@
 #!/bin/ksh
 #
-# $OpenBSD: reposync,v 1.1.1.1 2019/10/07 10:20:09 sthen Exp $
+# $OpenBSD: reposync,v 1.4 2019/11/08 21:58:58 sthen Exp $
 #
 # Copyright (c) 2018, 2019 Stuart Henderson <sthen@openbsd.org>
 #
@@ -24,27 +24,33 @@ err()
 
 usage()
 {
-        echo "usage: ${0##*/} rsync://upstream/cvs [/path/to/cvs]" >&2
+        echo "usage: ${0##*/} [-f] [-l username] rsync://upstream/cvs [/path/to/cvs]" >&2
 	exit 1
 }
 
-if [[ -z $1 ]]; then
-	usage
-	exit 1
-fi
+force=false
+while getopts "fl:" c; do
+	case "$c" in
+		f) force=true		;;
+		l) fwduser="$OPTARG"	;;
+		*) usage		;;
+	esac
+done
+shift $((OPTIND-1))
+[ $# -gt 0 ] || usage
+
 synchost="$1"
 repodir=/cvs
 [[ -n $2 ]] && repodir=$2
 
 run_rsync()
 {
-	case $synchost in
-		rsync://*@*)
+	if [[ -n $fwduser ]]; then
 			# reach rsync on the server via an ssh port-forward
-			rsync -e "ssh -W localhost:rsync" $* ;;
-		*)
-			rsync $* ;;
-	esac
+			rsync -e "ssh -W localhost:rsync -l $fwduser" $*
+	else
+			rsync $*
+	fi
 }
 
 rundir="/var/db/reposync"
@@ -54,9 +60,14 @@ for i in $rundir $repodir; do
 	    err "$i must exist as a writable directory"
 done
 
+if [[ $(id -u) != $(stat -L -f "%u" "$repodir") ]]; then
+	err "should be run by the uid owning the repository"
+fi
+
 oldhash="invalid"
 hashfile="$rundir/reposync.hash"
 lockfile="$rundir/reposync.lock"
+cd $rundir
 
 if [ -h $lockfile ]; then
         # read the pid from $lockfile symlink target
@@ -78,7 +89,7 @@ trap "rm -f $lockfile" 0 1 2 15
 # check CVSROOT directory listing to identify updates; primarily for
 # ChangeLog but val-tags may also be updated after a checkout was done
 # using a new tag. ignore "history" (lists read-only operations).
-newhash=`run_rsync ${synchost}/CVSROOT/ | grep -v history | sha256`
+newhash="${synchost} $(run_rsync ${synchost}/CVSROOT/ | grep -v history | sha256)"
 
 if [ -r $hashfile ]; then
 	age=$((`date +%s` - `stat -t %s -f %m $hashfile`))
@@ -90,7 +101,7 @@ if [ -r $hashfile ]; then
 	fi
 fi
 
-if [[ $oldhash != $newhash ]]; then
+if $force || [[ $oldhash != $newhash ]]; then
 	# only update saved hash if sync was successful; otherwise leave
 	# the old one so sync is reattempted next run
 	if run_rsync -rlptiz --omit-dir-times --delete \

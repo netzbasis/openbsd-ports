@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.36 2019/11/06 17:23:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.38 2019/11/08 16:07:49 sthen Exp $
 
      SUBDIR =
      SUBDIR += abc
@@ -9,7 +9,7 @@
      SUBDIR += graywolf
      SUBDIR += gtkwave
      SUBDIR += kicad
-     SUBDIR += kicad-library
+     SUBDIR += kicad-share
      SUBDIR += klogic
      SUBDIR += librecad
      SUBDIR += magic

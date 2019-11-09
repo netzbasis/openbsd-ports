@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/10/03 07:58:04 bentley Exp $
+# $OpenBSD: Makefile,v 1.3 2019/11/08 22:18:44 sthen Exp $
 
 KICAD_PROJECT =	i18n
 COMMENT =	language translations for KiCad
