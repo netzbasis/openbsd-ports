@@ -1,4 +1,4 @@
-/Makefile/1.1148/Thu Nov  7 10:16:26 2019//
+/Makefile/1.1149/Sat Nov  9 10:36:07 2019//
 D/GeoIP////
 D/adns////
 D/adsuck////
@@ -41,7 +41,6 @@ D/charm////
 D/cjc////
 D/clic////
 D/climm////
-D/clive////
 D/cnupm////
 D/coccinella////
 D/cppzmq////

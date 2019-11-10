@@ -1,4 +1,4 @@
-/Makefile/1.76/Tue Feb 26 15:29:51 2019//
+/Makefile/1.77/Sat Nov  9 15:36:59 2019//
 D/amtterm////
 D/birda////
 D/bottlerocket////
@@ -33,6 +33,7 @@ D/p5-Device-SerialPort////
 D/p5-SendPage////
 D/picocom////
 D/pilot-link////
+D/pterm////
 D/py-gammu////
 D/qodem////
 D/qpage////
