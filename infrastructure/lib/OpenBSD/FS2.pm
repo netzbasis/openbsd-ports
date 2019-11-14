@@ -1,4 +1,4 @@
-# $OpenBSD: FS2.pm,v 1.31 2019/09/11 09:05:53 espie Exp $
+# $OpenBSD: FS2.pm,v 1.33 2019/11/13 11:38:48 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -15,6 +15,8 @@
 
 use strict;
 use warnings;
+
+use OpenBSD::BaseFS;
 
 package OpenBSD::FS::File;
 
@@ -71,6 +73,7 @@ sub classes
 		OpenBSD::FS::File::Subinfo OpenBSD::FS::File::Info
 		OpenBSD::FS::File::Dirinfo OpenBSD::FS::File::Manpage
 		OpenBSD::FS::File::Library OpenBSD::FS::File::Plugin
+		OpenBSD::FS::File::StaticLibrary
 		OpenBSD::FS::File::Binary OpenBSD::FS::File::Font
 		OpenBSD::FS::File));
 }
@@ -99,6 +102,23 @@ sub tweak_other_paths
 {
 }
 
+sub can_have_debug
+{
+	return 0;
+}
+
+sub is_dir
+{
+	return 0;
+}
+
+package OpenBSD::FS::File::WithDebugInfo;
+our @ISA = qw(OpenBSD::FS::File);
+
+sub can_have_debug
+{
+	return 1;
+}
 package OpenBSD::FS::File::Directory;
 our @ISA = qw(OpenBSD::FS::File);
 sub recognize
@@ -110,6 +130,11 @@ sub recognize
 sub element_class
 {
 	'OpenBSD::PackingElement::Dir';
+}
+
+sub is_dir
+{
+	return 1;
 }
 
 package OpenBSD::FS::File::ManDirectory;
@@ -267,7 +292,7 @@ sub tweak_other_paths
 }
 
 package OpenBSD::FS::File::Binary;
-our @ISA = qw(OpenBSD::FS::File);
+our @ISA = qw(OpenBSD::FS::File::WithDebugInfo);
 
 sub element_class
 {
@@ -425,7 +450,7 @@ sub tweak_other_paths
 }
 
 package OpenBSD::FS::File::Library;
-our @ISA = qw(OpenBSD::FS::File);
+our @ISA = qw(OpenBSD::FS::File::WithDebugInfo);
 
 sub recognize
 {
@@ -452,7 +477,12 @@ sub element_class
 }
 
 package OpenBSD::FS::File::Plugin;
-our @ISA = qw(OpenBSD::FS::File);
+our @ISA = qw(OpenBSD::FS::File::WithDebugInfo);
+
+sub element_class
+{
+	return 'OpenBSD::PackingElement::SharedObject';
+}
 
 sub recognize
 {
@@ -464,6 +494,28 @@ sub recognize
 	if ($data->{objdump} =~ m/ .note.openbsd.ident / && 
 	    $data->{objdump} !~ m/ .interp /) {
 	    	return 1;
+	} else {
+		return 0;
+	}
+}
+
+package OpenBSD::FS::File::StaticLibrary;
+our @ISA = qw(OpenBSD::FS::File::WithDebugInfo);
+
+sub element_class
+{
+	return 'OpenBSD::PackingElement::StaticLib';
+}
+
+sub recognize
+{
+	my ($class, $filename, $fs, $data) = @_;
+
+	return 0 unless $filename =~ m/\/lib[^\/]+\.a$/;
+	$filename = $fs->resolve_link($filename);
+	my $check = `/usr/bin/ar t \Q$filename\E >/dev/null 2>/dev/null`;
+	if ($? == 0) {
+		return 1;
 	} else {
 		return 0;
 	}
@@ -493,6 +545,7 @@ sub tweak_other_paths
 }
 
 package OpenBSD::FS2;
+our @ISA = qw(OpenBSD::BaseFS);
 
 use OpenBSD::Mtree;
 use File::Find;
@@ -516,8 +569,9 @@ sub ignore_parents
 sub new
 {
 	my ($class, $destdir, $ignored, $state) = @_;
-	my $o = bless {destdir => $destdir, ignored => {},
-	    state => $state}, $class;
+	my $o = $class->SUPER::new($destdir, $state);
+
+	$o->{ignored} = {};
 	# this allows _FAKE_TREE_LIST to be used
 	for my $d (keys %$ignored) {
 		for my $path (glob $d) {
@@ -525,40 +579,6 @@ sub new
 		}
 	}
 	return $o;
-}
-
-sub destdir
-{
-	my $self = shift;
-	if (@_ == 0) {
-		return $self->{destdir};
-	} else {
-		return $self->{destdir}."/".shift;
-	}
-}
-
-# we are given a filename which actually lives under destdir.
-# but if it's a symlink, we WILL follow through, because the
-# link is meant relative to destdir
-sub resolve_link
-{
-	my ($self, $filename, $level) = @_;
-	$level //= 0;
-	my $solved = $self->destdir($filename);
-	if (-l $solved) {
-		my $l = readlink($solved);
-		if ($level++ > 14) {
-			print STDERR "Symlink too deep: $solved\n";
-			return $solved;
-		}
-		if ($l =~ m|^/|) {
-			return $self->resolve_link($l, $level);
-		} else {
-			return $self->resolve_link(File::Spec->catfile(dirname($filename),$l), $level);
-		}
-	} else {
-		return $solved;
-	}
 }
 
 sub mtree
@@ -577,14 +597,6 @@ sub mtree
 		$mtree->{dirname($Config{installarchlib})} = 1;
 	}
 	return $self->{mtree};
-}
-
-sub undest
-{
-	my ($self, $filename) = @_;
-	$filename =~ s/^\Q$self->{destdir}\E//;
-	$filename='/' if $filename eq '';
-	return $filename;
 }
 
 sub create

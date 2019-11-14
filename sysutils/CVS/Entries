@@ -1,4 +1,4 @@
-/Makefile/1.536/Sat Oct 19 07:45:46 2019//
+/Makefile/1.539/Tue Nov 12 15:18:32 2019//
 D/accountsservice////
 D/amazon-ecs-cli////
 D/amazon-ssm-agent////
@@ -11,7 +11,6 @@ D/apcupsd////
 D/arm-trusted-firmware////
 D/augeas////
 D/autossh////
-D/aws-shell////
 D/awscli////
 D/backuppc////
 D/bacula////
@@ -250,6 +249,7 @@ D/py-pynetbox////
 D/py-scandir////
 D/py-statgrab////
 D/py-tsk////
+D/py-vmomi////
 D/radiusreport////
 D/radmind////
 D/rancid////
@@ -347,6 +347,7 @@ D/ttyplot////
 D/u-boot////
 D/udfclient////
 D/uefitool////
+D/unionfs-fuse////
 D/upobsd////
 D/upower////
 D/upt////

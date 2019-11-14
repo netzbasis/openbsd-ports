@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1906 2019/11/09 16:47:28 kn Exp $
+# $OpenBSD: Makefile,v 1.1909 2019/11/11 19:38:30 pirofti Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1282,7 +1282,6 @@
      SUBDIR += py-Checker
      SUBDIR += py-SOAPpy
      SUBDIR += py-algorithm-munkres
-     SUBDIR += py-algorithm-munkres,python3
      SUBDIR += py-altgraph
      SUBDIR += py-altgraph,python3
      SUBDIR += py-ana
@@ -1349,6 +1348,7 @@
      SUBDIR += py-certifi,python3
      SUBDIR += py-cffi
      SUBDIR += py-cffi,python3
+     SUBDIR += py-cflow2dot
      SUBDIR += py-chai
      SUBDIR += py-chai,python3
      SUBDIR += py-cheetah
@@ -1767,8 +1767,6 @@
      SUBDIR += ruby-abstract
      SUBDIR += ruby-activesupport
      SUBDIR += ruby-arrayfields
-     SUBDIR += ruby-atomic,ruby25
-     SUBDIR += ruby-atomic,ruby26
      SUBDIR += ruby-bundler
      SUBDIR += ruby-cicphash
      SUBDIR += ruby-colorator

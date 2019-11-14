@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.21 2019/09/26 09:46:10 chrisz Exp $
+# $OpenBSD: Makefile,v 1.24 2019/11/13 17:41:22 sthen Exp $
 
-BROKEN-i386 =	ld: error: undefined symbol: ml_as_z_pred, etc
+BROKEN-i386 =	ld: error: undefined symbol: ml_as_z_mul, etc
 
 FIX_EXTRACT_PERMISSIONS =	Yes
 
@@ -10,7 +10,7 @@ CATEGORIES =		devel
 GH_ACCOUNT =		Frama-C
 GH_PROJECT =		Frama-C-snapshot
 GH_TAGNAME =		19.0
-REVISION =		1
+REVISION =		2
 DISTNAME =		frama-c-${GH_TAGNAME}-Potassium
 PKGNAME =		frama-c-${GH_TAGNAME}
 
@@ -30,10 +30,10 @@ RUN_DEPENDS =		x11/lablgtk3 \
 			devel/ocaml-graph \
 			math/graphviz \
 			math/ocaml-zarith \
-			devel/ocaml-yojson
-
-BUILD_DEPENDS =		${RUN_DEPENDS} \
+			devel/ocaml-yojson \
 			sysutils/findlib
+
+BUILD_DEPENDS =		${RUN_DEPENDS}
 
 USE_GMAKE =		Yes
 TEST_TARGET =		oracles tests

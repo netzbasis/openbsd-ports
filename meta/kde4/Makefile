@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.69 2019/11/07 14:13:21 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.72 2019/11/12 20:18:02 rsadowski Exp $
 
 PKGNAME =		kde4-${MODKDE4_VERSION}
 
@@ -31,11 +31,11 @@ REVISION-games = 4
 REVISION-sdk = 4
 REVISION-edu = 8
 REVISION-multimedia = 1
-REVISION-network = 0
-REVISION-extras = 10
-REVISION-main =		30
+REVISION-network = 1
+REVISION-extras = 11
+REVISION-main =		32
 REVISION-admin =	1
-REVISION-graphics =	4
+REVISION-graphics =	5
 
 MAINTAINER =		KDE porting team <openbsd-kde@googlegroups.com>
 
@@ -86,7 +86,6 @@ KDE4-graphics = \
 	${MODKDE4_DEP_DIR}/graphics-strigi-analyzer \
 	${MODKDE4_DEP_DIR}/graphics-thumbnailers \
 	${MODKDE4_DEP_DIR}/kgamma		\
-	${MODKDE4_DEP_DIR}/ksnapshot		\
 	${MODKDE4_DEP_DIR}/libkexiv2		\
 	${MODKDE4_DEP_DIR}/svgpart
 
@@ -103,7 +102,6 @@ KDE4-multimedia = \
 RUN_DEPENDS-network = \
 	${MODKDE4_DEP_DIR}/network-filesharing \
 	${MODKDE4_DEP_DIR}/network-strigi-analyzers \
-	${MODKDE4_DEP_DIR}/kget			\
 	${MODKDE4_DEP_DIR}/kopete		\
 	${MODKDE4_DEP_DIR}/kppp			\
 	${MODKDE4_DEP_DIR}/krdc			\
@@ -159,9 +157,6 @@ RUN_DEPENDS-main = \
 	${MODKDE4_DEP_DIR}/wallpapers		\
 	${MODKDE4_DEP_DIR}/workspace
 
-RUN_DEPENDS-extras = \
-	graphics/digikam-kde4,-main	\
-	graphics/digikam-kde4,-kipi	\
-	productivity/kmymoney
+RUN_DEPENDS-extras = productivity/kmymoney
 
 .include <bsd.port.mk>

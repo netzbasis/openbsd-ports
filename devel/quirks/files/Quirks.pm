@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.819 2019/11/09 10:39:40 fcambus Exp $
+# $OpenBSD: Quirks.pm,v 1.826 2019/11/13 14:50:45 fcambus Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -336,6 +336,8 @@ my $stem_extensions = {
 	'bro' => 'zeek',
 	'filter-rspamd' => 'opensmtpd-filter-rspamd',
 	'filter-senderscore' => 'opensmtpd-filter-senderscore',
+	'ilmbase' => 'OpenEXR',
+	'openexr-viewers' => 'OpenEXR-tools',
 };
 
 my $obsolete_reason = {
@@ -1330,6 +1332,12 @@ my $obsolete_reason = {
 	'py-bokeh' => 14,
 	'pecl-geoip' => 6,
 	'clive' => 5,
+	'aws-shell' => 6,
+	'aqsis' => 5,
+	'py-algorithm-munkres' => 14,
+	'gtk-xfce-engine' => 3,
+	'py-pdfminer' => 14,
+	'firewalk' => 0,
 };
 
 # reasons for obsolete packages

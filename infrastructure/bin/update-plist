@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: update-plist,v 1.176 2019/09/11 09:05:53 espie Exp $
+# $OpenBSD: update-plist,v 1.179 2019/11/11 19:00:27 espie Exp $
 # Copyright (c) 2018 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -669,6 +669,11 @@ sub check_specific
 {
 }
 
+# this is specific to DEBUG_PACKAGES: if there are new/changed annotated
+# files, we'll need to rerun make clean=fake/fake
+sub notice_new_file
+{
+}
 package OpenBSD::PackingElement::State;
 
 # that stuff NEVER gets copied over, but interpolated from existing objects
@@ -1452,6 +1457,34 @@ sub scan_fake_dir
 	    $self->{state}{logfile}, $self->{state});
 }
 
+sub zap_debug_files
+{
+	my $self = shift;
+	$self->{state}->say("Removing .debug artefacts");
+	my $keep = {};	# hash of directories to keep
+	for my $path (keys %{$self->{objects}}) {
+		next unless $path =~ m,(.*)\/\.debug\/,;
+		my $dir = $1;
+		if ($path =~ m,\/([^\/]+)\.dbg$, or
+		    $path =~ m,\/([^\/]+\.a)$,) {
+			    my $p2 = "$dir/$1";
+			    my $o = $self->{objects}{$p2};
+			    if (defined $o && $o->can_have_debug) {
+				    delete $self->{objects}{$path};
+				    next;
+			    }
+		}
+		$keep->{$dir} = 1;
+	}
+	for my $path (keys %{$self->{objects}}) {
+		next unless $path =~ m,(.*)\/\.debug$,;
+		next if $keep->{path};
+		if ($self->{objects}{$path}->is_dir) {
+			delete $self->{objects}{$path};
+		}
+	}
+}
+
 sub add_missing_cvstags
 {
 	my ($list, $base) = @_;
@@ -1469,11 +1502,12 @@ sub add_missing_cvstags
 
 sub copy_from_old
 {
-	my ($e, $o, $unexec) = @_;
+	my ($self, $e, $o, $unexec) = @_;
 
 	my $s = $e->{comesfrom};
 	if ($o->element_class ne ref($e) && $e->rebless_okay) {
 		$e->rebless($o->element_class);
+		$e->notice_new_file($self);
 	}
 
 	# mark it for later (see add_delayed_objects)
@@ -1499,7 +1533,7 @@ sub copy_existing
 		# this will be re-added to multiple paths if there are
 		# multiple matching plists
 		for my $e (@{$self->{exact}{$path}}) {
-			copy_from_old($e, $o, $self->{comes_after}{$path});
+			$self->copy_from_old($e, $o, $self->{comes_after}{$path});
 		}
 		return 1;
 	} else {
@@ -1555,6 +1589,7 @@ sub walk_up_directory
 				last;
 			}
 			my $a = $c->add($s->nlist, $p2);
+			$a->notice_new_file($self);
 			# and match the file
 			$a->{file} = $s->{file};
 			# unsubst is used as a hint in reversesubst, so we
@@ -1831,6 +1866,7 @@ my $self = UpdatePlist->new;
 $self->parse_args;
 $self->known_objects;
 $self->scan_fake_dir;
+$self->zap_debug_files;
 $self->handle_annotations;
 $self->copy_objects;
 $self->add_missing_tags;

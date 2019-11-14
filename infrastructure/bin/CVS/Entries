@@ -1,3 +1,4 @@
+/build-debug-info/1.13/Thu Nov 14 12:47:03 2019//
 /check-lib-depends/1.45/Mon Jul  8 13:13:29 2019//
 /check-wrkdir/1.1/Fri Nov 24 14:47:26 2017//
 /check_register/1.3/Sun Jan 13 15:28:51 2013//
@@ -17,13 +18,13 @@
 /port-resolve-lib-helper/1.1/Mon Jul  9 14:48:08 2018//
 /port-search-helper/1.1/Mon Jul  9 13:48:16 2018//
 /portbump/1.22/Wed Jun 27 16:20:08 2018//
-/portcheck/1.129/Tue Aug 20 11:06:06 2019//
+/portcheck/1.130/Tue Nov 12 06:01:04 2019//
 /portgen/1.1/Mon Jan 18 19:01:02 2016//
 /portimport/1.6/Thu Nov  1 11:33:12 2018//
 /portlock/1.1/Mon Jul  9 11:33:04 2018//
 /portslogger/1.1/Mon Aug 30 19:02:33 2010//
 /proot/1.65/Tue Oct 22 09:52:46 2019//
 /register-plist/1.22/Tue May 28 19:41:48 2019//
-/update-patches/1.19/Mon May 13 20:39:07 2019//
-/update-plist/1.176/Wed Sep 11 09:05:53 2019//
+/update-patches/1.20/Sun Nov 10 15:28:19 2019//
+/update-plist/1.179/Mon Nov 11 19:00:27 2019//
 D

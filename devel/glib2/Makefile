@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.317 2019/11/09 17:27:39 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.323 2019/11/11 19:01:06 ajacoutot Exp $
 
 COMMENT=		general-purpose utility library
 
 GNOME_PROJECT=		glib
 GNOME_VERSION=		2.62.2
 PKGNAME=		${DISTNAME:S/glib/glib2/}
-REVISION=		3
+REVISION=		8
 
 CATEGORIES=		devel
 
@@ -35,6 +35,8 @@ MODULES=		devel/meson \
 
 MODGNOME_TOOLS=		docbook
 MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
+
+DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
 # meson: have_bash, needed to install bash-completion snippets
 BUILD_DEPENDS +=	shells/bash

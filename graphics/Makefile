@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.487 2019/10/15 13:08:33 espie Exp $
+# $OpenBSD: Makefile,v 1.490 2019/11/10 15:52:42 sthen Exp $
 
      SUBDIR =
      SUBDIR += DevIL
@@ -10,7 +10,6 @@
      SUBDIR += amide
      SUBDIR += animorph
      SUBDIR += ansilove
-     SUBDIR += aqsis
      SUBDIR += argyll
      SUBDIR += aspect-crop
      SUBDIR += asymptote
@@ -105,7 +104,6 @@
      SUBDIR += hugin
      SUBDIR += icoutils
      SUBDIR += iec16022
-     SUBDIR += ilmbase
      SUBDIR += img2pdf
      SUBDIR += imlib2
      SUBDIR += imv
@@ -180,7 +178,6 @@
      SUBDIR += opencsg
      SUBDIR += opencv
      SUBDIR += openexr
-     SUBDIR += openexr-viewers
      SUBDIR += openimageio
      SUBDIR += openjp2
      SUBDIR += openjpeg
@@ -246,6 +243,7 @@
      SUBDIR += py-cycler
      SUBDIR += py-cycler,python3
      SUBDIR += py-dot
+     SUBDIR += py-dot,python3
      SUBDIR += py-pygal
      SUBDIR += py-pygal,python3
      SUBDIR += py-gd

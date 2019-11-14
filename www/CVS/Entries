@@ -1,4 +1,4 @@
-/Makefile/1.933/Thu Nov  7 21:56:19 2019//
+/Makefile/1.934/Sun Nov 10 16:56:31 2019//
 D/ajaxterm////
 D/analog////
 D/ap2-mod_dnssd////
@@ -463,6 +463,7 @@ D/ruby-rack-test////
 D/ruby-rainbows////
 D/ruby-raindrops////
 D/ruby-sanitize////
+D/ruby-sassc////
 D/ruby-sinatra////
 D/ruby-thin////
 D/ruby-typhoeus////

@@ -1,7 +1,9 @@
 /patch-gio_gdesktopappinfo_c/1.1/Thu Nov  7 14:26:22 2019//
 /patch-gio_glib-compile-schemas_c/1.12/Fri Nov  1 19:33:14 2019//
 /patch-gio_gunixmount_c/1.19/Fri Nov  1 19:33:14 2019//
+/patch-gio_kqueue_gkqueuefilemonitor_c/1.8/Mon Nov 11 19:01:06 2019//
 /patch-glib_gfileutils_c/1.6/Fri Nov  1 19:33:14 2019//
+/patch-glib_gspawn_c/1.3/Sun Nov 10 19:01:49 2019//
 /patch-glib_gtimezone_c/1.1/Sat Nov  2 11:07:42 2019//
 /patch-meson_build/1.11/Tue Nov  5 18:21:59 2019//
 D

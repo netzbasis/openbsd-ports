@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.536 2019/10/19 07:45:46 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.539 2019/11/12 15:18:32 bket Exp $
 
      SUBDIR =
      SUBDIR += accountsservice
@@ -13,7 +13,6 @@
      SUBDIR += arm-trusted-firmware
      SUBDIR += augeas
      SUBDIR += autossh
-     SUBDIR += aws-shell
      SUBDIR += awscli
      SUBDIR += backuppc
      SUBDIR += bacula
@@ -268,6 +267,8 @@
      SUBDIR += py-statgrab,python3
      SUBDIR += py-tsk
      SUBDIR += py-tsk,python3
+     SUBDIR += py-vmomi
+     SUBDIR += py-vmomi,python3
      SUBDIR += radiusreport
      SUBDIR += radmind
      SUBDIR += rancid
@@ -370,6 +371,7 @@
      SUBDIR += u-boot,aarch64
      SUBDIR += uefitool
      SUBDIR += udfclient
+     SUBDIR += unionfs-fuse
      SUBDIR += upower
      SUBDIR += upobsd
      SUBDIR += upt

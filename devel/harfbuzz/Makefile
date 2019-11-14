@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.114 2019/10/31 08:27:57 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.117 2019/11/10 21:44:07 ajacoutot Exp $
 
 BROKEN-hppa=		no atomic primitives
 
@@ -11,6 +11,9 @@ EXTRACT_SUFX=		.tar.xz
 
 PKGNAME-main=		harfbuzz-${V}
 PKGNAME-icu=		harfbuzz-icu-${V}
+
+REVISION-main=		1
+REVISION-icu=		1
 
 SHARED_LIBS +=  harfbuzz             15.1     # 20600.4
 SHARED_LIBS +=  harfbuzz-icu         1.2      # 20600.4
@@ -37,6 +40,8 @@ WANTLIB-icu += ${WANTLIB} harfbuzz icudata icuuc
 MASTER_SITES=		https://www.freedesktop.org/software/harfbuzz/release/
 
 MULTI_PACKAGES=		-main -icu
+
+DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
 USE_GMAKE=		Yes
 

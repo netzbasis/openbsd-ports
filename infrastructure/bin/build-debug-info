@@ -1,0 +1,338 @@
+#! /usr/bin/perl
+# $OpenBSD: build-debug-info,v 1.13 2019/11/14 12:47:03 espie Exp $
+# Copyright (c) 2019 Marc Espie <espie@openbsd.org>
+#
+# Permission to use, copy, modify, and distribute this software for any
+# purpose with or without fee is hereby granted, provided that the above
+# copyright notice and this permission notice appear in all copies.
+#
+# THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES
+# WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
+# MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR
+# ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+# WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
+# ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
+# OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+
+use strict;
+use warnings;
+
+my $ports1;
+BEGIN {
+	$ports1 = $ENV{PORTSDIR} || '/usr/ports';
+}
+
+use lib "$ports1/infrastructure/lib";
+use OpenBSD::BaseFS;
+
+use OpenBSD::PkgCreate;
+
+# PlistReader is "just" a specialized version of PkgCreate algorithm
+# that does mimic what PkgCreate reader does with a few specialized methods
+package PlistReader;
+our @ISA = qw(OpenBSD::PkgCreate);
+sub new
+{
+	my $class = shift;
+	bless { olist => OpenBSD::PackingList->new }, $class;
+}
+
+sub olist
+{
+	my $self = shift;
+	return $self->{olist};
+}
+
+
+# specialized state
+package PlistReader::State;
+our @ISA = qw(OpenBSD::PkgCreate::State);
+
+# mostly make sure we have a progressmeter
+sub init
+{
+	my ($self, $realstate) = @_;
+	$self->{subst} = OpenBSD::Subst->new($realstate);
+	$self->{progressmeter} = $realstate->{progressmeter};
+	$self->{bad} = 0;
+	$self->{repo} = $realstate->{repo};
+	$self->{quiet} = $realstate->{quiet};
+	$self->{cache_dir} = $realstate->{cache_dir};
+}
+
+# if we're in quiet mode, get rid of status messages
+sub set_status
+{
+	my $self = shift;
+	return if $self->{quiet};
+	$self->SUPER::set_status(@_);
+}
+
+sub end_status
+{
+	my $self = shift;
+	return if $self->{quiet};
+	$self->SUPER::end_status(@_);
+}
+
+# Most of the heavy lifting is done by visitor methods, as always
+
+package OpenBSD::PackingElement;
+sub write_debug_info
+{
+}
+
+package OpenBSD::PackingElement::CVSTag;
+sub write_debug_info
+{
+	my ($self, $fh, $o) = @_;
+	$self->write($fh);
+}
+
+package OpenBSD::PackingElement::PkgPath;
+sub write_debug_info
+{
+	my ($self, $fh, $o) = @_;
+	print $fh "\@", $self->keyword, " debug/", $self->name, "\n";
+}
+
+package OpenBSD::PackingElement::Cwd;
+# so the reader stuffs a default cwd in the packing-list, which is VERY
+# useful for absolute names, BUT we don't want to copy the first one.
+
+# copy the later ones, even if there is nothing to emit afterwards (this
+# is cheap)
+sub write_debug_info
+{
+	my ($self, $fh, $o) = @_;
+	if ($o->{first_cwd}) {
+		$o->{first_cwd} = 0;
+	} else {
+		$self->write($fh);
+	}
+}
+
+
+package OpenBSD::PackingElement::FileWithDebugInfo;
+use File::Basename;
+sub write_debug_info
+{
+	my ($self, $fh, $o) = @_;
+	my $s = $self->name;
+	my $dbg = $self->mogrify($s);
+	my $dir = $dbg;
+	$dir =~ s/(\/\.debug\/)[^\/]+/$1/;
+	if (!exists $o->{dirstash}{$dir}) {
+		print $fh $dir, "\n";
+		$o->{dirstash}{$dir} = 1;
+	}
+	my $path = $self->fullname;
+	if (-l $path) {
+		$o->{state}->errsay(
+		    "WARNING: #1 is a symlink, no debug info produced", 
+		    $path);
+		return;
+	}
+	if (-f $path) {
+		$self->write_dbg($fh, $dbg);
+		my $k = join('/', (stat $path)[0,1]);
+		my $out = $o->{out};
+		my $l = $o->{linkstash}{$k};
+		if (defined $l) {
+			$self->write_rule($out, $l, $dbg, "LINK_RULE");
+		} else {
+			$self->write_dbg_rule($out, $s, $dbg);
+			$o->{linkstash}{$k} = $dbg;
+		}
+	} else {
+		$o->{state}->fatal("Error: #1 does not exist", $path);
+	}
+}
+
+sub write_rule
+{
+	my ($self, $out, $s, $dbg, $what) = @_;
+	print $out "all: $dbg\n";
+	print $out "$dbg: $s\n";
+	print $out "\t\@\$\{$what\}\n\n";
+}
+
+sub write_dbg_rule
+{	my ($self, $out, $s, $dbg) = @_;
+	$self->write_rule($out, $s, $dbg, "OBJCOPY_RULE");
+}
+
+sub write_dbg
+{
+	my ($self, $fh, $dbg) = @_;
+	print $fh $dbg, "\n";
+}
+
+sub mogrify
+{
+	my ($self, $s) = @_;
+	$s =~ s,([^\/]+)$,.debug/$1.dbg,;
+	return $s;
+}
+
+package OpenBSD::PackingElement::Lib;
+sub write_dbg
+{
+	my ($self, $fh, $dbg) = @_;
+	print $fh $dbg, "\n";
+}
+
+package OpenBSD::PackingElement::StaticLib;
+sub mogrify
+{
+	my ($self, $s) = @_;
+	$s =~ s,([^\/]+.a)$,.debug/$1,;
+	return $s;
+}
+
+sub write_dbg_rule
+{
+	my ($self, $out, $s, $dbg) = @_;
+	$self->write_rule($out, $s, $dbg, "STRIP_RULE");
+}
+
+sub write_dbg
+{
+	my ($self, $fh, $dbg) = @_;
+	print $fh "\@", $self->keyword, " ",  $dbg, "\n";
+}
+
+package OpenBSD::PackingElement::NoDefaultConflict;
+sub write_debug_info
+{
+	&OpenBSD::PackingElement::CVSTag::write_debug_info;
+}
+
+package OpenBSD::PackingElement::Conflict;
+sub write_debug_info
+{
+	my ($self, $fh, $o) = @_;
+	my $m = join('|', map {"debug-$_"} split(/\|/, $self->name));
+	print $fh "\@", $self->keyword, " $m\n";
+}
+
+# This is the BuildDebugInfo main code proper
+package BuildDebugInfo::State;
+our @ISA = qw(OpenBSD::AddCreateDelete::State);
+sub handle_options
+{
+	my $state = shift;
+	$state->SUPER::handle_options('vqFP:', 
+	    '[-Fmnqvx]',
+	    '-P pkgdir',
+	    '-- pkg_create_args ...');
+    	$state->{pkgdir} = $state->opt('P');
+	if (!defined $state->{pkgdir}) {
+		$state->fatal("-P pkgdir is mandatory");
+	}
+	$state->{verbose} = $state->opt('v');
+	$state->{quiet} = $state->opt('q');
+}
+
+sub openfile
+{
+	my ($self, $name) = @_;
+	open my $fh, ">", $name or 
+	    $self->fatal("Can't write to #1: #2", $name, $!);
+	$self->say("Writing #1", $name) unless $self->{quiet};
+	return $fh;
+}
+
+package BuildDebugInfo;
+our @ISA = qw(OpenBSD::BaseFS);
+use File::Basename;
+use File::Compare;
+
+sub new
+{
+	my $class = shift;
+	return $class->SUPER::new(undef, BuildDebugInfo::State->new);
+}
+
+sub process_next_subpackage
+{
+	my $self = shift;
+	my $r = PlistReader->new;
+
+	my $s = PlistReader::State->new('build-debug-info', $self->{state});
+	$r->{state} = $s;
+	$s->handle_options;
+	$s->{opt}{q} = 1;
+	$r->{base_plists} = $s->{contents};
+	my $pkg = shift @ARGV;
+
+	$r->read_all_fragments($s, $r->olist);
+	push(@{$self->{lists}}, $r);
+	if ($s->{bad} != 0) {
+		$self->{state}{exitcode} = 1;
+	}
+}
+
+sub parse_args
+{
+	my $self = shift;
+	# this handles update-plist options proper, finished with --
+	$self->{state}->handle_options;
+	if (@ARGV == 0) {
+		$self->{state}->usage;
+	}
+	# we read all plists using the exact same code as pkg_create
+	# e.g., ARGV is all PKG_ARGS*  parameters concatenated together:
+	# options1 pkgname1 options2 pkgname2 ...
+	while (@ARGV > 0) {
+		$self->process_next_subpackage;
+	}
+
+}
+
+my $self = BuildDebugInfo->new;
+my $state = $self->{state};
+$state->{exitcode} = 0;
+$self->parse_args;
+use File::Basename;
+$self->{dirstash} = {};
+$self->{linkstash} = {};
+$self->{out} = $state->openfile($state->{pkgdir}."/Makefile");
+print {$self->{out}} << 'EOPREAMBLE';
+# Makefile generated by build-debug-info
+# No serviceable parts
+
+OBJCOPY_RULE = ${INSTALL_DATA_DIR} ${@D} && \
+    echo "> Copy debug info from $? to $@" && \
+    objcopy --only-keep-debug $? $@ && \
+    objcopy --strip-debug $? && \
+    objcopy --add-gnu-debuglink=$@ $? && \
+    touch $@
+
+STRIP_RULE = ${INSTALL_DATA_DIR} ${@D} && \
+    echo "> Copy debug info from $? to $@" && \
+    cp $? $@ && strip $? && touch $@
+
+LINK_RULE = ${INSTALL_DATA_DIR} ${@D} && \
+    echo "> Link debug info from $? to $@" && ln $? $@
+
+SYMLINK_RULE = ${INSTALL_DATA_DIR} ${@D} && \
+    echo "> Link debug info from $? to $@" && ln -s $? $@
+
+all:
+.PHONY: all
+
+EOPREAMBLE
+
+for my $l (@{$self->{lists}}) {
+	my $name = pop @{$l->{base_plists}};
+	$name = $state->{pkgdir}."/".(basename $name);
+	my $fh = $state->openfile($name);
+	$self->{first_cwd} = 1;
+	$l->olist->write_debug_info($fh, $self);
+	close($fh) or $state->fatal("Can't write plist: #1", $!);
+}
+close($self->{out}) or $state->fatal("Can't close Makefile: #1", $!);
+
+
+exit($state->{exitcode});

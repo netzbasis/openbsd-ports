@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1483 2019/11/09 15:08:09 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1497 2019/11/13 15:22:41 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -886,6 +886,8 @@ WRKBUILD ?= ${WRKSRC}
 .endif
 WRKCONF ?= ${WRKBUILD}
 
+_WRKDEBUG = ${WRKINST}/debug-pkg
+
 MAKE_FILE ?= Makefile
 ALL_TARGET ?= all
 
@@ -908,11 +910,8 @@ XAUTHORITY ?= ${HOME}/.Xauthority
 
 _PACKAGE_COOKIE_DEPS=${_FAKE_COOKIE}
 
-.for _s in ${BUILD_PACKAGES}
-PKGNAMES += ${FULLPKGNAME${_s}}
-PKGFILES += ${PKGFILE${_s}}
-PKGPATHS += ${FULLPKGPATH${_s}}
-.endfor
+DEBUG_PACKAGES ?=
+DEBUG_CONFIGURE_ARGS ?=
 
 STATIC_PLIST ?= Yes
 .for _s in ${MULTI_PACKAGES}
@@ -930,16 +929,33 @@ ${_v}${_s} ?= ${${_v}}
 .  endfor
 .endfor
 
+# make DEBUG_PACKAGES uniform: automatically strip PKG_ARCH=*
+# from it (so DEBUG_PACKAGES=${BUILD_PACKAGES} works)
+.if !empty(DEBUG_PACKAGES)
+.  for i in ${DEBUG_PACKAGES}
+.    if ${PKG_ARCH$i} == "*"
+DEBUG_PACKAGES := ${DEBUG_PACKAGES:N$i}
+.    endif
+.  endfor
+.endif
+
+.for _s in ${BUILD_PACKAGES}
+PKGNAMES += ${FULLPKGNAME${_s}}
+PKGFILES += ${PKGFILE${_s}}
+PKGPATHS += ${FULLPKGPATH${_s}}
+.  if ${DEBUG_PACKAGES:M${_s}}
+PKGFILES += ${_PKG_REPO}${_DBG_PKGFILE${_s}}
+PKGNAMES += debug-${FULLPKGNAME${_s}}
+#PKGPATHS += debug/${FULLPKGPATH${_s}} # XXX sqlports doesn't like it
+.  endif 
+.endfor
+
 _PACKAGE_LINKS =
 NO_ARCH ?= ${MACHINE_ARCH}/no-arch
 _PKG_REPO = ${PACKAGE_REPOSITORY}/${MACHINE_ARCH}/all/
 _TMP_REPO = ${PACKAGE_REPOSITORY}/${MACHINE_ARCH}/tmp/
 _CACHE_REPO = ${PACKAGE_REPOSITORY}/${MACHINE_ARCH}/cache/
 PKGFILE = ${_PKG_REPO}${_PKGFILE${SUBPACKAGE}}
-
-DEBUG_PACKAGES ?=
-DEBUG_FILES ?=
-DEBUG_CONFIGURE_ARGS ?=
 
 .for _S in ${MULTI_PACKAGES}
 _PKGFILE${_S} = ${FULLPKGNAME${_S}}.tgz
@@ -976,12 +992,11 @@ _PACKAGE_LINKS += ${MACHINE_ARCH}/ftp/${_DBG_PKGFILE${_S}} ${MACHINE_ARCH}/all/$
 
 .endfor
 
-.if !empty(DEBUG_PACKAGES) || !empty(DEBUG_FILES)
+# Make it so disabling debug packages is trivial
+.if !empty(DEBUG_PACKAGES)
 INSTALL_STRIP =
-DEBUG_FLAGS = -g
+DEBUG ?= -g
 CONFIGURE_ARGS += ${DEBUG_CONFIGURE_ARGS}
-.else
-DEBUG_FLAGS =
 .endif
 
 .if empty(SUBPACKAGE) || ${SUBPACKAGE} == "-"
@@ -1160,6 +1175,8 @@ DESCR${_S} ?= ${PKGDIR}/DESCR${_S}
 .endif
 
 
+_EXCLUDE_DEBUG_PLISTS = ${_WRKDEBUG} ${_WRKDEBUG}/Makefile
+
 .for _S in ${MULTI_PACKAGES}
 PKG_ARGS${_S} += -A'${PKG_ARCH${_S}}'
 
@@ -1179,14 +1196,16 @@ _DBG_PKG_ARGS${_S} := ${PKG_ARGS${_S}}
 _DBG_PKG_ARGS${_S} += -P${FULLPKGPATH${_S}}:${FULLPKGNAME${_S}}:${FULLPKGNAME${_S}}
 _DBG_PKG_ARGS${_S} += -DCOMMENT="debug info for ${FULLPKGNAME${_S}}"
 _DBG_PKG_ARGS${_S} += -d"-debug info for ${FULLPKGNAME${_S}}"
+# XXX revisit that fullpkgpath later ?
 _DBG_PKG_ARGS${_S} += -DFULLPKGPATH=debug/${FULLPKGPATH${_S}}
-_DBG_PKG_ARGS${_S} += -f ${PLIST${_S}}-debug
+_DBG_PKG_ARGS${_S} += -f ${_WRKDEBUG}/${PLIST${_S}:T}
+_EXCLUDE_DEBUG_PLISTS += ${_WRKDEBUG}/${PLIST${_S}:T}
 _create_pkg${_S} += && \
 	tmp=${_TMP_REPO}${_DBG_PKGFILE${_S}} pkgname=${_DBG_PKGFILE${_S}} && \
 	${_PBUILD} ${_PKG_CREATE} -DPORTSDIR="${PORTSDIR}" \
 		$$deps ${_DBG_PKG_ARGS${_S}} $$tmp && \
 	${_check_lib_depends} $$tmp && \
-	${_register_plist${_S}} $$tmp && \
+	${_dbg_register_plist${_S}} $$tmp && \
 	${_checksum_package}
 _move_tmp_pkg${_S} += && ${_PBUILD} mv ${_TMP_REPO}${_DBG_PKGFILE${_S}} ${_DBG_PACKAGE_COOKIE${_S}}
 _tmp_pkg${_S} += ${_TMP_REPO}${_DBG_PKGFILE${_S}}
@@ -1874,8 +1893,10 @@ _CHECK_LIB_DEPENDS += -F pthread
 .for _s in ${MULTI_PACKAGES}
 .  if ${STATIC_PLIST${_s}:L} == "no"
 _register_plist${_s} = :
+_dbg_register_plist${_s} = :
 .  else
 _register_plist${_s} = ${_register_plist}
+_dbg_register_plist${_s} = : 
 .  endif
 .endfor
 
@@ -1944,8 +1965,9 @@ _update_plist = ${_cache_fragment}; \
 	-s BASE_PKGPATH -s LOCALBASE -s LOCALSTATEDIR -s PREFIX \
 	-s RCDIR -s SYSCONFDIR -s X11BASE \
 	-X ${_FAKE_COOKIE} -X ${_INSTALL_PRE_COOKIE} -X ${WRKINST}/.saved_libs
+	
 
-.for _d in ${_FAKE_TREE_LIST}
+.for _d in ${_FAKE_TREE_LIST} ${_EXCLUDE_DEBUG_PLISTS}
 _update_plist += -X ${_d:Q}
 .endfor
 
@@ -1955,6 +1977,13 @@ _update_plist += -L ${WRKINST}/.fake_log \
 _update_plist += `SUBPACKAGE=$i make run-depends-args lib-depends-args` ${PKG_ARGS$i} ${FULLPKGNAME$i}
 .endfor
 
+_build_debug_info = PORTSDIR=${PORTSDIR} ${_PERLSCRIPT}/build-debug-info -P ${_WRKDEBUG} --
+
+.for i in ${BUILD_PACKAGES}
+.  if ${DEBUG_PACKAGES:M$i}
+_build_debug_info += ${PKG_ARGS$i} ${FULLPKGNAME$i}
+.  endif
+.endfor
 
 ###
 ### end of variable setup. Only targets now
@@ -2070,6 +2099,9 @@ ${_PACKAGE_COOKIE${_S}}:
 .  else
 	@${_MAKE} ${_PACKAGE_COOKIE_DEPS}
 # What PACKAGE normally does:
+.  if !empty(DEBUG_PACKAGES)
+	@${_SUDOMAKESYS} _copy-debug-info ${FAKE_SETUP}
+.  endif
 	@${_MAKE} _internal-generate-readmes
 	@${ECHO_MSG} "===>  Building package for ${FULLPKGNAME${_S}}"
 	@${ECHO_MSG} "Create ${_PACKAGE_COOKIE${_S}}"
@@ -2481,6 +2513,7 @@ update-patches:
 	@toedit=`WRKDIST=${WRKDIST} PATCHDIR=${PATCHDIR} \
 		PATCH_LIST='${PATCH_LIST}' DIFF_ARGS='${DIFF_ARGS}' \
 		DISTORIG=${DISTORIG} PATCHORIG=${PATCHORIG} \
+		WRKOBJDIR=${WRKOBJDIR} \
 		${_PERLSCRIPT}/update-patches`; \
 	if [ -n "$$toedit" ] && [ "${EDIT_PATCHES:L}" != no ]; then \
 		cd ${PATCHDIR} && $${VISUAL:-$${EDITOR:-/usr/bin/vi}} $$toedit; \
@@ -2923,32 +2956,23 @@ ${_FAKE_COOKIE}: ${_BUILD_COOKIE}
 	@${_SUDOMAKESYS} post-install ${FAKE_SETUP}
 .endif
 	@${_SUDOMAKESYS} _post-install-modules ${FAKE_SETUP}
-.if !empty(DEBUG_FILES)
-	@${_SUDOMAKESYS} _copy_debug_info ${FAKE_SETUP}
-.endif
 	@${_check_wrkdir} ${WRKDIR} ${_TS_COOKIE} ${WRKDIR_CHANGES_OKAY} 
 	@${_PBUILD} ${_MAKE_COOKIE} $@
 
-_copy_debug_info:
-.for P in ${DEBUG_FILES:N*.a}
-	@dbgpath=${PREFIX}/${P:H}/.debug; \
-	dbginfo=$${dbgpath}/${P:T}.dbg; \
-	p=${PREFIX}/$P; \
-	${INSTALL_DATA_DIR} $${dbgpath}; \
-	echo "> move debug info from $$p into $${dbginfo}"; \
-	objcopy --only-keep-debug $$p $${dbginfo}; \
-	objcopy --strip-debug $$p; \
-	objcopy --add-gnu-debuglink=$${dbginfo} $$p
-.endfor
-.for P in ${DEBUG_FILES:M*.a}
-	@dbgpath=${PREFIX}/${P:H}/.debug; \
-	dbginfo=$${dbgpath}/${P:T}; \
-	p=${PREFIX}/$P; \
-	${INSTALL_DATA_DIR} $${dbgpath}; \
-	echo "> copy debug info from $$p into $${dbginfo}"; \
-	cp $$p $${dbginfo}; \
-	strip $$p
-.endfor
+_copy-debug-info: ${_FAKE_COOKIE}
+	@mkdir -p ${_WRKDEBUG}
+	@${_build_debug_info}
+	@cd ${PREFIX} && \
+		exec ${SETENV} ${MAKE} -r -f ${_WRKDEBUG}/Makefile \
+			INSTALL_DATA_DIR='${INSTALL_DATA_DIR}' all
+
+show-debug-info:
+	@for i in ${_WRKDEBUG}/*; do \
+		echo "$$i:"; \
+		echo "------------------"; \
+		cat $$i; \
+	done
+
 # XXX this is a separate step that is "always on" and doesn't generate
 # cookies
 _internal-generate-readmes: ${_FAKE_COOKIE}
@@ -3606,7 +3630,7 @@ _all_phony = ${_recursive_depends_targets} \
 	_recurse-show-run-depends show-run-depends \
 	_post-extract-finalize _post-patch-finalize _pre-fake-modules \
 	_gen-finalize _post-install-modules fix-permissions \
-	_copy_debug_info
+	_copy-debug-info show-debug-info
 
 .if defined(_DEBUG_TARGETS)
 .  for _t in ${_all_phony}

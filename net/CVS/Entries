@@ -1,4 +1,4 @@
-/Makefile/1.1149/Sat Nov  9 10:36:07 2019//
+/Makefile/1.1151/Wed Nov 13 14:49:29 2019//
 D/GeoIP////
 D/adns////
 D/adsuck////
@@ -86,7 +86,6 @@ D/exabgp////
 D/ezstream////
 D/fastnetmon////
 D/filezilla////
-D/firewalk////
 D/flickcurl////
 D/flow-tools////
 D/flowd////
@@ -627,6 +626,7 @@ D/sslsniffer////
 D/ssvnc////
 D/strongswan////
 D/supybot////
+D/swirc////
 D/syncthing////
 D/synergy////
 D/tacacs+////

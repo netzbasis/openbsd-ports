@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.230 2019/11/09 17:27:39 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.233 2019/11/10 21:44:07 ajacoutot Exp $
 
 COMMENT-main=		multi-platform graphical toolkit
 COMMENT-cups=		gtk+2 CUPS print backend
@@ -9,8 +9,8 @@ GNOME_PROJECT=		gtk+
 PKGNAME-main=		gtk+2-${GNOME_VERSION}
 PKGNAME-cups=		gtk+2-cups-${GNOME_VERSION}
 
-REVISION-main=		6
-REVISION-cups=		2
+REVISION-main=		8
+REVISION-cups=		4
 
 CATEGORIES=		x11 devel
 
@@ -42,6 +42,8 @@ MULTI_PACKAGES=		-main -cups
 
 MODULES=		lang/python \
 			x11/gnome
+
+DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
 LIB_DEPENDS-main=	devel/atk \
 			devel/pango \

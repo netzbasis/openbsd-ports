@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.124 2019/08/01 07:05:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.127 2019/11/10 21:44:06 ajacoutot Exp $
 
 COMMENT=		library for layout and rendering of text
 
 GNOME_VERSION=		1.42.4
 GNOME_PROJECT=		pango
-REVISION=		3
+REVISION=		5
 
 SHARED_LIBS +=  pango-1.0            3800.2   # 4200.4
 SHARED_LIBS +=  pangoft2-1.0         3800.1   # 4200.4
@@ -28,6 +28,8 @@ WANTLIB += z
 MODULES=		x11/gnome
 
 MODGNOME_TOOLS=		gobject-introspection
+
+DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
 LIB_DEPENDS=		devel/glib2 \
 			devel/fribidi \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1149 2019/11/09 10:36:07 fcambus Exp $
+# $OpenBSD: Makefile,v 1.1151 2019/11/13 14:49:29 fcambus Exp $
 
      SUBDIR =
      SUBDIR += GeoIP
@@ -93,7 +93,6 @@
      SUBDIR += ezstream
      SUBDIR += fastnetmon
      SUBDIR += filezilla
-     SUBDIR += firewalk
      SUBDIR += flickcurl
      SUBDIR += flow-tools
      SUBDIR += flowd
@@ -707,6 +706,7 @@
      SUBDIR += ssvnc
      SUBDIR += strongswan
      SUBDIR += supybot
+     SUBDIR += swirc
      SUBDIR += syncthing
      SUBDIR += synergy
      SUBDIR += tacacs+

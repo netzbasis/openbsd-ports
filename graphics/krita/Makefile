@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.34 2019/10/18 04:43:12 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.36 2019/11/10 18:15:08 ajacoutot Exp $
 
 COMMENT =	advanced drawing and image manipulation
 
 VERSION =	4.2.7.1
 DISTNAME =	krita-${VERSION}
+REVISION =	0
 
 SHARED_LIBS +=  kritabasicflakes          2.0 # 16.0
 SHARED_LIBS +=  kritacolord               1.0 # 16.0
@@ -42,15 +43,15 @@ MAINTAINER =	Rafael Sadowski <rsadowski@openbsd.org>
 # GPLv2+, LGPLv2+ and GNU FDLv1.2
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} Half ICE Iex IlmImf IlmThread Imath
-WANTLIB += KF5Archive KF5Completion KF5ConfigCore KF5ConfigGui
-WANTLIB += KF5CoreAddons KF5Crash KF5GuiAddons KF5I18n KF5ItemViews
-WANTLIB += KF5WidgetsAddons KF5WindowSystem OpenColorIO Qt5Concurrent
-WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Multimedia Qt5Network Qt5PrintSupport
-WANTLIB += Qt5Qml Qt5Quick Qt5QuickWidgets Qt5Svg Qt5Widgets Qt5X11Extras
-WANTLIB += Qt5Xml SM X11 Xext Xi boost_system-mt c exiv2 fftw3
-WANTLIB += gif gsl gslcblas jpeg lcms2 m png poppler poppler-qt5
-WANTLIB += quazip5 raw tiff z
+WANTLIB += ${COMPILER_LIBCXX} Half-2_4 ICE Iex-2_4 IlmImf-2_4
+WANTLIB += IlmThread-2_4 Imath-2_4 KF5Archive KF5Completion KF5ConfigCore
+WANTLIB += KF5ConfigGui KF5CoreAddons KF5Crash KF5GuiAddons KF5I18n
+WANTLIB += KF5ItemViews KF5WidgetsAddons KF5WindowSystem OpenColorIO
+WANTLIB += Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Multimedia
+WANTLIB += Qt5Network Qt5PrintSupport Qt5Qml Qt5Quick Qt5QuickWidgets
+WANTLIB += Qt5Svg Qt5Widgets Qt5X11Extras Qt5Xml SM X11 Xext Xi
+WANTLIB += boost_system-mt c exiv2 fftw3 gif gsl gslcblas jpeg
+WANTLIB += lcms2 m png poppler poppler-qt5 quazip5 raw tiff z
 
 MASTER_SITES =	${MASTER_SITE_KDE:=stable/krita/${VERSION}/}
 EXTRACT_SUFX =	.tar.gz

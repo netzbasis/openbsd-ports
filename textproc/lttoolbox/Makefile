@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.15 2019/07/12 20:50:01 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2019/11/12 20:18:55 espie Exp $
 
 COMMENT =		finite-state lexical processing toolkit
 
 V =			3.5
 VER =			3.5.0
 DISTNAME =		lttoolbox-${VER}
-REVISION =		0
+REVISION =		1
 
 SHARED_LIBS +=		lttoolbox3-$V             2.0 # 0.0
 SHARED_LIBS +=		lttoolbox3                2.0 # 0.0
@@ -15,6 +15,8 @@ CATEGORIES =		textproc
 HOMEPAGE =		http://wiki.apertium.org/wiki/Lttoolbox
 
 MAINTAINER =		Anthony J. Bentley <anthony@anjbe.name>
+
+DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
 # GPLv2+
 PERMIT_PACKAGE =	Yes

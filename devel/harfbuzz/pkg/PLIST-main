@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.31 2019/08/17 19:11:24 ajacoutot Exp $
+@comment $OpenBSD: PLIST-main,v 1.33 2019/11/10 17:26:23 ajacoutot Exp $
 @pkgpath devel/harfbuzz
 @bin bin/hb-ot-shape-closure
 @bin bin/hb-shape
@@ -43,13 +43,13 @@ lib/cmake/harfbuzz/
 lib/cmake/harfbuzz/harfbuzz-config.cmake
 lib/girepository-1.0/
 lib/girepository-1.0/HarfBuzz-0.0.typelib
-lib/libharfbuzz-gobject.a
+@static-lib lib/libharfbuzz-gobject.a
 lib/libharfbuzz-gobject.la
 @lib lib/libharfbuzz-gobject.so.${LIBharfbuzz-gobject_VERSION}
-lib/libharfbuzz-subset.a
+@static-lib lib/libharfbuzz-subset.a
 lib/libharfbuzz-subset.la
 @lib lib/libharfbuzz-subset.so.${LIBharfbuzz-subset_VERSION}
-lib/libharfbuzz.a
+@static-lib lib/libharfbuzz.a
 lib/libharfbuzz.la
 @lib lib/libharfbuzz.so.${LIBharfbuzz_VERSION}
 lib/pkgconfig/harfbuzz-gobject.pc

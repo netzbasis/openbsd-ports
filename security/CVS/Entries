@@ -283,6 +283,7 @@ D/py-pbkdf2////
 D/py-pefile////
 D/py-pgpdump////
 D/py-potr////
+D/py-pyscard////
 D/py-pysha3////
 D/py-requests-aws4auth////
 D/py-ropper////

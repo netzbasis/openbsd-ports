@@ -1,6 +1,8 @@
-/Makefile/1.57/Sun Feb 10 18:14:36 2019//
-/adj.mk/1.6/Sun Jan 20 11:17:48 2019//
-/distinfo/1.13/Sun Jan 20 11:17:48 2019//
+/Makefile/1.58/Mon Nov 11 22:54:15 2019//
+/adj.mk/1.7/Mon Nov 11 22:54:15 2019//
+/distinfo/1.14/Mon Nov 11 22:54:15 2019//
+/manpage_symlinks.mk/1.1/Mon Nov 11 22:54:15 2019//
+/symlinks.mk/1.1/Mon Nov 11 22:54:15 2019//
 D/files////
 D/patches////
 D/pkg////

@@ -1,4 +1,4 @@
-/Makefile/1.487/Tue Oct 15 13:08:33 2019//
+/Makefile/1.490/Sun Nov 10 15:52:42 2019//
 D/DevIL////
 D/GraphicsMagick////
 D/ImageMagick////
@@ -8,7 +8,6 @@ D/allegropng////
 D/amide////
 D/animorph////
 D/ansilove////
-D/aqsis////
 D/argyll////
 D/aspect-crop////
 D/asymptote////
@@ -102,7 +101,6 @@ D/hs-graphviz////
 D/hugin////
 D/icoutils////
 D/iec16022////
-D/ilmbase////
 D/img2pdf////
 D/imlib2////
 D/imv////
@@ -178,7 +176,6 @@ D/opencsg////
 D/opencv////
 D/opencv2////
 D/openexr////
-D/openexr-viewers////
 D/openimageio////
 D/openjp2////
 D/openjpeg////

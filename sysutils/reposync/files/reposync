@@ -1,6 +1,6 @@
 #!/bin/ksh
 #
-# $OpenBSD: reposync,v 1.4 2019/11/08 21:58:58 sthen Exp $
+# $OpenBSD: reposync,v 1.7 2019/11/10 13:53:39 sthen Exp $
 #
 # Copyright (c) 2018, 2019 Stuart Henderson <sthen@openbsd.org>
 #
@@ -18,21 +18,23 @@
 
 err()
 {
-        echo "${0##*/}: $*" >&2
+	echo "${0##*/}: $*" >&2
 	exit 1
 }
 
 usage()
 {
-        echo "usage: ${0##*/} [-f] [-l username] rsync://upstream/cvs [/path/to/cvs]" >&2
+	echo "usage: ${0##*/} [-f] [-p | -l username] rsync://upstream/cvs [/path/to/cvs]" >&2
 	exit 1
 }
 
 force=false
-while getopts "fl:" c; do
+fwduser=anoncvs
+while getopts "fl:p" c; do
 	case "$c" in
 		f) force=true		;;
 		l) fwduser="$OPTARG"	;;
+		p) fwduser=""		;;
 		*) usage		;;
 	esac
 done
@@ -47,9 +49,9 @@ run_rsync()
 {
 	if [[ -n $fwduser ]]; then
 			# reach rsync on the server via an ssh port-forward
-			rsync -e "ssh -W localhost:rsync -l $fwduser" $*
+			rsync -e "ssh -W localhost:rsync -l $fwduser" $* 2>&1
 	else
-			rsync $*
+			rsync $* 2>&1
 	fi
 }
 
@@ -70,16 +72,16 @@ lockfile="$rundir/reposync.lock"
 cd $rundir
 
 if [ -h $lockfile ]; then
-        # read the pid from $lockfile symlink target
-        lockedpid=$(stat -f %Y $lockfile)
+	# read the pid from $lockfile symlink target
+	lockedpid=$(stat -f %Y $lockfile)
 
-        # exit if it's A) still running and B) looks like this script
-        if ps -o command -p $lockedpid | grep -q "${0##*/}"; then
+	# exit if it's A) still running and B) looks like this script
+	if ps -o command -p $lockedpid | grep -q "${0##*/}"; then
 		err "already running?"
-        fi
+	fi
 
-        # not still running, the lock must be stale (machine panicked, etc) so zap it
-        rm -f $lockfile
+	# not still running, the lock must be stale (machine panicked, etc) so zap it
+	rm -f $lockfile
 fi
 
 ln -s $$ $lockfile || err "could not lock $lockfile"
@@ -89,7 +91,12 @@ trap "rm -f $lockfile" 0 1 2 15
 # check CVSROOT directory listing to identify updates; primarily for
 # ChangeLog but val-tags may also be updated after a checkout was done
 # using a new tag. ignore "history" (lists read-only operations).
-newhash="${synchost} $(run_rsync ${synchost}/CVSROOT/ | grep -v history | sha256)"
+_t="$(run_rsync ${synchost}/CVSROOT/ | grep -v history)"
+[[ -n $fwduser ]] && case $_t in
+	"stdio forwarding failed"*|"Stdio forwarding request failed"*)
+		err "mirror does not support ssh port-forwarding" ;;
+esac
+newhash="${synchost} $(echo $_t | sha256)"
 
 if [ -r $hashfile ]; then
 	age=$((`date +%s` - `stat -t %s -f %m $hashfile`))
