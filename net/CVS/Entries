@@ -1,4 +1,4 @@
-/Makefile/1.1151/Wed Nov 13 14:49:29 2019//
+/Makefile/1.1152/Sat Nov 16 10:32:11 2019//
 D/GeoIP////
 D/adns////
 D/adsuck////
@@ -268,6 +268,7 @@ D/netinfo////
 D/netpipes////
 D/netrate////
 D/netsed////
+D/nextcloudclient////
 D/nfdump////
 D/nfsen////
 D/ngircd////

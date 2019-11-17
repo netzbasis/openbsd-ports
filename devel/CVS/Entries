@@ -1,4 +1,4 @@
-/Makefile/1.1909/Mon Nov 11 19:38:30 2019//
+/Makefile/1.1910/Sat Nov 16 17:47:27 2019//
 D/ElectricFence////
 D/ORBit2////
 D/acpica////
@@ -166,7 +166,6 @@ D/go-sys////
 D/go-tools////
 D/gobject-introspection////
 D/goffice////
-D/goffice08////
 D/goopy////
 D/got////
 D/gpatch////
