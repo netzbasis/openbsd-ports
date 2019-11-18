@@ -1,4 +1,4 @@
-/Makefile/1.30/Mon Mar  4 17:06:10 2019//
+/Makefile/1.31/Sun Nov 17 19:30:18 2019//
 /Makefile.inc/1.5/Sat Jun 15 09:19:04 2019//
 D/pkg////
 D/provider-alicloud////
@@ -64,7 +64,6 @@ D/provider-softlayer////
 D/provider-spotinst////
 D/provider-statuscake////
 D/provider-template////
-D/provider-terraform////
 D/provider-tls////
 D/provider-triton////
 D/provider-ultradns////
