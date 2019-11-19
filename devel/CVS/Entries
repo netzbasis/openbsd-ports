@@ -1,4 +1,4 @@
-/Makefile/1.1910/Sat Nov 16 17:47:27 2019//
+/Makefile/1.1911/Tue Nov 19 00:05:33 2019//
 D/ElectricFence////
 D/ORBit2////
 D/acpica////
@@ -1458,6 +1458,7 @@ D/py-test-mock////
 D/py-test-relaxed////
 D/py-test-runner////
 D/py-test-subtesthack////
+D/py-test-vcr////
 D/py-test-xdist////
 D/py-testpath////
 D/py-testtools////

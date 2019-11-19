@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.71 2019/09/26 13:54:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.73 2019/11/18 12:08:53 sthen Exp $
 
 COMMENT=	free audio editor
 
 V=		2.3.2
 DISTNAME=	Audacity-${V}
 PKGNAME=	audacity-${V}
+REVISION=	0
 CATEGORIES=	audio
 
 MASTER_SITES=	https://github.com/audacity/audacity/archive/
@@ -21,7 +22,7 @@ WANTLIB += cairo-gobject epoxy expat ffi fontconfig freetype fribidi
 WANTLIB += gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
 WANTLIB += graphite2 gthread-2.0 gtk-3 harfbuzz iconv id3tag intl
 WANTLIB += jpeg m mad mspack notify ogg pango-1.0 pangocairo-1.0
-WANTLIB += pangoft2-1.0 pcre pixman-1 png portaudio portmidi
+WANTLIB += pangoft2-1.0 pcre pixman-1 png portaudio portmidi vamp-hostsdk
 WANTLIB += samplerate sndfile sndio soxr tiff usbhid vorbis vorbisenc
 WANTLIB += vorbisfile wx_baseu-3.0 wx_baseu_net-3.0 wx_baseu_xml-3.0
 WANTLIB += wx_gtk3u_adv-3.0 wx_gtk3u_core-3.0 wx_gtk3u_html-3.0
@@ -49,7 +50,8 @@ LIB_DEPENDS=	x11/wxWidgets>=3.0.4 \
 		audio/libmad \
 		audio/portaudio-svn>=1406p1 \
 		audio/portmidi \
-		audio/soundtouch
+		audio/soundtouch \
+		audio/vamp-plugin-sdk
 RUN_DEPENDS=	devel/desktop-file-utils \
 		misc/shared-mime-info \
 		x11/gtk+3,-guic
@@ -72,18 +74,19 @@ MODGNU_CONFIG_GUESS_DIRS= ${WRKSRC} \
 			${WRKSRC}/lib-src/sbsms \
 			${WRKSRC}/lib-src/libnyquist
 
-CONFIGURE_ARGS=		--enable-unicode \
-			--enable-ladspa \
+CONFIGURE_ARGS=		--enable-ladspa \
 			--enable-nyquist \
-			--with-lib-preferences=system \
-			--with-libsndfile=system \
+			--enable-unicode \
 			--with-expat=system \
 			--with-lame=system \
-			--with-libsoxr=system \
-			--with-libvorbis=system \
-			--with-libmad=system \
+			--with-lib-preferences=system \
 			--with-libflac=system \
 			--with-libid3tag=system \
+			--with-libmad=system \
+			--with-libsndfile=system \
+			--with-libsoxr=system \
+			--with-libvamp=system \
+			--with-libvorbis=system \
 			--with-lv2=local \
 			--with-midi=yes \
 			--with-portaudio=system \
@@ -91,13 +94,11 @@ CONFIGURE_ARGS=		--enable-unicode \
 			--with-sbsms=local \
 			--with-soundtouch=system \
 			--with-widgetextra=local \
-			--without-libtwolame \
 			--without-ffmpeg \
-			--without-redland \
 			--without-liblrdf \
-			--without-portmixer
-# XXX libtool/ld(1) fail to find libvamp-hostsdk.so
-CONFIGURE_ARGS+= 	--without-libvamp
+			--without-libtwolame \
+			--without-portmixer \
+			--without-redland
 
 .if ${MACHINE_ARCH} != "amd64"
 CONFIGURE_ARGS+=	--disable-sse
