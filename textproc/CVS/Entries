@@ -1,4 +1,4 @@
-/Makefile/1.608/Tue Nov  5 18:01:51 2019//
+/Makefile/1.609/Tue Nov 19 14:27:41 2019//
 D/TclXML////
 D/antiword////
 D/apertium////
@@ -121,6 +121,7 @@ D/lua-yaml////
 D/luaexpat////
 D/luasoldout////
 D/makefaq////
+D/mdbook////
 D/mdp////
 D/meld////
 D/mgdiff////

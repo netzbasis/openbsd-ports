@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.75 2019/10/24 16:22:07 jsing Exp $
+# $OpenBSD: Makefile,v 1.77 2019/11/19 09:30:40 sthen Exp $
 
 ONLY_FOR_ARCHS =	${GO_ARCHS}
 
@@ -8,9 +8,10 @@ BIN_BOOTSTRAP_VERSION = 1.13
 COMMENT =		Go programming language
 
 VERSION =		1.13.3
+REVISION =		0
 DISTNAME =		go${VERSION}.src
 PKGNAME =		go-${VERSION}
-PKGSPEC =		go-=${VERSION}
+PKGSPEC =		${FULLPKGNAME:S/go-/go-=/}
 
 CATEGORIES =		lang
 
@@ -54,6 +55,11 @@ GOARCH =		arm64
 .elif ${MACHINE_ARCH} == "i386"
 GOARCH =		386
 .endif
+
+# We cannot assume that the maching running the built code will have SSE,
+# even though the machine building the package has SSE. As such, we need
+# to explicitly disable SSE on i386 builds.
+MAKE_ENV +=		GO386=387
 
 .for arch in ${BIN_BOOTSTRAP_GOARCHS}
 SUPDISTFILES +=		go-openbsd-${arch}-bootstrap-${BIN_BOOTSTRAP_VERSION}${EXTRACT_SUFX}:0

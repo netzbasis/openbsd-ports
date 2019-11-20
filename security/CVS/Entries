@@ -1,4 +1,4 @@
-/Makefile/1.554/Thu Oct 31 06:21:33 2019//
+/Makefile/1.555/Tue Nov 19 18:54:59 2019//
 D/ADMsnmp////
 D/ROPgadget////
 D/acme-client////
@@ -269,6 +269,7 @@ D/py-dfvfs////
 D/py-dfwinreg////
 D/py-ecdsa////
 D/py-elfesteem////
+D/py-fido2////
 D/py-gnupg////
 D/py-josepy////
 D/py-keyring////
