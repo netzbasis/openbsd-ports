@@ -1,4 +1,4 @@
-/Makefile/1.935/Mon Nov 18 23:58:54 2019//
+/Makefile/1.936/Wed Nov 20 20:11:41 2019//
 D/ajaxterm////
 D/analog////
 D/ap2-mod_dnssd////
@@ -427,7 +427,6 @@ D/py-urlgrabber////
 D/py-urllib3////
 D/py-vcrpy////
 D/py-waitress////
-D/py-webdav////
 D/py-weberror////
 D/py-webhelpers////
 D/py-webob////
