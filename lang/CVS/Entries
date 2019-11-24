@@ -1,4 +1,4 @@
-/Makefile/1.238/Sun Sep 22 10:37:07 2019//
+/Makefile/1.239/Sun Nov 24 03:01:38 2019//
 D/STk////
 D/a60////
 D/abcl////
@@ -68,6 +68,7 @@ D/mruby////
 D/myhdl////
 D/myrddin////
 D/nbfc////
+D/nekovm////
 D/newlisp////
 D/nim////
 D/node////

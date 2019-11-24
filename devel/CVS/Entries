@@ -1,4 +1,4 @@
-/Makefile/1.1912/Thu Nov 21 04:40:43 2019//
+/Makefile/1.1914/Sun Nov 24 00:12:34 2019//
 D/ElectricFence////
 D/ORBit2////
 D/acpica////
@@ -1046,6 +1046,7 @@ D/p5-Term-Size////
 D/p5-Term-Size-Any////
 D/p5-Term-Size-Perl////
 D/p5-Term-Table////
+D/p5-Test-API////
 D/p5-Test-Assertions////
 D/p5-Test-Base////
 D/p5-Test-Bits////
@@ -1091,6 +1092,7 @@ D/p5-Test-MockObject////
 D/p5-Test-MockRandom////
 D/p5-Test-MockSleep////
 D/p5-Test-MockTime////
+D/p5-Test-Modern////
 D/p5-Test-More-UTF8////
 D/p5-Test-Most////
 D/p5-Test-Needs////
@@ -1404,6 +1406,7 @@ D/py-pluggy////
 D/py-plugnplay////
 D/py-ply////
 D/py-pretend////
+D/py-process-tests////
 D/py-progress////
 D/py-progressbar////
 D/py-prompt_toolkit////
@@ -1493,6 +1496,7 @@ D/py-xlsxwriter////
 D/py-xmlrunner////
 D/py-yamllint////
 D/py-yapf////
+D/py-zc-lockfile////
 D/py-zopecomponent////
 D/py-zopeevent////
 D/py-zopeinterface////

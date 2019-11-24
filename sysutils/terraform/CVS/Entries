@@ -1,4 +1,4 @@
-/Makefile/1.31/Sun Nov 17 19:30:18 2019//
+/Makefile/1.32/Sat Nov 23 15:45:26 2019//
 /Makefile.inc/1.5/Sat Jun 15 09:19:04 2019//
 D/pkg////
 D/provider-alicloud////
@@ -60,7 +60,6 @@ D/provider-rancher////
 D/provider-random////
 D/provider-rundeck////
 D/provider-scaleway////
-D/provider-softlayer////
 D/provider-spotinst////
 D/provider-statuscake////
 D/provider-template////

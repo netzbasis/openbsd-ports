@@ -1,4 +1,4 @@
-/Makefile/1.381/Tue Nov  5 09:13:00 2019//
+/Makefile/1.383/Sun Nov 24 04:55:11 2019//
 D/architect////
 D/barman////
 D/citus////
@@ -77,6 +77,7 @@ D/p5-DBD-mysql////
 D/p5-DBD-mysqlPP////
 D/p5-DBI////
 D/p5-DBI-Shell////
+D/p5-DBICx-Sugar////
 D/p5-DBICx-TestDatabase////
 D/p5-DBIx-Class////
 D/p5-DBIx-Class-Cursor-Cached////
@@ -199,6 +200,7 @@ D/ruby-tiny_tds////
 D/sharedance////
 D/skytools////
 D/soprano////
+D/sqlbox////
 D/sqlite////
 D/sqlite3////
 D/sqlite3-odbc////

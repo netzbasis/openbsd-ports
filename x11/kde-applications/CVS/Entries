@@ -1,4 +1,4 @@
-/Makefile/1.50/Fri Nov  8 13:44:27 2019//
+/Makefile/1.52/Sat Nov 23 13:03:17 2019//
 /Makefile.inc/1.10/Sun Jun 23 05:24:00 2019//
 /kde-applications.port.mk/1.4/Fri Nov  8 13:38:38 2019//
 D/analitza////
@@ -27,6 +27,7 @@ D/kanagram////
 D/kapman////
 D/kate////
 D/katomic////
+D/kbackup////
 D/kblackbox////
 D/kblocks////
 D/kbounce////
@@ -35,10 +36,15 @@ D/kbruch////
 D/kcalc////
 D/kcalcore////
 D/kcalutils////
+D/kcharselect////
 D/kcolorchooser////
+D/kcontacts////
 D/kcron////
+D/kdebugsettings////
 D/kdeedu-data////
 D/kdegraphics-mobipocket////
+D/kdegraphics-thumbnailers////
+D/kdenetwork-filesharing////
 D/kdenlive////
 D/kdialog////
 D/kdiamond////
@@ -68,6 +74,7 @@ D/kmahjongg////
 D/kmbox////
 D/kmime////
 D/kmines////
+D/kmix////
 D/kmousetool////
 D/kmouth////
 D/kmplot////
@@ -81,7 +88,9 @@ D/konquest////
 D/konsole////
 D/kpimtextedit////
 D/kqtquickcharts////
+D/krdc////
 D/kreversi////
+D/krfb////
 D/kruler////
 D/kshisen////
 D/ksirk////
@@ -90,6 +99,8 @@ D/kspaceduel////
 D/ksquares////
 D/ksudoku////
 D/ksystemlog////
+D/kteatime////
+D/ktimer////
 D/ktouch////
 D/ktuberling////
 D/kturtle////

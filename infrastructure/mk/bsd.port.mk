@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1497 2019/11/13 15:22:41 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1502 2019/11/23 16:31:20 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -953,6 +953,7 @@ PKGNAMES += debug-${FULLPKGNAME${_s}}
 _PACKAGE_LINKS =
 NO_ARCH ?= ${MACHINE_ARCH}/no-arch
 _PKG_REPO = ${PACKAGE_REPOSITORY}/${MACHINE_ARCH}/all/
+_PKG_REPO_NO_ARCH = ${PACKAGE_REPOSITORY}/${NO_ARCH}/
 _TMP_REPO = ${PACKAGE_REPOSITORY}/${MACHINE_ARCH}/tmp/
 _CACHE_REPO = ${PACKAGE_REPOSITORY}/${MACHINE_ARCH}/cache/
 PKGFILE = ${_PKG_REPO}${_PKGFILE${SUBPACKAGE}}
@@ -960,19 +961,20 @@ PKGFILE = ${_PKG_REPO}${_PKGFILE${SUBPACKAGE}}
 .for _S in ${MULTI_PACKAGES}
 _PKGFILE${_S} = ${FULLPKGNAME${_S}}.tgz
 _DBG_PKGFILE${_S} = debug-${_PKGFILE${_S}}
-.  if ${PKG_ARCH${_S}} == "*" && ${NO_ARCH} != ${MACHINE_ARCH}/all
-_PACKAGE_COOKIE${_S} = ${PACKAGE_REPOSITORY}/${NO_ARCH}/${_PKGFILE${_S}}
+.  if ${PKG_ARCH${_S}} == "*"
+_PKG_REPO${_S} = ${_PKG_REPO_NO_ARCH}
 .  else
-_PACKAGE_COOKIE${_S} = ${PACKAGE_REPOSITORY}/${MACHINE_ARCH}/all/${_PKGFILE${_S}}
-_DBG_PACKAGE_COOKIE${_S} = ${PACKAGE_REPOSITORY}/${MACHINE_ARCH}/all/${_DBG_PKGFILE${_S}}
+_PKG_REPO${_S} = ${_PKG_REPO}
 .  endif
+_PACKAGE_COOKIE${_S} = ${_PKG_REPO${_S}}${_PKGFILE${_S}}
+_DBG_PACKAGE_COOKIE${_S} = ${_PKG_REPO${_S}}${_DBG_PKGFILE${_S}}
 _CACHE_PACKAGE_COOKIES += ${_CACHE_REPO}${_PKGFILE${_S}}
 .endfor
 
 .for _S in ${BUILD_PACKAGES}
 .  if ${PKG_ARCH${_S}} == "*" && ${NO_ARCH} != ${MACHINE_ARCH}/all
 _PACKAGE_LINKS += ${MACHINE_ARCH}/all/${_PKGFILE${_S}} ${NO_ARCH}/${_PKGFILE${_S}}
-_PACKAGE_COOKIES${_S} += ${PACKAGE_REPOSITORY}/${MACHINE_ARCH}/all/${_PKGFILE${_S}}
+_PACKAGE_COOKIES${_S} += ${_PKG_REPO}/${_PKGFILE${_S}}
 .  endif
 _PACKAGE_COOKIES${_S} += ${_PACKAGE_COOKIE${_S}}
 .  if ${PERMIT_PACKAGE${_S}:L} == "yes"
@@ -1180,16 +1182,7 @@ _EXCLUDE_DEBUG_PLISTS = ${_WRKDEBUG} ${_WRKDEBUG}/Makefile
 .for _S in ${MULTI_PACKAGES}
 PKG_ARGS${_S} += -A'${PKG_ARCH${_S}}'
 
-_create_pkg${_S} = \
-	tmp=${_TMP_REPO}${_PKGFILE${_S}} pkgname=${_PKGFILE${_S}} && \
-	${_PBUILD} ${_PKG_CREATE} -DPORTSDIR="${PORTSDIR}" \
-		$$deps ${PKG_ARGS${_S}} $$tmp && \
-	${_check_lib_depends} $$tmp && \
-	${_register_plist${_S}} $$tmp && \
-	${_checksum_package}
-
-_move_tmp_pkg${_S} = ${_PBUILD} mv ${_TMP_REPO}${_PKGFILE${_S}} ${_PACKAGE_COOKIE${_S}}
-_tmp_pkg${_S} = ${_TMP_REPO}${_PKGFILE${_S}}
+_pkg${_S} = ${_PKGFILE${_S}}
 
 .  if ${DEBUG_PACKAGES:M${_S}}
 _DBG_PKG_ARGS${_S} := ${PKG_ARGS${_S}}
@@ -1200,15 +1193,7 @@ _DBG_PKG_ARGS${_S} += -d"-debug info for ${FULLPKGNAME${_S}}"
 _DBG_PKG_ARGS${_S} += -DFULLPKGPATH=debug/${FULLPKGPATH${_S}}
 _DBG_PKG_ARGS${_S} += -f ${_WRKDEBUG}/${PLIST${_S}:T}
 _EXCLUDE_DEBUG_PLISTS += ${_WRKDEBUG}/${PLIST${_S}:T}
-_create_pkg${_S} += && \
-	tmp=${_TMP_REPO}${_DBG_PKGFILE${_S}} pkgname=${_DBG_PKGFILE${_S}} && \
-	${_PBUILD} ${_PKG_CREATE} -DPORTSDIR="${PORTSDIR}" \
-		$$deps ${_DBG_PKG_ARGS${_S}} $$tmp && \
-	${_check_lib_depends} $$tmp && \
-	${_dbg_register_plist${_S}} $$tmp && \
-	${_checksum_package}
-_move_tmp_pkg${_S} += && ${_PBUILD} mv ${_TMP_REPO}${_DBG_PKGFILE${_S}} ${_DBG_PACKAGE_COOKIE${_S}}
-_tmp_pkg${_S} += ${_TMP_REPO}${_DBG_PKGFILE${_S}}
+_pkg${_S} += ${_DBG_PKGFILE${_S}}
 .  endif
 
 # Finish filling out package command, and package dependencies
@@ -2073,17 +2058,19 @@ fix-permissions:
 
 .for _S in ${MULTI_PACKAGES}
 
+.  for _p in ${_pkg${_S}}
 # run under _pfetch
-${_CACHE_REPO}${_PKGFILE${_S}}:
+${_CACHE_REPO}${_p}:
 	@install -d ${PACKAGE_REPOSITORY_MODE} ${@D}
-	@${ECHO_MSG} -n "===>  Looking for ${_PKGFILE${_S}} in \$$PKG_PATH - "
-	@if ${SETENV} ${_TERM_ENV} PKG_CACHE=${_CACHE_REPO} TRUSTED_PKG_PATH=${_CACHE_REPO}:${_PKG_REPO}:${PACKAGE_REPOSITORY}/${NO_ARCH}/:${TRUSTED_PKG_PATH} PKG_PATH=${_PKG_PATH} ${PKG_ADD} -I -x -n -q ${_PKG_ADD_FORCE} -r -D installed -D downgrade ${FETCH_PACKAGES} ${_PKGFILE${_S}}; then \
+	@${ECHO_MSG} -n "===>  Looking for ${@F} in \$$PKG_PATH - "
+	@if ${SETENV} ${_TERM_ENV} PKG_CACHE=${_CACHE_REPO} TRUSTED_PKG_PATH=${_CACHE_REPO}:${_PKG_REPO}:${PACKAGE_REPOSITORY}/${NO_ARCH}/:${TRUSTED_PKG_PATH} PKG_PATH=${_PKG_PATH} ${PKG_ADD} -I -x -n -q ${_PKG_ADD_FORCE} -r -D installed -D downgrade ${FETCH_PACKAGES} ${@F}; then \
 		${ECHO_MSG} "found"; \
 		exit 0; \
 	else \
 		${ECHO_MSG} "not found"; \
 		exit 1; \
 	fi
+.  endfor
 
 
 # The real package
@@ -2092,10 +2079,20 @@ ${_PACKAGE_COOKIE${_S}}:
 	@${_PBUILD} install -d ${PACKAGE_REPOSITORY_MODE} ${@D} ${_TMP_REPO}
 .  if ${FETCH_PACKAGES:L} != "no" && !defined(_TRIED_FETCHING_${_PACKAGE_COOKIE${_S}})
 	@${_INSTALL_CACHE_REPO} ${_CACHE_REPO}
-	@f=${_CACHE_REPO}${_PKGFILE${_S}}; \
-	cd ${.CURDIR} && ${_PFETCH} ${MAKE} $$f && \
-		{ ${_PBUILD} ln $$f $@ 2>/dev/null || ${_PBUILD} cp -p $$f $@ ; } || \
-		cd ${.CURDIR} && ${MAKE} _TRIED_FETCHING_${_PACKAGE_COOKIE${_S}}=Yes _internal-package-only _FETCH_RECURSE_HELPER=No
+	@cd ${.CURDIR}; gotit=true; for p in ${_pkg${_S}}; do \
+		if ! ${_PFETCH} ${MAKE} ${_CACHE_REPO}$$p; then \
+			gotit=false; \
+			break; \
+		fi; \
+	done; \
+	if $$gotit; then \
+		for p in ${_pkg${_S}}; do \
+			s=${_CACHE_REPO}$$p; d=${_PKG_REPO${_S}}$$p; \
+			${_PBUILD} ln $$s $$d 2>/dev/null || ${_PBUILD} cp -p $$s $$d; \
+		done; \
+	else \
+		exec ${MAKE} _TRIED_FETCHING_${_PACKAGE_COOKIE${_S}}=Yes _internal-package-only _FETCH_RECURSE_HELPER=No; \
+	fi
 .  else
 	@${_MAKE} ${_PACKAGE_COOKIE_DEPS}
 # What PACKAGE normally does:
@@ -2105,15 +2102,21 @@ ${_PACKAGE_COOKIE${_S}}:
 	@${_MAKE} _internal-generate-readmes
 	@${ECHO_MSG} "===>  Building package for ${FULLPKGNAME${_S}}"
 	@${ECHO_MSG} "Create ${_PACKAGE_COOKIE${_S}}"
-	@cd ${.CURDIR} && permit=${PERMIT_PACKAGE${_S}:L:Q} && \
-	if deps=$$(SUBPACKAGE=${_S} wantlib_args=${_pkg_wantlib_args} \
-			${MAKE} print-package-args) && ${_create_pkg${_S}}; then \
-			${_move_tmp_pkg${_S}}; \
-		 	exit 0; \
-	else \
-		${_PBUILD} rm -f ${_tmp_pkg${_S}}; \
-	    exit 1; \
-	fi
+	@trap "cd ${_TMP_REPO} && ${_PBUILD} rm -f ${_pkg${_S}}" 0 1 2 3 13 15; \
+	cd ${.CURDIR}; permit=${PERMIT_PACKAGE${_S}:L:Q}; \
+	deps=$$(SUBPACKAGE=${_S} wantlib_args=${_pkg_wantlib_args} \
+		${MAKE} print-package-args); \
+	for p in ${_pkg${_S}}; do \
+		tmp=${_TMP_REPO}$$p pkgname=$$p; \
+		${_PBUILD} ${_PKG_CREATE} -DPORTSDIR="${PORTSDIR}" \
+			$$deps ${PKG_ARGS${_S}} $$tmp; \
+			${_check_lib_depends} $$tmp; \
+			${_register_plist${_S}} $$tmp; \
+			${_checksum_package}; \
+	done; \
+	for p in ${_pkg${_S}}; do \
+		${_PBUILD} mv ${_TMP_REPO}$$p ${_PKG_REPO${_S}}$$p; \
+	done
 # End of PACKAGE.
 	@-rm -f ${_BULK_COOKIE} ${_UPDATE_COOKIE${_S}} ${_FUPDATE_COOKIE${_S}}
 .  endif

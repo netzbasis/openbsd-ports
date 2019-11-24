@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1912 2019/11/21 04:40:43 afresh1 Exp $
+# $OpenBSD: Makefile,v 1.1914 2019/11/24 00:12:34 afresh1 Exp $
 
      SUBDIR =
      SUBDIR += ElectricFence
@@ -1084,6 +1084,7 @@
      SUBDIR += p5-Term-Size-Any
      SUBDIR += p5-Term-Size-Perl
      SUBDIR += p5-Term-Table
+     SUBDIR += p5-Test-API
      SUBDIR += p5-Test-Assertions
      SUBDIR += p5-Test-Base
      SUBDIR += p5-Test-Bits
@@ -1129,6 +1130,7 @@
      SUBDIR += p5-Test-MockRandom
      SUBDIR += p5-Test-MockSleep
      SUBDIR += p5-Test-MockTime
+     SUBDIR += p5-Test-Modern
      SUBDIR += p5-Test-More-UTF8
      SUBDIR += p5-Test-Most
      SUBDIR += p5-Test-Needs
@@ -1730,6 +1732,8 @@
      SUBDIR += py-yamllint,python3
      SUBDIR += py-yapf
      SUBDIR += py-yapf,python3
+     SUBDIR += py-zc-lockfile
+     SUBDIR += py-zc-lockfile,python3
      SUBDIR += py-zopecomponent
      SUBDIR += py-zopecomponent,python3
      SUBDIR += py-zopeevent

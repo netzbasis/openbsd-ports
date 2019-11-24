@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.4 2019/07/12 20:43:29 sthen Exp $
+# $OpenBSD: Makefile,v 1.6 2019/11/23 17:54:19 kmos Exp $
 
-MODPY_EGG_VERSION =	2.8
+MODPY_EGG_VERSION =	2.9
 COMMENT =	Python interface to libarchive
 DISTNAME =	libarchive-c-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
-REVISION =	1
 CATEGORIES =	archivers devel
 
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
@@ -15,10 +14,12 @@ PERMIT_PACKAGE =	Yes
 FLAVORS =	python3
 FLAVOR ?=
 
-MODULES =	lang/python
-MODPY_PI =	Yes
+MODULES =		lang/python
+MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
+MODPY_PYTEST =		Yes
 
 RUN_DEPENDS =	archivers/libarchive
+TEST_DEPENDS =	devel/py-mock${MODPY_FLAVOR}
 
 .include <bsd.port.mk>

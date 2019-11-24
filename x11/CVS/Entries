@@ -1,4 +1,4 @@
-/Makefile/1.646/Sun Nov  3 11:43:04 2019//
+/Makefile/1.647/Sat Nov 23 15:22:30 2019//
 D/2bwm////
 D/Xaw3d////
 D/XawMu////
@@ -219,6 +219,7 @@ D/pidgin-libnotify////
 D/piewm////
 D/podbrowser////
 D/polkit-qt////
+D/polkit-qt5////
 D/polybar////
 D/pwm////
 D/py-gtk2////
