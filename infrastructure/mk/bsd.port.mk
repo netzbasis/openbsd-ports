@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1502 2019/11/23 16:31:20 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1504 2019/11/24 12:54:12 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -1878,10 +1878,8 @@ _CHECK_LIB_DEPENDS += -F pthread
 .for _s in ${MULTI_PACKAGES}
 .  if ${STATIC_PLIST${_s}:L} == "no"
 _register_plist${_s} = :
-_dbg_register_plist${_s} = :
 .  else
 _register_plist${_s} = ${_register_plist}
-_dbg_register_plist${_s} = : 
 .  endif
 .endfor
 
@@ -2106,16 +2104,18 @@ ${_PACKAGE_COOKIE${_S}}:
 	cd ${.CURDIR}; permit=${PERMIT_PACKAGE${_S}:L:Q}; \
 	deps=$$(SUBPACKAGE=${_S} wantlib_args=${_pkg_wantlib_args} \
 		${MAKE} print-package-args); \
-	for p in ${_pkg${_S}}; do \
-		tmp=${_TMP_REPO}$$p pkgname=$$p; \
+	regular=true; for pkgname in ${_pkg${_S}}; do \
+		tmp=${_TMP_REPO}$$pkgname; \
 		${_PBUILD} ${_PKG_CREATE} -DPORTSDIR="${PORTSDIR}" \
 			$$deps ${PKG_ARGS${_S}} $$tmp; \
 			${_check_lib_depends} $$tmp; \
-			${_register_plist${_S}} $$tmp; \
-			${_checksum_package}; \
+			if $$regular; then \
+				${_register_plist${_S}} $$tmp; regular=false; \
+			fi; \
 	done; \
-	for p in ${_pkg${_S}}; do \
-		${_PBUILD} mv ${_TMP_REPO}$$p ${_PKG_REPO${_S}}$$p; \
+	for pkgname in ${_pkg${_S}}; do \
+		${_checksum_package}; \
+		${_PBUILD} mv ${_TMP_REPO}$$pkgname ${_PKG_REPO${_S}}$$p; \
 	done
 # End of PACKAGE.
 	@-rm -f ${_BULK_COOKIE} ${_UPDATE_COOKIE${_S}} ${_FUPDATE_COOKIE${_S}}
