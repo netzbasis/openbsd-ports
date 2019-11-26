@@ -1,4 +1,4 @@
-/Makefile/1.419/Wed Aug 14 12:43:52 2019//
+/Makefile/1.421/Mon Nov 25 21:14:48 2019//
 D/abcde////
 D/adplay////
 D/adplug////
@@ -135,6 +135,7 @@ D/musique////
 D/nap////
 D/ncmpc////
 D/ncmpcpp////
+D/ncspot////
 D/normalize////
 D/nosefart////
 D/nspmod////

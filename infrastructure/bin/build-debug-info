@@ -1,5 +1,5 @@
 #! /usr/bin/perl
-# $OpenBSD: build-debug-info,v 1.22 2019/11/19 15:49:30 espie Exp $
+# $OpenBSD: build-debug-info,v 1.25 2019/11/25 15:35:05 espie Exp $
 # Copyright (c) 2019 Marc Espie <espie@openbsd.org>
 #
 # Permission to use, copy, modify, and distribute this software for any
@@ -118,7 +118,7 @@ sub write_debug_info
 		return;
 	}
 	if (-f $path) {
-		$self->write_dbg($fh, $dbg);
+		print $fh $dbg, "\n";
 		my $k = join('/', (stat $path)[0,1]);
 		my $l = $o->{linkstash}{$k};
 		if (defined $l) {
@@ -156,12 +156,6 @@ sub write_dbg_rule
 	$self->write_rule($mk, $s, $dbg, "OBJCOPY_RULE");
 }
 
-sub write_dbg
-{
-	my ($self, $fh, $dbg) = @_;
-	print $fh $dbg, "\n";
-}
-
 sub mogrify
 {
 	my ($self, $s) = @_;
@@ -169,31 +163,10 @@ sub mogrify
 	return $s;
 }
 
-package OpenBSD::PackingElement::Lib;
-sub write_dbg
-{
-	my ($self, $fh, $dbg) = @_;
-	print $fh $dbg, "\n";
-}
-
 package OpenBSD::PackingElement::StaticLib;
-sub mogrify
+sub write_debug_info
 {
-	my ($self, $s) = @_;
-	$s =~ s,([^\/]+.a)$,.debug/$1,;
-	return $s;
-}
-
-sub write_dbg_rule
-{
-	my ($self, $mk, $s, $dbg) = @_;
-	$self->write_rule($mk, $s, $dbg, "STRIP_RULE");
-}
-
-sub write_dbg
-{
-	my ($self, $fh, $dbg) = @_;
-	print $fh "\@", $self->keyword, " ",  $dbg, "\n";
+	# don't do anything
 }
 
 package OpenBSD::PackingElement::NoDefaultConflict;
@@ -262,14 +235,13 @@ print {$self->{mk}} << 'EOPREAMBLE';
 
 OBJCOPY_RULE = ${INSTALL_DATA_DIR} ${@D} && \
     echo "> Copy debug info from $? to $@" && \
+    if readelf 2>/dev/null -wi $?|cmp -s /dev/null -; then \
+    	echo "Warning: no debug-info in $?"; \
+    fi && \
     objcopy --only-keep-debug $? $@ && \
     objcopy --strip-debug $? && \
     objcopy --add-gnu-debuglink=$@ $? && \
     touch $@
-
-STRIP_RULE = ${INSTALL_DATA_DIR} ${@D} && \
-    echo "> Copy debug info from $? to $@" && \
-    cp $? $@ && strip $? && touch $@
 
 LINK_RULE = ${INSTALL_DATA_DIR} ${@D} && \
     echo "> Link debug info from $? to $@" && ln $? $@
