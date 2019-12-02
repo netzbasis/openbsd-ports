@@ -1,4 +1,4 @@
-/Makefile/1.1152/Sat Nov 16 10:32:11 2019//
+/Makefile/1.1153/Mon Dec  2 03:38:56 2019//
 D/GeoIP////
 D/adns////
 D/adsuck////
@@ -541,7 +541,6 @@ D/py-netifaces////
 D/py-netmiko////
 D/py-nmap////
 D/py-nxos////
-D/py-oauth2////
 D/py-paho-mqtt////
 D/py-pcapy////
 D/py-pf////
