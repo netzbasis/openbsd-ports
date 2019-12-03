@@ -1,4 +1,4 @@
-/Makefile/1.1916/Fri Nov 29 01:36:06 2019//
+/Makefile/1.1917/Mon Dec  2 22:43:24 2019//
 D/ElectricFence////
 D/ORBit2////
 D/acpica////
@@ -1285,6 +1285,7 @@ D/py-certifi////
 D/py-cffi////
 D/py-cflow2dot////
 D/py-chai////
+D/py-characteristic////
 D/py-cheetah////
 D/py-click////
 D/py-click-log////
@@ -1326,6 +1327,7 @@ D/py-extras////
 D/py-fasteners////
 D/py-fastimport////
 D/py-faulthandler////
+D/py-fields////
 D/py-filebytes////
 D/py-flaky////
 D/py-flexmock////
@@ -1361,6 +1363,7 @@ D/py-iso3166////
 D/py-iso639////
 D/py-isodate////
 D/py-isort////
+D/py-jaraco-functools////
 D/py-jedi////
 D/py-jmespath////
 D/py-jsonrpclib////
