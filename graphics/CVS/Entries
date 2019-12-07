@@ -1,4 +1,4 @@
-/Makefile/1.491/Wed Nov 27 14:15:08 2019//
+/Makefile/1.493/Sat Dec  7 02:07:05 2019//
 D/DevIL////
 D/GraphicsMagick////
 D/ImageMagick////
@@ -12,6 +12,7 @@ D/argyll////
 D/aspect-crop////
 D/asymptote////
 D/autopano-sift-c////
+D/azpainter////
 D/babl////
 D/barcode////
 D/birdfont////
@@ -65,7 +66,6 @@ D/gd////
 D/gdcm////
 D/gdk-pixbuf2////
 D/geeqie////
-D/gegl////
 D/gegl03////
 D/gegl04////
 D/geomview////
