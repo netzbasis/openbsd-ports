@@ -1,4 +1,4 @@
-/Makefile/1.52/Sat Nov 23 13:03:17 2019//
+/Makefile/1.53/Tue Dec 10 18:30:54 2019//
 /Makefile.inc/1.10/Sun Jun 23 05:24:00 2019//
 /kde-applications.port.mk/1.4/Fri Nov  8 13:38:38 2019//
 D/analitza////
@@ -25,6 +25,7 @@ D/kalzium////
 D/kamera////
 D/kanagram////
 D/kapman////
+D/kapptemplate////
 D/kate////
 D/katomic////
 D/kbackup////
@@ -33,6 +34,7 @@ D/kblocks////
 D/kbounce////
 D/kbreakout////
 D/kbruch////
+D/kcachegrind////
 D/kcalc////
 D/kcalcore////
 D/kcalutils////
@@ -40,16 +42,22 @@ D/kcharselect////
 D/kcolorchooser////
 D/kcontacts////
 D/kcron////
+D/kde-dev-scripts////
+D/kde-dev-utils////
 D/kdebugsettings////
 D/kdeedu-data////
 D/kdegraphics-mobipocket////
 D/kdegraphics-thumbnailers////
 D/kdenetwork-filesharing////
 D/kdenlive////
+D/kdesdk-kioslaves////
+D/kdesdk-thumbnailers////
+D/kdf////
 D/kdialog////
 D/kdiamond////
 D/keditbookmarks////
 D/kfind////
+D/kfloppy////
 D/kfourinline////
 D/kgeography////
 D/kgoldrunner////
@@ -118,6 +126,7 @@ D/libkleo////
 D/libkmahjongg////
 D/libkomparediff2////
 D/libksane////
+D/lokalize////
 D/lskat////
 D/marble////
 D/minuet////
@@ -125,6 +134,8 @@ D/okteta////
 D/okular////
 D/palapeli////
 D/picmi////
+D/poxml////
+D/print-manager////
 D/rocs////
 D/spectacle////
 D/step////

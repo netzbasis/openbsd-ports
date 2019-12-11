@@ -1,19 +1,16 @@
-# $OpenBSD: Makefile,v 1.36 2019/07/12 20:47:43 sthen Exp $
-
-# let's give it a chance?
-#BROKEN-powerpc=	fails to build
-#BROKEN-hppa =	fails to configure
+# $OpenBSD: Makefile,v 1.38 2019/12/10 21:38:15 feinerer Exp $
 
 COMMENT=	library for machine-independent, array-oriented data access
 
-V=		4.7.0
+V=		4.7.3
 NAME=		netcdf
 DISTNAME=	${NAME}-c-${V}
 PKGNAME=	${NAME}-${V}
+REVISION=	0
 
 CATEGORIES=	math
 
-SHARED_LIBS=	netcdf		5.0 # 4.0
+SHARED_LIBS=	netcdf		6.0 # 5.0
 
 HOMEPAGE=	http://www.unidata.ucar.edu/software/netcdf/
 
