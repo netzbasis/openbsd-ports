@@ -1,4 +1,4 @@
-/Makefile/1.1153/Mon Dec  2 03:38:56 2019//
+/Makefile/1.1154/Thu Dec 12 09:38:27 2019//
 D/GeoIP////
 D/adns////
 D/adsuck////
@@ -315,7 +315,6 @@ D/p5-Danga-Socket////
 D/p5-Event-RPC////
 D/p5-Filesys-Virtual-DAAP////
 D/p5-GRID-Machine////
-D/p5-Geo-IP////
 D/p5-GeoIP2////
 D/p5-IO-Interface////
 D/p5-IO-Socket-INET6////

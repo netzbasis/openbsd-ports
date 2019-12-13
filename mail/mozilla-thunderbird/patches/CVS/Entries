@@ -3,7 +3,6 @@
 /patch-mozilla_js_src_jit_ProcessExecutableMemory_h/1.6/Mon Oct  7 13:43:06 2019//
 /patch-mozilla_security_manager_pki_resources_content_exceptionDialog_js/1.10/Mon Oct  7 13:43:06 2019//
 /patch-mozilla_storage_mozStorageConnection_cpp/1.6/Mon Oct  7 13:43:06 2019//
-/patch-python_mozbuild_mozbuild_action_node_py/1.1/Tue Oct 29 14:43:03 2019//
 /patch-storage_mozStorageService_cpp/1.1/Fri Sep 13 15:05:17 2019//
 /patch-third_party_rust_bindgen_src_ir_analysis_has_vtable_rs/1.1/Tue Dec  3 17:04:25 2019//
 /patch-third_party_rust_bindgen_src_ir_analysis_sizedness_rs/1.1/Tue Dec  3 17:04:25 2019//
