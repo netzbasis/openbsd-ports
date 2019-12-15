@@ -1,4 +1,4 @@
-# $OpenBSD: Port.pm,v 1.18 2019/06/12 19:25:53 kmos Exp $
+# $OpenBSD: Port.pm,v 1.20 2019/12/15 00:57:49 afresh1 Exp $
 #
 # Copyright (c) 2015 Giannis Tsaraias <tsg@openbsd.org>
 # Copyright (c) 2019 Andrew Hewus Fresh <afresh1@openbsd.org>
@@ -21,6 +21,8 @@ use 5.012;
 use warnings;
 
 use Cwd;
+use Fcntl qw( :mode );
+use File::Find qw();
 use File::Path qw( make_path );
 use JSON::PP;
 use Text::Wrap;
@@ -203,9 +205,7 @@ sub set_build_deps
 {
 	my ( $self, $build_deps ) = @_;
 
-	# Makefile.template is missing a tab for BUILD_DEPENDS
-	# and we want the port to be pretty, so add one
-	$self->{BUILD_DEPENDS} = "\t" . $build_deps if $build_deps;
+	$self->{BUILD_DEPENDS} = $build_deps;
 }
 
 sub set_run_deps
@@ -220,6 +220,37 @@ sub set_test_deps
 	my ( $self, $test_deps ) = @_;
 
 	$self->{TEST_DEPENDS} = $test_deps;
+}
+
+sub set_fix_extract_permissions
+{
+	my ($self, $value) = @_;
+
+	return $self->{FIX_EXTRACT_PERMISSIONS} = $value
+	    if @_ == 2;
+
+	my $perm_file = S_IRUSR | S_IRGRP | S_IROTH;
+	my $perm_dir  = S_IXUSR | S_IXGRP | S_IXOTH | $perm_file;
+
+	# Assume a cached stat on whatever mode we are checking
+	my $perm_ok = sub {
+		my $mode = ( stat _ )[2];
+		return S_ISDIR($mode)
+		    ? ($mode & $perm_dir ) == $perm_dir
+		    : ($mode & $perm_file) == $perm_file;
+	};
+
+	my $wrksrc = $self->make_show('WRKSRC');
+
+	# Look through WRKSRC for files that don't have
+	# the necessary permissions.
+	my $needs_fix;
+	File::Find::find({ no_chdir => 1, wanted => sub {
+		$needs_fix = $File::Find::prune = 1
+		    if $needs_fix or not $perm_ok->();
+	} }, $wrksrc );
+
+	return $self->{FIX_EXTRACT_PERMISSIONS} = $needs_fix ? 'Yes' : undef;
 }
 
 sub set_other
@@ -344,6 +375,22 @@ sub write_makefile
 	delete $configs{EXTRACT_SUFX}
 	    if $configs{EXTRACT_SUFX} and $configs{EXTRACT_SUFX} eq '.tar.gz';
 
+	my $format = sub {
+		my ($key, $value, %opts) = @_;
+
+		my $tabs = "\t" x ( $opts{tabs} || 1 );
+		$key .= $opts{equal} || $default_equal;
+
+		if (ref $value eq 'ARRAY') {
+			my $key_tabs = "\t" x ( length($key) / 8 );
+			$value = join " \\\n$key_tabs$tabs", @{ $value }
+		}
+
+		$key .= $tabs if length $value;
+
+		return $key . $value;
+	};
+
 	my @makefile;
 	foreach my $line (@template) {
 		next    # no more than one blank line
@@ -358,10 +405,7 @@ sub write_makefile
 				next if $key !~ /^[\p{Upper}_]+(?:-\w+)?$/;
 				my $value = $configs{$key};
 				next unless defined $value;
-
-				my $print_key = "$key$default_equal";
-				$print_key .= "\t" if length $value;
-				push @additions, "$print_key$value";
+				push @additions, $format->($key, $value);
 			}
 			if (@additions) {
 				push @makefile,
@@ -382,18 +426,11 @@ sub write_makefile
 			}
 
 			# If we didn't get a value, copy from the template
-			if ( not $value and %copy_values ) {
-				$value = $line->{value}
-				    if $copy_values{$key}
-				    and not $reset_values{$key};
-			}
+			$value ||= $line->{value}
+			    if $copy_values{$key}
+			    and not $reset_values{$key};
 
 			next unless defined $value;
-
-			my $equal = $line->{equal} || $default_equal;
-			my $tabs      = "\t" x ( $line->{tabs} || 1 );
-			my $print_key = "$key$equal";
-			$print_key .= $tabs if length $value;
 
 			if ( $key eq 'PERMIT_PACKAGE' && $license ) {
 				# guess that the comment before this was
@@ -402,7 +439,7 @@ sub write_makefile
 				push @makefile, "# $license";
 			}
 
-			push @makefile, "$print_key$value";
+			push @makefile, $format->($key, $value, %{$line});
 		} else {
 			push @makefile, $line;
 		}
@@ -535,7 +572,14 @@ sub make_port
 
 	$self->make_makesum();
 	$self->make_checksum();
+	$self->make_clean();
 	$self->make_extract();
+
+	if ( $self->set_fix_extract_permissions() ) {
+		$self->write_makefile();
+		$self->make_clean();
+		$self->make_extract();
+	}
 
 	my $wrksrc = $self->make_show('WRKSRC');
 
