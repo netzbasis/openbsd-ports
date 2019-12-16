@@ -3,7 +3,7 @@
 bin/xslt-config
 @bin bin/xsltproc
 include/libexslt/
-include/libexÖúÀexslt.h
+include/libexslt/exslt.h
 include/libexslt/exsltconfig.h
 include/libexslt/exsltexports.h
 include/libxslt/

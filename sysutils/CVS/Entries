@@ -1,4 +1,4 @@
-/Makefile/1.542/Sat Dec 14 22:27:03 2019//
+/Makefile/1.543/Sun Dec 15 13:51:36 2019//
 D/accountsservice////
 D/amazon-ecs-cli////
 D/amazon-ssm-agent////
@@ -71,6 +71,7 @@ D/dwdiff////
 D/e2fsprogs////
 D/ec2-api-tools////
 D/entr////
+D/envconsul////
 D/eventlog////
 D/exa////
 D/exfat-fuse////
