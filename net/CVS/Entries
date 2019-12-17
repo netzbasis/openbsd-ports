@@ -1,4 +1,4 @@
-/Makefile/1.1154/Thu Dec 12 09:38:27 2019//
+/Makefile/1.1155/Mon Dec 16 13:37:47 2019//
 D/GeoIP////
 D/adns////
 D/adsuck////
@@ -556,6 +556,7 @@ D/py-socketio-client////
 D/py-socks////
 D/py-stem////
 D/py-tld////
+D/py-transmissionrpc-ng////
 D/py-twitter////
 D/py-websocket-client////
 D/py-xmpp////

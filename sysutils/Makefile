@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.543 2019/12/15 13:51:36 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.545 2019/12/17 03:36:25 bcallah Exp $
 
      SUBDIR =
      SUBDIR += accountsservice
@@ -35,6 +35,7 @@
      SUBDIR += cloud-agent
      SUBDIR += clusterit
      SUBDIR += clusterit,no_x11
+     SUBDIR += cmb
      SUBDIR += collectd
      SUBDIR += colorls
      SUBDIR += colortail
@@ -331,6 +332,7 @@
      SUBDIR += snmp_exporter
      SUBDIR += socket
      SUBDIR += socklog
+     SUBDIR += squashfs-tools
      SUBDIR += sshfs-fuse
      SUBDIR += sshpass
      SUBDIR += sslmate

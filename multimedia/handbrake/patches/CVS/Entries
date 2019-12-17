@@ -1,9 +1,9 @@
-/patch-gtk_configure_ac/1.1.1.1/Mon Aug  5 13:35:20 2019//
-/patch-gtk_src_callbacks_c/1.1.1.1/Mon Aug  5 13:35:20 2019//
-/patch-libhb_decsrtsub_c/1.1.1.1/Mon Aug  5 13:35:20 2019//
-/patch-libhb_fifo_c/1.1.1.1/Mon Aug  5 13:35:20 2019//
-/patch-make_configure_py/1.1.1.1/Mon Aug  5 13:35:20 2019//
-/patch-make_include_gcc_defs/1.1.1.1/Mon Aug  5 13:35:20 2019//
-/patch-make_include_main_defs/1.1.1.1/Mon Aug  5 13:35:20 2019//
+/patch-gtk_configure_ac/1.2/Mon Dec 16 17:23:58 2019//
+/patch-gtk_src_callbacks_c/1.2/Mon Dec 16 17:23:58 2019//
+/patch-libhb_decsrtsub_c/1.2/Mon Dec 16 17:23:58 2019//
+/patch-libhb_fifo_c/1.2/Mon Dec 16 17:23:58 2019//
+/patch-make_configure_py/1.2/Mon Dec 16 17:23:58 2019//
+/patch-make_include_gcc_defs/1.2/Mon Dec 16 17:23:58 2019//
+/patch-make_include_main_defs/1.2/Mon Dec 16 17:23:58 2019//
 /patch-make_variant_freebsd_defs/1.1/Wed Aug  7 19:23:10 2019//
 D

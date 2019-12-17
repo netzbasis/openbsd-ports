@@ -1,4 +1,4 @@
-/Makefile/1.543/Sun Dec 15 13:51:36 2019//
+/Makefile/1.545/Tue Dec 17 03:36:25 2019//
 D/accountsservice////
 D/amazon-ecs-cli////
 D/amazon-ssm-agent////
@@ -32,6 +32,7 @@ D/checkrestart////
 D/cl-launch////
 D/cloud-agent////
 D/clusterit////
+D/cmb////
 D/collectd////
 D/colorls////
 D/colortail////
@@ -307,6 +308,7 @@ D/smbldap-tools////
 D/snmp_exporter////
 D/socket////
 D/socklog////
+D/squashfs-tools////
 D/sshfs-fuse////
 D/sshpass////
 D/sslmate////

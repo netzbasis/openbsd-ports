@@ -1,4 +1,4 @@
-/Makefile/1.386/Wed Dec 11 15:59:27 2019//
+/Makefile/1.387/Mon Dec 16 22:03:50 2019//
 D/abook////
 D/adcomplain////
 D/akpop3d////
@@ -40,6 +40,7 @@ D/femail////
 D/fetchmail////
 D/geary////
 D/getmail////
+D/gmail-oauth2////
 D/gmime////
 D/gmime30////
 D/grepmail////
