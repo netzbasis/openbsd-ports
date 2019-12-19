@@ -1,25 +1,24 @@
-# $OpenBSD: Makefile,v 1.102 2019/12/17 18:03:22 sthen Exp $
+# $OpenBSD: Makefile,v 1.104 2019/12/18 19:38:17 sthen Exp $
 
 COMMENT=	Berkeley Internet Name Daemon: DNS server and tools
 
 # 9.11 is an ESV.  After 9.11 the format changes: odd numbers are devel,
 # even numbers are stable (and for stable branches, point releases are
 # bug fixes only).  The next ESV will be 9.16.
-V=		9.11.13
+V=		9.14.9
 EPOCH=		0
-REVISION=	2
 
 DISTNAME=	bind-$V
 PKGNAME=	isc-bind-${V:S/-P/pl/}
 
 # in shared_libs.log but not installed: isc-nosymtbl, t_api
-SHARED_LIBS +=  isc                  4.3
-SHARED_LIBS +=  isccc                2.0
-SHARED_LIBS +=  dns                  8.1
-SHARED_LIBS +=  isccfg               3.0
-SHARED_LIBS +=  bind9                0.1
-SHARED_LIBS +=  lwres                0.1
-SHARED_LIBS +=  irs                  2.0
+SHARED_LIBS +=  isc                  5.0
+SHARED_LIBS +=  isccc                3.0
+SHARED_LIBS +=  dns                  9.0
+SHARED_LIBS +=  isccfg               4.0
+SHARED_LIBS +=  bind9                1.0
+SHARED_LIBS +=  irs                  3.0
+SHARED_LIBS +=	ns                   0.0
 
 CATEGORIES=	net
 
@@ -30,7 +29,7 @@ MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 # MPL 2.0
 PERMIT_PACKAGE=	Yes
 
-WANTLIB=	c iconv idn2 json-c lzma m pthread unistring xml2 z
+WANTLIB += c crypto iconv idn2 json-c lzma m pthread unistring xml2 z
 
 MASTER_SITES=	${MASTER_SITE_ISC:=bind9/$V/}
 
@@ -45,6 +44,7 @@ LIB_DEPENDS=	converters/libiconv \
 		textproc/libxml
 
 SEPARATE_BUILD=	Yes
+DEBUG_PACKAGES=	${BUILD_PACKAGES}
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	--enable-full-report \
 		--enable-filter-aaaa \
@@ -58,6 +58,9 @@ CONFIGURE_ARGS=	--enable-full-report \
 
 CONFIGURE_ENV=	STD_CDEFINES="-DDIG_SIGCHASE=1"
 
+COMPILER=	base-clang ports-gcc
+COMPILER_LANGS=	c
+
 .include <bsd.port.arch.mk>
 
 # we don't link with libgcc, use the c++abi unwinder instead
@@ -68,20 +71,12 @@ WANTLIB +=	c++abi
 
 FAKE_FLAGS=	sysconfdir=${PREFIX}/share/examples/bind9
 
-FLAVORS=	geoip no_ssl
+FLAVORS=	geoip
 FLAVOR?=
 .if ${FLAVOR:Mgeoip}
 CONFIGURE_ARGS+= --with-geoip2
 LIB_DEPENDS+=	net/libmaxminddb
 WANTLIB+=	maxminddb
-COMPILER=	base-clang ports-gcc
-COMPILER_LANGS=	c
-.endif
-
-.if ${FLAVOR:Mno_ssl}
-CONFIGURE_ARGS+= --without-openssl
-.else
-WANTLIB+=	crypto
 .endif
 
 # not strictly speaking interactive, but it configures temporary addresses on
