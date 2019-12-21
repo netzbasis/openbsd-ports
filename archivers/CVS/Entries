@@ -1,4 +1,4 @@
-/Makefile/1.97/Thu Dec 19 07:03:55 2019//
+/Makefile/1.98/Sat Dec 21 14:17:59 2019//
 D/arc////
 D/blosc////
 D/brotli////
@@ -45,6 +45,7 @@ D/par2cmdline////
 D/pecl-lzf////
 D/pecl-rar////
 D/pigz////
+D/py-backports-lzma////
 D/py-libarchive-c////
 D/py-lzo////
 D/py-rarfile////

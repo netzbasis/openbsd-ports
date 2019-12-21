@@ -1,4 +1,4 @@
-/Makefile/1.1919/Tue Dec 17 21:56:42 2019//
+/Makefile/1.1920/Sat Dec 21 14:17:59 2019//
 D/ElectricFence////
 D/ORBit2////
 D/acpica////
@@ -1308,6 +1308,7 @@ D/py-country////
 D/py-coverage////
 D/py-coveralls////
 D/py-cparser////
+D/py-cstruct////
 D/py-curtsies////
 D/py-dateutil////
 D/py-decorator////
