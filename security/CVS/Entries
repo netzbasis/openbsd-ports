@@ -1,4 +1,4 @@
-/Makefile/1.557/Wed Dec 11 15:59:27 2019//
+/Makefile/1.558/Tue Dec 24 18:46:41 2019//
 D/ADMsnmp////
 D/ROPgadget////
 D/acme-client////
@@ -272,7 +272,6 @@ D/py-fido2////
 D/py-gnupg////
 D/py-josepy////
 D/py-keyring////
-D/py-libnacl////
 D/py-miasm////
 D/py-oauthlib////
 D/py-openssl////
