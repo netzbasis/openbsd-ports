@@ -1,10 +1,18 @@
-/patch-configure_ac/1.21/Sat Feb 10 15:29:24 2018//
-/patch-include_config_h/1.1/Fri Feb 16 14:27:53 2018//
-/patch-m4_decoders_m4/1.5/Sat Feb 10 15:29:24 2018//
-/patch-m4_input_m4/1.2/Sat Feb 10 15:29:24 2018//
+/patch-configure_ac/1.22/Wed Dec 25 15:50:45 2019//
+/patch-include_xine_buffer_h/1.3/Wed Dec 25 15:50:45 2019//
+/patch-include_xine_xineutils_h/1.1/Wed Dec 25 15:50:45 2019//
+/patch-m4_decoders_m4/1.6/Wed Dec 25 15:50:45 2019//
+/patch-m4_input_m4/1.3/Wed Dec 25 15:50:45 2019//
+/patch-src_demuxers_demux_ts_c/1.7/Wed Dec 25 15:50:45 2019//
+/patch-src_input_http_helper_c/1.1/Wed Dec 25 15:50:45 2019//
+/patch-src_input_input_cdda_c/1.9/Wed Dec 25 15:50:45 2019//
+/patch-src_input_input_http_c/1.10/Wed Dec 25 15:50:45 2019//
 /patch-src_input_input_v4l2_c/1.1/Sat Jan 23 08:31:50 2016//
-/patch-src_post_deinterlace_plugins_Makefile_in/1.18/Sat Feb 10 15:29:24 2018//
-/patch-src_xine-engine_demux_c/1.4/Sat Feb 10 15:29:24 2018//
-/patch-src_xine-utils_memcpy_c/1.5/Sun Jul  1 21:10:48 2018//
+/patch-src_post_Makefile_in/1.1/Wed Dec 25 15:50:45 2019//
+/patch-src_vdr_input_vdr_c/1.1/Wed Dec 25 15:50:45 2019//
+/patch-src_xine-engine_builtins_h/1.1/Wed Dec 25 15:50:45 2019//
+/patch-src_xine-engine_load_plugins_c/1.1/Wed Dec 25 15:50:45 2019//
+/patch-src_xine-utils_memcpy_c/1.6/Wed Dec 25 15:50:45 2019//
 /patch-src_xine-utils_utils_c/1.8/Sat Feb 10 15:29:24 2018//
+/patch-src_xine-utils_xmlparser_c/1.1/Wed Dec 25 15:50:45 2019//
 D

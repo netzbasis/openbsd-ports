@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.236 2019/12/05 15:24:58 jca Exp $
+# $OpenBSD: Makefile,v 1.238 2019/12/25 21:58:23 jca Exp $
 
 # XXX If broken on an architecture, remove the arch from LLVM_ARCHS.
 ONLY_FOR_ARCHS = ${LLVM_ARCHS}
@@ -18,7 +18,7 @@ PKGSPEC-main =	llvm-=${LLVM_V}
 PKGNAME-main =	llvm-${LLVM_V}
 PKGNAME-python =	py-llvm-${LLVM_V}
 PKGNAME-lldb =	lldb-${LLVM_V}
-REVISION-main =	2
+REVISION-main =	3
 
 CATEGORIES =	devel
 
@@ -89,7 +89,7 @@ CONFIGURE_ARGS =	-DLLVM_ENABLE_FFI:Bool=False \
 			-DLLVM_LINK_LLVM_DYLIB:Bool=True \
 			-DLLVM_BUILD_LLVM_DYLIB:Bool=True \
 			-DGO_EXECUTABLE=GO_EXECUTABLE-NOTFOUND \
-			-DBacktrace_LIBRARY=''
+			-DCMAKE_DISABLE_FIND_PACKAGE_Backtrace:Bool=True
 
 # Disable some protections in the compiler to regain performance
 .if ${MACHINE_ARCH} == "aarch64" || ${MACHINE_ARCH} == "amd64" || \
@@ -126,7 +126,8 @@ post-extract:
 	mv ${WRKDIR}/lldb-${LLVM_V}.src ${WRKSRC}/tools/lldb
 
 pre-configure:
-	@${SUBST_CMD} ${WRKSRC}/tools/clang/lib/Driver/ToolChains/OpenBSD.cpp
+	@${SUBST_CMD} ${WRKSRC}/tools/clang/lib/Driver/ToolChains/OpenBSD.cpp \
+	    ${WRKSRC}/cmake/modules/LLVMProcessSources.cmake
 	-@ln -s ${MODPY_BIN} ${WRKDIR}/bin/python
 
 post-build:
