@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2019/12/23 07:50:32 giovanni Exp $
+# $OpenBSD: Makefile,v 1.32 2019/12/26 11:19:28 sthen Exp $
 
 COMMENT-main=		extras for smtpd
 COMMENT-mysql=		mysql based smtpd table support
@@ -13,7 +13,7 @@ PKGNAME-mysql=		opensmtpd-extras-mysql-${V}
 PKGNAME-pgsql=		opensmtpd-extras-pgsql-${V}
 PKGNAME-python=		opensmtpd-extras-python-${V}
 PKGNAME-redis=		opensmtpd-extras-redis-${V}
-REVISION=		0
+REVISION=		2
 EPOCH=			0
 
 CATEGORIES=		mail
@@ -51,8 +51,9 @@ BUILD_DEPENDS = ${MODGNU_AUTOCONF_DEPENDS} \
                 ${MODGNU_AUTOMAKE_DEPENDS}
 
 AUTOCONF_VERSION=	2.69
-AUTOMAKE_VERSION=	1.13
-CONFIGURE_STYLE=	autoconf automake
+AUTOMAKE_VERSION=	1.16
+CONFIGURE_STYLE=	autoreconf
+AUTORECONF=		sh bootstrap
 CONFIGURE_ARGS=		--mandir=${PREFIX}/man \
 			--libexecdir=${PREFIX}/libexec \
 			--sysconfdir=${SYSCONFDIR}/mail \
@@ -75,9 +76,5 @@ CONFIGURE_ARGS=		--mandir=${PREFIX}/man \
 			--with-table-socketmap \
 			--with-table-sqlite \
 			--with-table-stub
-
-post-patch:
-		cd ${WRKSRC} && env AUTOCONF_VERSION=${AUTOCONF_VERSION} \
-		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} sh bootstrap
 
 .include <bsd.port.mk>

@@ -1,4 +1,4 @@
-/Makefile/1.613/Tue Dec 17 14:11:33 2019//
+/Makefile/1.614/Fri Dec 27 05:14:26 2019//
 D/TclXML////
 D/antiword////
 D/apertium////
@@ -374,6 +374,7 @@ D/py-polib////
 D/py-precis_i18n////
 D/py-prettytable////
 D/py-pyRFC3339////
+D/py-pyaml////
 D/py-pygfm////
 D/py-pygments////
 D/py-pykwalify////
