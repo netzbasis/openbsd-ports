@@ -1,4 +1,4 @@
-/Makefile/1.1158/Fri Dec 20 17:16:49 2019//
+/Makefile/1.1159/Sat Dec 28 08:05:04 2019//
 D/GeoIP////
 D/adns////
 D/adsuck////
@@ -368,7 +368,6 @@ D/p5-Net-IP-XS////
 D/p5-Net-IPTrie////
 D/p5-Net-IPv4Addr////
 D/p5-Net-IPv6Addr////
-D/p5-Net-IRC////
 D/p5-Net-Ident////
 D/p5-Net-Inspect////
 D/p5-Net-Jabber////

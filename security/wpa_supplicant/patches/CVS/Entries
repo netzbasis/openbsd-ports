@@ -3,6 +3,8 @@
 /patch-src_utils_os_unix_c/1.1/Tue Nov 19 14:35:59 2019//
 /patch-wpa_supplicant_Makefile/1.10/Fri Apr 26 13:32:36 2019//
 /patch-wpa_supplicant_config_h/1.1/Wed Feb  8 12:53:46 2017//
-/patch-wpa_supplicant_defconfig/1.1/Tue Nov 19 14:35:59 2019//
+/patch-wpa_supplicant_ctrl_iface_c/1.1/Sat Dec 28 18:58:36 2019//
+/patch-wpa_supplicant_defconfig/1.2/Sat Dec 28 18:58:36 2019//
 /patch-wpa_supplicant_main_c/1.3/Fri Oct  7 14:44:03 2016//
+/patch-wpa_supplicant_scan_c/1.1/Sat Dec 28 17:50:11 2019//
 D
