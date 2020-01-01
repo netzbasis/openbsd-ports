@@ -1,4 +1,4 @@
-/Makefile/1.1924/Mon Dec 30 14:11:42 2019//
+/Makefile/1.1925/Tue Dec 31 11:36:42 2019//
 D/ElectricFence////
 D/ORBit2////
 D/acpica////
@@ -365,6 +365,7 @@ D/libsigc++-2////
 D/libsigc++30////
 D/libsigsegv////
 D/libslang////
+D/libsmb2////
 D/libsoup////
 D/libspectrum////
 D/libtalloc////

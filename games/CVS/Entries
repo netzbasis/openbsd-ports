@@ -1,4 +1,4 @@
-/Makefile/1.411/Tue Dec 17 16:17:23 2019//
+/Makefile/1.412/Wed Jan  1 02:29:25 2020//
 D/0ad////
 D/1oom////
 D/2048-cli////
@@ -186,6 +186,7 @@ D/moria////
 D/mvdsv////
 D/mysticmine////
 D/naev////
+D/nblood////
 D/nethack////
 D/netris////
 D/neverball////
