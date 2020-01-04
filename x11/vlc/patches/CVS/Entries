@@ -1,6 +1,8 @@
 /patch-compat_Makefile_am/1.3/Sun Dec  1 22:44:13 2019//
-/patch-configure_ac/1.35/Sun Dec  1 22:44:13 2019//
+/patch-configure_ac/1.36/Fri Jan  3 08:45:09 2020//
+/patch-modules_access_Makefile_am/1.1/Fri Jan  3 08:45:09 2020//
 /patch-modules_access_http_Makefile_am/1.1/Sun Dec  1 22:44:13 2019//
+/patch-modules_access_smb2_c/1.1/Fri Jan  3 08:45:09 2020//
 /patch-modules_access_v4l2_lib_c/1.2/Sun Dec  1 22:44:13 2019//
 /patch-modules_access_v4l2_v4l2_h/1.2/Sun Dec  1 22:44:13 2019//
 /patch-modules_video_output_opengl_fragment_shaders_c/1.1/Wed Dec 25 15:48:26 2019//

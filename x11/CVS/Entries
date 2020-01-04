@@ -1,4 +1,4 @@
-/Makefile/1.647/Sat Nov 23 15:22:30 2019//
+/Makefile/1.648/Fri Jan  3 17:23:20 2020//
 D/2bwm////
 D/Xaw3d////
 D/XawMu////
@@ -147,6 +147,7 @@ D/krusader////
 D/lablgtk2////
 D/lablgtk3////
 D/lemonbar////
+D/lemonbar-xft////
 D/libdbus-c++////
 D/libdbusmenu////
 D/libdnd////
