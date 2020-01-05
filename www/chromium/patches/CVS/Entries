@@ -138,7 +138,7 @@
 /patch-chrome_app_shutdown_signal_handlers_posix_cc/1.3/Fri Apr 26 09:38:19 2019//
 /patch-chrome_app_theme_chrome_unscaled_resources_grd/1.6/Mon Sep 23 07:18:03 2019//
 /patch-chrome_app_theme_theme_resources_grd/1.21/Tue Nov  5 22:30:26 2019//
-/patch-chrome_browser_about_flags_cc/1.58/Sun Dec 15 12:03:46 2019//
+/patch-chrome_browser_about_flags_cc/1.59/Sat Jan  4 14:49:15 2020//
 /patch-chrome_browser_after_startup_task_utils_cc/1.16/Sun Dec 15 12:03:46 2019//
 /patch-chrome_browser_apps_platform_apps_api_music_manager_private_device_id_linux_cc/1.3/Fri Apr 26 09:38:19 2019//
 /patch-chrome_browser_autocomplete_chrome_autocomplete_scheme_classifier_cc/1.1/Thu Sep 27 06:36:18 2018//
@@ -177,8 +177,8 @@
 /patch-chrome_browser_first_run_first_run_dialog_h/1.1/Sat Apr 27 12:12:05 2019//
 /patch-chrome_browser_first_run_first_run_internal_h/1.1/Sat Apr 27 12:12:05 2019//
 /patch-chrome_browser_first_run_first_run_internal_posix_cc/1.6/Tue Nov  5 22:30:26 2019//
-/patch-chrome_browser_flag_descriptions_cc/1.24/Sun Dec 15 12:03:46 2019//
-/patch-chrome_browser_flag_descriptions_h/1.24/Sun Dec 15 12:03:46 2019//
+/patch-chrome_browser_flag_descriptions_cc/1.25/Sat Jan  4 14:49:15 2020//
+/patch-chrome_browser_flag_descriptions_h/1.25/Sat Jan  4 14:49:15 2020//
 /patch-chrome_browser_media_galleries_fileapi_mtp_device_map_service_cc/1.4/Fri Apr 26 09:38:20 2019//
 /patch-chrome_browser_media_galleries_media_file_system_registry_cc/1.25/Fri Apr 26 09:38:20 2019//
 /patch-chrome_browser_media_router_discovery_discovery_network_list_posix_cc/1.2/Wed Oct 25 13:47:07 2017//
@@ -188,6 +188,7 @@
 /patch-chrome_browser_media_webrtc_webrtc_logging_controller_cc/1.1/Tue Nov  5 22:30:26 2019//
 /patch-chrome_browser_media_webrtc_webrtc_logging_controller_h/1.1/Tue Nov  5 22:30:26 2019//
 /patch-chrome_browser_memory_details_cc/1.42/Fri Dec  7 11:07:35 2018//
+/patch-chrome_browser_memory_details_linux_cc/1.5/Sat Jan  4 14:49:15 2020//
 /patch-chrome_browser_metrics_chrome_browser_main_extra_parts_metrics_cc/1.16/Sun Dec 15 12:03:46 2019//
 /patch-chrome_browser_metrics_chrome_metrics_service_client_cc/1.11/Sun Dec 15 12:03:46 2019//
 /patch-chrome_browser_native_file_system_chrome_native_file_system_permission_context_cc/1.2/Sun Dec 15 12:03:46 2019//
@@ -245,7 +246,7 @@
 /patch-chrome_browser_ui_views_first_run_dialog_cc/1.20/Sun Dec 15 12:03:46 2019//
 /patch-chrome_browser_ui_views_frame_browser_frame_cc/1.21/Tue Nov  5 22:30:27 2019//
 /patch-chrome_browser_ui_views_frame_browser_non_client_frame_view_factory_views_cc/1.3/Sun Mar 24 12:24:45 2019//
-/patch-chrome_browser_ui_views_frame_browser_view_cc/1.23/Sun Dec 15 12:03:46 2019//
+/patch-chrome_browser_ui_views_frame_browser_view_cc/1.24/Sat Jan  4 14:49:15 2020//
 /patch-chrome_browser_ui_views_frame_opaque_browser_frame_view_cc/1.40/Sun Dec 15 12:03:46 2019//
 /patch-chrome_browser_ui_views_frame_opaque_browser_frame_view_platform_specific_cc/1.2/Fri Apr 26 09:38:20 2019//
 /patch-chrome_browser_ui_views_frame_system_menu_model_builder_cc/1.12/Tue Nov  5 22:30:27 2019//
@@ -675,7 +676,7 @@
 /patch-ui_base_ui_base_features_h/1.8/Sun Dec 15 12:03:47 2019//
 /patch-ui_base_webui_web_ui_util_cc/1.14/Sun Dec 15 12:03:47 2019//
 /patch-ui_base_x_x11_shm_image_pool_base_cc/1.3/Sun Dec 15 13:55:34 2019//
-/patch-ui_compositor_compositor_cc/1.1/Sun Dec 15 12:03:47 2019//
+/patch-ui_compositor_compositor_cc/1.2/Sat Jan  4 14:49:15 2020//
 /patch-ui_compositor_compositor_h/1.1/Sun Dec 15 12:03:47 2019//
 /patch-ui_compositor_compositor_observer_h/1.1/Sun Dec 15 12:03:47 2019//
 /patch-ui_compositor_host_host_context_factory_private_cc/1.1/Sun Dec 15 12:03:47 2019//
