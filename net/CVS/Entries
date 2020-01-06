@@ -1,4 +1,4 @@
-/Makefile/1.1159/Sat Dec 28 08:05:04 2019//
+/Makefile/1.1161/Sun Jan  5 23:51:03 2020//
 D/GeoIP////
 D/adns////
 D/adsuck////
@@ -20,6 +20,7 @@ D/avahi////
 D/axel////
 D/balance////
 D/bgpq3////
+D/bgpq4////
 D/bindgraph////
 D/bing////
 D/bird////
@@ -244,6 +245,7 @@ D/mosh////
 D/mosquitto////
 D/mrtg////
 D/msdl////
+D/msoak////
 D/mtr////
 D/mudix////
 D/munin////
