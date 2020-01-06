@@ -2,6 +2,7 @@
 /patch-bin_dig_host_c/1.12/Wed Dec 18 19:38:17 2019//
 /patch-bin_dig_nslookup_c/1.13/Wed Dec 18 19:38:17 2019//
 /patch-bin_named_include_named_globals_h/1.13/Wed Dec 18 15:05:43 2019//
+/patch-configure_ac/1.1/Mon Jan  6 14:45:40 2020//
 /patch-lib_isc_Makefile_in/1.5/Wed Dec 18 15:05:43 2019//
 /patch-lib_isc_unix_net_c/1.9/Wed Dec 18 15:05:43 2019//
 /patch-lib_isc_unix_socket_c/1.17/Wed Dec 18 15:05:43 2019//

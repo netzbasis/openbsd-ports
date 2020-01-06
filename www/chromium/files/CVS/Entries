@@ -3,6 +3,10 @@
 /chrome/1.19/Sat May 11 20:36:47 2019//
 /chromium-browser.desktop/1.2/Sat Dec 16 15:34:39 2017//
 /electron/1.1/Thu Aug 22 19:20:03 2019//
+/hid_connection_fido.cc/1.1/Mon Jan  6 16:05:06 2020//
+/hid_connection_fido.h/1.1/Mon Jan  6 16:05:06 2020//
+/hid_service_fido.cc/1.1/Mon Jan  6 16:05:06 2020//
+/hid_service_fido.h/1.1/Mon Jan  6 16:05:06 2020//
 /pledge.main/1.6/Wed Jun 26 17:22:41 2019//
 /pledge.utility_audio/1.2/Wed Oct  2 13:41:06 2019//
 /pledge.utility_network/1.2/Sun Oct  6 14:06:10 2019//
@@ -11,7 +15,7 @@
 /sndio_output.cc/1.10/Thu Aug  1 08:31:59 2019//
 /sndio_output.h/1.6/Thu Aug  1 08:31:59 2019//
 /unveil.gpu/1.1/Fri Aug 10 14:57:53 2018//
-/unveil.main/1.7/Wed Jun 26 17:22:41 2019//
+/unveil.main/1.8/Mon Jan  6 16:05:06 2020//
 /unveil.plugin/1.1/Fri Aug 10 14:57:53 2018//
 /unveil.renderer/1.1/Fri Aug 10 14:57:53 2018//
 /unveil.utility/1.1/Fri Aug 10 14:57:53 2018//
