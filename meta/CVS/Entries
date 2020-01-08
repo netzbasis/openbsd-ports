@@ -1,4 +1,4 @@
-/Makefile/1.14/Mon Dec 10 15:31:52 2018//
+/Makefile/1.15/Tue Jan  7 20:01:20 2020//
 /Makefile.inc/1.4/Fri Jul 12 20:47:47 2019//
 D/avr////
 D/geda////
@@ -9,6 +9,7 @@ D/lxqt////
 D/mate////
 D/msp430////
 D/mupen64plus////
+D/python3////
 D/qt5////
 D/tor-browser////
 D/xfce////

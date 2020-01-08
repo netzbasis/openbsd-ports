@@ -72,6 +72,7 @@
 /patch-base_files_file_path_watcher_kqueue_h/1.1/Sun Oct  8 16:02:46 2017//
 /patch-base_files_file_path_watcher_stub_cc/1.4/Sat Jun  2 17:19:23 2018//
 /patch-base_files_file_util_posix_cc/1.6/Sun Dec 15 12:03:46 2019//
+/patch-base_files_scoped_file_cc/1.1/Tue Jan  7 17:57:12 2020//
 /patch-base_i18n_icu_util_cc/1.7/Sun Dec 15 12:03:46 2019//
 /patch-base_linux_util_cc/1.8/Sun Dec 15 12:03:46 2019//
 /patch-base_memory_platform_shared_memory_region_h/1.1/Mon Sep 23 07:18:03 2019//
