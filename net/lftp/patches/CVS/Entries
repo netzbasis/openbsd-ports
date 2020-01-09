@@ -1,6 +1,4 @@
-/patch-configure/1.21/Mon Aug 13 14:36:41 2018//
-/patch-doc_lftp_1/1.4/Sun Mar 10 17:27:01 2019//
-/patch-lib_vasnprintf_c/1.4/Tue Aug 22 15:48:45 2017//
-/patch-src_Makefile_in/1.17/Mon Aug 13 14:36:41 2018//
-/patch-src_Torrent_cc/1.1/Sun Mar 10 18:24:48 2019//
+/patch-configure/1.22/Wed Jan  8 07:50:30 2020//
+/patch-lib_vasnprintf_c/1.5/Wed Jan  8 07:50:30 2020//
+/patch-src_Makefile_in/1.18/Wed Jan  8 07:50:30 2020//
 D
