@@ -1,4 +1,4 @@
-/Makefile/1.170/Wed Dec 25 15:01:08 2019//
+/Makefile/1.171/Fri Jan 10 13:30:41 2020//
 D/R////
 D/aamath////
 D/abs////
@@ -127,6 +127,7 @@ D/py-scipy////
 D/py-snuggs////
 D/py-statistics////
 D/py-sympy////
+D/py-tables////
 D/qhull////
 D/qrupdate////
 D/sc////
