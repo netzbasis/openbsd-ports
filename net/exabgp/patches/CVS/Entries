@@ -1,12 +1,11 @@
 /patch-dev_bin_python-profile/1.1/Thu Jul 11 14:14:52 2019//
 /patch-dev_bin_pythonstats/1.1/Thu Jul 11 14:14:52 2019//
-/patch-etc_exabgp_example-healthcheck_conf/1.1/Thu Jul 11 14:14:52 2019//
+/patch-etc_exabgp_example-healthcheck_conf/1.2/Wed Jan 15 22:32:39 2020//
 /patch-exabgp_daemon_env/1.1/Thu Jul 11 14:14:52 2019//
-/patch-lib_exabgp_application_bgp_py/1.1/Thu Jul 11 14:14:52 2019//
+/patch-lib_exabgp_application_bgp_py/1.2/Wed Jan 15 22:32:39 2020//
 /patch-lib_exabgp_application_cli_py/1.1/Thu Jul 11 14:14:52 2019//
-/patch-lib_exabgp_application_healthcheck_py/1.1/Thu Jul 11 14:14:52 2019//
+/patch-lib_exabgp_application_healthcheck_py/1.2/Wed Jan 15 22:32:39 2020//
 /patch-lib_exabgp_configuration_usage_py/1.1/Thu Jul 11 14:14:52 2019//
 /patch-lib_exabgp_vendoring_profiler_py/1.1/Thu Jul 11 14:14:52 2019//
-/patch-qa_sbin_bgp/1.1/Thu Jul 11 14:14:52 2019//
-/patch-setup_py/1.4/Thu Jul 11 14:14:52 2019//
+/patch-setup_py/1.5/Wed Jan 15 22:32:39 2020//
 D
