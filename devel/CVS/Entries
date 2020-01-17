@@ -1,4 +1,4 @@
-/Makefile/1.1927/Sun Jan 12 18:11:43 2020//
+/Makefile/1.1928/Thu Jan 16 13:57:29 2020//
 D/64tass////
 D/ElectricFence////
 D/ORBit2////
@@ -1333,6 +1333,7 @@ D/py-fastimport////
 D/py-faulthandler////
 D/py-fields////
 D/py-filebytes////
+D/py-fixtures////
 D/py-flaky////
 D/py-flexmock////
 D/py-fpconst////
@@ -1377,6 +1378,7 @@ D/py-jupyter_core////
 D/py-kiwisolver////
 D/py-lazy-object-proxy////
 D/py-liblarch////
+D/py-linecache2////
 D/py-llvmlite////
 D/py-logilab-common////
 D/py-magic////
@@ -1478,6 +1480,7 @@ D/py-testpath////
 D/py-testtools////
 D/py-texscythe////
 D/py-tox////
+D/py-traceback2////
 D/py-traitlets////
 D/py-trollius////
 D/py-twisted////

@@ -1,4 +1,4 @@
-/Makefile/1.68/Tue May  7 22:55:34 2019//
+/Makefile/1.69/Thu Jan 16 17:57:43 2020//
 D/foxtrotgps////
 D/garmindev////
 D/gdal////
@@ -56,6 +56,7 @@ D/py-proj////
 D/py-rasterio////
 D/py-rio-cogeo////
 D/py-shapely////
+D/pygeoapi////
 D/qgis////
 D/qlandkartegt////
 D/ruby-findmyiphone////
