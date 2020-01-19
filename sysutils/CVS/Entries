@@ -1,4 +1,4 @@
-/Makefile/1.549/Sat Jan 11 16:52:54 2020//
+/Makefile/1.550/Sat Jan 18 15:17:35 2020//
 D/accountsservice////
 D/amazon-ecs-cli////
 D/amazon-ssm-agent////
@@ -41,6 +41,7 @@ D/conky////
 D/consolekit////
 D/consul////
 D/consul-template////
+D/coreboot-utils////
 D/coreutils////
 D/cpdup////
 D/cpuid////
