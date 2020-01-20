@@ -1,5 +1,6 @@
 /DESCR-calendar/1.1/Wed Jan 19 11:25:16 2011//
 /DESCR-http_post/1.1/Thu May  3 11:25:27 2012//
+/DESCR-kqueue/1.1/Sun Jan 19 21:35:24 2020//
 /DESCR-ldap/1.1/Sun Dec 13 12:11:29 2009//
 /DESCR-main/1.4/Fri Mar 23 22:42:25 2012//
 /DESCR-odbc/1.1/Wed Sep  5 22:42:52 2007//
@@ -9,8 +10,9 @@
 /DESCR-tds/1.1/Tue Jul 16 13:03:19 2013//
 /PLIST-calendar/1.4/Mon Nov 11 21:25:19 2019//
 /PLIST-http_post/1.2/Mon Nov 11 21:25:20 2019//
+/PLIST-kqueue/1.1/Sun Jan 19 21:35:24 2020//
 /PLIST-ldap/1.4/Mon Nov 11 21:25:20 2019//
-/PLIST-main/1.83/Fri Dec 27 13:27:50 2019//
+/PLIST-main/1.84/Sun Jan 19 21:35:24 2020//
 /PLIST-odbc/1.6/Mon Nov 11 21:25:20 2019//
 /PLIST-pgsql/1.4/Mon Nov 11 21:25:20 2019//
 /PLIST-snmp/1.4/Mon Nov 11 21:25:20 2019//
