@@ -1,12 +1,13 @@
-# $OpenBSD: Makefile,v 1.19 2019/07/12 20:49:40 sthen Exp $
+# $OpenBSD: Makefile,v 1.21 2020/01/23 19:06:43 robert Exp $
 
 COMMENT=		color-able replacement for tail(1)
 
-DISTNAME=		colortail-0.3.0
-CATEGORIES=		sysutils
-REVISION =		5
+GH_ACCOUNT=		joakim666
+GH_PROJECT=		colortail
+GH_TAGNAME=		0.3.3
 
-MASTER_SITES=		http://keyserver.kjsl.com/~jharris/distfiles/
+CATEGORIES=		sysutils
+
 MAINTAINER=		Robert Nagy <robert@openbsd.org>
 
 # GPLv2+
@@ -16,7 +17,8 @@ WANTLIB=		c m ${COMPILER_LIBCXX}
 
 COMPILER =		base-clang ports-gcc base-gcc
 
-CONFIGURE_STYLE=	gnu
+AUTOCONF_VERSION=	2.61
+CONFIGURE_STYLE=	autoreconf
 
 post-install:
 	${INSTALL_MAN} ${FILESDIR}/colortail.1 ${PREFIX}/man/man1

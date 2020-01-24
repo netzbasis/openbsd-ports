@@ -1,5 +1,5 @@
-/patch-configure_ac/1.3/Wed Jun 12 20:28:36 2019//
-/patch-lib-src_FileDialog_Makefile_am/1.1/Tue Mar 26 18:26:45 2019//
+/patch-configure_ac/1.4/Fri Jan 24 05:20:37 2020//
+/patch-lib-src_FileDialog_Makefile_am/1.2/Fri Jan 24 05:20:37 2020//
 /patch-lib-src_lib-widget-extra_Makefile_am/1.1/Tue Mar 26 18:26:45 2019//
 /patch-lib-src_libnyquist_Makefile_am/1.1/Tue Mar 26 18:26:45 2019//
 /patch-lib-src_libnyquist_nyquist_cmt_midifns_c/1.2/Tue Mar  5 16:36:58 2019//
@@ -9,7 +9,6 @@
 /patch-lib-src_lv2_configure/1.1/Tue Mar  5 16:36:58 2019//
 /patch-lib-src_lv2_suil_src_x11_in_gtk2_c/1.1/Tue Mar  5 16:36:58 2019//
 /patch-m4_audacity_checklib_portaudio_m4/1.1/Tue Mar 26 18:26:45 2019//
-/patch-src_AudacityApp_cpp/1.7/Thu Sep 26 13:54:54 2019//
-/patch-src_AudioIO_cpp/1.10/Thu Sep 26 13:54:54 2019//
-/patch-src_MemoryX_h/1.4/Thu Sep 26 13:54:54 2019//
+/patch-src_AudacityApp_cpp/1.8/Fri Jan 24 05:20:37 2020//
+/patch-src_AudioIO_cpp/1.11/Fri Jan 24 05:20:37 2020//
 D
