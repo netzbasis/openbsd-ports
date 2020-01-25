@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.842 2019/12/30 14:12:35 ajacoutot Exp $
+# $OpenBSD: Quirks.pm,v 1.845 2020/01/25 05:34:01 rsadowski Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1355,6 +1355,9 @@ my $obsolete_reason = {
 	'py3-typing' => 5,
 	'p5-Net-IRC' => 3,
 	'pangox-compat' => 0,
+	'qtserialport' => 5,
+	'tmake' => 5,
+	'qt3-sqlite3' => 5,
 };
 
 # reasons for obsolete packages

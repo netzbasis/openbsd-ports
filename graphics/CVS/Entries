@@ -1,4 +1,4 @@
-/Makefile/1.496/Fri Jan 10 17:37:35 2020//
+/Makefile/1.497/Sat Jan 25 06:09:03 2020//
 D/DevIL////
 D/GraphicsMagick////
 D/ImageMagick////
@@ -175,7 +175,6 @@ D/openbsd-backgrounds////
 D/opencolorio////
 D/opencsg////
 D/opencv////
-D/opencv2////
 D/openexr////
 D/openimageio////
 D/openjp2////

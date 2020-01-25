@@ -1,4 +1,4 @@
-/Makefile/1.386/Fri Jan 10 17:37:34 2020//
+/Makefile/1.387/Sat Jan 25 05:32:11 2020//
 D/architect////
 D/barman////
 D/citus////
@@ -176,7 +176,6 @@ D/py-storm////
 D/py-sybase////
 D/py-whisper////
 D/qdbm////
-D/qt3-sqlite3-plugin////
 D/redis////
 D/repmgr////
 D/riak////

@@ -1,4 +1,4 @@
-/Makefile/1.77/Sat Nov  9 15:36:59 2019//
+/Makefile/1.78/Sat Jan 25 05:05:18 2020//
 D/amtterm////
 D/birda////
 D/bottlerocket////
@@ -37,7 +37,6 @@ D/pterm////
 D/py-gammu////
 D/qodem////
 D/qpage////
-D/qtserialport////
 D/rtl-sdr////
 D/scmxx////
 D/seyon////
