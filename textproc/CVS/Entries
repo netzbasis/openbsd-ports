@@ -1,4 +1,4 @@
-/Makefile/1.616/Fri Jan 10 17:37:36 2020//
+/Makefile/1.617/Sat Jan 25 16:55:32 2020//
 D/TclXML////
 D/antiword////
 D/apertium////
@@ -438,6 +438,7 @@ D/ruby-treetop////
 D/ruby-yard////
 D/rxp////
 D/sablotron////
+D/scdoc////
 D/sim////
 D/solr////
 D/source-highlight////

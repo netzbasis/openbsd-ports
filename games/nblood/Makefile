@@ -1,13 +1,15 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/01/01 02:28:07 jsg Exp $
+# $OpenBSD: Makefile,v 1.3 2020/01/25 23:53:44 jsg Exp $
 
 COMMENT =	reverse-engineered ports of Build games
 
-DISTNAME =	nblood-1.01.20191231
+DISTNAME =	nblood-1.01.20200124
 
 GH_ACCOUNT =	nukeykt
 GH_PROJECT =	NBlood
-GH_COMMIT =	a8b09ac222c38f41c6e4c0b18e744c2a40ce80e2
+GH_COMMIT =	37d7a3d5fd28380051b55bf0d9eca19bf044e642
 CATEGORIES =	games x11
+
+MAINTAINER =	Jonathan Gray <jsg@openbsd.org>
 
 # GPLv2, BUILD license and shareware data
 PERMIT_PACKAGE =    "BUILD engine license is not compatible with GPLv2."
@@ -43,6 +45,12 @@ MAKE_FLAGS +=	PRETTY_OUTPUT=0 \
 MAKE_FILE =	GNUmakefile
 USE_GMAKE =	Yes
 NO_TEST =	Yes
+
+# Fix "undefined reference to `__atomic_load_8'"
+.if ${MACHINE_ARCH:Mpowerpc} || ${MACHINE_ARCH:Mhppa}
+WANTLIB +=	atomic
+MAKE_FLAGS +=	LDFLAGS="${LDFLAGS} -latomic"
+.endif
 
 .include <bsd.port.arch.mk>
 
