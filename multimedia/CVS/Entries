@@ -1,4 +1,4 @@
-/Makefile/1.118/Thu Sep 19 14:22:32 2019//
+/Makefile/1.119/Mon Jan 27 04:54:54 2020//
 D/aom////
 D/assimp////
 D/atomicparsley////
@@ -61,7 +61,6 @@ D/py-caption////
 D/py-casttube////
 D/py-chromecast////
 D/py-pafy////
-D/qt-gstreamer////
 D/qtav////
 D/regionset////
 D/sfml////

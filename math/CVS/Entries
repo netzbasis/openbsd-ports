@@ -1,4 +1,4 @@
-/Makefile/1.171/Fri Jan 10 13:30:41 2020//
+/Makefile/1.172/Sun Jan 26 07:41:09 2020//
 D/R////
 D/aamath////
 D/abs////
@@ -16,8 +16,6 @@ D/dieharder////
 D/double-conversion////
 D/ebc////
 D/ecm////
-D/eigen////
-D/eigen2////
 D/eigen3////
 D/ensmallen////
 D/fann////
