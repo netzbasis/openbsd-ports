@@ -3,4 +3,8 @@
 /patch-rsync_1/1.6/Tue Feb 13 19:20:06 2018//
 /patch-rsyncd_conf_5/1.7/Tue Feb 13 19:20:06 2018//
 /patch-support_rrsync/1.2/Tue Sep 18 11:28:23 2012//
+/patch-zlib_crc32_c/1.1/Mon Jan 27 20:27:10 2020//
+/patch-zlib_inffast_c/1.1/Mon Jan 27 20:27:10 2020//
+/patch-zlib_inflate_c/1.1/Mon Jan 27 20:27:10 2020//
+/patch-zlib_inftrees_c/1.1/Mon Jan 27 20:27:10 2020//
 D
