@@ -1,4 +1,4 @@
-/Makefile/1.1164/Mon Jan 13 19:56:38 2020//
+/Makefile/1.1165/Wed Jan 29 04:57:24 2020//
 D/GeoIP////
 D/adns////
 D/adsuck////
@@ -569,7 +569,6 @@ D/py-zmq////
 D/py-zsi////
 D/qbittorrent////
 D/qsyncthingtray////
-D/qsynergy////
 D/quagga////
 D/queryperf////
 D/queso////

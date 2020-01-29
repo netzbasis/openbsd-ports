@@ -1,4 +1,4 @@
-/Makefile/1.561/Fri Jan 10 17:37:35 2020//
+/Makefile/1.562/Wed Jan 29 04:54:58 2020//
 D/ADMsnmp////
 D/ROPgadget////
 D/acme-client////
@@ -95,7 +95,6 @@ D/keyringer////
 D/klaxon////
 D/knockpy////
 D/kpcli////
-D/kqoauth////
 D/lastpass-cli////
 D/letsencrypt////
 D/libassuan////
