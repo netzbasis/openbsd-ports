@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1165 2020/01/29 04:57:24 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.1167 2020/01/31 23:34:42 abieber Exp $
 
      SUBDIR =
      SUBDIR += GeoIP
@@ -21,6 +21,7 @@
      SUBDIR += avahi,
      SUBDIR += axel
      SUBDIR += balance
+     SUBDIR += barrier
      SUBDIR += bgpq3
      SUBDIR += bgpq4
      SUBDIR += bindgraph
@@ -57,7 +58,6 @@
      SUBDIR += czmq
      SUBDIR += daq
      SUBDIR += darkstat
-     SUBDIR += dclib
      SUBDIR += ddclient
      SUBDIR += deluge
      SUBDIR += deluge-ltconfig
@@ -765,7 +765,6 @@
      SUBDIR += uucp
      SUBDIR += uucpd
      SUBDIR += validns
-     SUBDIR += valknut
      SUBDIR += vf1
      SUBDIR += vicq
      SUBDIR += vncsnapshot

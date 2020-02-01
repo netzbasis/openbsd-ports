@@ -1,4 +1,4 @@
-/Makefile/1.1165/Wed Jan 29 04:57:24 2020//
+/Makefile/1.1167/Fri Jan 31 23:34:42 2020//
 D/GeoIP////
 D/adns////
 D/adsuck////
@@ -19,6 +19,7 @@ D/arpwatch////
 D/avahi////
 D/axel////
 D/balance////
+D/barrier////
 D/bgpq3////
 D/bgpq4////
 D/bindgraph////
@@ -51,7 +52,6 @@ D/curl////
 D/czmq////
 D/daq////
 D/darkstat////
-D/dclib////
 D/ddclient////
 D/deluge////
 D/deluge-ltconfig////
@@ -680,7 +680,6 @@ D/utox////
 D/uucp////
 D/uucpd////
 D/validns////
-D/valknut////
 D/vf1////
 D/vicq////
 D/vncsnapshot////
