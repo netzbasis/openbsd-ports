@@ -1,2 +1,4 @@
 /patch-src_os_signal_signal_cgo_test_go/1.2/Sat Mar 16 13:37:29 2019//
+/patch-src_runtime_sys_openbsd_arm64_s/1.1/Tue Feb  4 17:22:42 2020//
+/patch-src_syscall_asm_openbsd_arm64_s/1.1/Tue Feb  4 17:22:42 2020//
 D

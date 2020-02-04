@@ -1,4 +1,4 @@
-/Makefile/1.387/Sat Jan 25 05:32:11 2020//
+/Makefile/1.388/Tue Feb  4 06:20:53 2020//
 D/architect////
 D/barman////
 D/citus////
@@ -29,7 +29,6 @@ D/lmdb////
 D/luadbi////
 D/lualdap////
 D/luasqlite3////
-D/luma////
 D/mariadb////
 D/mdbtools////
 D/mongodb////

@@ -1,4 +1,4 @@
-/Makefile/1.86/Sat Aug 10 21:27:47 2019//
+/Makefile/1.87/Tue Feb  4 06:26:27 2020//
 D/akonadi////
 D/aqbanking////
 D/attica////
@@ -32,7 +32,6 @@ D/osmo////
 D/p5-Business-Tax-VAT-Validation////
 D/projectlibre////
 D/py-carddav////
-D/qhacc////
 D/radicale////
 D/radicale2////
 D/rednotebook////
