@@ -4,12 +4,12 @@
 /DESCR-pg_upgrade/1.1/Sun Dec 18 18:18:27 2016//
 /DESCR-plpython/1.1/Tue Oct 15 02:18:18 2013//
 /DESCR-server/1.1/Mon Jul 26 10:10:46 2004//
-/PLIST-contrib/1.20/Tue Feb 19 05:09:18 2019//
-/PLIST-docs/1.93/Fri Nov 15 13:19:10 2019//
-/PLIST-main/1.30/Tue Feb 19 05:09:18 2019//
+/PLIST-contrib/1.21/Thu Feb  6 00:36:12 2020//
+/PLIST-docs/1.94/Thu Feb  6 00:36:12 2020//
+/PLIST-main/1.31/Thu Feb  6 00:36:12 2020//
 /PLIST-pg_upgrade/1.1/Sun Dec 18 18:18:27 2016//
-/PLIST-plpython/1.8/Tue Feb 19 05:09:18 2019//
-/PLIST-server/1.38/Tue Feb 19 16:45:46 2019//
+/PLIST-plpython/1.9/Thu Feb  6 00:36:12 2020//
+/PLIST-server/1.39/Thu Feb  6 00:36:12 2020//
 /README-server/1.27/Thu Apr 11 15:18:39 2019//
 /postgresql.rc/1.13/Tue Aug 27 19:49:46 2019//
 D
