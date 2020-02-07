@@ -1,4 +1,4 @@
-/Makefile/1.387/Mon Dec 16 22:03:50 2019//
+/Makefile/1.388/Thu Feb  6 11:30:56 2020//
 D/abook////
 D/adcomplain////
 D/akpop3d////
@@ -25,6 +25,7 @@ D/cyrus-imapd////
 D/dkimproxy////
 D/dma////
 D/dovecot////
+D/dovecot-fts-xapian////
 D/dovecot-pigeonhole////
 D/dspam////
 D/elm////
