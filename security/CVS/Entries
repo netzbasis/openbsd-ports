@@ -1,4 +1,4 @@
-/Makefile/1.562/Wed Jan 29 04:54:58 2020//
+/Makefile/1.564/Fri Feb  7 16:57:26 2020//
 D/ADMsnmp////
 D/ROPgadget////
 D/acme-client////
@@ -20,6 +20,7 @@ D/bsd-airtools////
 D/burpsuite////
 D/ccid////
 D/ccrypt////
+D/cfssl////
 D/cgichk////
 D/chntpw////
 D/chrootuid////
