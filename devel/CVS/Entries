@@ -1,4 +1,4 @@
-/Makefile/1.1929/Sat Jan 25 05:26:19 2020//
+/Makefile/1.1932/Mon Feb 10 02:15:41 2020//
 D/64tass////
 D/ElectricFence////
 D/ORBit2////
@@ -868,6 +868,7 @@ D/p5-MooX-StrictConstructor////
 D/p5-MooX-Types-MooseLike////
 D/p5-Moose////
 D/p5-MooseX-Aliases////
+D/p5-MooseX-Attribute-Chained////
 D/p5-MooseX-AttributeHelpers////
 D/p5-MooseX-Clone////
 D/p5-MooseX-ConfigFromFile////
@@ -1032,6 +1033,8 @@ D/p5-TAP-Formatter-JUnit////
 D/p5-TAP-Harness-Archive////
 D/p5-TAP-Harness-JUnit////
 D/p5-TAP-Harness-Multiple////
+D/p5-TOML////
+D/p5-TOML-Parser////
 D/p5-Taint-Runtime////
 D/p5-Task-Weaken////
 D/p5-Tcl////
@@ -1142,6 +1145,7 @@ D/p5-Test-YAML-Valid////
 D/p5-Test-utf8////
 D/p5-Test2-Plugin-NoWarnings////
 D/p5-Test2-Suite////
+D/p5-Test2-Tools-Explain////
 D/p5-Text-FixEOL////
 D/p5-Text-vFile-asData////
 D/p5-Throwable////

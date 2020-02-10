@@ -1,4 +1,4 @@
-/Makefile/1.620/Thu Jan 30 21:18:54 2020//
+/Makefile/1.621/Sun Feb  9 23:46:10 2020//
 D/TclXML////
 D/antiword////
 D/apertium////
@@ -313,6 +313,7 @@ D/p5-XML-XPath////
 D/p5-XML-XPathEngine////
 D/p5-XML-XSLT////
 D/p5-XML-XSPF////
+D/p5-XString////
 D/p5-ack////
 D/p5-sdf////
 D/p5-tkispell////
