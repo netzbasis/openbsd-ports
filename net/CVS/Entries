@@ -1,4 +1,4 @@
-/Makefile/1.1167/Fri Jan 31 23:34:42 2020//
+/Makefile/1.1168/Mon Feb 10 22:44:20 2020//
 D/GeoIP////
 D/adns////
 D/adsuck////
@@ -28,6 +28,7 @@ D/bird////
 D/bitcoin////
 D/bitlbee////
 D/bitlbee-facebook////
+D/bitlbee-mastodon////
 D/blaeu////
 D/bnc////
 D/bro////
