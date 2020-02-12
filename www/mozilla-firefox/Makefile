@@ -1,18 +1,18 @@
-# $OpenBSD: Makefile,v 1.409 2020/01/21 10:56:11 landry Exp $
+# $OpenBSD: Makefile,v 1.411 2020/02/11 18:24:46 landry Exp $
 
 COMMENT =	Mozilla web browser
 ONLY_FOR_ARCHS =	amd64 i386 aarch64
 
 # Don't forget to bump www/firefox-i18n after updates.
 
-MOZILLA_VERSION =	72.0.2
+MOZILLA_VERSION =	73.0
 MOZILLA_BRANCH =	release
 MOZILLA_PROJECT =	firefox
 MOZILLA_CODENAME =	browser
 
 WRKDIST =	${WRKDIR}/${MOZILLA_DIST}-${MOZILLA_DIST_VERSION:C/b[0-9]*//}
 HOMEPAGE =	https://www.mozilla.org/firefox/
-SO_VERSION =	87.0
+SO_VERSION =	88.0
 # NOTE: Must bump minor version if any shlib's are removed from the
 # components dir to avoid pkg_add -r issues.
 MOZILLA_LIBS =	mozavcodec mozavutil mozgtk xul clearkey lgpllibs
@@ -40,7 +40,7 @@ MOZILLA_USE_BUNDLED_CAIRO = Yes
 MOZILLA_USE_BUNDLED_HUNSPELL = Yes
 
 # firefox >= 53 needs rust
-BUILD_DEPENDS +=	lang/rust>=1.34
+BUILD_DEPENDS +=	lang/rust>=1.39
 # stylo build needs LLVM
 BUILD_DEPENDS +=	devel/llvm
 # 61 requires both versions of python
@@ -57,7 +57,7 @@ BUILD_DEPENDS +=	devel/nasm
 RUN_DEPENDS +=		devel/xdg-utils
 
 # uses pledge()
-WANTLIB += X11-xcb Xcursor Xi intl xcb xcb-shm ${COMPILER_LIBCXX}
+WANTLIB += X11-xcb Xcursor Xi intl xcb xcb-shm harfbuzz ${COMPILER_LIBCXX}
 
 # Regression tests are too hard to adapt to run here
 NO_TEST =	Yes
@@ -74,10 +74,6 @@ SUBST_VARS +=	LOCALBASE X11BASE MOZILLA_PROJECT
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 DEBUG_CONFIGURE_ARGS +=	--enable-debug-symbols \
 			--disable-install-strip
-
-post-patch:
-	sed -i 's/"files":{[^}]*}/"files":{}/' \
-		${WRKSRC}/third_party/rust/slice-deque/.cargo-checksum.json
 
 show-commit:
 	@curl -s https://releases.mozilla.org/pub/mozilla.org/firefox/releases/${MOZILLA_VERSION}/SOURCE| awk -F / '/^https:\/\/hg/ {print $$7 }'

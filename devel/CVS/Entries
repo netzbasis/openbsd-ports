@@ -1,4 +1,4 @@
-/Makefile/1.1932/Mon Feb 10 02:15:41 2020//
+/Makefile/1.1934/Tue Feb 11 23:39:35 2020//
 D/64tass////
 D/ElectricFence////
 D/ORBit2////
@@ -126,6 +126,7 @@ D/dtc////
 D/dune////
 D/ectags////
 D/elftoolchain////
+D/esptool-ck////
 D/etl////
 D/expect-lite////
 D/fasm////
@@ -1387,6 +1388,7 @@ D/py-llvmlite////
 D/py-logilab-common////
 D/py-magic////
 D/py-mccabe////
+D/py-minidump////
 D/py-minimock////
 D/py-mock////
 D/py-modulegraph////

@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.5 2019/12/28 14:10:21 jasper Exp $
+# $OpenBSD: Makefile,v 1.7 2020/02/11 20:52:12 kn Exp $
 
 COMMENT =	multi-architecture binary analysis toolkit
 
 ANGR_PYTHON_MODULE =	angr
-REVISION =	0
+REVISION =	1
 
 HOMEPAGE =	https://angr.io/
 
@@ -22,15 +22,18 @@ BUILD_DEPENDS =	devel/angr/py-pyvex>=${MODPY_EGG_VERSION} \
 		devel/py-future${MODPY_FLAVOR}
 
 # AngrServer could use (unported) rpyc
-RUN_DEPENDS =	${BUILD_DEPENDS} \
-		devel/angr/py-ailment>=${MODPY_EGG_VERSION} \
+RUN_DEPENDS =	devel/angr/py-ailment>=${MODPY_EGG_VERSION} \
 		devel/angr/py-archinfo>=${MODPY_EGG_VERSION} \
 		devel/angr/py-claripy>=${MODPY_EGG_VERSION} \
 		devel/angr/py-cle>=${MODPY_EGG_VERSION} \
+		devel/angr/py-pyvex>=${MODPY_EGG_VERSION} \
 		devel/capstone/python${MODPY_FLAVOR} \
+		devel/py-bitstring${MODPY_FLAVOR} \
 		devel/py-cachetools \
+		devel/py-cffi${MODPY_FLAVOR} \
 		devel/py-cooldict${MODPY_FLAVOR} \
 		devel/py-cparser${MODPY_FLAVOR} \
+		devel/py-future${MODPY_FLAVOR} \
 		devel/py-mulpyplexer${MODPY_FLAVOR} \
 		devel/py-progressbar${MODPY_FLAVOR} \
 		devel/py-protobuf${MODPY_FLAVOR}>=3.9.1 \

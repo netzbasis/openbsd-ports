@@ -1,4 +1,4 @@
-/Makefile/1.191/Thu Sep  5 11:50:47 2019//
+/Makefile/1.192/Tue Feb 11 10:36:59 2020//
 D/WordGenerator////
 D/astrolog////
 D/bible-kjv////
@@ -53,6 +53,7 @@ D/migrationtools////
 D/mmv////
 D/most////
 D/nyancat////
+D/open62541////
 D/openbabel////
 D/os-test////
 D/osinfo////

@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2019/07/12 20:51:03 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2020/02/11 13:57:52 kmos Exp $
 
 COMMENT =	URI templates
 
-MODPY_EGG_VERSION = 3.0.0
+MODPY_EGG_VERSION = 3.0.1
 DISTNAME =	uritemplate-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
-REVISION =	0
 
 CATEGORIES =	www
 
@@ -17,6 +16,7 @@ PERMIT_PACKAGE =	Yes
 MODULES =	lang/python
 MODPY_PI =	Yes
 MODPY_SETUPTOOLS =	Yes
+MODPY_PYTEST =		Yes
 
 FLAVORS =	python3
 FLAVOR ?=

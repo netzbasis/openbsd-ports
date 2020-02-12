@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1932 2020/02/10 02:15:41 bluhm Exp $
+# $OpenBSD: Makefile,v 1.1934 2020/02/11 23:39:35 kn Exp $
 
      SUBDIR =
      SUBDIR += 64tass
@@ -131,6 +131,7 @@
      SUBDIR += dune
      SUBDIR += ectags
      SUBDIR += elftoolchain
+     SUBDIR += esptool-ck
      SUBDIR += etl
      SUBDIR += expect-lite
      SUBDIR += fasm
@@ -1526,6 +1527,7 @@
      SUBDIR += py-magic,python3
      SUBDIR += py-mccabe
      SUBDIR += py-mccabe,python3
+     SUBDIR += py-minidump
      SUBDIR += py-minimock
      SUBDIR += py-minimock,python3
      SUBDIR += py-mock
