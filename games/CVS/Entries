@@ -1,4 +1,4 @@
-/Makefile/1.412/Wed Jan  1 02:29:25 2020//
+/Makefile/1.413/Wed Feb 12 06:19:42 2020//
 D/0ad////
 D/1oom////
 D/2048-cli////
@@ -225,7 +225,6 @@ D/pushover////
 D/puzzles////
 D/pyganim////
 D/pysol////
-D/qgo////
 D/qqwing////
 D/qstat////
 D/quadrupleback////
