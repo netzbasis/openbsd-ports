@@ -1,4 +1,4 @@
-/Makefile/1.1168/Mon Feb 10 22:44:20 2020//
+/Makefile/1.1169/Thu Feb 13 11:59:42 2020//
 D/GeoIP////
 D/adns////
 D/adsuck////
@@ -62,6 +62,7 @@ D/dhcpdump////
 D/dhcping////
 D/dico////
 D/dictd////
+D/dino////
 D/dleyna////
 D/dlint////
 D/dnscontrol////
