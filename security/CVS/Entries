@@ -1,4 +1,4 @@
-/Makefile/1.565/Sun Feb  9 01:45:56 2020//
+/Makefile/1.566/Fri Feb 14 11:55:33 2020//
 D/ADMsnmp////
 D/ROPgadget////
 D/acme-client////
@@ -43,7 +43,6 @@ D/dsniff////
 D/easy-rsa////
 D/emldump////
 D/encfs////
-D/erl-bcrypt////
 D/exploitdb////
 D/fcrackzip////
 D/fierce////
