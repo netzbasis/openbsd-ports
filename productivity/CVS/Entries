@@ -1,4 +1,4 @@
-/Makefile/1.87/Tue Feb  4 06:26:27 2020//
+/Makefile/1.88/Sat Feb 15 11:37:34 2020//
 D/akonadi////
 D/aqbanking////
 D/attica////
@@ -26,6 +26,7 @@ D/libalkimia////
 D/libkfbapi////
 D/libkgapi////
 D/librcps////
+D/lifeograph////
 D/mcds////
 D/novprog////
 D/osmo////
