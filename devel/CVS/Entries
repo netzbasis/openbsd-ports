@@ -1,4 +1,4 @@
-/Makefile/1.1935/Sat Feb 15 08:06:43 2020//
+/Makefile/1.1936/Sun Feb 16 19:44:00 2020//
 D/64tass////
 D/ElectricFence////
 D/ORBit2////
@@ -575,6 +575,7 @@ D/p5-Class-XSAccessor////
 D/p5-Clone////
 D/p5-Clone-Choose////
 D/p5-Clone-PP////
+D/p5-Conf-Libconfig////
 D/p5-Config-Any////
 D/p5-Config-Auto////
 D/p5-Config-AutoConf////

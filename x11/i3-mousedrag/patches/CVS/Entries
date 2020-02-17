@@ -1,8 +1,8 @@
-/patch-Makefile_am/1.1/Thu Jun 27 17:31:37 2019//
-/patch-etc_config/1.1.1.1/Sat Feb 16 10:09:57 2019//
-/patch-etc_config_keycodes/1.1.1.1/Sat Feb 16 10:09:57 2019//
+/patch-Makefile_am/1.2/Sun Feb 16 20:50:25 2020//
+/patch-etc_config/1.2/Sun Feb 16 20:50:25 2020//
+/patch-etc_config_keycodes/1.2/Sun Feb 16 20:50:25 2020//
 /patch-i3-dmenu-desktop/1.1.1.1/Sat Feb 16 10:09:57 2019//
-/patch-i3-nagbar_main_c/1.1.1.1/Sat Feb 16 10:09:57 2019//
+/patch-i3-nagbar_main_c/1.2/Sun Feb 16 20:50:25 2020//
 /patch-libi3_get_exe_path_c/1.1.1.1/Sat Feb 16 10:09:57 2019//
 /patch-man_i3-config-wizard_man/1.1.1.1/Sat Feb 16 10:09:57 2019//
 /patch-man_i3-dump-log_man/1.1.1.1/Sat Feb 16 10:09:57 2019//
