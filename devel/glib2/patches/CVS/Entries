@@ -2,6 +2,6 @@
 /patch-gio_gunixmount_c/1.19/Fri Nov  1 19:33:14 2019//
 /patch-glib_gfileutils_c/1.6/Fri Nov  1 19:33:14 2019//
 /patch-glib_gspawn_c/1.4/Tue Nov 19 21:06:48 2019//
-/patch-glib_gtimezone_c/1.1/Sat Nov  2 11:07:42 2019//
-/patch-meson_build/1.12/Thu Dec 19 17:42:13 2019//
+/patch-glib_gtimezone_c/1.2/Tue Feb 18 12:24:00 2020//
+/patch-meson_build/1.13/Tue Feb 18 12:24:00 2020//
 D
