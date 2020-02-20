@@ -1,4 +1,4 @@
-/Makefile/1.1937/Mon Feb 17 16:32:00 2020//
+/Makefile/1.1939/Wed Feb 19 17:14:33 2020//
 D/64tass////
 D/ElectricFence////
 D/ORBit2////
@@ -37,7 +37,6 @@ D/avr////
 D/avr32////
 D/avrdude////
 D/bashunit////
-D/beediff////
 D/bison////
 D/blame////
 D/blocksruntime////

@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.864 2020/02/15 08:23:13 rsadowski Exp $
+# $OpenBSD: Quirks.pm,v 1.868 2020/02/19 17:35:36 juanfra Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -339,6 +339,10 @@ my $stem_extensions = {
 	'ilmbase' => 'OpenEXR',
 	'openexr-viewers' => 'OpenEXR-tools',
 	'libvirt-python' => 'py-libvirt',
+# 6.7
+	'py-jaraco-functoolsjaraco.functools' => 'py-jaraco-functools',
+	'py3-jaraco-functoolsjaraco.functools' => 'py3-jaraco-functools',
+	'py3-qscintilla-qt5' => 'py3-qscintilla',
 };
 
 my $obsolete_reason = {
@@ -1378,6 +1382,8 @@ my $obsolete_reason = {
 	'rebar18' => 5,
 	'rebar17' => 5,
 	'bouml' => 3,
+	'beediff' => 18,
+	'jupyter-notebook' => 14,
 };
 
 # reasons for obsolete packages
@@ -1400,6 +1406,7 @@ my @msg = (
 	"no longer maintained upstream, suggest homebank, gnucash, kmymoney", #15
 	"no longer maintained upstream, suggest kigo", #16
 	"old GeoIP databases end-of-life, see alternative using geoip2/libmaxminddb", #17
+	"no longer maintained upstream, suggest kompare", #18
 );
 
 # ->is_base_system($handle, $state):

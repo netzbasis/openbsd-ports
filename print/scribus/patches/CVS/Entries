@@ -1,5 +1,10 @@
-/patch-CMakeLists_txt/1.3/Fri Apr 13 20:51:12 2018//
-/patch-scribus_CMakeLists_txt/1.1/Fri Apr 13 20:51:12 2018//
-/patch-scribus_gtdialogs_cpp/1.1/Mon Jan 21 21:19:48 2019//
-/patch-scribus_util_cpp/1.1/Fri Apr 13 20:51:12 2018//
+/patch-resources_manpages_CMakeLists_txt/1.1/Wed Feb 19 12:15:45 2020//
+/patch-scribus_plugins_import_pdf_importpdf_cpp/1.1/Wed Feb 19 12:15:45 2020//
+/patch-scribus_plugins_import_pdf_importpdfconfig_h/1.1/Wed Feb 19 12:15:45 2020//
+/patch-scribus_plugins_import_pdf_slaoutput_cpp/1.1/Wed Feb 19 12:15:45 2020//
+/patch-scribus_plugins_import_pdf_slaoutput_h/1.1/Wed Feb 19 12:15:45 2020//
+/patch-scribus_third_party_zip_zip_p_h/1.1/Wed Feb 19 12:15:45 2020//
+/patch-scribus_ui_colorlistmodel_cpp/1.1/Wed Feb 19 12:15:45 2020//
+/patch-scribus_ui_colorlistmodel_h/1.1/Wed Feb 19 12:15:45 2020//
+/patch-scribus_util_cpp/1.2/Wed Feb 19 12:15:45 2020//
 D
