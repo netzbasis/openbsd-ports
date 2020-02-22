@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.869 2020/02/20 20:16:50 jasper Exp $
+# $OpenBSD: Quirks.pm,v 1.872 2020/02/22 05:43:01 rsadowski Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -346,6 +346,7 @@ my $stem_extensions = {
 	'py-netmiko' => 'py3-netmiko',
 	'py-napalm' => 'py3-napalm',
 	'py-IOSXR' => 'py3-IOSXR',
+	'py-owslib' => 'py3-owslib',
 };
 
 my $obsolete_reason = {
@@ -1387,6 +1388,8 @@ my $obsolete_reason = {
 	'bouml' => 3,
 	'beediff' => 18,
 	'jupyter-notebook' => 14,
+	'php-mcrypt' => 3,
+	'sqliteman' => 19,
 };
 
 # reasons for obsolete packages
@@ -1410,6 +1413,7 @@ my @msg = (
 	"no longer maintained upstream, suggest kigo", #16
 	"old GeoIP databases end-of-life, see alternative using geoip2/libmaxminddb", #17
 	"no longer maintained upstream, suggest kompare", #18
+	"no longer maintained upstream, suggest sqlitebrowser, kexi", #19
 );
 
 # ->is_base_system($handle, $state):
