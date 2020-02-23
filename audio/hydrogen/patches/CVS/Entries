@@ -1,9 +1,11 @@
-/patch-CMakeLists_txt/1.1/Sat Jun  8 18:42:32 2019//
+/patch-CMakeLists_txt/1.2/Sat Feb 22 17:34:36 2020//
+/patch-cmake_StatusSupportOptions_cmake/1.1/Sat Feb 22 17:34:36 2020//
 /patch-data_hydrogen_default_conf/1.4/Sat Jun  8 18:42:32 2019//
-/patch-src_core_CMakeLists_txt/1.1/Sat Jun  8 18:42:32 2019//
+/patch-src_core_CMakeLists_txt/1.2/Sat Feb 22 17:34:36 2020//
 /patch-src_core_include_hydrogen_Preferences_h/1.1/Sat Jun  8 18:42:32 2019//
 /patch-src_core_include_hydrogen_config_h_in/1.1/Sat Jun  8 18:42:32 2019//
-/patch-src_core_src_hydrogen_cpp/1.1/Sat Jun  8 18:42:32 2019//
-/patch-src_core_src_preferences_cpp/1.1/Sat Jun  8 18:42:32 2019//
-/patch-src_gui_src_PreferencesDialog_cpp/1.1/Sat Jun  8 18:42:32 2019//
+/patch-src_core_src_hydrogen_cpp/1.2/Sat Feb 22 17:34:36 2020//
+/patch-src_core_src_preferences_cpp/1.2/Sat Feb 22 17:34:36 2020//
+/patch-src_gui_src_PreferencesDialog_cpp/1.2/Sat Feb 22 17:34:36 2020//
+/patch-src_tests_CMakeLists_txt/1.1/Sat Feb 22 17:34:36 2020//
 D
