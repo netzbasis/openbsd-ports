@@ -1,4 +1,4 @@
-/Makefile/1.119/Mon Jan 27 04:54:54 2020//
+/Makefile/1.120/Mon Feb 24 23:23:29 2020//
 D/aom////
 D/assimp////
 D/atomicparsley////
@@ -24,8 +24,10 @@ D/libaacs////
 D/libass////
 D/libbdplus////
 D/libbluray////
+D/libde265////
 D/libdv////
 D/libdvdnav////
+D/libheif////
 D/libmatroska////
 D/libmms////
 D/libmp4v2////

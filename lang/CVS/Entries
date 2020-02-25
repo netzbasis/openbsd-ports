@@ -1,4 +1,4 @@
-/Makefile/1.241/Sat Jan 18 00:33:12 2020//
+/Makefile/1.242/Tue Feb 25 02:38:04 2020//
 D/STk////
 D/a60////
 D/abcl////
@@ -47,6 +47,7 @@ D/gprolog////
 D/gravity////
 D/guile////
 D/guile2////
+D/hashlink////
 D/haxe////
 D/icon////
 D/intel2gas////

@@ -1,4 +1,4 @@
-/Makefile/1.192/Tue Feb 11 10:36:59 2020//
+/Makefile/1.193/Mon Feb 24 15:11:09 2020//
 D/WordGenerator////
 D/astrolog////
 D/bible-kjv////
@@ -69,6 +69,7 @@ D/p5-Finance-Quote////
 D/p5-Finance-QuoteHist////
 D/p5-I18N-Charset////
 D/p5-Lingua-Romana-Perligata////
+D/p5-OPCUA-Open62541////
 D/p5-Spreadsheet-ParseExcel////
 D/p5-Spreadsheet-WriteExcel////
 D/p5-Term-Animation////
