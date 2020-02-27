@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1518 2020/02/20 16:48:03 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1520 2020/02/26 15:34:48 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -46,12 +46,11 @@
 #
 # tests and variable definitions come first, THEN targets
 #
-.if ${.MAKEFLAGS:MFLAVOR=*}
-ERRORS += "Fatal: Use 'env FLAVOR=${FLAVOR} ${MAKE}' instead."
-.endif
-.if ${.MAKEFLAGS:MSUBPACKAGE=*}
-ERRORS += "Fatal: Use 'env SUBPACKAGE=${SUBPACKAGE} ${MAKE}' instead."
-.endif
+.for forbidden in FLAVOR SUBPACKAGE SUBDIR SUBDIRLIST
+.  if ${.MAKEFLAGS:M${forbidden}=*}
+ERRORS += "Fatal: Use 'env ${forbidden}=${${forbidden}} ${MAKE}' instead."
+.  endif
+.endfor
 
 .for f v in bsd.port.mk _BSD_PORT_MK bsd.port.subdir.mk _BSD_PORT_SUBDIR_MK
 .  if defined($v)
@@ -339,10 +338,6 @@ COMPILER_LIBCXX ?= ${LIBCXX}
 ERRORS += "Fatal: Variable $v is obsolete, see bsd.port.mk(5)"
 .  endif
 .endfor
-
-.if !empty(BUILD_DEPENDS:Mdevel/automake/*)
-DPB_PROPERTIES += noconfigurejunk
-.endif
 
 .for t in pre-fetch do-fetch post-fetch pre-package do-package post-package
 .  if target($t)
@@ -1701,6 +1696,10 @@ _DEPLIBSPECS_COOKIES = ${_DEPBUILDLIBSPECS_COOKIES} ${_DEPRUNLIBSPECS_COOKIES}
 _BUILD_DEP = ${_BUILD_DEP2:C,^[^:/]*:,,}
 _RUN_DEP = ${_RUN_DEP2:C,^[^:/]*:,,}
 _TEST_DEP = ${_TEST_DEP2:C,^[^:/]*:,,}
+
+.if !empty(_BUILD_DEP:Mdevel/automake/*)
+DPB_PROPERTIES += noconfigurejunk
+.endif
 
 REORDER_DEPENDENCIES ?=
 ECHO_REORDER ?= :

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.553 2020/02/17 09:37:59 martin Exp $
+# $OpenBSD: Makefile,v 1.555 2020/02/26 10:46:42 paco Exp $
 
      SUBDIR =
      SUBDIR += accountsservice
@@ -115,7 +115,6 @@
      SUBDIR += gpioflicker
      SUBDIR += grafana
      SUBDIR += grive2
-     SUBDIR += grub
      SUBDIR += gsmartcontrol
      SUBDIR += hotplug-diskmount
      SUBDIR += htop
@@ -263,7 +262,6 @@
      SUBDIR += py-packaging,python3
      SUBDIR += py-parallel-ssh
      SUBDIR += py-parallel-ssh,python3
-     SUBDIR += py-prometheus_client
      SUBDIR += py-prometheus_client,python3
      SUBDIR += py-psutil
      SUBDIR += py-psutil,python3
