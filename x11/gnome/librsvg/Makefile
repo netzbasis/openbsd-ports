@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.162 2020/02/02 16:31:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.164 2020/02/27 14:31:58 ajacoutot Exp $
 
 COMMENT=		SAX-based render library for SVG files
 
 GNOME_PROJECT=		librsvg
 STABLE_VERSION=		2.47.3
-OLD_VERSION=		2.40.20
+OLD_VERSION=		2.40.21
 DISTFILES=		librsvg-${STABLE_VERSION}${EXTRACT_SUFX}:0 \
 			librsvg-${OLD_VERSION}${EXTRACT_SUFX}:1
 
@@ -15,6 +15,7 @@ MASTER_SITES1=		${MASTER_SITE_GNOME:=sources/${GNOME_PROJECT}/${OLD_VERSION:C/^(
 
 ### stable
 .if ${PROPERTIES:Mrust}
+REVISION=		0
 SHARED_LIBS +=  rsvg-2               39.2     # 49.0
 GNOME_VERSION=		${STABLE_VERSION}
 BUILD_DEPENDS=		lang/rust
@@ -25,12 +26,11 @@ COMPILER=		base-clang ports-gcc
 WANTLIB += cairo-gobject
 .else
 ### old
-REVISION=		6
 SHARED_LIBS +=  rsvg-2               38.2     # 42.20
 GNOME_VERSION=		${OLD_VERSION}
 PATCH_LIST=		old-patch-*
 PKG_ARGS=		-Dold=1 -Dstable=0
-WANTLIB += croco-0.6 ffi gmodule-2.0 gthread-2.0 pcre
+WANTLIB += croco-0.6 ffi gmodule-2.0 pcre
 LIB_DEPENDS +=		www/libcroco
 .endif
 
@@ -60,11 +60,6 @@ CONFIGURE_ARGS=		--disable-tools
 CONFIGURE_ARGS +=	--disable-Bsymbolic
 
 DEBUG_PACKAGES=		${BUILD_PACKAGES}
-
-post-patch:
-	# permit patching libc-rs to support sparc64 (could be removed with libc>=0.2.63)
-	-sed -i 's/"files":{[^}]*}/"files":{}/' \
-		${WRKSRC}/vendor/libc/.cargo-checksum.json
 
 post-install:
 	rm ${PREFIX}/lib/gdk-pixbuf-2.0/2.10.0/loaders/*.{a,la}

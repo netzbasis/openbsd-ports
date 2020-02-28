@@ -1,9 +1,11 @@
 /patch-arch_arm_dts_rk3328-rock64_dts/1.1/Tue Oct  8 01:10:28 2019//
 /patch-arch_arm_dts_rk3328-sdram-ddr4-666_dtsi/1.1/Wed Feb  5 17:54:03 2020//
 /patch-arch_arm_dts_rk3328-sdram-lpddr3-666_dtsi/1.1/Wed Feb  5 17:54:03 2020//
+/patch-arch_arm_dts_rk3399-rock960_dts/1.1/Thu Feb 27 14:45:50 2020//
 /patch-arch_arm_dts_rk3399-rockpro64_dts/1.4/Fri Jan 17 14:24:42 2020//
 /patch-configs_firefly-rk3399_defconfig/1.5/Mon Jan 13 10:32:33 2020//
 /patch-configs_rock64-rk3328_defconfig/1.2/Tue Jan  7 07:07:08 2020//
+/patch-configs_rock960-rk3399_defconfig/1.1/Thu Feb 27 14:45:50 2020//
 /patch-configs_rockpro64-rk3399_defconfig/1.2/Sat Sep 28 01:40:24 2019//
 /patch-configs_rpi_2_defconfig/1.7/Sat Sep 28 01:40:24 2019//
 /patch-configs_rpi_3_32b_defconfig/1.7/Sat Sep 28 01:40:24 2019//

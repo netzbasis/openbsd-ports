@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.173 2020/02/09 18:48:29 martin Exp $
+# $OpenBSD: Makefile,v 1.175 2020/02/27 18:23:39 bket Exp $
 
      SUBDIR =
      SUBDIR += R
@@ -57,7 +57,6 @@
      SUBDIR += mcsim
      SUBDIR += minisat
      SUBDIR += mlpack
-     SUBDIR += mlpack,
      SUBDIR += moo
      SUBDIR += muparser
      SUBDIR += netcdf
@@ -131,7 +130,6 @@
      SUBDIR += py-numexpr,python3
      SUBDIR += py-numpy
      SUBDIR += py-numpy,python3
-     SUBDIR += py-pandas
      SUBDIR += py-pandas,python3
      SUBDIR += py-patsy
      SUBDIR += py-patsy,python3
