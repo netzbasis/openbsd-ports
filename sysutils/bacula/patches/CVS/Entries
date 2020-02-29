@@ -1,12 +1,13 @@
 /patch-Makefile_in/1.7/Sat Aug 15 07:50:02 2015//
-/patch-configure/1.24/Thu Feb  7 12:45:05 2019//
+/patch-configure/1.25/Fri Feb 28 23:26:53 2020//
 /patch-manpages_Makefile_in/1.6/Sat Aug 15 07:50:02 2015//
 /patch-manpages_bat_1/1.6/Sat Apr 19 09:44:11 2014//
 /patch-scripts_bacula-ctl-dir_in/1.1/Fri Feb  9 09:31:50 2018//
 /patch-scripts_bacula-ctl-fd_in/1.1/Fri Feb  9 09:31:50 2018//
 /patch-scripts_bacula-ctl-sd_in/1.1/Fri Feb  9 09:31:50 2018//
+/patch-scripts_bacula-tray-monitor_desktop_in/1.1/Fri Feb 28 23:26:53 2020//
 /patch-scripts_baculabackupreport_in/1.1/Fri Jul 26 13:41:19 2019//
-/patch-scripts_bat_desktop_in/1.4/Thu Nov 17 23:45:56 2011//
+/patch-scripts_bat_desktop_in/1.5/Fri Feb 28 23:26:53 2020//
 /patch-src_cats_Makefile_in/1.6/Sat Aug 15 07:50:02 2015//
 /patch-src_cats_create_postgresql_database_in/1.4/Sat Feb 16 22:49:48 2019//
 /patch-src_cats_make_catalog_backup_pl_in/1.1/Mon Sep  9 11:10:10 2019//

@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.877 2020/02/27 18:27:42 bket Exp $
+# $OpenBSD: Quirks.pm,v 1.880 2020/02/28 21:01:11 martin Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -361,6 +361,8 @@ my $stem_extensions = {
 	'py-pandas' => 'py3-pandas',
 	'py-siphon' => 'py3-siphon',
 	'py-mlpack' => 'py3-mlpack',
+	'py-bottleneck' => 'py3-bottleneck',
+	'py-daemon' => 'py3-daemon',
 };
 
 my $obsolete_reason = {
@@ -1405,6 +1407,7 @@ my $obsolete_reason = {
 	'php-mcrypt' => 3,
 	'sqliteman' => 19,
 	'entomologist' => 3,
+	'fcitx-qt4' => 6,
 };
 
 # reasons for obsolete packages
