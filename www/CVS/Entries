@@ -1,4 +1,4 @@
-/Makefile/1.947/Tue Feb 25 20:29:28 2020//
+/Makefile/1.949/Sat Feb 29 23:09:35 2020//
 D/ajaxterm////
 D/analog////
 D/ap2-mod_dnssd////
@@ -508,6 +508,7 @@ D/trac////
 D/trac-ldapplugin////
 D/tracnav////
 D/ttyd////
+D/tuir////
 D/twill////
 D/uget////
 D/uriparser////
