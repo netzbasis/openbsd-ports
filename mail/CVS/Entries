@@ -1,4 +1,4 @@
-/Makefile/1.388/Thu Feb  6 11:30:56 2020//
+/Makefile/1.389/Tue Mar  3 22:15:13 2020//
 D/abook////
 D/adcomplain////
 D/akpop3d////
@@ -176,6 +176,7 @@ D/razor-agents////
 D/rcube-contextmenu////
 D/rcube-dkimstatus////
 D/rcube-dovecot_ident////
+D/rcube-html5-notifier////
 D/rcube-ldapAliasSync////
 D/rcube-markasjunk2////
 D/rcube-sieverules////

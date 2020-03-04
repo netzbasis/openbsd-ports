@@ -1,4 +1,4 @@
-/Makefile/1.498/Sun Jan 26 19:15:13 2020//
+/Makefile/1.499/Tue Mar  3 21:16:21 2020//
 D/DevIL////
 D/GraphicsMagick////
 D/ImageMagick////
@@ -126,6 +126,7 @@ D/lensfun////
 D/leptonica////
 D/libansilove////
 D/libart////
+D/libavif////
 D/libcaca////
 D/libdmtx////
 D/libdvbpsi////
