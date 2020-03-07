@@ -1,12 +1,12 @@
 /patch-ext_rack_config_ru/1.1.1.1/Mon Nov 20 12:45:17 2017//
-/patch-lib_puppet_defaults_rb/1.6/Thu Oct 24 20:37:17 2019//
+/patch-lib_puppet_defaults_rb/1.7/Fri Mar  6 15:20:31 2020//
 /patch-lib_puppet_gettext_config_rb/1.1.1.1/Mon Nov 20 12:45:17 2017//
 /patch-lib_puppet_provider_package_gem_rb/1.3/Fri Jul 19 06:09:21 2019//
-/patch-lib_puppet_provider_package_openbsd_rb/1.3/Fri Aug 23 08:18:12 2019//
+/patch-lib_puppet_provider_package_openbsd_rb/1.4/Fri Mar  6 15:20:31 2020//
 /patch-lib_puppet_provider_package_pip3_rb/1.2/Fri Jul 19 06:09:21 2019//
-/patch-lib_puppet_provider_package_pip_rb/1.3/Fri Jul 19 06:09:21 2019//
+/patch-lib_puppet_provider_package_pip_rb/1.4/Fri Mar  6 15:20:31 2020//
 /patch-lib_puppet_provider_service_openbsd_rb/1.1.1.1/Mon Nov 20 12:45:17 2017//
 /patch-lib_puppet_reference_configuration_rb/1.1.1.1/Mon Nov 20 12:45:17 2017//
-/patch-lib_puppet_type_package_rb/1.4/Thu Oct 24 20:37:17 2019//
+/patch-lib_puppet_type_package_rb/1.5/Fri Mar  6 15:20:31 2020//
 /patch-lib_puppet_util_run_mode_rb/1.1.1.1/Mon Nov 20 12:45:17 2017//
 D
