@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-server,v 1.76 2019/12/15 23:57:22 sthen Exp $
+@comment $OpenBSD: PLIST-server,v 1.78 2020/03/07 11:36:52 sthen Exp $
 @conflict dovecot-sqlite-*
 @pkgpath mail/dovecot
 @pkgpath mail/dovecot,-server,bdb
@@ -19,8 +19,11 @@
 @newuser _dovecot:518:_dovecot:daemon:Dovecot Account:/nonexistent:/sbin/nologin
 @newuser _dovenull:666:_dovenull:daemon:Dovecot Login User:/nonexistent:/sbin/nologin
 @extraunexec rm -rf /var/dovecot/*
+@sample ${SYSCONFDIR}/dovecot/
+@rcscript ${RCDIR}/dovecot
 @bin bin/doveadm
 @bin bin/doveconf
+@comment bin/dovecot-sysreport
 bin/dsync
 include/dovecot/
 include/dovecot/access-lookup.h
@@ -425,6 +428,7 @@ include/dovecot/mdbox-storage.h
 include/dovecot/mdbox-sync.h
 include/dovecot/mech-otp-skey-common.h
 include/dovecot/mech-plain-common.h
+include/dovecot/mech-scram.h
 include/dovecot/mech.h
 include/dovecot/memarea.h
 include/dovecot/mempool.h
@@ -752,6 +756,7 @@ libexec/dovecot/health-check.sh
 @man man/man1/doveadm.1
 @man man/man1/doveconf.1
 @man man/man1/dovecot-lda.1
+@comment @man man/man1/dovecot-sysreport.1
 @man man/man1/dovecot.1
 @man man/man1/dsync.1
 @man man/man7/doveadm-search-query.7
@@ -1062,7 +1067,6 @@ share/examples/dovecot/
 share/examples/dovecot/dovecot-openssl.cnf
 @sample /etc/ssl/dovecot-openssl.cnf
 share/examples/dovecot/example-config/
-@sample ${SYSCONFDIR}/dovecot/
 share/examples/dovecot/example-config/conf.d/
 @sample ${SYSCONFDIR}/dovecot/conf.d/
 share/examples/dovecot/example-config/conf.d/10-auth.conf
@@ -1130,8 +1134,7 @@ share/examples/dovecot/example-config/dovecot.conf
 @mode 750
 @group _dovenull
 @sample /var/dovecot/login/
-@extra /etc/ssl/dovecotcert.pem
-@extra /etc/ssl/private/dovecot.pem
 @mode
 @group
-@rcscript ${RCDIR}/dovecot
+@extra /etc/ssl/dovecotcert.pem
+@extra /etc/ssl/private/dovecot.pem
