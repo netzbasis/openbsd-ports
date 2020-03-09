@@ -1,4 +1,4 @@
-/Makefile/1.1176/Thu Mar  5 14:20:43 2020//
+/Makefile/1.1177/Sun Mar  8 17:03:52 2020//
 D/GeoIP////
 D/adns////
 D/adsuck////
@@ -634,6 +634,7 @@ D/ssvnc////
 D/strongswan////
 D/supybot////
 D/swirc////
+D/synapse////
 D/syncthing////
 D/synergy////
 D/tacacs+////

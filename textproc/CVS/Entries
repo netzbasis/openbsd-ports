@@ -1,4 +1,4 @@
-/Makefile/1.621/Sun Feb  9 23:46:10 2020//
+/Makefile/1.622/Sun Mar  8 16:55:25 2020//
 D/TclXML////
 D/antiword////
 D/apertium////
@@ -343,6 +343,7 @@ D/py-PEG2////
 D/py-PyPDF2////
 D/py-alabaster////
 D/py-black////
+D/py-canonicaljson////
 D/py-chardet////
 D/py-colored////
 D/py-commonmark////
@@ -384,6 +385,7 @@ D/py-rdflib////
 D/py-recommonmark////
 D/py-ruamel.yaml////
 D/py-semver////
+D/py-signedjson////
 D/py-snowballstemmer////
 D/py-spdx////
 D/py-spdx-lookup////
@@ -398,6 +400,7 @@ D/py-textfsm////
 D/py-toml////
 D/py-unicodecsv////
 D/py-unidecode////
+D/py-unpaddedbase64////
 D/py-vatnumber////
 D/py-vobject////
 D/py-webencodings////

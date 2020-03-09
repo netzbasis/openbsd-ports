@@ -1,4 +1,4 @@
-/Makefile/1.569/Wed Mar  4 14:33:28 2020//
+/Makefile/1.570/Sun Mar  8 16:55:24 2020//
 D/ADMsnmp////
 D/ROPgadget////
 D/acme-client////
@@ -273,6 +273,7 @@ D/py-fido2////
 D/py-gnupg////
 D/py-josepy////
 D/py-keyring////
+D/py-libnacl////
 D/py-miasm////
 D/py-oauthlib////
 D/py-openssl////

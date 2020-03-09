@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.49 2019/12/18 20:25:16 robert Exp $
+# $OpenBSD: Makefile,v 1.51 2020/03/08 09:22:39 robert Exp $
 
 # undefined ref's to libicon*, libintl*
 USE_LLD=	Yes
@@ -8,6 +8,8 @@ COMMENT-mapi=	kopano MAPI extensions for PHP
 
 PKGNAME-main=	kopano-core-${V}
 PKGNAME-mapi=	kopano-mapi-${V}
+
+REVISION-main=	0
 
 CATEGORIES=	mail www productivity
 
@@ -44,7 +46,7 @@ BUILD_DEPENDS=	devel/gettext,-tools \
 		textproc/xmlto
 
 WANTLIB += m pthread z vmime iconv icudata icui18n icuuc intl
-WANTLIB += lzma crypto ssl kvm
+WANTLIB += lzma crypto ssl kvm idn2 unistring
 
 WANTLIB-main += c ${WANTLIB} ${MODPY_WANTLIB}
 WANTLIB-main += curl nghttp2 ical icalss
@@ -65,10 +67,12 @@ UPDATE_PLIST_ARGS+=	-i MODULE_NAME
 
 RUN_DEPENDS-main= ${MODPY_RUN_DEPENDS} \
 		databases/xapian-bindings,-python \
-		devel/libmagic \
+		databases/py-bsddb3${MODPY_FLAVOR} \
 		devel/py-dateutil${MODPY_FLAVOR} \
+		devel/py-magic${MODPY_FLAVOR} \
 		mail/p5-Mail-SpamAssassin \
 		textproc/catdoc \
+		sysutils/py-daemon${MODPY_FLAVOR} \
 		www/py-jwt${MODPY_FLAVOR}
 LIB_DEPENDS-main= databases/mariadb \
 		databases/openldap \
@@ -77,7 +81,9 @@ LIB_DEPENDS-main= databases/mariadb \
 		devel/gsoap>=2.8.50 \
 		devel/jsoncpp \
 		devel/libHX \
+		devel/libidn2 \
 		devel/libvmime>=0.9.4 \
+		converters/libunistring \
 		net/curl \
 		net/rrdtool,-main \
 		textproc/icu4c \
@@ -109,7 +115,7 @@ CONFIGURE_STYLE=	autoreconf
 AUTOCONF_VERSION=	2.69
 AUTOMAKE_VERSION=	1.16
 
-CONFIGURE_ENV=	CPPFLAGS="-fpermissive -I${LOCALBASE}/include" \
+CONFIGURE_ENV=	CPPFLAGS="-fpermissive -I${LOCALBASE}/include -DSWIG_DIRECTOR_NO_UEH" \
 		PHP_SYSCONF_DIR="${SYSCONFDIR}/php-${MODPHP_VERSION}" \
 		ac_cv_lib_pam_pam_start=no
 CONFIGURE_ARGS=	--disable-static \
@@ -152,12 +158,11 @@ pre-configure:
 		for i in *.cfg ldap.m4 createuser.dotforward ; do \
 			${SUBST_CMD} $$i; \
 			perl -pi -e 's/\r\n/\n/;' $$i; done
-#	for i in ${SUB_SCRIPTS}; do \
-#		${SUBST_CMD} ${WRKSRC}/installer/userscripts/$$i; done
 	${SUBST_CMD} ${WRKSRC}/spooler/{DAgent,Spooler}.cpp \
 		${WRKSRC}/tools/python-scripts/kopano-cachestat
 	perl -pi -e 's,/bin/bash,/bin/sh,g' \
 		${WRKSRC}/installer/searchscripts/{attachments_parser,zmktemp}
+	find ${WRKSRC} -type f | xargs perl -pi -e 's,/usr/bin/python3,${MODPY_BIN},g'
 
 post-install:
 	${INSTALL_DATA_DIR} ${WRKINST}${INSTDIR}
