@@ -1,4 +1,4 @@
-/Makefile/1.622/Sun Mar  8 16:55:25 2020//
+/Makefile/1.623/Mon Mar  9 16:28:49 2020//
 D/TclXML////
 D/antiword////
 D/apertium////
@@ -196,6 +196,7 @@ D/p5-PDF-Table////
 D/p5-POE-Filter-XML////
 D/p5-PPI////
 D/p5-PPI-HTML////
+D/p5-PPIx-QuoteLike////
 D/p5-PPIx-Regexp////
 D/p5-PPIx-Utilities////
 D/p5-PatchReader////
