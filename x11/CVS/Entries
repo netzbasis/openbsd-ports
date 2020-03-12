@@ -1,4 +1,4 @@
-/Makefile/1.651/Sat Feb 29 14:37:08 2020//
+/Makefile/1.652/Wed Mar 11 12:19:53 2020//
 D/2bwm////
 D/Xaw3d////
 D/XawMu////
@@ -280,6 +280,7 @@ D/tellico////
 D/terminator////
 D/textsuggest////
 D/thewidgetfactory////
+D/tigervnc////
 D/tilda////
 D/tint2////
 D/tk////

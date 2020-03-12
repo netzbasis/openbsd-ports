@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1947 2020/03/09 07:20:36 sebastia Exp $
+# $OpenBSD: Makefile,v 1.1950 2020/03/12 00:13:19 tracey Exp $
 
      SUBDIR =
      SUBDIR += 64tass
@@ -128,6 +128,7 @@
      SUBDIR += dtc
      SUBDIR += dune
      SUBDIR += ectags
+     SUBDIR += electron
      SUBDIR += elftoolchain
      SUBDIR += esptool-ck
      SUBDIR += etl
@@ -1931,6 +1932,7 @@
      SUBDIR += slib
      SUBDIR += smpeg
      SUBDIR += smpeg2
+     SUBDIR += snare
      SUBDIR += sparsehash
      SUBDIR += spe
      SUBDIR += spice-protocol
@@ -1982,6 +1984,7 @@
      SUBDIR += xdg-utils
      SUBDIR += xmake
      SUBDIR += xtensa-elf
+     SUBDIR += xtensa-esp32-elf
      SUBDIR += yaml-cpp
      SUBDIR += yasm
      SUBDIR += zeal

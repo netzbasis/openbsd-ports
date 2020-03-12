@@ -1,4 +1,4 @@
-/Makefile/1.1947/Mon Mar  9 07:20:36 2020//
+/Makefile/1.1950/Thu Mar 12 00:13:19 2020//
 D/64tass////
 D/ElectricFence////
 D/ORBit2////
@@ -1664,6 +1664,7 @@ D/simulavr////
 D/slib////
 D/smpeg////
 D/smpeg2////
+D/snare////
 D/sparsehash////
 D/spe////
 D/spice-protocol////
@@ -1714,6 +1715,7 @@ D/xdg-user-dirs////
 D/xdg-utils////
 D/xmake////
 D/xtensa-elf////
+D/xtensa-esp32-elf////
 D/yaml-cpp////
 D/yasm////
 D/zeal////
