@@ -1,6 +1,5 @@
-# $OpenBSD: Makefile,v 1.9 2019/07/12 20:46:17 sthen Exp $
+# $OpenBSD: Makefile,v 1.11 2020/03/13 04:59:13 kirby Exp $
 
-BROKEN-i386 =	std::bad_alloc when compiling fifePYTHON_wrap.cxx
 BROKEN-powerpc =out of memory when compiling fifePYTHON_wrap.cxx
 BROKEN-sparc64 =out of memory when compiling fifePYTHON_wrap.cxx
 
@@ -9,11 +8,11 @@ COMMENT =	2D game engine
 GH_ACCOUNT =	fifengine
 GH_PROJECT =	fifengine
 GH_TAGNAME =	0.4.1
-REVISION =	1
+REVISION =	2
 
 CATEGORIES =	games
 
-HOMEPAGE =	http://fifengine.net/
+HOMEPAGE =	https://www.fifengine.net/
 
 # LGPLv2.1+
 PERMIT_PACKAGE =	Yes

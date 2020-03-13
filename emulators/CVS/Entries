@@ -1,4 +1,4 @@
-/Makefile/1.102/Thu Nov 21 01:29:01 2019//
+/Makefile/1.103/Thu Mar 12 12:24:44 2020//
 D/BasiliskII////
 D/advancemame////
 D/atari800////
@@ -22,6 +22,7 @@ D/gambatte////
 D/gns3////
 D/gnusim8085////
 D/gr-lida////
+D/gsplus////
 D/gw-libretro////
 D/gxemul////
 D/hatari////

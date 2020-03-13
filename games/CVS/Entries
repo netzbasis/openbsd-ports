@@ -1,4 +1,4 @@
-/Makefile/1.413/Wed Feb 12 06:19:42 2020//
+/Makefile/1.414/Thu Mar 12 17:18:47 2020//
 D/0ad////
 D/1oom////
 D/2048-cli////
@@ -223,6 +223,7 @@ D/prboom////
 D/prboom-plus////
 D/pushover////
 D/puzzles////
+D/pygame_sdl2////
 D/pyganim////
 D/pysol////
 D/qqwing////
