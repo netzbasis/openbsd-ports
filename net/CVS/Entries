@@ -1,4 +1,4 @@
-/Makefile/1.1179/Sat Mar 14 16:21:52 2020//
+/Makefile/1.1180/Sun Mar 15 22:05:46 2020//
 D/GeoIP////
 D/adns////
 D/adsuck////
@@ -705,6 +705,7 @@ D/wifind////
 D/wireguard-go////
 D/wireguard-tools////
 D/wireless////
+D/wiresep////
 D/wireshark////
 D/wmnetload////
 D/wol////
