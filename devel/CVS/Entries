@@ -1,4 +1,4 @@
-/Makefile/1.1951/Thu Mar 12 15:06:31 2020//
+/Makefile/1.1952/Mon Mar 16 19:53:57 2020//
 D/64tass////
 D/ElectricFence////
 D/ORBit2////
@@ -1693,7 +1693,6 @@ D/tig////
 D/tkcvs////
 D/tkdiff////
 D/tklib////
-D/tortoisehg////
 D/ucpp////
 D/udis86////
 D/unibilium////
