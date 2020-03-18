@@ -1,4 +1,4 @@
-/Makefile/1.1181/Mon Mar 16 14:06:58 2020//
+/Makefile/1.1184/Tue Mar 17 18:48:00 2020//
 D/GeoIP////
 D/adns////
 D/adsuck////
@@ -41,7 +41,6 @@ D/cftp////
 D/cgo////
 D/cgterm////
 D/charm////
-D/cjc////
 D/clic////
 D/climm////
 D/cnupm////
@@ -566,7 +565,6 @@ D/py-tlslite-ng////
 D/py-transmissionrpc-ng////
 D/py-twitter////
 D/py-websocket-client////
-D/py-xmpp////
 D/py-xmpppy////
 D/py-zeroconf////
 D/py-zmq////
@@ -624,7 +622,6 @@ D/snmptt////
 D/snort////
 D/socat////
 D/softflowd////
-D/spectrum////
 D/spectrum-tools////
 D/srain////
 D/ssldump////

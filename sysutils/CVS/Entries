@@ -1,4 +1,4 @@
-/Makefile/1.558/Sat Mar  7 10:13:17 2020//
+/Makefile/1.560/Tue Mar 17 21:22:01 2020//
 D/accountsservice////
 D/amazon-ecs-cli////
 D/amazon-ssm-agent////
@@ -128,6 +128,7 @@ D/libburn////
 D/libesedb////
 D/libevt////
 D/libevtx////
+D/libfsapfs////
 D/libfsntfs////
 D/libfvde////
 D/libfwnt////

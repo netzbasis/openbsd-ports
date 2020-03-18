@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1181 2020/03/16 14:06:58 solene Exp $
+# $OpenBSD: Makefile,v 1.1184 2020/03/17 18:48:00 jasper Exp $
 
      SUBDIR =
      SUBDIR += GeoIP
@@ -47,7 +47,6 @@
      SUBDIR += cgo
      SUBDIR += cgterm
      SUBDIR += charm
-     SUBDIR += cjc
      SUBDIR += clic
      SUBDIR += climm
      SUBDIR += cnupm
@@ -640,7 +639,6 @@
      SUBDIR += py-twitter
      SUBDIR += py-websocket-client
      SUBDIR += py-websocket-client,python3
-     SUBDIR += py-xmpp
      SUBDIR += py-xmpppy
      SUBDIR += py-zeroconf
      SUBDIR += py-zmq
@@ -705,7 +703,6 @@
      SUBDIR += snort
      SUBDIR += socat
      SUBDIR += softflowd
-     SUBDIR += spectrum
      SUBDIR += spectrum-tools
      SUBDIR += srain
      SUBDIR += ssldump
