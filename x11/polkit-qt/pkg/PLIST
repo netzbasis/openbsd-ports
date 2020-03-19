@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2019/11/23 15:21:27 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.4 2020/03/18 22:05:41 jca Exp $
 @pkgpath x11/polkit-qt4
 @pkgpath x11/polkit-qt,
 include/polkit-qt-1/

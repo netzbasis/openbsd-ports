@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2019/11/23 15:29:17 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.15 2020/03/18 22:05:41 jca Exp $
 
 # next releases are for qt5
 PORTROACH=	ignore:1

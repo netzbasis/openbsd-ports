@@ -1,12 +1,13 @@
 /patch-CMakeLists_txt/1.1/Thu Sep  1 16:50:14 2016//
 /patch-cmake_Config_cmake/1.2/Thu Sep  1 16:50:14 2016//
+/patch-cmake_Modules_FindSFML_cmake/1.1/Wed Mar 18 18:53:45 2020//
 /patch-include_SFML_Config_hpp/1.2/Thu Sep  1 16:50:14 2016//
 /patch-include_SFML_OpenGL_hpp/1.2/Thu Sep  1 16:50:14 2016//
 /patch-include_SFML_Window_WindowHandle_hpp/1.2/Thu Sep  1 16:50:14 2016//
-/patch-src_SFML_Window_CMakeLists_txt/1.2/Thu Sep  1 16:50:14 2016//
+/patch-src_SFML_Window_CMakeLists_txt/1.3/Wed Mar 18 18:53:45 2020//
 /patch-src_SFML_Window_GlContext_cpp/1.2/Thu Sep  1 16:50:14 2016//
 /patch-src_SFML_Window_InputImpl_hpp/1.2/Thu Sep  1 16:50:14 2016//
-/patch-src_SFML_Window_JoystickImpl_hpp/1.2/Thu Sep  1 16:50:14 2016//
+/patch-src_SFML_Window_JoystickImpl_hpp/1.3/Wed Mar 18 18:53:45 2020//
 /patch-src_SFML_Window_SensorImpl_hpp/1.1/Thu Sep  1 16:50:14 2016//
 /patch-src_SFML_Window_Unix_GlxExtensions_hpp/1.1/Wed Jan 30 23:59:26 2019//
 /patch-src_SFML_Window_Unix_WindowImplX11_cpp/1.1/Tue Apr 10 20:11:39 2018//

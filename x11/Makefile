@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.653 2020/03/13 16:54:00 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.655 2020/03/18 22:05:41 jca Exp $
 
      SUBDIR =
      SUBDIR += 2bwm

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/03/15 22:02:04 abieber Exp $
+# $OpenBSD: Makefile,v 1.3 2020/03/18 22:22:25 tb Exp $
 
 COMMENT	=		privilege separated implementation of WireGuard
 
 GH_ACCOUNT =		timkuijsten
 GH_PROJECT =		wiresep
-GH_TAGNAME =		v0.8.4
+GH_TAGNAME =		v0.9.0
 
 CATEGORIES =		net
 
@@ -15,6 +15,9 @@ PERMIT_PACKAGE =	Yes
 
 # uses pledge()
 WANTLIB =		c crypto
+
+COMPILER =		base-clang ports-gcc
+COMPILER_LANGS =	c
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
