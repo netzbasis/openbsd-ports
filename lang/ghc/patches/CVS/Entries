@@ -1,6 +1,5 @@
 /patch-configure/1.19/Mon Sep 30 11:44:18 2019//
 /patch-ghc_mk/1.14/Mon Sep 30 11:44:18 2019//
-/patch-libffi_ghc_mk/1.6/Tue Nov  7 02:58:34 2017//
 /patch-libraries_Cabal_Cabal_Distribution_Simple_Program_Strip_hs/1.3/Mon Jan 22 00:42:30 2018//
 /patch-libraries_process_include_runProcess_h/1.4/Mon Jan 22 00:42:30 2018//
 /patch-libraries_unix_unix_cabal/1.4/Tue Nov  7 02:58:34 2017//
