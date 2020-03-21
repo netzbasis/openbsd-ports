@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.907 2020/03/19 18:44:55 kn Exp $
+# $OpenBSD: Quirks.pm,v 1.910 2020/03/20 14:46:47 mariani Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -390,6 +390,13 @@ my $stem_extensions = {
 	'py-nbconvert' => 'py3-nbconvert',
 	'py-smbc' => 'py3-smbc',
 	'py-git2' => 'py3-git2',
+	'py-bencode' => 'py3-bencode',
+	'py-dfwinreg' => 'py3-dfwinreg',
+	'py-dfvfs' => 'py3-dfvfs',
+	'py-dfdatetime' => 'py3-dfdatetime',
+	'py-artifacts' => 'py3-artifacts',
+	'py-rope' => 'py3-rope',
+	'py-xlrd' => 'py3-xlrd',
 };
 
 my $obsolete_reason = {

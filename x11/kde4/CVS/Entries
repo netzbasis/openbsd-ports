@@ -3,7 +3,7 @@
 /UPDATE/1.3/Mon Nov  3 08:13:29 2014//
 /kde-release-helper/1.9/Tue Dec 23 14:10:36 2014//
 /kde4.pkgpath/1.1/Sat Oct  4 12:59:26 2014//
-/kde4.port.mk/1.40/Sat May 12 12:07:07 2018//
+/kde4.port.mk/1.41/Fri Mar 20 12:09:52 2020//
 D/amor////
 D/artwork////
 D/audiocd-kio////
@@ -11,8 +11,6 @@ D/baloo////
 D/baloo-widgets////
 D/base-artwork////
 D/baseapps////
-D/dev-scripts////
-D/dev-utils////
 D/ffmpegthumbs////
 D/graphics-mobipocket////
 D/graphics-strigi-analyzer////
@@ -20,27 +18,17 @@ D/graphics-thumbnailers////
 D/jovie////
 D/kaccessible////
 D/kactivities////
-D/kapptemplate////
-D/kcachegrind////
-D/kcharselect////
-D/kdf////
 D/kfilemetadata////
-D/kfloppy////
 D/kgamma////
 D/kgpg////
 D/kimono////
-D/kmix////
 D/kopete////
 D/korundum////
 D/kpat////
 D/kppp////
-D/krdc////
 D/kremotecontrol////
-D/krfb////
 D/kross-interpreters////
 D/kscd////
-D/kteatime////
-D/ktimer////
 D/ktux////
 D/kuser////
 D/l10n////
@@ -53,7 +41,6 @@ D/libkexiv2////
 D/libkipi////
 D/libkmahjongg////
 D/libs////
-D/lokalize////
 D/mplayerthumbs////
 D/nepomuk-core////
 D/nepomuk-widgets////
@@ -67,15 +54,11 @@ D/pim////
 D/pim-runtime////
 D/pimlibs////
 D/plasma-addons////
-D/poxml////
-D/print-manager////
 D/py-kde////
 D/qyoto////
 D/ruby-qt////
 D/runtime////
-D/sdk-kioslaves////
 D/sdk-strigi-analyzers////
-D/sdk-thumbnailers////
 D/smokegen////
 D/smokekde////
 D/smokeqt////
