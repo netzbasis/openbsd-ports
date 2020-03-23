@@ -1,4 +1,4 @@
-/Makefile/1.193/Mon Feb 24 15:11:09 2020//
+/Makefile/1.194/Sun Mar 22 17:44:52 2020//
 D/WordGenerator////
 D/astrolog////
 D/bible-kjv////
@@ -89,7 +89,6 @@ D/remind////
 D/reprepro////
 D/rlwrap////
 D/rocrail////
-D/rpm////
 D/screen////
 D/screen-shm////
 D/sent////
