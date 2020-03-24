@@ -1,4 +1,4 @@
-/Makefile/1.99/Sat Jan 25 22:57:56 2020//
+/Makefile/1.100/Mon Mar 23 13:17:03 2020//
 D/arc////
 D/blosc////
 D/brotli////
@@ -18,6 +18,7 @@ D/ha////
 D/hs-zip-archive////
 D/hs-zlib////
 D/innoextract////
+D/laszip////
 D/lha////
 D/libarchive////
 D/libmspack////
