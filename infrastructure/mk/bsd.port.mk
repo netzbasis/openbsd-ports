@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1524 2020/03/11 16:46:34 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1526 2020/03/24 17:33:43 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -107,7 +107,7 @@ NONBINMODE = 644
 # All variables relevant to the port's description (see dump-vars)
 _ALL_VARIABLES = BUILD_DEPENDS IS_INTERACTIVE \
 	SUBPACKAGE FLAVOR BUILD_PACKAGES DPB_PROPERTIES \
-	MULTI_PACKAGES
+	MULTI_PACKAGES DPB_LOCKNAME
 # and stuff needing to be MULTI_PACKAGE'd
 _ALL_VARIABLES_INDEXED = FULLPKGNAME RUN_DEPENDS LIB_DEPENDS IGNORE \
 	PERMIT_PACKAGE
@@ -940,6 +940,14 @@ ${_v}${_s} ?= ${${_v}}
 DEBUG_PACKAGES := ${DEBUG_PACKAGES:N$i}
 .    endif
 .  endfor
+.endif
+
+# not yet
+#DWZ = dwz -L 100000000
+DWZ = :
+
+.if !empty(DEBUG_PACKAGES) && ${DWZ} != ":"  && ${PKGPATH} != "devel/dwz"
+BUILD_DEPENDS += devel/dwz
 .endif
 
 .for _s in ${BUILD_PACKAGES}
@@ -2981,6 +2989,7 @@ ${_WRKDEBUG}/Makefile: ${_FAKE_COOKIE}
 _copy-debug-info: ${_FAKE_COOKIE} ${_WRKDEBUG}/Makefile
 	@cd ${PREFIX} && \
 		exec ${SETENV} ${MAKE} -r -f ${_WRKDEBUG}/Makefile \
+			PATH='${PATH}' DWZ='${DWZ}' \
 			INSTALL_DATA_DIR='${INSTALL_DATA_DIR}' all
 
 show-debug-info:

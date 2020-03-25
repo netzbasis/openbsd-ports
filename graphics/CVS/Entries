@@ -1,4 +1,4 @@
-/Makefile/1.500/Thu Mar 19 13:23:57 2020//
+/Makefile/1.501/Tue Mar 24 21:05:16 2020//
 D/DevIL////
 D/GraphicsMagick////
 D/ImageMagick////
@@ -264,6 +264,7 @@ D/shotwell////
 D/simgear////
 D/simple-scan////
 D/sk1////
+D/skanlite////
 D/sketch////
 D/slop////
 D/spirv-headers////
