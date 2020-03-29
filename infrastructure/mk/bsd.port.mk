@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1526 2020/03/24 17:33:43 espie Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1528 2020/03/29 12:11:45 espie Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -942,11 +942,9 @@ DEBUG_PACKAGES := ${DEBUG_PACKAGES:N$i}
 .  endfor
 .endif
 
-# not yet
-#DWZ = dwz -L 100000000
-DWZ = :
+DWZ ?= dwz -L 100000000
 
-.if !empty(DEBUG_PACKAGES) && ${DWZ} != ":"  && ${PKGPATH} != "devel/dwz"
+.if !empty(DEBUG_PACKAGES) && ${DWZ} != ":" && ${PKGPATH} != "devel/dwz"
 BUILD_DEPENDS += devel/dwz
 .endif
 
@@ -2056,7 +2054,9 @@ fix-permissions:
 	else \
 		install -o ${FETCH_USER} -g $$f -d ${DISTDIR}; \
 	fi
-.  for d in ${LOCKDIR} ${PACKAGE_REPOSITORY} ${PLIST_REPOSITORY} ${WRKOBJDIR}
+.  for d in ${LOCKDIR} ${PACKAGE_REPOSITORY} \
+		${PACKAGE_REPOSITORY}/${MACHINE_ARCH} \
+		${PLIST_REPOSITORY} ${WRKOBJDIR}
 	@b=`id -gn ${BUILD_USER}`; \
 	echo "give $d to ${BUILD_USER}:$$b"; \
 	if test -d $d; then \
@@ -2065,6 +2065,13 @@ fix-permissions:
 		install -o ${BUILD_USER} -g $$b -d $d; \
 	fi
 .  endfor
+	@f=`id -gn ${FETCH_USER}`; \
+	echo "give ${_CACHE_REPO} to ${FETCH_USER}:$$f"; \
+	if test -d ${_CACHE_REPO}; then \
+		cd ${_CACHE_REPO} && chown -R ${FETCH_USER}:$$f .; \
+	else \
+		install -o ${FETCH_USER} -g $$f -d $${_CACHE_REPO}; \
+	fi
 .endif
 
 .for _S in ${MULTI_PACKAGES}
@@ -2089,7 +2096,7 @@ ${_CACHE_REPO}${_p}:
 ${_pkg_cookie${_S}}:
 	@${_PBUILD} install -d ${PACKAGE_REPOSITORY_MODE} ${_PKG_REPO${_S}} ${_TMP_REPO}
 .  if ${FETCH_PACKAGES:L} != "no" && !defined(_TRIED_FETCHING_${_PACKAGE_COOKIE${_S}})
-	@${_INSTALL_CACHE_REPO} ${_CACHE_REPO}
+	@${_INSTALL_CACHE_REPO}
 	@cd ${.CURDIR}; gotit=true; for p in ${_pkg${_S}}; do \
 		if ! ${_PFETCH} ${MAKE} ${_CACHE_REPO}$$p; then \
 			gotit=false; \

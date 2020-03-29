@@ -1,4 +1,4 @@
-/Makefile/1.414/Thu Mar 12 17:18:47 2020//
+/Makefile/1.415/Thu Mar 26 13:58:18 2020//
 D/0ad////
 D/1oom////
 D/2048-cli////
@@ -327,7 +327,6 @@ D/xbubble////
 D/xcowsay////
 D/xcubes////
 D/xdino////
-D/xevil////
 D/xgalaga-sdl////
 D/xgolgo////
 D/xinvaders////

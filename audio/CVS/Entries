@@ -1,4 +1,4 @@
-/Makefile/1.426/Mon Mar 23 17:15:02 2020//
+/Makefile/1.427/Fri Mar 27 21:32:54 2020//
 D/abcde////
 D/adplay////
 D/adplug////
@@ -88,6 +88,7 @@ D/libmpd////
 D/libmpdclient////
 D/libmusicbrainz////
 D/libmusicbrainz5////
+D/libmysofa////
 D/libnjb////
 D/libofa////
 D/libogg////

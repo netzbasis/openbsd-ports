@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1185 2020/03/19 14:47:04 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.1187 2020/03/26 13:25:01 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += GeoIP
@@ -559,9 +559,7 @@
      SUBDIR += py-ripe.atlas.tools
      SUBDIR += py-boto
      SUBDIR += py-boto,python3
-     SUBDIR += py-boto3
      SUBDIR += py-boto3,python3
-     SUBDIR += py-botocore
      SUBDIR += py-botocore,python3
      SUBDIR += py-cares
      SUBDIR += py-cares,python3
@@ -617,7 +615,6 @@
      SUBDIR += py-pf,python3
      SUBDIR += py-portend
      SUBDIR += py-portend,python3
-     SUBDIR += py-s3transfer
      SUBDIR += py-s3transfer,python3
      SUBDIR += py-simplesoap
      SUBDIR += py-simplesoap,python3

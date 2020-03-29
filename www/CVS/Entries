@@ -1,4 +1,4 @@
-/Makefile/1.953/Wed Mar 11 09:41:53 2020//
+/Makefile/1.954/Thu Mar 26 20:11:08 2020//
 D/ajaxterm////
 D/analog////
 D/ap2-mod_dnssd////
@@ -401,6 +401,7 @@ D/py-mako////
 D/py-mastodon.py////
 D/py-mechanize////
 D/py-meld3////
+D/py-metallum////
 D/py-multidict////
 D/py-ndg-httpsclient////
 D/py-paste////

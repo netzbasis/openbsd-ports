@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.63 2019/10/31 22:19:48 kn Exp $
+# $OpenBSD: Makefile,v 1.65 2020/03/29 17:23:30 kn Exp $
 
 COMMENT=	GNU debugger
 CATEGORIES=	devel
 
 DISTNAME=	gdb-7.12.1
-REVISION=	9
+REVISION=	10
 
 HOMEPAGE=	https://www.gnu.org/software/gdb/
 
@@ -23,7 +23,7 @@ WANTLIB = c expat kvm m curses pthread ${MODPY_WANTLIB} ${COMPILER_LIBCXX} util
 
 COMPILER =		base-clang ports-gcc base-gcc
 
-#SEPARATE_BUILD = Yes
+SEPARATE_BUILD= Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--program-prefix=e \
 		--disable-nls \
@@ -39,7 +39,6 @@ MODPY_VERSION =	${MODPY_DEFAULT_VERSION_3}
 
 LIB_DEPENDS +=	${MODPY_LIB_DEPENDS}
 TEST_DEPENDS +=	devel/dejagnu
-MODPY_BUILDDEP = No
 
 post-install:
 	${MODPY_BIN} -m compileall ${PREFIX}/share/gdb/python

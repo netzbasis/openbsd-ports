@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.914 2020/03/23 17:15:11 jasper Exp $
+# $OpenBSD: Quirks.pm,v 1.921 2020/03/29 18:47:31 paco Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -403,6 +403,17 @@ my $stem_extensions = {
 	'py-jupyter_core' => 'py3-jupyter_core',
 	'py-nbformat' => 'py3-nbformat',
 	'py-traitlets' => 'py3-traitlets',
+	'py-parso' => 'py3-parso',
+	'py-jedi' => 'py3-jedi',
+	'py-botocore' => 'py3-botocore',
+	'py-boto3' => 'py3-boto3',
+	'py-s3transfer' => 'py3-s3transfer',
+	'py-libpst' => 'py3-libpst',
+	'Clementine' => 'clementine',
+	'py-curtsies' => 'py3-curtsies',
+	'bpython3' => 'bpython',
+	'py-prompt_toolkit' => 'py3-prompt_toolkit',
+	'py-wcwidth' => 'py3-wcwidth',
 };
 
 my $obsolete_reason = {
@@ -1450,6 +1461,7 @@ my $obsolete_reason = {
 	'rpm' => 0,
 	'oggconvert' => 3,
 	'radiotray' => 3,
+	'xevil' => 0,
 };
 
 # reasons for obsolete packages

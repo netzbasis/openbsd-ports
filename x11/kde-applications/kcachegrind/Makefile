@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2020/03/23 18:01:17 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.4 2020/03/29 17:16:04 rsadowski Exp $
 
 COMMENT =	profile data visualization tool
 DISTNAME =	kcachegrind-${VERSION}
 CATEGORIES =	x11 devel
+REVISION =	0
 
 HOMEPAGE =	https://kde.org/applications/development/org.kde.kcachegrind
 
@@ -22,7 +23,6 @@ MODULES +=	x11/kde-applications
 
 LIB_DEPENDS =	devel/kf5/karchive \
 		devel/kf5/kauth \
-		devel/kf5/kbookmarks \
 		devel/kf5/kcodecs \
 		devel/kf5/kcompletion \
 		devel/kf5/kconfig \
@@ -30,11 +30,9 @@ LIB_DEPENDS =	devel/kf5/karchive \
 		devel/kf5/kcoreaddons \
 		devel/kf5/ki18n \
 		devel/kf5/kio \
-		devel/kf5/kitemviews \
 		devel/kf5/kjobwidgets \
 		devel/kf5/kservice \
 		devel/kf5/kwidgetsaddons \
-		devel/kf5/kxmlgui \
-		devel/kf5/solid
+		devel/kf5/kxmlgui
 
 .include <bsd.port.mk>

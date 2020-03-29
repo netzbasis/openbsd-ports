@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1957 2020/03/23 18:23:23 bcallah Exp $
+# $OpenBSD: Makefile,v 1.1959 2020/03/29 18:47:09 paco Exp $
 
      SUBDIR =
      SUBDIR += 64tass
@@ -46,7 +46,6 @@
      SUBDIR += boehm-gc
      SUBDIR += boost
      SUBDIR += boris
-     SUBDIR += bpython
      SUBDIR += bpython,python3
      SUBDIR += bullet
      SUBDIR += bzr
@@ -1407,7 +1406,6 @@
      SUBDIR += py-cparser,python3
      SUBDIR += py-cstruct
      SUBDIR += py-cstruct,python3
-     SUBDIR += py-curtsies
      SUBDIR += py-curtsies,python3
      SUBDIR += py-dateutil
      SUBDIR += py-dateutil,python3
@@ -1507,7 +1505,6 @@
      SUBDIR += py-isort,python3
      SUBDIR += py-jaraco-functools
      SUBDIR += py-jaraco-functools,python3
-     SUBDIR += py-jedi
      SUBDIR += py-jedi,python3
      SUBDIR += py-jmespath
      SUBDIR += py-jmespath,python3
@@ -1567,7 +1564,6 @@
      SUBDIR += py-parsedatetime,python3
      SUBDIR += py-parsing
      SUBDIR += py-parsing,python3
-     SUBDIR += py-parso
      SUBDIR += py-parso,python3
      SUBDIR += py-path.py
      SUBDIR += py-path.py,python3
@@ -1595,7 +1591,6 @@
      SUBDIR += py-progress
      SUBDIR += py-progressbar
      SUBDIR += py-progressbar,python3
-     SUBDIR += py-prompt_toolkit
      SUBDIR += py-prompt_toolkit,python3
      SUBDIR += py-protobuf
      SUBDIR += py-protobuf,python3
@@ -1734,7 +1729,6 @@
      SUBDIR += py-voluptuous,python3
      SUBDIR += py-wbem
      SUBDIR += py-wbem,python3
-     SUBDIR += py-wcwidth
      SUBDIR += py-wcwidth,python3
      SUBDIR += py-wheel
      SUBDIR += py-wheel,python3

@@ -1,18 +1,19 @@
-# $OpenBSD: Makefile,v 1.7 2019/07/12 20:49:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2020/03/28 17:39:42 kn Exp $
 
 COMMENT =	instant terminal sharing based on tmux
 
 GH_ACCOUNT =	tmate-io
 GH_PROJECT =	tmate
-GH_TAGNAME =	2.2.1
-REVISION =	2
+GH_TAGNAME =	2.4.0
 CATEGORIES =	sysutils
+REVISION =	1
 
-MAINTAINER =	Wesley MOUEDINE ASSABY <milo974@gmail.com>
+HOMEPAGE =	https://tmate.io
 
 # BSD
 PERMIT_PACKAGE =	Yes
 
+# uses pledge()
 WANTLIB += c event_core event_extra msgpackc curses ssh util
 
 LIB_DEPENDS =	devel/libevent2 \
@@ -23,14 +24,17 @@ CONFIGURE_STYLE =	autoreconf
 CONFIGURE_ARGS +=	--disable-debug
 
 AUTOCONF_VERSION=	2.69
-AUTOMAKE_VERSION=       1.15
+AUTOMAKE_VERSION=       1.16
 AUTORECONF=		./autogen.sh
 
-pre-configure:
-# Fixup any stragglers that would pickup libevent1 from base
+SEPARATE_BUILD =	Yes
+
+# before patch, otherwise updates-patches fails
+post-extract:
+	# XXX: use ports libevent2 not base libevent, avoid massive patching
 	sed -i 's,<event.h>,<event2/event.h>,' ${WRKSRC}/*.[ch]
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/tmate ${PREFIX}/bin/
+	${INSTALL_PROGRAM} ${WRKBUILD}/tmate ${PREFIX}/bin/
 
 .include <bsd.port.mk>
