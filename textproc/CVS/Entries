@@ -1,4 +1,4 @@
-/Makefile/1.625/Fri Mar 20 14:48:15 2020//
+/Makefile/1.626/Mon Mar 30 11:37:18 2020//
 D/TclXML////
 D/antiword////
 D/apertium////
@@ -402,7 +402,6 @@ D/py-toml////
 D/py-unicodecsv////
 D/py-unidecode////
 D/py-unpaddedbase64////
-D/py-vatnumber////
 D/py-vobject////
 D/py-webencodings////
 D/py-xlrd////

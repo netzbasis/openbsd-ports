@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.54 2020/03/23 18:01:13 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.56 2020/03/30 17:39:06 rsadowski Exp $
 
      SUBDIR =
 
@@ -93,7 +93,7 @@
      SUBDIR += kamera
      SUBDIR += kcolorchooser
      SUBDIR += kdegraphics-mobipocket
-     #SUBDIR += kdegraphics-thumbnailers
+     SUBDIR += kdegraphics-thumbnailers
      SUBDIR += kolourpaint
      SUBDIR += kruler
      SUBDIR += okular
@@ -242,7 +242,6 @@
      #SUBDIR += pim-sieve-editor
      #SUBDIR += pimcommon
      #SUBDIR += signon-kwallet-extension
-     #SUBDIR += syndication
 
      # Former projects under the hat of KDE Applications
      SUBDIR += okteta
