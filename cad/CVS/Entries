@@ -1,4 +1,4 @@
-/Makefile/1.38/Fri Nov  8 16:07:49 2019//
+/Makefile/1.39/Tue Mar 31 15:04:47 2020//
 D/abc////
 D/fritzing////
 D/geda-gaf////
@@ -21,7 +21,6 @@ D/pcb////
 D/qcad////
 D/qelectrotech////
 D/qrouter////
-D/qucs////
 D/qucs-s////
 D/tkgate////
 D/xcircuit////

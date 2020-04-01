@@ -2,12 +2,12 @@
 /AffinityStub.pm/1.1/Sun Oct 13 18:23:35 2013//
 /BasePkgPath.pm/1.8/Tue Oct 15 13:45:04 2019//
 /Clock.pm/1.17/Fri Feb 14 18:51:46 2020//
-/Config.pm/1.87/Thu Nov  7 16:36:42 2019//
-/Core.pm/1.100/Tue Oct 22 15:44:10 2019//
+/Config.pm/1.88/Tue Mar 31 11:12:15 2020//
+/Core.pm/1.101/Tue Mar 31 11:13:14 2020//
 /Distfile.pm/1.23/Thu Feb 27 15:53:35 2020//
 /Engine.pm/1.142/Fri Nov  8 13:06:00 2019//
 /ErrorList.pm/1.8/Fri Nov  8 13:06:00 2019//
-/External.pm/1.23/Sun Oct 27 09:21:11 2019//
+/External.pm/1.25/Tue Mar 31 19:06:44 2020//
 /Fetch.pm/1.86/Sat Nov  9 17:06:37 2019//
 /Grabber.pm/1.44/Sat Nov  9 17:06:37 2019//
 /Heuristics.pm/1.36/Wed Nov  6 16:36:11 2019//
@@ -18,7 +18,7 @@
 /Locks.pm/1.52/Mon Jul  1 08:59:41 2019//
 /Logger.pm/1.25/Tue Jun 20 15:46:18 2017//
 /MiniCurses.pm/1.16/Wed Oct 30 16:07:25 2019//
-/PkgPath.pm/1.60/Mon Mar 23 19:22:22 2020//
+/PkgPath.pm/1.61/Tue Mar 31 19:05:45 2020//
 /PortBuilder.pm/1.87/Wed Oct 23 10:07:24 2019//
 /PortInfo.pm/1.43/Mon Mar 23 19:22:22 2020//
 /Queue.pm/1.1/Tue Oct 15 14:41:22 2019//
