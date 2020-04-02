@@ -1,4 +1,4 @@
-/Makefile/1.626/Mon Mar 30 11:37:18 2020//
+/Makefile/1.627/Wed Apr  1 17:07:12 2020//
 D/TclXML////
 D/antiword////
 D/apertium////
@@ -8,6 +8,7 @@ D/apertium-separable////
 D/apertium-streamparser////
 D/arabica////
 D/asciidoc////
+D/asciidoctor////
 D/asciinema////
 D/aspell////
 D/bibelot////
