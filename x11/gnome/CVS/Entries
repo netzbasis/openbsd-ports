@@ -1,4 +1,4 @@
-/Makefile/1.280/Fri Nov  1 13:06:42 2019//
+/Makefile/1.281/Thu Apr  2 14:34:50 2020//
 /Makefile.inc/1.15/Thu Apr 13 07:38:44 2017//
 /gnome.port.mk/1.115/Sat Dec  1 13:04:41 2018//
 D/accerciser////
@@ -109,6 +109,7 @@ D/usage////
 D/user-docs////
 D/vfs2////
 D/vinagre////
+D/vino////
 D/weather////
 D/yelp////
 D/yelp-tools////

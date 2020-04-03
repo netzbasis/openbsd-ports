@@ -1,4 +1,4 @@
-/Makefile/1.1959/Sun Mar 29 18:47:09 2020//
+/Makefile/1.1960/Thu Apr  2 13:40:57 2020//
 D/64tass////
 D/ElectricFence////
 D/ORBit2////
@@ -1672,6 +1672,7 @@ D/spice-protocol////
 D/spidermonkey60////
 D/splint////
 D/spyder////
+D/sqlc////
 D/src////
 D/srecord////
 D/startup-notification////
