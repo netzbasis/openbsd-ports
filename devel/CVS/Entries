@@ -1,4 +1,4 @@
-/Makefile/1.1960/Thu Apr  2 13:40:57 2020//
+/Makefile/1.1961/Fri Apr  3 14:47:33 2020//
 D/64tass////
 D/ElectricFence////
 D/ORBit2////
@@ -1263,7 +1263,6 @@ D/py-apipkg////
 D/py-appdirs////
 D/py-argcomplete////
 D/py-argh////
-D/py-arrow////
 D/py-asn1////
 D/py-asn1-modules////
 D/py-astroid////
@@ -1279,7 +1278,6 @@ D/py-backports-functools-lru-cache////
 D/py-backports-shutil-get-terminal-size////
 D/py-backports-ssl-match-hostname////
 D/py-bencode////
-D/py-binaryornot////
 D/py-binplist////
 D/py-biplist////
 D/py-bitcoinlib////
@@ -1296,7 +1294,6 @@ D/py-cairocffi////
 D/py-certifi////
 D/py-cffi////
 D/py-cflow2dot////
-D/py-chai////
 D/py-characteristic////
 D/py-cheetah////
 D/py-click////
@@ -1514,7 +1511,6 @@ D/py-voluptuous////
 D/py-wbem////
 D/py-wcwidth////
 D/py-wheel////
-D/py-whichcraft////
 D/py-wrapt////
 D/py-wsgiutils////
 D/py-wurlitzer////
