@@ -1,5 +1,5 @@
 /patch-Makefile/1.10/Sun Nov 24 18:42:28 2019//
-/patch-common_gypi/1.13/Sun Nov 24 18:42:28 2019//
+/patch-common_gypi/1.14/Sat Apr  4 16:42:57 2020//
 /patch-deps_cares_include_ares_h/1.2/Tue Jun 27 12:04:08 2017//
 /patch-deps_npm_bin_node-gyp-bin_node-gyp/1.4/Sun Nov 24 18:42:28 2019//
 /patch-deps_npm_lib_npm_js/1.8/Sun Nov 24 18:42:28 2019//
@@ -7,7 +7,7 @@
 /patch-deps_npm_node_modules_node-gyp_gyp_pylib_gyp_generator_ninja_py/1.5/Sun Nov 24 18:42:28 2019//
 /patch-deps_npm_node_modules_node-gyp_lib_build_js/1.8/Sun Nov 24 18:42:28 2019//
 /patch-deps_npm_node_modules_node-gyp_lib_find-python_js/1.1/Sun Nov 24 18:42:28 2019//
-/patch-deps_npm_node_modules_node-gyp_lib_install_js/1.11/Sun Nov 24 18:42:28 2019//
+/patch-deps_npm_node_modules_node-gyp_lib_install_js/1.12/Sat Apr  4 16:42:57 2020//
 /patch-deps_openssl_config_Makefile/1.3/Sun Nov 24 18:42:28 2019//
 /patch-deps_openssl_config_bn_conf_asm_h/1.1/Mon Jan 21 23:46:01 2019//
 /patch-deps_openssl_config_bn_conf_no-asm_h/1.3/Sun Nov 24 18:42:28 2019//
@@ -21,10 +21,10 @@
 /patch-deps_uv_src_unix_tcp_c/1.1/Wed Sep 19 19:10:27 2018//
 /patch-deps_v8_src_base_cpu_cc/1.2/Mon Jan 21 23:46:01 2019//
 /patch-deps_v8_src_base_platform_platform-openbsd_cc/1.1/Mon Jan 21 23:46:01 2019//
-/patch-deps_v8_src_base_utils_random-number-generator_cc/1.2/Sun Nov 24 18:42:28 2019//
+/patch-deps_v8_src_base_utils_random-number-generator_cc/1.3/Sat Apr  4 16:42:57 2020//
 /patch-deps_v8_src_logging_log-utils_h/1.1/Sun Nov 24 18:42:28 2019//
-/patch-lib_module_js/1.12/Sun Nov 24 18:42:28 2019//
-/patch-node_gypi/1.7/Sun Nov 24 18:42:28 2019//
+/patch-lib_module_js/1.13/Sat Apr  4 16:42:57 2020//
+/patch-node_gypi/1.8/Sat Apr  4 16:42:57 2020//
 /patch-tools_icu_icu-generic_gyp/1.5/Sun Nov 24 18:42:28 2019//
 /patch-tools_test_py/1.8/Sun Nov 24 18:42:28 2019//
 D
