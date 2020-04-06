@@ -272,6 +272,7 @@
 /patch-components_previews_core_previews_features_cc/1.4/Thu Apr  2 15:11:57 2020//
 /patch-components_services_paint_preview_compositor_paint_preview_compositor_collection_impl_cc/1.1/Thu Apr  2 15:11:57 2020//
 /patch-components_services_paint_preview_compositor_paint_preview_compositor_collection_impl_h/1.1/Thu Apr  2 15:11:58 2020//
+/patch-components_startup_metric_utils_browser_startup_metric_utils_cc/1.1/Sun Apr  5 09:02:19 2020//
 /patch-components_storage_monitor_BUILD_gn/1.8/Thu Apr  2 15:11:58 2020//
 /patch-components_storage_monitor_removable_device_constants_cc/1.4/Thu Apr  2 15:11:58 2020//
 /patch-components_storage_monitor_removable_device_constants_h/1.4/Thu Apr  2 15:11:58 2020//
@@ -290,7 +291,7 @@
 /patch-components_viz_test_mock_display_client_h/1.1/Thu Apr  2 15:11:58 2020//
 /patch-content_app_content_main_runner_impl_cc/1.5/Thu Apr  2 15:11:58 2020//
 /patch-content_browser_browser_child_process_host_impl_cc/1.7/Thu Apr  2 15:11:58 2020//
-/patch-content_browser_browser_main_loop_cc/1.23/Thu Apr  2 15:11:58 2020//
+/patch-content_browser_browser_main_loop_cc/1.24/Sun Apr  5 09:02:19 2020//
 /patch-content_browser_child_process_launcher_helper_linux_cc/1.10/Thu Apr  2 15:11:58 2020//
 /patch-content_browser_compositor_gpu_process_transport_factory_cc/1.1/Thu Apr  2 15:11:58 2020//
 /patch-content_browser_compositor_software_browser_compositor_output_surface_cc/1.1/Thu Apr  2 15:11:58 2020//
@@ -319,7 +320,7 @@
 /patch-content_common_common_sandbox_support_linux_cc/1.4/Thu Apr  2 15:11:58 2020//
 /patch-content_common_sandbox_init_linux_cc/1.4/Thu Apr  2 15:11:58 2020//
 /patch-content_common_user_agent_cc/1.7/Thu Apr  2 15:11:58 2020//
-/patch-content_gpu_gpu_main_cc/1.23/Thu Apr  2 15:11:58 2020//
+/patch-content_gpu_gpu_main_cc/1.24/Sun Apr  5 09:02:19 2020//
 /patch-content_gpu_gpu_sandbox_hook_linux_cc/1.7/Thu Apr  2 15:11:58 2020//
 /patch-content_ppapi_plugin_ppapi_blink_platform_impl_cc/1.11/Thu Apr  2 15:11:58 2020//
 /patch-content_ppapi_plugin_ppapi_blink_platform_impl_h/1.9/Thu Apr  2 15:11:58 2020//
@@ -516,6 +517,7 @@
 /patch-third_party_blink_renderer_platform_fonts_font_metrics_cc/1.4/Thu Apr  2 15:11:59 2020//
 /patch-third_party_blink_renderer_platform_fonts_font_unique_name_lookup_cc/1.3/Thu Apr  2 15:11:59 2020//
 /patch-third_party_blink_renderer_platform_fonts_skia_font_cache_skia_cc/1.5/Thu Apr  2 15:11:59 2020//
+/patch-third_party_blink_renderer_platform_graphics_begin_frame_provider_cc/1.1/Sun Apr  5 09:02:19 2020//
 /patch-third_party_blink_renderer_platform_heap_thread_state_cc/1.6/Thu Apr  2 15:11:59 2020//
 /patch-third_party_blink_renderer_platform_wtf_container_annotations_h/1.3/Thu Apr  2 15:11:59 2020//
 /patch-third_party_blink_renderer_platform_wtf_stack_util_cc/1.4/Thu Apr  2 15:11:59 2020//

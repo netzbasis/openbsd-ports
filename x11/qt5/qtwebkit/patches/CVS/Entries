@@ -1,6 +1,6 @@
 /patch-CMakeLists_txt/1.1/Wed Feb 19 16:08:53 2020//
 /patch-Source_JavaScriptCore_API_ObjCCallbackFunction_h/1.1/Wed Feb 19 16:08:53 2020//
-/patch-Source_JavaScriptCore_CMakeLists_txt/1.1/Wed Feb 19 16:08:53 2020//
+/patch-Source_JavaScriptCore_CMakeLists_txt/1.2/Sun Apr  5 15:43:06 2020//
 /patch-Source_JavaScriptCore_assembler_ARM64Assembler_h/1.1/Wed Feb 19 16:08:53 2020//
 /patch-Source_JavaScriptCore_assembler_ARMAssembler_h/1.1/Wed Feb 19 16:08:53 2020//
 /patch-Source_JavaScriptCore_assembler_MacroAssemblerX86Common_h/1.1/Wed Feb 19 16:08:53 2020//
@@ -15,11 +15,10 @@
 /patch-Source_WTF_wtf_InlineASM_h/1.1/Wed Feb 19 16:08:53 2020//
 /patch-Source_WTF_wtf_Platform_h/1.2/Wed Feb 19 16:08:53 2020//
 /patch-Source_WTF_wtf_dtoa_utils_h/1.1/Wed Feb 19 16:08:53 2020//
-/patch-Source_WebCore_dom_Document_cpp/1.2/Wed Feb 19 16:08:53 2020//
 /patch-Source_WebCore_page_NavigatorBase_cpp/1.1/Wed Feb 19 16:08:53 2020//
 /patch-Source_WebCore_platform_graphics_surfaces_GraphicsSurfaceToken_h/1.1/Wed Feb 19 16:08:53 2020//
 /patch-Source_WebCore_platform_graphics_surfaces_GraphicsSurface_h/1.1/Wed Feb 19 16:08:53 2020//
 /patch-Source_WebKit2_Shared_Plugins_unix_PluginSearchPath_cpp/1.1/Wed Feb 19 16:08:53 2020//
-/patch-Source_WebKit_qt_WebCoreSupport_QWebFrameAdapter_cpp/1.1/Wed Feb 19 16:08:53 2020//
+/patch-Source_WebKit_qt_WebCoreSupport_QWebFrameAdapter_cpp/1.2/Sun Apr  5 15:43:06 2020//
 /patch-Source_cmake_OptionsCommon_cmake/1.1/Wed Feb 19 16:08:53 2020//
 D
