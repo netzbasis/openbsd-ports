@@ -1,4 +1,4 @@
-/Makefile/1.415/Thu Mar 26 13:58:18 2020//
+/Makefile/1.416/Mon Apr  6 11:06:08 2020//
 D/0ad////
 D/1oom////
 D/2048-cli////
@@ -191,6 +191,7 @@ D/nethack////
 D/netris////
 D/neverball////
 D/newvox////
+D/nsnake////
 D/nudoku////
 D/numptyphysics////
 D/oilwar////
