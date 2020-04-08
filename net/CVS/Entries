@@ -1,4 +1,4 @@
-/Makefile/1.1191/Mon Apr  6 12:41:05 2020//
+/Makefile/1.1192/Wed Apr  8 04:58:50 2020//
 D/GeoIP////
 D/adns////
 D/adsuck////
@@ -619,6 +619,7 @@ D/sipcalc////
 D/sipsak////
 D/slurm////
 D/smokeping////
+D/sniproxy////
 D/snmptt////
 D/snort////
 D/socat////
