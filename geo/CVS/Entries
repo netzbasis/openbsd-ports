@@ -1,4 +1,4 @@
-/Makefile/1.72/Tue Feb 25 09:59:04 2020//
+/Makefile/1.73/Fri Apr 10 06:26:42 2020//
 D/foxtrotgps////
 D/garmindev////
 D/gdal////
@@ -51,12 +51,14 @@ D/postgis////
 D/py-cligj////
 D/py-fiona////
 D/py-laspy////
+D/py-mercantile////
 D/py-owslib////
 D/py-planet////
 D/py-proj////
 D/py-rasterio////
 D/py-rio-cogeo////
 D/py-shapely////
+D/py-supermercado////
 D/pygeoapi////
 D/qgis////
 D/qlandkartegt////

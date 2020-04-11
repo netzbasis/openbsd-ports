@@ -1,4 +1,4 @@
-/Makefile/1.416/Mon Apr  6 11:06:08 2020//
+/Makefile/1.417/Fri Apr 10 11:16:58 2020//
 D/0ad////
 D/1oom////
 D/2048-cli////
@@ -132,6 +132,7 @@ D/gnukem////
 D/gnurobbo////
 D/gnushogi////
 D/godot////
+D/gogrepo////
 D/golly////
 D/gottcode////
 D/grhino////
