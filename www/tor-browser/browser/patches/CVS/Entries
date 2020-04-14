@@ -12,5 +12,7 @@
 /patch-security_nss_lib_freebl_blapi_h/1.4/Thu Feb 13 07:41:53 2020//
 /patch-storage_mozStorageConnection_cpp/1.5/Thu Feb 13 07:41:53 2020//
 /patch-storage_mozStorageService_cpp/1.1/Thu Feb 13 07:41:53 2020//
+/patch-toolkit_moz_configure/1.1/Mon Apr 13 16:25:42 2020//
+/patch-tor-browser_en-US_Browser_TorBrowser_Data_fontconfig_fonts_conf/1.1/Mon Apr 13 16:25:42 2020//
 /patch-xpcom_io_TorFileUtils_cpp/1.4/Thu Feb 13 07:41:53 2020//
 D

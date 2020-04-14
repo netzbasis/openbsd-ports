@@ -6,7 +6,7 @@
 /patch-external_corert_src_System_Private_CoreLib_shared_System_Collections_Generic_ArraySortHelper_cs/1.1/Mon Nov 11 17:05:02 2019//
 /patch-mcs_class_Mono_Security_Mono_Security_Cryptography_KeyPairPersistence_cs/1.1/Thu Mar 29 19:33:18 2018//
 /patch-mcs_class_Mono_Security_Mono_Security_X509_X509StoreManager_cs/1.1/Thu Mar 29 19:33:18 2018//
-/patch-mcs_class_System_System_Net_NetworkInformation_OpenBSDNetworkInterface_cs/1.1/Mon Apr  6 15:11:11 2020//
+/patch-mcs_class_System_System_Net_NetworkInformation_OpenBSDNetworkInterface_cs/1.2/Mon Apr 13 19:26:20 2020//
 /patch-mcs_class_System_System_Net_NetworkInformation_UnixNetworkInterfaceFactory_cs/1.2/Mon Apr  6 15:11:11 2020//
 /patch-mcs_class_System_macos_networkinfo_sources/1.1/Mon Apr  6 15:11:11 2020//
 /patch-mcs_class_corlib_System_Environment_cs/1.2/Mon Apr  6 15:11:11 2020//
