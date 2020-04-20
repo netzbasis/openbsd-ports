@@ -7,13 +7,13 @@
 /patch-ECtools_spamd_kopano_spamd___init___py/1.6/Wed Apr 17 13:01:02 2019//
 /patch-ECtools_statsd_cpp/1.3/Sun Mar  8 08:17:57 2020//
 /patch-ECtools_utils_kopano_utils_autorespond_py/1.5/Sun Mar  8 08:17:57 2020//
-/patch-Makefile_am/1.4/Sun Mar 22 11:20:34 2020//
+/patch-Makefile_am/1.5/Sun Apr 19 12:44:22 2020//
 /patch-autoconf_php_m4/1.1.1.1/Wed Sep 13 10:38:42 2017//
 /patch-caldav_CalDAV_cpp/1.14/Sun Mar  8 08:17:57 2020//
 /patch-common_ECChannel_cpp/1.7/Sun Mar 22 11:20:34 2020//
 /patch-common_ECThreadPool_cpp/1.2/Sat Jun 29 13:52:11 2019//
 /patch-common_UnixUtil_cpp/1.4/Sun Mar  8 08:17:57 2020//
-/patch-common_include_kopano_platform_linux_h/1.4/Sat Nov 16 20:01:20 2019//
+/patch-common_include_kopano_platform_linux_h/1.5/Sun Apr 19 12:44:22 2020//
 /patch-configure_ac/1.19/Sun Mar  8 08:17:57 2020//
 /patch-gateway_Gateway_cpp/1.11/Sun Mar  8 08:17:57 2020//
 /patch-installer_linux_Makefile_am/1.2/Sun Mar  8 08:17:57 2020//
