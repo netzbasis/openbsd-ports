@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.938 2020/04/20 14:38:12 kn Exp $
+# $OpenBSD: Quirks.pm,v 1.941 2020/04/22 02:09:55 jca Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1546,6 +1546,8 @@ my $obsolete_reason = {
 	'terraform-provider-vcd' => 1,
 	'terraform-provider-vsphere' => 1,
 	'radare2-bindings' => 6,
+	'py3-django' => 1,
+	'py3-django-lts' => 1,
 };
 
 # reasons for obsolete packages
@@ -1669,9 +1671,9 @@ my $cve = {
 	'databases/postgresql,-main' => 'postgresql-client-<10.6',
 	'databases/postgresql,-server' => 'postgresql-server-<10.6',
 	'databases/sqlite3' => 'sqlite3-<3.25.3',
-	'devel/git,-main' => 'git-<2.26.1',
-	'devel/git,-svn' => 'git-svn-<2.26.1',
-	'devel/git,-x11' => 'git-x11-<2.26.1',
+	'devel/git,-main' => 'git-<2.26.2',
+	'devel/git,-svn' => 'git-svn-<2.26.2',
+	'devel/git,-x11' => 'git-x11-<2.26.2',
 	'devel/jenkins/devel' => 'jenkins-<2.154',
 	'devel/jenkins/stable' => 'jenkins-<2.138.4',
 	'devel/libgit2/libgit2' => 'libgit2-<0.27.7',
@@ -1707,6 +1709,7 @@ my $cve = {
 	'net/mosquitto' => 'mosquitto-<1.5.6',
 	'net/ntp' => 'ntp-<4.2.8pl7',
 	'net/openconnect' => 'openconnect-<8.05',
+	'net/openvpn' => 'openvpn-<2.4.9',
 	'net/powerdns,-main' => 'powerdns-<4.1.5',
 	'net/powerdns,-mysql' => 'powerdns-mysql-<4.1.5',
 	'net/powerdns,-pgsql' => 'powerdns-pgsql-<4.1.5',

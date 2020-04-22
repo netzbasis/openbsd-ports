@@ -1,4 +1,4 @@
-/Makefile/1.954/Thu Mar 26 20:11:08 2020//
+/Makefile/1.956/Tue Apr 21 20:42:00 2020//
 D/ajaxterm////
 D/analog////
 D/ap2-mod_dnssd////
@@ -375,7 +375,6 @@ D/py-bokeh////
 D/py-bottle////
 D/py-cheroot////
 D/py-cookies////
-D/py-django////
 D/py-feedgenerator////
 D/py-flask////
 D/py-flask-cors////
