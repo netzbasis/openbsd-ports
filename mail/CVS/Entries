@@ -1,4 +1,4 @@
-/Makefile/1.390/Tue Apr 21 20:42:00 2020//
+/Makefile/1.391/Wed Apr 22 06:35:08 2020//
 D/abook////
 D/adcomplain////
 D/akpop3d////
@@ -27,7 +27,6 @@ D/dma////
 D/dovecot////
 D/dovecot-fts-xapian////
 D/dovecot-pigeonhole////
-D/dspam////
 D/elm////
 D/enigmail////
 D/evolution////

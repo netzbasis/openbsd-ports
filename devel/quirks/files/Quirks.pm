@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.941 2020/04/22 02:09:55 jca Exp $
+# $OpenBSD: Quirks.pm,v 1.944 2020/04/22 11:24:48 landry Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1548,6 +1548,9 @@ my $obsolete_reason = {
 	'radare2-bindings' => 6,
 	'py3-django' => 1,
 	'py3-django-lts' => 1,
+	'dspam' => 3,
+	'dspam-mysql' => 3,
+	'dspam-pgsql' => 3,
 };
 
 # reasons for obsolete packages
@@ -1573,6 +1576,7 @@ my @msg = (
 	"no longer maintained upstream, suggest kompare", #18
 	"no longer maintained upstream, suggest sqlitebrowser, kexi", #19
 	"merged into IETF Opus codec, obsolete, audio/mumble uses bundled version now", #20
+	"upstream recommends to use composer to build a drupal site", #21
 );
 
 # ->is_base_system($handle, $state):
@@ -1624,7 +1628,8 @@ sub filter_obsolete
 	for my $pkgname (@in) {
 		my $stem = OpenBSD::PackageName::splitstem($pkgname);
 		my $reason = $obsolete_reason->{$stem};
-		$reason = 3 if (!defined $reason && $pkgname =~ m/^(drupal(-6|6-)|ruby(19|2[0-4])-|ruby-[^0-9])/);
+		$reason = 3 if (!defined $reason && $pkgname =~ m/^(ruby(19|2[0-4])-|ruby-[^0-9])/);
+		$reason = 21 if (!defined $reason && $pkgname =~ m/^drupal/);
 		if (defined $reason) {
 			$state->say("Obsolete package: #1 (#2)", $pkgname, 
 			    $msg[$reason]);
@@ -1727,6 +1732,7 @@ my $cve = {
 	'print/cups,-main' => 'cups-<1.7.4',
 	'security/clamav' => 'clamav-<0.100.2',
 	'security/opensc' => 'opensc-<0.20.0',
+	'security/openssl/1.1' => 'openssl-<1.1.1g',
 	'security/polarssl' => 'mbedtls-<2.16.6',
 	'security/sudo' => 'sudo-<1.8.31',
 	'shells/bash' => 'bash-<4.3.27',

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.151 2020/04/21 20:38:31 sthen Exp $
+# $OpenBSD: Makefile.inc,v 1.153 2020/04/22 11:55:14 sthen Exp $
 
 BROKEN-hppa=	no __sync_bool_compare_and_swap support nor asm fallback
 
@@ -131,11 +131,6 @@ PSEUDO_FLAVORS+=	no_apache
 
 .include <bsd.port.arch.mk>
 
-# checking for Apache 2.0 handler-module support via DSO through APXS... Trace/BPT trap (core dumped)
-.if ${MACHINE_ARCH:Maarch64}
-BUILD_PACKAGES:=	${BUILD_PACKAGES:N-apache}
-.endif
-
 # sapi
 CONFIGURE_ARGS+=	--enable-cli \
 			--enable-fpm \
@@ -168,7 +163,7 @@ LIB_DEPENDS$i +=	devel/gettext,-runtime \
 			textproc/libxml \
 			textproc/oniguruma
 .  if !${PV:M7.2} && !${PV:M7.3}
-WANTLIB$i +=		${COMPILER_LIBCXX} pcre2-8
+WANTLIB$i +=		pcre2-8
 LIB_DEPENDS$i +=	devel/pcre2
 .  endif
 .endfor
