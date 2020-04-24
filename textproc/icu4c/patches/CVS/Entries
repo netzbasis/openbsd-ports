@@ -1,13 +1,12 @@
-/patch-source_common_Makefile_in/1.13/Wed Oct 16 13:42:58 2019//
-/patch-source_common_putil_cpp/1.4/Wed Oct 16 13:42:58 2019//
+/patch-source_common_Makefile_in/1.14/Thu Apr 23 06:33:13 2020//
+/patch-source_common_putil_cpp/1.5/Thu Apr 23 06:33:13 2020//
 /patch-source_common_unicode_uconfig_h/1.3/Sat Oct 19 08:44:40 2019//
-/patch-source_config_icu-config-bottom/1.10/Wed Oct 16 13:42:58 2019//
+/patch-source_config_icu-config-bottom/1.11/Thu Apr 23 06:33:13 2020//
 /patch-source_config_mh-bsd-gcc/1.10/Sat Oct 19 08:44:40 2019//
-/patch-source_data_Makefile_in/1.3/Sat Jul  6 12:11:01 2019//
-/patch-source_i18n_Makefile_in/1.6/Wed Oct 16 13:42:59 2019//
-/patch-source_io_Makefile_in/1.4/Wed May 24 15:44:42 2017//
-/patch-source_layoutex_Makefile_in/1.4/Wed May 24 15:44:42 2017//
-/patch-source_stubdata_Makefile_in/1.9/Wed May 24 15:44:42 2017//
-/patch-source_tools_ctestfw_Makefile_in/1.1/Wed May 24 15:44:42 2017//
-/patch-source_tools_toolutil_Makefile_in/1.4/Wed May 24 15:44:42 2017//
+/patch-source_i18n_Makefile_in/1.7/Thu Apr 23 06:33:13 2020//
+/patch-source_io_Makefile_in/1.5/Thu Apr 23 06:33:13 2020//
+/patch-source_layoutex_Makefile_in/1.5/Thu Apr 23 06:33:13 2020//
+/patch-source_stubdata_Makefile_in/1.10/Thu Apr 23 06:33:13 2020//
+/patch-source_tools_ctestfw_Makefile_in/1.2/Thu Apr 23 06:33:13 2020//
+/patch-source_tools_toolutil_Makefile_in/1.5/Thu Apr 23 06:33:13 2020//
 D

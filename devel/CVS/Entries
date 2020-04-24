@@ -1,4 +1,4 @@
-/Makefile/1.1963/Wed Apr 15 17:13:04 2020//
+/Makefile/1.1964/Thu Apr 23 14:37:16 2020//
 D/64tass////
 D/ElectricFence////
 D/ORBit2////
@@ -17,6 +17,8 @@ D/arduboy2////
 D/arduino////
 D/arduino-adafruit-gfx////
 D/arduino-adafruit-ra8875////
+D/arduino-esp32////
+D/arduino-esp8266////
 D/arduino-makefile////
 D/argp-standalone////
 D/argtable////
@@ -426,6 +428,7 @@ D/luarings////
 D/luastdlib////
 D/lutok////
 D/m4////
+D/makeesparduino////
 D/maven////
 D/mcs////
 D/mercurial////
@@ -433,6 +436,7 @@ D/meson////
 D/metaauto////
 D/mingw////
 D/mk////
+D/mkspiffs////
 D/mm////
 D/mm-common////
 D/mono-addins////

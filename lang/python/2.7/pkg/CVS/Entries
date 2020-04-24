@@ -7,13 +7,13 @@
 /DESCR-tools/1.1.1.1/Sun Apr 24 09:31:46 2011//
 /MESSAGE-idle/1.1.1.1/Sun Apr 24 09:31:46 2011//
 /MESSAGE-main/1.2/Tue May  3 17:18:28 2011//
-/PLIST-bsddb/1.3/Mon Nov 11 17:47:42 2019//
-/PLIST-gdbm/1.3/Mon Nov 11 17:47:42 2019//
-/PLIST-idle/1.9/Fri Nov  3 13:13:06 2017//
-/PLIST-main/1.25/Mon Nov 11 17:47:42 2019//
-/PLIST-tests/1.17/Fri Nov  1 17:40:08 2019//
-/PLIST-tkinter/1.7/Mon Nov 11 17:47:42 2019//
-/PLIST-tools/1.12/Sun Apr 21 09:32:19 2019//
+/PLIST-bsddb/1.4/Thu Apr 23 07:56:01 2020//
+/PLIST-gdbm/1.4/Thu Apr 23 07:56:01 2020//
+/PLIST-idle/1.10/Thu Apr 23 07:56:01 2020//
+/PLIST-main/1.26/Thu Apr 23 07:56:01 2020//
+/PLIST-tests/1.18/Thu Apr 23 07:56:01 2020//
+/PLIST-tkinter/1.8/Thu Apr 23 07:56:01 2020//
+/PLIST-tools/1.13/Thu Apr 23 07:56:01 2020//
 /UNMESSAGE-idle/1.1.1.1/Sun Apr 24 09:31:44 2011//
 /UNMESSAGE-main/1.2/Tue May  3 17:18:28 2011//
 D
