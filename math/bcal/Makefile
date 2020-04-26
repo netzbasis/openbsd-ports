@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2020/01/10 15:03:23 bcallah Exp $
+# $OpenBSD: Makefile,v 1.7 2020/04/25 20:48:29 sthen Exp $
 
 # Upstream says 64-bit only.
 # https://github.com/jarun/bcal/issues/4
@@ -23,8 +23,12 @@ MASTER_SITES =	https://github.com/jarun/bcal/releases/download/v${V}/
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
 # Test script is a Python 3 script.
-# It is not worth invoking the python MODULE for this.
-TEST_DEPENDS =	devel/py-test,python3
+MODULES +=	lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_3}
+MODPY_RUNDEP =	No
+MODPY_BUILDDEP =	No
+CONFIGURE_STYLE = python.port.mk-is-annoying
+TEST_DEPENDS =	devel/py-test${MODPY_FLAVOR}
 
 USE_GMAKE =	Yes
 

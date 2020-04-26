@@ -1,4 +1,4 @@
-/Makefile/1.502/Tue Apr 21 20:42:00 2020//
+/Makefile/1.503/Sat Apr 25 14:02:58 2020//
 D/DevIL////
 D/GraphicsMagick////
 D/ImageMagick////
@@ -278,6 +278,7 @@ D/tiff2png////
 D/tkimg////
 D/tkpng////
 D/ttfautohint////
+D/tumble////
 D/ufraw////
 D/unwebp////
 D/vcdimager////
