@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.945 2020/04/24 09:03:08 kmos Exp $
+# $OpenBSD: Quirks.pm,v 1.947 2020/04/26 18:50:55 rsadowski Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -418,6 +418,7 @@ my $stem_extensions = {
 	'py-irclib' => 'py3-irclib',
 	'py-casttube' => 'py3-casttube',
 	'py-libcloud' => 'py3-libcloud',
+	'gegl03' => 'gegl04',
 };
 
 my $obsolete_reason = {
@@ -1552,6 +1553,7 @@ my $obsolete_reason = {
 	'dspam-mysql' => 3,
 	'dspam-pgsql' => 3,
 	'py-iniparse' => 5,
+	'qtdeclarative-xmllistmodel' => 3,
 };
 
 # reasons for obsolete packages

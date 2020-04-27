@@ -1,4 +1,4 @@
-/Makefile/1.503/Sat Apr 25 14:02:58 2020//
+/Makefile/1.504/Sun Apr 26 10:53:19 2020//
 D/DevIL////
 D/GraphicsMagick////
 D/ImageMagick////
@@ -65,7 +65,6 @@ D/gd////
 D/gdcm////
 D/gdk-pixbuf2////
 D/geeqie////
-D/gegl03////
 D/gegl04////
 D/geomview////
 D/gfract////
