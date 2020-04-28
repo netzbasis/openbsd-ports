@@ -1,4 +1,4 @@
-/Makefile/1.1195/Tue Apr 21 15:52:18 2020//
+/Makefile/1.1196/Mon Apr 27 20:23:00 2020//
 D/GeoIP////
 D/adns////
 D/adsuck////
@@ -165,7 +165,6 @@ D/irssi-icb////
 D/irssi-xmpp////
 D/isc-bind////
 D/isc-dhcp////
-D/jabberd////
 D/jftpgw////
 D/jnettop////
 D/kdeconnect-kde////

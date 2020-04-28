@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.947 2020/04/26 18:50:55 rsadowski Exp $
+# $OpenBSD: Quirks.pm,v 1.949 2020/04/27 19:52:14 kn Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1554,6 +1554,7 @@ my $obsolete_reason = {
 	'dspam-pgsql' => 3,
 	'py-iniparse' => 5,
 	'qtdeclarative-xmllistmodel' => 3,
+	'jabberd' => 3,
 };
 
 # reasons for obsolete packages
@@ -1702,6 +1703,7 @@ my $cve = {
 	'lang/ruby/2.6,-main' => 'ruby->2.6,<2.6.2',
 	'mail/dovecot,-main' => 'dovecot-<2.3.6',
 	'mail/exim' => 'exim-<4.83',
+	'mail/mailman' => 'mailman-<2.1.30',
 	'mail/p5-Mail-SpamAssassin' => 'p5-Mail-SpamAssassin-<3.4.4',
 	'mail/roundcubemail' => 'roundcubemail-<1.3.8',
 	'math/hdf5' => 'hdf5-<1.8.21',
