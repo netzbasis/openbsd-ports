@@ -1,4 +1,4 @@
-/Makefile/1.281/Thu Apr  2 14:34:50 2020//
+/Makefile/1.282/Thu May 14 15:19:44 2020//
 /Makefile.inc/1.15/Thu Apr 13 07:38:44 2017//
 /gnome.port.mk/1.115/Sat Dec  1 13:04:41 2018//
 D/accerciser////
@@ -81,11 +81,9 @@ D/online-accounts////
 D/online-miners////
 D/orca////
 D/photos////
-D/planner////
 D/power-manager////
 D/py-atspi////
 D/quadrapassel////
-D/recipes////
 D/screenshot////
 D/seahorse////
 D/seahorse-nautilus////

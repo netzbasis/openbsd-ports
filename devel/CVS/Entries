@@ -1,4 +1,4 @@
-/Makefile/1.1967/Wed May  6 17:58:55 2020//
+/Makefile/1.1968/Thu May 14 14:54:41 2020//
 D/64tass////
 D/ElectricFence////
 D/ORBit2////
@@ -1671,6 +1671,7 @@ D/sparsehash////
 D/spe////
 D/spice-protocol////
 D/spidermonkey60////
+D/spidermonkey68////
 D/splint////
 D/spyder////
 D/sqlc////

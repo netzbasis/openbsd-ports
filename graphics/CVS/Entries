@@ -1,4 +1,4 @@
-/Makefile/1.504/Sun Apr 26 10:53:19 2020//
+/Makefile/1.505/Thu May 14 16:23:04 2020//
 D/DevIL////
 D/GraphicsMagick////
 D/ImageMagick////
@@ -8,7 +8,6 @@ D/allegropng////
 D/amide////
 D/animorph////
 D/ansilove////
-D/argyll////
 D/aspect-crop////
 D/asymptote////
 D/autopano-sift-c////
@@ -258,7 +257,6 @@ D/sane-backends////
 D/scour////
 D/scratch////
 D/scrot////
-D/shared-color-targets////
 D/shotwell////
 D/simgear////
 D/simple-scan////

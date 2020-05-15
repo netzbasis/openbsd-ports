@@ -1,4 +1,4 @@
-/Makefile/1.957/Wed Apr 22 11:24:43 2020//
+/Makefile/1.958/Thu May 14 16:22:02 2020//
 D/ajaxterm////
 D/analog////
 D/ap2-mod_dnssd////
@@ -68,7 +68,6 @@ D/kibana////
 D/kore////
 D/kwebkitpart////
 D/larbin////
-D/libcroco////
 D/libmicrohttpd////
 D/libsass////
 D/libwebsockets////

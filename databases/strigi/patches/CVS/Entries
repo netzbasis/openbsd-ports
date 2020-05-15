@@ -1,6 +1,8 @@
+/patch-libstreamanalyzer_cmake_FindExiv2_cmake/1.1/Thu May 14 19:16:24 2020//
 /patch-libstreamanalyzer_lib_rdfnamespaces_h/1.1/Sun May 21 00:43:52 2017//
 /patch-libstreamanalyzer_lib_saxeventanalyzer_cpp/1.1/Thu Nov 15 00:04:30 2012//
 /patch-libstreamanalyzer_plugins_endplugins_ffmpegendanalyzer_cpp/1.2/Wed Feb 20 11:22:26 2019//
+/patch-libstreamanalyzer_plugins_endplugins_jpegendanalyzer_cpp/1.1/Thu May 14 19:16:24 2020//
 /patch-libstreams_lib_textutils_cpp/1.1/Thu Nov 15 00:04:30 2012//
 /patch-strigidaemon_CMakeLists_txt/1.1/Sat Nov 23 10:38:35 2019//
 /patch-strigidaemon_bin_daemon_dbus_dbuscpp_makecode_pl/1.1/Thu Nov 15 00:04:30 2012//
