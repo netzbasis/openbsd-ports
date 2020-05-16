@@ -1,4 +1,4 @@
-/Makefile/1.392/Tue Apr 21 20:42:00 2020//
+/Makefile/1.393/Fri May 15 10:23:59 2020//
 D/architect////
 D/barman////
 D/citus////
@@ -154,7 +154,6 @@ D/py-ldap////
 D/py-ldap3////
 D/py-minidb////
 D/py-mongo////
-D/py-mysql////
 D/py-mysqlclient////
 D/py-odbc////
 D/py-peewee////

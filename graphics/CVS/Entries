@@ -1,4 +1,4 @@
-/Makefile/1.505/Thu May 14 16:23:04 2020//
+/Makefile/1.506/Fri May 15 08:19:21 2020//
 D/DevIL////
 D/GraphicsMagick////
 D/ImageMagick////
@@ -145,6 +145,7 @@ D/libqrencode////
 D/libraw////
 D/libsixel////
 D/libvidcap////
+D/libvips////
 D/libwebp////
 D/libwmf////
 D/libxmi////

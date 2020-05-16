@@ -1,21 +1,18 @@
-# $OpenBSD: Makefile,v 1.12 2019/11/22 16:39:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2020/05/15 10:23:59 sthen Exp $
 
 COMMENT =		Python interface to MySQL
 
 MODPY_EGG_VERSION =	1.4.6
-# XXX beware if updating:
-# XXX "mysqlclient 1.5 will not support Django 1.11.  It is not because
-#      mysqlclient will break backward compatibility, but Django used
-#      unsupported APIs and Django 1.11 don't fix bugs including
-#      compatibility issues."
+REVISION =		0
 DISTNAME =		mysqlclient-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 
 CATEGORIES =		databases
 
-HOMEPAGE =		https://github.com/PyMySQL/mysqlclient-python/
+# https://github.com/PyMySQL/mysqlclient-python/
+HOMEPAGE =		https://mysqlclient.readthedocs.io/
 
-# GPLv2
+# GPLv2+
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${MODPY_WANTLIB} mariadb pthread

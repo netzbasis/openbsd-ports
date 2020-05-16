@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.140 2020/05/14 16:47:27 florian Exp $
+# $OpenBSD: Makefile,v 1.142 2020/05/15 11:01:13 jasper Exp $
 
 # optional dependencies
 # https://github.com/saltstack/salt/blob/develop/doc/conf.py
@@ -59,7 +59,7 @@ RUN_DEPENDS +=		security/py-M2Crypto${MODPY_FLAVOR}
 # max openfiles, soft: 3072, hard: 4096; DBus system session running...
 TEST_IS_INTERACTIVE =	Yes
 PORTHOME =		${WRKDIST}
-TEST_DEPENDS =		databases/py-mysql${MODPY_FLAVOR} \
+TEST_DEPENDS =		databases/py-mysqlclient${MODPY_FLAVOR} \
 			devel/git \
 			devel/py-gitpython${MODPY_FLAVOR} \
 			devel/py-pip${MODPY_FLAVOR} \

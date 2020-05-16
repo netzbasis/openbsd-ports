@@ -1,4 +1,4 @@
-/Makefile/1.392/Wed Apr 29 15:25:45 2020//
+/Makefile/1.393/Fri May 15 08:58:43 2020//
 D/abook////
 D/adcomplain////
 D/alpine////
@@ -85,6 +85,7 @@ D/mutt////
 D/neomutt////
 D/nmh////
 D/nmzmail////
+D/notmuch////
 D/offlineimap////
 D/opendkim////
 D/opendmarc////

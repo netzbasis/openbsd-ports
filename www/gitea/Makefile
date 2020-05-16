@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.35 2020/05/14 15:19:32 pvk Exp $
+# $OpenBSD: Makefile,v 1.37 2020/05/15 09:38:42 pvk Exp $
 
 COMMENT =		compact self-hosted Git service
 
 VERSION =		1.11.5
-GH_ACCOUNT =		go-gitea
-GH_PROJECT =		gitea
-GH_TAGNAME =		v${VERSION}
+DISTNAME =		gitea-src-${VERSION}
+PKGNAME =		gitea-${VERSION}
 
-DISTFILES =		${GH_PROJECT}-src-${VERSION}${EXTRACT_SUFX}
+MASTER_SITES =		https://github.com/go-gitea/gitea/releases/download/v${VERSION}/
 
 CATEGORIES =		www devel
 
@@ -26,7 +25,7 @@ MODGO_FLAGS +=		-tags "sqlite cert"
 
 RUN_DEPENDS =		devel/git
 
-ALL_TARGET =		code.gitea.io/${GH_PROJECT}
+ALL_TARGET =		code.gitea.io/gitea
 WRKSRC =		${MODGO_WORKSPACE}/src/${ALL_TARGET}
 
 SUBST_VARS +=		VERSION
