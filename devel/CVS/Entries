@@ -1,4 +1,4 @@
-/Makefile/1.1968/Thu May 14 14:54:41 2020//
+/Makefile/1.1969/Sat May 16 11:04:12 2020//
 D/64tass////
 D/ElectricFence////
 D/ORBit2////
@@ -520,6 +520,7 @@ D/p5-Cache-FastMmap////
 D/p5-Cache-Memcached////
 D/p5-Cache-Mmap////
 D/p5-Cache-Simple-TimedExpiry////
+D/p5-Cairo-GObject////
 D/p5-Canary-Stability////
 D/p5-Carp-Always////
 D/p5-Carp-Assert////

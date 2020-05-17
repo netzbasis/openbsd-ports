@@ -1,11 +1,10 @@
 /Makefile/1.62/Fri Mar 13 16:53:49 2020//
 /Makefile.inc/1.15/Fri Mar 20 16:44:29 2020//
-/Makefile.version/1.11/Sun Apr  5 15:43:05 2020//
+/Makefile.version/1.12/Sat May 16 09:53:09 2020//
 /qt5.port.mk/1.25/Fri Mar 20 16:44:29 2020//
 D/docs////
 D/qt3d////
 D/qtbase////
-D/qtcanvas3d////
 D/qtcharts////
 D/qtconnectivity////
 D/qtdatavis3d////
@@ -33,6 +32,7 @@ D/qttranslations////
 D/qtvirtualkeyboard////
 D/qtwebchannel////
 D/qtwebengine////
+D/qtwebglplugin////
 D/qtwebkit////
 D/qtwebsockets////
 D/qtwebview////
