@@ -1,4 +1,4 @@
-/Makefile/1.393/Fri May 15 08:58:43 2020//
+/Makefile/1.394/Mon May 18 00:16:15 2020//
 D/abook////
 D/adcomplain////
 D/alpine////
@@ -100,6 +100,7 @@ D/p5-Email-Address-XS////
 D/p5-Email-Date////
 D/p5-Email-Date-Format////
 D/p5-Email-Filter////
+D/p5-Email-Filter-Rules////
 D/p5-Email-Folder////
 D/p5-Email-FolderType////
 D/p5-Email-LocalDelivery////
@@ -136,6 +137,7 @@ D/p5-Mail-DMARC-Iterator////
 D/p5-Mail-GnuPG////
 D/p5-Mail-IMAPClient////
 D/p5-Mail-IMAPTalk////
+D/p5-Mail-ListDetector////
 D/p5-Mail-Mbox-MessageParser////
 D/p5-Mail-Milter-Authentication////
 D/p5-Mail-POP3Client////

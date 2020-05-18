@@ -1,4 +1,4 @@
-/Makefile/1.630/Thu May 14 20:36:21 2020//
+/Makefile/1.631/Sun May 17 23:21:26 2020//
 D/TclXML////
 D/antiword////
 D/apertium////
@@ -220,6 +220,7 @@ D/p5-Sort-Versions////
 D/p5-Sourcecode-Spellchecker////
 D/p5-String-Approx////
 D/p5-String-CamelCase////
+D/p5-String-Escape////
 D/p5-String-Koremutake////
 D/p5-String-Random////
 D/p5-String-RewritePrefix////

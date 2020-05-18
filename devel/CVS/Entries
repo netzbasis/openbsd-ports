@@ -1,4 +1,4 @@
-/Makefile/1.1969/Sat May 16 11:04:12 2020//
+/Makefile/1.1971/Sun May 17 20:20:08 2020//
 D/64tass////
 D/ElectricFence////
 D/ORBit2////
@@ -576,6 +576,7 @@ D/p5-Class-Std-Fast////
 D/p5-Class-Std-Utils////
 D/p5-Class-Throwable////
 D/p5-Class-Tiny////
+D/p5-Class-Tiny-Chained////
 D/p5-Class-Trigger////
 D/p5-Class-Unload////
 D/p5-Class-Virtual////
@@ -876,7 +877,9 @@ D/p5-Module-Util////
 D/p5-Module-Versions-Report////
 D/p5-Module-Which////
 D/p5-Moo////
+D/p5-MooX-Aliases////
 D/p5-MooX-StrictConstructor////
+D/p5-MooX-Traits////
 D/p5-MooX-Types-MooseLike////
 D/p5-Moose////
 D/p5-MooseX-Aliases////
@@ -1133,6 +1136,7 @@ D/p5-Test-Requires////
 D/p5-Test-RequiresInternet////
 D/p5-Test-Script////
 D/p5-Test-SharedFork////
+D/p5-Test-Spec////
 D/p5-Test-Spelling////
 D/p5-Test-Strict////
 D/p5-Test-SubCalls////

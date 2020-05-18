@@ -1,4 +1,4 @@
-/Makefile/1.959/Sat May 16 18:46:55 2020//
+/Makefile/1.960/Sun May 17 18:47:22 2020//
 D/ajaxterm////
 D/analog////
 D/ap2-mod_dnssd////
@@ -262,6 +262,7 @@ D/p5-HTTP-Server-Simple////
 D/p5-HTTP-Server-Simple-Mason////
 D/p5-HTTP-Server-Simple-PSGI////
 D/p5-HTTP-Server-Simple-Recorder////
+D/p5-HTTP-Thin////
 D/p5-HTTPD-Log-Filter////
 D/p5-Hijk////
 D/p5-IO-HTML////
@@ -306,6 +307,7 @@ D/p5-Twiggy////
 D/p5-URI////
 D/p5-URI-Fetch////
 D/p5-URI-Find////
+D/p5-URL-Encode////
 D/p5-W3C-LinkChecker////
 D/p5-WWW-Bugzilla////
 D/p5-WWW-Ebay////
@@ -317,6 +319,7 @@ D/p5-WWW-Mechanize-FormFiller////
 D/p5-WWW-Mechanize-GZip////
 D/p5-WWW-Mechanize-Shell////
 D/p5-WWW-Mechanize-TreeBuilder////
+D/p5-WWW-OAuth////
 D/p5-WWW-Robot////
 D/p5-WWW-RobotRules////
 D/p5-WWW-Search////

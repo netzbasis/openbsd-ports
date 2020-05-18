@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.8 2019/07/12 20:47:31 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2020/05/17 22:37:08 cwen Exp $
 
 COMMENT = 	library for creating easy email filters
 
 DISTNAME =	Email-Filter-1.034
+REVISION =	0
 CATEGORIES =	mail
 
 HOMEPAGE =	http://emailproject.perl.org/
@@ -20,8 +21,6 @@ RUN_DEPENDS =	devel/p5-Class-Trigger>=0.08 \
 		mail/p5-Email-LocalDelivery>=0.07 \
 		mail/p5-Email-Simple>=1.91 \
 		devel/p5-IPC-Run>=0.77
-
-BUILD_DEPENDS =	${RUN_DEPENDS}
 
 MAKE_ENV =	TEST_POD=Yes
 

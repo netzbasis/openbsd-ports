@@ -1,8 +1,7 @@
-/Makefile/1.130/Mon Dec  9 08:37:50 2019//
+/Makefile/1.132/Mon May 18 00:02:48 2020//
 D/a2ps////
 D/apsfilter////
 D/apvlv////
-D/bg5pdf////
 D/bg5ps////
 D/bibview////
 D/brlaser////
@@ -45,7 +44,6 @@ D/muttprint////
 D/openclipart////
 D/p5-Poppler////
 D/p5-PostScript-MailLabels////
-D/pdflib////
 D/pdfshuffler////
 D/poppler////
 D/poppler-data////

@@ -1,4 +1,4 @@
-/Makefile/1.576/Thu May 14 12:06:00 2020//
+/Makefile/1.577/Sun May 17 10:36:17 2020//
 D/ADMsnmp////
 D/ROPgadget////
 D/acme-client////
@@ -110,7 +110,6 @@ D/libident////
 D/libksba////
 D/libmcrypt////
 D/libnettle////
-D/libnipper////
 D/libotr////
 D/libperseus////
 D/libpwquality////
@@ -132,7 +131,6 @@ D/nbaudit////
 D/netpgp////
 D/nfsshell////
 D/nikto////
-D/nipper////
 D/nss////
 D/oath-toolkit////
 D/ogvt////
