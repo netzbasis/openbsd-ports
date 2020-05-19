@@ -1,14 +1,16 @@
-/Makefile/1.29/Mon Jan 20 23:33:08 2020//
+/Makefile/1.31/Mon May 18 20:44:54 2020//
 D/blogbench////
 D/bonnie++////
 D/fio////
 D/fs_mark////
 D/httperf////
+D/hyperfine////
 D/iozone////
 D/netperf////
 D/netperf-wrapper////
 D/netpipe////
 D/netstrain////
+D/nuttcp////
 D/p5-Dumbbench////
 D/randread////
 D/siege////

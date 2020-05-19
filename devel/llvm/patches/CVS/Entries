@@ -15,6 +15,7 @@
 /patch-lib_CodeGen_PrologEpilogInserter_cpp/1.4/Sat Jul  6 15:06:36 2019//
 /patch-lib_CodeGen_ReturnProtectorLowering_cpp/1.2/Tue Jul  9 13:21:37 2019//
 /patch-lib_CodeGen_ReturnProtectorPass_cpp/1.3/Tue Jan  7 22:59:43 2020//
+/patch-lib_CodeGen_SelectionDAG_DAGCombiner_cpp/1.3/Mon May 18 22:28:22 2020//
 /patch-lib_CodeGen_TargetLoweringBase_cpp/1.6/Sat Jul  6 15:06:36 2019//
 /patch-lib_CodeGen_TargetPassConfig_cpp/1.3/Sat Jul  6 15:06:36 2019//
 /patch-lib_MC_MCAsmInfoELF_cpp/1.3/Sat Sep  2 09:36:13 2017//
@@ -42,7 +43,10 @@
 /patch-lib_Target_Mips_MipsReturnProtectorLowering_cpp/1.1/Tue Jan  7 22:59:43 2020//
 /patch-lib_Target_Mips_MipsReturnProtectorLowering_h/1.1/Tue Jan  7 22:59:43 2020//
 /patch-lib_Target_Mips_MipsTargetStreamer_h/1.1/Tue Jul  9 13:21:37 2019//
+/patch-lib_Target_PowerPC_PPCAsmPrinter_cpp/1.6/Mon May 18 22:28:22 2020//
+/patch-lib_Target_PowerPC_PPCISelDAGToDAG_cpp/1.7/Mon May 18 22:28:22 2020//
 /patch-lib_Target_PowerPC_PPCISelLowering_cpp/1.6/Sun Jul  7 14:04:07 2019//
+/patch-lib_Target_PowerPC_PPCMCInstLower_cpp/1.5/Mon May 18 22:28:22 2020//
 /patch-lib_Target_PowerPC_PPCSubtarget_h/1.5/Wed Feb 20 00:24:11 2019//
 /patch-lib_Target_Sparc_SparcAsmPrinter_cpp/1.1/Tue Jul  9 13:21:37 2019//
 /patch-lib_Target_Sparc_SparcISelLowering_cpp/1.4/Sat Jul  6 15:06:36 2019//
