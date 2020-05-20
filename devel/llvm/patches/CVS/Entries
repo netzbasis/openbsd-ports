@@ -12,6 +12,7 @@
 /patch-lib_CodeGen_AsmPrinter_AsmPrinter_cpp/1.9/Sun Jul  7 14:04:07 2019//
 /patch-lib_CodeGen_AtomicExpandPass_cpp/1.1/Sun Feb  9 06:14:21 2020//
 /patch-lib_CodeGen_CMakeLists_txt/1.3/Mon Jan 28 06:27:28 2019//
+/patch-lib_CodeGen_LocalStackSlotAllocation_cpp/1.1/Tue May 19 10:05:47 2020//
 /patch-lib_CodeGen_PrologEpilogInserter_cpp/1.4/Sat Jul  6 15:06:36 2019//
 /patch-lib_CodeGen_ReturnProtectorLowering_cpp/1.2/Tue Jul  9 13:21:37 2019//
 /patch-lib_CodeGen_ReturnProtectorPass_cpp/1.3/Tue Jan  7 22:59:43 2020//
@@ -30,8 +31,9 @@
 /patch-lib_Target_AArch64_AArch64ReturnProtectorLowering_cpp/1.2/Tue Jul  9 13:21:37 2019//
 /patch-lib_Target_AArch64_AArch64ReturnProtectorLowering_h/1.2/Tue Jul  9 13:21:37 2019//
 /patch-lib_Target_AArch64_AArch64Subtarget_h/1.5/Sat Jul  6 15:06:36 2019//
+/patch-lib_Target_AArch64_AArch64TargetMachine_cpp/1.1/Tue May 19 10:05:47 2020//
 /patch-lib_Target_AArch64_CMakeLists_txt/1.2/Sat Jul  6 15:06:36 2019//
-/patch-lib_Target_Mips_AsmParser_MipsAsmParser_cpp/1.1/Tue Jul  9 13:21:37 2019//
+/patch-lib_Target_Mips_AsmParser_MipsAsmParser_cpp/1.2/Tue May 19 10:05:47 2020//
 /patch-lib_Target_Mips_CMakeLists_txt/1.1/Tue Jan  7 22:59:43 2020//
 /patch-lib_Target_Mips_MCTargetDesc_MipsTargetStreamer_cpp/1.2/Sun Sep  8 10:40:39 2019//
 /patch-lib_Target_Mips_Mips64InstrInfo_td/1.1/Tue Jul  9 13:21:37 2019//
@@ -49,7 +51,9 @@
 /patch-lib_Target_PowerPC_PPCMCInstLower_cpp/1.5/Mon May 18 22:28:22 2020//
 /patch-lib_Target_PowerPC_PPCSubtarget_h/1.5/Wed Feb 20 00:24:11 2019//
 /patch-lib_Target_Sparc_SparcAsmPrinter_cpp/1.1/Tue Jul  9 13:21:37 2019//
-/patch-lib_Target_Sparc_SparcISelLowering_cpp/1.4/Sat Jul  6 15:06:36 2019//
+/patch-lib_Target_Sparc_SparcISelLowering_cpp/1.5/Tue May 19 10:05:47 2020//
+/patch-lib_Target_Sparc_SparcInstr64Bit_td/1.7/Tue May 19 10:05:47 2020//
+/patch-lib_Target_Sparc_SparcInstrInfo_td/1.10/Tue May 19 10:05:47 2020//
 /patch-lib_Target_X86_CMakeLists_txt/1.4/Sat Jul  6 15:06:36 2019//
 /patch-lib_Target_X86_MCTargetDesc_X86AsmBackend_cpp/1.5/Sun Jul  7 14:04:07 2019//
 /patch-lib_Target_X86_X86AsmPrinter_h/1.4/Mon Jan 28 06:27:28 2019//
@@ -77,6 +81,7 @@
 /patch-tools_clang_include_clang_Sema_Sema_h/1.5/Sat Jul  6 15:06:36 2019//
 /patch-tools_clang_lib_AST_FormatString_cpp/1.1/Tue Jul  9 13:21:37 2019//
 /patch-tools_clang_lib_Basic_Targets_Mips_h/1.1/Tue Jul  9 13:21:37 2019//
+/patch-tools_clang_lib_Basic_Targets_Sparc_cpp/1.1/Tue May 19 10:05:47 2020//
 /patch-tools_clang_lib_Basic_Targets_X86_cpp/1.4/Sat Jul  6 15:06:36 2019//
 /patch-tools_clang_lib_Basic_Targets_X86_h/1.4/Sat Jul  6 15:06:36 2019//
 /patch-tools_clang_lib_CodeGen_CGCall_cpp/1.3/Sat Jul  6 15:06:36 2019//
