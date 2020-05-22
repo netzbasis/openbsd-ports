@@ -1,4 +1,4 @@
-/Makefile/1.417/Fri Apr 10 11:16:58 2020//
+/Makefile/1.418/Thu May 21 21:23:34 2020//
 D/0ad////
 D/1oom////
 D/2048-cli////
@@ -225,6 +225,7 @@ D/prboom////
 D/prboom-plus////
 D/pushover////
 D/puzzles////
+D/py-minecraft-launcher-lib////
 D/pygame_sdl2////
 D/pyganim////
 D/pysol////

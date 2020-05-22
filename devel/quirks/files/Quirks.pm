@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.963 2020/05/18 16:06:20 kn Exp $
+# $OpenBSD: Quirks.pm,v 1.965 2020/05/21 14:29:02 solene Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1572,6 +1572,8 @@ my $obsolete_reason = {
 	'nipper' => 23,
 	'bg5pdf' => 13,
 	'pdflib' => 23,
+	'pop3gwd' => 3,
+	'tircd' => 3,
 };
 
 # reasons for obsolete packages
