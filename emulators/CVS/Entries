@@ -1,4 +1,4 @@
-/Makefile/1.103/Thu Mar 12 12:24:44 2020//
+/Makefile/1.104/Fri May 22 21:51:39 2020//
 D/BasiliskII////
 D/advancemame////
 D/atari800////
@@ -39,6 +39,7 @@ D/pcsxr////
 D/ppsspp////
 D/qemu////
 D/retroarch////
+D/sameboy////
 D/simh////
 D/snes9x////
 D/spim////

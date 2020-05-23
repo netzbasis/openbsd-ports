@@ -1,6 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.14 2020/04/24 13:14:09 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.16 2020/05/22 09:56:17 rsadowski Exp $
 @bin bin/qtcreator
 bin/qtcreator.sh
+@lib lib/libAdvancedDockingSystem.so.${LIBAdvancedDockingSystem_VERSION}
 @lib lib/libAggregation.so.${LIBAggregation_VERSION}
 @lib lib/libCPlusPlus.so.${LIBCPlusPlus_VERSION}
 @lib lib/libClangsupport.so.${LIBClangsupport_VERSION}
@@ -1046,6 +1047,7 @@ share/qtcreator/templates/wizards/qtquickstyleicons/universal-light@2x.png
 share/qtcreator/themes/
 share/qtcreator/themes/dark.creatortheme
 share/qtcreator/themes/default.creatortheme
+share/qtcreator/themes/design-light.creatortheme
 share/qtcreator/themes/design.creatortheme
 share/qtcreator/themes/flat-dark.creatortheme
 share/qtcreator/themes/flat-light.creatortheme

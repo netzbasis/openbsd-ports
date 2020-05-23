@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2020/05/18 09:22:23 kn Exp $
+# $OpenBSD: Makefile,v 1.4 2020/05/22 15:23:37 kn Exp $
 
 PORTROACH=		limit:^6
 
-VERSION=		6.14.0
-REVISION=		0
+VERSION=		6.15.0
 
 RUN_DEPENDS+=		databases/ruby-hiera3,${MODRUBY_FLAVOR} \
 			devel/ruby-gettext-setup,${MODRUBY_FLAVOR}>=0.28,<1 \
@@ -24,7 +23,7 @@ pre-install:
 		${WRKSRC}/lib/puppet/defaults.rb
 
 do-install:
-	@cd ${WRKSRC} && ${ALL_FAKE_FLAGS} ${RUBY} install.rb \
+	@cd ${WRKSRC} && ${FAKE_FLAGS} ${RUBY} install.rb \
 		--vardir=${LOCALSTATEDIR}/db/puppet/cache/ \
 		--rundir=${LOCALSTATEDIR}/run/puppetlabs/ \
                 --localedir=${TRUEPREFIX}/${MODRUBY_SITEDIR}/puppet/locales/

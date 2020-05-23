@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.16 2020/02/08 13:10:01 jasper Exp $
+# $OpenBSD: Makefile,v 1.18 2020/05/22 07:59:40 jasper Exp $
 
-BROKEN =		update requires QT5 webengine (not ported)
 COMMENT =		keyboard-focused browser with a minimal GUI
 
-MODPY_EGG_VERSION =	0.11.1
+MODPY_EGG_VERSION =	1.11.1
 DISTNAME =		qutebrowser-${MODPY_EGG_VERSION}
-REVISION =		3
+REVISION =		0
 
 HOMEPAGE =		https://www.qutebrowser.org/
 
@@ -20,17 +19,19 @@ MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
 
 RUN_DEPENDS =		devel/desktop-file-utils \
+			devel/py-attrs${MODPY_FLAVOR} \
 			textproc/py-cssutils${MODPY_FLAVOR} \
 			textproc/py-PEG2${MODPY_FLAVOR} \
 			textproc/py-pygments${MODPY_FLAVOR} \
 			textproc/py-yaml${MODPY_FLAVOR} \
 			x11/gtk+3,-guic \
 			x11/py-qt5${MODPY_FLAVOR} \
-			www/py-jinja2${MODPY_FLAVOR}
+			www/py-jinja2${MODPY_FLAVOR} \
+			www/py-qtwebengine${MODPY_FLAVOR}
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/applications/
-	${INSTALL_DATA} ${WRKSRC}/qutebrowser.desktop ${PREFIX}/share/applications/
+	${INSTALL_DATA} ${WRKSRC}/misc/org.qutebrowser.qutebrowser.desktop ${PREFIX}/share/applications/
 	${INSTALL_DATA_DIR} ${PREFIX}/share/pixmaps/qutebrowser/
 	${INSTALL_DATA} ${WRKSRC}/icons/*.{ico,xpm} ${PREFIX}/share/pixmaps/qutebrowser/
 .for s in 16 24 32 48 64 96 128 256 512

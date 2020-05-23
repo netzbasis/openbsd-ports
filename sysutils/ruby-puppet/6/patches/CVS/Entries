@@ -1,11 +1,10 @@
-/patch-lib_puppet_defaults_rb/1.1.1.1/Mon May 18 08:59:00 2020//
+/patch-lib_puppet_defaults_rb/1.2/Fri May 22 15:23:37 2020//
 /patch-lib_puppet_gettext_config_rb/1.1.1.1/Mon May 18 08:59:00 2020//
-/patch-lib_puppet_provider_package_gem_rb/1.2/Mon May 18 09:11:42 2020//
-/patch-lib_puppet_provider_package_openbsd_rb/1.2/Mon May 18 09:04:24 2020//
-/patch-lib_puppet_provider_package_pip3_rb/1.1.1.1/Mon May 18 08:59:00 2020//
-/patch-lib_puppet_provider_package_pip_rb/1.1.1.1/Mon May 18 08:59:00 2020//
+/patch-lib_puppet_provider_package_gem_rb/1.3/Fri May 22 15:23:37 2020//
+/patch-lib_puppet_provider_package_openbsd_rb/1.3/Fri May 22 15:23:37 2020//
+/patch-lib_puppet_provider_package_pip3_rb/1.2/Fri May 22 15:23:37 2020//
+/patch-lib_puppet_provider_package_pip_rb/1.2/Fri May 22 15:23:37 2020//
 /patch-lib_puppet_provider_service_openbsd_rb/1.2/Mon May 18 09:07:47 2020//
 /patch-lib_puppet_reference_configuration_rb/1.1.1.1/Mon May 18 08:59:00 2020//
-/patch-lib_puppet_type_package_rb/1.1.1.1/Mon May 18 08:59:00 2020//
 /patch-lib_puppet_util_run_mode_rb/1.1.1.1/Mon May 18 08:59:00 2020//
 D
