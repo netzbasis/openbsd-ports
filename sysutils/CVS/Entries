@@ -1,4 +1,4 @@
-/Makefile/1.567/Tue May 19 15:34:56 2020//
+/Makefile/1.568/Sun May 24 20:04:05 2020//
 D/accountsservice////
 D/amazon-ecs-cli////
 D/amazon-ssm-agent////
@@ -167,6 +167,7 @@ D/logstash////
 D/logtail////
 D/loki////
 D/lookat////
+D/lr////
 D/lscpu////
 D/lsyncd////
 D/mac-robber////
