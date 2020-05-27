@@ -16,6 +16,7 @@
 /patch-Modules_FindWish_cmake/1.6/Wed Aug 21 05:47:40 2019//
 /patch-Modules_FindXMLRPC_cmake/1.9/Wed Aug 21 05:47:40 2019//
 /patch-Modules_Platform_OpenBSD_cmake/1.16/Mon May 25 05:12:00 2020//
+/patch-Modules_Qt4ConfigDependentSettings_cmake/1.14/Tue May 26 15:15:09 2020//
 /patch-Source_cmArchiveWrite_cxx/1.5/Mon May 25 05:12:00 2020//
 /patch-Source_cmComputeLinkInformation_cxx/1.25/Mon May 25 05:12:00 2020//
 /patch-Source_cmComputeLinkInformation_h/1.6/Mon May 25 05:12:00 2020//
