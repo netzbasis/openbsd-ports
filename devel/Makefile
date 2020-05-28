@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1973 2020/05/19 15:34:55 jeremy Exp $
+# $OpenBSD: Makefile,v 1.1976 2020/05/27 13:44:50 stsp Exp $
 
      SUBDIR =
      SUBDIR += 64tass
@@ -1301,6 +1301,7 @@
      SUBDIR += ptlib
      SUBDIR += pudb
      SUBDIR += pudb,python3
+     SUBDIR += py3c
      SUBDIR += pycdc
      SUBDIR += pycharm
      SUBDIR += py-Checker
@@ -1417,6 +1418,7 @@
      SUBDIR += py-decorator
      SUBDIR += py-decorator,python3
      SUBDIR += py-decoratortools
+     SUBDIR += py-deprecation,python3
      SUBDIR += py-dispatcher
      SUBDIR += py-dispatcher,python3
      SUBDIR += py-distutils-extra
@@ -1450,6 +1452,7 @@
      SUBDIR += py-fields,python3
      SUBDIR += py-filebytes
      SUBDIR += py-filebytes,python3
+     SUBDIR += py-filetype,python3
      SUBDIR += py-fixtures
      SUBDIR += py-fixtures,python3
      SUBDIR += py-flaky

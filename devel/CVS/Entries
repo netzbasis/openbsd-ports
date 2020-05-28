@@ -1,4 +1,4 @@
-/Makefile/1.1973/Tue May 19 15:34:55 2020//
+/Makefile/1.1976/Wed May 27 13:44:50 2020//
 D/64tass////
 D/ElectricFence////
 D/ORBit2////
@@ -1331,6 +1331,7 @@ D/py-curtsies////
 D/py-dateutil////
 D/py-decorator////
 D/py-decoratortools////
+D/py-deprecation////
 D/py-dispatcher////
 D/py-distutils-extra////
 D/py-docopt////
@@ -1351,6 +1352,7 @@ D/py-fastimport////
 D/py-faulthandler////
 D/py-fields////
 D/py-filebytes////
+D/py-filetype////
 D/py-fixtures////
 D/py-flaky////
 D/py-flexmock////
@@ -1535,6 +1537,7 @@ D/py-zopecomponent////
 D/py-zopeevent////
 D/py-zopeinterface////
 D/py-zopetesting////
+D/py3c////
 D/pycdc////
 D/pycharm////
 D/pyflakes////
