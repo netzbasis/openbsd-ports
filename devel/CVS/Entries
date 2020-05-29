@@ -1,4 +1,4 @@
-/Makefile/1.1976/Wed May 27 13:44:50 2020//
+/Makefile/1.1977/Thu May 28 21:17:29 2020//
 D/64tass////
 D/ElectricFence////
 D/ORBit2////
@@ -1575,6 +1575,7 @@ D/ruby-bundler////
 D/ruby-cicphash////
 D/ruby-colorator////
 D/ruby-colored////
+D/ruby-colored2////
 D/ruby-colorize////
 D/ruby-commander////
 D/ruby-concurrent-ruby////

@@ -1,4 +1,4 @@
-/Makefile/1.657/Tue May 19 15:34:56 2020//
+/Makefile/1.658/Thu May 28 08:12:45 2020//
 D/2bwm////
 D/Xaw3d////
 D/XawMu////
@@ -109,7 +109,6 @@ D/gtkhotkey////
 D/gtksourceview////
 D/gtksourceview3////
 D/gtksourceview4////
-D/gtksourceviewmm3////
 D/gxmessage////
 D/herbstluftwm////
 D/hicolor-icon-theme////
