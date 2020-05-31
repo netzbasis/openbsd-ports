@@ -58,7 +58,7 @@
 /patch-base_threading_platform_thread_posix_cc/1.14/Sat Sep 28 16:29:40 2019//
 /patch-base_threading_thread_task_runner_handle_cc/1.8/Sun Dec 15 12:03:46 2019//
 /patch-base_trace_event_malloc_dump_provider_cc/1.14/Fri Apr 10 18:51:30 2020//
-/patch-base_trace_event_malloc_dump_provider_h/1.1/Fri May 29 20:03:22 2020//
+/patch-base_trace_event_memory_dump_manager_cc/1.1/Sat May 30 05:39:15 2020//
 /patch-base_trace_event_process_memory_dump_cc/1.13/Sun Mar 24 12:24:44 2019//
 /patch-base_trace_event_process_memory_dump_h/1.6/Mon Jul 30 15:28:28 2018//
 /patch-build_config_BUILDCONFIG_gn/1.15/Fri May 10 21:55:39 2019//
