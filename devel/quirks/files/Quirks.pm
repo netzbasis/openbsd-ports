@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.968 2020/05/29 22:51:12 juanfra Exp $
+# $OpenBSD: Quirks.pm,v 1.970 2020/05/31 19:17:26 kili Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -424,6 +424,7 @@ my $stem_extensions = {
 	'py-dulwich' => 'py3-dulwich',
 	'py-cups' => 'py3-cups',
 	'py-fastimport' => 'py3-fastimport',
+	'py-impacket' => 'py3-impacket',
 };
 
 my $obsolete_reason = {
@@ -1576,6 +1577,12 @@ my $obsolete_reason = {
 	'pop3gwd' => 3,
 	'tircd' => 3,
 	'gtksourceviewmm3' => 6,
+	'hpodder' => 3,
+	'hs-HDBC' => 5,
+	'hs-HDBC-sqlite3' => 5,
+	'hs-ConfigFile' => 5,
+	'hs-MissingH' => 5,
+	'hs-HaXml' => 5,
 };
 
 # reasons for obsolete packages

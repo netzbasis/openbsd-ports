@@ -1,4 +1,5 @@
-/patch-configure/1.19/Mon Sep 30 11:44:18 2019//
+/patch-aclocal_m4/1.3/Sun May 31 19:25:48 2020//
+/patch-configure_ac/1.3/Sun May 31 19:25:48 2020//
 /patch-ghc_mk/1.14/Mon Sep 30 11:44:18 2019//
 /patch-libraries_Cabal_Cabal_Distribution_Simple_Program_Strip_hs/1.3/Mon Jan 22 00:42:30 2018//
 /patch-libraries_process_include_runProcess_h/1.4/Mon Jan 22 00:42:30 2018//

@@ -1,4 +1,4 @@
-/Makefile/1.632/Tue May 19 15:34:56 2020//
+/Makefile/1.634/Sun May 31 20:35:52 2020//
 D/TclXML////
 D/antiword////
 D/apertium////
@@ -68,7 +68,6 @@ D/hevea////
 D/hfst////
 D/hgrep////
 D/highlight////
-D/hs-HaXml////
 D/hs-attoparsec////
 D/hs-bytestring-show////
 D/hs-json////
@@ -375,6 +374,7 @@ D/py-numpydoc////
 D/py-odfpy////
 D/py-ofxparse////
 D/py-pandocfilters////
+D/py-patiencediff////
 D/py-pdf////
 D/py-pdfminer////
 D/py-podcastparser////

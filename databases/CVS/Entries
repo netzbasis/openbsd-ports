@@ -1,4 +1,4 @@
-/Makefile/1.395/Fri May 22 19:58:14 2020//
+/Makefile/1.396/Sun May 31 19:03:43 2020//
 D/architect////
 D/barman////
 D/citus////
@@ -8,8 +8,6 @@ D/freetds////
 D/gdbm////
 D/gnats////
 D/gq////
-D/hs-HDBC////
-D/hs-HDBC-sqlite3////
 D/influxdb////
 D/iodbc////
 D/jxplorer////

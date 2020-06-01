@@ -1,4 +1,4 @@
-/Makefile/1.1206/Thu May 21 14:27:54 2020//
+/Makefile/1.1207/Sun May 31 18:57:39 2020//
 D/adns////
 D/adsuck////
 D/aggregate////
@@ -123,7 +123,6 @@ D/haproxy////
 D/hexchat////
 D/honeyd////
 D/hping////
-D/hpodder////
 D/hs-HTTP////
 D/hs-hostname////
 D/httptunnel////

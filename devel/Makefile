@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1978 2020/05/29 22:51:12 juanfra Exp $
+# $OpenBSD: Makefile,v 1.1981 2020/05/31 19:29:32 sthen Exp $
 
      SUBDIR =
      SUBDIR += 64tass
@@ -199,10 +199,8 @@
      SUBDIR += harfbuzz
      SUBDIR += hasktags
      SUBDIR += help2man
-     SUBDIR += hs-ConfigFile
      SUBDIR += hs-FindBin
      SUBDIR += hs-HUnit
-     SUBDIR += hs-MissingH
      SUBDIR += hs-QuickCheck
      SUBDIR += hs-ansi-terminal
      SUBDIR += hs-ansi-wl-pprint
@@ -1410,6 +1408,7 @@
      SUBDIR += py-coveralls,python3
      SUBDIR += py-cparser
      SUBDIR += py-cparser,python3
+     SUBDIR += py-crc32c,python3
      SUBDIR += py-cstruct
      SUBDIR += py-cstruct,python3
      SUBDIR += py-curtsies,python3
@@ -1929,6 +1928,7 @@
      SUBDIR += stm32loader
      SUBDIR += stp
      SUBDIR += subversion
+     SUBDIR += subversion,python3
      SUBDIR += swig
      SUBDIR += t1lib
      SUBDIR += tbb

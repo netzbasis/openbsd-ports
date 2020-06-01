@@ -1,4 +1,4 @@
-/Makefile/1.1978/Fri May 29 22:51:12 2020//
+/Makefile/1.1981/Sun May 31 19:29:32 2020//
 D/64tass////
 D/ElectricFence////
 D/ORBit2////
@@ -195,10 +195,8 @@ D/happy////
 D/harfbuzz////
 D/hasktags////
 D/help2man////
-D/hs-ConfigFile////
 D/hs-FindBin////
 D/hs-HUnit////
-D/hs-MissingH////
 D/hs-QuickCheck////
 D/hs-ansi-terminal////
 D/hs-ansi-wl-pprint////
@@ -1326,6 +1324,7 @@ D/py-country////
 D/py-coverage////
 D/py-coveralls////
 D/py-cparser////
+D/py-crc32c////
 D/py-cstruct////
 D/py-curtsies////
 D/py-dateutil////
