@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.104 2020/05/15 10:23:05 sthen Exp $
+# $OpenBSD: Makefile,v 1.106 2020/06/01 20:56:22 sthen Exp $
 
 COMMENT =	auto-discovering network management/monitoring system
 
 GH_ACCOUNT =	librenms
 GH_PROJECT =	librenms
-GH_TAGNAME =	1.63
+GH_TAGNAME =	1.64
 DISTFILES =	librenms-${GH_TAGNAME}.tar.gz librenms-vendor-${GH_TAGNAME}.tar.xz:0
 EPOCH =		0
 REVISION =	0
@@ -23,13 +23,12 @@ MASTER_SITES0 =	https://spacehopper.org/mirrors/
 MODULES =	lang/php \
 		lang/python
 MODPY_BUILDDEP = No
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_3}
 
 # librenms-service.py (currently in beta) will want py3 and the following:
 #		databases/py-redis${MODPY_FLAVOR}	# optional
 #		sysutils/py-dotenv${MODPY_FLAVOR}	# not ported yet
-# but (at least as of 1.43), the *-wrapper.py scripts don't support py3 yet
-
-RUN_DEPENDS =	databases/py-mysqlclient${MODPY_FLAVOR} \
+RUN_DEPENDS =	databases/py-pymysql${MODPY_FLAVOR} \
 		lang/php/${MODPHP_VERSION},-curl \
 		lang/php/${MODPHP_VERSION},-gd \
 		lang/php/${MODPHP_VERSION},-mysqli \
