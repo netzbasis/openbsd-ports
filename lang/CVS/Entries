@@ -1,4 +1,4 @@
-/Makefile/1.242/Tue Feb 25 02:38:04 2020//
+/Makefile/1.243/Tue Jun  2 14:09:16 2020//
 D/STk////
 D/a60////
 D/abcl////
@@ -64,6 +64,7 @@ D/lua////
 D/luajit////
 D/lucee////
 D/mawk////
+D/microscheme////
 D/moarvm////
 D/mono////
 D/mruby////
