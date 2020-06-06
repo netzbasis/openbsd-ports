@@ -1,4 +1,4 @@
-/Makefile/1.569/Thu Jun  4 07:24:06 2020//
+/Makefile/1.570/Fri Jun  5 13:35:55 2020//
 D/accountsservice////
 D/amazon-ecs-cli////
 D/amazon-ssm-agent////
@@ -124,6 +124,7 @@ D/iwatch////
 D/jefferson////
 D/krename////
 D/ktsuss////
+D/kubectl////
 D/libburn////
 D/libesedb////
 D/libevt////
