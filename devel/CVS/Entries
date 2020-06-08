@@ -1,4 +1,4 @@
-/Makefile/1.1981/Sun May 31 19:29:32 2020//
+/Makefile/1.1982/Sun Jun  7 23:30:33 2020//
 D/64tass////
 D/ElectricFence////
 D/ORBit2////
@@ -443,6 +443,7 @@ D/mono-notify////
 D/monotone////
 D/mowgli////
 D/mpfr////
+D/msbuild////
 D/msgpack////
 D/msp430////
 D/mspdebug////

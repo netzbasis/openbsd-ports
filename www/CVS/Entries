@@ -1,4 +1,4 @@
-/Makefile/1.963/Sat May 30 17:33:36 2020//
+/Makefile/1.964/Sun Jun  7 23:29:33 2020//
 D/ajaxterm////
 D/analog////
 D/ap2-mod_dnssd////
@@ -58,6 +58,7 @@ D/hugo////
 D/icedtea-web////
 D/igal////
 D/igal2////
+D/ipynb-py-convert////
 D/iridium////
 D/japana////
 D/jesred////

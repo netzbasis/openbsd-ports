@@ -1,4 +1,4 @@
-/Makefile/1.1207/Sun May 31 18:57:39 2020//
+/Makefile/1.1208/Sun Jun  7 11:23:03 2020//
 D/adns////
 D/adsuck////
 D/aggregate////
@@ -652,6 +652,7 @@ D/tcptrace////
 D/tcptraceroute////
 D/telegram-purple////
 D/telepathy////
+D/termshark////
 D/thcrut////
 D/thingsd////
 D/tinc////

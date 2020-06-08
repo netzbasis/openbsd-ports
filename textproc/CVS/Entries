@@ -1,4 +1,4 @@
-/Makefile/1.634/Sun May 31 20:35:52 2020//
+/Makefile/1.635/Sun Jun  7 09:05:24 2020//
 D/TclXML////
 D/antiword////
 D/apertium////
@@ -24,6 +24,7 @@ D/clo++////
 D/cloc////
 D/clucene////
 D/cmark////
+D/codesearch////
 D/codespell////
 D/crossfire////
 D/dblatex////
