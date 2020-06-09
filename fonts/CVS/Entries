@@ -1,4 +1,4 @@
-/Makefile/1.69/Fri May 22 21:57:52 2020//
+/Makefile/1.70/Tue Jun  9 03:42:44 2020//
 D/abyssinica////
 D/adobe-fonts////
 D/alkalami////
@@ -39,6 +39,7 @@ D/hanazono////
 D/hermit-font////
 D/ibm-plex////
 D/inconsolata-font////
+D/inconsolata-new////
 D/inter////
 D/intlfonts////
 D/iosevka-fonts////

@@ -1,4 +1,4 @@
-/Makefile/1.1982/Sun Jun  7 23:30:33 2020//
+/Makefile/1.1984/Mon Jun  8 11:19:22 2020//
 D/64tass////
 D/ElectricFence////
 D/ORBit2////
@@ -1411,6 +1411,7 @@ D/py-modulegraph////
 D/py-monotonic////
 D/py-more-itertools////
 D/py-mox////
+D/py-mox3////
 D/py-mulpyplexer////
 D/py-munch////
 D/py-mxDateTime////
@@ -1544,7 +1545,6 @@ D/pyflakes////
 D/pygame////
 D/pylint////
 D/pyrex////
-D/pysvn////
 D/pyusb////
 D/qbs////
 D/qgit////

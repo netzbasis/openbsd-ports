@@ -1,4 +1,4 @@
-/Makefile/1.579/Sat May 23 21:56:21 2020//
+/Makefile/1.580/Mon Jun  8 10:58:33 2020//
 D/ADMsnmp////
 D/ROPgadget////
 D/acme-client////
@@ -242,6 +242,7 @@ D/pgp5////
 D/pgpdump////
 D/pidgin-otr////
 D/pinentry////
+D/pivy////
 D/pixiewps////
 D/plaso////
 D/polarssl////

@@ -1,4 +1,4 @@
-/Makefile/1.10/Tue Sep 22 07:02:39 2015//
+/Makefile/1.11/Mon Jun  8 11:05:59 2020//
 /Makefile.inc/1.36/Sat Jul 13 20:32:35 2019//
 D/core////
 D/plugins-bad////
@@ -7,4 +7,3 @@ D/plugins-ffmpeg////
 D/plugins-gl////
 D/plugins-good////
 D/plugins-ugly////
-D/py-gstreamer////
