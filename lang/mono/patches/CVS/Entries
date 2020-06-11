@@ -1,5 +1,6 @@
 /patch-configure_ac/1.10/Mon Apr  6 15:11:11 2020//
-/patch-external_corefx_src_Common_src_CoreLib_System_Collections_Generic_List_cs/1.1/Mon Nov 11 17:05:02 2019//
+/patch-external_corefx_src_Common_src_CoreLib_System_Collections_Generic_Dictionary_cs/1.1/Wed Jun 10 22:11:15 2020//
+/patch-external_corefx_src_Common_src_CoreLib_System_Collections_Generic_List_cs/1.2/Wed Jun 10 22:11:15 2020//
 /patch-external_corefx_src_Native_Unix_System_Native_pal_errno_c/1.1/Sun Mar 31 18:28:39 2019//
 /patch-external_corefx_src_Native_Unix_System_Native_pal_io_c/1.3/Mon Apr  6 15:11:11 2020//
 /patch-external_corefx_src_System_Runtime_Extensions_src_System_Environment_Unix_cs/1.1/Thu Mar 29 19:33:18 2018//

@@ -1,6 +1,6 @@
-/Makefile/1.282/Thu May 14 15:19:44 2020//
+/Makefile/1.283/Wed Jun 10 07:20:04 2020//
 /Makefile.inc/1.15/Thu Apr 13 07:38:44 2017//
-/gnome.port.mk/1.116/Thu May 28 17:43:31 2020//
+/gnome.port.mk/1.117/Wed Jun 10 07:19:20 2020//
 D/accerciser////
 D/adwaita-icon-theme////
 D/aisleriot////
@@ -27,7 +27,6 @@ D/desktop////
 D/devel-docs////
 D/devhelp////
 D/dictionary////
-D/doc-utils////
 D/documents////
 D/eog////
 D/eog-plugins////

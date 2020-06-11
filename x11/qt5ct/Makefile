@@ -1,9 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2019/10/03 16:30:45 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.9 2020/06/11 04:39:41 rsadowski Exp $
 
 COMMENT =	Qt5 configuration tool
 
-DISTNAME =	qt5ct-0.41
-EXTRACT_SUFX =	.tar.bz2
+DISTNAME =	qt5ct-1.0
 
 CATEGORIES =	x11
 
@@ -12,12 +11,15 @@ MAINTAINER =	Rafael Sadowski <rsadowski@openbsd.org>
 # BSD
 PERMIT_PACKAGE=	Yes
 
-MODULES =	devel/qmake x11/qt5
-
-MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=qt5ct/}
-RUN_DEPENDS +=	devel/desktop-file-utils
-
 WANTLIB += ${COMPILER_LIBCXX} GL Qt5Concurrent Qt5Core Qt5DBus
 WANTLIB += Qt5Gui Qt5Widgets c m
+
+MASTER_SITES =	${MASTER_SITE_SOURCEFORGE:=qt5ct/}
+EXTRACT_SUFX =	.tar.bz2
+
+MODULES =	devel/qmake \
+		x11/qt5
+
+RUN_DEPENDS +=	devel/desktop-file-utils
 
 .include <bsd.port.mk>

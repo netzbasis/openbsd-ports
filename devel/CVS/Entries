@@ -1,4 +1,4 @@
-/Makefile/1.1985/Tue Jun  9 14:09:57 2020//
+/Makefile/1.1986/Wed Jun 10 19:56:29 2020//
 D/64tass////
 D/ElectricFence////
 D/ORBit2////
@@ -1573,7 +1573,6 @@ D/ruby-arrayfields////
 D/ruby-bundler////
 D/ruby-cicphash////
 D/ruby-colorator////
-D/ruby-colored////
 D/ruby-colored2////
 D/ruby-colorize////
 D/ruby-commander////

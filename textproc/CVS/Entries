@@ -1,4 +1,4 @@
-/Makefile/1.635/Sun Jun  7 09:05:24 2020//
+/Makefile/1.636/Wed Jun 10 07:21:22 2020//
 D/TclXML////
 D/antiword////
 D/apertium////
@@ -415,7 +415,6 @@ D/py-xmldiff////
 D/py-xmltodict////
 D/py-yaml////
 D/raptor////
-D/rarian////
 D/rasqal////
 D/redland////
 D/redland-bindings////
