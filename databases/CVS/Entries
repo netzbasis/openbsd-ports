@@ -1,4 +1,4 @@
-/Makefile/1.398/Tue Jun  9 18:42:59 2020//
+/Makefile/1.401/Fri Jun 12 11:29:08 2020//
 D/architect////
 D/barman////
 D/citus////
@@ -112,6 +112,7 @@ D/p5-SQL-ReservedWords////
 D/p5-SQL-Statement////
 D/p5-SQL-Translator////
 D/p5-Sort-SQL////
+D/p5-TAP-Parser-SourceHandler-pgTAP////
 D/p5-Tangram////
 D/p5-Tie-DBI////
 D/p5-ldap////
@@ -130,6 +131,7 @@ D/pgfouine////
 D/pgloader////
 D/pgmodeler////
 D/pgpool////
+D/pgtap////
 D/pgtcl////
 D/pkglocatedb////
 D/ports-readmes////
@@ -147,6 +149,7 @@ D/py-carbon////
 D/py-flask-sqlalchemy////
 D/py-influxdb////
 D/py-ldap////
+D/py-ldap0////
 D/py-ldap3////
 D/py-minidb////
 D/py-mongo////
@@ -211,5 +214,6 @@ D/tdbc-sqlite3////
 D/tinycdb////
 D/tokyocabinet////
 D/virtuoso////
+D/web2ldap////
 D/xapian-bindings////
 D/xapian-core////

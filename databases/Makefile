@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.398 2020/06/09 18:42:59 jasper Exp $
+# $OpenBSD: Makefile,v 1.401 2020/06/12 11:29:08 landry Exp $
 
      SUBDIR =
      SUBDIR += architect
@@ -117,6 +117,7 @@
      SUBDIR += p5-SQL-Statement
      SUBDIR += p5-SQL-Translator
      SUBDIR += p5-Sort-SQL
+     SUBDIR += p5-TAP-Parser-SourceHandler-pgTAP
      SUBDIR += p5-Tangram
      SUBDIR += p5-Tie-DBI
      SUBDIR += p5-ldap
@@ -137,6 +138,7 @@
      SUBDIR += pgloader
      SUBDIR += pgmodeler
      SUBDIR += pgpool
+     SUBDIR += pgtap
      SUBDIR += pgtcl
      SUBDIR += pkglocatedb
      SUBDIR += ports-readmes
@@ -158,6 +160,7 @@
      SUBDIR += py-influxdb,python3
      SUBDIR += py-ldap
      SUBDIR += py-ldap,python3
+     SUBDIR += py-ldap0,python3
      SUBDIR += py-ldap3
      SUBDIR += py-ldap3,python3
      SUBDIR += py-minidb,python3
@@ -245,6 +248,7 @@
      SUBDIR += tinycdb
      SUBDIR += tokyocabinet
      SUBDIR += virtuoso
+     SUBDIR += web2ldap
      SUBDIR += xapian-bindings
      SUBDIR += xapian-core
 
