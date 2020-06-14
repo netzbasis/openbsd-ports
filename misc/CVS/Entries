@@ -1,4 +1,4 @@
-/Makefile/1.194/Sun Mar 22 17:44:52 2020//
+/Makefile/1.195/Sat Jun 13 10:54:28 2020//
 D/WordGenerator////
 D/astrolog////
 D/bible-kjv////
@@ -34,7 +34,6 @@ D/gone////
 D/gpsd////
 D/gramps////
 D/gtk3mm-documentation////
-D/gutenpy////
 D/hfsplus////
 D/hwdata////
 D/ietf-cli////

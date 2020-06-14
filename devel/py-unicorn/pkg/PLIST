@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.3 2019/06/01 20:00:01 kn Exp $
+@comment $OpenBSD: PLIST,v 1.5 2020/06/13 10:12:54 jasper Exp $
+@conflict py-unicorn-*
+@pkgpath devel/py-unicorn
 lib/python${MODPY_VERSION}/site-packages/unicorn/
 lib/python${MODPY_VERSION}/site-packages/unicorn-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
 lib/python${MODPY_VERSION}/site-packages/unicorn-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
@@ -25,12 +27,12 @@ lib/python${MODPY_VERSION}/site-packages/unicorn/include/unicorn/arm.h
 lib/python${MODPY_VERSION}/site-packages/unicorn/include/unicorn/arm64.h
 lib/python${MODPY_VERSION}/site-packages/unicorn/include/unicorn/m68k.h
 lib/python${MODPY_VERSION}/site-packages/unicorn/include/unicorn/mips.h
+lib/python${MODPY_VERSION}/site-packages/unicorn/include/unicorn/platform.h
 lib/python${MODPY_VERSION}/site-packages/unicorn/include/unicorn/sparc.h
 lib/python${MODPY_VERSION}/site-packages/unicorn/include/unicorn/unicorn.h
 lib/python${MODPY_VERSION}/site-packages/unicorn/include/unicorn/x86.h
 lib/python${MODPY_VERSION}/site-packages/unicorn/lib/
-lib/python${MODPY_VERSION}/site-packages/unicorn/lib/libunicorn.a
-lib/python${MODPY_VERSION}/site-packages/unicorn/lib/libunicorn.so
+@so lib/python${MODPY_VERSION}/site-packages/unicorn/lib/libunicorn.so
 lib/python${MODPY_VERSION}/site-packages/unicorn/m68k_const.py
 lib/python${MODPY_VERSION}/site-packages/unicorn/mips_const.py
 lib/python${MODPY_VERSION}/site-packages/unicorn/sparc_const.py

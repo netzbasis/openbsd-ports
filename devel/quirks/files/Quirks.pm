@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.981 2020/06/12 05:59:19 rsadowski Exp $
+# $OpenBSD: Quirks.pm,v 1.983 2020/06/13 10:54:39 jasper Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -429,6 +429,7 @@ my $stem_extensions = {
 	'py-libvirt' => 'py3-libvirt',
 	'py-libxml' => 'py3-libxml',
 	'py-rsa' => 'py3-rsa',
+	'py-unicorn' => 'py3-unicorn',
 };
 
 my $obsolete_reason = {
@@ -1597,6 +1598,8 @@ my $obsolete_reason = {
 	'rarian' => 3,
 	'qtcanvas3d' => 3,
 	'qtcanvas3d-examples' => 3,
+	'gtkparasite' => 3,
+	'gutenpy' => 3,
 };
 
 # reasons for obsolete packages

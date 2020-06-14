@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1986 2020/06/10 19:56:29 sebastia Exp $
+# $OpenBSD: Makefile,v 1.1989 2020/06/13 16:22:52 rsadowski Exp $
 
      SUBDIR =
      SUBDIR += 64tass
@@ -37,7 +37,7 @@
      SUBDIR += autoconf-archive
      SUBDIR += autogen
      SUBDIR += automake
-     SUBDIR += automoc
+     #SUBDIR += automoc
      SUBDIR += avr
      SUBDIR += avr32
      SUBDIR += avrdude
@@ -190,7 +190,6 @@
      SUBDIR += gsl
      SUBDIR += gsoap
      SUBDIR += gtest
-     SUBDIR += gtkparasite
      SUBDIR += guilib
      SUBDIR += gwenhywfar
      SUBDIR += gyp
@@ -1722,7 +1721,6 @@
      SUBDIR += py-tzlocal,python3
      SUBDIR += py-uncompyle6
      SUBDIR += py-uncompyle6,python3
-     SUBDIR += py-unicorn
      SUBDIR += py-unicorn,python3
      SUBDIR += py-unittest2
      SUBDIR += py-urwid

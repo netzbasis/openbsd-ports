@@ -1,4 +1,4 @@
-/Makefile/1.1986/Wed Jun 10 19:56:29 2020//
+/Makefile/1.1989/Sat Jun 13 16:22:52 2020//
 D/64tass////
 D/ElectricFence////
 D/ORBit2////
@@ -186,7 +186,6 @@ D/gsettings-desktop-schemas////
 D/gsl////
 D/gsoap////
 D/gtest////
-D/gtkparasite////
 D/guilib////
 D/gwenhywfar////
 D/gyp////
