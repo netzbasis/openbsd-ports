@@ -1,4 +1,4 @@
-/Makefile/1.90/Sat Jun 13 16:22:53 2020//
+/Makefile/1.91/Sun Jun 14 19:23:09 2020//
 D/akonadi////
 D/aqbanking////
 D/attica////
@@ -9,7 +9,6 @@ D/davical////
 D/deskzilla////
 D/devtodo////
 D/fet////
-D/gbirthday////
 D/glabels////
 D/gnucash////
 D/grisbi////
@@ -32,6 +31,7 @@ D/osmo////
 D/p5-Business-Tax-VAT-Validation////
 D/projectlibre////
 D/py-carddav////
+D/qbirthday////
 D/radicale////
 D/radicale2////
 D/rednotebook////

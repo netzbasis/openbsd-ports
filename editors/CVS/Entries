@@ -1,4 +1,4 @@
-/Makefile/1.138/Sat Feb 29 08:17:58 2020//
+/Makefile/1.139/Sun Jun 14 13:07:23 2020//
 D/TeXmacs////
 D/abiword////
 D/axe////
@@ -25,6 +25,7 @@ D/ht////
 D/jed////
 D/joe////
 D/jove////
+D/kakoune////
 D/kile////
 D/ktikz////
 D/ldapvi////
