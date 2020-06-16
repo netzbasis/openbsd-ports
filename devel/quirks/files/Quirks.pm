@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.992 2020/06/14 14:24:33 rsadowski Exp $
+# $OpenBSD: Quirks.pm,v 1.994 2020/06/15 19:13:09 naddy Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1710,7 +1710,7 @@ my $obsolete_reason = {
 	'kdenetwork' => 3,
 	'kdenetwork-strigi-analyzers' => 3,
 	'kdepim' => 3,
-	'kdepim-runtim' => 3,e
+	'kdepim-runtim' => 3,
 	'kdepimlibs' => 3,
 	'kdeplasma-addons' => 3,
 	'kdesdk-strigi-analyzers' => 3,
@@ -1747,6 +1747,7 @@ my $obsolete_reason = {
 	'smokekde' => 3,
 	'smokeqt' => 3,
 	'superkaramba' => 3,
+	'gbirthday' => 24,
 };
 
 # reasons for obsolete packages
@@ -1775,6 +1776,7 @@ my @msg = (
 	"upstream recommends to use composer to build a drupal site", #21
 	"the original GeoIP database is end of life; use libmaxminddb/GeoIP2", #22
 	"no longer maintained upstream, became commercial over ten years ago", #23
+	"no longer maintained upstream, suggest qbirthday", #24
 );
 
 # ->is_base_system($handle, $state):
