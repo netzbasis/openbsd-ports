@@ -1,4 +1,4 @@
-/Makefile/1.195/Sat Jun 13 10:54:28 2020//
+/Makefile/1.196/Tue Jun 16 20:38:02 2020//
 D/WordGenerator////
 D/astrolog////
 D/bible-kjv////
@@ -25,6 +25,7 @@ D/fasd////
 D/feathernotes////
 D/figlet////
 D/findutils////
+D/freeopcua////
 D/ftdi-eeprom////
 D/garmin-utils////
 D/geekcode////
