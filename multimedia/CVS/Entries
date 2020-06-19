@@ -1,4 +1,4 @@
-/Makefile/1.125/Tue May 26 17:06:34 2020//
+/Makefile/1.126/Thu Jun 18 10:31:19 2020//
 D/aom////
 D/assimp////
 D/atomicparsley////
@@ -71,6 +71,7 @@ D/streamdvd////
 D/streamlink////
 D/subrip////
 D/subtitleripper////
+D/svt-av1////
 D/swfmill////
 D/swftools////
 D/synfig////
