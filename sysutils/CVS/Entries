@@ -1,4 +1,4 @@
-/Makefile/1.571/Thu Jun 18 09:50:22 2020//
+/Makefile/1.572/Fri Jun 19 14:52:23 2020//
 D/accountsservice////
 D/amazon-ecs-cli////
 D/amazon-ssm-agent////
@@ -244,6 +244,7 @@ D/pstree////
 D/pv////
 D/py-analyzemft////
 D/py-augeas////
+D/py-consul////
 D/py-croniter////
 D/py-daemon////
 D/py-daemonize////
