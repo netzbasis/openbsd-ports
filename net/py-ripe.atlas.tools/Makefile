@@ -1,16 +1,14 @@
-# $OpenBSD: Makefile,v 1.15 2019/12/01 02:22:12 kmos Exp $
+# $OpenBSD: Makefile,v 1.18 2020/08/01 11:30:36 sthen Exp $
 
 COMMENT =		official command-line client for RIPE Atlas
 
 MODPY_EGG_VERSION =	2.3.0
 DISTNAME =		ripe.atlas.tools-${MODPY_EGG_VERSION}
-REVISION =		0
+REVISION =		3
 
 CATEGORIES =		net
 
 HOMEPAGE =		https://github.com/RIPE-NCC/ripe-atlas-tools
-
-MAINTAINER =		Stuart Henderson <sthen@openbsd.org>
 
 # GPLv3
 PERMIT_PACKAGE =	Yes

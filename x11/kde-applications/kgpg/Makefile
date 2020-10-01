@@ -1,20 +1,19 @@
-# $OpenBSD: Makefile,v 1.2 2020/06/21 17:57:34 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.4 2020/09/07 14:49:19 rsadowski Exp $
 
 COMMENT =	KDE interface to GnuPG
 DISTNAME =	kgpg-${VERSION}
 CATEGORIES =	x11
-REVISION =	0
 
 WANTLIB += ${COMPILER_LIBCXX} KF5AkonadiContact KF5AkonadiCore
 WANTLIB += KF5AkonadiWidgets KF5Archive KF5Auth KF5AuthCore KF5Bookmarks
 WANTLIB += KF5Codecs KF5Completion KF5ConfigCore KF5ConfigGui
 WANTLIB += KF5ConfigWidgets KF5Contacts KF5CoreAddons KF5Crash
 WANTLIB += KF5DBusAddons KF5I18n KF5IconThemes KF5ItemModels KF5ItemViews
-WANTLIB += KF5JobWidgets KF5KIOCore KF5KIOFileWidgets KF5KIOWidgets
-WANTLIB += KF5Notifications KF5Service KF5Solid KF5SonnetUi KF5TextWidgets
-WANTLIB += KF5WidgetsAddons KF5WindowSystem KF5XmlGui Qt5Concurrent
-WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5PrintSupport Qt5Widgets
-WANTLIB += Qt5Xml c m
+WANTLIB += KF5JobWidgets KF5KIOCore KF5KIOFileWidgets KF5KIOGui
+WANTLIB += KF5KIOWidgets KF5Notifications KF5Service KF5Solid
+WANTLIB += KF5SonnetUi KF5TextWidgets KF5WidgetsAddons KF5WindowSystem
+WANTLIB += KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network
+WANTLIB += Qt5PrintSupport Qt5Widgets Qt5Xml c m
 
 MODKDE5_TRANSLATIONS = yes
 MODKDE5_DESKTOP_FILE = yes
@@ -25,7 +24,10 @@ MODKF5_I18N_CONFLICT = yes
 
 MODULES +=	x11/kde-applications
 
-BUILD_DEPENDS =	devel/boost
+BUILD_DEPENDS =	devel/boost \
+		security/gpgme,-qt
+
+RUN_DEPENDS =	security/gpgme
 
 LIB_DEPENDS =	devel/kf5/karchive \
 		devel/kf5/kauth \

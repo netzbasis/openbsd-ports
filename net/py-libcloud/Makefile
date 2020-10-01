@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.33 2020/06/13 08:17:30 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.36 2020/09/21 16:08:49 ajacoutot Exp $
 
 COMMENT=		unified interface for interacting with cloud services
 
-MODPY_EGG_VERSION=	3.1.0
+MODPY_EGG_VERSION=	3.2.0
 DISTNAME=		apache-libcloud-${MODPY_EGG_VERSION}
 PKGNAME=		py-libcloud-${MODPY_EGG_VERSION}
 
@@ -23,7 +23,7 @@ MODPY_SETUPTOOLS=	Yes
 MODPY_PYTEST =		Yes
 
 FLAVORS=		python3
-FLAVOR ?=		python3
+FLAVOR=			python3
 
 BUILD_DEPENDS=		devel/py-test-runner${MODPY_FLAVOR}
 

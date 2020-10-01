@@ -1,4 +1,4 @@
-/Makefile/1.40/Sat Jun 13 16:22:52 2020//
+/Makefile/1.42/Fri Jul  3 13:55:27 2020//
 D/abc////
 D/fritzing////
 D/geda-gaf////
@@ -8,7 +8,6 @@ D/graywolf////
 D/gtkwave////
 D/kicad////
 D/kicad-share////
-D/klogic////
 D/librecad////
 D/magic////
 D/necpp////
@@ -20,6 +19,7 @@ D/opensta////
 D/pcb////
 D/qcad////
 D/qelectrotech////
+D/qflow////
 D/qrouter////
 D/qucs-s////
 D/tkgate////

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/05/31 11:46:47 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2020/08/19 12:25:12 ajacoutot Exp $
 
 COMMENT =	implemention of the crc32c algorithm in hardware
 
@@ -6,6 +6,7 @@ MODPY_EGG_VERSION =	2.0
 
 DISTNAME =	crc32c-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
+REVISION =	0
 
 CATEGORIES =	devel
 
@@ -22,6 +23,6 @@ MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
 
 FLAVORS =	python3
-FLAVOR ?=	python3
+FLAVOR =	python3
 
 .include <bsd.port.mk>

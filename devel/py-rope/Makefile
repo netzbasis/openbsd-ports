@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.11 2020/03/20 11:46:06 mariani Exp $
+# $OpenBSD: Makefile,v 1.13 2020/08/13 03:44:39 mariani Exp $
 
 COMMENT =		refactoring library
 
-MODPY_EGG_VERSION =	0.16.0
+MODPY_EGG_VERSION =	0.17.0
 DISTNAME =		rope-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 
@@ -18,6 +18,7 @@ PERMIT_PACKAGE =	Yes
 MODULES =		lang/python
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
+MODPY_PYTEST =          Yes
 
 FLAVORS =		python3
 FLAVOR =		python3

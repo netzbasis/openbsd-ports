@@ -1,10 +1,4 @@
-/patch-CMakeLists_txt/1.2/Mon Jan 15 23:12:48 2018//
-/patch-kmymoney_dialogs_kexportdlg_cpp/1.1/Thu Jan 24 22:39:51 2019//
-/patch-kmymoney_dialogs_settings_CMakeLists_txt/1.4/Wed Mar 21 19:21:33 2018//
-/patch-kmymoney_mymoney_mymoneyreport_cpp/1.1/Wed Jan 23 19:17:05 2019//
-/patch-kmymoney_plugins_kbanking_CMakeLists_txt/1.2/Wed Mar 21 19:21:33 2018//
-/patch-kmymoney_plugins_ofximport_CMakeLists_txt/1.2/Wed Mar 21 19:21:33 2018//
-/patch-kmymoney_plugins_ofximport_dialogs_CMakeLists_txt/1.1/Mon Jul 23 08:05:58 2018//
-/patch-kmymoney_views_kmymoneyview_cpp/1.2/Mon Jan 15 23:12:48 2018//
-/patch-tools_CMakeLists_txt/1.1/Sat Jan 14 11:19:04 2017//
+/patch-CMakeLists_txt/1.4/Sat Jul 25 10:45:44 2020//
+/patch-cmake_modules_FindLibOfx_cmake/1.1/Thu Jul 16 05:01:23 2020//
+/patch-kmymoney_plugins_xml_libkgpgfile_CMakeLists_txt/1.1/Thu Jul 16 05:01:23 2020//
 D

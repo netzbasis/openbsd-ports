@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2020/02/15 18:36:18 kn Exp $
+# $OpenBSD: Makefile,v 1.5 2020/07/07 14:51:51 kn Exp $
 
 COMMENT =		CLE loads binaries and their associated libraries
 

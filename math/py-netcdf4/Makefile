@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/02/09 18:45:25 martin Exp $
+# $OpenBSD: Makefile,v 1.4 2020/08/10 21:34:45 edd Exp $
 
 COMMENT=	Python interface to the netCDF C library
 
-MODPY_EGG_VERSION=	1.5.3
+MODPY_EGG_VERSION=	1.5.4
 DISTNAME=		netCDF4-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME:L}
 CATEGORIES=		math
@@ -19,8 +19,6 @@ MODPY_SETUPTOOLS=	Yes
 MODPY_PI=		Yes
 MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
 
-PORT_HOME=		${WRKDIR}
-
 WANTLIB+=		netcdf hdf5 hdf5_hl pthread ${MODPY_WANTLIB}
 
 LIB_DEPENDS=		math/netcdf \
@@ -35,7 +33,7 @@ RUN_DEPENDS+=		lang/cython${MODPY_FLAVOR} \
 			math/hdf5 \
 			math/netcdf \
 			math/py-numpy${MODPY_FLAVOR} \
-			math/py-cftime
+			math/py-cftime${MODPY_FLAVOR}
 
 TEST_DEPENDS=		${FULLPKGNAME}:${FULLPKGPATH}
 TEST_ENV=		TMPDIR=${WRKDIR}/tmp

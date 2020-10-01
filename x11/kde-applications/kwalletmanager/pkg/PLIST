@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.4 2020/06/05 05:40:29 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.6 2020/09/11 11:23:08 rsadowski Exp $
 @pkgpath x11/kde4/kwalletmanager
 @bin bin/kwalletmanager5
 @so lib/qt5/plugins/kcm_kwallet5.so
@@ -7,6 +7,7 @@ share/applications/kwalletmanager5-kwalletd.desktop
 share/applications/org.kde.kwalletmanager5.desktop
 share/dbus-1/system-services/org.kde.kcontrol.kcmkwallet5.service
 share/dbus-1/system.d/org.kde.kcontrol.kcmkwallet5.conf
+@sample ${SYSCONFDIR}/dbus-1/system.d/org.kde.kcontrol.kcmkwallet5.conf
 share/doc/HTML/ca/kwallet5/
 share/doc/HTML/ca/kwallet5/index.cache.bz2
 share/doc/HTML/ca/kwallet5/index.docbook
@@ -58,8 +59,6 @@ share/doc/HTML/sv/kwallet5/
 share/doc/HTML/sv/kwallet5/index.cache.bz2
 share/doc/HTML/sv/kwallet5/index.docbook
 share/doc/HTML/uk/kwallet5/
-share/doc/HTML/uk/kwallet5/edit1.png
-share/doc/HTML/uk/kwallet5/edit2.png
 share/doc/HTML/uk/kwallet5/index.cache.bz2
 share/doc/HTML/uk/kwallet5/index.docbook
 share/doc/HTML/uk/kwallet5/kwalletmanager.png

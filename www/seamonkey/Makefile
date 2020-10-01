@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.236 2020/02/11 16:49:36 landry Exp $
+# $OpenBSD: Makefile,v 1.239 2020/09/22 12:58:18 landry Exp $
 
 COMMENT-main =		Mozilla application suite
 COMMENT-lightning =	Mozilla Seamonkey calendar extension
@@ -9,7 +9,7 @@ BROKEN-amd64 =		xpcshell segfaults during fake since llvm8 update
 MOZILLA_VERSION =	2.49.5
 MOZILLA_PROJECT =	seamonkey
 MOZILLA_CODENAME =	suite
-REVISION =	2
+REVISION =	4
 
 MULTI_PACKAGES =	-main -lightning
 PKGNAME-main =		${PKGNAME}
@@ -40,6 +40,7 @@ MOZILLA_USE_BUNDLED_LIBEVENT =	Yes
 # gecko >= 46 defaults to gtk+3
 MOZILLA_USE_GTK3 = Yes
 CONFIGURE_ARGS +=	--enable-default-toolkit=cairo-gtk2
+CONFIGURE_ARGS +=	--disable-gconf
 NO_TEST=	Yes
 
 CONFIGURE_STYLE =	simple

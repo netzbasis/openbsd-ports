@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.124 2020/04/02 01:21:21 bluhm Exp $
+# $OpenBSD: Makefile,v 1.126 2020/09/14 13:38:58 bluhm Exp $
 
 COMMENT =	Perl SSL sockets with IO::Socket interface
 
 DISTNAME =	IO-Socket-SSL-2.068
+REVISION =	1
 
 CATEGORIES =	security
 
@@ -12,7 +13,7 @@ MAINTAINER =		Alexander Bluhm <bluhm@openbsd.org>
 PERMIT_PACKAGE =	Yes
 
 MODULES =		cpan
-RUN_DEPENDS =		security/p5-Net_SSLeay>=1.88
+RUN_DEPENDS =		security/p5-Net-SSLeay>=1.88
 TEST_DEPENDS =		net/p5-IO-Socket-INET6>=2.62 \
 			converters/p5-Net-IDN-Encode \
 			www/p5-URI>=1.50

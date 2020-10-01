@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2020/04/05 15:44:52 naddy Exp $
+# $OpenBSD: Makefile,v 1.9 2020/08/31 22:20:49 naddy Exp $
 
 # Should work on all other archs.
-NOT_FOR_ARCHS =	aarch64 m88k
+NOT_FOR_ARCHS =	aarch64 m88k mips64
 
 COMMENT =	GNU Pascal compiler
 DISTNAME =	gpc-20070904
-REVISION =	4
+REVISION =	6
 CATEGORIES =	lang
 
 HOMEPAGE =	https://www.gnu-pascal.de/gpc/h-index.html

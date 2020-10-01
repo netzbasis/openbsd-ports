@@ -1,13 +1,15 @@
-/patch-core_io_SCsub/1.1.1.1/Fri Apr 27 07:32:53 2018//
-/patch-core_io_compression_cpp/1.1.1.1/Fri Apr 27 07:32:53 2018//
+/patch-core_io_SCsub/1.2/Sun Jul 19 13:02:38 2020//
+/patch-core_io_compression_cpp/1.2/Sun Jul 19 13:02:38 2020//
 /patch-core_io_compression_h/1.1.1.1/Fri Apr 27 07:32:53 2018//
-/patch-core_project_settings_cpp/1.2/Sat Aug 25 19:20:29 2018//
-/patch-core_safe_refcount_h/1.1/Mon Sep  2 18:20:12 2019//
-/patch-drivers_unix_os_unix_cpp/1.3/Sat Aug 25 19:20:29 2018//
-/patch-main_main_cpp/1.1/Sat Aug 25 19:20:29 2018//
-/patch-platform_x11_detect_py/1.1/Sat Aug 25 19:20:29 2018//
-/patch-platform_x11_os_x11_cpp/1.1.1.1/Fri Apr 27 07:32:53 2018//
-/patch-servers_audio_server_cpp/1.1/Sat Aug 25 19:20:29 2018//
-/patch-servers_visual_shader_language_cpp/1.1/Fri Aug 16 15:38:15 2019//
-/patch-thirdparty_thekla_atlas_nvcore_nvcore_h/1.1/Fri Aug 16 15:38:15 2019//
+/patch-core_project_settings_cpp/1.4/Sat Sep 19 06:37:23 2020//
+/patch-core_safe_refcount_h/1.2/Sun Jul 19 13:02:38 2020//
+/patch-core_ustring_h/1.1/Mon Aug  3 18:41:08 2020//
+/patch-drivers_SCsub/1.1/Sun Sep  6 10:34:19 2020//
+/patch-drivers_unix_os_unix_cpp/1.5/Sat Sep 19 06:37:23 2020//
+/patch-platform_uwp_export_export_cpp/1.1/Sun Jul 19 13:02:38 2020//
+/patch-platform_x11_detect_py/1.3/Sun Sep  6 10:34:19 2020//
+/patch-platform_x11_os_x11_cpp/1.4/Sat Sep 19 06:37:23 2020//
+/patch-platform_x11_os_x11_h/1.2/Sat Sep 19 06:37:23 2020//
+/patch-thirdparty_minizip_unzip_c/1.1/Sun Jul 19 13:02:38 2020//
+/patch-thirdparty_minizip_zip_c/1.1/Sun Jul 19 13:02:38 2020//
 D

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2019/07/23 19:22:21 jasper Exp $
+# $OpenBSD: Makefile,v 1.3 2020/07/07 14:51:51 kn Exp $
 
 COMMENT =		angr intermediate language
 

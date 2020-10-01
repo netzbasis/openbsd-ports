@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.8 2020/06/03 05:13:43 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.10 2020/09/07 14:49:24 rsadowski Exp $
 
 COMMENT =	world domination strategy game
 DISTNAME =	ksirk-${VERSION}
 CATEGORIES =	games
-REVISION =	1
 
 HOMEPAGE =	https://www.kde.org/applications/games/ksirk
 
-SHARED_LIBS +=  iris_ksirk                1.0 # 2.0
+SHARED_LIBS +=  iris_ksirk                2.0 # 2.0
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Attica KF5Auth KF5AuthCore KF5Codecs
 WANTLIB += KF5Completion KF5ConfigCore KF5ConfigGui KF5ConfigWidgets
@@ -15,7 +14,7 @@ WANTLIB += KF5CoreAddons KF5Crash KF5I18n KF5IconThemes KF5KDEGames
 WANTLIB += KF5KDEGamesPrivate KF5KIOCore KF5NewStuff KF5NewStuffCore
 WANTLIB += KF5Service KF5Wallet KF5WidgetsAddons KF5XmlGui Qt5Concurrent
 WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Qml Qt5Quick Qt5QuickWidgets
-WANTLIB += Qt5Svg Qt5Widgets Qt5Xml c m qca-qt5 z
+WANTLIB += Qt5Svg Qt5Widgets Qt5Xml c m phonon4qt5 qca-qt5 z
 
 MODKDE5_ICON_CACHE = yes
 MODKDE5_TRANSLATIONS = yes
@@ -23,8 +22,7 @@ MODKF5_L10N_CONFLICT = yes
 MODKDE5_DOCS = yes
 MODKDE5_DESKTOP_FILE = yes
 
-MODULES +=	x11/kde-applications \
-		multimedia/phonon
+MODULES +=	x11/kde-applications
 
 BUILD_DEPENDS =	x11/qt5/qtquickcontrols
 RUN_DEPENDS =	x11/qt5/qtquickcontrols
@@ -46,6 +44,7 @@ LIB_DEPENDS =	devel/kf5/kauth \
 		security/qca-qt5 \
 		x11/kde-applications/libkdegames \
 		x11/qt5/qtdeclarative \
-		x11/qt5/qtsvg
+		x11/qt5/qtsvg \
+		multimedia/phonon
 
 .include <bsd.port.mk>

@@ -1,38 +1,37 @@
-# $OpenBSD: Makefile,v 1.10 2020/04/12 13:30:55 cwen Exp $
+# $OpenBSD: Makefile,v 1.16 2020/09/19 06:37:23 thfr Exp $
 
 COMMENT =	2D and 3D game engine
 
-V =		3.0.6
+V =		3.2.3
 DISTNAME =	godot-${V}-stable
 PKGNAME =	godot-${V}
 CATEGORIES =	games
 HOMEPAGE =	https://godotengine.org/
-MAINTAINER =	Thomas Frohwein <thfr@openbsd.org>
-REVISION =	3
+MAINTAINER =	Omar Polo <op@omarpolo.com>
 
 # MIT
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX}
 WANTLIB += GL X11 Xau Xcursor Xdmcp Xext Xfixes Xi Xinerama Xrandr
-WANTLIB += Xrender c crypto enet execinfo freetype intl m mpcdec
-WANTLIB += ogg opus opusfile png ssl theora theoradec vorbis vorbisfile
-WANTLIB += webp xcb z pcre2-32 vpx zstd
+WANTLIB += Xrender c enet execinfo freetype intl m mbedtls mbedcrypto
+WANTLIB += mbedx509 mpcdec ogg opus opusfile png sndio theora theoradec
+WANTLIB += vorbis vorbisfile webp xcb z pcre2-32 vpx zstd
 
-COMPILER =		base-clang ports-gcc base-gcc
+# C++14
+COMPILER =	base-clang ports-gcc
 
 MASTER_SITES =	https://downloads.tuxfamily.org/godotengine/${V}/
 EXTRACT_SUFX =	.tar.xz
 
 MODULES =		devel/scons
 # Can't disable builtin_bullet until devel/bullet has been updated to 2.88
-# Building with module_mono_enabled requires msbuild (which we don't have
-# yet) and to fix the sharedlib_ext in modules/mono/config.py to '.so.1.0'
-# Disable pulseaudio which is currently not working
+# Building with module_mono_enabled requires msbuild and to fix the
+# sharedlib_ext in modules/mono/config.py to '.so.1.0'
 MODSCONS_FLAGS =	CC="${CC}" \
 			CXX="${CXX}" \
 			CFLAGS="${CFLAGS}" \
-			CXXFLAGS="${CXXFLAGS}" \
+			CXXFLAGS="${CXXFLAGS} -Wno-deprecated-register" \
 			LINKFLAGS="${LDFLAGS} -lintl -lmpcdec" \
 			builtin_enet=no \
 			builtin_freetype=no \
@@ -44,16 +43,18 @@ MODSCONS_FLAGS =	CC="${CC}" \
 			builtin_libvorbis=no \
 			builtin_libvpx=no \
 			builtin_libwebp=no \
-			builtin_openssl=no \
+			builtin_mbedtls=no \
 			builtin_opus=no \
 			builtin_pcre2=no \
 			builtin_zlib=no \
 			builtin_zstd=no \
-			dev=yes \
 			platform=x11 \
 			progress=no \
 			pulseaudio=no \
-			target=release_debug
+			target=release_debug \
+			verbose=yes \
+			warnings=extra \
+			werror=no
 LIB_DEPENDS =		archivers/zstd \
 			audio/libvorbis \
 			audio/musepack \
@@ -65,7 +66,8 @@ LIB_DEPENDS =		archivers/zstd \
 			graphics/png \
 			multimedia/libtheora \
 			multimedia/libvpx \
-			net/enet
+			net/enet \
+			security/polarssl
 
 NO_TEST =		Yes
 
@@ -80,6 +82,9 @@ CFLAGS +=      -mlongcall
 CXXFLAGS +=    -mlongcall
 LDFLAGS +=     -Wl,--relax
 .endif
+
+post-extract:
+	cp -R ${FILESDIR}/sndio ${WRKDIST}/drivers
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/drivers/unix/os_unix.cpp

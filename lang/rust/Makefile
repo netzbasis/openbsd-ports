@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.113 2020/06/09 06:39:30 semarie Exp $
+# $OpenBSD: Makefile,v 1.119 2020/08/27 17:24:57 semarie Exp $
 
 ONLY_FOR_ARCHS =	${RUST_ARCHS}
 
@@ -13,17 +13,17 @@ COMMENT-gdb =		Rust debugger through gdb
 COMMENT-clippy =	Rust linter
 COMMENT-rustfmt =	Rust code formatter
 
-V =			1.44.0
-CARGO_V =		0.45.0
+V =			1.46.0
+CARGO_V =		0.47.0
 CLIPPY_V =		0.0.212
-RUSTFMT_V =		1.4.14
+RUSTFMT_V =		1.4.18
 DISTNAME =		rustc-${V}-src
 
 # rustc bootstrap version
-BV-aarch64 =		1.44.0-20200605
-BV-amd64 =		1.44.0-20200602
-BV-i386 =		1.44.0-20200602
-BV-sparc64 =		1.44.0-20200602
+BV-aarch64 =		1.46.0-20200827
+BV-amd64 =		1.46.0-20200825
+BV-i386 =		1.46.0-20200825
+BV-sparc64 =		1.46.0-20200825
 BV =			${BV-${MACHINE_ARCH}}
 
 PKGNAME =		rust-${V}
@@ -45,8 +45,8 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB-main =		${COMPILER_LIBCXX} c crypto curl m pthread ssh2 ssl z
 WANTLIB-gdb =
-WANTLIB-clippy =	c c++abi m pthread
-WANTLIB-rustfmt =	c c++abi m pthread
+WANTLIB-clippy =	${COMPILER_LIBCXX} c m pthread
+WANTLIB-rustfmt =	${COMPILER_LIBCXX} c m pthread
 
 MASTER_SITES =		https://static.rust-lang.org/dist/ \
 			https://dev-static.rust-lang.org/dist/
@@ -76,26 +76,28 @@ SUPDISTFILES +=		${BOOTSTRAP-$m}
 LIBRUST_WITH_HASHES =	alloc 				01 \
 			backtrace 			02 \
 			backtrace_sys 			03 \
-			cfg_if 				04 \
-			compiler_builtins 		05 \
-			core 				06 \
-			getopts 			07 \
-			hashbrown 			08 \
-			libc 				09 \
-			panic_abort 			0a \
-			panic_unwind 			0b \
-			proc_macro 			0c \
-			rustc_demangle 			0d \
-			rustc_driver 			0e \
-			rustc_macros 			0f \
-			rustc_std_workspace_alloc 	10 \
-			rustc_std_workspace_core 	11 \
-			rustc_std_workspace_std 	12 \
-			std 				13 \
-			term 				14 \
-			test 				15 \
-			unicode_width 			16 \
-			unwind				17
+			chalk_derive			04 \
+			cfg_if 				05 \
+			compiler_builtins 		06 \
+			core 				07 \
+			getopts 			08 \
+			hashbrown 			09 \
+			libc 				0a \
+			panic_abort 			0b \
+			panic_unwind 			0c \
+			proc_macro 			0d \
+			rustc_demangle 			0e \
+			rustc_driver 			0f \
+			rustc_macros 			10 \
+			rustc_std_workspace_alloc 	11 \
+			rustc_std_workspace_core 	12 \
+			rustc_std_workspace_std 	13 \
+			std 				14 \
+			term 				15 \
+			test 				16 \
+			tracing_attributes		17 \
+			unicode_width 			18 \
+			unwind				19
 
 # generate a stable hash mostly conforming to rust expectations
 # (it should change if anything changed)
@@ -249,9 +251,10 @@ do-install:
 .endfor
 	for lib in ${PREFIX}/lib/lib*.* ; do \
 		libname=$${lib##*/} ; \
-		test -e ${PREFIX}/lib/rustlib/${TRIPLE_ARCH}/lib/$${libname} && \
+		if [ -e ${PREFIX}/lib/rustlib/${TRIPLE_ARCH}/lib/$${libname} ] ; then \
 			ln -fs rustlib/${TRIPLE_ARCH}/lib/$${libname} \
 				${PREFIX}/lib/$${libname} ; \
+		fi ; \
 	done
 
 post-install:

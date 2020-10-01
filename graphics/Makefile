@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.509 2020/06/13 16:22:52 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.518 2020/09/22 22:08:40 tracey Exp $
 
      SUBDIR =
      SUBDIR += DevIL
@@ -23,6 +23,7 @@
      SUBDIR += cairomm
      SUBDIR += cal3d
      SUBDIR += cfdg
+     SUBDIR += chafa
      SUBDIR += clutter
      SUBDIR += colord
      SUBDIR += colord-gtk
@@ -83,7 +84,6 @@
      SUBDIR += gmt
      SUBDIR += gnofract4d
      SUBDIR += gocr
-     SUBDIR += goocanvas2
      SUBDIR += gphoto2
      SUBDIR += gpicview
      SUBDIR += gprof2dot
@@ -165,7 +165,9 @@
      SUBDIR += mpeg_encode
      SUBDIR += mscgen
      SUBDIR += mtpaint
+     SUBDIR += mypaint
      SUBDIR += mypaint-brushes
+     SUBDIR += mypaint-brushes2
      SUBDIR += netpbm
      SUBDIR += nomacs
      SUBDIR += ocaml-cairo
@@ -233,8 +235,8 @@
      SUBDIR += potrace
      SUBDIR += povray
      SUBDIR += pqiv
-     #SUBDIR += prison
      SUBDIR += pstoedit
+     SUBDIR += py-blurhash
      SUBDIR += py-Pillow
      SUBDIR += py-Pillow,python3
      SUBDIR += py-cairo
@@ -244,6 +246,7 @@
      SUBDIR += py-dot,python3
      SUBDIR += py-pygal
      SUBDIR += py-pygal,python3
+     SUBDIR += py-imageio,python3
      SUBDIR += py-imagesize
      SUBDIR += py-imagesize,python3
      SUBDIR += py-matplotlib
@@ -255,9 +258,8 @@
      SUBDIR += py-qrcode,python3
      SUBDIR += py-sane
      SUBDIR += py-sane,python3
-     SUBDIR += py-seaborn
+     SUBDIR += py-seaborn,python3
      SUBDIR += pycha
-     #SUBDIR += qimageblitz
      SUBDIR += qiv
      SUBDIR += quesoglc
      SUBDIR += quirc

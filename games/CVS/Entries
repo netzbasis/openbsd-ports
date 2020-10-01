@@ -1,4 +1,4 @@
-/Makefile/1.419/Mon May 25 16:09:09 2020//
+/Makefile/1.426/Mon Sep 21 07:23:24 2020//
 D/0ad////
 D/1oom////
 D/2048-cli////
@@ -96,9 +96,11 @@ D/fire////
 D/flare////
 D/flightgear////
 D/fnaify////
+D/fnaify-extralibs////
 D/foobillard////
 D/forcedattack////
 D/fotaq////
+D/freebee////
 D/freeblocks////
 D/freeciv////
 D/freecol////
@@ -141,7 +143,6 @@ D/gti////
 D/gtkballs////
 D/gzdoom////
 D/hackdata////
-D/hedgewars////
 D/heroes////
 D/hex-a-hop////
 D/hypatia////
@@ -184,6 +185,7 @@ D/mnemosyne////
 D/moon-buggy////
 D/moonlander////
 D/moria////
+D/multimc////
 D/mvdsv////
 D/mysticmine////
 D/naev////
@@ -225,6 +227,7 @@ D/prboom////
 D/prboom-plus////
 D/pushover////
 D/puzzles////
+D/py-chess////
 D/py-minecraft-launcher-lib////
 D/pygame_sdl2////
 D/pyganim////
@@ -250,6 +253,7 @@ D/sdl-jstest////
 D/sdlpop////
 D/sdlroids////
 D/sdlzombies////
+D/shockolate////
 D/singularity////
 D/ski////
 D/sl////

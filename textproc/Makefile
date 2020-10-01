@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.637 2020/06/12 10:04:13 landry Exp $
+# $OpenBSD: Makefile,v 1.647 2020/09/19 07:43:50 solene Exp $
 
      SUBDIR =
      SUBDIR += TclXML
@@ -21,6 +21,7 @@
      SUBDIR += catdoc
      SUBDIR += catfish
      SUBDIR += cdiff
+     SUBDIR += chordpro
      SUBDIR += clit
      SUBDIR += clo++
      SUBDIR += cloc
@@ -50,12 +51,12 @@
      SUBDIR += extract_url
      SUBDIR += fcbanner
      SUBDIR += filepp
+     SUBDIR += foliate
      SUBDIR += fragistics
      SUBDIR += fzy
      SUBDIR += gdiff
      SUBDIR += glimpse
      SUBDIR += go-text
-     SUBDIR += go-xlsx
      SUBDIR += gpresent
      SUBDIR += grepcidr
      SUBDIR += groff
@@ -140,6 +141,7 @@
      SUBDIR += luasoldout
      SUBDIR += luasoldout,lua52
      SUBDIR += luasoldout,lua53
+     SUBDIR += luceneplusplus
      SUBDIR += makefaq
      SUBDIR += mdbook
      SUBDIR += mdp
@@ -211,6 +213,7 @@
      SUBDIR += p5-Object-MultiType
      SUBDIR += p5-PDF-API2
      SUBDIR += p5-PDF-API2-Simple
+     SUBDIR += p5-PDF-API2-XS
      SUBDIR += p5-PDF-Reuse
      SUBDIR += p5-PDF-Table
      SUBDIR += p5-POE-Filter-XML
@@ -379,6 +382,7 @@
      SUBDIR += py-colored,python3
      SUBDIR += py-commonmark
      SUBDIR += py-commonmark,python3
+     SUBDIR += py-css-parser,python3
      SUBDIR += py-cssselect
      SUBDIR += py-cssselect,python3
      SUBDIR += py-cssutils
@@ -398,7 +402,6 @@
      SUBDIR += py-enchant,python3
      SUBDIR += py-feedparser
      SUBDIR += py-feedparser,python3
-     SUBDIR += py-humanize
      SUBDIR += py-humanize,python3
      SUBDIR += py-iso8601
      SUBDIR += py-iso8601,python3
@@ -436,14 +439,11 @@
      SUBDIR += py-pyRFC3339,python3
      SUBDIR += py-pyaml
      SUBDIR += py-pyaml,python3
-     SUBDIR += py-pygfm
      SUBDIR += py-pygfm,python3
      SUBDIR += py-pygments
      SUBDIR += py-pygments,python3
      SUBDIR += py-pykwalify
      SUBDIR += py-pykwalify,python3
-     SUBDIR += py-rdflib
-     SUBDIR += py-rdflib,python3
      SUBDIR += py-recommonmark
      SUBDIR += py-recommonmark,python3
      SUBDIR += py-ruamel.yaml
@@ -468,8 +468,6 @@
      SUBDIR += py-sphinx_rtd_theme,python3
      SUBDIR += py-stemmer
      SUBDIR += py-stemmer,python3
-     SUBDIR += py-termcolor
-     SUBDIR += py-termcolor,python3
      SUBDIR += py-textfsm
      SUBDIR += py-textfsm,python3
      SUBDIR += py-toml

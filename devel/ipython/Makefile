@@ -1,46 +1,47 @@
-# $OpenBSD: Makefile,v 1.53 2020/03/23 05:05:03 bket Exp $
+# $OpenBSD: Makefile,v 1.59 2020/09/02 16:23:25 bket Exp $
 
-COMMENT=		enhanced interactive Python shell
+COMMENT =		enhanced interactive Python shell
 
-MODPY_EGG_VERSION =	5.8.0
-REVISION =		3
-DISTNAME=		ipython-${MODPY_EGG_VERSION}
+MODPY_EGG_VERSION =	7.18.1
+DISTNAME =		ipython-${MODPY_EGG_VERSION}
 PKGNAME =		ipython${MODPY_MAJOR_VERSION}-${MODPY_EGG_VERSION}
-CATEGORIES=		devel
 
-HOMEPAGE=		https://ipython.org/
+CATEGORIES =		devel
 
-MAINTAINER=		Edd Barrett <edd@openbsd.org>
+HOMEPAGE =		https://ipython.org/
 
-MODULES=		lang/python
+MAINTAINER =		Bjorn Ketelaars <bket@openbsd.org>
 
-RUN_DEPENDS =		devel/py-decorator${MODPY_FLAVOR} \
-			databases/py-pickleshare${MODPY_FLAVOR} \
-			devel/py-simplegeneric${MODPY_FLAVOR}>0.8 \
-			devel/py-traitlets${MODPY_FLAVOR}>=4.2 \
-			devel/desktop-file-utils \
-			devel/py-pexpect${MODPY_FLAVOR} \
-			devel/py-prompt_toolkit${MODPY_FLAVOR} \
-			math/py-numpy${MODPY_FLAVOR} \
-			textproc/py-pygments${MODPY_FLAVOR}
+# BSD
+PERMIT_PACKAGE =	Yes
 
-# Note that if you have pdb++ installed, tests will fail.
-TEST_DEPENDS =		${BASE_PKGPATH}=${MODPY_EGG_VERSION} \
-			graphics/py-matplotlib${MODPY_FLAVOR} \
-			devel/py-nbformat${MODPY_FLAVOR}>=4.2.0 \
-			devel/py-nose${MODPY_FLAVOR} \
-			devel/py-ipykernel${MODPY_FLAVOR} \
-			www/py-requests${MODPY_FLAVOR} \
-			devel/py-testpath${MODPY_FLAVOR}
+MODULES =		lang/python
+MODPY_PI =		Yes
 
 # Optional dependency which gets picked up if it happens to be installed, thus
 # causing race conditions under dpb. Pull it in to avoid this possibility.
-BUILD_DEPENDS +=	www/py-mako${MODPY_FLAVOR}
+BUILD_DEPENDS =		www/py-mako${MODPY_FLAVOR}
 
-# BSD
-PERMIT_PACKAGE=	Yes
+RUN_DEPENDS =		databases/py-pickleshare${MODPY_FLAVOR} \
+			devel/desktop-file-utils \
+			devel/py-backcall${MODPY_FLAVOR} \
+			devel/py-decorator${MODPY_FLAVOR} \
+			devel/py-jedi${MODPY_FLAVOR}>=0.10 \
+			devel/py-pexpect${MODPY_FLAVOR}>=4.3 \
+			devel/py-prompt_toolkit${MODPY_FLAVOR}>=2.0.0v1,<3.1.0v1 \
+			devel/py-traitlets${MODPY_FLAVOR}>=4.2 \
+			textproc/py-pygments${MODPY_FLAVOR}
 
-MODPY_PI =		Yes
+# Note that if you have pdb++ installed OR are using PORTS_PRIVSEP, tests will
+# fail.
+TEST_DEPENDS =		${BASE_PKGPATH}=${MODPY_EGG_VERSION} \
+			devel/py-ipykernel${MODPY_FLAVOR} \
+			devel/py-nbformat${MODPY_FLAVOR} \
+			devel/py-nose${MODPY_FLAVOR}>=0.10.1 \
+			devel/py-testpath${MODPY_FLAVOR} \
+			math/py-numpy${MODPY_FLAVOR}>=1.14 \
+			textproc/py-pygments${MODPY_FLAVOR} \
+			www/py-requests${MODPY_FLAVOR}
 
 FLAVORS =		python3
 FLAVOR =		python3

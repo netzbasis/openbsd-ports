@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.320 2020/06/17 19:51:33 sthen Exp $
+# $OpenBSD: Makefile,v 1.325 2020/09/12 19:35:37 sthen Exp $
 
 COMMENT-main=	open source multi-protocol PBX and telephony toolkit
 
-VER=		16.11.1
-PJ_V=		2.9
+VER=		16.13.0
+PJ_V=		2.10
 DISTNAME=	asterisk-${VER:S/beta/-beta/:S/rc/-rc/}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} pjproject-${PJ_V}.tar.bz2:0
 PKGNAME-main=	asterisk-${VER}
@@ -18,7 +18,7 @@ CATEGORIES=	telephony
 
 HOMEPAGE=	https://www.asterisk.org/
 
-MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
+MAINTAINER=	Stuart Henderson <stu.ports@spacehopper.org>
 
 # Mostly GPL v2 (only). "Specific permission is also granted to link
 # Asterisk with OpenSSL and OpenH323 and distribute the resulting binary
@@ -28,8 +28,10 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB-main += ${MODGCC4_CPPWANTLIB}
 # XXX somehow COMPILER_LIBCXX doesn't get set to gcc libs?
+# XXX Asterisk is not allowed to use other ports which pull in C++ libs
+# XXX otherwise there is a conflict between libstdc++ and libc++.
 WANTLIB-main += c crypto curl curses edit execinfo gsm iconv iksemel
-WANTLIB-main += jansson lzma m nghttp2 ogg portaudio pthread radcli
+WANTLIB-main += jansson lzma m ogg portaudio pthread radcli
 WANTLIB-main += spandsp sqlite3 srtp2 ssl tiff uriparser unbound uuid
 WANTLIB-main += vorbis vorbisenc vorbisfile xml2 xslt z
 
@@ -44,10 +46,12 @@ DPB_PROPERTIES=	parallel
 #    echo 'int main(){return ^{return 42;}();}' | \
 #         clang -o /tmp/blockstest -fblocks -x c -L/usr/local/lib -lBlocksRuntime -
 #
-# -> undefined reference to `_NSConcreteGlobalBlock'
+# -> undefined reference to `_NSConcreteGlobalBlock' (also can be tested
+# on ld.lld arches by adding "-fuse-ld=bfd")
 #
 # - runtime fails on ld.lld arches: dlopen()ing the .so modules results in
-# undefined symbols from the BlocksRuntime lib.
+# undefined symbols (same symbols as ld.bfd detects as missing) from the
+# BlocksRuntime lib.
 #
 # So, as things stand, this requires building with gcc.
 #
@@ -118,7 +122,7 @@ MAKE_FLAGS+=		ASTCFLAGS="${CFLAGS}" \
 CONFIGURE_ARGS+=	--localstatedir=/var \
 			--with-download-cache=${FULLDISTDIR} \
 			--with-pjproject-bundled
-CONFIGURE_ENV+=		PJPROJECT_CONFIGURE_OPTS="--disable-bcg729"
+CONFIGURE_ENV+=		PJPROJECT_CONFIGURE_OPTS="--disable-bcg729 --disable-vpx"
 MAKE_ENV=		LOCALBASE="${LOCALBASE}"
 
 CONFIGURE_ARGS+=	--with-asound=no \
@@ -178,10 +182,6 @@ CONFIGURE_ARGS+=	--with-imap=no
 ## multipackages:
 .include <bsd.port.arch.mk>
 
-#.if ${PROPERTIES:Mclang}
-#BUILD_DEPENDS+=		devel/blocksruntime
-#.endif
-
 # calendar
 COMMENT-calendar=	calendar support for Asterisk
 WANTLIB-calendar=	crypto expat ical iconv intl iksemel lzma
@@ -196,8 +196,8 @@ CONFIGURE_ARGS+=	--with-ical=no
 # http_post
 COMMENT-http_post=	HTTP POST support for Asterisk
 LIB_DEPENDS-http_post=	devel/gettext,-runtime \
-			mail/gmime
-WANTLIB-http_post=	gio-2.0 glib-2.0 gmime-2.6 gobject-2.0 intl pthread
+			mail/gmime30
+WANTLIB-http_post=	gio-2.0 glib-2.0 gmime-3.0 gobject-2.0 intl pthread
 .if !${BUILD_PACKAGES:M-http_post}
 CONFIGURE_ARGS+=	--with-gmime=no
 .endif
@@ -336,3 +336,9 @@ post-install:
 	@find ${WRKINST}/opt -type d -delete
 
 .include <bsd.port.mk>
+
+.if ${CHOSEN_COMPILER} == ports-gcc
+CFLAGS+=		-ftrampolines
+.else
+BUILD_DEPENDS+=		devel/blocksruntime
+.endif

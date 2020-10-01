@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.6 2020/04/10 15:21:15 semarie Exp $
+# $OpenBSD: Makefile,v 1.8 2020/08/08 04:40:56 semarie Exp $
 
-MODPY_EGG_VERSION =	5.0.4
+MODPY_EGG_VERSION =	5.0.5
 TRYTON_MODULE =		production_work
 
 TRYTON_DEPENDS +=	company \

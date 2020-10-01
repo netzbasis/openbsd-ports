@@ -1,4 +1,4 @@
-/Makefile/1.104/Fri May 22 21:51:39 2020//
+/Makefile/1.105/Mon Jul  6 17:43:19 2020//
 D/BasiliskII////
 D/advancemame////
 D/atari800////
@@ -34,6 +34,7 @@ D/mednafen////
 D/mgba////
 D/mupen64plus////
 D/nestopia////
+D/nono////
 D/openmsx////
 D/pcsxr////
 D/ppsspp////

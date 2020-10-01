@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.152 2020/06/08 13:48:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.155 2020/08/10 22:36:07 sthen Exp $
 
 COMMENT=	imap4 webmail client
 
-V=		1.4.6
+V=		1.4.8
 DISTNAME=	roundcubemail-$V
 PKGNAME=	roundcubemail-${V:S/-rc/rc/}
 EXTRACT_SUFX=	-complete.tar.gz
@@ -13,7 +13,7 @@ CATEGORIES=	mail www
 
 HOMEPAGE=	http://www.roundcube.net/
 
-MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
+MAINTAINER=	Stuart Henderson <stu.ports@spacehopper.org>
 
 # GPLv3+ with exceptions for skins & plugins
 PERMIT_PACKAGE=	Yes

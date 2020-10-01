@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.26 2020/06/12 04:43:27 kn Exp $
+# $OpenBSD: Makefile,v 1.28 2020/08/18 18:55:21 edd Exp $
 
 COMMENT =		python documentation generator
 
 MODPY_EGG_VERSION =	1.4.8
 DISTNAME =		Sphinx-${MODPY_EGG_VERSION}
 PKGNAME =		py-sphinx-${MODPY_EGG_VERSION}
-REVISION =		2
+REVISION =		4
 
 CATEGORIES =		textproc
 
@@ -42,6 +42,11 @@ post-build:
 		${MODPY_BIN} sphinx-build.py doc doc/_build/html
 
 DOCS =		${PREFIX}/share/doc/${MODPY_PY_PREFIX}sphinx
+
+pre-build:
+	# Bundles an old and incompatible version of iftex.sty that overrides
+	# the one in TeX Live. Kill it.
+	rm ${WRKSRC}/sphinx/texinputs/iftex.sty
 
 post-install:
 	${INSTALL_DATA_DIR} ${DOCS}

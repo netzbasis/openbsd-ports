@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.17 2020/04/17 16:14:40 naddy Exp $
+# $OpenBSD: Makefile,v 1.22 2020/09/09 20:32:22 fcambus Exp $
 
 COMMENT =	web application framework for writing scalable web APIs in C
 
-DISTNAME =	kore-3.3.1
+DISTNAME =	kore-4.0.1
 
 CATEGORIES =	www
 
@@ -17,8 +17,14 @@ WANTLIB +=	c crypto pthread ssl
 
 MASTER_SITES =	https://kore.io/releases/
 
-FLAVORS =	curl debug pgsql python
+FLAVORS =	acme curl debug pgsql python
 FLAVOR ?=
+
+.if ${FLAVOR} == "acme"
+MAKE_ENV +=	ACME=1
+WANTLIB +=	curl
+LIB_DEPENDS +=	net/curl
+.endif
 
 .if ${FLAVOR} == "curl"
 MAKE_ENV +=	CURL=1
@@ -49,7 +55,12 @@ USE_GMAKE =	Yes
 
 MAKE_ENV +=	CC="${CC}" TASKS=1
 
+FAKE_FLAGS =	DESTDIR=
+
 NO_TEST =	Yes
+
+post-configure:
+	${SUBST_CMD} ${WRKSRC}/misc/python3-config.sh
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/kore

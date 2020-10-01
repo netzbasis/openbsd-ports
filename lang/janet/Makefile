@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.21 2020/06/15 18:00:42 jturner Exp $
+# $OpenBSD: Makefile,v 1.27 2020/09/22 19:03:51 jturner Exp $
 
 BROKEN-sparc64 = compile error in boot.janet
 BROKEN-mips64 =	compile error in system_test.c
@@ -8,9 +8,9 @@ CATEGORIES =	lang
 
 GH_ACCOUNT =	janet-lang
 GH_PROJECT =	janet
-GH_TAGNAME =	v1.10.0
+GH_TAGNAME =	v1.12.2
 
-SHARED_LIBS +=	janet		2.0 # 0.1
+SHARED_LIBS +=	janet		4.0 # 1.12
 
 HOMEPAGE =	https://www.janet-lang.org/
 MAINTAINER =	James Turner <james@calminferno.net>
@@ -25,7 +25,7 @@ COMPILER =	base-clang ports-gcc
 COMPILER_LANGS =	c
 
 USE_GMAKE =	Yes
-MAKE_FLAGS =	PREFIX="${PREFIX}" FLAGS="${CFLAGS}" \
+MAKE_FLAGS =	PREFIX="${PREFIX}" CFLAGS="${CFLAGS}" \
 		JANET_LIBRARY="build/libjanet.so.${LIBjanet_VERSION}"
 
 .include <bsd.port.mk>

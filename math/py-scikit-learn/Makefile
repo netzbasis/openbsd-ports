@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.4 2020/04/06 08:48:06 pirofti Exp $
+# $OpenBSD: Makefile,v 1.7 2020/07/03 21:12:57 sthen Exp $
 
 COMMENT =	set of python modules for machine learning and data mining
 
 MODPY_EGG_VERSION =	0.20.3
 DISTNAME =		scikit-learn-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
+REVISION =		3
 
 CATEGORIES =		math
 
@@ -22,12 +22,14 @@ MODPY_PI =		Yes
 MODPY_PYTEST =		Yes
 MODPY_TEST_DIR = ${WRKSRC}/lib.openbsd-${OSREV}-${ARCH}-${MODPY_VERSION}
 MODPY_SETUPTOOLS = 	Yes
-MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
+
+FLAVORS =		python3
+FLAVOR =		python3
 
 BUILD_DEPENDS =		math/py-numpy${MODPY_FLAVOR}
 RUN_DEPENDS =		math/py-numpy${MODPY_FLAVOR} \
 			math/py-scipy${MODPY_FLAVOR} \
-			sysutils/py-joblib
+			sysutils/py-joblib${MODPY_FLAVOR}
 TEST_DEPENDS =		lang/cython${MODPY_FLAVOR}
 
 MAKE_ENV +=		SKLEARN_NO_OPENMP=1

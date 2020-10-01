@@ -1,26 +1,24 @@
-# $OpenBSD: Makefile,v 1.113 2020/02/22 22:45:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.116 2020/09/07 10:18:14 sthen Exp $
 
 COMMENT-main=	extendable SNMP implementation
 COMMENT-tkmib=	graphical SNMP MIB browser
 
-V=		5.8.1.pre2
-REVISION-main=	0
-
+V=		5.9
 DISTNAME=	net-snmp-$V
 MULTI_PACKAGES=	-main -tkmib
-PKGNAME-main=	net-snmp-${V:S/.pre/pre/}
-PKGNAME-tkmib=	net-snmp-tkmib-${V:S/.pre/pre/}
+PKGNAME-main=	net-snmp-$V
+PKGNAME-tkmib=	net-snmp-tkmib-$V
 
 # tkmib isn't flavoured
 FULLPKGPATH-tkmib= net/net-snmp,-tkmib
-FULLPKGNAME-tkmib= net-snmp-tkmib-${V:S/.pre/pre/}
+FULLPKGNAME-tkmib= net-snmp-tkmib-$V
 
 # N.B. p5 module picks up installed libs in /usr/local
 # please check sysutils/snmp_exporter "make test" if updating
-SHARED_LIBS += netsnmp		17.1
-SHARED_LIBS += netsnmpagent	16.1
+SHARED_LIBS += netsnmp		18.0
+SHARED_LIBS += netsnmpagent	17.0
 SHARED_LIBS += netsnmphelpers	15.1
-SHARED_LIBS += netsnmpmibs	17.1
+SHARED_LIBS += netsnmpmibs	18.0
 SHARED_LIBS += netsnmptrapd	15.1
 
 CATEGORIES=	net perl5
@@ -28,7 +26,7 @@ MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:=net-snmp/}
 
 HOMEPAGE=	http://www.net-snmp.org/
 
-MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
+MAINTAINER=	Stuart Henderson <stu.ports@spacehopper.org>
 
 # BSD
 PERMIT_PACKAGE=	Yes
@@ -52,9 +50,7 @@ DEFAULT_MIBS=		IP-MIB:IF-MIB:TCP-MIB:UDP-MIB:SNMPv2-MIB:RFC1213-MIB
 # - base OpenBSD mibs (/usr/share/snmp/mibs), SNMPD-CONF pulls in the rest
 OPENBSD_MIBS=		OPENBSD-SNMPD-CONF
 
-CONFIGURE_STYLE=  autoreconf
-AUTOMAKE_VERSION= 1.16
-AUTOCONF_VERSION= 2.69
+CONFIGURE_STYLE=  gnu
 CONFIGURE_ARGS=   --enable-ipv6 \
 	--enable-blumenthal-aes \
 	--enable-mfd-rewrites \

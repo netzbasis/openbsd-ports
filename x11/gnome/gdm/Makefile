@@ -1,13 +1,14 @@
-# $OpenBSD: Makefile,v 1.282 2020/05/14 15:25:53 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.285 2020/09/21 14:36:21 ajacoutot Exp $
 
 COMMENT=		GNOME display manager
 
 GNOME_PROJECT=		gdm
-GNOME_VERSION=		3.36.2
+GNOME_VERSION=		3.36.3
+REVISION=		0
 
-DISTFILES=		${DISTNAME}${EXTRACT_SUFX} puflogh1000X248.gif:0
+DISTFILES=		${DISTNAME}${EXTRACT_SUFX} gdm-puffy.png:0
 EXTRACT_ONLY=		${DISTNAME}${EXTRACT_SUFX}
-MASTER_SITES0=		http://www.openbsd.org/art/puffy/
+MASTER_SITES0=		https://distfiles.bsdfrog.org/
 
 SHARED_LIBS +=  gdm                  0.0      # 1.0
 
@@ -22,7 +23,7 @@ WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 graphite2
 WANTLIB += gthread-2.0 gtk-3 harfbuzz iconv intl ltdl m ogg pam
 WANTLIB += pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre pixman-1
 WANTLIB += png pthread util vorbis vorbisfile xcb xcb-render
-WANTLIB += xcb-shm z
+WANTLIB += xcb-shm z ${COMPILER_LIBCXX}
 
 MODULES=		x11/gnome \
 			devel/dconf
@@ -94,7 +95,7 @@ pre-configure:
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/pixmaps/
-	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/puflogh1000X248.gif \
+	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/gdm-puffy.png \
 		${PREFIX}/share/pixmaps/
 	rm -r ${WRKINST}/var/run/gdm ${WRKINST}/rules.d
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/gdm/{etc/pam.d,var/db}
@@ -105,10 +106,6 @@ post-install:
 		${PREFIX}/share/glib-2.0/schemas/10_org.gnome.login-screen.gschema.override
 	mv ${WRKINST}/etc/gdm ${PREFIX}/share/examples/gdm/etc
 	mv ${WRKINST}/etc/dbus-1 ${PREFIX}/share/examples/gdm/etc
-	mv ${WRKINST}/var/db/gdm ${PREFIX}/share/examples/gdm/var/db
-	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/gdm/var/db/gdm/.pulse
-	${INSTALL_DATA} ${FILESDIR}/client.conf \
-		${PREFIX}/share/examples/gdm/var/db/gdm/.pulse
 	${INSTALL_DATA} ${FILESDIR}/locale.conf \
 		${PREFIX}/share/examples/gdm/etc/gdm/locale.conf
 	${SUBST_CMD} -m 0555 -c -o ${BINOWN} -g ${BINGRP} \

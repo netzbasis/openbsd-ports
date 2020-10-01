@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.419 2020/05/25 16:09:09 solene Exp $
+# $OpenBSD: Makefile,v 1.426 2020/09/21 07:23:24 kmos Exp $
 
      SUBDIR =
      SUBDIR += 0ad
@@ -102,9 +102,11 @@
      SUBDIR += flare
      SUBDIR += flightgear
      SUBDIR += fnaify
+     SUBDIR += fnaify-extralibs
      SUBDIR += foobillard
      SUBDIR += forcedattack
      SUBDIR += fotaq
+     SUBDIR += freebee
      SUBDIR += freeblocks
      SUBDIR += freeciv
      SUBDIR += freecol
@@ -147,7 +149,6 @@
      SUBDIR += gtkballs
      SUBDIR += gzdoom
      SUBDIR += hackdata
-     SUBDIR += hedgewars
      SUBDIR += heroes
      SUBDIR += hex-a-hop
      SUBDIR += hypatia
@@ -192,6 +193,7 @@
      SUBDIR += moonlander
      SUBDIR += moonlander,no_sound
      SUBDIR += moria
+     SUBDIR += multimc
      SUBDIR += mvdsv
      SUBDIR += mysticmine
      SUBDIR += naev
@@ -233,6 +235,7 @@
      SUBDIR += prboom-plus
      SUBDIR += pushover
      SUBDIR += puzzles
+     SUBDIR += py-chess,python3
      SUBDIR += py-minecraft-launcher-lib,python3
      SUBDIR += pygame_sdl2
      SUBDIR += pyganim
@@ -258,6 +261,7 @@
      SUBDIR += sdlpop
      SUBDIR += sdlroids
      SUBDIR += sdlzombies
+     SUBDIR += shockolate
      SUBDIR += singularity
      SUBDIR += ski
      SUBDIR += sl

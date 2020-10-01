@@ -1,7 +1,6 @@
-# $OpenBSD: Makefile,v 1.965 2020/06/13 16:22:53 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.983 2020/09/14 16:45:36 kmos Exp $
 
      SUBDIR =
-     SUBDIR += ajaxterm
      SUBDIR += analog
      SUBDIR += ap2-mod_dnssd
      SUBDIR += ap2-mod_jk
@@ -35,6 +34,7 @@
      SUBDIR += drush
      SUBDIR += e2guardian
      SUBDIR += edbrowse
+     SUBDIR += ephemetoot
      SUBDIR += epiphany
      SUBDIR += fcgi
      SUBDIR += fcgi-cgi
@@ -46,7 +46,6 @@
      SUBDIR += geckodriver
      SUBDIR += gitea
      SUBDIR += goaccess
-     SUBDIR += goaccess,tokyocabinet
      SUBDIR += gumbo
      SUBDIR += h2o
      SUBDIR += h2o,mruby
@@ -75,10 +74,10 @@
      SUBDIR += kcgi
      SUBDIR += kibana
      SUBDIR += kore
+     SUBDIR += kore,acme
      SUBDIR += kore,curl
      SUBDIR += kore,pgsql
      SUBDIR += kore,python
-     #SUBDIR += kwebkitpart
      SUBDIR += larbin
      SUBDIR += libcroco
      SUBDIR += libmicrohttpd
@@ -106,7 +105,6 @@
      SUBDIR += mollify
      SUBDIR += mono-xsp
      SUBDIR += mozilla-firefox
-     SUBDIR += mozplugger
      SUBDIR += netsurf
      SUBDIR += newsboat
      SUBDIR += nextcloud
@@ -145,6 +143,8 @@
      SUBDIR += p5-CGI-Session
      SUBDIR += p5-CGI-Session-Driver-memcached
      SUBDIR += p5-CGI-Simple
+     SUBDIR += p5-CGI-Struct
+     SUBDIR += p5-CGI-Struct-XS
      SUBDIR += p5-CGI-Untaint
      SUBDIR += p5-CGI-XMLApplication
      SUBDIR += p5-CSS-DOM
@@ -152,9 +152,11 @@
      SUBDIR += p5-CSS-Minifier-XS
      SUBDIR += p5-CSS-Squish
      SUBDIR += p5-CSS-Tiny
+     SUBDIR += p5-Catalyst-Action-REST
      SUBDIR += p5-Catalyst-Action-RenderView
      SUBDIR += p5-Catalyst-Component-ACCEPT_CONTEXT
      SUBDIR += p5-Catalyst-Component-InstancePerContext
+     SUBDIR += p5-Catalyst-Controller-ActionRole
      SUBDIR += p5-Catalyst-Controller-FormBuilder
      SUBDIR += p5-Catalyst-Controller-HTML-FormFu
      SUBDIR += p5-Catalyst-Devel
@@ -302,6 +304,7 @@
      SUBDIR += p5-Plack
      SUBDIR += p5-Plack-App-URLMux
      SUBDIR += p5-Plack-Middleware-FixMissingBodyInRedirect
+     SUBDIR += p5-Plack-Middleware-MethodOverride
      SUBDIR += p5-Plack-Middleware-RemoveRedundantBody
      SUBDIR += p5-Plack-Middleware-ReverseProxy
      SUBDIR += p5-Plack-Test-ExternalServer
@@ -321,6 +324,7 @@
      SUBDIR += p5-URI
      SUBDIR += p5-URI-Fetch
      SUBDIR += p5-URI-Find
+     SUBDIR += p5-URI-ws
      SUBDIR += p5-URL-Encode
      SUBDIR += p5-W3C-LinkChecker
      SUBDIR += p5-WWW-Bugzilla
@@ -395,6 +399,7 @@
      SUBDIR += pound
      SUBDIR += privoxy
      SUBDIR += puppetboard
+     SUBDIR += purritobin
      SUBDIR += py-CherryPy
      SUBDIR += py-CherryPy,python3
      SUBDIR += py-aiohttp
@@ -465,7 +470,6 @@
      SUBDIR += py-paste
      SUBDIR += py-paste-deploy
      SUBDIR += py-paste-script
-     SUBDIR += py-pylons
      SUBDIR += py-qtwebengine
      SUBDIR += py-query
      SUBDIR += py-query,python3
@@ -484,12 +488,9 @@
      SUBDIR += py-requests-oauthlib,python3
      SUBDIR += py-requests-toolbelt
      SUBDIR += py-requests-toolbelt,python3
-     SUBDIR += py-responses
      SUBDIR += py-responses,python3
-     SUBDIR += py-routes
      SUBDIR += py-selenium
      SUBDIR += py-selenium,python3
-     SUBDIR += py-sockjs-tornado
      SUBDIR += py-soupsieve
      SUBDIR += py-soupsieve,python3
      SUBDIR += py-tempita
@@ -507,11 +508,8 @@
      SUBDIR += py-vcrpy,python3
      SUBDIR += py-waitress
      SUBDIR += py-waitress,python3
-     SUBDIR += py-weberror
-     SUBDIR += py-webhelpers
      SUBDIR += py-webob
      SUBDIR += py-webob,python3
-     SUBDIR += py-webpy
      SUBDIR += py-webpy,python3
      SUBDIR += py-webtest
      SUBDIR += py-webtest,python3
@@ -584,6 +582,7 @@
      SUBDIR += spawn-fcgi
      SUBDIR += sqtop
      SUBDIR += squid
+     SUBDIR += squid,krb5
      SUBDIR += squidclamav
      SUBDIR += squidguard
      SUBDIR += squidguard,ldap
@@ -608,11 +607,11 @@
      SUBDIR += uget
      SUBDIR += uriparser
      SUBDIR += urlwatch
+     SUBDIR += uwebsockets
      SUBDIR += varnish
      SUBDIR += vimb
      SUBDIR += visitors
      SUBDIR += vnu
-     SUBDIR += vteplugin
      SUBDIR += w3m
      SUBDIR += w3m,image
      SUBDIR += w3mir

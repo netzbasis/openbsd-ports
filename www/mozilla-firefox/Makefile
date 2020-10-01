@@ -1,18 +1,18 @@
-# $OpenBSD: Makefile,v 1.426 2020/06/04 06:06:58 landry Exp $
+# $OpenBSD: Makefile,v 1.435 2020/09/22 13:00:55 landry Exp $
 
-COMMENT =	Mozilla web browser
+COMMENT =	Firefox web browser
 ONLY_FOR_ARCHS =	amd64 i386 aarch64
 
 # Don't forget to bump www/firefox-i18n after updates.
 
-MOZILLA_VERSION =	77.0.1
+MOZILLA_VERSION =	81.0
 MOZILLA_BRANCH =	release
 MOZILLA_PROJECT =	firefox
 MOZILLA_CODENAME =	browser
 
 WRKDIST =	${WRKDIR}/${MOZILLA_DIST}-${MOZILLA_DIST_VERSION:C/b[0-9]*//}
 HOMEPAGE =	https://www.mozilla.org/firefox/
-SO_VERSION =	92.0
+SO_VERSION =	96.0
 # NOTE: Must bump minor version if any shlib's are removed from the
 # components dir to avoid pkg_add -r issues.
 MOZILLA_LIBS =	mozavcodec mozavutil mozgtk xul clearkey lgpllibs mozsqlite3
@@ -26,8 +26,9 @@ PERMIT_PACKAGE=	Yes
 MODULES =	www/mozilla lang/python
 
 MODPY_RUNDEP =	No
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_3}
 
-COMPILER =	base-clang ports-clang
+COMPILER =	ports-clang
 MODCLANG_ARCHS =	amd64 i386
 
 # firefox >= 44 doesnt build with base libevent
@@ -42,21 +43,17 @@ MOZILLA_USE_BUNDLED_HUNSPELL = Yes
 MOZILLA_USE_BUNDLED_SQLITE = Yes
 
 # firefox >= 53 needs rust
-BUILD_DEPENDS +=	lang/rust>=1.39
+BUILD_DEPENDS +=	lang/rust>=1.43
 # stylo build needs LLVM
 BUILD_DEPENDS +=	devel/llvm
-# 61 requires both versions of python
-BUILD_DEPENDS +=	lang/python/${MODPY_DEFAULT_VERSION_3}
 # 63 requires node because why not #1483595
 BUILD_DEPENDS +=	lang/node
 # 63 requires cbindgen #1478813
-BUILD_DEPENDS +=	devel/cbindgen>=0.13.1
+BUILD_DEPENDS +=	devel/cbindgen>=0.14.3
 .if (${MACHINE_ARCH}==amd64) || (${MACHINE_ARCH}==i386)
 # 67 requires nasm for bundled libdav1d
 BUILD_DEPENDS +=	devel/nasm
 .endif
-# unveil support relies on xdg-open
-RUN_DEPENDS +=		devel/xdg-utils
 
 # uses pledge()
 WANTLIB += X11-xcb Xcursor Xi intl xcb xcb-shm harfbuzz ${COMPILER_LIBCXX}
@@ -71,7 +68,6 @@ MAKE_ENV +=		BUILD_VERBOSE_LOG="1" CARGOFLAGS="-j${MAKE_JOBS}"
 CONFIGURE_ARGS +=	--enable-release #1386371
 CONFIGURE_ARGS +=	--enable-sandbox
 CONFIGURE_ARGS +=	--with-libclang-path=${LOCALBASE}/lib
-SUBST_VARS +=	LOCALBASE X11BASE MOZILLA_PROJECT
 
 # XXX badly formed debug ?
 DWZ = :
@@ -84,9 +80,7 @@ show-commit:
 
 post-install:
 	${SUBST_MAN} ${FILESDIR}/mozilla-firefox.1 \
-		${PREFIX}/man/man1/mozilla-firefox.1
-	cd ${PREFIX}/man/man1/ && ln -sf mozilla-firefox.1 firefox.1
-	cd ${PREFIX}/bin/ && ln -sf firefox mozilla-firefox
+		${PREFIX}/man/man1/firefox.1
 	# install prefs
 	${INSTALL_DATA_DIR} ${PREFIX}/lib/${MOZILLA_PROJECT}/browser/defaults/preferences
 	${SUBST_DATA} ${FILESDIR}/all-openbsd.js \

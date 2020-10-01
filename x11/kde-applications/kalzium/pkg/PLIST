@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2020/06/05 05:40:24 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.7 2020/09/11 11:23:01 rsadowski Exp $
 @bin bin/kalzium
 include/libkdeedu/
 include/libkdeedu/chemicaldataobject.h
@@ -267,7 +267,6 @@ share/doc/HTML/pt_BR/kalzium/screenshot-rs-phrases.png
 share/doc/HTML/pt_BR/kalzium/screenshot-tables.png
 share/doc/HTML/pt_BR/kalzium/screenshot1.png
 share/doc/HTML/pt_BR/kalzium/screenshot2.png
-share/doc/HTML/pt_BR/kalzium/screenshot5.png
 share/doc/HTML/pt_BR/kalzium/screenshot6.png
 share/doc/HTML/pt_BR/kalzium/screenshot7.png
 share/doc/HTML/pt_BR/kalzium/screenshotnuclidboard.png
@@ -343,7 +342,6 @@ share/doc/HTML/uk/kalzium/infodialog_isotopes.png
 share/doc/HTML/uk/kalzium/infodialog_misc.png
 share/doc/HTML/uk/kalzium/infodialog_spectrum.png
 share/doc/HTML/uk/kalzium/quick-1.png
-share/doc/HTML/uk/kalzium/quick-2.png
 share/doc/HTML/uk/kalzium/quick-3.png
 share/doc/HTML/uk/kalzium/quick-4.png
 share/doc/HTML/uk/kalzium/screenshot-calc-conc.png
@@ -357,7 +355,6 @@ share/doc/HTML/uk/kalzium/screenshot-rs-phrases.png
 share/doc/HTML/uk/kalzium/screenshot-tables.png
 share/doc/HTML/uk/kalzium/screenshot1.png
 share/doc/HTML/uk/kalzium/screenshot2.png
-share/doc/HTML/uk/kalzium/screenshot5.png
 share/doc/HTML/uk/kalzium/screenshot6.png
 share/doc/HTML/uk/kalzium/screenshot7.png
 share/doc/HTML/uk/kalzium/screenshotnuclidboard.png

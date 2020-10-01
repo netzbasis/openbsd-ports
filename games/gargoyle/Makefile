@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.29 2019/11/19 14:49:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.31 2020/08/01 11:30:36 sthen Exp $
 
 COMMENT =	cross-platform interactive fiction player
 
@@ -6,12 +6,11 @@ GH_ACCOUNT =	garglk
 GH_PROJECT =	garglk
 GH_TAGNAME =	2019.1.1
 EPOCH =		0
+REVISION =	1
 
 CATEGORIES =	games x11
 
 HOMEPAGE =	http://ccxvii.net/gargoyle/
-
-MAINTAINER =	Stuart Henderson <sthen@openbsd.org>
 
 # Various. Gargoyle is a frontend for various other included
 # programs under differing licenses; many GPL but some others.

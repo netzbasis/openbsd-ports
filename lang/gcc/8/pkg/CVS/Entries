@@ -1,7 +1,7 @@
 /PFRAG.ITM-libs/1.1.1.1/Fri Jan  4 15:50:40 2019//
-/PFRAG.ITM-main/1.1.1.1/Fri Jan  4 15:50:40 2019//
+/PFRAG.ITM-main/1.2/Fri Sep  4 09:55:35 2020//
 /PFRAG.QUADMATH-libs/1.1.1.1/Fri Jan  4 15:50:40 2019//
-/PFRAG.QUADMATH-main/1.1.1.1/Fri Jan  4 15:50:40 2019//
+/PFRAG.QUADMATH-main/1.2/Fri Sep  4 09:55:35 2020//
 /PFRAG.X86-ada/1.1.1.1/Fri Jan  4 15:50:40 2019//
 /PFRAG.X86-main/1.1.1.1/Fri Jan  4 15:50:40 2019//
 /PFRAG.aarch64-main/1.1.1.1/Fri Jan  4 15:50:40 2019//
@@ -14,10 +14,10 @@
 /PFRAG.mips64el-main/1.1.1.1/Fri Jan  4 15:50:40 2019//
 /PFRAG.powerpc-main/1.2/Sat Jan  5 22:08:11 2019//
 /PFRAG.sparc64-main/1.1.1.1/Fri Jan  4 15:50:40 2019//
-/PLIST-ada/1.2/Sat Apr 27 21:26:35 2019//
-/PLIST-c++/1.2/Sat Apr 27 21:26:35 2019//
-/PLIST-f95/1.2/Sat Apr 27 21:26:35 2019//
+/PLIST-ada/1.3/Fri Sep  4 09:55:35 2020//
+/PLIST-c++/1.3/Fri Sep  4 09:55:35 2020//
+/PLIST-f95/1.3/Fri Sep  4 09:55:35 2020//
 /PLIST-libs/1.2/Sat Apr 27 21:26:35 2019//
-/PLIST-main/1.2/Sat Apr 27 21:26:35 2019//
-/PLIST-objc/1.2/Sat Apr 27 21:26:35 2019//
+/PLIST-main/1.3/Fri Sep  4 09:55:35 2020//
+/PLIST-objc/1.3/Fri Sep  4 09:55:35 2020//
 D

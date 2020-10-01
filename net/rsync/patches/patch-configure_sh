@@ -1,7 +1,9 @@
-$OpenBSD: patch-configure_sh,v 1.4 2016/01/10 21:36:22 naddy Exp $
---- configure.sh.orig	Mon Dec 21 21:20:53 2015
-+++ configure.sh	Tue Dec 22 21:23:23 2015
-@@ -4453,7 +4453,7 @@ fi
+$OpenBSD: patch-configure_sh,v 1.6 2020/08/26 12:15:56 sthen Exp $
+
+Index: configure.sh
+--- configure.sh.orig
++++ configure.sh
+@@ -4908,7 +4908,7 @@ fi
  
  
  cat >>confdefs.h <<_ACEOF

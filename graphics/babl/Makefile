@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.55 2020/06/08 16:46:10 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.57 2020/08/03 08:01:48 ajacoutot Exp $
 
 COMMENT=		dynamic pixel format conversion library
 
-V=			0.1.78
+V=			0.1.80
 DISTNAME=		babl-${V}
 EXTRACT_SUFX=		.tar.xz
 
@@ -11,7 +11,7 @@ SUBST_VARS=		API_VERSION
 
 CATEGORIES=		graphics devel
 
-SHARED_LIBS += babl-0.1                  1.8 # 0.177.1
+SHARED_LIBS += babl-0.1                  1.8 # 0.179.1
 
 HOMEPAGE=		http://gegl.org/babl/
 
@@ -30,6 +30,9 @@ MODULES=		devel/meson \
 MODGNOME_TOOLS=		gobject-introspection vala
 
 COMPILER=		base-clang ports-gcc
+
+# rsvg-convert(1)
+BUILD_DEPENDS=		x11/gnome/librsvg
 
 LIB_DEPENDS=		graphics/lcms2
 

@@ -5,9 +5,10 @@
 /patch-common_gdm-log_c/1.2/Tue Apr 24 08:37:00 2018//
 /patch-configure_ac/1.18/Thu May 14 15:25:54 2020//
 /patch-daemon_Makefile_am/1.4/Sat Nov  2 15:34:07 2019//
+/patch-daemon_gdm-display-access-file_c/1.1/Sat Jul  4 17:19:20 2020//
 /patch-daemon_gdm-display_c/1.8/Sat Nov  2 15:34:07 2019//
 /patch-daemon_gdm-launch-environment_c/1.10/Sat Nov  2 15:34:07 2019//
-/patch-daemon_gdm-local-display-factory_c/1.13/Sat Nov  2 15:34:07 2019//
+/patch-daemon_gdm-local-display-factory_c/1.14/Tue Jul 14 06:32:03 2020//
 /patch-daemon_gdm-manager_c/1.24/Thu May 14 15:25:54 2020//
 /patch-daemon_gdm-server_c/1.12/Wed May  8 21:58:04 2019//
 /patch-daemon_gdm-session-record_c/1.11/Sat Nov  2 15:34:07 2019//

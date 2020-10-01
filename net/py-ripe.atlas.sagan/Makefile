@@ -1,17 +1,15 @@
-# $OpenBSD: Makefile,v 1.13 2019/12/01 01:28:23 kmos Exp $
+# $OpenBSD: Makefile,v 1.16 2020/08/01 11:30:36 sthen Exp $
 
 COMMENT =		parsing library for RIPE Atlas measurement results
 
 MODPY_EGG_VERSION =	1.3.0
 DISTNAME =		ripe.atlas.sagan-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
+REVISION =		3
 
 CATEGORIES =		net
 
 HOMEPAGE =		https://github.com/RIPE-NCC/ripe.atlas.sagan
-
-MAINTAINER =		Stuart Henderson <sthen@openbsd.org>
 
 # GPLv3
 PERMIT_PACKAGE =	Yes

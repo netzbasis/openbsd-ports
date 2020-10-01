@@ -1,8 +1,10 @@
-# $OpenBSD: Makefile,v 1.91 2020/03/20 16:44:27 naddy Exp $
+# $OpenBSD: Makefile,v 1.93 2020/08/01 23:49:30 mariani Exp $
+
+PORTROACH=	skipv:2.3.x
 
 COMMENT=	graphical frontend for LaTeX (nearly WYSIWYG)
 
-DISTNAME=	lyx-2.3.4.2
+DISTNAME=	lyx-2.3.5.2
 
 CATEGORIES=	print editors
 

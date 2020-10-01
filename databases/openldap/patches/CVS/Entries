@@ -2,7 +2,6 @@
 /patch-aclocal_m4/1.2/Thu Jul 25 22:07:47 2019//
 /patch-build_top_mk/1.8/Thu Jul 25 22:07:47 2019//
 /patch-configure_in/1.7/Thu Jun 18 21:36:11 2020//
-/patch-libraries_libldap_tls_o_c/1.4/Thu Jul 25 22:07:47 2019//
 /patch-libraries_liblutil_uuid_c/1.1/Thu Jun 18 21:36:11 2020//
 /patch-servers_slapd_Makefile_in/1.4/Thu Jul 25 22:07:47 2019//
 /patch-servers_slapd_back-mdb_init_c/1.6/Thu Jul 25 22:07:47 2019//

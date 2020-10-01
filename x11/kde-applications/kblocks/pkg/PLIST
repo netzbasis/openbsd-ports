@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2020/06/03 05:13:37 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.8 2020/09/11 11:23:02 rsadowski Exp $
 @pkgpath x11/kde4/kblocks
 @bin bin/kblocks
 share/applications/org.kde.kblocks.desktop

@@ -1,4 +1,4 @@
-/Makefile/1.73/Fri Apr 10 06:26:42 2020//
+/Makefile/1.75/Sat Aug 22 06:18:34 2020//
 D/foxtrotgps////
 D/garmindev////
 D/gdal////
@@ -61,7 +61,8 @@ D/py-shapely////
 D/py-supermercado////
 D/pygeoapi////
 D/qgis////
-D/qlandkartegt////
+D/qmapshack////
+D/routino////
 D/ruby-findmyiphone////
 D/spatialindex////
 D/spatialite////

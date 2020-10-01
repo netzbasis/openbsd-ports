@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.102 2020/06/12 22:09:09 cwen Exp $
+# $OpenBSD: Makefile,v 1.105 2020/08/07 09:21:02 jsg Exp $
 
 COMMENT=		IDE for GNOME
 
 GNOME_PROJECT=		gnome-builder
-GNOME_VERSION=		3.36.0
+GNOME_VERSION=		3.36.1
 REVISION=		0
 
 CATEGORIES=		devel
@@ -60,9 +60,7 @@ LIB_DEPENDS=		devel/glade \
 			x11/gtksourceview4
 
 .include <bsd.port.arch.mk>
-.if ${ARCH:Mi386} # needs 64-bit atomic ops
-CFLAGS +=		-march=i586
-CXXFLAGS +=		-march=i586
+.if ${ARCH:Mi386}
 # Doesn't build with lld: non-ABS relocation R_386_GOTOFF against symbol '.LC74'
 USE_LLD =		No
 .endif

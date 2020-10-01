@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2020/06/03 05:13:40 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.7 2020/09/11 11:23:04 rsadowski Exp $
 @pkgpath x11/kde4/kigo
 @bin bin/kigo
 share/applications/org.kde.kigo.desktop
@@ -127,6 +127,7 @@ share/locale/km/LC_MESSAGES/kigo.mo
 share/locale/ko/LC_MESSAGES/kigo.mo
 share/locale/lt/LC_MESSAGES/kigo.mo
 share/locale/lv/LC_MESSAGES/kigo.mo
+share/locale/ml/LC_MESSAGES/kigo.mo
 share/locale/mr/LC_MESSAGES/kigo.mo
 share/locale/nb/LC_MESSAGES/kigo.mo
 share/locale/nds/LC_MESSAGES/kigo.mo
@@ -150,3 +151,4 @@ share/metainfo/
 share/metainfo/org.kde.kigo.appdata.xml
 @tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag update-desktop-database
+share/qlogging-categories5/kigo.categories

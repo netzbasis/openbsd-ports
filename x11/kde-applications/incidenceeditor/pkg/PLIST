@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2020/06/13 19:43:03 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.3 2020/09/11 11:23:01 rsadowski Exp $
 @conflict kdepimlibs-<=4
 @bin bin/kincidenceeditor
 include/KF5/IncidenceEditor/

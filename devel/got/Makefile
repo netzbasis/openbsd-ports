@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.41 2020/05/05 16:23:10 stsp Exp $
+# $OpenBSD: Makefile,v 1.48 2020/09/30 18:30:37 stsp Exp $
 
 COMMENT-main =		game of trees version control system
 COMMENT-web =		game of trees repository server for web browsers
 
-V =			0.36
+V =			0.42
 DISTNAME =		got-${V}
 PKGNAME-main =		${DISTNAME}
 PKGNAME-web =		gotweb-${V}
@@ -31,6 +31,7 @@ DEBUG_PACKAGES =	${BUILD_PACKAGES}
 BUILD_DEPENDS =		www/kcgi>=0.12.0
 
 # some tests will fail without working non-interactive 'ssh 127.0.0.1'
+TEST_IS_INTERACTIVE =	Yes
 TEST_DEPENDS =		devel/git \
 			${PKGPATH}=${V}
 

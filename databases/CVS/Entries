@@ -1,4 +1,4 @@
-/Makefile/1.402/Sat Jun 13 16:22:52 2020//
+/Makefile/1.406/Wed Aug 19 02:21:51 2020//
 D/architect////
 D/barman////
 D/citus////
@@ -33,12 +33,12 @@ D/mydumper////
 D/mysql-utilities////
 D/mysql-zrm////
 D/mysql2pgsql////
-D/mytop////
 D/openldap////
 D/openldap23////
 D/p5-AnyEvent-CouchDB////
 D/p5-AsciiDB-TagFile////
 D/p5-BerkeleyDB////
+D/p5-CDB_File////
 D/p5-CGI-Application-Plugin-DBH////
 D/p5-Catalyst-Controller-Rose////
 D/p5-Catalyst-Model-CDBI////
@@ -107,6 +107,7 @@ D/p5-Rose-DB-Object////
 D/p5-Rose-DateTime////
 D/p5-Rose-Object////
 D/p5-SQL-Abstract////
+D/p5-SQL-Abstract-Classic////
 D/p5-SQL-Abstract-Limit////
 D/p5-SQL-ReservedWords////
 D/p5-SQL-Statement////
@@ -196,7 +197,6 @@ D/ruby-sqlite3////
 D/ruby-tiny_tds////
 D/sharedance////
 D/skytools////
-D/soprano////
 D/sqlbox////
 D/sqlite////
 D/sqlite3////
@@ -205,7 +205,6 @@ D/sqlite3-tcl////
 D/sqlitebrowser////
 D/sqlports////
 D/sqsh////
-D/strigi////
 D/tdb////
 D/tdbc////
 D/tdbc-mysql////

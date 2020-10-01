@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.12 2020/03/23 18:01:08 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.14 2020/09/07 14:48:47 rsadowski Exp $
 
 COMMENT =	KDE Gettext-based UI text internationalization
 DISTNAME =	ki18n-${VERSION}
 
-SHARED_LIBS =	KF5I18n		5.0
+SHARED_LIBS =	KF5I18n		6.0
 
 WANTLIB += ${COMPILER_LIBCXX} Qt5Core Qt5Network Qt5Qml intl m
 

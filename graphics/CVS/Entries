@@ -1,4 +1,4 @@
-/Makefile/1.509/Sat Jun 13 16:22:52 2020//
+/Makefile/1.518/Tue Sep 22 22:08:40 2020//
 D/DevIL////
 D/GraphicsMagick////
 D/ImageMagick////
@@ -21,6 +21,7 @@ D/cairo////
 D/cairomm////
 D/cal3d////
 D/cfdg////
+D/chafa////
 D/clutter////
 D/colord////
 D/colord-gtk////
@@ -80,7 +81,6 @@ D/glslang////
 D/gmt////
 D/gnofract4d////
 D/gocr////
-D/goocanvas2////
 D/gphoto2////
 D/gpicview////
 D/gprof2dot////
@@ -162,7 +162,9 @@ D/mpeg-lib////
 D/mpeg_encode////
 D/mscgen////
 D/mtpaint////
+D/mypaint////
 D/mypaint-brushes////
+D/mypaint-brushes2////
 D/netpbm////
 D/nomacs////
 D/ocaml-cairo////
@@ -228,12 +230,13 @@ D/posterazor////
 D/potrace////
 D/povray////
 D/pqiv////
-D/prison////
 D/pstoedit////
 D/py-Pillow////
+D/py-blurhash////
 D/py-cairo////
 D/py-cycler////
 D/py-dot////
+D/py-imageio////
 D/py-imagesize////
 D/py-matplotlib////
 D/py-opengl////
@@ -243,7 +246,6 @@ D/py-qrcode////
 D/py-sane////
 D/py-seaborn////
 D/pycha////
-D/qimageblitz////
 D/qiv////
 D/quesoglc////
 D/quirc////

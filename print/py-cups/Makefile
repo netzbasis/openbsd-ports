@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.33 2020/05/18 15:46:23 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.35 2020/08/19 12:25:13 ajacoutot Exp $
 
 COMMENT=		CUPS bindings for Python
 
 MODPY_EGG_VERSION=	2.0.1
 DISTNAME=		pycups-${MODPY_EGG_VERSION}
 PKGNAME=		${DISTNAME:S/^py/py-/}
+REVISION=		0
 
 CATEGORIES=		print
 
@@ -22,7 +23,7 @@ MODULES=		lang/python
 MODPY_PI=		Yes
 
 FLAVORS=		python3
-FLAVOR?=		python3
+FLAVOR=			python3
 
 LIB_DEPENDS=		print/cups,-libs \
 			${MODPY_LIB_DEPENDS}

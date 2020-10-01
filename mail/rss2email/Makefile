@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2019/09/11 00:15:43 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2020/08/08 17:00:50 sthen Exp $
 
 COMMENT =	convert RSS/Atom newsfeeds to email
 
-MODPY_EGG_VERSION = 3.10
+MODPY_EGG_VERSION = 3.12.1
 DISTNAME =	rss2email-${MODPY_EGG_VERSION}
 CATEGORIES =	mail www
 

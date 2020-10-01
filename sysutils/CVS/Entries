@@ -1,4 +1,4 @@
-/Makefile/1.572/Fri Jun 19 14:52:23 2020//
+/Makefile/1.576/Tue Aug 11 14:54:41 2020//
 D/accountsservice////
 D/amazon-ecs-cli////
 D/amazon-ssm-agent////
@@ -83,6 +83,7 @@ D/facette////
 D/facter////
 D/faubackup////
 D/fdupes////
+D/fff////
 D/findlib////
 D/firmware////
 D/flashrom////
@@ -113,6 +114,7 @@ D/grive2////
 D/gsmartcontrol////
 D/hotplug-diskmount////
 D/htop////
+D/hw-probe////
 D/idled////
 D/incron////
 D/inotify-tools////
@@ -253,6 +255,7 @@ D/py-dotenv////
 D/py-elasticsearch-curator////
 D/py-filelock////
 D/py-ghmi////
+D/py-hpilo////
 D/py-joblib////
 D/py-lockfile////
 D/py-metlog////
@@ -367,6 +370,7 @@ D/ttyplot////
 D/u-boot////
 D/udfclient////
 D/uefitool////
+D/ugrep////
 D/unionfs-fuse////
 D/upobsd////
 D/upower////

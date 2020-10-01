@@ -1,4 +1,4 @@
-/Makefile/1.243/Tue Jun  2 14:09:16 2020//
+/Makefile/1.244/Sun Sep 20 04:27:38 2020//
 D/STk////
 D/a60////
 D/abcl////
@@ -29,7 +29,6 @@ D/eltclsh////
 D/erlang////
 D/expect////
 D/flang////
-D/fpc////
 D/freebasic////
 D/freehdl////
 D/fsharp////

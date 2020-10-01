@@ -1,19 +1,22 @@
-# $OpenBSD: Makefile,v 1.26 2019/09/18 07:40:32 sthen Exp $
+# $OpenBSD: Makefile,v 1.31 2020/09/07 08:42:02 sthen Exp $
 
 COMMENT =	create PDF documents with perl
 
 MODULES =	cpan
 PKG_ARCH =	*
 
-DISTNAME =	PDF-API2-2.036
+DISTNAME =	PDF-API2-2.038
+REVISION =	0
+
 CATEGORIES =	textproc
 
-MAINTAINER =	Stuart Henderson <sthen@openbsd.org>
+MAINTAINER =	Stuart Henderson <stu.ports@spacehopper.org>
 
 # LGPLv2.1
 PERMIT_PACKAGE =	Yes
 
-RUN_DEPENDS =	textproc/p5-Font-TTF
+RUN_DEPENDS =	textproc/p5-Font-TTF \
+		textproc/p5-PDF-API2-XS
 TEST_DEPENDS =	devel/p5-Test-Exception \
 		devel/p5-Test-Memory-Cycle
 

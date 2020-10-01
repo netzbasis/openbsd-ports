@@ -9,6 +9,7 @@
 /DESCR-passenger/1.1/Fri Nov  4 22:13:43 2016//
 /DESCR-perl/1.1/Fri Nov  4 22:13:43 2016//
 /DESCR-rtmp/1.1/Sun Aug 25 12:22:04 2019//
+/DESCR-securelink/1.1/Mon Jul 27 14:33:15 2020//
 /DESCR-stream/1.1/Fri Nov  4 22:13:43 2016//
 /DESCR-xslt/1.1/Fri Nov  4 22:13:43 2016//
 /PLIST-geoip2/1.2/Mon Jun  8 06:03:50 2020//
@@ -22,6 +23,7 @@
 /PLIST-passenger/1.2/Mon Jun  8 06:03:51 2020//
 /PLIST-perl/1.5/Mon Jun  8 06:03:51 2020//
 /PLIST-rtmp/1.2/Mon Jun  8 06:03:51 2020//
+/PLIST-securelink/1.1/Mon Jul 27 14:33:15 2020//
 /PLIST-stream/1.2/Mon Jun  8 06:03:51 2020//
 /PLIST-xslt/1.2/Mon Jun  8 06:03:51 2020//
 /README-main/1.2/Tue Sep  4 12:46:25 2018//

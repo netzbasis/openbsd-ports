@@ -1,10 +1,12 @@
-@comment $OpenBSD: PLIST,v 1.2 2020/06/13 09:24:29 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.4 2020/07/17 18:08:56 jasper Exp $
 bin/pwn
 lib/python${MODPY_VERSION}/site-packages/CHANGELOG.md
 lib/python${MODPY_VERSION}/site-packages/CONTRIBUTING.md
 lib/python${MODPY_VERSION}/site-packages/LICENSE-pwntools.txt
 lib/python${MODPY_VERSION}/site-packages/README.md
 lib/python${MODPY_VERSION}/site-packages/TESTING.md
+lib/python${MODPY_VERSION}/site-packages/bar.txt
+lib/python${MODPY_VERSION}/site-packages/foo.txt
 lib/python${MODPY_VERSION}/site-packages/pwn/
 lib/python${MODPY_VERSION}/site-packages/pwn/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pwn/${MODPY_PYCACHE}/
@@ -221,6 +223,10 @@ lib/python${MODPY_VERSION}/site-packages/pwnlib/data/elf/
 lib/python${MODPY_VERSION}/site-packages/pwnlib/data/elf/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pwnlib/data/elf/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pwnlib/data/elf/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pwnlib/data/elf/fmtstr/
+lib/python${MODPY_VERSION}/site-packages/pwnlib/data/elf/fmtstr/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pwnlib/data/elf/fmtstr/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pwnlib/data/elf/fmtstr/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pwnlib/data/elf/relro/
 lib/python${MODPY_VERSION}/site-packages/pwnlib/data/elf/relro/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pwnlib/data/elf/relro/${MODPY_PYCACHE}/
@@ -394,10 +400,12 @@ ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pwnlib/rop/${MODPY_PYCA
 lib/python${MODPY_VERSION}/site-packages/pwnlib/rop/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pwnlib/rop/${MODPY_PYCACHE}call.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pwnlib/rop/${MODPY_PYCACHE}gadgets.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pwnlib/rop/${MODPY_PYCACHE}ret2dlresolve.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pwnlib/rop/${MODPY_PYCACHE}rop.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pwnlib/rop/${MODPY_PYCACHE}srop.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pwnlib/rop/call.py
 lib/python${MODPY_VERSION}/site-packages/pwnlib/rop/gadgets.py
+lib/python${MODPY_VERSION}/site-packages/pwnlib/rop/ret2dlresolve.py
 lib/python${MODPY_VERSION}/site-packages/pwnlib/rop/rop.py
 lib/python${MODPY_VERSION}/site-packages/pwnlib/rop/srop.py
 lib/python${MODPY_VERSION}/site-packages/pwnlib/runner.py
@@ -6935,6 +6943,8 @@ lib/python${MODPY_VERSION}/site-packages/pwnlib/term/${MODPY_PYCACHE}spinners.${
 lib/python${MODPY_VERSION}/site-packages/pwnlib/term/${MODPY_PYCACHE}term.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pwnlib/term/${MODPY_PYCACHE}termcap.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pwnlib/term/${MODPY_PYCACHE}text.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pwnlib/term/${MODPY_PYCACHE}unix_termcap.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pwnlib/term/${MODPY_PYCACHE}windows_termcap.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pwnlib/term/completer.py
 lib/python${MODPY_VERSION}/site-packages/pwnlib/term/key.py
 lib/python${MODPY_VERSION}/site-packages/pwnlib/term/keyconsts.py
@@ -6944,6 +6954,8 @@ lib/python${MODPY_VERSION}/site-packages/pwnlib/term/spinners.py
 lib/python${MODPY_VERSION}/site-packages/pwnlib/term/term.py
 lib/python${MODPY_VERSION}/site-packages/pwnlib/term/termcap.py
 lib/python${MODPY_VERSION}/site-packages/pwnlib/term/text.py
+lib/python${MODPY_VERSION}/site-packages/pwnlib/term/unix_termcap.py
+lib/python${MODPY_VERSION}/site-packages/pwnlib/term/windows_termcap.py
 lib/python${MODPY_VERSION}/site-packages/pwnlib/testexample.py
 lib/python${MODPY_VERSION}/site-packages/pwnlib/timeout.py
 lib/python${MODPY_VERSION}/site-packages/pwnlib/tubes/

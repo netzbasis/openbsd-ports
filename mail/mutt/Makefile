@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.136 2020/06/21 11:41:31 sthen Exp $
+# $OpenBSD: Makefile,v 1.140 2020/08/31 16:52:03 sthen Exp $
 
 COMMENT=	tty-based e-mail client
 
-DISTNAME=	mutt-1.14.4
+DISTNAME=	mutt-1.14.7
 EPOCH=		3
-REVISION=	0
 
 CATEGORIES=	mail
 HOMEPAGE=	http://www.mutt.org/
 
-MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
+MAINTAINER=	Stuart Henderson <stu.ports@spacehopper.org>
 
 # GPLv2+
 PERMIT_PACKAGE=	Yes

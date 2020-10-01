@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2020/06/03 05:13:37 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.7 2020/09/11 11:23:02 rsadowski Exp $
 @pkgpath x11/kde4/katomic
 @bin bin/katomic
 share/applications/org.kde.katomic.desktop
@@ -95,6 +95,7 @@ share/locale/km/LC_MESSAGES/katomic.mo
 share/locale/ko/LC_MESSAGES/katomic.mo
 share/locale/lt/LC_MESSAGES/katomic.mo
 share/locale/lv/LC_MESSAGES/katomic.mo
+share/locale/ml/LC_MESSAGES/katomic.mo
 share/locale/mr/LC_MESSAGES/katomic.mo
 share/locale/nb/LC_MESSAGES/katomic.mo
 share/locale/nds/LC_MESSAGES/katomic.mo
@@ -119,3 +120,4 @@ share/metainfo/
 share/metainfo/org.kde.katomic.appdata.xml
 @tag update-desktop-database
 @tag gtk-update-icon-cache %D/share/icons/hicolor
+share/qlogging-categories5/katomic.categories

@@ -6,7 +6,6 @@
 /patch-php_ini-development/1.1/Tue Apr 21 20:38:31 2020//
 /patch-php_ini-production/1.1/Tue Apr 21 20:38:31 2020//
 /patch-sapi_cgi_cgi_main_c/1.2/Thu Jun 11 13:59:03 2020//
-/patch-sapi_cli_php_cli_c/1.1/Tue Apr 21 20:38:31 2020//
 /patch-sapi_fpm_fpm_fpm_atomic_h/1.1/Tue Apr 21 20:38:31 2020//
 /patch-sapi_fpm_fpm_fpm_children_c/1.1/Tue Apr 21 20:38:31 2020//
 /patch-sapi_fpm_www_conf_in/1.1/Tue Apr 21 20:38:31 2020//

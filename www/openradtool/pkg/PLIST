@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.2 2019/06/03 23:27:32 jturner Exp $
+@comment $OpenBSD: PLIST,v 1.4 2020/08/24 17:41:52 jturner Exp $
 @conflict kwebapp-*
 @pkgpath www/kwebapp
 @bin bin/ort
@@ -8,6 +8,7 @@
 @bin bin/ort-c-header
 @bin bin/ort-c-source
 @bin bin/ort-javascript
+@bin bin/ort-nodejs
 @bin bin/ort-sql
 @bin bin/ort-sqldiff
 @bin bin/ort-xliff
@@ -17,6 +18,7 @@
 @man man/man1/ort-c-header.1
 @man man/man1/ort-c-source.1
 @man man/man1/ort-javascript.1
+@man man/man1/ort-nodejs.1
 @man man/man1/ort-sql.1
 @man man/man1/ort-sqldiff.1
 @man man/man1/ort-xliff.1
@@ -29,3 +31,4 @@ share/openradtool/audit.js
 share/openradtool/b64_ntop.c
 share/openradtool/gensalt.c
 share/openradtool/jsmn.c
+share/openradtool/ortPrivate.ts

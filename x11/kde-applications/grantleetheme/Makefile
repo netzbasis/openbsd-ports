@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.4 2020/06/05 05:40:24 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.6 2020/09/07 14:49:14 rsadowski Exp $
 
 COMMENT =	grantlee theme library
 DISTNAME =	grantleetheme-${VERSION}
 CATEGORIES =	devel x11
-REVISION =	1
 
-SHARED_LIBS +=  KF5GrantleeTheme          1.0 # 5.9
+SHARED_LIBS +=  KF5GrantleeTheme          2.0 # 5.9
 
 WANTLIB += ${COMPILER_LIBCXX} Grantlee_Templates KF5Attica KF5Auth
 WANTLIB += KF5AuthCore KF5Codecs KF5ConfigCore KF5ConfigGui KF5ConfigWidgets
@@ -33,7 +32,7 @@ LIB_DEPENDS =	devel/kf5/attica \
 		devel/kf5/kservice \
 		devel/kf5/kwidgetsaddons \
 		devel/kf5/kxmlgui \
-		x11/grantlee-qt5
+		x11/grantlee-qt5>=5.2
 
 TEST_IS_INTERACTIVE =	X11
 

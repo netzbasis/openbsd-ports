@@ -1,15 +1,15 @@
-# $OpenBSD: Makefile,v 1.53 2020/06/19 22:21:41 sthen Exp $
+# $OpenBSD: Makefile,v 1.58 2020/09/10 08:38:48 sthen Exp $
 
 COMMENT=	tty-based e-mail client, Mutt with patches
 
 GH_ACCOUNT=	neomutt
 GH_PROJECT=	neomutt
-GH_TAGNAME=	20200619
+GH_TAGNAME=	20200821
 
 CATEGORIES=	mail
 HOMEPAGE=	https://neomutt.org/
 
-MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
+MAINTAINER=	Stuart Henderson <stu.ports@spacehopper.org>
 
 # GPLv2+
 PERMIT_PACKAGE=	Yes
@@ -20,17 +20,17 @@ WANTLIB+=	c crypto curses iconv idn2 intl ssl tdb z
 LIB_DEPENDS+=	databases/tdb \
 		devel/gettext,-runtime \
 		devel/libidn2
-BUILD_DEPENDS+=	textproc/docbook-xsl \
-		www/lynx
+BUILD_DEPENDS+=	devel/gettext,-tools \
+		lang/jimtcl \
+		textproc/docbook-xsl \
+		w3m-*|lynx-*:www/lynx
 DEBUG_PACKAGES=	${BUILD_PACKAGES}
 
 SEPARATE_BUILD=	Yes
-FLAVORS=	gpgme sasl
+FLAVORS=	gpgme sasl notmuch
 FLAVOR?=
 
 CONFIGURE_STYLE= simple
-BUILD_DEPENDS+=	lang/jimtcl \
-		devel/gettext,-tools
 CONFIGURE_ARGS+= --mandir="${PREFIX}/man" \
 		--with-ui=ncurses \
 		--docdir="${PREFIX}/share/doc/neomutt" \
@@ -62,6 +62,19 @@ WANTLIB+=	assuan gpg-error gpgme sqlite3
 CONFIGURE_ARGS+= --sasl
 LIB_DEPENDS+=	security/cyrus-sasl2
 WANTLIB+=	sasl2
+.endif
+
+.if ${FLAVOR:Mnotmuch}
+CONFIGURE_ARGS+= --notmuch
+LIB_DEPENDS+=	mail/notmuch/notmuch,-main
+WANTLIB+=	notmuch
+.endif
+
+.include <bsd.port.arch.mk>
+.if ${MACHINE_ARCH} != hppa && ${MACHINE_ARCH} != powerpc
+LIB_DEPENDS+=  databases/kyotocabinet
+WANTLIB+=      kyotocabinet
+CONFIGURE_ARGS+= --kyotocabinet
 .endif
 
 post-install:

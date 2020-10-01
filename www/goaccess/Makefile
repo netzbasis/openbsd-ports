@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.24 2019/08/10 21:24:31 sthen Exp $
+# $OpenBSD: Makefile,v 1.26 2020/08/08 07:36:57 kirby Exp $
 
 COMMENT =		realtime console web log analyzer
 
-DISTNAME =		goaccess-1.3
-REVISION =		2
+DISTNAME =		goaccess-1.4
+REVISION =		0
 
 CATEGORIES =		www
 
@@ -34,14 +34,5 @@ CONFIGURE_ARGS =	--enable-geoip=mmdb \
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 FAKE_FLAGS =		confdir="${PREFIX}/share/examples/goaccess"
-
-FLAVORS = 		tokyocabinet
-FLAVOR ?=
-
-.if ${FLAVOR:Mtokyocabinet}
-WANTLIB += 		bz2 tokyocabinet z
-LIB_DEPENDS += 		databases/tokyocabinet
-CONFIGURE_ARGS += 	--enable-tcb=btree
-.endif
 
 .include <bsd.port.mk>

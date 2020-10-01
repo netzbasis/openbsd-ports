@@ -1,10 +1,7 @@
-/patch-authenticate_c/1.6/Sun Jan 10 21:36:22 2016//
-/patch-configure_sh/1.4/Sun Jan 10 21:36:22 2016//
-/patch-rsync_1/1.6/Tue Feb 13 19:20:06 2018//
-/patch-rsyncd_conf_5/1.7/Tue Feb 13 19:20:06 2018//
-/patch-support_rrsync/1.2/Tue Sep 18 11:28:23 2012//
-/patch-zlib_crc32_c/1.1/Mon Jan 27 20:27:10 2020//
-/patch-zlib_inffast_c/1.1/Mon Jan 27 20:27:10 2020//
-/patch-zlib_inflate_c/1.1/Mon Jan 27 20:27:10 2020//
-/patch-zlib_inftrees_c/1.1/Mon Jan 27 20:27:10 2020//
+/patch-authenticate_c/1.8/Wed Aug 26 12:15:56 2020//
+/patch-compat_c/1.1/Wed Aug 26 12:15:56 2020//
+/patch-configure_sh/1.6/Wed Aug 26 12:15:56 2020//
+/patch-rsync_1/1.8/Wed Aug 26 12:15:56 2020//
+/patch-rsyncd_conf_5/1.9/Wed Aug 26 12:15:56 2020//
+/patch-support_rrsync/1.3/Wed Aug 26 12:15:56 2020//
 D

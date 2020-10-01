@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.41 2020/06/06 20:30:48 sthen Exp $
+# $OpenBSD: Makefile,v 1.43 2020/09/07 11:42:26 sthen Exp $
 
 COMMENT=	IPMI library and tools (in- and out-of-band)
 
-DISTNAME=	freeipmi-1.6.5
+DISTNAME=	freeipmi-1.6.6
 
 SHARED_LIBS +=  freeipmi             7.0      # 19.3
 SHARED_LIBS +=  ipmiconsole          3.1      # 5.5
@@ -13,7 +13,7 @@ CATEGORIES=	sysutils
 
 HOMEPAGE=	https://www.gnu.org/software/freeipmi/
 
-MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
+MAINTAINER=	Stuart Henderson <stu.ports@spacehopper.org>
 
 # GPLv3+
 PERMIT_PACKAGE=	Yes

@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.6 2019/07/12 20:45:47 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2020/09/23 11:08:30 rpointel Exp $
 
 COMMENT =	data type fabric
 
-MODPY_EGG_VERSION =	20181128
+MODPY_EGG_VERSION =	20200621
 DISTNAME =	dtfabric-${MODPY_EGG_VERSION}
 
 PKGNAME =	py-${DISTNAME}
-REVISION =	0
 
 CATEGORIES =	devel
 
@@ -22,7 +21,7 @@ MODPY_PI =	Yes
 RUN_DEPENDS =	textproc/py-yaml${MODPY_FLAVOR}
 
 FLAVORS =	python3
-FLAVOR ?=
+FLAVOR =	python3
 
 # make it possible to install both (un)FLAVORed packages alongside
 post-install:

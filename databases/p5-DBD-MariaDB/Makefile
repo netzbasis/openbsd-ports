@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.2 2020/02/16 10:58:15 giovanni Exp $
+# $OpenBSD: Makefile,v 1.4 2020/09/14 13:38:58 bluhm Exp $
 
 COMMENT =	MariaDB and MySQL driver for the Perl5 Database Interface
 
 DISTNAME =	DBD-MariaDB-1.21
-REVISION =	0
+REVISION =	2
 
 MAINTAINER =	Giovanni Bechis <giovanni@openbsd.org>
 
@@ -22,7 +22,7 @@ LIB_DEPENDS =		databases/mariadb
 TEST_DEPENDS =		databases/p5-DBI \
 			databases/mariadb,-server \
 			devel/p5-Test-Deep \
-			security/p5-Net_SSLeay>=1.43 \
+			security/p5-Net-SSLeay>=1.43 \
 			sysutils/p5-Proc-ProcessTable
 TEST_ENV=               EXTENDED_TESTING=1
 

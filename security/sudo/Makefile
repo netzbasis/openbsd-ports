@@ -1,15 +1,14 @@
-# $OpenBSD: Makefile,v 1.40 2020/06/21 12:38:52 sthen Exp $
+# $OpenBSD: Makefile,v 1.45 2020/09/24 02:44:14 danj Exp $
 
 COMMENT-main=	execute a command as another user
 COMMENT-python=	sudo Python plugin
 
-V=		1.9.1
-REVISION-main=	0
+V=		1.9.3p1
 DISTNAME=	sudo-${V}
 CATEGORIES=	security
 
-PKGNAME-main=	sudo-${V}
-PKGNAME-python=	sudo-python-${V}
+PKGNAME-main=	sudo-${V:S/p/./}
+PKGNAME-python=	sudo-python-${V:S/p/./}
 
 MAINTAINER=	Todd C. Miller <millert@openbsd.org>
 
@@ -38,6 +37,7 @@ SHARED_LIBS=	sudo_util	0.0
 PSEUDO_FLAVORS=	no_python
 FLAVORS=	gettext ldap
 FLAVOR?=
+FLAVOR_STRING=	${FLAVOR_EXT:S/-/,/g}
 
 MULTI_PACKAGES=		-main -python
 MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}

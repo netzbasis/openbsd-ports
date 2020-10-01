@@ -1,20 +1,22 @@
-/Makefile/1.178/Sat Mar  7 06:50:42 2020//
+/Makefile/1.193/Thu Aug 27 15:18:30 2020//
+D/4ti2////
 D/R////
 D/aamath////
 D/abs////
 D/armadillo////
 D/arpack////
+D/bc-gh////
 D/bcal////
 D/blas////
 D/calc////
 D/calcoo////
 D/cblas////
+D/cddlib////
 D/cfitsio////
 D/cgal////
 D/coq////
 D/dieharder////
 D/double-conversion////
-D/ebc////
 D/ecm////
 D/eigen3////
 D/ensmallen////
@@ -22,7 +24,6 @@ D/fann////
 D/fftw////
 D/fftw3////
 D/foma////
-D/freemat////
 D/galculator////
 D/gbc////
 D/geogebra////
@@ -92,6 +93,8 @@ D/p5-Math-GMPz////
 D/p5-Math-Int128////
 D/p5-Math-Int64////
 D/p5-Math-MatrixReal////
+D/p5-Math-Prime-Util////
+D/p5-Math-Prime-Util-GMP////
 D/p5-Math-Random-ISAAC////
 D/p5-Math-Round////
 D/p5-Math-Spline////
@@ -110,9 +113,13 @@ D/plplot////
 D/prover9////
 D/pspp////
 D/py-Numeric////
+D/py-PyWavelets////
 D/py-affine////
 D/py-bottleneck////
 D/py-cftime////
+D/py-cvxopt////
+D/py-cvxpy////
+D/py-ecos////
 D/py-graphviz////
 D/py-h5py////
 D/py-mpmath////
@@ -120,17 +127,21 @@ D/py-netcdf4////
 D/py-networkx////
 D/py-numexpr////
 D/py-numpy////
+D/py-osqp////
 D/py-pandas////
 D/py-patsy////
 D/py-pysmt////
+D/py-scikit-image////
 D/py-scikit-learn////
 D/py-scipy////
+D/py-scs////
 D/py-snuggs////
 D/py-statistics////
 D/py-sympy////
 D/py-tables////
 D/qhull////
 D/qrupdate////
+D/rstudio////
 D/sc////
 D/spread-sheet-widget////
 D/suitesparse////

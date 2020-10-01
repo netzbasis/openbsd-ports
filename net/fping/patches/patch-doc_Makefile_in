@@ -1,12 +1,9 @@
-$OpenBSD: patch-doc_Makefile_in,v 1.2 2019/03/31 00:09:09 sthen Exp $
-
-remove unnecessary GNUism; in traditional make(1), $< may only be used
-in a suffix rule.
+$OpenBSD: patch-doc_Makefile_in,v 1.4 2020/08/06 14:39:37 sthen Exp $
 
 Index: doc/Makefile.in
 --- doc/Makefile.in.orig
 +++ doc/Makefile.in
-@@ -476,7 +476,7 @@ uninstall-man: uninstall-man8
+@@ -489,7 +489,7 @@ uninstall-man: uninstall-man8
  
  
  fping.8: fping.pod

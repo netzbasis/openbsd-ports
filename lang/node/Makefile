@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.83 2020/04/04 16:42:57 abieber Exp $
+# $OpenBSD: Makefile,v 1.87 2020/07/22 17:30:24 jasper Exp $
 
 # XXX:
 # - Needs __ARM_NR_cacheflush (or the like) to work on arm-based ports.
 # - Needs bundled libcares as arpa/nameser.h does not include ns_t_a.
 
-ONLY_FOR_ARCHS =	amd64 aarch64 i386
+ONLY_FOR_ARCHS =	amd64 aarch64 i386 powerpc64
 DPB_PROPERTIES =	parallel
 
 USE_WXNEEDED =		Yes
@@ -16,6 +16,7 @@ PLEDGE_VER =		1.1.2
 DISTFILES =		node-pledge-{}${PLEDGE_VER}.tar.gz:0 \
 			${DISTNAME}-headers.tar.gz \
 			${DISTNAME}.tar.gz
+REVISION =		1
 
 DISTNAME =		node-${NODE_VERSION}
 PKGNAME =		${DISTNAME:S/v//g}
@@ -32,6 +33,7 @@ PERMIT_PACKAGE =	Yes
 MASTER_SITES =		${HOMEPAGE}dist/${NODE_VERSION}/
 
 MODULES =		lang/python
+MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 
 WANTLIB += c execinfo kvm m pthread util ${COMPILER_LIBCXX}
 
@@ -48,12 +50,13 @@ RUN_DEPENDS =		devel/gmake \
 
 TEST_TARGET =		test
 CONFIGURE_STYLE =	simple
+CONFIGURE_SCRIPT =	${MODPY_BIN} configure.py
 
 # libpath and includes aren't picked up, but I added them here as a note.
 # The patch for node.gyp is where they are actually being set.
 CONFIGURE_ARGS =	--prefix=${PREFIX}
 
-.if "${MACHINE_ARCH}" ==	"aarch64"
+.if "${MACHINE_ARCH}" == "aarch64" || "${MACHINE_ARCH}" == "powerpc64"
 CONFIGURE_ARGS +=	--openssl-no-asm
 .endif
 

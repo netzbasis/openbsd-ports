@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.60 2020/03/27 08:08:31 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.62 2020/08/15 20:30:47 rsadowski Exp $
 
 BROKEN-hppa=		linking .libs/python-libpst.o fails
 
@@ -6,6 +6,8 @@ COMMENT-main=		read and convert Microsoft Outlook mail files
 COMMENT-python=		python interface to libpst
 
 DISTNAME=		libpst-0.6.75
+
+REVISION-python=	1
 
 SHARED_LIBS +=  pst                  3.0      # 5.17
 
@@ -29,7 +31,7 @@ WANTLIB-main += glib-2.0 gobject-2.0 gsf-1 jpeg pcre png zstd
 WANTLIB-main += tiff webp xml2 z m pthread ${COMPILER_LIBCXX} lzma
 
 WANTLIB-python += ${WANTLIB} iconv
-WANTLIB-python += pst boost_python3-mt
+WANTLIB-python += pst boost_python${MODPY_VERSION:C/\.//g}-mt
 
 COMPILER =		base-clang ports-gcc base-gcc
 
@@ -47,7 +49,7 @@ LIB_DEPENDS-main=	devel/libgsf \
 			graphics/gd
 
 LIB_DEPENDS-python=	${BASE_PKGPATH} \
-			devel/boost
+			devel/boost>=1.67.0
 
 USE_GMAKE=		Yes
 

@@ -1,4 +1,4 @@
-/Makefile/1.1209/Sat Jun 13 16:22:52 2020//
+/Makefile/1.1222/Sat Sep 12 15:33:31 2020//
 D/adns////
 D/adsuck////
 D/aggregate////
@@ -6,7 +6,6 @@ D/aggregate6////
 D/amule////
 D/angst////
 D/ap-utils////
-D/apache-activemq////
 D/argus////
 D/argus-clients////
 D/arouteserver////
@@ -31,11 +30,11 @@ D/bitlbee-facebook////
 D/bitlbee-mastodon////
 D/blaeu////
 D/bnc////
+D/bombadillo////
 D/bro////
 D/btpd////
 D/bwm-ng////
 D/cadaver////
-D/cagibi////
 D/castget////
 D/cftp////
 D/cgo////
@@ -110,11 +109,13 @@ D/gmudix////
 D/gnugk////
 D/go-ipfs////
 D/go-net////
+D/gomuks////
 D/gopher////
 D/gophernicus////
 D/gotthard////
 D/gpodder////
 D/grake////
+D/grsync////
 D/gssdp////
 D/gtk-gnutella////
 D/gupnp////
@@ -168,6 +169,7 @@ D/isc-dhcp////
 D/jftpgw////
 D/jnettop////
 D/kdeconnect-kde////
+D/kdsoap////
 D/kea////
 D/kismet////
 D/kissd////
@@ -187,7 +189,6 @@ D/libfstrm////
 D/libgadu////
 D/libircclient////
 D/libktorrent////
-D/libkvkontakte////
 D/libmaxminddb////
 D/libmesode////
 D/libmygpo-qt////
@@ -234,6 +235,7 @@ D/megatools////
 D/mfi////
 D/microblog-purple////
 D/minbif////
+D/miniflux////
 D/mininet////
 D/minio////
 D/miniupnp////
@@ -358,7 +360,6 @@ D/p5-Net-Frame////
 D/p5-Net-Frame-Dump////
 D/p5-Net-Frame-Layer-ICMPv6////
 D/p5-Net-Frame-Layer-IPv6////
-D/p5-Net-GPSD////
 D/p5-Net-Google////
 D/p5-Net-HTTP////
 D/p5-Net-ICQ2000////
@@ -682,6 +683,7 @@ D/uhttpmock////
 D/unifi////
 D/unison////
 D/unworkable////
+D/usockets////
 D/utox////
 D/uucp////
 D/uucpd////
@@ -703,8 +705,6 @@ D/wide-dhcpv6////
 D/wifind////
 D/wireguard-go////
 D/wireguard-tools////
-D/wireless////
-D/wiresep////
 D/wireshark////
 D/wmnetload////
 D/wol////

@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.30 2020/04/20 07:30:20 jasper Exp $
+# $OpenBSD: Makefile,v 1.34 2020/08/23 20:42:29 sthen Exp $
 
 COMMENT=	C-based regular expression scanner generator
 
-V=		1.3
+V=		2.0.3
 DISTNAME=	re2c-$V
 EXTRACT_SUFX=	.tar.xz
 CATEGORIES=	devel
-REVISION=	1
 
 HOMEPAGE=	https://re2c.org/
 
@@ -27,7 +26,6 @@ CONFIGURE_STYLE= gnu
 # to pregenerated files. because re2c is a depdendency of ninja, which is on
 # the path to building much of the tree, forcibly disable this rather than
 # listing the dependency.
-# 
 CONFIGURE_ENV=	ac_cv_path_BISON=no
 
 .include <bsd.port.mk>

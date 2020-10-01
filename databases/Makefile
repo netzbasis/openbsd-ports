@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.402 2020/06/13 16:22:52 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.406 2020/08/19 02:21:51 afresh1 Exp $
 
      SUBDIR =
      SUBDIR += architect
@@ -35,7 +35,6 @@
      SUBDIR += mysql-utilities
      SUBDIR += mysql-zrm
      SUBDIR += mysql2pgsql
-     SUBDIR += mytop
      SUBDIR += openldap
      SUBDIR += openldap,aci
      SUBDIR += openldap,aci,gssapi
@@ -44,6 +43,7 @@
      SUBDIR += p5-AnyEvent-CouchDB
      SUBDIR += p5-AsciiDB-TagFile
      SUBDIR += p5-BerkeleyDB
+     SUBDIR += p5-CDB_File
      SUBDIR += p5-CGI-Application-Plugin-DBH
      SUBDIR += p5-Catalyst-Controller-Rose
      SUBDIR += p5-Catalyst-Model-CDBI
@@ -112,6 +112,7 @@
      SUBDIR += p5-Rose-DateTime
      SUBDIR += p5-Rose-Object
      SUBDIR += p5-SQL-Abstract
+     SUBDIR += p5-SQL-Abstract-Classic
      SUBDIR += p5-SQL-Abstract-Limit
      SUBDIR += p5-SQL-ReservedWords
      SUBDIR += p5-SQL-Statement
@@ -230,7 +231,6 @@
      SUBDIR += ruby-tiny_tds,ruby27
      SUBDIR += sharedance
      SUBDIR += skytools
-     #SUBDIR += soprano
      SUBDIR += sqlbox
      SUBDIR += sqlite
      SUBDIR += sqlite3
@@ -239,7 +239,6 @@
      SUBDIR += sqlitebrowser
      SUBDIR += sqlports
      SUBDIR += sqsh
-     #SUBDIR += strigi
      SUBDIR += tdb
      SUBDIR += tdbc
      SUBDIR += tdbc-mysql

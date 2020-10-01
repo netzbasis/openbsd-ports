@@ -1,17 +1,21 @@
-# $OpenBSD: Makefile,v 1.18 2019/07/12 20:44:57 sthen Exp $
+# $OpenBSD: Makefile,v 1.20 2020/07/24 23:59:57 bluhm Exp $
 
-COMMENT=		perl interface to the BSD kqueue system call
+COMMENT =	perl interface to the BSD kqueue system call
 
-MODULES=		cpan
-DISTNAME=		IO-KQueue-0.34
-REVISION=		3
-CATEGORIES=		devel
+DISTNAME =	IO-KQueue-0.39
 
-# perl
-PERMIT_PACKAGE=	Yes
+CATEGORIES =	devel
 
-WANTLIB += c perl
+MAINTAINER =		Alexander Bluhm <bluhm@openbsd.org>
 
-MODCPAN_EXAMPLES=	Yes
+# Perl
+PERMIT_PACKAGE =	Yes
+
+WANTLIB =		c perl
+
+MODULES =		cpan
+BUILD_DEPENDS =		devel/p5-Devel-CheckLib
+
+MODCPAN_EXAMPLES =	Yes
 
 .include <bsd.port.mk>

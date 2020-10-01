@@ -1,4 +1,4 @@
-/Makefile/1.139/Sun Jun 14 13:07:23 2020//
+/Makefile/1.141/Sun Jun 28 21:25:18 2020//
 D/TeXmacs////
 D/abiword////
 D/axe////
@@ -9,6 +9,7 @@ D/calligra////
 D/cooledit////
 D/dhex////
 D/dte////
+D/editorconfig-core-c////
 D/ee////
 D/elvis////
 D/emacs////
@@ -38,6 +39,7 @@ D/nano////
 D/ne////
 D/nedit////
 D/neovim////
+D/neovim-qt////
 D/nvi////
 D/py-neovim////
 D/py-qscintilla////

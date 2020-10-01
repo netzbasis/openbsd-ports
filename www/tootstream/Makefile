@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.6 2019/12/15 17:09:52 kmos Exp $
+# $OpenBSD: Makefile,v 1.8 2020/09/16 03:23:18 pamela Exp $
 
 COMMENT =		CLI for interacting with Mastodon/fediverse instances
 
-MODPY_EGG_VERSION =	0.3.7
+MODPY_EGG_VERSION =	0.3.8.1
 DISTNAME =		tootstream-${MODPY_EGG_VERSION}
-REVISION =		1
 
 CATEGORIES =		www
 
@@ -20,7 +19,7 @@ MODPY_SETUPTOOLS =	Yes
 MODPY_PI =		Yes
 MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 
-RUN_DEPENDS =		www/py-mastodon.py>=1.4.5,<1.5.0 \
+RUN_DEPENDS =		www/py-mastodon.py${MODPY_FLAVOR} \
 			devel/py-click${MODPY_FLAVOR} \
 			devel/py-dateutil${MODPY_FLAVOR} \
 			textproc/py-colored${MODPY_FLAVOR} \

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.9 2019/08/27 15:35:55 landry Exp $
+# $OpenBSD: Makefile,v 1.11 2020/07/20 07:18:13 landry Exp $
 
 COMMENT =	continuous integration framework
 

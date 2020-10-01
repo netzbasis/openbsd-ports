@@ -1,4 +1,4 @@
-/Makefile/1.133/Mon May 18 15:46:23 2020//
+/Makefile/1.134/Wed Sep  2 10:35:05 2020//
 D/a2ps////
 D/apsfilter////
 D/apvlv////
@@ -30,6 +30,7 @@ D/htmldoc////
 D/ijs////
 D/l2a////
 D/latex-mk////
+D/lcdf-typetools////
 D/libXp////
 D/libharu////
 D/libpaper////

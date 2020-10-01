@@ -1,14 +1,15 @@
-# $OpenBSD: Makefile,v 1.87 2020/06/18 21:02:20 sebastia Exp $
+# $OpenBSD: Makefile,v 1.90 2020/09/09 07:53:09 sebastia Exp $
 
 COMMENT = 	web based groupware server
 
-VERSION =	4.3.2
+VERSION =	5.0.0
+REVISION =	0
 DISTNAME =	SOGo-${VERSION}
 PKGNAME =	sogo-${VERSION}
 
 SHARED_LIBS +=	GDLContentStore 3.0
 SHARED_LIBS +=	NGCards		3.1
-SHARED_LIBS +=	SOGo		5.0
+SHARED_LIBS +=	SOGo		5.1
 SHARED_LIBS +=	SOGoUI		2.2
 
 CATEGORIES =	www
@@ -25,11 +26,14 @@ MODGNUSTEP_NEEDS_GUI =	No
 WANTLIB +=		c m pthread crypto memcached SBJson
 WANTLIB +=		DOM EOControl GDLAccess NGExtensions NGLdap
 WANTLIB +=		NGMime NGObjWeb NGStreams SaxObjC WEExtensions
-WANTLIB +=		objc2 gnustep-base curl
+WANTLIB +=		objc2 gnustep-base curl oath sodium zip
 WANTLIB += ${COMPILER_LIBCXX}
 
-LIB_DEPENDS +=		devel/libmemcached \
+LIB_DEPENDS +=		archivers/libzip \
+			devel/libmemcached \
 			net/curl \
+			security/libsodium \
+			security/oath-toolkit \
 			www/sope>=${VERSION}
 RUN_DEPENDS +=		sope-postgres-*|sope-mysql-*:www/sope,-postgres \
 			archivers/zip
@@ -40,7 +44,7 @@ PATCH_LIST =		patch-* gcc-*
 
 CONFIGURE_STYLE =	simple dest
 CONFIGURE_ARGS +=	--gsmake=`gnustep-config --variable=GNUSTEP_MAKEFILES` \
-			--with-ssl=ssl
+			--with-ssl=ssl --enable-mfa
 MAKE_FLAGS +=		libGDLContentStore_INTERFACE_VERSION=${LIBGDLContentStore_VERSION} \
 			libNGCards_INTERFACE_VERSION=${LIBNGCards_VERSION} \
 			libOGoContentStore_INTERFACE_VERSION=${LIBOGoContentStore_VERSION} \

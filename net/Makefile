@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1209 2020/06/13 16:22:52 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.1222 2020/09/12 15:33:31 jasper Exp $
 
      SUBDIR =
      SUBDIR += adns
@@ -8,7 +8,6 @@
      SUBDIR += amule
      SUBDIR += angst
      SUBDIR += ap-utils
-     SUBDIR += apache-activemq
      SUBDIR += argus
      SUBDIR += argus-clients
      SUBDIR += arp-scan
@@ -37,11 +36,11 @@
      SUBDIR += bitlbee-mastodon
      SUBDIR += blaeu
      SUBDIR += bnc
+     SUBDIR += bombadillo
      SUBDIR += bro
      SUBDIR += btpd
      SUBDIR += bwm-ng
      SUBDIR += cadaver
-     #SUBDIR += cagibi
      SUBDIR += castget
      SUBDIR += cftp
      SUBDIR += cgo
@@ -117,11 +116,13 @@
      SUBDIR += gnugk
      SUBDIR += go-ipfs
      SUBDIR += go-net
+     SUBDIR += gomuks
      SUBDIR += gopher
      SUBDIR += gophernicus
      SUBDIR += gotthard
      SUBDIR += gpodder
      SUBDIR += grake
+     SUBDIR += grsync
      SUBDIR += gssdp
      SUBDIR += gtk-gnutella
      SUBDIR += gupnp
@@ -179,6 +180,7 @@
      SUBDIR += jftpgw
      SUBDIR += jnettop
      SUBDIR += kdeconnect-kde
+     SUBDIR += kdsoap
      SUBDIR += kea
      SUBDIR += kea,mysql
      SUBDIR += kea,postgresql
@@ -200,7 +202,6 @@
      SUBDIR += libgadu
      SUBDIR += libircclient
      SUBDIR += libktorrent
-     #SUBDIR += libkvkontakte
      SUBDIR += libmaxminddb
      SUBDIR += libmesode
      SUBDIR += libmygpo-qt
@@ -253,6 +254,7 @@
      SUBDIR += mfi
      SUBDIR += microblog-purple
      SUBDIR += minbif
+     SUBDIR += miniflux
      SUBDIR += mininet
      SUBDIR += minio
      SUBDIR += miniupnp
@@ -382,7 +384,6 @@
      SUBDIR += p5-Net-Frame-Dump
      SUBDIR += p5-Net-Frame-Layer-ICMPv6
      SUBDIR += p5-Net-Frame-Layer-IPv6
-     SUBDIR += p5-Net-GPSD
      SUBDIR += p5-Net-Google
      SUBDIR += p5-Net-HTTP
      SUBDIR += p5-Net-ICQ2000
@@ -548,7 +549,6 @@
      SUBDIR += py-IOSXR,python3
      SUBDIR += py-IP
      SUBDIR += py-IP,python3
-     SUBDIR += py-aiodns
      SUBDIR += py-aiodns,python3
      SUBDIR += py-ripe.atlas.cousteau
      SUBDIR += py-ripe.atlas.cousteau,python3
@@ -617,7 +617,7 @@
      SUBDIR += py-simplesoap
      SUBDIR += py-simplesoap,python3
      SUBDIR += py-siphon,python3
-     SUBDIR += py-slixmpp
+     SUBDIR += py-slixmpp,python3
      SUBDIR += py-smbc,python3
      SUBDIR += py-snmp
      SUBDIR += py-socketio-client
@@ -756,6 +756,7 @@
      SUBDIR += unifi
      SUBDIR += unison
      SUBDIR += unworkable
+     SUBDIR += usockets
      SUBDIR += utox
      SUBDIR += uucp
      SUBDIR += uucpd
@@ -777,8 +778,6 @@
      SUBDIR += wifind
      SUBDIR += wireguard-go
      SUBDIR += wireguard-tools
-     SUBDIR += wireless
-     SUBDIR += wiresep
      SUBDIR += wireshark
      SUBDIR += wmnetload
      SUBDIR += wol

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.90 2020/04/06 20:58:29 cwen Exp $
+# $OpenBSD: Makefile,v 1.96 2020/08/12 14:43:54 sthen Exp $
 
 COMMENT-main=	multithreaded SQL database (client)
 COMMENT-server=	multithreaded SQL database (server)
 COMMENT-tests=	multithreaded SQL database (regression test suite/benchmark)
 
-VERSION=	10.4.12
+VERSION=	10.5.5
 DISTNAME=	mariadb-${VERSION}
 PKGNAME-main=	mariadb-client-${VERSION}
 PKGNAME-server=	mariadb-server-${VERSION}
@@ -29,8 +29,8 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB=	${COMPILER_LIBCXX} c crypto iconv m pthread ssl z
 WANTLIB-main=	${WANTLIB} curses readline
-WANTLIB-server=	${WANTLIB} bz2 lz4 lzma lzo2 pcre snappy
-WANTLIB-tests=	${WANTLIB} pcre pcreposix
+WANTLIB-server=	${WANTLIB} bz2 curl lz4 lzma lzo2 pcre2-8 snappy xml2
+WANTLIB-tests=	${WANTLIB} pcre2-8 pcre2-posix
 
 MULTI_PACKAGES=	-main -server -tests
 
@@ -46,8 +46,8 @@ BUILD_DEPENDS=	devel/bison
 
 LIB_DEPENDS-main=	${LIB_DEPENDS} \
 			converters/libiconv
-RUN_DEPENDS-server=	${BASE_PKGPATH},-main>=10.4v1,<10.5v1 \
-			databases/p5-DBD-mysql
+RUN_DEPENDS-server=	${BASE_PKGPATH},-main>=10.5v1,<10.6v1 \
+			databases/p5-DBD-MariaDB
 LIB_DEPENDS-server=	${LIB_DEPENDS} \
 			archivers/bzip2 \
 			archivers/lz4 \
@@ -55,11 +55,13 @@ LIB_DEPENDS-server=	${LIB_DEPENDS} \
 			archivers/snappy \
 			archivers/xz \
 			converters/libiconv \
-			devel/pcre
-RUN_DEPENDS-tests=	${BASE_PKGPATH},-main>=10.4v1,<10.5v1
+			devel/pcre2 \
+			net/curl \
+			textproc/libxml
+RUN_DEPENDS-tests=	${BASE_PKGPATH},-main>=10.5v1,<10.6v1
 LIB_DEPENDS-tests=	${LIB_DEPENDS} \
 			converters/libiconv \
-			devel/pcre
+			devel/pcre2
 
 CONFIGURE_ARGS+=-DCMAKE_INSTALL_PREFIX="${PREFIX}" \
 		-DINSTALL_DOCDIR="share/doc/mysql" \
@@ -79,12 +81,10 @@ CONFIGURE_ARGS+=-DCMAKE_INSTALL_PREFIX="${PREFIX}" \
 		-DINSTALL_SUPPORTFILESDIR="share/examples/mysql" \
 		-DMYSQL_UNIX_ADDR="${SOCKET_DIR}/mysql.sock" \
 		-DCOMPILATION_COMMENT='OpenBSD port: ${FULLPKGNAME-server}' \
-		-DWITH_CURL=Off \
 		-DWITH_EXTERNAL_ZLIB=On \
 		-DWITH_PCRE=system \
 		-DWITH_SSL=system \
 		-DCONNECT_WITH_JDBC=Off \
-		-DCONNECT_WITH_LIBXML2=Off \
 		-DCONNECT_WITH_MONGO=Off \
 		-DCONNECT_WITH_ODBC=Off \
 		-DGRN_WITH_MECAB=no \
@@ -103,11 +103,13 @@ CONFIGURE_ARGS+=-DHAVE_EXECINFO_H=0 \
 # CMake test fails on OpenBSD
 CONFIGURE_ARGS+=-DHAVE_NETINET_TCP_H=1
 
-# The Mroonga, RocksDB, and TokuDB storage engines are disabled.
+# The ColumnStore, Mroonga, RocksDB, and TokuDB storage engines are disabled.
+# ColumnStore is only buildable on X86.
 # Mroonga is only buildable on little endian archs.
 # RocksDB is only buildable on little endian archs and requires POSIX timers.
-# TokuDB is only buildable on 64-bit little endian archs.
-CONFIGURE_ARGS+=-DWITHOUT_MROONGA_STORAGE_ENGINE=1 \
+# TokuDB is only buildable on 64-bit little endian archs and requires O_DIRECT.
+CONFIGURE_ARGS+=-DPLUGIN_COLUMNSTORE=NO \
+		-DWITHOUT_MROONGA_STORAGE_ENGINE=1 \
 		-DWITHOUT_ROCKSDB_STORAGE_ENGINE=1 \
 		-DWITHOUT_TOKUDB_STORAGE_ENGINE=1
 
@@ -136,6 +138,7 @@ post-install:
 		ln -sf libmariadb.so.${LIBmariadb_VERSION} libmysqlclient.so.${LIBmysqlclient_VERSION} && \
 		ln -sf libmariadb.so.${LIBmariadb_VERSION} libmysqlclient_r.so.${LIBmysqlclient_r_VERSION}
 	${INSTALL_DATA} ${FILESDIR}/my.cnf ${PREFIX}/share/examples/mysql/
+	rm -f ${PREFIX}/man/man1/myrocks_hotbackup.1
 	rm -Rf ${PREFIX}/share/mysql-test/plugin/rocksdb/
 
 do-test:

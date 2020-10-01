@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.10 2020/06/15 08:49:02 kn Exp $
+# $OpenBSD: Makefile,v 1.12 2020/07/07 14:51:51 kn Exp $
 
 COMMENT =	multi-architecture binary analysis toolkit
 

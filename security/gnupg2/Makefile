@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.67 2020/04/27 19:22:54 naddy Exp $
+# $OpenBSD: Makefile,v 1.71 2020/09/05 10:07:43 jca Exp $
 
 COMMENT =	GNU privacy guard - a free PGP replacement
 
-DISTNAME =	gnupg-2.2.12
+DISTNAME =	gnupg-2.2.23
+REVISION =	0
 CATEGORIES = 	security
-REVISION =	1
 
 # don't mix up dependencies with gnupg1
 PKGSPEC =	gnupg->=2
@@ -13,13 +13,13 @@ MASTER_SITES =	${MASTER_SITE_GNUPG:=gnupg/}
 
 HOMEPAGE = 	https://www.gnupg.org/
 
-MAINTAINER = 	Pierre-Emmanuel Andre <pea@openbsd.org>
+MAINTAINER = 	Edd Barrett <edd@openbsd.org>
 
 # GPLv3+
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += assuan bz2 c gcrypt gnutls gpg-error iconv intl ksba
-WANTLIB += npth pthread readline sqlite3 usb-1.0 z curses
+WANTLIB += npth pthread readline sqlite3 usb-1.0 z
 
 EXTRACT_SUFX = 		.tar.bz2
 
@@ -62,5 +62,6 @@ CONFIGURE_ARGS += 	docdir=${LOCALBASE}/share/doc/gnupg2 \
 # Avoid conflict with gnupg-1.x
 post-install:
 	@mv ${PREFIX}/man/man7/gnupg.7 ${PREFIX}/man/man7/gnupg2.7
+	@mv ${PREFIX}/bin/gpgsplit ${PREFIX}/bin/gpgsplit2
 
 .include <bsd.port.mk>

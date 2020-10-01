@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.41 2020/04/18 10:15:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.43 2020/09/09 09:39:13 edd Exp $
 
 ONLY_FOR_ARCHS =	aarch64 amd64
 
@@ -20,12 +20,12 @@ COMMENT =		fast implementation of the Python language
 # you can use the no_bootstrap FLAVOR to make a new bootstrap. This uses
 # CPython to build PyPy instead, which is much slower and takes more RAM.
 
-V =			7.2.0
-BOOTSTRAP_V =		7.2.0
+V =			7.3.1
+BOOTSTRAP_V =		${V}
 DISTNAME =		pypy2.7-v${V}-src
 PKGNAME =		pypy-${V}
 BOOTSTRAP-amd64 =	pypy-bootstrap-amd64-${BOOTSTRAP_V}.tar.xz
-BOOTSTRAP-aarch64 =	pypy-bootstrap-aarch64-${BOOTSTRAP_V}-1.tar.xz
+BOOTSTRAP-aarch64 =	pypy-bootstrap-aarch64-${BOOTSTRAP_V}.tar.xz
 # list bootstraps for all arches in SUPDISTFILES
 SUPDISTFILES +=		${BOOTSTRAP-amd64}:0
 SUPDISTFILES +=		${BOOTSTRAP-aarch64}:0
@@ -45,8 +45,8 @@ WANTLIB +=		${MODTK_LIB} util z
 
 LIB_DEPENDS +=		databases/sqlite3
 
-MASTER_SITES =		https://bitbucket.org/pypy/pypy/downloads/
-MASTER_SITES0 =		https://spacehopper.org/mirrors/
+MASTER_SITES =		https://downloads.python.org/pypy/
+MASTER_SITES0 =		https://theunixzoo.co.uk/distfiles/
 EXTRACT_SUFX =		.tar.bz2
 
 PSEUDO_FLAVORS =	no_bootstrap
@@ -135,7 +135,7 @@ do-install:
 		LDFLAGS=-L${LOCALBASE}/lib \
 		CPPFLAGS=-I${LOCALBASE}/include \
 		PYTHONPATH=`pwd` \
-		${PREFIX}/pypy/bin/pypy pypy/tool/build_cffi_imports.py
+		${PREFIX}/pypy/bin/pypy lib_pypy/tools/build_cffi_imports.py
 	find ${PREFIX}/pypy/lib_pypy/ -name '*.[co]' -delete
 	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/pypy/lib_pypy
 	chown -R ${SHAREOWN}:${SHAREGRP}  ${PREFIX}/pypy/lib-python/2.7

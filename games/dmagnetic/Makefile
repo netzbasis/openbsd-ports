@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.11 2020/06/09 12:40:17 sthen Exp $
+# $OpenBSD: Makefile,v 1.13 2020/07/26 16:47:51 sthen Exp $
 
-V =		0.23
+V =		0.25
 COMMENT =	interpreter for Magnetic Scrolls games
 DISTNAME =	dMagnetic_${V}
 PKGNAME =	dmagnetic-${V}
@@ -19,6 +19,9 @@ MASTER_SITES =	https://www.dettus.net/dMagnetic/
 
 MAKE_FLAGS =	CC="${CC}" CFLAGS="${CFLAGS}"
 
+TEST_ENV =	SHA256_CMD=sha256
+TEST_TARGET =	check
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/dMagnetic ${PREFIX}/bin/dMagnetic
 	${INSTALL_MAN} ${WRKSRC}/dMagnetic.1 ${PREFIX}/man/man1
@@ -27,37 +30,5 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/dMagnetic.ini ${PREFIX}/share/dMagnetic
 	${INSTALL_DATA} ${WRKSRC}/LICENSE.txt ${PREFIX}/share/dMagnetic
 	${INSTALL_DATA} ${WRKSRC}/README.txt ${PREFIX}/share/dMagnetic
-
-do-test:
-	cd ${WRKSRC}/testcode;  if [ `echo Hello | ../dMagnetic -ini ../dMagnetic.ini \
-		-mag minitest.mag -gfx minitest.gfx \
-		-vmode none -vecho -vcols 300 -vrows 300 | \
-		sha256 -b` == cK9FNnpq0bYSzqvTb+8wnUJYq6wnUoGlVBNCzPCnZc0= -a \
-		`echo Hello | ../dMagnetic -ini ../dMagnetic.ini \
-		-mag minitest.mag -gfx minitest.gfx \
-		-vmode monochrome -vecho -vcols 300 -vrows 300 | \
-		sha256 -b` == seDxuft63ieWCyOgu/GV1rV3E7yROXeS+rC9cA6IL7Y= -a \
-		`echo Hello | ../dMagnetic -ini ../dMagnetic.ini \
-		-mag minitest.mag -gfx minitest.gfx \
-		-vmode monochrome_inv -vecho -vcols 300 -vrows 300 | \
-		sha256 -b` == MfppImDWbkyITNN49NVWlI+iysmToiJzW1D+d9XkL3Q= -a \
-		`echo Hello | ../dMagnetic -ini ../dMagnetic.ini \
-		-mag minitest.mag -gfx minitest.gfx \
-		-vmode low_ansi -vecho -vcols 300 -vrows 300 | \
-		sha256 -b` == AwX+FxRDEMR1mi/CP3jn85dWA9UltkoezHn7hmKFI8k= -a \
-		`echo Hello | ../dMagnetic -ini ../dMagnetic.ini \
-		-mag minitest.mag -gfx minitest.gfx \
-		-vmode low_ansi2 -vecho -vcols 300 -vrows 300 | \
-		sha256 -b` == 70oe3RMTJG3/R6nUTigntHXEg+/ORW0cNHW5sZ+P2Lc= -a \
-		`echo Hello | ../dMagnetic -ini ../dMagnetic.ini \
-		-mag minitest.mag -gfx minitest.gfx \
-		-vmode high_ansi -vecho -vcols 300 -vrows 300 | \
-		sha256 -b` == kaRDtG5AyqOo8ikUStr+giD0RfRSyuZjLg99zZXgO58= -a \
-		`echo Hello | ../dMagnetic -ini ../dMagnetic.ini \
-		-mag minitest.mag -gfx minitest.gfx \
-		-vmode sixel -vecho -vcols 300 -vrows 300 | \
-		sha256 -b` == ad6zWhMj07AY0kn7DrkbM4cuRU2YbHU4kSq6PJHVWjI= \
-		]; \
-		then echo ok; else echo expected output not seen; exit 1; fi
 
 .include <bsd.port.mk>

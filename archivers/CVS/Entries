@@ -1,4 +1,4 @@
-/Makefile/1.101/Tue Apr 21 20:42:00 2020//
+/Makefile/1.103/Sat Sep 12 20:39:31 2020//
 D/arc////
 D/blosc////
 D/brotli////
@@ -47,7 +47,9 @@ D/pecl-lzf////
 D/pecl-rar////
 D/pigz////
 D/py-backports-lzma////
+D/py-brotli////
 D/py-libarchive-c////
+D/py-lz4////
 D/py-lzo////
 D/py-rarfile////
 D/quazip////

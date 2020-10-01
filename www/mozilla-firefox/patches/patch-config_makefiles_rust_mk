@@ -1,0 +1,19 @@
+$OpenBSD: patch-config_makefiles_rust_mk,v 1.4 2020/09/22 13:00:55 landry Exp $
+
+use lto=thin to reduce memory pressure when building gkrust
+https://bugzilla.mozilla.org/show_bug.cgi?id=1644409
+https://bugzilla.mozilla.org/show_bug.cgi?id=1640982
+
+Index: config/makefiles/rust.mk
+--- config/makefiles/rust.mk.orig
++++ config/makefiles/rust.mk
+@@ -61,7 +61,8 @@ ifndef MOZ_DEBUG_RUST
+ # Enable link-time optimization for release builds, but not when linking
+ # gkrust_gtest.
+ ifeq (,$(findstring gkrust_gtest,$(RUST_LIBRARY_FILE)))
+-cargo_rustc_flags += -Clto
++cargo_rustc_flags += -Clto=thin
++export CARGO_PROFILE_RELEASE_LTO=thin
+ endif
+ # Versions of rust >= 1.45 need -Cembed-bitcode=yes for all crates when
+ # using -Clto.

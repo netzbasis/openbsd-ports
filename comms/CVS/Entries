@@ -1,4 +1,4 @@
-/Makefile/1.78/Sat Jan 25 05:05:18 2020//
+/Makefile/1.79/Mon Jul 27 16:46:11 2020//
 D/amtterm////
 D/birda////
 D/bottlerocket////
@@ -7,6 +7,7 @@ D/chirp////
 D/colrdx////
 D/conserver////
 D/dfu-util////
+D/dump1090////
 D/efax////
 D/ems-flasher////
 D/fldigi////

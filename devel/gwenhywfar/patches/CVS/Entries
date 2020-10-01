@@ -1,8 +1,6 @@
-/patch-gui_qt4_gwengui-qt4-config_cmake_in/1.1/Thu Jan 12 16:36:12 2017//
-/patch-gwenhywfar-config_cmake_in/1.1/Thu Jan 12 16:36:12 2017//
-/patch-plugins_dbio_csv_Makefile_in/1.3/Fri Jan 30 16:20:43 2015//
-/patch-plugins_dbio_olddb_Makefile_in/1.3/Fri Jan 30 16:20:43 2015//
-/patch-plugins_dbio_xmldb_Makefile_in/1.3/Fri Jan 30 16:20:43 2015//
-/patch-src_os_posix_inetsocket_p_h/1.1/Sun Sep 11 20:54:12 2016//
-/patch-src_sio_syncio_tls_c/1.1/Sun Mar  6 12:17:17 2016//
+/patch-configure/1.2/Sun Aug 23 08:24:04 2020//
+/patch-gui_cpp_gwengui-cpp-config_cmake_in/1.2/Sun Aug 23 08:24:04 2020//
+/patch-gui_qt5_gwengui-qt5-config_cmake_in/1.2/Sun Aug 23 08:24:04 2020//
+/patch-gwenhywfar-config_cmake_in/1.3/Sun Aug 23 08:24:04 2020//
+/patch-src_os_posix_inetsocket_p_h/1.2/Sun Aug 23 08:24:04 2020//
 D

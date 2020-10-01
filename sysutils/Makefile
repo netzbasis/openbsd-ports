@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.572 2020/06/19 14:52:23 landry Exp $
+# $OpenBSD: Makefile,v 1.576 2020/08/11 14:54:41 landry Exp $
 
      SUBDIR =
      SUBDIR += accountsservice
@@ -88,6 +88,7 @@
      SUBDIR += facette
      SUBDIR += faubackup
      SUBDIR += fdupes
+     SUBDIR += fff
      SUBDIR += findlib
      SUBDIR += firmware
      SUBDIR += flashrom
@@ -118,6 +119,7 @@
      SUBDIR += gsmartcontrol
      SUBDIR += hotplug-diskmount
      SUBDIR += htop
+     SUBDIR += hw-probe
      SUBDIR += idled
      SUBDIR += iogen
      SUBDIR += incron
@@ -262,6 +264,7 @@
      SUBDIR += py-filelock
      SUBDIR += py-filelock,python3
      SUBDIR += py-ghmi,python3
+     SUBDIR += py-hpilo,python3
      SUBDIR += py-joblib
      SUBDIR += py-lockfile
      SUBDIR += py-lockfile,python3
@@ -385,11 +388,12 @@
      SUBDIR += ttyplot
      SUBDIR += u-boot
      SUBDIR += u-boot,aarch64
-     SUBDIR += uefitool
      SUBDIR += udfclient
+     SUBDIR += uefitool
+     SUBDIR += ugrep
      SUBDIR += unionfs-fuse
-     SUBDIR += upower
      SUBDIR += upobsd
+     SUBDIR += upower
      SUBDIR += upt
      SUBDIR += uptimed
      SUBDIR += usbutil

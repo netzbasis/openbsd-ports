@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.6 2019/07/12 20:44:56 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2020/07/05 14:45:14 sthen Exp $
 
 COMMENT=	dynamically create Perl language bindings
 
-DISTNAME=	Glib-Object-Introspection-0.047
+DISTNAME=	Glib-Object-Introspection-0.048
 
 CATEGORIES=	devel
 

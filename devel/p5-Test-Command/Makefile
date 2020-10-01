@@ -1,13 +1,12 @@
-# $OpenBSD: Makefile,v 1.3 2019/10/03 10:12:52 kn Exp $
+# $OpenBSD: Makefile,v 1.5 2020/07/08 22:57:41 kn Exp $
 
 COMMENT =		test routines for external commands
 
 DISTNAME =		Test-Command-0.11
-REVISION =		0
+REVISION =		2
 
 CATEGORIES =		devel
 
-MAINTAINER =		Klemens Nanni <kn@openbsd.org>
 
 # Perl
 PERMIT_PACKAGE =	Yes

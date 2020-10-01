@@ -1,14 +1,16 @@
-$OpenBSD: patch-src_tools_aqbanking-cli_Makefile_in,v 1.1 2019/05/23 11:02:39 naddy Exp $
+$OpenBSD: patch-src_tools_aqbanking-cli_Makefile_in,v 1.3 2020/07/26 10:40:53 sthen Exp $
+
+Do not hardcode -lstdc++
 
 Index: src/tools/aqbanking-cli/Makefile.in
 --- src/tools/aqbanking-cli/Makefile.in.orig
 +++ src/tools/aqbanking-cli/Makefile.in
-@@ -449,7 +449,7 @@ AM_CFLAGS = @visibility_cflags@
+@@ -461,7 +461,7 @@ AM_CPPFLAGS = -I$(top_srcdir)/src/libs -I$(top_builddi
+ AM_CFLAGS = @visibility_cflags@
  aqbanking_cli_LDADD = \
-   $(aqhbci_internal_libs) \
    $(aqbanking_internal_libs) \
 -  $(gwenhywfar_libs) -lstdc++
 +  $(gwenhywfar_libs)
  
  aqbanking_cli_SOURCES = \
-   main.c
+   main.c \

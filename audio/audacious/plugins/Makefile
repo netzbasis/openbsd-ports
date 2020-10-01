@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2020/05/29 04:24:21 bket Exp $
+# $OpenBSD: Makefile,v 1.5 2020/07/12 12:15:52 bket Exp $
 
 COMMENT =		input and output plugins for Audacious
 
@@ -17,10 +17,7 @@ WANTLIB += notify ogg pango-1.0 pangocairo-1.0 pangoft2-1.0 samplerate
 WANTLIB += sndfile sndio soxr vorbis vorbisenc vorbisfile wavpack
 WANTLIB += xml2 z
 
-COMPILER =		base-clang ports-gcc
-
-BUILD_DEPENDS =		audio/audacious/player>=${VERSION} \
-			devel/gettext,-tools
+BUILD_DEPENDS =		audio/audacious/player>=${VERSION}
 RUN_DEPENDS =		audio/audacious/player>=${VERSION}
 # needed for the gio plugin
 RUN_DEPENDS +=		x11/gnome/gvfs
@@ -42,26 +39,18 @@ LIB_DEPENDS =		audio/faad>=2.7 \
 			multimedia/libmms \
 			net/curl \
 			net/neon \
-			textproc/libxml \
-			x11/gtk+2
+			textproc/libxml
 
-USE_GMAKE =		Yes
-
-CONFIGURE_STYLE =	gnu
-CONFIGURE_ARGS +=	--disable-alsa \
+CONFIGURE_ARGS =	--disable-alsa \
 			--disable-amidiplug \
 			--disable-bs2b \
 			--disable-jack \
 			--disable-lirc \
 			--disable-oss4 \
 			--disable-pulse \
-			--disable-qt \
 			--disable-sdlout \
-			--disable-sid \
-			--enable-gtk
+			--disable-sid
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib"
-
-NO_TEST =		Yes
 
 .include <bsd.port.mk>

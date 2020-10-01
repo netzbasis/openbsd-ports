@@ -1,4 +1,4 @@
-$OpenBSD: patch-utils_CMakeLists_txt,v 1.2 2020/02/17 20:33:00 kili Exp $
+$OpenBSD: patch-utils_CMakeLists_txt,v 1.4 2020/09/09 20:16:44 kili Exp $
 
 For utils/pdftocairo, move common_libs to the front to avoid picking
 up any already installed older version of libpoppler.so.
@@ -6,12 +6,12 @@ up any already installed older version of libpoppler.so.
 Index: utils/CMakeLists.txt
 --- utils/CMakeLists.txt.orig
 +++ utils/CMakeLists.txt
-@@ -35,7 +35,7 @@ if (HAVE_CAIRO)
+@@ -38,7 +38,7 @@ if (HAVE_CAIRO)
    )
    add_definitions(${CAIRO_CFLAGS})
    add_executable(pdftocairo ${pdftocairo_SOURCES})
 -  target_link_libraries(pdftocairo ${CAIRO_LIBRARIES} ${FREETYPE_LIBRARIES} ${common_libs})
 +  target_link_libraries(pdftocairo ${common_libs} ${CAIRO_LIBRARIES} ${FREETYPE_LIBRARIES})
-   if(LCMS_FOUND)
-     target_link_libraries(pdftocairo ${LCMS_LIBRARIES})
+   if(CMAKE_USE_PTHREADS_INIT)
+     target_link_libraries(pdftocairo Threads::Threads)
    endif()

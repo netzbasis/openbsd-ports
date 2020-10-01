@@ -1,8 +1,9 @@
-/Makefile/1.33/Fri May  3 16:35:46 2019//
+/Makefile/1.35/Fri Aug  7 06:40:46 2020//
 D/ansiweather////
 D/celestia////
 D/dgpsip////
 D/gcal////
+D/gnuastro////
 D/jday////
 D/kstars////
 D/libnova////

@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.3 2019/07/27 15:47:35 thfr Exp $
+# $OpenBSD: Makefile,v 1.5 2020/09/04 05:09:17 thfr Exp $
 
 COMMENT =	reference front-end for GLSL and ESSL
 
-GH_TAGNAME =	7.11.3214
+REVISION =	0
+GH_TAGNAME =	8.13.3743
 GH_ACCOUNT =	KhronosGroup
 GH_PROJECT =	glslang
 
@@ -19,7 +20,9 @@ WANTLIB += ${COMPILER_LIBCXX} c m
 # C++11
 COMPILER =	base-clang ports-gcc
 
-MODULES =	devel/cmake
+MODULES =	devel/cmake \
+		lang/python
+MODPY_VERSION =	${MODPY_DEFAULT_VERSION_3}
 TEST_DEPENDS =	graphics/spirv-tools \
 		shells/bash
 

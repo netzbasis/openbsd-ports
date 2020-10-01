@@ -1,4 +1,4 @@
-/Makefile/1.637/Fri Jun 12 10:04:13 2020//
+/Makefile/1.647/Sat Sep 19 07:43:50 2020//
 D/TclXML////
 D/antiword////
 D/apertium////
@@ -19,6 +19,7 @@ D/calibre////
 D/catdoc////
 D/catfish////
 D/cdiff////
+D/chordpro////
 D/clit////
 D/clo++////
 D/cloc////
@@ -48,12 +49,12 @@ D/exempi////
 D/extract_url////
 D/fcbanner////
 D/filepp////
+D/foliate////
 D/fragistics////
 D/fzy////
 D/gdiff////
 D/glimpse////
 D/go-text////
-D/go-xlsx////
 D/gpresent////
 D/grepcidr////
 D/groff////
@@ -124,6 +125,7 @@ D/lua-markdown////
 D/lua-yaml////
 D/luaexpat////
 D/luasoldout////
+D/luceneplusplus////
 D/makefaq////
 D/mdbook////
 D/mdp////
@@ -194,6 +196,7 @@ D/p5-Number-Format////
 D/p5-Object-MultiType////
 D/p5-PDF-API2////
 D/p5-PDF-API2-Simple////
+D/p5-PDF-API2-XS////
 D/p5-PDF-Reuse////
 D/p5-PDF-Table////
 D/p5-POE-Filter-XML////
@@ -352,6 +355,7 @@ D/py-canonicaljson////
 D/py-chardet////
 D/py-colored////
 D/py-commonmark////
+D/py-css-parser////
 D/py-cssselect////
 D/py-cssutils////
 D/py-defusedxml////
@@ -387,7 +391,6 @@ D/py-pyaml////
 D/py-pygfm////
 D/py-pygments////
 D/py-pykwalify////
-D/py-rdflib////
 D/py-recommonmark////
 D/py-ruamel.yaml////
 D/py-semver////
@@ -401,7 +404,6 @@ D/py-sphinx-notfound-page////
 D/py-sphinx_guzzle_theme////
 D/py-sphinx_rtd_theme////
 D/py-stemmer////
-D/py-termcolor////
 D/py-textfsm////
 D/py-toml////
 D/py-unicodecsv////

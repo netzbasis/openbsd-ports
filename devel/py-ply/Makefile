@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2020/01/06 17:33:34 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2020/09/16 07:29:10 jasper Exp $
 
 COMMENT =		Python lex/yacc
 
@@ -6,7 +6,7 @@ MODPY_EGG_VERSION =	3.11
 DISTNAME =		ply-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		devel
-REVISION =		1
+REVISION =		3
 
 HOMEPAGE =		https://www.dabeaz.com/ply/
 
@@ -19,7 +19,7 @@ MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
 
 FLAVORS =		python3
-FLAVOR ?=
+FLAVOR ?=		python3
 
 do-test:
 	cd ${WRKSRC}/test && \

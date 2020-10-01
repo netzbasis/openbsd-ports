@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.62 2020/05/02 07:05:17 landry Exp $
+# $OpenBSD: Makefile,v 1.65 2020/08/10 07:28:45 landry Exp $
 
 COMMENT=	Xfce4 window manager
 
 XFCE_PROJECT=	xfwm4
-XFCE_VERSION=	4.14.2
+XFCE_VERSION=	4.14.5
 
 # GPLv2
 PERMIT_PACKAGE=	Yes
@@ -25,6 +25,6 @@ WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre pixman-1 png pthread
 WANTLIB += startup-notification-1 wnck-3 xcb xcb-util
 WANTLIB += xcb-render xcb-shm xfce4kbd-private-3 xfce4ui-2 xfce4util
 WANTLIB += xfconf-0 z graphite2 harfbuzz iconv intl epoxy
-WANTLIB += atk-bridge-2.0 cairo-gobject fribidi
+WANTLIB += atk-bridge-2.0 cairo-gobject fribidi ${COMPILER_LIBCXX}
 
 .include <bsd.port.mk>

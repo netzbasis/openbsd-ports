@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.40 2020/04/13 02:53:05 bentley Exp $
+# $OpenBSD: Makefile,v 1.42 2020/09/24 07:31:51 bentley Exp $
 
 COMMENT-main =		Game Boy Color/Advance emulator
 COMMENT-qt =		Game Boy Color/Advance emulator with GUI
 COMMENT-libretro =	Game Boy Color/Advance core for retroarch
 
-V =			0.8.1
+V =			0.8.3
 GH_ACCOUNT =		mgba-emu
 GH_PROJECT =		mgba
 GH_TAGNAME =		$V
@@ -28,7 +28,7 @@ MAINTAINER =		Anthony J. Bentley <anthony@anjbe.name>
 # MPL 2.0
 PERMIT_PACKAGE =	Yes
 
-cWANTLIB =		GL GLU MagickCore-6.Q16 MagickWand-6.Q16 SDL2 \
+cWANTLIB =		GL GLU SDL2 avfilter \
 			avcodec avformat avutil c curses edit m png \
 			pthread sqlite3 swresample swscale z zip elf \
 			avresample
@@ -40,8 +40,9 @@ WANTLIB-libretro =	m pthread z
 MODULES =		devel/cmake
 COMPILER =		base-clang ports-gcc
 LIB_DEPENDS-main =	archivers/libzip \
-			graphics/ImageMagick \
+			databases/sqlite3 \
 			graphics/ffmpeg \
+			graphics/png \
 			devel/sdl2
 LIB_DEPENDS-qt =	${LIB_DEPENDS-main} \
 			${MODQT_LIB_DEPENDS} \

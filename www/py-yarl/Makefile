@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2020/03/10 16:24:46 paco Exp $
+# $OpenBSD: Makefile,v 1.9 2020/07/03 21:13:21 sthen Exp $
 
 COMMENT =		yet another URL library
 
 MODPY_EGG_VERSION =	1.4.2
 DISTNAME =		yarl-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		www devel
 
@@ -16,7 +16,7 @@ MAINTAINER =		Joerg Jung <jung@openbsd.org>
 # Apache License 2.0
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += pthread python3.7m
+WANTLIB += pthread ${MODPY_WANTLIB}
 
 MODULES =		lang/python
 

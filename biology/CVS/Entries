@@ -1,8 +1,12 @@
-/Makefile/1.9/Tue Nov 22 11:07:10 2016//
+/Makefile/1.10/Tue Aug 25 23:44:13 2020//
 D/AcePerl////
 D/bioperl////
 D/emboss////
 D/hmmer////
 D/nutdb////
 D/p5-Bio-ASN1-EntrezGene////
+D/p5-Bio-Cluster////
+D/p5-Bio-DB-EMBL////
+D/p5-Bio-DB-NCBIHelper////
+D/p5-Bio-Variation////
 D/py-biopython////

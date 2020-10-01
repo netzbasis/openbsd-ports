@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2020/06/01 15:48:28 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2020/09/09 03:19:10 espie Exp $
 
 USE_WXNEEDED =	Yes
 COMMENT =	video editor
 
-V =		20.04.12
+V =		20.07.11
 DISTNAME =	shotcut-$V
-REVISION =	1
 
 CATEGORIES =	multimedia
 

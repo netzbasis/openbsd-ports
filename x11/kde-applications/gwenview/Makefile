@@ -1,26 +1,25 @@
-# $OpenBSD: Makefile,v 1.9 2020/06/05 05:40:24 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.13 2020/09/23 06:12:26 rsadowski Exp $
 
 COMMENT =	KDE image viewer
 DISTNAME =	gwenview-${VERSION}
 CATEGORIES =	graphics x11
-REVISION =	2
+REVISION =	0
 
-SHARED_LIBS +=  gwenviewlib               54.0 # 4.97
-
-MODULES +=	x11/kde-applications \
-		multimedia/phonon
+SHARED_LIBS +=  gwenviewlib               55.0 # 4.97
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Activities KF5Auth KF5AuthCore
 WANTLIB += KF5Baloo KF5Bookmarks KF5Codecs KF5Completion KF5ConfigCore
 WANTLIB += KF5ConfigGui KF5ConfigWidgets KF5CoreAddons KF5FileMetaData
 WANTLIB += KF5I18n KF5IconThemes KF5ItemModels KF5ItemViews KF5JobWidgets
-WANTLIB += KF5KDcraw KF5KIOCore KF5KIOFileWidgets KF5KIOWidgets
+WANTLIB += KF5KDcraw KF5KIOCore KF5KIOFileWidgets KF5KIOGui KF5KIOWidgets
 WANTLIB += KF5Kipi KF5Notifications KF5Parts KF5Purpose KF5PurposeWidgets
 WANTLIB += KF5Service KF5Solid KF5SonnetUi KF5TextWidgets KF5WidgetsAddons
 WANTLIB += KF5WindowSystem KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus
 WANTLIB += Qt5Gui Qt5Network Qt5OpenGL Qt5PrintSupport Qt5Svg
 WANTLIB += Qt5Widgets Qt5X11Extras Qt5Xml X11 c cfitsio exiv2
-WANTLIB += jpeg lcms2 m png 
+WANTLIB += jpeg lcms2 m phonon4qt5 png tiff z
+
+MODULES +=	x11/kde-applications
 
 MODKDE5_DESKTOP_FILE = yes
 MODKDE5_ICON_CACHE = yes
@@ -64,7 +63,8 @@ LIB_DEPENDS =	devel/kf5/baloo,-main \
 		x11/kde-applications/libkdcraw \
 		x11/kde-applications/libkipi \
 		x11/qt5/qtsvg \
-		x11/qt5/qtx11extras
+		x11/qt5/qtx11extras \
+		multimedia/phonon
 
 TEST_IS_INTERACTIVE =	X11
 

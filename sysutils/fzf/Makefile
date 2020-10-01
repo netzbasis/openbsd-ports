@@ -1,12 +1,16 @@
-# $OpenBSD: Makefile,v 1.5 2020/04/07 08:32:50 paco Exp $
+# $OpenBSD: Makefile,v 1.8 2020/08/26 19:34:01 edd Exp $
 
 COMMENT =	command-line fuzzy finder
 
-DISTNAME =	fzf-0.21.1
+# Note: we make our own vendored distfile.
+DISTNAME =	fzf-0.22.0
+REVISION =	0
 
 CATEGORIES =	sysutils
 
 HOMEPAGE =	https://github.com/junegunn/fzf
+
+MAINTAINER =	Edd Barrett <edd@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE =	Yes
@@ -14,15 +18,12 @@ PERMIT_PACKAGE =	Yes
 # uses pledge()
 WANTLIB +=	c pthread
 
-MASTER_SITES =	https://deftly.net/dist/
+MASTER_SITES =	https://theunixzoo.co.uk/distfiles/
 
 MODULES =	lang/go
 MODGO_TYPE =	bin
 
-NO_TEST =	Yes
-
 ALL_TARGET =	github.com/junegunn/fzf
-
 
 # Note that unlike zsh and fish, bash has no well-defined site functions
 # directory from which to autoload stuff.

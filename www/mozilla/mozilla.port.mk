@@ -1,4 +1,4 @@
-# $OpenBSD: mozilla.port.mk,v 1.131 2020/06/02 15:22:18 landry Exp $
+# $OpenBSD: mozilla.port.mk,v 1.133 2020/09/22 12:57:55 landry Exp $
 
 # ppc: firefox-esr/thunderbird xpcshell segfaults during startup compilation
 # ppc: seamonkey/firefox - failure to link for atomic ops on 64 bits
@@ -61,13 +61,13 @@ MODMOZ_BUILD_DEPENDS =	devel/autoconf/2.13 \
 			archivers/zip>=2.3
 
 .if !defined(MOZILLA_USE_BUNDLED_NSS)
-MODMOZ_LIB_DEPENDS +=	security/nss>=3.53 #77: #1629594 for 3.52, #1637369 for 3.52.1
+MODMOZ_LIB_DEPENDS +=	security/nss>=3.57
 MODMOZ_WANTLIB +=	nss3 nssutil3 smime3 ssl3
 CONFIGURE_ARGS +=	--with-system-nss
 .endif
 
 .if !defined(MOZILLA_USE_BUNDLED_NSPR)
-MODMOZ_LIB_DEPENDS +=	devel/nspr>=4.25
+MODMOZ_LIB_DEPENDS +=	devel/nspr>=4.29
 MODMOZ_WANTLIB +=	nspr4 plc4 plds4
 CONFIGURE_ARGS +=	--with-system-nspr
 .endif
@@ -127,9 +127,8 @@ USE_GMAKE ?=	Yes
 # no --with-system-png, apng support not bundled in
 
 AUTOCONF_VERSION =	2.13
-CONFIGURE_ARGS +=	--with-system-zlib=/usr	\
+CONFIGURE_ARGS +=	--with-system-zlib	\
 		--enable-official-branding	\
-		--disable-gconf			\
 		--disable-necko-wifi		\
 		--disable-optimize		\
 		--disable-tests			\

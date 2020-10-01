@@ -1,7 +1,7 @@
-# $OpenBSD: Makefile,v 1.9 2019/11/23 19:26:52 kmos Exp $
+# $OpenBSD: Makefile,v 1.11 2020/07/03 21:12:42 sthen Exp $
 
 COMMENT =	extended pickling support for Python objects
-MODPY_EGG_VERSION =	0.5.2
+MODPY_EGG_VERSION =	1.5.0
 DISTNAME =	cloudpickle-${MODPY_EGG_VERSION}
 PKGNAME =	py-cloudpickle-${MODPY_EGG_VERSION}
 CATEGORIES =	devel
@@ -19,9 +19,12 @@ MODPY_PI =		Yes
 MODPY_PYTEST =		Yes
 
 FLAVORS =	python3
-FLAVOR ?=
+FLAVOR =	python3
 
 TEST_DEPENDS =	devel/py-mock${MODPY_FLAVOR} \
+		sysutils/py-psutil${MODPY_FLAVOR} \
 		www/py-tornado${MODPY_FLAVOR}
+
+TEST_ENV =	PYTHONPATH=".:tests:tests/cloudpickle_testpkg"
 
 .include <bsd.port.mk>

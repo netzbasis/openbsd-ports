@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.36 2020/06/16 12:03:26 pvk Exp $
+# $OpenBSD: Makefile,v 1.39 2020/09/10 13:54:53 pvk Exp $
 
 ONLY_FOR_ARCHS =	amd64
 COMMENT =		tool for managing events and logs
 
-V =			7.7.1
+V =			7.9.1
 DISTNAME =		logstash-oss-$V
 PKGNAME =		logstash-$V
 EPOCH =			0
@@ -20,8 +20,7 @@ PERMIT_PACKAGE =	Yes
 MASTER_SITES =		https://artifacts.elastic.co/downloads/logstash/
 
 MASTER_SITES0 =		https://distfiles.tristero.se/
-DISTFILES =		logstash-oss-$V.tar.gz \
-			netty-tcnative-boringssl-static-2.0.12.Final.jar:0
+DISTFILES =		logstash-oss-$V.tar.gz
 EXTRACT_ONLY =		logstash-oss-$V.tar.gz
 
 MODULES =		java
@@ -67,10 +66,6 @@ do-install:
 		 ${PREFIX}/share/doc/logstash/
 	${INSTALL_DATA} ${WRKSRC}/config/* ${PREFIX}/share/examples/logstash/
 	cp -R ${WRKSRC}/{lib,logstash-*,modules,tools,vendor} ${LOGSTASH_HOME}
-	cp ${FULLDISTDIR}/netty-tcnative-boringssl-static-2.0.12.Final.jar \
-		${LOGSTASH_HOME}vendor/bundle/jruby/2.5.0/gems/logstash-input-beats-6.0.9-java/vendor/jar-dependencies/io/netty/netty-tcnative-boringssl-static/2.0.12.Final/
-	cp ${FULLDISTDIR}/netty-tcnative-boringssl-static-2.0.12.Final.jar \
-		${LOGSTASH_HOME}vendor/bundle/jruby/2.5.0/gems/logstash-input-http-3.3.4-java/vendor/jar-dependencies/io/netty/netty-tcnative-boringssl-static/2.0.12.Final/
 	${INSTALL_DATA} ${FILESDIR}/filebeat.yml \
 		${PREFIX}/share/examples/logstash/filebeat.yml
 	cd ${PREFIX}/logstash && \

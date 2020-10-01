@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.5 2020/06/05 05:40:25 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.7 2020/09/11 11:23:01 rsadowski Exp $
 @pkgpath x11/kde4/kanagram
 @bin bin/kanagram
 share/applications/org.kde.kanagram.desktop

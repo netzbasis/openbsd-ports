@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.102 2020/06/19 21:55:17 sthen Exp $
+# $OpenBSD: Makefile,v 1.104 2020/08/06 15:00:11 sthen Exp $
 
 COMMENT-main =	network monitoring system
 COMMENT-mysql =	MySQL support for icinga2
 COMMENT-pgsql =	PostgreSQL support for icinga2
 
-V =		2.11.4
+V =		2.12.0
 EPOCH =		0
 GH_ACCOUNT =	Icinga
 GH_PROJECT =	icinga2
@@ -35,7 +35,7 @@ SHARED_LIBS +=	socketpair                0.0 # 2.6
 
 HOMEPAGE =	https://icinga.com/products/icinga-2/
 
-MAINTAINER =	Stuart Henderson <sthen@openbsd.org>
+MAINTAINER =	Stuart Henderson <stu.ports@spacehopper.org>
 
 # GPLv2+ with OpenSSL exemption
 PERMIT_PACKAGE =	Yes
@@ -87,6 +87,9 @@ CONFIGURE_ENV +=	LDFLAGS="${LDFLAGS} -latomic"
 .endif
 
 post-install:
+	mv ${WRKINST}${SYSCONFDIR}/icinga2/features-available/* \
+	    ${PREFIX}/share/examples/icinga2/features-available/
+	rmdir ${WRKINST}${SYSCONFDIR}/icinga2/features-available
 	mv ${WRKINST}${SYSCONFDIR}/icinga2/* ${PREFIX}/share/examples/icinga2/
 	rmdir ${WRKINST}${LOCALSTATEDIR}/run/icinga2{/cmd,}
 	${INSTALL_DATA_DIR} ${PREFIX}/share/nano

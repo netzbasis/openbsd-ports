@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.55 2020/02/08 12:19:19 sthen Exp $
+# $OpenBSD: Makefile,v 1.58 2020/08/01 11:30:37 sthen Exp $
 
 COMMENT=	latency logging and graphing system
 
 V=		2.7.3
-REVISION=	1
+REVISION=	4
 DISTNAME=	smokeping-$V
 
 CATEGORIES=	net
@@ -11,8 +11,6 @@ CATEGORIES=	net
 MASTER_SITES=	${HOMEPAGE}pub/
 
 HOMEPAGE=	http://oss.oetiker.ch/smokeping/
-
-MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
 
 # GPLv2+
 PERMIT_PACKAGE=	Yes

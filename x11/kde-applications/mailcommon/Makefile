@@ -1,34 +1,34 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/06/13 18:50:20 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.5 2020/09/07 14:49:28 rsadowski Exp $
 
 COMMENT =	KDE PIM common mail library
 DISTNAME =	mailcommon-${VERSION}
 CATEGORIES =	devel mail
 
-SHARED_LIBS +=  KF5MailCommon       0.0 # 5.13.2
+SHARED_LIBS +=  KF5MailCommon       1.0 # 5.13.2
 
 WANTLIB += ${COMPILER_LIBCXX} KF5AkonadiContact KF5AkonadiCore
 WANTLIB += KF5AkonadiMime KF5AkonadiWidgets KF5Archive KF5Auth
 WANTLIB += KF5AuthCore KF5Codecs KF5Completion KF5ConfigCore KF5ConfigGui
 WANTLIB += KF5ConfigWidgets KF5Contacts KF5CoreAddons KF5I18n
 WANTLIB += KF5IMAP KF5IconThemes KF5IdentityManagement KF5ItemModels
-WANTLIB += KF5ItemViews KF5JobWidgets KF5KIOCore KF5KIOWidgets
-WANTLIB += KF5Libkdepim KF5LibkdepimAkonadi KF5Libkleo KF5MailImporter
-WANTLIB += KF5MailTransport KF5MessageComposer KF5MessageCore
-WANTLIB += KF5MessageViewer KF5Mime KF5MimeTreeParser KF5PimCommon
-WANTLIB += KF5PimCommonAkonadi KF5PimTextEdit KF5Service KF5SonnetUi
-WANTLIB += KF5SyntaxHighlighting KF5TemplateParser KF5TextWidgets
-WANTLIB += KF5Wallet KF5WidgetsAddons KF5XmlGui Qt5Concurrent
-WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Widgets Qt5Xml
-WANTLIB += gpgmepp m qgpgme
+WANTLIB += KF5ItemViews KF5JobWidgets KF5KIOCore KF5KIOGui KF5KIOWidgets
+WANTLIB += KF5Libkdepim KF5Libkleo KF5MailImporter KF5MailTransport
+WANTLIB += KF5MessageComposer KF5MessageCore KF5MessageViewer
+WANTLIB += KF5Mime KF5MimeTreeParser KF5PimCommon KF5PimCommonAkonadi
+WANTLIB += KF5PimTextEdit KF5Service KF5SonnetUi KF5SyntaxHighlighting
+WANTLIB += KF5TemplateParser KF5TextWidgets KF5Wallet KF5WidgetsAddons
+WANTLIB += KF5WindowSystem KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus
+WANTLIB += Qt5Gui Qt5Network Qt5Widgets Qt5Xml gpgmepp m phonon4qt5
+WANTLIB += qgpgme
 
 MODKDE5_TRANSLATIONS = yes
 MODKF5_L10N_CONFLICT = yes
 
-MODULES +=	x11/kde-applications \
-		multimedia/phonon
+MODULES +=	x11/kde-applications
 
 BUILD_DEPENDS =	textproc/libxslt \
-		devel/boost
+		devel/boost \
+		devel/libinotify
 
 LIB_DEPENDS =	devel/kf5/karchive \
 		devel/kf5/kauth \
@@ -50,6 +50,7 @@ LIB_DEPENDS =	devel/kf5/karchive \
 		devel/kf5/syntax-highlighting \
 		security/gpgme,-qt \
 		x11/kde-applications/akonadi \
+		x11/kde-applications/akonadi-mime \
 		x11/kde-applications/kidentitymanagement \
 		x11/kde-applications/kimap \
 		x11/kde-applications/kmime \
@@ -57,7 +58,8 @@ LIB_DEPENDS =	devel/kf5/karchive \
 		x11/kde-applications/libkdepim \
 		x11/kde-applications/mailimporter \
 		x11/kde-applications/messagelib \
-		x11/kde-applications/pimcommon
+		x11/kde-applications/pimcommon \
+		multimedia/phonon
 
 TEST_IS_INTERACTIVE =	X11
 

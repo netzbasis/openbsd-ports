@@ -1,5 +1,6 @@
 /patch-Makefile/1.10/Sun Nov 24 18:42:28 2019//
-/patch-common_gypi/1.14/Sat Apr  4 16:42:57 2020//
+/patch-common_gypi/1.15/Wed Jul 22 17:30:24 2020//
+/patch-configure_py/1.1/Fri Jul 31 21:22:48 2020//
 /patch-deps_cares_include_ares_h/1.2/Tue Jun 27 12:04:08 2017//
 /patch-deps_npm_bin_node-gyp-bin_node-gyp/1.4/Sun Nov 24 18:42:28 2019//
 /patch-deps_npm_lib_npm_js/1.8/Sun Nov 24 18:42:28 2019//

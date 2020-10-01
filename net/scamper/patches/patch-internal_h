@@ -1,8 +1,16 @@
-$OpenBSD: patch-internal_h,v 1.2 2018/05/04 13:31:14 sthen Exp $
+$OpenBSD: patch-internal_h,v 1.5 2020/09/23 20:20:32 sthen Exp $
+
+On OpenBSD tcp_var.h also requires tcp_timer.h.
+
+/usr/include/netinet/tcp_var.h:72:25: error: use of undeclared identifier 'TCPT_NTIMERS'
+        struct timeout t_timer[TCPT_NTIMERS];   /* tcp timers */
+
+Nothing from tcp_var is used here at the moment anyway so don't pull it in.
+
 Index: internal.h
 --- internal.h.orig
 +++ internal.h
-@@ -131,9 +131,6 @@ typedef unsigned short sa_family_t;
+@@ -137,9 +137,6 @@ typedef unsigned short sa_family_t;
  #include <netinet/udp.h>
  #include <netinet/icmp6.h>
  #include <netinet/tcp.h>

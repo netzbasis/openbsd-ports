@@ -1,9 +1,9 @@
-$OpenBSD: patch-content_public_browser_BUILD_gn,v 1.2 2020/05/29 20:03:23 robert Exp $
+$OpenBSD: patch-content_public_browser_BUILD_gn,v 1.4 2020/09/22 11:47:41 robert Exp $
 
 Index: content/public/browser/BUILD.gn
 --- content/public/browser/BUILD.gn.orig
 +++ content/public/browser/BUILD.gn
-@@ -458,6 +458,7 @@ jumbo_source_set("browser_sources") {
+@@ -469,6 +469,7 @@ jumbo_source_set("browser_sources") {
      "//media/capture",
      "//net",
      "//ppapi/c",

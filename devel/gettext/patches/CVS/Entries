@@ -1,7 +1,7 @@
-/patch-gettext-runtime_intl_dcigettext_c/1.9/Thu May 28 19:52:35 2020//
-/patch-gettext-runtime_intl_l10nflist_c/1.6/Thu May 28 19:52:35 2020//
+/patch-gettext-runtime_intl_dcigettext_c/1.10/Thu Aug 20 21:03:25 2020//
+/patch-gettext-runtime_intl_l10nflist_c/1.7/Thu Aug 20 21:03:25 2020//
 /patch-gettext-runtime_intl_log_c/1.4/Mon Jan 21 22:08:52 2013//
-/patch-gettext-runtime_intl_relocatable_c/1.6/Mon May 20 22:15:03 2019//
-/patch-gettext-tools_gnulib-lib_Makefile_in/1.11/Thu May 28 19:52:35 2020//
-/patch-gettext-tools_src_Makefile_in/1.12/Thu May 28 19:52:35 2020//
+/patch-gettext-runtime_intl_relocatable_c/1.7/Thu Aug 20 21:03:25 2020//
+/patch-gettext-tools_gnulib-lib_Makefile_in/1.12/Thu Aug 20 21:03:25 2020//
+/patch-gettext-tools_src_Makefile_in/1.13/Thu Aug 20 21:03:25 2020//
 D

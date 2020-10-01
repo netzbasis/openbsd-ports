@@ -1,4 +1,4 @@
-/Makefile/1.283/Wed Jun 10 07:20:04 2020//
+/Makefile/1.284/Sun Sep 13 08:48:57 2020//
 /Makefile.inc/1.15/Thu Apr 13 07:38:44 2017//
 /gnome.port.mk/1.117/Wed Jun 10 07:19:20 2020//
 D/accerciser////
@@ -75,7 +75,6 @@ D/mono-gnome////
 D/music////
 D/mutter////
 D/nautilus////
-D/ocrfeeder////
 D/online-accounts////
 D/online-miners////
 D/orca////

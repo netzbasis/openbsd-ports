@@ -1,16 +1,14 @@
-# $OpenBSD: Makefile,v 1.59 2020/04/04 20:36:26 sthen Exp $
+# $OpenBSD: Makefile,v 1.63 2020/08/01 11:30:36 sthen Exp $
 
 COMMENT =	compiler cache
 
-V =		3.7.9
+V =		3.7.11
 DISTNAME =	ccache-$V
 REVISION =	0
 
 CATEGORIES =	devel
 
 HOMEPAGE =	https://ccache.dev/
-
-MAINTAINER =	Stuart Henderson <sthen@openbsd.org>
 
 # GPLv3+
 PERMIT_PACKAGE =	 Yes
@@ -34,6 +32,6 @@ TEST_DEPENDS =		shells/bash \
 			sysutils/coreutils
 
 pre-test:
-	ln -s ${LOCALBASE}/bin/gseq ${WRKDIR}/bin/seq
+	ln -fs ${LOCALBASE}/bin/gseq ${WRKDIR}/bin/seq
 
 .include <bsd.port.mk>

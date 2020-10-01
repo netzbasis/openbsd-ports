@@ -1,17 +1,17 @@
-# $OpenBSD: Makefile,v 1.30 2019/11/18 04:37:33 kmos Exp $
+# $OpenBSD: Makefile,v 1.33 2020/08/19 12:25:12 ajacoutot Exp $
 
 COMMENT-main=		lint-like code checker for Python code
 COMMENT-gui=		GUI for pylint
 
 MODPY_EGG_VERSION=	1.6.5
-REVISION-gui=		1
-REVISION-main=		1
+REVISION-gui=		3
+REVISION-main=		3
 DISTNAME=		pylint-${MODPY_EGG_VERSION}
 PKGNAME-main=		pylint-${MODPY_EGG_VERSION}
 PKGNAME-gui=		pylint-gui-${MODPY_EGG_VERSION}
 CATEGORIES=		devel
 
-HOMEPAGE=		http://www.pylint.org/
+HOMEPAGE=		https://www.pylint.org/
 
 # GPL
 PERMIT_PACKAGE=	Yes
@@ -34,17 +34,12 @@ RUN_DEPENDS-gui=	${MODPY_TKINTER_DEPENDS} \
 TEST_DEPENDS=		devel/py-logilab-common${MODPY_FLAVOR}>=1.3.0
 
 FLAVORS =		python3
-FLAVOR ?=
+FLAVOR =		python3
 
-.if ${FLAVOR:Mpython3}
 FULLPKGNAME-main=	${PKGNAME-main:S/pylint/pylint3/}
 FULLPKGPATH-main=	devel/pylint,-main${MODPY_FLAVOR}
 FULLPKGNAME-gui=	${PKGNAME-gui:S/pylint/pylint3/}
 FULLPKGPATH-gui=	devel/pylint,-gui${MODPY_FLAVOR}
-.else
-RUN_DEPENDS+=		devel/py-backports-functools-lru-cache \
-			devel/py-configparser
-.endif
 
 post-install:
 	rm ${WRKINST}${MODPY_SITEPKG}/pylint/test/unittest_lint.py.orig

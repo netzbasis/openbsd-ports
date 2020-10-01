@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2020/06/15 08:49:02 kn Exp $
+# $OpenBSD: Makefile,v 1.8 2020/07/07 14:51:51 kn Exp $
 
 # sync with devel/angr/Makefile.inc
 ONLY_FOR_ARCHS =	amd64
@@ -19,9 +19,10 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
-MODPY_EGG_VERSION =	8.20.6.8
+MODPY_EGG_VERSION =	8.20.7.6
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
+REVISION =		0
 
 RUN_DEPENDS =		devel/angr/py-angr>=${MODPY_EGG_VERSION} \
 			devel/py-progressbar${MODPY_FLAVOR}

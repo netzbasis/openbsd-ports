@@ -1,5 +1,6 @@
 /patch-CMakeLists_txt/1.1/Sun Mar  8 02:15:51 2020//
 /patch-Externals_Bochs_disasm_CMakeLists_txt/1.1.1.1/Sun Jul 22 16:54:48 2018//
+/patch-Externals_glslang_glslang_Include_PoolAlloc_h/1.1/Sun Aug  9 14:46:23 2020//
 /patch-Externals_soundtouch_SoundTouch_cpp/1.1/Sun Mar  8 02:15:51 2020//
 /patch-Externals_soundtouch_SoundTouch_h/1.1/Sun Mar  8 02:15:51 2020//
 /patch-Source_Core_AudioCommon_AudioStretcher_h/1.1/Sun Mar  8 02:15:51 2020//

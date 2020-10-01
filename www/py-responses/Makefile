@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.3 2020/02/10 14:47:27 kmos Exp $
+# $OpenBSD: Makefile,v 1.5 2020/09/03 12:53:59 kmos Exp $
 
 COMMENT =		utility library for mocking out the `requests` Python
 
-MODPY_EGG_VERSION =	0.10.9
+MODPY_EGG_VERSION =	0.12.0
 
 DISTNAME =		responses-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
@@ -32,6 +32,6 @@ TEST_DEPENDS =		devel/flake8 \
 			devel/py-test-localserver${MODPY_FLAVOR}
 
 FLAVORS =		python3
-FLAVOR ?=
+FLAVOR =		python3
 
 .include <bsd.port.mk>

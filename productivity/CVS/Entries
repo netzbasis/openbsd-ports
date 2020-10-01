@@ -1,7 +1,5 @@
-/Makefile/1.91/Sun Jun 14 19:23:09 2020//
-D/akonadi////
+/Makefile/1.95/Sun Sep 13 13:21:00 2020//
 D/aqbanking////
-D/attica////
 D/baikal////
 D/bruce////
 D/calcurse////
@@ -21,8 +19,6 @@ D/khard////
 D/kmymoney////
 D/ledger////
 D/libalkimia////
-D/libkfbapi////
-D/libkgapi////
 D/librcps////
 D/lifeograph////
 D/mcds////
@@ -30,7 +26,6 @@ D/novprog////
 D/osmo////
 D/p5-Business-Tax-VAT-Validation////
 D/projectlibre////
-D/py-carddav////
 D/qbirthday////
 D/radicale////
 D/radicale2////

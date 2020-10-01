@@ -1,4 +1,4 @@
-/Makefile/1.4/Wed Feb 27 16:07:17 2019//
+/Makefile/1.5/Fri Aug 21 14:44:57 2020//
 /Makefile.inc/1.5/Sat Mar 21 16:14:53 2020//
 D/atril////
 D/caja////
@@ -14,6 +14,7 @@ D/libmatemixer////
 D/libmateweather////
 D/marco////
 D/media////
+D/menu-advanced////
 D/menus////
 D/notification-daemon////
 D/panel////

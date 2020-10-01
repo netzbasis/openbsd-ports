@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-examples,v 1.4 2020/05/20 15:54:51 sthen Exp $
+@comment $OpenBSD: PLIST-examples,v 1.6 2020/07/14 15:13:37 sthen Exp $
 @option is-branch
 @owner _tomcat
 @group _tomcat
@@ -553,6 +553,7 @@ webapps/docs/api/org/apache/catalina/startup/
 webapps/docs/api/org/apache/catalina/startup/AddPortOffsetRule.html
 webapps/docs/api/org/apache/catalina/startup/Bootstrap.html
 webapps/docs/api/org/apache/catalina/startup/Catalina.CatalinaShutdownHook.html
+webapps/docs/api/org/apache/catalina/startup/Catalina.ServerXml.html
 webapps/docs/api/org/apache/catalina/startup/Catalina.html
 webapps/docs/api/org/apache/catalina/startup/CatalinaBaseConfigurationSource.html
 webapps/docs/api/org/apache/catalina/startup/CatalinaProperties.html
@@ -562,6 +563,7 @@ webapps/docs/api/org/apache/catalina/startup/ClassLoaderFactory.RepositoryType.h
 webapps/docs/api/org/apache/catalina/startup/ClassLoaderFactory.html
 webapps/docs/api/org/apache/catalina/startup/ConnectorCreateRule.html
 webapps/docs/api/org/apache/catalina/startup/Constants.html
+webapps/docs/api/org/apache/catalina/startup/ContextConfig.ContextXml.html
 webapps/docs/api/org/apache/catalina/startup/ContextConfig.html
 webapps/docs/api/org/apache/catalina/startup/ContextRuleSet.html
 webapps/docs/api/org/apache/catalina/startup/CopyParentClassLoaderRule.html
@@ -940,6 +942,11 @@ webapps/docs/api/org/apache/catalina/valves/package-frame.html
 webapps/docs/api/org/apache/catalina/valves/package-summary.html
 webapps/docs/api/org/apache/catalina/valves/package-tree.html
 webapps/docs/api/org/apache/catalina/valves/rewrite/
+webapps/docs/api/org/apache/catalina/valves/rewrite/InternalRewriteMap.Escape.html
+webapps/docs/api/org/apache/catalina/valves/rewrite/InternalRewriteMap.LowerCase.html
+webapps/docs/api/org/apache/catalina/valves/rewrite/InternalRewriteMap.Unescape.html
+webapps/docs/api/org/apache/catalina/valves/rewrite/InternalRewriteMap.UpperCase.html
+webapps/docs/api/org/apache/catalina/valves/rewrite/InternalRewriteMap.html
 webapps/docs/api/org/apache/catalina/valves/rewrite/QuotedStringTokenizer.html
 webapps/docs/api/org/apache/catalina/valves/rewrite/Resolver.html
 webapps/docs/api/org/apache/catalina/valves/rewrite/ResolverImpl.html
@@ -2032,7 +2039,12 @@ webapps/docs/api/org/apache/tomcat/util/net/openssl/OpenSSLUtil.html
 webapps/docs/api/org/apache/tomcat/util/net/openssl/ciphers/
 webapps/docs/api/org/apache/tomcat/util/net/openssl/ciphers/Authentication.html
 webapps/docs/api/org/apache/tomcat/util/net/openssl/ciphers/Cipher.html
+webapps/docs/api/org/apache/tomcat/util/net/openssl/ciphers/Encryption.html
+webapps/docs/api/org/apache/tomcat/util/net/openssl/ciphers/EncryptionLevel.html
+webapps/docs/api/org/apache/tomcat/util/net/openssl/ciphers/KeyExchange.html
+webapps/docs/api/org/apache/tomcat/util/net/openssl/ciphers/MessageDigest.html
 webapps/docs/api/org/apache/tomcat/util/net/openssl/ciphers/OpenSSLCipherConfigurationParser.html
+webapps/docs/api/org/apache/tomcat/util/net/openssl/ciphers/Protocol.html
 webapps/docs/api/org/apache/tomcat/util/net/openssl/ciphers/package-frame.html
 webapps/docs/api/org/apache/tomcat/util/net/openssl/ciphers/package-summary.html
 webapps/docs/api/org/apache/tomcat/util/net/openssl/ciphers/package-tree.html

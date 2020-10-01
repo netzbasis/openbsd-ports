@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.7 2020/03/05 17:38:11 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2020/07/15 20:59:36 edd Exp $
 
 COMMENT =	 backup a github user or organization
 
-MODPY_EGG_VERSION =	0.31.0
+MODPY_EGG_VERSION =	0.33.0
 PKGNAME =	github-backup-${MODPY_EGG_VERSION}
 
 GH_ACCOUNT =	josegonzalez

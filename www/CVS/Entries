@@ -1,5 +1,4 @@
-/Makefile/1.965/Sat Jun 13 16:22:53 2020//
-D/ajaxterm////
+/Makefile/1.983/Mon Sep 14 16:45:36 2020//
 D/analog////
 D/ap2-mod_dnssd////
 D/ap2-mod_jk////
@@ -33,6 +32,7 @@ D/dokuwiki////
 D/drush////
 D/e2guardian////
 D/edbrowse////
+D/ephemetoot////
 D/epiphany////
 D/fcgi////
 D/fcgi-cgi////
@@ -67,7 +67,6 @@ D/kcaldav////
 D/kcgi////
 D/kibana////
 D/kore////
-D/kwebkitpart////
 D/larbin////
 D/libcroco////
 D/libmicrohttpd////
@@ -92,7 +91,6 @@ D/mollify////
 D/mono-xsp////
 D/mozilla////
 D/mozilla-firefox////
-D/mozplugger////
 D/netsurf////
 D/newsboat////
 D/nextcloud////
@@ -131,6 +129,8 @@ D/p5-CGI-SSI////
 D/p5-CGI-Session////
 D/p5-CGI-Session-Driver-memcached////
 D/p5-CGI-Simple////
+D/p5-CGI-Struct////
+D/p5-CGI-Struct-XS////
 D/p5-CGI-Untaint////
 D/p5-CGI-XMLApplication////
 D/p5-CSS-DOM////
@@ -138,9 +138,11 @@ D/p5-CSS-Minifier////
 D/p5-CSS-Minifier-XS////
 D/p5-CSS-Squish////
 D/p5-CSS-Tiny////
+D/p5-Catalyst-Action-REST////
 D/p5-Catalyst-Action-RenderView////
 D/p5-Catalyst-Component-ACCEPT_CONTEXT////
 D/p5-Catalyst-Component-InstancePerContext////
+D/p5-Catalyst-Controller-ActionRole////
 D/p5-Catalyst-Controller-FormBuilder////
 D/p5-Catalyst-Controller-HTML-FormFu////
 D/p5-Catalyst-Devel////
@@ -288,6 +290,7 @@ D/p5-PSGI////
 D/p5-Plack////
 D/p5-Plack-App-URLMux////
 D/p5-Plack-Middleware-FixMissingBodyInRedirect////
+D/p5-Plack-Middleware-MethodOverride////
 D/p5-Plack-Middleware-RemoveRedundantBody////
 D/p5-Plack-Middleware-ReverseProxy////
 D/p5-Plack-Test-ExternalServer////
@@ -308,6 +311,7 @@ D/p5-Twiggy////
 D/p5-URI////
 D/p5-URI-Fetch////
 D/p5-URI-Find////
+D/p5-URI-ws////
 D/p5-URL-Encode////
 D/p5-W3C-LinkChecker////
 D/p5-WWW-Bugzilla////
@@ -366,6 +370,7 @@ D/polipo////
 D/pound////
 D/privoxy////
 D/puppetboard////
+D/purritobin////
 D/py-CherryPy////
 D/py-aiohttp////
 D/py-autobahn////
@@ -409,7 +414,6 @@ D/py-ndg-httpsclient////
 D/py-paste////
 D/py-paste-deploy////
 D/py-paste-script////
-D/py-pylons////
 D/py-qtwebengine////
 D/py-query////
 D/py-quixote////
@@ -424,9 +428,7 @@ D/py-requests-mock////
 D/py-requests-oauthlib////
 D/py-requests-toolbelt////
 D/py-responses////
-D/py-routes////
 D/py-selenium////
-D/py-sockjs-tornado////
 D/py-soupsieve////
 D/py-tempita////
 D/py-terminado////
@@ -437,8 +439,6 @@ D/py-urlgrabber////
 D/py-urllib3////
 D/py-vcrpy////
 D/py-waitress////
-D/py-weberror////
-D/py-webhelpers////
 D/py-webob////
 D/py-webpy////
 D/py-webtest////
@@ -520,11 +520,11 @@ D/twill////
 D/uget////
 D/uriparser////
 D/urlwatch////
+D/uwebsockets////
 D/varnish////
 D/vimb////
 D/visitors////
 D/vnu////
-D/vteplugin////
 D/w3m////
 D/w3mir////
 D/wApua////

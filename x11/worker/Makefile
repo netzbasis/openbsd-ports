@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.43 2020/04/14 15:34:49 bcallah Exp $
+# $OpenBSD: Makefile,v 1.47 2020/08/26 22:44:48 bcallah Exp $
 
 BROKEN-hppa =	no atomic ops
 COMMENT =	Midnight Commander-like file manager for X
-DISTNAME =	worker-4.4.0
+DISTNAME =	worker-4.5.1
 CATEGORIES =	x11
 
 HOMEPAGE =	http://www.boomerangsworld.de/
@@ -16,10 +16,11 @@ WANTLIB += fontconfig freetype m pthread xcb z ${COMPILER_LIBCXX}
 
 MASTER_SITES =	http://www.boomerangsworld.de/cms/worker/downloads/
 
-# C++11
+# C++14
 COMPILER =	base-clang ports-clang ports-gcc
 
-RUN_DEPENDS =	devel/desktop-file-utils
+RUN_DEPENDS =	devel/desktop-file-utils \
+		x11/xli
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS =	--without-avfs \

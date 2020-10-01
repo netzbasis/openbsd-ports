@@ -1,27 +1,27 @@
-# $OpenBSD: Makefile,v 1.12 2020/06/05 05:40:29 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.14 2020/09/07 14:49:28 rsadowski Exp $
 
 COMMENT =	virtual globe and world atlas
 DISTNAME =	marble-${VERSION}
 PKGNAME =	marble-kf5-${VERSION}
 CATEGORIES =	geo
-REVISION =	2
 
 HOMEPAGE =	https://marble.kde.org/
 
-SHARED_LIBS +=  astro                     1.0 # 0.17
-SHARED_LIBS +=  marblewidget-qt5          1.0 # 0.28
-SHARED_LIBS +=  marbledeclarative         0.0 # 0.28
+SHARED_LIBS +=  astro                     2.0 # 0.17
+SHARED_LIBS +=  marblewidget-qt5          2.0 # 0.28
+SHARED_LIBS +=  marbledeclarative         1.0 # 0.28
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Attica KF5Auth KF5AuthCore KF5Codecs
 WANTLIB += KF5Completion KF5ConfigCore KF5ConfigGui KF5ConfigWidgets
 WANTLIB += KF5CoreAddons KF5Crash KF5I18n KF5JobWidgets KF5KIOCore
-WANTLIB += KF5KIOWidgets KF5NewStuff KF5NewStuffCore KF5Package
-WANTLIB += KF5Parts KF5Plasma KF5Runner KF5Service KF5SonnetUi
-WANTLIB += KF5TextWidgets KF5WidgetsAddons KF5XmlGui Qt5Concurrent
-WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Positioning Qt5PrintSupport
-WANTLIB += Qt5Qml Qt5Quick Qt5SerialPort Qt5Sql Qt5Svg Qt5WebChannel
-WANTLIB += Qt5WebEngine Qt5WebEngineCore Qt5WebEngineWidgets Qt5Widgets
-WANTLIB += Qt5Xml c gps m shp z
+WANTLIB += KF5KIOGui KF5KIOWidgets KF5NewStuff KF5NewStuffCore
+WANTLIB += KF5Package KF5Parts KF5Plasma KF5Runner KF5Service
+WANTLIB += KF5SonnetUi KF5TextWidgets KF5WidgetsAddons KF5WindowSystem
+WANTLIB += KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network
+WANTLIB += Qt5Positioning Qt5PrintSupport Qt5Qml Qt5Quick Qt5SerialPort
+WANTLIB += Qt5Sql Qt5Svg Qt5WebChannel Qt5WebEngine Qt5WebEngineCore
+WANTLIB += Qt5WebEngineWidgets Qt5Widgets Qt5Xml c gps m phonon4qt5
+WANTLIB += shp z
 
 MODKDE5_DESKTOP_FILE = yes
 MODKDE5_ICON_CACHE = yes
@@ -30,8 +30,7 @@ MODKF5_I18N_CONFLICT = yes
 MODKF5_L10N_CONFLICT = yes
 MODKDE5_DOCS = yes
 
-MODULES +=	x11/kde-applications \
-		multimedia/phonon
+MODULES +=	x11/kde-applications
 
 BUILD_DEPENDS =	x11/qt5/qtquickcontrols \
 		devel/protobuf \
@@ -62,6 +61,7 @@ LIB_DEPENDS =	devel/kf5/attica \
 		devel/kf5/sonnet \
 		devel/shapelib \
 		misc/gpsd,-main \
+		multimedia/phonon \
 		x11/qt5/qtdeclarative \
 		x11/qt5/qtlocation \
 		x11/qt5/qtserialport \
@@ -71,8 +71,7 @@ LIB_DEPENDS =	devel/kf5/attica \
 CONFIGURE_ARGS +=	-DCMAKE_DISABLE_FIND_PACKAGE_libwlocate=ON \
 			-DBUILD_MARBLE_TOOLS=ON \
 			-DBUILD_MARBLE_EXAMPLES=OFF \
-			-DMOBILE=OFF \
-			-DPhonon4Qt5_INCLUDE_DIR="${LOCALBASE}/include/phonon4qt5/"
+			-DMOBILE=OFF
 
 TEST_IS_INTERACTIVE =	X11
 

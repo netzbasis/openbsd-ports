@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.6 2019/07/12 20:48:40 sthen Exp $
+# $OpenBSD: Makefile,v 1.8 2020/09/14 13:38:58 bluhm Exp $
 
 COMMENT=		interface to XML based eBay API
 
 DISTNAME =		Net-eBay-0.61
 CATEGORIES=		net
+REVISION =		1
 
 # perl
 PERMIT_PACKAGE=	Yes
@@ -14,7 +15,7 @@ MODCPAN_EXAMPLES=	Yes
 
 RUN_DEPENDS=		devel/p5-DateTime-Precise \
 			security/p5-Crypt-SSLeay \
-			security/p5-Net_SSLeay \
+			security/p5-Net-SSLeay \
 			textproc/p5-Text-Format \
 			textproc/p5-XML-Dumper \
 			textproc/p5-XML-Simple \

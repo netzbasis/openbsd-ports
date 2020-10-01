@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2020/01/06 08:52:42 martin Exp $
+# $OpenBSD: Makefile,v 1.8 2020/08/19 12:25:12 ajacoutot Exp $
 
 COMMENT =		snuggs are s-expressions for numpy
 
@@ -6,6 +6,7 @@ MODPY_EGG_VERSION =	1.4.7
 DISTNAME =		snuggs-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		math
+REVISION =		1
 
 MAINTAINER =		Martin Reindl <martin@catai.org>
 
@@ -26,6 +27,6 @@ TEST_DEPENDS =		devel/py-test${MODPY_FLAVOR} \
 			devel/py-hypothesis${MODPY_FLAVOR}
 
 FLAVORS =		python3
-FLAVOR ?=
+FLAVOR =		python3
 
 .include <bsd.port.mk>

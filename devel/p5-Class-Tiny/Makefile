@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.5 2019/07/12 20:44:48 sthen Exp $
+# $OpenBSD: Makefile,v 1.7 2020/09/16 02:34:40 afresh1 Exp $
 
 COMMENT=		minimalist class construction
 
-DISTNAME =		Class-Tiny-1.006
+DISTNAME =		Class-Tiny-1.008
 CATEGORIES=		devel
 
 # Apache Licence 2.0

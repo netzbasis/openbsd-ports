@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2020/06/17 19:52:00 sthen Exp $
+# $OpenBSD: Makefile,v 1.10 2020/08/01 11:30:37 sthen Exp $
 
 ONLY_FOR_ARCHS =	${RUST_ARCHS:Naarch64}
 
@@ -9,10 +9,9 @@ BROKEN-sparc64 = "error: failed to run custom build command for `ring v0.14.6`"
 GH_ACCOUNT =		NLnetLabs
 GH_PROJECT =		routinator
 GH_TAGNAME =		v0.7.1
+REVISION =		1
 
 CATEGORIES =		net
-
-MAINTAINER =		Stuart Henderson <sthen@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE =	Yes

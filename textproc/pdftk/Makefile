@@ -1,16 +1,17 @@
-# $OpenBSD: Makefile,v 1.24 2020/04/19 15:12:23 sthen Exp $
+# $OpenBSD: Makefile,v 1.26 2020/07/11 22:54:40 sthen Exp $
 
 COMMENT=	pdf swiss army knife
 
-V=		3.0.10
+V=		3.1.3
 BC=		165
 CL3=		3.10
 DISTNAME=	pdftk-v$V
 PKGNAME=	pdftk-$V
 EXTRACT_ONLY=	pdftk-v$V.tar.gz \
 		commons-lang3-${CL3}-bin.tar.gz
+REVISION=	0
 
-MAINTAINER=	Stuart Henderson <sthen@openbsd.org>
+MAINTAINER=	Stuart Henderson <stu.ports@spacehopper.org>
 
 CATEGORIES=	textproc
 

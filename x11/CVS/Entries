@@ -1,4 +1,4 @@
-/Makefile/1.659/Sat Jun 13 16:22:53 2020//
+/Makefile/1.676/Fri Sep 25 20:34:10 2020//
 D/2bwm////
 D/Xaw3d////
 D/XawMu////
@@ -20,6 +20,7 @@ D/bbkeys////
 D/bbpager////
 D/bclock////
 D/belt////
+D/bemenu////
 D/bgs////
 D/blackbox////
 D/blast////
@@ -51,6 +52,7 @@ D/e16keyedit////
 D/e17////
 D/echinus////
 D/ede////
+D/elementary////
 D/emelfm2////
 D/enlightenment////
 D/eterm////
@@ -82,9 +84,9 @@ D/gnustep////
 D/gob2////
 D/goggles////
 D/golem////
-D/grantlee////
 D/grantlee-qt5////
 D/greybird////
+D/gromit-mpx////
 D/gtk+2////
 D/gtk+3////
 D/gtk+4////
@@ -116,6 +118,7 @@ D/hs-X11////
 D/hs-X11-xft////
 D/hs-dbus////
 D/hs-xmonad-contrib////
+D/hsetroot////
 D/human-icon-theme////
 D/i3////
 D/i3-gaps////
@@ -137,16 +140,17 @@ D/jwm////
 D/kde////
 D/kde-applications////
 D/kde-shared-data////
-D/kde4////
 D/keybinder////
 D/keybinder3////
 D/keynav////
+D/kitty////
 D/klavaro////
 D/krusader////
 D/lablgtk2////
 D/lablgtk3////
 D/lemonbar////
 D/lemonbar-xft////
+D/libappindicator////
 D/libdbus-c++////
 D/libdbusmenu////
 D/libdnd////
@@ -154,7 +158,7 @@ D/libfakekey////
 D/libfm////
 D/libgdiplus////
 D/libhandy////
-D/libkscreen////
+D/libindicator////
 D/libqaccessibilityclient////
 D/libxdg-basedir////
 D/lsw////
@@ -163,6 +167,7 @@ D/lupe////
 D/lxappearance////
 D/lxqt////
 D/lxrandr////
+D/lxterminal////
 D/mate////
 D/menu-cache////
 D/menumaker////
@@ -197,6 +202,7 @@ D/p5-Gtk2-Ex-PodViewer////
 D/p5-Gtk2-Ex-Simple-List////
 D/p5-Gtk2-GladeXML////
 D/p5-Gtk2-ImageView////
+D/p5-Gtk3////
 D/p5-Tk////
 D/p5-Tk-ProgressBar-Mac////
 D/p5-Tk-Splash////
@@ -213,11 +219,11 @@ D/parcellite////
 D/pcmanfm////
 D/peksystray////
 D/pekwm////
+D/picom////
 D/pidgin-guifications////
 D/pidgin-libnotify////
 D/piewm////
 D/podbrowser////
-D/polkit-qt////
 D/polkit-qt5////
 D/polybar////
 D/pwm////
@@ -256,8 +262,8 @@ D/rxvt-unicode////
 D/sakura////
 D/sawfish////
 D/sclock////
+D/screenkey////
 D/sct////
-D/sisctrl////
 D/skippy////
 D/slim////
 D/slim-themes////
@@ -349,6 +355,7 @@ D/xcb////
 D/xchm////
 D/xclip////
 D/xco////
+D/xcolor////
 D/xcoloredit////
 D/xcolors////
 D/xcursor-dmz////

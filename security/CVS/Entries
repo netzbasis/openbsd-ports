@@ -1,4 +1,4 @@
-/Makefile/1.581/Sat Jun 13 16:22:53 2020//
+/Makefile/1.592/Mon Sep 14 22:47:10 2020//
 D/ADMsnmp////
 D/ROPgadget////
 D/acme-client////
@@ -87,7 +87,6 @@ D/jailkit////
 D/john////
 D/john-jumbo////
 D/kc////
-D/keepassx////
 D/keepassxc////
 D/keybase////
 D/keychain////
@@ -152,6 +151,7 @@ D/outguess////
 D/p0f////
 D/p0f3////
 D/p11-kit////
+D/p5-Alt-Crypt-RSA-BigInt////
 D/p5-Auth-Yubikey_Decrypter////
 D/p5-Authen-Htpasswd////
 D/p5-Authen-NTLM////
@@ -177,6 +177,7 @@ D/p5-Crypt-DSA////
 D/p5-Crypt-Eksblowfish////
 D/p5-Crypt-IDEA////
 D/p5-Crypt-LE////
+D/p5-Crypt-OpenPGP////
 D/p5-Crypt-OpenSSL-Bignum////
 D/p5-Crypt-OpenSSL-DSA////
 D/p5-Crypt-OpenSSL-EC////
@@ -219,11 +220,12 @@ D/p5-Mojolicious-Plugin-Authentication////
 D/p5-Mozilla-CA-Fake////
 D/p5-Net-SSL-ExpireDate////
 D/p5-Net-SSLGlue////
-D/p5-Net_SSLeay////
+D/p5-Net-SSLeay////
 D/p5-PGP-Sign////
 D/p5-POE-Component-SSLify////
 D/p5-Text-Password-Pronounceable////
 D/p5-Tie-EncryptedHash////
+D/p5-Unix-OpenBSD-Random////
 D/pass-otp////
 D/passwdqc////
 D/password-gorilla////
@@ -296,10 +298,9 @@ D/py-trustme////
 D/py-viv_utils////
 D/py-vivisect////
 D/py-yaswfp////
-D/qca////
 D/qca-qt5////
-D/qoauth////
 D/qtkeychain////
+D/qtpass////
 D/radiusniff////
 D/rarcrack////
 D/rdp////
@@ -352,6 +353,7 @@ D/tclgpg////
 D/tcltls////
 D/tempwatch////
 D/theharvester////
+D/tls-attacker////
 D/towitoko////
 D/uacme////
 D/vault////

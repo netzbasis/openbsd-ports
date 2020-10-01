@@ -1,30 +1,30 @@
-# $OpenBSD: Makefile,v 1.9 2019/06/03 16:06:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2020/07/26 16:22:06 sthen Exp $
 
-PKG_ARCH =	*
+PKG_ARCH=	*
 
-COMMENT =	tool to check the quality of a DNS zone
+COMMENT=	tool to check the quality of a DNS zone
 
-MODULES =	cpan
-CPAN_AUTHOR =	ZNMSTR
-V =		1.1.3
-DISTNAME =	Zonemaster-CLI-v$V
-PKGNAME =	zonemaster-$V
-CATEGORIES =	net
+MODULES=	cpan
+CPAN_AUTHOR=	ZNMSTR
+V=		2.0.4
+DISTNAME=	Zonemaster-CLI-v$V
+PKGNAME=	zonemaster-$V
+CATEGORIES=	net
 
-MAINTAINER =	Stuart Henderson <sthen@openbsd.org>
+MAINTAINER=	Stuart Henderson <stu.ports@spacehopper.org>
 
 # BSD
-PERMIT_PACKAGE = Yes
+PERMIT_PACKAGE=	Yes
 
-WANTLIB =	perl
+WANTLIB=	perl
 
-CONFIGURE_STYLE =	modinst
+CONFIGURE_STYLE= modinst
 
-BUILD_DEPENDS =		${RUN_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS}
 
-RUN_DEPENDS =		devel/p5-MooseX-Getopt \
-			devel/p5-namespace-autoclean \
-			net/p5-Zonemaster/engine>=2.0.0 \
-			textproc/p5-Text-Reflow
+RUN_DEPENDS=	devel/p5-MooseX-Getopt \
+		devel/p5-namespace-autoclean \
+		net/p5-Zonemaster/engine>=2.0.0 \
+		textproc/p5-Text-Reflow
 
 .include <bsd.port.mk>

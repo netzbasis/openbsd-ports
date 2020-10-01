@@ -1,4 +1,4 @@
-/Makefile/1.394/Mon May 18 00:16:15 2020//
+/Makefile/1.396/Wed Sep  9 07:30:26 2020//
 D/abook////
 D/adcomplain////
 D/alpine////
@@ -82,6 +82,7 @@ D/mozilla-thunderbird////
 D/msmtp////
 D/mu////
 D/mutt////
+D/mutt-wizard////
 D/neomutt////
 D/nmh////
 D/nmzmail////

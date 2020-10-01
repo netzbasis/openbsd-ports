@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.16 2020/02/14 12:11:56 benoit Exp $
+# $OpenBSD: Makefile,v 1.18 2020/07/05 14:22:23 sthen Exp $
 
 COMMENT=	talk to modem devices connected via serial port
 
-DISTNAME =	Device-Modem-1.57
+DISTNAME =	Device-Modem-1.59
 CATEGORIES=	comms
 
 MODULES=	cpan

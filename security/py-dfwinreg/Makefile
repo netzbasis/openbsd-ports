@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.8 2020/03/17 21:52:42 rpointel Exp $
+# $OpenBSD: Makefile,v 1.10 2020/09/23 11:22:52 rpointel Exp $
 
 COMMENT =	Digital Forensics Windows Registry (dfWinReg)
 
-MODPY_EGG_VERSION = 20200121
+MODPY_EGG_VERSION = 20200415
 DISTNAME =	dfwinreg-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
 

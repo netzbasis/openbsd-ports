@@ -1,12 +1,13 @@
-# $OpenBSD: Makefile,v 1.7 2019/06/03 16:06:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2020/07/11 22:54:35 sthen Exp $
 
 COMMENT =	generate data for Data Matrix (IEC16022) barcodes
 
 DISTNAME =	Barcode-DataMatrix-0.10
+REVISION =	1
 
 CATEGORIES =	graphics
 
-MAINTAINER =	Stuart Henderson <sthen@openbsd.org>
+MAINTAINER =	Stuart Henderson <stu.ports@spacehopper.org>
 
 # Perl
 PERMIT_PACKAGE =	Yes

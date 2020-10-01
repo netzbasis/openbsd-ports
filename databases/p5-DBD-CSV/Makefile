@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.22 2019/07/12 20:43:55 sthen Exp $
+# $OpenBSD: Makefile,v 1.24 2020/08/16 19:29:17 afresh1 Exp $
 
 COMMENT =	DBI driver for CSV files
 
-DISTNAME =	DBD-CSV-0.54
+DISTNAME =	DBD-CSV-0.55
 EXTRACT_SUFX =	.tgz
 CATEGORIES =	databases
 MODULES =	cpan

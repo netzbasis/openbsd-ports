@@ -1,13 +1,14 @@
-# $OpenBSD: Makefile,v 1.23 2020/06/08 16:46:26 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.25 2020/09/05 16:46:23 ajacoutot Exp $
 
 COMMENT=		graph based image processing framework (API version 0.4)
 
-V=			0.4.24
+V=			0.4.26
 DISTNAME=		gegl-${V}
 PKGNAME=		gegl04-${V}
 EXTRACT_SUFX=		.tar.xz
+REVISION=		0
 
-SHARED_LIBS += gegl-0.4                  0.4 # 0.423.1
+SHARED_LIBS += gegl-0.4                  0.4 # 0.425.1
 
 API_VERSION=		${V:R}
 SUBST_VARS=		API_VERSION
@@ -37,7 +38,8 @@ MODGNOME_TOOLS=		vala gobject-introspection
 
 BUILD_DEPENDS=		devel/gettext,-tools \
 			graphics/libgexiv2 \
-			shells/bash
+			shells/bash \
+			www/netsurf/libnsgif
 
 LIB_DEPENDS=		devel/json-glib \
 			graphics/babl \

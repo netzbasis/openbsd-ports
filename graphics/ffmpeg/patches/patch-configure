@@ -1,4 +1,4 @@
-$OpenBSD: patch-configure,v 1.63 2020/06/18 07:03:15 ajacoutot Exp $
+$OpenBSD: patch-configure,v 1.65 2020/07/06 07:14:55 ajacoutot Exp $
 
 Index: configure
 --- configure.orig

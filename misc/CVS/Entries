@@ -1,4 +1,4 @@
-/Makefile/1.196/Tue Jun 16 20:38:02 2020//
+/Makefile/1.197/Mon Aug  3 18:51:51 2020//
 D/WordGenerator////
 D/astrolog////
 D/bible-kjv////
@@ -42,6 +42,7 @@ D/impress////
 D/insult////
 D/lfm////
 D/libdivecomputer////
+D/libstubborn////
 D/lifelines////
 D/logjam////
 D/m17n////

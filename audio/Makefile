@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.431 2020/05/19 15:34:55 jeremy Exp $
+# $OpenBSD: Makefile,v 1.436 2020/09/25 21:02:23 bcallah Exp $
 
      SUBDIR =
      SUBDIR += abcde
@@ -35,15 +35,14 @@
      SUBDIR += dumb
      SUBDIR += easytag
      SUBDIR += espeak
-     SUBDIR += exaile
      SUBDIR += faad
      SUBDIR += faudio
      SUBDIR += fdk-aac
+     SUBDIR += ffmpeg-normalize
      SUBDIR += flac
      SUBDIR += flac123
      SUBDIR += flite
      SUBDIR += fluidsynth
-     SUBDIR += fookebox
      SUBDIR += freealut
      SUBDIR += generaluser-gs-soundfont
      SUBDIR += gimmix
@@ -79,6 +78,7 @@
      SUBDIR += libgpod
      SUBDIR += libid3tag
      SUBDIR += liblastfm
+     SUBDIR += liblo
      SUBDIR += libmad
      SUBDIR += libmikmod
      SUBDIR += libmodplug
@@ -194,6 +194,7 @@
      SUBDIR += py-discid,python3
      SUBDIR += py-discogs-client,python3
      SUBDIR += py-eyed3
+     SUBDIR += py-fsb5
      SUBDIR += py-last
      SUBDIR += py-last,python3
      SUBDIR += py-mpd

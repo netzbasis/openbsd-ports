@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.18 2020/06/05 12:07:59 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.20 2020/09/07 14:48:43 rsadowski Exp $
 
 SUBDIR =
 SUBDIR += extra-cmake-modules
 
 # do not sort blindly: items below are listed in the straight build order
+# tier docs: https://api.kde.org/frameworks/index.html
 
 # tier 1
 SUBDIR += ki18n
@@ -67,7 +68,6 @@ SUBDIR += kinit
 SUBDIR += kactivities-stats
 SUBDIR += kparts
 SUBDIR += kded
-SUBDIR += kxmlrpcclient
 SUBDIR += kdeclarative
 SUBDIR += kcmutils
 SUBDIR += baloo
@@ -77,8 +77,10 @@ SUBDIR += plasma-framework
 SUBDIR += krunner
 SUBDIR += qqc2-desktop-style
 SUBDIR += purpose
+SUBDIR += kdav
 
 # porting aids
+SUBDIR += kxmlrpcclient
 SUBDIR += kjs
 SUBDIR += kjsembed
 SUBDIR += khtml

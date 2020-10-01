@@ -1,15 +1,15 @@
-$OpenBSD: patch-chrome_browser_ui_browser_command_controller_cc,v 1.46 2020/05/29 20:03:23 robert Exp $
+$OpenBSD: patch-chrome_browser_ui_browser_command_controller_cc,v 1.48 2020/09/22 11:47:40 robert Exp $
 
 Index: chrome/browser/ui/browser_command_controller.cc
 --- chrome/browser/ui/browser_command_controller.cc.orig
 +++ chrome/browser/ui/browser_command_controller.cc
-@@ -84,7 +84,7 @@
+@@ -83,7 +83,7 @@
  #include "components/session_manager/core/session_manager.h"
  #endif
  
 -#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
-+#if (defined(OS_LINUX) || defined(OS_BSD)) && !defined(OS_CHROMEOS)
- #include "ui/base/ime/linux/text_edit_key_bindings_delegate_auralinux.h"
++#if (defined(OS_LINUX) && !defined(OS_CHROMEOS)) || defined(OS_BSD)
+ #include "ui/base/ime/linux/text_edit_key_bindings_delegate_auralinux.h"  // nogncheck
  #endif
  
 @@ -254,7 +254,7 @@ bool BrowserCommandController::IsReservedCommandOrKey(
@@ -17,7 +17,7 @@ Index: chrome/browser/ui/browser_command_controller.cc
    }
  
 -#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
-+#if (defined(OS_LINUX) || defined(OS_BSD)) && !defined(OS_CHROMEOS)
++#if (defined(OS_LINUX) && !defined(OS_CHROMEOS)) || defined(OS_BSD)
    // If this key was registered by the user as a content editing hotkey, then
    // it is not reserved.
    ui::TextEditKeyBindingsDelegateAuraLinux* delegate =
@@ -26,16 +26,16 @@ Index: chrome/browser/ui/browser_command_controller.cc
  #endif
  
 -#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
-+#if (defined(OS_LINUX) || defined(OS_BSD)) && !defined(OS_CHROMEOS)
++#if (defined(OS_LINUX) && !defined(OS_CHROMEOS)) || defined(OS_BSD)
      case IDC_MINIMIZE_WINDOW:
        browser_->window()->Minimize();
        break;
-@@ -979,7 +979,7 @@ void BrowserCommandController::InitCommandState() {
+@@ -953,7 +953,7 @@ void BrowserCommandController::InitCommandState() {
    command_updater_.UpdateCommandEnabled(IDC_VISIT_DESKTOP_OF_LRU_USER_4, true);
    command_updater_.UpdateCommandEnabled(IDC_VISIT_DESKTOP_OF_LRU_USER_5, true);
  #endif
 -#if defined(OS_LINUX) && !defined(OS_CHROMEOS)
-+#if (defined(OS_LINUX) || defined(OS_BSD)) && !defined(OS_CHROMEOS)
++#if (defined(OS_LINUX) && !defined(OS_CHROMEOS)) || defined(OS_BSD)
    command_updater_.UpdateCommandEnabled(IDC_MINIMIZE_WINDOW, true);
    command_updater_.UpdateCommandEnabled(IDC_MAXIMIZE_WINDOW, true);
    command_updater_.UpdateCommandEnabled(IDC_RESTORE_WINDOW, true);

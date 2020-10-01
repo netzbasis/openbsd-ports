@@ -1,4 +1,6 @@
-@comment $OpenBSD: PLIST,v 1.1.1.1 2020/05/14 14:54:11 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.4 2020/06/30 10:21:32 ajacoutot Exp $
+@conflict spidermonkey-<=60.9.0v1
+@pkgpath devel/spidermonkey60
 bin/js${MOZILLA_VERSION}-config
 include/mozjs-${MOZILLA_VERSION}/
 include/mozjs-${MOZILLA_VERSION}/double-conversion/

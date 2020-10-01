@@ -1,12 +1,12 @@
-# $OpenBSD: Makefile,v 1.3 2019/05/05 17:09:07 naddy Exp $
+# $OpenBSD: Makefile,v 1.5 2020/09/10 13:32:37 mariani Exp $
 
 COMMENT =	configuration tool for compton X composite manager
 
-VERSION =	0.4.0
+VERSION =	0.15.0
+REVISION =      0
 
 NAME =		compton-conf
 DISTNAME =	${NAME}-${VERSION}
-REVISION =	1
 
 WANTLIB += ${COMPILER_LIBCXX} Qt5Core Qt5DBus Qt5Gui Qt5Widgets
 WANTLIB += c config m
@@ -15,10 +15,7 @@ LIB_DEPENDS +=		devel/libconfig
 
 BUILD_DEPENDS +=	x11/lxqt/build-tools
 
-RUN_DEPENDS +=		x11/lxqt/l10n,-compton-conf \
-			devel/desktop-file-utils
-
-CONFIGURE_ARGS +=	-DPULL_TRANSLATIONS:BOOL=OFF
+RUN_DEPENDS +=		devel/desktop-file-utils
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/${NAME}
