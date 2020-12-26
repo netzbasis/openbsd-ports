@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2020/09/07 14:49:14 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.8 2020/11/08 20:12:51 rsadowski Exp $
 
 COMMENT =	personal alarm message, command and email scheduler
 DISTNAME =	kalarm-${VERSION}
@@ -27,12 +27,12 @@ MODKDE5_DOCS = yes
 MODKF5_L10N_CONFLICT = yes
 MODKF5_I18N_CONFLICT = yes
 
-MODULES +=	x11/kde-applications
-
-BUILD_DEPENDS =	devel/boost
+BUILD_DEPENDS =	devel/boost \
+		x11/kde-applications/mailcommon
 
 RUN_DEPENDS =	x11/dbus,-suid \
-		x11/kde-applications/kdepim-runtime
+		x11/kde-applications/kdepim-runtime \
+		x11/kde-applications/mailcommon
 
 LIB_DEPENDS =	devel/kf5/kauth \
 		devel/kf5/kbookmarks \
@@ -49,7 +49,6 @@ LIB_DEPENDS =	devel/kf5/kauth \
 		devel/kf5/kguiaddons \
 		devel/kf5/kholidays \
 		devel/kf5/ki18n \
-		devel/kf5/kiconthemes \
 		devel/kf5/kio \
 		devel/kf5/kitemmodels \
 		devel/kf5/kitemviews \
@@ -70,7 +69,6 @@ LIB_DEPENDS =	devel/kf5/kauth \
 		x11/kde-applications/kidentitymanagement \
 		x11/kde-applications/kmailtransport \
 		x11/kde-applications/kpimtextedit \
-		x11/kde-applications/libkdepim \
 		x11/kde-applications/pimcommon \
 		x11/kde-applications/mailcommon \
 		x11/qt5/qtx11extras

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.30 2020/02/29 14:29:28 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.32 2020/12/02 20:24:22 sthen Exp $
 
 # as error: ``operation combines symbols in different segments''
 # (known toolchain problem) - if fixing, re-enable in devel/cmake/Makefile
@@ -9,7 +9,7 @@ COMMENT =		small build system with a focus on speed
 
 GH_ACCOUNT =		ninja-build
 GH_PROJECT =		ninja
-GH_TAGNAME =		v1.10.0
+GH_TAGNAME =		v1.10.2
 
 CATEGORIES =		devel
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.518 2020/09/22 22:08:40 tracey Exp $
+# $OpenBSD: Makefile,v 1.534 2020/12/13 15:37:07 daniel Exp $
 
      SUBDIR =
      SUBDIR += DevIL
@@ -21,12 +21,11 @@
      SUBDIR += cadubi
      SUBDIR += cairo
      SUBDIR += cairomm
+     SUBDIR += cairomm16
      SUBDIR += cal3d
      SUBDIR += cfdg
      SUBDIR += chafa
      SUBDIR += clutter
-     SUBDIR += colord
-     SUBDIR += colord-gtk
      SUBDIR += colorexplorer
      SUBDIR += comix
      SUBDIR += cstitch
@@ -57,6 +56,7 @@
      SUBDIR += ffmpeg
      SUBDIR += ffmpegthumbnailer
      SUBDIR += flameshot
+     SUBDIR += fna3d
      SUBDIR += fotowall
      SUBDIR += freeglut
      SUBDIR += freeimage
@@ -66,6 +66,7 @@
      SUBDIR += gd
      SUBDIR += gdcm
      SUBDIR += gdk-pixbuf2
+     SUBDIR += gdk-pixbuf-xlib
      SUBDIR += geeqie
      SUBDIR += gegl04
      SUBDIR += geomview
@@ -114,9 +115,9 @@
      SUBDIR += jpeg
      SUBDIR += jpeg2ps
      SUBDIR += jpegdump
+     SUBDIR += jpeginfo
      SUBDIR += jpegoptim
      SUBDIR += jpegpixi
-     SUBDIR += k3dsurf
      SUBDIR += kdiagram
      SUBDIR += krita
      SUBDIR += l2p
@@ -180,7 +181,6 @@
      SUBDIR += openexr
      SUBDIR += openimageio
      SUBDIR += openjp2
-     SUBDIR += openjpeg
      SUBDIR += openscenegraph
      SUBDIR += optipng
      SUBDIR += orthanc
@@ -220,7 +220,6 @@
      SUBDIR += p5-SVG-Graph
      SUBDIR += p5-Sane
      SUBDIR += pdf2djvu
-     SUBDIR += pdfmod
      SUBDIR += pdfsandwich
      SUBDIR += pecl-imagick,php72
      SUBDIR += pecl-imagick,php73
@@ -237,9 +236,9 @@
      SUBDIR += pqiv
      SUBDIR += pstoedit
      SUBDIR += py-blurhash
-     SUBDIR += py-Pillow
+     SUBDIR += py2-Pillow
      SUBDIR += py-Pillow,python3
-     SUBDIR += py-cairo
+     SUBDIR += py-cairo,python3
      SUBDIR += py-cycler
      SUBDIR += py-cycler,python3
      SUBDIR += py-dot
@@ -249,17 +248,15 @@
      SUBDIR += py-imageio,python3
      SUBDIR += py-imagesize
      SUBDIR += py-imagesize,python3
-     SUBDIR += py-matplotlib
      SUBDIR += py-matplotlib,python3
      SUBDIR += py-opengl
      SUBDIR += py-opengl,python3
-     SUBDIR += py-pyx
-     SUBDIR += py-qrcode
+     SUBDIR += py-pyx,python3
      SUBDIR += py-qrcode,python3
-     SUBDIR += py-sane
      SUBDIR += py-sane,python3
      SUBDIR += py-seaborn,python3
-     SUBDIR += pycha
+     SUBDIR += pycha,python3
+     SUBDIR += py2-cairo
      SUBDIR += qiv
      SUBDIR += quesoglc
      SUBDIR += quirc

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.13 2019/07/12 20:43:40 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2020/10/31 15:48:07 ajacoutot Exp $
 
 COMMENT =	Python MPD client library
 

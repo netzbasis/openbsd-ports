@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-examples,v 1.31 2020/06/25 23:55:45 sthen Exp $
+@comment $OpenBSD: PLIST-examples,v 1.33 2020/12/03 20:58:53 sthen Exp $
 @option is-branch
 @owner _tomcat
 @group _tomcat
@@ -13,10 +13,7 @@ webapps/ROOT/bg-nav.png
 webapps/ROOT/bg-upper.png
 webapps/ROOT/favicon.ico
 webapps/ROOT/index.jsp
-webapps/ROOT/tomcat-power.gif
 webapps/ROOT/tomcat.css
-webapps/ROOT/tomcat.gif
-webapps/ROOT/tomcat.png
 webapps/ROOT/tomcat.svg
 webapps/docs/
 webapps/docs/BUILDING.txt
@@ -470,6 +467,7 @@ webapps/docs/api/org/apache/catalina/realm/JAASCallbackHandler.html
 webapps/docs/api/org/apache/catalina/realm/JAASMemoryLoginModule.html
 webapps/docs/api/org/apache/catalina/realm/JAASRealm.html
 webapps/docs/api/org/apache/catalina/realm/JDBCRealm.html
+webapps/docs/api/org/apache/catalina/realm/JNDIRealm.JNDIConnection.html
 webapps/docs/api/org/apache/catalina/realm/JNDIRealm.User.html
 webapps/docs/api/org/apache/catalina/realm/JNDIRealm.html
 webapps/docs/api/org/apache/catalina/realm/LockOutRealm.LockRecord.html
@@ -513,6 +511,7 @@ webapps/docs/api/org/apache/catalina/servlets/package-summary.html
 webapps/docs/api/org/apache/catalina/servlets/package-tree.html
 webapps/docs/api/org/apache/catalina/session/
 webapps/docs/api/org/apache/catalina/session/Constants.html
+webapps/docs/api/org/apache/catalina/session/DataSourceStore.html
 webapps/docs/api/org/apache/catalina/session/FileStore.html
 webapps/docs/api/org/apache/catalina/session/JDBCStore.html
 webapps/docs/api/org/apache/catalina/session/ManagerBase.SessionTiming.html
@@ -1001,6 +1000,7 @@ webapps/docs/api/org/apache/coyote/CloseNowException.html
 webapps/docs/api/org/apache/coyote/CompressionConfig.html
 webapps/docs/api/org/apache/coyote/Constants.html
 webapps/docs/api/org/apache/coyote/ContainerThreadMarker.html
+webapps/docs/api/org/apache/coyote/ContinueResponseTiming.html
 webapps/docs/api/org/apache/coyote/ErrorState.html
 webapps/docs/api/org/apache/coyote/InputBuffer.html
 webapps/docs/api/org/apache/coyote/OutputBuffer.html
@@ -1062,6 +1062,8 @@ webapps/docs/api/org/apache/coyote/http11/package-summary.html
 webapps/docs/api/org/apache/coyote/http11/package-tree.html
 webapps/docs/api/org/apache/coyote/http11/upgrade/
 webapps/docs/api/org/apache/coyote/http11/upgrade/InternalHttpUpgradeHandler.html
+webapps/docs/api/org/apache/coyote/http11/upgrade/UpgradeGroupInfo.html
+webapps/docs/api/org/apache/coyote/http11/upgrade/UpgradeInfo.html
 webapps/docs/api/org/apache/coyote/http11/upgrade/UpgradeProcessorBase.html
 webapps/docs/api/org/apache/coyote/http11/upgrade/UpgradeProcessorExternal.html
 webapps/docs/api/org/apache/coyote/http11/upgrade/UpgradeProcessorInternal.html
@@ -1890,6 +1892,7 @@ webapps/docs/api/org/apache/tomcat/util/http/fileupload/util/LimitedInputStream.
 webapps/docs/api/org/apache/tomcat/util/http/fileupload/util/Streams.html
 webapps/docs/api/org/apache/tomcat/util/http/fileupload/util/mime/
 webapps/docs/api/org/apache/tomcat/util/http/fileupload/util/mime/MimeUtility.html
+webapps/docs/api/org/apache/tomcat/util/http/fileupload/util/mime/RFC2231Utility.html
 webapps/docs/api/org/apache/tomcat/util/http/fileupload/util/mime/package-frame.html
 webapps/docs/api/org/apache/tomcat/util/http/fileupload/util/mime/package-summary.html
 webapps/docs/api/org/apache/tomcat/util/http/fileupload/util/mime/package-tree.html
@@ -1905,6 +1908,7 @@ webapps/docs/api/org/apache/tomcat/util/http/parser/AcceptLanguage.html
 webapps/docs/api/org/apache/tomcat/util/http/parser/Authorization.html
 webapps/docs/api/org/apache/tomcat/util/http/parser/ContentRange.html
 webapps/docs/api/org/apache/tomcat/util/http/parser/Cookie.html
+webapps/docs/api/org/apache/tomcat/util/http/parser/EntityTag.html
 webapps/docs/api/org/apache/tomcat/util/http/parser/Host.html
 webapps/docs/api/org/apache/tomcat/util/http/parser/HttpParser.html
 webapps/docs/api/org/apache/tomcat/util/http/parser/MediaType.html
@@ -2334,16 +2338,6 @@ webapps/docs/elapi/resources/titlebar_end.gif
 webapps/docs/elapi/serialized-form.html
 webapps/docs/elapi/stylesheet.css
 webapps/docs/extras.html
-webapps/docs/funcspecs/
-webapps/docs/funcspecs/fs-admin-apps.html
-webapps/docs/funcspecs/fs-admin-objects.html
-webapps/docs/funcspecs/fs-admin-opers.html
-webapps/docs/funcspecs/fs-default.html
-webapps/docs/funcspecs/fs-jdbc-realm.html
-webapps/docs/funcspecs/fs-jndi-realm.html
-webapps/docs/funcspecs/fs-memory-realm.html
-webapps/docs/funcspecs/index.html
-webapps/docs/funcspecs/mbean-names.html
 webapps/docs/host-manager-howto.html
 webapps/docs/html-host-manager-howto.html
 webapps/docs/html-manager-howto.html
@@ -2749,6 +2743,8 @@ webapps/docs/websocketapi/stylesheet.css
 webapps/docs/windows-auth-howto.html
 webapps/docs/windows-service-howto.html
 webapps/examples/
+webapps/examples/META-INF/
+webapps/examples/META-INF/context.xml
 webapps/examples/WEB-INF/
 webapps/examples/WEB-INF/classes/
 webapps/examples/WEB-INF/classes/CookieExample.class

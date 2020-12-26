@@ -1,18 +1,19 @@
-# $OpenBSD: Makefile,v 1.62 2020/08/07 09:21:02 jsg Exp $
+# $OpenBSD: Makefile,v 1.68 2020/12/23 18:30:47 rsadowski Exp $
 
 COMMENT =		movie player based on MPlayer/mplayer2
 
 GH_ACCOUNT =		mpv-player
 GH_PROJECT =		mpv
-GH_TAGNAME =		v0.32.0
+GH_TAGNAME =		v0.33.0
+REVISION =		1
 
-SHARED_LIBS +=		mpv		0.1 # 1.107
+SHARED_LIBS +=		mpv		0.2 # 1.107
 
 CATEGORIES =		multimedia x11
 
 HOMEPAGE =		https://mpv.io/
 
-WAF =			${WRKSRC}/waf-2.0.19
+WAF =			${WRKSRC}/waf-2.0.20
 MASTER_SITES0 =		https://waf.io/
 DISTFILES =		${DISTNAME}{${GH_TAGNAME}}${EXTRACT_SUFX} ${WAF:T}:0
 EXTRACT_ONLY =		${DISTNAME}${EXTRACT_SUFX}
@@ -21,12 +22,13 @@ EXTRACT_ONLY =		${DISTNAME}${EXTRACT_SUFX}
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += EGL GL SDL2 X11 X11-xcb Xau Xdamage Xdmcp Xext Xfixes
-WANTLIB += Xinerama Xrandr Xrender Xss Xv Xxf86vm archive ass avcodec
-WANTLIB += avdevice avfilter avformat avresample avutil bluray
-WANTLIB += c cdio cdio_cdda cdio_paranoia drm dvdnav dvdread expat
-WANTLIB += fontconfig freetype fribidi gbm iconv jpeg lcms2 m
-WANTLIB += placebo postproc pthread sndio swresample swscale xcb
-WANTLIB += xcb-dri2 xcb-glx xml2 z ${MODLUA_WANTLIB}
+WANTLIB += Xinerama Xrandr Xrender Xss Xv Xxf86vm archive ass
+WANTLIB += avcodec avdevice avfilter avformat avresample avutil
+WANTLIB += bluray c cdio cdio_cdda cdio_paranoia drm dvdnav dvdread
+WANTLIB += epoxy expat fontconfig freetype fribidi gbm glib-2.0
+WANTLIB += graphite2 harfbuzz iconv intl jpeg lcms2 ${MODLUA_WANTLIB}
+WANTLIB += m pcre placebo postproc pthread swresample swscale xcb
+WANTLIB += xcb-dri2 xcb-glx xml2 z
 
 MODULES =		lang/lua \
 			lang/python
@@ -35,6 +37,7 @@ MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 
 COMPILER =		base-clang ports-gcc
 COMPILER_LANGS =	c
+DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
 BUILD_DEPENDS =		audio/ladspa \
 			textproc/py-docutils${MODPY_FLAVOR}
@@ -61,10 +64,10 @@ CONFIGURE_ARGS =	--confloaddir=${SYSCONFDIR}/mpv \
 			--confdir=${LOCALBASE}/share/examples/mpv \
 			--mandir=${LOCALBASE}/man \
 			--docdir=${LOCALBASE}/share/examples/mpv \
+			--lua="${MODLUA_DEP_VERSION}obsd" \
 			--enable-cdda \
 			--enable-dvdnav \
 			--enable-libmpv-shared \
-			--enable-sndio \
 			--enable-sdl2 \
 			--disable-alsa \
 			--disable-caca \
@@ -73,12 +76,10 @@ CONFIGURE_ARGS =	--confloaddir=${SYSCONFDIR}/mpv \
 			--disable-gl-wayland \
 			--disable-jack \
 			--disable-rubberband \
-			--disable-oss-audio \
 			--disable-openal \
 			--disable-optimize \
 			--disable-pulse \
-			--disable-rsound \
-			--disable-libsmbclient \
+			--disable-sixel \
 			--disable-uchardet \
 			--disable-vaapi \
 			--disable-vaapi-drm \

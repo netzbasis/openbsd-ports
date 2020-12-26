@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.2 2020/07/03 21:45:48 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2020/12/09 01:27:54 afresh1 Exp $
 
 COMMENT =	parse Perl string literals and string-literal-like things
 
-DISTNAME =	PPIx-QuoteLike-0.009
+DISTNAME =	PPIx-QuoteLike-0.013
 REVISION =	0
 
 CATEGORIES =	textproc
@@ -12,7 +12,8 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =	cpan
 
-RUN_DEPENDS =	textproc/p5-PPI>=1.117
+RUN_DEPENDS =	devel/p5-Readonly \
+		textproc/p5-PPI>=1.117
 
 PKG_ARCH =	*
 

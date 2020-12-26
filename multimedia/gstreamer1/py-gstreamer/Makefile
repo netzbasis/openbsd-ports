@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2020/09/14 06:03:13 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.19 2020/10/28 15:42:15 ajacoutot Exp $
 
 COMMENT=		overrides for the gobject-introspection-based pygst bindings
 
@@ -14,7 +14,9 @@ MASTER_SITES=		${MASTER_SITE_GST:=gst-python/}
 
 # XXX we need the meson MODULE to come first, but Makefile.inc is parsed after
 MODULES=		devel/meson lang/python
-MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
+
+FLAVORS=		python3
+FLAVOR=			python3
 
 # MODPY_LIBDIR/gi/overrides/
 BUILD_DEPENDS=		devel/py-gobject3${MODPY_FLAVOR} \

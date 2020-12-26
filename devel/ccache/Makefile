@@ -1,10 +1,9 @@
-# $OpenBSD: Makefile,v 1.63 2020/08/01 11:30:36 sthen Exp $
+# $OpenBSD: Makefile,v 1.65 2020/11/15 14:40:50 jca Exp $
 
 COMMENT =	compiler cache
 
-V =		3.7.11
+V =		3.7.12
 DISTNAME =	ccache-$V
-REVISION =	0
 
 CATEGORIES =	devel
 
@@ -25,7 +24,7 @@ DEBUG_PACKAGES =	${BUILD_PACKAGES}
 NO_CCACHE =		Yes
 DWZ =			:
 
-# Failure in cpp1 test suire appears to be due to an embedded filename
+# Failure in cpp1 test suite appears to be due to an embedded filename
 # in a .o file present in one file, and not present in the file being
 # compared with.
 TEST_DEPENDS =		shells/bash \

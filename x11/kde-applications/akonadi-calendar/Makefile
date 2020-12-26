@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2020/09/07 14:49:11 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.6 2020/11/08 20:12:49 rsadowski Exp $
 
 COMMENT =	PIM Akonadi calendar support library
 DISTNAME =	akonadi-calendar-${VERSION}
@@ -19,8 +19,6 @@ WANTLIB += Qt5Xml m
 
 MODKDE5_TRANSLATIONS = yes
 
-MODULES +=	x11/kde-applications
-
 BUILD_DEPENDS =	devel/boost
 
 LIB_DEPENDS +=	devel/kf5/kauth \
@@ -38,7 +36,6 @@ LIB_DEPENDS +=	devel/kf5/kauth \
 		devel/kf5/kwallet \
 		devel/kf5/kwidgetsaddons \
 		devel/kf5/kxmlgui \
-		x11/grantlee-qt5 \
 		x11/kde-applications/akonadi \
 		x11/kde-applications/akonadi-contacts \
 		x11/kde-applications/kcalutils \

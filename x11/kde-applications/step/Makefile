@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2020/09/07 14:49:29 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.11 2020/11/08 20:12:59 rsadowski Exp $
 
 COMMENT =	KDE interactive physics simulator
 DISTNAME =	step-${VERSION}
@@ -18,11 +18,11 @@ WANTLIB += gsl gslcblas m qalculate
 MODKDE5_ICON_CACHE = yes
 MODKDE5_TRANSLATIONS = yes
 MODKF5_L10N_CONFLICT = yes
-ODKDE5_DOCS = yes
-
-MODULES +=	x11/kde-applications
+MODKDE5_DESKTOP_FILE = yes
+MODKDE5_DOCS = yes
 
 BUILD_DEPENDS =	math/eigen3
+RUN_DEPENDS =	misc/shared-mime-info
 
 LIB_DEPENDS =	devel/gsl \
 		devel/kf5/attica \
@@ -33,12 +33,10 @@ LIB_DEPENDS =	devel/gsl \
 		devel/kf5/kcrash \
 		devel/kf5/kconfigwidgets \
 		devel/kf5/kcoreaddons \
-		devel/kf5/khtml \
 		devel/kf5/ki18n \
 		devel/kf5/kiconthemes \
 		devel/kf5/kio \
 		devel/kf5/kjobwidgets \
-		devel/kf5/kjs \
 		devel/kf5/knewstuff \
 		devel/kf5/kplotting \
 		devel/kf5/kservice \

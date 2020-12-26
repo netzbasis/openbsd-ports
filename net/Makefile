@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.1222 2020/09/12 15:33:31 jasper Exp $
+# $OpenBSD: Makefile,v 1.1233 2020/12/12 14:22:39 solene Exp $
 
      SUBDIR =
      SUBDIR += adns
@@ -10,8 +10,8 @@
      SUBDIR += ap-utils
      SUBDIR += argus
      SUBDIR += argus-clients
-     SUBDIR += arp-scan
      SUBDIR += arouteserver
+     SUBDIR += arp-scan
      SUBDIR += arpcatch
      SUBDIR += arpd
      SUBDIR += arping
@@ -42,6 +42,7 @@
      SUBDIR += bwm-ng
      SUBDIR += cadaver
      SUBDIR += castget
+     SUBDIR += catgirl
      SUBDIR += cftp
      SUBDIR += cgo
      SUBDIR += cgterm
@@ -62,6 +63,7 @@
      SUBDIR += ddclient
      SUBDIR += deluge
      SUBDIR += deluge-ltconfig
+     SUBDIR += dendrite
      SUBDIR += dhcdrop
      SUBDIR += dhcpcd
      SUBDIR += dhcpdump
@@ -80,6 +82,7 @@
      SUBDIR += dnstop
      SUBDIR += dnstracer
      SUBDIR += doc
+     SUBDIR += dog
      SUBDIR += doh
      SUBDIR += dsocks
      SUBDIR += dsvpn
@@ -119,6 +122,7 @@
      SUBDIR += gomuks
      SUBDIR += gopher
      SUBDIR += gophernicus
+     SUBDIR += gortr
      SUBDIR += gotthard
      SUBDIR += gpodder
      SUBDIR += grake
@@ -134,6 +138,7 @@
      SUBDIR += hs-HTTP
      SUBDIR += hs-hostname
      SUBDIR += httptunnel
+     SUBDIR += i2p
      SUBDIR += i2pd
      SUBDIR += icbd
      SUBDIR += icbirc
@@ -188,9 +193,11 @@
      SUBDIR += kissd
      SUBDIR += knot
      SUBDIR += konversation
+     SUBDIR += kristall
      SUBDIR += ktorrent
      SUBDIR += kurly
      SUBDIR += ladvd
+     SUBDIR += lagrange
      SUBDIR += ldns
      SUBDIR += lftp
      SUBDIR += libbgpdump
@@ -550,11 +557,6 @@
      SUBDIR += py-IP
      SUBDIR += py-IP,python3
      SUBDIR += py-aiodns,python3
-     SUBDIR += py-ripe.atlas.cousteau
-     SUBDIR += py-ripe.atlas.cousteau,python3
-     SUBDIR += py-ripe.atlas.sagan
-     SUBDIR += py-ripe.atlas.sagan,python3
-     SUBDIR += py-ripe.atlas.tools
      SUBDIR += py-boto
      SUBDIR += py-boto,python3
      SUBDIR += py-boto3,python3
@@ -613,6 +615,13 @@
      SUBDIR += py-pf,python3
      SUBDIR += py-portend
      SUBDIR += py-portend,python3
+     SUBDIR += py-ripe.atlas.cousteau
+     SUBDIR += py-ripe.atlas.cousteau,python3
+     SUBDIR += py-ripe.atlas.sagan
+     SUBDIR += py-ripe.atlas.sagan,python3
+     SUBDIR += py-ripe.atlas.tools
+     SUBDIR += py-rrdtool
+     SUBDIR += py-rrdtool,python3
      SUBDIR += py-s3transfer,python3
      SUBDIR += py-simplesoap
      SUBDIR += py-simplesoap,python3
@@ -635,7 +644,6 @@
      SUBDIR += py-websocket-client,python3
      SUBDIR += py-xmpppy
      SUBDIR += py-zeroconf,python3
-     SUBDIR += py-zmq
      SUBDIR += py-zmq,python3
      SUBDIR += py-zsi
      SUBDIR += qbittorrent
@@ -680,6 +688,7 @@
      SUBDIR += sbm
      SUBDIR += scamper
      SUBDIR += scapy
+     SUBDIR += scapy,python3
      SUBDIR += seafile
      SUBDIR += sendxmpp
      SUBDIR += serf
@@ -776,7 +785,6 @@
      SUBDIR += whatweb
      SUBDIR += wide-dhcpv6
      SUBDIR += wifind
-     SUBDIR += wireguard-go
      SUBDIR += wireguard-tools
      SUBDIR += wireshark
      SUBDIR += wmnetload

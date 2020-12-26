@@ -1,4 +1,4 @@
-/Makefile/1.983/Mon Sep 14 16:45:36 2020//
+/Makefile/1.991/Mon Dec 14 03:16:31 2020//
 D/analog////
 D/ap2-mod_dnssd////
 D/ap2-mod_jk////
@@ -17,6 +17,7 @@ D/buku////
 D/c-icap////
 D/calamaris////
 D/canto////
+D/castor////
 D/cclive////
 D/cgicc////
 D/cgiparse////
@@ -88,7 +89,6 @@ D/mimetex////
 D/minitube////
 D/moinmoin////
 D/mollify////
-D/mono-xsp////
 D/mozilla////
 D/mozilla-firefox////
 D/netsurf////
@@ -140,6 +140,8 @@ D/p5-CSS-Squish////
 D/p5-CSS-Tiny////
 D/p5-Catalyst-Action-REST////
 D/p5-Catalyst-Action-RenderView////
+D/p5-Catalyst-ActionRole-ACL////
+D/p5-Catalyst-Authentication-Credential-HTTP////
 D/p5-Catalyst-Component-ACCEPT_CONTEXT////
 D/p5-Catalyst-Component-InstancePerContext////
 D/p5-Catalyst-Controller-ActionRole////
@@ -149,6 +151,7 @@ D/p5-Catalyst-Devel////
 D/p5-Catalyst-Engine-Apache////
 D/p5-Catalyst-Helper-Controller-Scaffold////
 D/p5-Catalyst-Log-Log4perl////
+D/p5-Catalyst-Model-Adaptor////
 D/p5-Catalyst-Plugin-Cache////
 D/p5-Catalyst-Plugin-Cache-FileCache////
 D/p5-Catalyst-Plugin-Cache-Memcached////
@@ -168,6 +171,8 @@ D/p5-Catalyst-Plugin-Session-FastMmap////
 D/p5-Catalyst-Plugin-Session-PerUser////
 D/p5-Catalyst-Plugin-Session-State-Cookie////
 D/p5-Catalyst-Plugin-Session-State-URI////
+D/p5-Catalyst-Plugin-Session-Store-DBIC////
+D/p5-Catalyst-Plugin-Session-Store-Delegate////
 D/p5-Catalyst-Plugin-Session-Store-FastMmap////
 D/p5-Catalyst-Plugin-Session-Store-File////
 D/p5-Catalyst-Plugin-Singleton////
@@ -177,6 +182,11 @@ D/p5-Catalyst-Plugin-XMLRPC////
 D/p5-Catalyst-Runtime////
 D/p5-Catalyst-View-Mason////
 D/p5-CatalystX-Component-Traits////
+D/p5-CatalystX-InjectComponent////
+D/p5-CatalystX-LeakChecker////
+D/p5-CatalystX-Profile////
+D/p5-CatalystX-REPL////
+D/p5-CatalystX-SimpleLogin////
 D/p5-Config-ApacheFormat////
 D/p5-Cookie-Baker////
 D/p5-Dancer////
@@ -204,6 +214,8 @@ D/p5-HTML-Escape////
 D/p5-HTML-FillInForm////
 D/p5-HTML-Form////
 D/p5-HTML-FormFu////
+D/p5-HTML-FormFu-MultiForm////
+D/p5-HTML-FormHandler////
 D/p5-HTML-Format////
 D/p5-HTML-FormatText-WithLinks////
 D/p5-HTML-FormatText-WithLinks-AndTables////

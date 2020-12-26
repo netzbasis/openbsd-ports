@@ -1,23 +1,22 @@
-# $OpenBSD: Makefile,v 1.43 2020/08/15 20:31:04 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.48 2020/11/29 20:05:50 sthen Exp $
 
 BROKEN-i386 =		clang segfault compiling imagebufalgo_pixelmath.cpp
 BROKEN-powerpc =	clang segfault compiling imagebufalgo_pixelmath.cpp
 
 COMMENT =		library for reading and writing images
 
-GH_ACCOUNT = 		OpenImageIO
-GH_PROJECT = 		oiio
-V =			1.8.6
+GH_ACCOUNT =		OpenImageIO
+GH_PROJECT =		oiio
 GH_TAGNAME =		Release-$V
+V =			1.8.17
 DISTNAME =		openimageio-${V}
-REVISION =		9
 
-SHARED_LIBS +=		OpenImageIO		5.0 # 1.0
-SHARED_LIBS +=  	OpenImageIO_Util	2.0 # 1.5
+SHARED_LIBS +=		OpenImageIO		7.0 # 1.0
+SHARED_LIBS +=		OpenImageIO_Util	3.0 # 1.5
 
 CATEGORIES =		graphics devel
 
-HOMEPAGE =		http://www.openimageio.org
+HOMEPAGE =		https://sites.google.com/site/openimageio/home
 
 MAINTAINER =		Pascal Stumpf <pascal@stumpf.co>
 
@@ -25,44 +24,46 @@ MAINTAINER =		Pascal Stumpf <pascal@stumpf.co>
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} ${MODPY_WANTLIB}
-WANTLIB += GL GLEW GLU Half-2_5 Iex-2_5 IlmImf-2_5 IlmThread-2_5
+WANTLIB += boost_python${MODPY_MAJORMINOR}-mt
+WANTLIB += GL GLU Half-2_5 Iex-2_5 IlmImf-2_5 IlmThread-2_5
 WANTLIB += Imath-2_5 OpenColorIO Qt5Core Qt5Gui Qt5OpenGL Qt5Widgets
 WANTLIB += avcodec avformat avutil boost_atomic-mt boost_chrono-mt
-WANTLIB += boost_date_time-mt boost_filesystem-mt boost_python${MODPY_VERSION:C/\.//g}-mt
-WANTLIB += boost_system-mt boost_thread-mt bz2 c freetype gif
-WANTLIB += jpeg m openjpeg png raw_r swscale tiff webp z
+WANTLIB += boost_date_time-mt boost_filesystem-mt boost_system-mt
+WANTLIB += boost_thread-mt bz2 c freetype gif jpeg m openjp2
+WANTLIB += png pugixml raw_r swscale tiff webp z
 
 MODULES =		devel/cmake \
 			lang/python \
-			x11/qt5 \
+			x11/qt5
+
+MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 
 COMPILER =		base-clang ports-gcc
 
 BUILD_DEPENDS =		textproc/txt2man
 
-LIB_DEPENDS =		devel/boost>=1.67.0 \
-			graphics/openjpeg \
-			graphics/tiff \
-			graphics/libwebp \
-			graphics/glew \
-			graphics/openexr \
-			graphics/giflib \
-			graphics/opencolorio \
+LIB_DEPENDS =		devel/boost \
 			graphics/ffmpeg \
-			graphics/libraw
+			graphics/giflib \
+			graphics/libraw \
+			graphics/libwebp \
+			graphics/opencolorio \
+			graphics/openexr \
+			graphics/openjp2 \
+			graphics/tiff \
+			textproc/pugixml
 
-CONFIGURE_ARGS +=	-DUSE_OPENCV=OFF \
-			-DCMAKE_INSTALL_MANDIR="man/man1" \
-			-DSTOP_ON_WARNING=OFF
-
-CXXFLAGS +=		-pthread
-
-WRKDIST =		${WRKDIR}/oiio-Release-$V
+CONFIGURE_ARGS +=	-DCMAKE_INSTALL_MANDIR="man/man1" \
+			-DSTOP_ON_WARNING=OFF \
+			-DUSE_CCACHE=OFF \
+			-DUSE_DICOM=OFF \
+			-DUSE_EXTERNAL_PUGIXML=ON \
+			-DUSE_OPENCV=OFF
 
 # Fix undefined reference to __atomic_*
 .if ${MACHINE_ARCH:Mhppa}
-CONFIGURE_ENV += 	LDFLAGS="${LDFLAGS} -latomic"
-WANTLIB +=              atomic
+CONFIGURE_ENV +=	LDFLAGS="${LDFLAGS} -latomic"
+WANTLIB +=		atomic
 .endif
 
 post-install:

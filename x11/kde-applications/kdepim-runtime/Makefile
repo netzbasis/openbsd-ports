@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2020/09/07 15:58:36 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.9 2020/11/08 20:12:52 rsadowski Exp $
 
 COMMENT =	KDE PIM mail related libraries
 DISTNAME =	kdepim-runtime-${VERSION}
@@ -32,10 +32,10 @@ WANTLIB += Qt5Widgets Qt5Xml c m qca-qt5 sasl2
 
 MODKDE5_TRANSLATIONS = yes
 MODKDE5_DESKTOP_FILE = yes
+MODKDE5_ICON_CACHE = yes
+
 MODKF5_L10N_CONFLICT = yes
 MODKF5_I18N_CONFLICT = yes
-
-MODULES +=	x11/kde-applications
 
 BUILD_DEPENDS =	devel/boost
 
@@ -50,7 +50,6 @@ LIB_DEPENDS =	devel/kf5/kauth \
 		devel/kf5/kconfigwidgets \
 		devel/kf5/kcontacts \
 		devel/kf5/kcoreaddons \
-		devel/kf5/kdbusaddons \
 		devel/kf5/kholidays \
 		devel/kf5/ki18n \
 		devel/kf5/kio \

@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.36 2020/01/20 17:42:06 naddy Exp $
+# $OpenBSD: Makefile,v 1.38 2020/11/15 23:17:00 naddy Exp $
 
 COMMENT=	GNU versions of grep pattern matching utilities
 
-DISTNAME=	grep-3.4
+DISTNAME=	grep-3.6
 PKGNAME=	g${DISTNAME}
 CATEGORIES=	sysutils
 HOMEPAGE=	https://www.gnu.org/software/grep/grep.html
@@ -27,5 +27,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 # in absence of the corresponding XSI behavior.  Let's try without.
 CONFIGURE_ENV+= ac_cv_libsigsegv=no
 MODGNU_CONFIG_GUESS_DIRS=${WRKSRC}/build-aux
+
+DEBUG_PACKAGES=	${BUILD_PACKAGES}
 
 .include <bsd.port.mk>

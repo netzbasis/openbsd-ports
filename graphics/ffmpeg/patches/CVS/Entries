@@ -1,4 +1,8 @@
 /patch-configure/1.65/Mon Jul  6 07:14:55 2020//
 /patch-ffbuild_library_mak/1.1/Mon Feb 25 22:41:34 2019//
 /patch-ffbuild_pkgconfig_generate_sh/1.1/Mon Feb 25 22:41:34 2019//
+/patch-libavcodec_x86_h264_deblock_asm/1.1/Sun Oct  4 18:33:40 2020//
+/patch-libavfilter_x86_vf_blend_asm/1.1/Sun Oct  4 18:33:40 2020//
+/patch-libavutil_x86_x86inc_asm/1.1/Sun Oct  4 18:33:40 2020//
+/patch-libswscale_x86_yuv_2_rgb_asm/1.1/Sun Oct  4 18:33:40 2020//
 D

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.183 2020/09/11 07:34:55 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.196 2020/11/25 10:10:59 ajacoutot Exp $
 
 COMMENT-main=		GNOME desktop meta-package (core installation)
 COMMENT-extras=		GNOME desktop meta-package (world installation)
 
 # sync with gnome-desktop GNOME_VERSION
-V=			3.36.6
+V=			3.38.2
 PKGNAME=		gnome-${V}
 
 PKGNAME-main=		gnome-${V}
@@ -16,9 +16,8 @@ MAINTAINER=		Jasper Lievisse Adriaanse <jasper@openbsd.org>, \
 MULTI_PACKAGES=		-main -extras
 
 # GNOME spooler is CUPS (gnome-printers-panel in gnome-control-center)
-# add gtk+{2,3}-cups so that gtkprint() can see native CUPS printers;
+# add gtk+3-cups so that gtkprint() can see native CUPS printers;
 # add gtk+3-cloudprint, gnome-online-accounts is already a dependency
-RUN_DEPENDS-main +=	x11/gtk+2,-cups
 RUN_DEPENDS-main +=	x11/gtk+3,-cups
 RUN_DEPENDS-main +=	x11/gtk+3,-cloudprint
 
@@ -34,15 +33,21 @@ RUN_DEPENDS-main +=	x11/xdg-user-dirs-gtk
 # https://gitlab.gnome.org/GNOME/gnome-build-meta/blob/master/elements/core.bst
 ################################################################################
 
+# https://gitlab.gnome.org/GNOME/gnome-build-meta/blob/master/elements/core/meta-gnome-core-developer-tools.bst
+RUN_DEPENDS-extras +=	x11/gnome/builder \
+			x11/gnome/dconf-editor \
+			x11/gnome/devhelp
+
+# https://gitlab.gnome.org/GNOME/gnome-build-meta/blob/master/elements/core/meta-gnome-core-os-services.bst
+RUN_DEPENDS-main +=	sysutils/upower
+
 # https://gitlab.gnome.org/GNOME/gnome-build-meta/blob/master/elements/core/meta-gnome-core-shell.bst
 RUN_DEPENDS-main +=	devel/gsettings-desktop-schemas \
 			net/glib2-networking \
 			x11/gnome/adwaita-icon-theme \
 			x11/gnome/backgrounds \
-			x11/gnome/color-manager \
 			x11/gnome/control-center \
 			x11/gnome/desktop=${V} \
-			x11/gnome/getting-started-docs \
 			x11/gnome/gdm \
 			x11/gnome/gvfs \
 			x11/gnome/initial-setup \
@@ -52,7 +57,7 @@ RUN_DEPENDS-main +=	devel/gsettings-desktop-schemas \
 			x11/gnome/settings-daemon \
 			x11/gnome/shell \
 			x11/gnome/shell-extensions \
-			x11/gnome/themes-extra \
+			x11/gnome/tour \
 			x11/gnome/user-docs \
 			x11/gnome/mutter \
 			x11/gnome/orca \
@@ -75,18 +80,25 @@ RUN_DEPENDS-main +=	x11/gnome/calculator \
 			x11/gnome/photos \
 			x11/gnome/screenshot \
 			x11/gnome/terminal \
-			x11/gnome/totem \
-			x11/gnome/weather
+			x11/gnome/weather \
+			x11/gnome/yelp
 # replacement for gnome-system-monitor
 RUN_DEPENDS-main +=	x11/gnome/usage
+
+RUN_DEPENDS-extras +=	graphics/simple-scan \
+			www/epiphany \
+			x11/gnome/baobab \
+			x11/gnome/system-monitor \
+			x11/gnome/totem
 
 ################################################################################
 # https://gitlab.gnome.org/GNOME/gnome-build-meta/blob/master/elements/core-deps.bst
 ################################################################################
+
 RUN_DEPENDS-main +=	x11/gnome/grilo-plugins \
 			x11/gnome/online-accounts \
 			x11/gnome/online-miners \
-			x11/gnome/tracker-miners
+			x11/gnome/tracker3-miners
 
 ################################################################################
 # https://gitlab.gnome.org/GNOME/gnome-build-meta/blob/master/elements/world.bst
@@ -95,25 +107,21 @@ RUN_DEPENDS-main +=	x11/gnome/grilo-plugins \
 RUN_DEPENDS-extras +=	inputmethods/ibus-anthy \
 			mail/evolution \
 			net/gupnp/igd \
-			x11/gnome/bijiben \
 			x11/gnome/books \
-			x11/gnome/builder \
-			x11/gnome/dconf-editor \
+			x11/gnome/connections \
 			x11/gnome/devel-docs \
-			x11/gnome/devhelp \
 			x11/gnome/dictionary \
 			x11/gnome/documents \
 			x11/gnome/todo \
 			x11/gnome/tweaks
 
-# moved from core
-RUN_DEPENDS-extras +=	graphics/simple-scan \
-			www/epiphany \
-			x11/gnome/baobab \
-			x11/gnome/system-monitor
+
+# gtk+2
+RUN_DEPENDS-extras +=	audio/libcanberra,-gtk \
+			x11/gnome/themes-extra \
+			x11/gtk+2,-cups
 
 # depends on -main
 RUN_DEPENDS-extras +=	STEM-=${V}:${BASE_PKGPATH},-main
-
 
 .include <bsd.port.mk>

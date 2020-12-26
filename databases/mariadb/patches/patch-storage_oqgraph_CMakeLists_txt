@@ -1,14 +1,18 @@
-$OpenBSD: patch-storage_oqgraph_CMakeLists_txt,v 1.10 2019/12/30 20:26:51 sthen Exp $
+$OpenBSD: patch-storage_oqgraph_CMakeLists_txt,v 1.12 2020/11/14 21:24:37 sthen Exp $
+
+https://jira.mariadb.org/browse/MDEV-24161
 
 Index: storage/oqgraph/CMakeLists.txt
 --- storage/oqgraph/CMakeLists.txt.orig
 +++ storage/oqgraph/CMakeLists.txt
-@@ -1,4 +1,8 @@
- set(CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
-+# Disable oqgraph storage engine
-+IF(TRUE)
+@@ -20,6 +20,10 @@ INCLUDE_DIRECTORIES(${Judy_INCLUDE_DIR})
+ SET(OQGRAPH_OK 1)
+ ENDMACRO()
+ 
++IF(PLUGIN_OQGRAPH STREQUAL "NO")
 +  RETURN()
 +ENDIF()
- 
- MACRO(CHECK_OQGRAPH)
- MESSAGE(STATUS "Configuring OQGraph")
++
+ IF(NOT DEFINED OQGRAPH_OK)
+   CHECK_OQGRAPH()
+   IF (NOT OQGRAPH_OK)

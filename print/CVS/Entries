@@ -1,4 +1,4 @@
-/Makefile/1.134/Wed Sep  2 10:35:05 2020//
+/Makefile/1.137/Mon Nov  9 21:42:51 2020//
 D/a2ps////
 D/apsfilter////
 D/apvlv////
@@ -45,7 +45,7 @@ D/muttprint////
 D/openclipart////
 D/p5-Poppler////
 D/p5-PostScript-MailLabels////
-D/pdfshuffler////
+D/pdfarranger////
 D/poppler////
 D/poppler-data////
 D/printrun////
@@ -55,7 +55,7 @@ D/psdim////
 D/psutils////
 D/ptouch-driver////
 D/py-cups////
-D/py-poppler////
+D/py-pikepdf////
 D/py-relatorio////
 D/py-reportlab////
 D/qpdf////

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.406 2020/08/19 02:21:51 afresh1 Exp $
+# $OpenBSD: Makefile,v 1.412 2020/12/21 13:26:33 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += architect
@@ -106,6 +106,7 @@
      SUBDIR += p5-Ima-DBI
      SUBDIR += p5-Jifty-DBI
      SUBDIR += p5-Mojo-Pg
+     SUBDIR += p5-Net-Prometheus
      SUBDIR += p5-Redis
      SUBDIR += p5-Rose-DB
      SUBDIR += p5-Rose-DB-Object
@@ -167,7 +168,6 @@
      SUBDIR += py-minidb,python3
      SUBDIR += py-mongo
      SUBDIR += py-mongo,python3
-     SUBDIR += py-mysqlclient
      SUBDIR += py-mysqlclient,python3
      SUBDIR += py-odbc
      SUBDIR += py-odbc,python3
@@ -180,7 +180,6 @@
      SUBDIR += py-psycopg2,python3
      SUBDIR += py-puppetdb
      SUBDIR += py-puppetdb,python3
-     SUBDIR += py-pygresql
      SUBDIR += py-pygresql,python3
      SUBDIR += py-pymysql,python3
      SUBDIR += py-redis
@@ -189,18 +188,17 @@
      SUBDIR += py-sql,python3
      SUBDIR += py-sqlalchemy
      SUBDIR += py-sqlalchemy,python3
-     SUBDIR += py-sqlalchemy-migrate
      SUBDIR += py-sqlalchemy-migrate,python3
      SUBDIR += py-sqlite
      SUBDIR += py-sqlite2
      SUBDIR += py-sqlobject
      SUBDIR += py-sqlobject,python3
-     SUBDIR += py-sqlparse
      SUBDIR += py-sqlparse,python3
      SUBDIR += py-storm
      SUBDIR += py-sybase
      SUBDIR += py-whisper
      SUBDIR += qdbm
+     SUBDIR += recoll
      SUBDIR += redis
      SUBDIR += repmgr
      SUBDIR += riak
@@ -244,6 +242,7 @@
      SUBDIR += tdbc-mysql
      SUBDIR += tdbc-postgres
      SUBDIR += tdbc-sqlite3
+     SUBDIR += timescaledb
      SUBDIR += tinycdb
      SUBDIR += tokyocabinet
      SUBDIR += virtuoso

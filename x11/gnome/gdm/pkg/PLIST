@@ -1,12 +1,7 @@
-@comment $OpenBSD: PLIST,v 1.98 2020/09/21 14:36:21 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.103 2020/11/14 11:45:33 ajacoutot Exp $
+@newuser _gdm:676:_x11:daemon:GNOME Display Manager:/var/db/gdm:/sbin/nologin
 @comment starts a full gnome-session as _gdm which requires a valid homedir
-@newgroup _gdm:676
-@newuser _gdm:676:_gdm:daemon:GNOME Display Manager:/var/db/gdm:/sbin/nologin
-@extraunexec rm -rf /var/db/gdm/.local/share/applications/*
-@extraunexec rm -rf /var/db/gdm/.local/share/!(applications)
-@extraunexec rm -rf /var/db/gdm/.!(local)
-@extraunexec rm -rf /var/db/gdm/*
-@extraunexec rm -rf /var/cache/gdm/*
+@extraunexec rm -rf /var/db/gdm
 @extraunexec rm -rf /var/log/gdm/*
 @rcscript ${RCDIR}/gdm
 @bin bin/gdm-screenshot
@@ -17,10 +12,9 @@ include/gdm/gdm-client.h
 include/gdm/gdm-sessions.h
 include/gdm/gdm-user-switching.h
 lib/girepository-1.0/Gdm-1.0.typelib
-@static-lib lib/libgdm.a
-lib/libgdm.la
 @lib lib/libgdm.so.${LIBgdm_VERSION}
 lib/pkgconfig/gdm.pc
+@so lib/security/pam_gdm.so
 @bin libexec/gdm-disable-wayland
 @bin libexec/gdm-host-chooser
 @bin libexec/gdm-session-worker
@@ -78,22 +72,6 @@ share/examples/gdm/etc/pam.d/gdm-launch-environment
 share/examples/gdm/etc/pam.d/gdm-password
 @sample ${SYSCONFDIR}/pam.d/gdm-password
 @mode
-share/examples/gdm/var/
-share/examples/gdm/var/db/
-share/examples/gdm/var/db/gdm/
-@mode 1770
-@group _gdm
-@sample /var/db/gdm/
-@mode
-@owner _gdm
-share/examples/gdm/var/db/gdm/.local/
-@sample /var/db/gdm/.local/
-share/examples/gdm/var/db/gdm/.local/share/
-@sample /var/db/gdm/.local/share/
-share/examples/gdm/var/db/gdm/.local/share/applications/
-@sample /var/db/gdm/.local/share/applications/
-@owner
-@group
 share/gdm/gdb-cmd
 share/gdm/gdm.schemas
 share/gdm/greeter/
@@ -183,7 +161,6 @@ share/help/tr/
 share/help/tr/gdm/
 share/help/tr/gdm/index.docbook
 share/help/tr/gdm/legal.xml
-share/help/uk/
 share/help/uk/gdm/
 share/help/uk/gdm/index.docbook
 share/help/uk/gdm/legal.xml
@@ -305,11 +282,4 @@ share/locale/zh_TW/LC_MESSAGES/gdm.mo
 share/locale/zu/LC_MESSAGES/gdm.mo
 share/pixmaps/
 share/pixmaps/gdm-puffy.png
-@mode 0755
-@sample /var/log/gdm/
-@mode 1755
-@group _gdm
-@sample /var/cache/gdm/
-@group
-@mode
 @tag glib-compile-schemas

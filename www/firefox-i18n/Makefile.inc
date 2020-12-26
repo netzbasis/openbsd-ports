@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile.inc,v 1.164 2020/09/22 13:00:55 landry Exp $
+# $OpenBSD: Makefile.inc,v 1.174 2020/12/22 15:27:10 landry Exp $
 
 # Unversioned distfiles
 PORTROACH =	ignore:1
@@ -8,7 +8,7 @@ ONLY_FOR_ARCHS =	amd64 i386 aarch64
 
 PKG_ARCH =	*
 
-FV =		81.0
+FV =		84.0.1
 V =		${FV:C/b.$//}
 NAME =		firefox-i18n
 
@@ -32,7 +32,7 @@ LANGUAGES =	ach af an ar ast az bg bn br bs ca cs cy da de dsb el en-GB en-US eo
 		ta te th tr uk vi xh zh-CN zh-TW
 
 BUILD_DEPENDS =	archivers/unzip
-RUN_DEPENDS =	firefox-${FV:S/b/beta/}:www/mozilla-firefox
+RUN_DEPENDS =	firefox->=${FV:S/b/beta/}:www/mozilla-firefox
 
 DIST_SUBDIR =	mozilla/${NAME}-${FV}
 NO_BUILD =	Yes

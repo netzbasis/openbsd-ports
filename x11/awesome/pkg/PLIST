@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.17 2017/08/05 20:18:11 dcoppa Exp $
+@comment $OpenBSD: PLIST,v 1.19 2020/12/01 06:03:24 rsadowski Exp $
 @bin bin/awesome
 bin/awesome-client
 @man man/man1/awesome-client.1
@@ -28,6 +28,7 @@ share/awesome/lib/awful/hotkeys_popup/keys/
 share/awesome/lib/awful/hotkeys_popup/keys/firefox.lua
 share/awesome/lib/awful/hotkeys_popup/keys/init.lua
 share/awesome/lib/awful/hotkeys_popup/keys/qutebrowser.lua
+share/awesome/lib/awful/hotkeys_popup/keys/termite.lua
 share/awesome/lib/awful/hotkeys_popup/keys/tmux.lua
 share/awesome/lib/awful/hotkeys_popup/keys/vim.lua
 share/awesome/lib/awful/hotkeys_popup/widget.lua
@@ -52,6 +53,7 @@ share/awesome/lib/awful/mouse/init.lua
 share/awesome/lib/awful/mouse/resize.lua
 share/awesome/lib/awful/mouse/snap.lua
 share/awesome/lib/awful/placement.lua
+share/awesome/lib/awful/popup.lua
 share/awesome/lib/awful/prompt.lua
 share/awesome/lib/awful/remote.lua
 share/awesome/lib/awful/rules.lua
@@ -74,6 +76,7 @@ share/awesome/lib/awful/widget/init.lua
 share/awesome/lib/awful/widget/keyboardlayout.lua
 share/awesome/lib/awful/widget/launcher.lua
 share/awesome/lib/awful/widget/layoutbox.lua
+share/awesome/lib/awful/widget/layoutlist.lua
 share/awesome/lib/awful/widget/only_on_screen.lua
 share/awesome/lib/awful/widget/progressbar.lua
 share/awesome/lib/awful/widget/prompt.lua
@@ -83,6 +86,7 @@ share/awesome/lib/awful/widget/textclock.lua
 share/awesome/lib/awful/widget/watch.lua
 share/awesome/lib/beautiful/
 share/awesome/lib/beautiful.lua
+share/awesome/lib/beautiful/gtk.lua
 share/awesome/lib/beautiful/init.lua
 share/awesome/lib/beautiful/theme_assets.lua
 share/awesome/lib/beautiful/xresources.lua
@@ -100,6 +104,9 @@ share/awesome/lib/gears/object.lua
 share/awesome/lib/gears/object/properties.lua
 share/awesome/lib/gears/protected_call.lua
 share/awesome/lib/gears/shape.lua
+share/awesome/lib/gears/sort/
+share/awesome/lib/gears/sort/init.lua
+share/awesome/lib/gears/sort/topological.lua
 share/awesome/lib/gears/string.lua
 share/awesome/lib/gears/surface.lua
 share/awesome/lib/gears/table.lua
@@ -155,6 +162,7 @@ share/awesome/lib/wibox/widget/imagebox.lua
 share/awesome/lib/wibox/widget/init.lua
 share/awesome/lib/wibox/widget/piechart.lua
 share/awesome/lib/wibox/widget/progressbar.lua
+share/awesome/lib/wibox/widget/separator.lua
 share/awesome/lib/wibox/widget/slider.lua
 share/awesome/lib/wibox/widget/systray.lua
 share/awesome/lib/wibox/widget/textbox.lua
@@ -223,6 +231,8 @@ share/awesome/themes/default/titlebar/sticky_focus_active.png
 share/awesome/themes/default/titlebar/sticky_focus_inactive.png
 share/awesome/themes/default/titlebar/sticky_normal_active.png
 share/awesome/themes/default/titlebar/sticky_normal_inactive.png
+share/awesome/themes/gtk/
+share/awesome/themes/gtk/theme.lua
 share/awesome/themes/sky/
 share/awesome/themes/sky/awesome-icon.png
 share/awesome/themes/sky/layouts/

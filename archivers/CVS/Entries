@@ -1,4 +1,4 @@
-/Makefile/1.103/Sat Sep 12 20:39:31 2020//
+/Makefile/1.105/Sat Nov 21 16:30:25 2020//
 D/arc////
 D/blosc////
 D/brotli////
@@ -34,6 +34,7 @@ D/lzo2////
 D/lzop////
 D/macutil////
 D/makeself////
+D/minizip////
 D/p5-Archive-Extract////
 D/p5-Archive-Zip////
 D/p5-Compress-Bzip2////

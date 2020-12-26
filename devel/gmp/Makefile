@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.41 2020/02/21 23:36:54 naddy Exp $
+# $OpenBSD: Makefile,v 1.43 2020/11/17 21:54:42 naddy Exp $
 
 COMMENT-main=	library for arbitrary precision arithmetic
 COMMENT-cxx=	C++ library for arbitrary precision arithmetic
 
-VERSION=	6.2.0
+VERSION=	6.2.1
 DISTNAME=	gmp-${VERSION}
 MULTI_PACKAGES=	-main -cxx
 PKGNAME-main=	gmp-${VERSION}
 PKGNAME-cxx=	gmpxx-${VERSION}
 
-SHARED_LIBS +=  gmp                  11.0     # 14.0
-SHARED_LIBS +=  gmpxx                3.0      # 10.0
+SHARED_LIBS +=  gmp                  11.0     # 14.1
+SHARED_LIBS +=  gmpxx                3.0      # 10.1
 CATEGORIES=	devel math
 
 HOMEPAGE=	https://gmplib.org/
@@ -38,6 +38,9 @@ DEBUG_PACKAGES=	${BUILD_PACKAGES}
 CONFIGURE_STYLE=gnu
 # Don't try to optimize for the local CPU submodel
 CONFIGURE_ARGS+=--build=${MACHINE_ARCH}-unknown-openbsd${OSrev}
+
+# Our vsnprintf works properly; skip test that uses %n.
+CONFIGURE_ENV+=	gmp_cv_func_vsnprintf=yes
 
 .include <bsd.port.arch.mk>
 .if ${BUILD_PACKAGES:M-cxx}

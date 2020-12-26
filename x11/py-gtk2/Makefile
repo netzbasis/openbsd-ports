@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.69 2020/03/20 16:44:29 naddy Exp $
+# $OpenBSD: Makefile,v 1.72 2020/11/07 21:48:06 jca Exp $
 
 BROKEN-alpha=	.got subsegment exceeds 64K
 
@@ -7,7 +7,7 @@ COMMENT=	GTK+2 Python bindings
 GNOME_PROJECT=	pygtk
 GNOME_VERSION=	2.24.0
 PKGNAME=	py-gtk2-${VERSION}
-REVISION=	7
+REVISION=	10
 
 CATEGORIES=	x11
 
@@ -32,9 +32,8 @@ MODULES=	lang/python \
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 LIB_DEPENDS=	devel/libglade2
-RUN_DEPENDS=	graphics/py-cairo>=1.2 \
-		devel/py-gobject>=2.26.0 \
-		math/py-numpy
+RUN_DEPENDS=	graphics/py2-cairo>=1.2 \
+		devel/py-gobject>=2.26.0
 
 USE_GMAKE=	No
 
@@ -43,6 +42,7 @@ PATCH_LIST=	patch-* sup-mips64-*
 .endif
 
 CONFIGURE_STYLE=gnu
+CONFIGURE_ARGS=	--disable-numpy
 
 # pick bind_textdomain_codeset
 MODGNOME_LDFLAGS=-lintl -liconv

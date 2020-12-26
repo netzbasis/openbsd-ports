@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.647 2020/09/19 07:43:50 solene Exp $
+# $OpenBSD: Makefile,v 1.655 2020/12/21 21:17:36 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += TclXML
@@ -55,7 +55,6 @@
      SUBDIR += fragistics
      SUBDIR += fzy
      SUBDIR += gdiff
-     SUBDIR += glimpse
      SUBDIR += go-text
      SUBDIR += gpresent
      SUBDIR += grepcidr
@@ -112,7 +111,8 @@
      SUBDIR += libwpd
      SUBDIR += libxml
      SUBDIR += libxml++
-     SUBDIR += libxml++3
+     SUBDIR += libxml++40
+     SUBDIR += libxml++50
      SUBDIR += libxmlbird
      SUBDIR += libxslt
      SUBDIR += link-grammar
@@ -283,6 +283,7 @@
      SUBDIR += p5-Text-Reflow
      SUBDIR += p5-Text-Reform
      SUBDIR += p5-Text-SimpleTable
+     SUBDIR += p5-Text-Soundex
      SUBDIR += p5-Text-Table
      SUBDIR += p5-Text-TabularDisplay
      SUBDIR += p5-Text-Tags
@@ -398,7 +399,6 @@
      SUBDIR += py-elasticsearch,python3
      SUBDIR += py-emoji
      SUBDIR += py-emoji,python3
-     SUBDIR += py-enchant
      SUBDIR += py-enchant,python3
      SUBDIR += py-feedparser
      SUBDIR += py-feedparser,python3
@@ -415,10 +415,8 @@
      SUBDIR += py-m2r,python3
      SUBDIR += py-mistune
      SUBDIR += py-mistune,python3
-     SUBDIR += py-natsort
-     SUBDIR += py-nltk
+     SUBDIR += py-natsort,python3
      SUBDIR += py-nltk,python3
-     SUBDIR += py-numpydoc
      SUBDIR += py-numpydoc,python3
      SUBDIR += py-odfpy
      SUBDIR += py-ofxparse
@@ -468,11 +466,8 @@
      SUBDIR += py-sphinx_rtd_theme,python3
      SUBDIR += py-stemmer
      SUBDIR += py-stemmer,python3
-     SUBDIR += py-textfsm
      SUBDIR += py-textfsm,python3
-     SUBDIR += py-toml
      SUBDIR += py-toml,python3
-     SUBDIR += py-unicodecsv
      SUBDIR += py-unicodecsv,python3
      SUBDIR += py-unidecode
      SUBDIR += py-unidecode,python3

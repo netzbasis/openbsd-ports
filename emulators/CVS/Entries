@@ -1,4 +1,4 @@
-/Makefile/1.105/Mon Jul  6 17:43:19 2020//
+/Makefile/1.107/Wed Dec 16 16:54:16 2020//
 D/BasiliskII////
 D/advancemame////
 D/atari800////
@@ -43,8 +43,10 @@ D/retroarch////
 D/sameboy////
 D/simh////
 D/snes9x////
+D/spike////
 D/spim////
 D/stella////
+D/tnylpo////
 D/uae////
 D/ucon64////
 D/vbam////

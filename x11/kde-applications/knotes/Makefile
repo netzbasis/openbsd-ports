@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2020/09/07 14:49:22 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.9 2020/11/08 20:12:55 rsadowski Exp $
 
 COMMENT =	notes management tool
 DISTNAME =	knotes-${VERSION}
@@ -26,15 +26,13 @@ WANTLIB += KF5WindowSystem KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus
 WANTLIB += Qt5Gui Qt5Network Qt5PrintSupport Qt5Widgets Qt5X11Extras
 WANTLIB += Qt5Xml SM X11 Xext c m
 
-MODKDE5_TRANSLATIONS = yes
 MODKDE5_ICON_CACHE = yes
 MODKDE5_TRANSLATIONS = yes
+MODKDE5_DESKTOP_FILE = yes
 MODKDE5_DOCS = yes
 
 MODKF5_L10N_CONFLICT = yes
 MODKF5_I18N_CONFLICT = yes
-
-MODULES +=	x11/kde-applications
 
 BUILD_DEPENDS =	devel/boost
 
@@ -52,7 +50,6 @@ LIB_DEPENDS =	devel/kf5/attica \
 		devel/kf5/kcontacts \
 		devel/kf5/kcoreaddons \
 		devel/kf5/kcrash \
-		devel/kf5/kdbusaddons \
 		devel/kf5/kdnssd \
 		devel/kf5/kglobalaccel \
 		devel/kf5/ki18n \

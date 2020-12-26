@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.22 2019/07/12 20:51:25 sthen Exp $
+# $OpenBSD: Makefile,v 1.24 2020/11/21 12:32:55 sthen Exp $
 
 COMMENT =	bind keys or mouse buttons to shell commands under X11
-DISTNAME =	xbindkeys-1.8.6
+DISTNAME =	xbindkeys-1.8.7
 CATEGORIES =	x11
-REVISION =	0
 
-HOMEPAGE =	http://www.nongnu.org/xbindkeys/xbindkeys.html
+HOMEPAGE =	https://www.nongnu.org/xbindkeys/xbindkeys.html
 
 # GPLv2+
 PERMIT_PACKAGE =	Yes
@@ -13,15 +12,16 @@ PERMIT_PACKAGE =	Yes
 WANTLIB =	X11 c
 
 # not on MASTER_SITE_SAVANNAH
-MASTER_SITES =	${HOMEPAGE:=/../}
+MASTER_SITES =		${HOMEPAGE:=/../}
 
 MODULES =	x11/tk
 RUN_DEPENDS =	${MODTK_RUN_DEPENDS} \
 		devel/desktop-file-utils
-SEPARATE_BUILD =Yes
 
-CONFIGURE_STYLE=gnu
-CONFIGURE_ARGS+=--disable-guile
+SEPARATE_BUILD =	Yes
+
+CONFIGURE_STYLE =	gnu
+CONFIGURE_ARGS +=	--disable-guile
 
 NO_TEST =	Yes
 

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2020/09/07 14:49:25 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.11 2020/11/08 20:12:56 rsadowski Exp $
 
 COMMENT =	system log viewer
 DISTNAME =	ksystemlog-${VERSION}
@@ -20,8 +20,6 @@ MODKF5_I18N_CONFLICT = yes
 MODKF5_L10N_CONFLICT = yes
 MODKDE5_DOCS = yes
 
-MODULES +=	x11/kde-applications
-
 LIB_DEPENDS +=	devel/kf5/karchive \
 		devel/kf5/kauth \
 		devel/kf5/kcodecs \
@@ -30,8 +28,6 @@ LIB_DEPENDS +=	devel/kf5/karchive \
 		devel/kf5/kconfigwidgets \
 		devel/kf5/kcoreaddons \
 		devel/kf5/ki18n \
-		devel/kf5/kiconthemes \
-		devel/kf5/kiconthemes\
 		devel/kf5/kio \
 		devel/kf5/kitemviews \
 		devel/kf5/kjobwidgets \

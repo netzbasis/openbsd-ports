@@ -1,4 +1,4 @@
-# $OpenBSD: go.port.mk,v 1.34 2020/07/17 18:19:17 abieber Exp $
+# $OpenBSD: go.port.mk,v 1.36 2020/11/25 15:23:49 sthen Exp $
 
 ONLY_FOR_ARCHS ?=	${GO_ARCHS}
 
@@ -71,7 +71,7 @@ DISTFILES +=	${MODGO_DIST_SUBDIR}/${_modpath}/@v/${_modver}.mod{${_modpath}/@v/$
 .  for _modpath _modver in ${MODGO_MODFILES}
 DISTFILES +=	${MODGO_DIST_SUBDIR}/${_modpath}/@v/${_modver}.mod{${_modpath}/@v/${_modver}.mod}:${MODGO_MASTER_SITESN}
 .  endfor
-MAKE_ENV +=		GOPROXY=file://${DISTDIR}/${MODGO_DIST_SUBDIR}
+MAKE_ENV +=		GOPROXY=file://${WRKDIR}/go_modules
 MAKE_ENV +=		GO111MODULE=on GOPATH="${MODGO_GOPATH}"
 .else
 # ports are not allowed to fetch from the network at build time; point
@@ -105,7 +105,10 @@ WRKSRC ?=		${MODGO_WORKSPACE}/src/${ALL_TARGET}
 MODGO_SETUP_WORKSPACE =	mkdir -p ${WRKSRC:H}; mv ${MODGO_SUBDIR} ${WRKSRC};
 .else
 WRKSRC ?=		${WRKDIR}/${MODGO_MODNAME}@${MODGO_VERSION}
-MODGO_SETUP_WORKSPACE =	ln -sf ${WRKSRC} ${WRKDIR}/${MODGO_MODNAME}
+MODGO_SETUP_WORKSPACE =	ln -sf ${WRKSRC} ${WRKDIR}/${MODGO_MODNAME};
+.for _MODGO_m in ${DISTFILES:Mgo_modules/*:C/{.*//}
+MODGO_SETUP_WORKSPACE += ${INSTALL} -D ${DISTDIR}/${_MODGO_m} ${WRKDIR}/${_MODGO_m};
+.endfor
 .endif
 
 INSTALL_STRIP =
@@ -161,3 +164,12 @@ do-test:
 	${MODGO_TEST_TARGET}
 .  endif
 .endif
+
+# modgo-gen-modules will output MODGO_MODULES and MODGO_MODFILES
+modgo-gen-modules:
+.    if empty(ALL_TARGET)
+	@${ECHO_MSG} "No ALL_TARGET set"
+	@exit 1
+.    else
+	@${_PERLSCRIPT}/modgo-gen-modules-helper ${ALL_TARGET}
+.    endif

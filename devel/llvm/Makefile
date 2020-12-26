@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.263 2020/09/04 09:55:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.271 2020/12/22 22:29:01 jca Exp $
 
 # XXX If broken on an architecture, remove the arch from LLVM_ARCHS.
 ONLY_FOR_ARCHS = ${LLVM_ARCHS}
@@ -18,9 +18,8 @@ PKGSPEC-main =	llvm-=${LLVM_V}
 PKGNAME-main =	llvm-${LLVM_V}
 PKGNAME-python =	py3-llvm-${LLVM_V}
 PKGNAME-lldb =	lldb-${LLVM_V}
-
-REVISION-main =	3
-
+REVISION-main =	8
+REVISION-lldb =	1
 CATEGORIES =	devel
 
 SHARED_LIBS =	clang		8.1 \
@@ -100,19 +99,22 @@ CONFIGURE_ARGS =	-DLLVM_ENABLE_FFI:Bool=False \
 			-DLLDB_ENABLE_LUA=OFF \
 			-DLLDB_ENABLE_LIBXML2=OFF
 
-# Disable some protections in the compiler to regain performance
+# Disable some protections in the compiler to regain performance.
 .if ${MACHINE_ARCH} == "aarch64" || ${MACHINE_ARCH} == "amd64" || \
-    ${MACHINE_ARCH} == "i386" || ${MACHINE_ARCH} == "mips64"
-CXXFLAGS +=	-fno-ret-protector
+    ${MACHINE_ARCH} == "i386" || ${MACHINE_ARCH} == "mips64" || \
+    ${MACHINE_ARCH} == "mips64el" || ${MACHINE_ARCH} == "powerpc"
+CXXFLAGS+=	-fno-ret-protector
 .endif
 .if ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "i386"
-CXXFLAGS +=	-mno-retpoline
+CXXFLAGS+=	-mno-retpoline
 .endif
 
-.if ${MACHINE_ARCH} == "arm"
-CFLAGS +=		-mlong-calls
-CXXFLAGS +=		-mlong-calls
-.elif ${MACHINE_ARCH} == "powerpc"
+# Omit frame pointer to improve performance.
+.if ${MACHINE_ARCH} == "mips64" || ${MACHINE_ARCH} == "mips64el"
+CXXFLAGS+=	-fomit-frame-pointer
+.endif
+
+.if ${MACHINE_ARCH} == "powerpc"
 CONFIGURE_ARGS +=	-DCMAKE_EXE_LINKER_FLAGS="-Wl,-relax"
 CONFIGURE_ARGS +=	-DCMAKE_SHARED_LINKER_FLAGS="-Wl,-relax"
 .endif

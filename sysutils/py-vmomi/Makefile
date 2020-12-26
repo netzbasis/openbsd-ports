@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.5 2020/08/19 12:25:13 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.7 2020/11/21 22:03:39 pvk Exp $
 
 COMMENT =		python SDK for the VMware vSphere API
 
-MODPY_EGG_VERSION =	6.7.3
+MODPY_EGG_VERSION =	7.0.1
 
 DISTNAME =		pyvmomi-${MODPY_EGG_VERSION}
 PKGNAME =		${DISTNAME:S/py/py-/}
-REVISION =		1
 
 CATEGORIES =		sysutils
 
@@ -32,6 +31,6 @@ FLAVOR =		python3
 TEST_DEPENDS =		devel/py-mock${MODPY_FLAVOR} \
 			devel/py-testtools${MODPY_FLAVOR} \
 			devel/py-tox${MODPY_FLAVOR} \
-			www/py-vcrpy${MODPY_FLAVOR} 
+			www/py-vcrpy${MODPY_FLAVOR}
 
 .include <bsd.port.mk>

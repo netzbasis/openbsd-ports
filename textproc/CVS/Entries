@@ -1,4 +1,4 @@
-/Makefile/1.647/Sat Sep 19 07:43:50 2020//
+/Makefile/1.655/Mon Dec 21 21:17:36 2020//
 D/TclXML////
 D/antiword////
 D/apertium////
@@ -53,7 +53,6 @@ D/foliate////
 D/fragistics////
 D/fzy////
 D/gdiff////
-D/glimpse////
 D/go-text////
 D/gpresent////
 D/grepcidr////
@@ -110,7 +109,8 @@ D/libuninameslist////
 D/libwpd////
 D/libxml////
 D/libxml++////
-D/libxml++3////
+D/libxml++40////
+D/libxml++50////
 D/libxmlbird////
 D/libxslt////
 D/link-grammar////
@@ -266,6 +266,7 @@ D/p5-Text-RecordParser////
 D/p5-Text-Reflow////
 D/p5-Text-Reform////
 D/p5-Text-SimpleTable////
+D/p5-Text-Soundex////
 D/p5-Text-Table////
 D/p5-Text-TabularDisplay////
 D/p5-Text-Tags////

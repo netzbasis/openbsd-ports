@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.6 2019/11/01 19:37:45 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.8 2020/11/07 09:47:57 jasper Exp $
 @bin bin/dazzle-list-counters
 include/libdazzle-1.0/
 include/libdazzle-1.0/actions/

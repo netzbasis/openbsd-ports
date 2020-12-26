@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2020/09/07 14:49:12 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.7 2020/11/08 20:12:50 rsadowski Exp $
 
 COMMENT =	PIM calendar support library
 DISTNAME =	calendarsupport-${VERSION}
@@ -19,8 +19,6 @@ WANTLIB += Qt5Network Qt5PrintSupport Qt5Widgets Qt5Xml m
 MODKDE5_TRANSLATIONS = yes
 MODKF5_L10N_CONFLICT = yes
 
-MODULES +=	x11/kde-applications
-
 BUILD_DEPENDS =	devel/boost
 
 RUN_DEPENDS =	x11/kde-applications/kdepim-runtime
@@ -40,11 +38,9 @@ LIB_DEPENDS =	devel/kf5/kauth \
 		devel/kf5/kjobwidgets \
 		devel/kf5/kservice \
 		devel/kf5/kwidgetsaddons \
-		x11/grantlee-qt5 \
 		x11/kde-applications/akonadi \
 		x11/kde-applications/akonadi-calendar \
 		x11/kde-applications/akonadi-notes \
-		x11/kde-applications/kdepim-apps-libs \
 		x11/kde-applications/kidentitymanagement \
 		x11/kde-applications/kmime  \
 		x11/kde-applications/kpimtextedit \

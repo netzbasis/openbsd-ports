@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.1.1.1 2020/07/27 14:00:19 bluhm Exp $
+# $OpenBSD: Makefile,v 1.4 2020/12/12 07:00:15 benoit Exp $
 
 COMMENT =	Perl extension for access to cdb databases
 
-DISTNAME =	CDB_File-1.02
+DISTNAME =	CDB_File-1.05
 
 CATEGORIES =	databases
 
@@ -13,6 +13,8 @@ WANTLIB =		c perl
 
 MODULES =		cpan
 
-TEST_DEPENDS =		devel/p5-B-COW
+TEST_DEPENDS =		devel/p5-B-COW \
+			devel/p5-Test-Warnings \
+			devel/p5-Test-Fatal
 
 .include <bsd.port.mk>

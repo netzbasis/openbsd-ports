@@ -1,4 +1,4 @@
-/Makefile/1.197/Mon Aug  3 18:51:51 2020//
+/Makefile/1.198/Sun Dec 20 15:19:27 2020//
 D/WordGenerator////
 D/astrolog////
 D/bible-kjv////
@@ -34,7 +34,6 @@ D/gnuwatch////
 D/gone////
 D/gpsd////
 D/gramps////
-D/gtk3mm-documentation////
 D/hfsplus////
 D/hwdata////
 D/ietf-cli////

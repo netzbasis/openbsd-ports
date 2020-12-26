@@ -1,6 +1,7 @@
 /patch-CMakeLists_txt/1.1.1.1/Wed Aug  9 14:39:32 2017//
 /patch-Core_MultiThreading_Mutex_cpp/1.1.1.1/Wed Aug  9 14:39:32 2017//
 /patch-Core_SystemToolbox_cpp/1.2/Wed Aug  9 17:02:35 2017//
+/patch-Core_Toolbox_cpp/1.1/Sun Oct 18 18:30:33 2020//
 /patch-OrthancServer_FromDcmtkBridge_cpp/1.1.1.1/Wed Aug  9 14:39:32 2017//
 /patch-Plugins_Engine_PluginsManager_cpp/1.1.1.1/Wed Aug  9 14:39:32 2017//
 /patch-Plugins_Engine_SharedLibrary_cpp/1.1.1.1/Wed Aug  9 14:39:32 2017//

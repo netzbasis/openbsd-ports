@@ -1,16 +1,18 @@
-# $OpenBSD: Makefile,v 1.97 2020/09/14 13:38:58 bluhm Exp $
+# $OpenBSD: Makefile,v 1.99 2020/11/17 03:19:37 jeremy Exp $
 
 PORTROACH = 	limitw:1,even
 
 COMMENT-main =	flexible network host monitoring, client
 COMMENT-server =flexible network host monitoring, server
 
-V =		2.0.64
-REVISION =	0
+V =		2.0.65
 DISTNAME =	munin-$V
 PKGNAME-main =	munin-node-$V
 PKGNAME-server =munin-server-$V
 CATEGORIES =	net
+
+REVISION-main = 0
+REVISION-server = 0
 
 HOMEPAGE =	http://munin-monitoring.org/
 MASTER_SITES =	http://downloads.munin-monitoring.org/munin/stable/$V/

@@ -1,4 +1,4 @@
-/Makefile/1.576/Tue Aug 11 14:54:41 2020//
+/Makefile/1.590/Sat Dec  5 20:44:15 2020//
 D/accountsservice////
 D/amazon-ecs-cli////
 D/amazon-ssm-agent////
@@ -20,6 +20,7 @@ D/beats////
 D/bfs////
 D/binwalk////
 D/bitrot////
+D/blackbox_exporter////
 D/boar////
 D/borgbackup////
 D/borgmatic////
@@ -58,15 +59,18 @@ D/detox////
 D/dfc////
 D/diffoscope////
 D/dinit////
+D/direnv////
 D/direvent////
 D/diskrescue////
 D/dmassage////
 D/dmidecode////
+D/docker-cli////
 D/dosfstools////
 D/downtimed////
 D/dsh////
 D/dtb////
 D/dtpstree////
+D/duf////
 D/duplicity////
 D/dvd+rw-tools////
 D/dwdiff////
@@ -101,6 +105,7 @@ D/gdmap////
 D/ggrep////
 D/gitolite////
 D/gkrellm////
+D/glances////
 D/glastree////
 D/glide////
 D/go-cs////
@@ -191,8 +196,6 @@ D/multitail////
 D/multitime////
 D/ncal////
 D/ncdu////
-D/ndesk-dbus////
-D/ndesk-dbus-glib////
 D/neofetch////
 D/netshot////
 D/nnn////
@@ -258,7 +261,6 @@ D/py-ghmi////
 D/py-hpilo////
 D/py-joblib////
 D/py-lockfile////
-D/py-metlog////
 D/py-packaging////
 D/py-parallel-ssh////
 D/py-prometheus_client////
@@ -268,8 +270,10 @@ D/py-pynetbox////
 D/py-scandir////
 D/py-schedule////
 D/py-statgrab////
+D/py-threadpoolctl////
 D/py-tsk////
 D/py-vmomi////
+D/py-vsphere-automation////
 D/radiusreport////
 D/radmind////
 D/rancid////
@@ -278,6 +282,7 @@ D/ranger////
 D/ranval////
 D/raspberrypi-firmware////
 D/rclone////
+D/rclone-browser////
 D/rcm////
 D/rdiff-backup////
 D/reed-alert////
@@ -288,6 +293,7 @@ D/restic////
 D/restic-rest-server////
 D/riemann////
 D/riemann-c-client////
+D/riscv-pk////
 D/rofi////
 D/rpl////
 D/rsyslog////

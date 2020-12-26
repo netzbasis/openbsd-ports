@@ -1,6 +1,7 @@
-/patch-data_gnome-shell-dbus-interfaces_gresource_xml/1.1/Thu Jan 17 19:00:46 2019//
-/patch-js_misc_loginManager_js/1.10/Thu May 14 15:28:46 2020//
+/patch-data_gnome-shell-dbus-interfaces_gresource_xml/1.2/Sat Nov  7 13:13:34 2020//
+/patch-js_misc_loginManager_js/1.13/Sun Nov  8 10:42:44 2020//
+/patch-js_ui_endSessionDialog_js/1.1/Sun Nov  8 09:38:19 2020//
 /patch-js_ui_status_keyboard_js/1.6/Thu May 14 15:28:46 2020//
-/patch-src_main_c/1.6/Thu May 14 15:28:46 2020//
+/patch-src_main_c/1.7/Sun Nov  8 10:42:44 2020//
 /patch-subprojects_extensions-tool_man_meson_build/1.1/Thu May 14 15:28:46 2020//
 D

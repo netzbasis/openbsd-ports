@@ -1,11 +1,10 @@
-# $OpenBSD: Makefile,v 1.56 2020/07/03 21:13:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.58 2020/11/06 07:32:59 ajacoutot Exp $
 
 COMMENT=		printer (CUPS) administration tool
 
 GH_ACCOUNT=		OpenPrinting
 GH_PROJECT=		system-config-printer
-GH_TAGNAME=		1.5.12
-REVISION=		0
+GH_TAGNAME=		v1.5.13
 
 CATEGORIES=		print sysutils
 

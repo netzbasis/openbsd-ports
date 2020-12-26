@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.17 2020/02/10 10:20:29 benoit Exp $
+# $OpenBSD: Makefile,v 1.19 2020/11/02 18:44:36 landry Exp $
 
 COMMENT =	internet radio browser and player
 GH_TAGNAME =	v7.3
@@ -6,6 +6,7 @@ GH_ACCOUNT =	haecker-felix
 GH_PROJECT =	Gradio
 DISTNAME =	${GH_PROJECT:L}-${GH_TAGNAME:S/^v//}
 EPOCH =		0
+REVISION =	0
 
 CATEGORIES =	audio www
 

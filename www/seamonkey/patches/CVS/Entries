@@ -1,8 +1,8 @@
-/patch-mozilla_intl_icu_source_Makefile_in/1.4/Tue Nov 14 20:46:57 2017//
+/patch-mozilla_ipc_chromium_src_base_process_util_bsd_cc/1.1/Sat Nov 14 17:42:12 2020//
 /patch-mozilla_js_src_ctypes_libffi_src_dlmalloc_c/1.6/Tue Sep  9 21:27:17 2014//
-/patch-mozilla_security_manager_pki_resources_content_exceptionDialog_js/1.13/Wed Dec 28 09:14:19 2016//
-/patch-mozilla_security_manager_ssl_moz_build/1.1/Fri Oct 25 11:49:14 2019//
-/patch-mozilla_storage_mozStorageConnection_cpp/1.4/Tue Nov 14 20:46:57 2017//
+/patch-mozilla_security_manager_pki_resources_content_exceptionDialog_js/1.14/Thu Oct 15 06:53:09 2020//
+/patch-mozilla_third_party_rust_packed_simd_src_api_into_bits_arch_specific_rs/1.1/Thu Nov 19 16:06:10 2020//
+/patch-mozilla_third_party_rust_packed_simd_src_codegen_reductions_mask_x86_rs/1.1/Thu Nov 19 16:06:10 2020//
+/patch-mozilla_third_party_rust_packed_simd_src_lib_rs/1.1/Thu Nov 19 16:06:10 2020//
 /patch-mozilla_widget_nsPrintSettingsImpl_cpp/1.3/Wed Dec 28 09:14:19 2016//
-/patch-suite_installer_Makefile_in/1.17/Tue Nov 14 20:46:57 2017//
 D

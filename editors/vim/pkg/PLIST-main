@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST-main,v 1.40 2020/09/18 12:29:48 sthen Exp $
+@comment $OpenBSD: PLIST-main,v 1.43 2020/12/03 21:35:56 sthen Exp $
 @pkgpath ${BASE_PKGPATH}
 %%gtk2%%
 bin/ex
@@ -170,6 +170,7 @@ share/vim/${P}/compiler/rubyunit.vim
 share/vim/${P}/compiler/rustc.vim
 share/vim/${P}/compiler/sass.vim
 share/vim/${P}/compiler/se.vim
+share/vim/${P}/compiler/shellcheck.vim
 share/vim/${P}/compiler/splint.vim
 share/vim/${P}/compiler/stack.vim
 share/vim/${P}/compiler/standard.vim
@@ -184,6 +185,7 @@ share/vim/${P}/compiler/xbuild.vim
 share/vim/${P}/compiler/xmllint.vim
 share/vim/${P}/compiler/xmlwf.vim
 share/vim/${P}/compiler/xo.vim
+share/vim/${P}/compiler/zsh.vim
 share/vim/${P}/defaults.vim
 share/vim/${P}/delmenu.vim
 share/vim/${P}/doc/
@@ -480,6 +482,7 @@ share/vim/${P}/ftplugin/occam.vim
 share/vim/${P}/ftplugin/pamconf.vim
 share/vim/${P}/ftplugin/pascal.vim
 share/vim/${P}/ftplugin/passwd.vim
+share/vim/${P}/ftplugin/pbtxt.vim
 share/vim/${P}/ftplugin/pdf.vim
 share/vim/${P}/ftplugin/perl.vim
 share/vim/${P}/ftplugin/perl6.vim
@@ -739,6 +742,8 @@ share/vim/${P}/keymap/hebrewp_iso-8859-8.vim
 share/vim/${P}/keymap/hebrewp_utf-8.vim
 share/vim/${P}/keymap/kana.vim
 share/vim/${P}/keymap/kazakh-jcuken.vim
+share/vim/${P}/keymap/korean-dubeolsik_utf-8.vim
+share/vim/${P}/keymap/korean.vim
 share/vim/${P}/keymap/lithuanian-baltic.vim
 share/vim/${P}/keymap/magyar_utf-8.vim
 share/vim/${P}/keymap/mongolian_utf-8.vim
@@ -785,15 +790,6 @@ share/vim/${P}/keymap/vietnamese-viqr_utf-8.vim
 share/vim/${P}/keymap/vietnamese-vni_utf-8.vim
 share/vim/${P}/lang/
 share/vim/${P}/lang/README.txt
-share/vim/${P}/lang/menu_tr.cp1254.vim
-share/vim/${P}/lang/menu_tr.iso_8859-9.vim
-share/vim/${P}/lang/menu_tr.utf-8.vim
-share/vim/${P}/lang/menu_tr_tr.cp1254.vim
-share/vim/${P}/lang/menu_tr_tr.iso_8859-9.vim
-share/vim/${P}/lang/menu_tr_tr.utf-8.vim
-share/vim/${P}/lang/tr/
-share/vim/${P}/lang/tr/LC_MESSAGES/
-share/vim/${P}/lang/tr/LC_MESSAGES/vim.mo
 share/vim/${P}/macros/
 share/vim/${P}/macros/README.txt
 share/vim/${P}/macros/editexisting.vim
@@ -989,6 +985,8 @@ share/vim/${P}/syntax/bzl.vim
 share/vim/${P}/syntax/bzr.vim
 share/vim/${P}/syntax/c.vim
 share/vim/${P}/syntax/cabal.vim
+share/vim/${P}/syntax/cabalconfig.vim
+share/vim/${P}/syntax/cabalproject.vim
 share/vim/${P}/syntax/calendar.vim
 share/vim/${P}/syntax/catalog.vim
 share/vim/${P}/syntax/cdl.vim
@@ -1298,6 +1296,7 @@ share/vim/${P}/syntax/pamenv.vim
 share/vim/${P}/syntax/papp.vim
 share/vim/${P}/syntax/pascal.vim
 share/vim/${P}/syntax/passwd.vim
+share/vim/${P}/syntax/pbtxt.vim
 share/vim/${P}/syntax/pcap.vim
 share/vim/${P}/syntax/pccts.vim
 share/vim/${P}/syntax/pdf.vim
@@ -1577,7 +1576,6 @@ share/vim/${P}/tools/xcmdsrv_client.c
 share/vim/${P}/tutor/
 share/vim/${P}/tutor/README.txt
 share/vim/${P}/tutor/tutor
-share/vim/${P}/tutor/tutor.ko
 share/vim/${P}/tutor/tutor.utf-8
 share/vim/${P}/tutor/tutor.vim
 share/vim/${P}/vimrc_example.vim

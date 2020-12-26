@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.21 2020/05/14 15:14:30 jasper Exp $
+@comment $OpenBSD: PLIST,v 1.23 2020/11/07 14:58:24 jasper Exp $
 @bin bin/gnome-contacts
 @bin libexec/gnome-contacts-search-provider
 @man man/man1/gnome-contacts.1

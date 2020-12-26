@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.124 2020/09/17 08:16:03 sthen Exp $
+# $OpenBSD: Makefile,v 1.128 2020/12/16 21:44:49 sthen Exp $
 
 COMMENT=	Berkeley Internet Name Daemon: DNS server and tools
 
-# Odd numbers devel, even numbers stable, ESV branched occasionally.
-# 9.16.x is ESV.
-V=		9.16.7
+# Second digits: odd numbers devel, even numbers stable,
+# ESV branched occasionally.  9.16.x is ESV.
+V=		9.16.10
 PORTROACH=	limitw:1,even
 EXTRACT_SUFX=	.tar.xz
 EPOCH=		0
@@ -13,10 +13,10 @@ DISTNAME=	bind-$V
 PKGNAME=	isc-bind-${V:S/-P/pl/}
 
 # in shared_libs.log but not installed: isc-nosymtbl, t_api
-SHARED_LIBS +=  isc                  7.0
+SHARED_LIBS +=  isc                  8.0
 SHARED_LIBS +=  isccc                3.0
-SHARED_LIBS +=  dns                  9.4
-SHARED_LIBS +=  isccfg               4.1
+SHARED_LIBS +=  dns                  10.1
+SHARED_LIBS +=  isccfg               4.2
 SHARED_LIBS +=  bind9                1.0
 SHARED_LIBS +=  irs                  3.0
 SHARED_LIBS +=	ns                   0.0

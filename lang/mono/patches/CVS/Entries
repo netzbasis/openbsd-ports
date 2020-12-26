@@ -1,10 +1,10 @@
-/patch-configure_ac/1.10/Mon Apr  6 15:11:11 2020//
+/patch-configure_ac/1.11/Thu Dec 17 15:17:52 2020//
 /patch-external_corefx_src_Common_src_CoreLib_System_Collections_Generic_Dictionary_cs/1.1/Wed Jun 10 22:11:15 2020//
 /patch-external_corefx_src_Common_src_CoreLib_System_Collections_Generic_List_cs/1.2/Wed Jun 10 22:11:15 2020//
 /patch-external_corefx_src_Native_Unix_System_Native_pal_errno_c/1.1/Sun Mar 31 18:28:39 2019//
 /patch-external_corefx_src_Native_Unix_System_Native_pal_io_c/1.3/Mon Apr  6 15:11:11 2020//
 /patch-external_corefx_src_System_Runtime_Extensions_src_System_Environment_Unix_cs/1.1/Thu Mar 29 19:33:18 2018//
-/patch-external_corert_src_System_Private_CoreLib_shared_System_Collections_Generic_ArraySortHelper_cs/1.1/Mon Nov 11 17:05:02 2019//
+/patch-external_corert_src_System_Private_CoreLib_shared_System_Collections_Generic_ArraySortHelper_cs/1.2/Thu Dec 17 15:17:52 2020//
 /patch-mcs_class_Mono_Security_Mono_Security_Cryptography_KeyPairPersistence_cs/1.1/Thu Mar 29 19:33:18 2018//
 /patch-mcs_class_Mono_Security_Mono_Security_X509_X509StoreManager_cs/1.1/Thu Mar 29 19:33:18 2018//
 /patch-mcs_class_System_System_Net_NetworkInformation_OpenBSDNetworkInterface_cs/1.3/Tue Apr 14 14:43:21 2020//
@@ -19,8 +19,8 @@
 /patch-mcs_tools_xbuild_data_12_0_Microsoft_CSharp_targets/1.1/Thu Mar 29 19:33:18 2018//
 /patch-mcs_tools_xbuild_data_14_0_Microsoft_CSharp_targets/1.1/Thu Mar 29 19:33:18 2018//
 /patch-mono_metadata_w32process-unix-bsd_c/1.2/Wed May 23 12:40:53 2018//
-/patch-mono_mini_main_c/1.10/Mon Apr  6 15:11:11 2020//
-/patch-mono_mini_mini-exceptions_c/1.5/Mon Apr  6 15:11:11 2020//
+/patch-mono_mini_main_c/1.11/Thu Dec 17 15:17:52 2020//
+/patch-mono_mini_mini-exceptions_c/1.6/Thu Dec 17 15:17:52 2020//
 /patch-mono_mini_test_op_il_seq_point_headerfooter_sh/1.1/Mon Oct 31 11:45:07 2016//
 /patch-mono_native_Makefile_am/1.1/Mon Apr  6 15:11:11 2020//
 /patch-mono_native_mono-native-platform_h/1.1/Mon Apr  6 15:11:11 2020//

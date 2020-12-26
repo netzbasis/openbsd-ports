@@ -1,4 +1,4 @@
-/Makefile/1.676/Fri Sep 25 20:34:10 2020//
+/Makefile/1.683/Sun Dec 20 15:15:21 2020//
 D/2bwm////
 D/Xaw3d////
 D/XawMu////
@@ -14,6 +14,7 @@ D/asclock////
 D/asfiles////
 D/astime////
 D/autocutsel////
+D/autorandr////
 D/awesome////
 D/bbdate////
 D/bbkeys////
@@ -108,6 +109,7 @@ D/gtkdatabox////
 D/gtkglarea////
 D/gtkglext////
 D/gtkhotkey////
+D/gtkmm40////
 D/gtksourceview////
 D/gtksourceview3////
 D/gtksourceview4////
@@ -137,10 +139,7 @@ D/itk////
 D/iwidgets////
 D/jgmenu////
 D/jwm////
-D/kde////
 D/kde-applications////
-D/kde-shared-data////
-D/keybinder////
 D/keybinder3////
 D/keynav////
 D/kitty////
@@ -239,7 +238,6 @@ D/py-wxPython////
 D/py-xcbgen////
 D/py-xlib////
 D/qdirstat////
-D/qt3////
 D/qt4////
 D/qt5////
 D/qt5ct////
@@ -398,6 +396,7 @@ D/xscreensaver////
 D/xscribble////
 D/xsel////
 D/xsettingsd////
+D/xss-lock////
 D/xtacy////
 D/xtermset////
 D/xtestpicture////

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.436 2020/09/25 21:02:23 bcallah Exp $
+# $OpenBSD: Makefile,v 1.443 2020/11/28 19:58:37 daniel Exp $
 
      SUBDIR =
      SUBDIR += abcde
@@ -110,7 +110,6 @@
      SUBDIR += milkytracker
      SUBDIR += mkplaylist
      SUBDIR += moc
-     SUBDIR += mono-taglib
      SUBDIR += morseplayer
      SUBDIR += mp3applygain
      SUBDIR += mp3blaster
@@ -184,7 +183,6 @@
      SUBDIR += potamus
      SUBDIR += puddletag
      SUBDIR += pulseaudio
-     SUBDIR += py-acoustid
      SUBDIR += py-acoustid,python3
      SUBDIR += py-ao
      SUBDIR += py-audio
@@ -198,17 +196,14 @@
      SUBDIR += py-last
      SUBDIR += py-last,python3
      SUBDIR += py-mpd
-     SUBDIR += py-mpd2
      SUBDIR += py-mpd2,python3
      SUBDIR += py-musicbrainzngs
      SUBDIR += py-musicbrainzngs,python3
      SUBDIR += py-mutagen,python3
      SUBDIR += py-ogg
-     SUBDIR += py-tagpy
      SUBDIR += py-tagpy,python3
      SUBDIR += py-vorbis
      SUBDIR += pykaraoke
-     SUBDIR += pympd
      SUBDIR += qsynth
      SUBDIR += quodlibet
      SUBDIR += rgain
@@ -267,6 +262,5 @@
      SUBDIR += xmp
      SUBDIR += ympd
      SUBDIR += yt-audio
-     SUBDIR += zeya
 
 .include <bsd.port.subdir.mk>

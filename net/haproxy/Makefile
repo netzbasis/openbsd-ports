@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.67 2020/09/22 14:12:21 danj Exp $
+# $OpenBSD: Makefile,v 1.72 2020/12/14 23:26:59 danj Exp $
 
 COMMENT =	reliable, high performance TCP/HTTP load balancer
 
-DISTNAME =	haproxy-2.0.17
+DISTNAME =	haproxy-2.0.19
 CATEGORIES =	net www
 HOMEPAGE =	http://www.haproxy.org/
 MAINTAINER =	Daniel Jakots <obsd@chown.me>
-REVISION =	0
 
 # GPLv2
 PERMIT_PACKAGE =		Yes
@@ -23,7 +22,7 @@ SUBST_VARS =	HAPROXYCONF HAPROXYSTATE \
 		HAPROXYUID HAPROXYGID
 
 USE_GMAKE =	Yes
-MAKE_FLAGS +=	CFLAGS="${CFLAGS} -fno-strict-aliasing" LDFLAGS="${LDFLAGS}"
+MAKE_FLAGS +=	CPU_CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}"
 MAKE_FLAGS +=	CC="${CC}" LD="${CC}" TARGET="openbsd"
 MAKE_FLAGS +=	USE_OPENSSL=1 USE_PCRE=1 USE_ZLIB=1 V=1
 

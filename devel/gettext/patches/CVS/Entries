@@ -2,6 +2,11 @@
 /patch-gettext-runtime_intl_l10nflist_c/1.7/Thu Aug 20 21:03:25 2020//
 /patch-gettext-runtime_intl_log_c/1.4/Mon Jan 21 22:08:52 2013//
 /patch-gettext-runtime_intl_relocatable_c/1.7/Thu Aug 20 21:03:25 2020//
+/patch-gettext-runtime_intl_vasnprintf_c/1.1/Wed Oct  7 21:14:35 2020//
+/patch-gettext-runtime_libasprintf_vasnprintf_c/1.2/Fri Oct 23 21:34:05 2020//
 /patch-gettext-tools_gnulib-lib_Makefile_in/1.12/Thu Aug 20 21:03:25 2020//
+/patch-gettext-tools_gnulib-lib_vasnprintf_c/1.2/Fri Oct 23 21:34:05 2020//
+/patch-gettext-tools_libgettextpo_vasnprintf_c/1.2/Fri Oct 23 21:34:05 2020//
 /patch-gettext-tools_src_Makefile_in/1.13/Thu Aug 20 21:03:25 2020//
+/patch-libtextstyle_lib_vasnprintf_c/1.2/Fri Oct 23 21:34:05 2020//
 D

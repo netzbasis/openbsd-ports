@@ -1,4 +1,4 @@
-# $OpenBSD: ruby.port.mk,v 1.100 2020/03/20 16:44:24 naddy Exp $
+# $OpenBSD: ruby.port.mk,v 1.102 2020/11/17 03:15:34 jeremy Exp $
 
 # ruby module
 
@@ -24,7 +24,7 @@ MODRUBY_HANDLE_FLAVORS ?= No
 # If ruby.pork.mk should handle FLAVORs, define a separate FLAVOR
 # for each ruby interpreter
 .    if !defined(FLAVORS)
-FLAVORS=	ruby25 ruby26 ruby27
+FLAVORS=	ruby26 ruby27
 .      if !${CONFIGURE_STYLE:L:Mext}
 FLAVORS+=	jruby
 .      endif
@@ -45,18 +45,17 @@ FULLPKGNAME?=		${MODRUBY_PKG_PREFIX}-${PKGNAME}
 SUBST_VARS+=		GEM_BIN_SUFFIX GEM_MAN_SUFFIX
 
 FLAVOR?=
-# Without a FLAVOR, assume the use of ruby 2.6.
+# Without a FLAVOR, assume the use of ruby 2.7.
 .    if empty(FLAVOR)
-FLAVOR =		ruby26
+FLAVOR =		ruby27
 .    endif
 
 # Check for conflicting FLAVORs and set MODRUBY_REV appropriately based
 # on the FLAVOR.
-.    for i in ruby25 ruby26 ruby27 jruby
+.    for i in ruby26 ruby27 jruby
 .      if ${FLAVOR:M$i}
 MODRUBY_REV = ${i:C/ruby([0-9])/\1./}
-.        if ${FLAVOR:N$i:Mruby25} || \ 
-            ${FLAVOR:N$i:Mruby26} || \ 
+.        if ${FLAVOR:N$i:Mruby26} || \ 
             ${FLAVOR:N$i:Mruby27} || \ 
 	    ${FLAVOR:N$i:Mjruby}
 ERRORS += "Fatal: Conflicting flavors used: ${FLAVOR}"
@@ -67,8 +66,8 @@ ERRORS += "Fatal: Conflicting flavors used: ${FLAVOR}"
 .endif
 
 # The default ruby version to use for non-gem ports.  Defaults to ruby
-# 2.6 for consistency with the default ruby26 FLAVOR for gem ports.
-MODRUBY_REV?=		2.6
+# 2.7 for consistency with the default ruby27 FLAVOR for gem ports.
+MODRUBY_REV?=		2.7
 
 # Because the jruby FLAVORs use same binary names but in
 # different directories, GEM_MAN_SUFFIX is used for the man pages to avoid

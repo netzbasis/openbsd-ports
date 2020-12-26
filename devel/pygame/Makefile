@@ -1,12 +1,11 @@
-# $OpenBSD: Makefile,v 1.37 2020/07/03 21:12:53 sthen Exp $
+# $OpenBSD: Makefile,v 1.41 2020/12/09 04:49:12 daniel Exp $
 
 COMMENT=	set of Python modules designed for writing games
 
-MODPY_EGG_VERSION =	1.9.3
+MODPY_EGG_VERSION =	2.0.0
 DISTNAME=	pygame-${MODPY_EGG_VERSION}
 PKGNAME =	py-game-${MODPY_EGG_VERSION}
 CATEGORIES=	devel games
-REVISION =	2
 
 HOMEPAGE=	https://www.pygame.org/
 
@@ -16,17 +15,15 @@ PERMIT_PACKAGE=	Yes
 WANTLIB += SDL SDL_image SDL_mixer SDL_ttf X11 jpeg png pthread
 WANTLIB += freetype z ${MODPY_WANTLIB}
 
-MODULES=	lang/python
-#MODPY_PI =	Yes
-# 1.9.3 was pulled out of the main pypi
-MASTER_SITES =	https://files.pythonhosted.org/packages/61/06/3c25051549c252cc6fde01c8aeae90b96831370884504fe428a623316def/
-MODPY_SETUPTOOLS =	Yes
-SUBST_VARS +=	MODPY_LIB_SUFFIX
+MODULES =	lang/python
+
 FLAVORS =		python3
 FLAVOR ?=
 
-BUILD_DEPENDS+=	math/py-Numeric
+MODPY_PI =		Yes
+MODPY_SETUPTOOLS =	Yes
 
+SUBST_VARS +=	MODPY_LIB_SUFFIX
 LIB_DEPENDS=	devel/sdl-ttf \
 		devel/sdl-image \
 		devel/sdl-mixer
@@ -43,17 +40,17 @@ TEST_IS_INTERACTIVE=	x11
 TEST_ENV =	PYTHONPATH=${WRKSRC}
 
 do-configure:
-	${SUBST_CMD} ${WRKSRC}/Setup.in
-	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MODPY_BIN} config.py
+	${SUBST_CMD} ${WRKSRC}/buildconfig/Setup.SDL1.in
+	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MODPY_BIN} buildconfig/config.py -auto -sdl1
 
 post-install:
 	${INSTALL_DATA_DIR} ${EXAMPLESDIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/examples/*.py ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/examples/readme.txt ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/examples/README.rst ${EXAMPLESDIR}
 	${INSTALL_DATA_DIR} ${EXAMPLESDIR}/data
 	${INSTALL_SCRIPT} ${WRKSRC}/examples/data/* ${EXAMPLESDIR}/data
 	${INSTALL_DATA_DIR} ${DOCDIR}
-	${INSTALL_DATA} ${WRKSRC}/readme.rst ${DOCDIR}
+	${INSTALL_DATA} ${WRKSRC}/README.rst ${DOCDIR}
 	${INSTALL_DATA} ${WRKSRC}/docs/*.{gif,html} ${DOCDIR}
 .for i in ref tut
 	${INSTALL_DATA_DIR} ${DOCDIR}/$i

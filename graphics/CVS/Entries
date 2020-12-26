@@ -1,4 +1,4 @@
-/Makefile/1.518/Tue Sep 22 22:08:40 2020//
+/Makefile/1.534/Sun Dec 13 15:37:07 2020//
 D/DevIL////
 D/GraphicsMagick////
 D/ImageMagick////
@@ -19,12 +19,11 @@ D/bonzomatic////
 D/cadubi////
 D/cairo////
 D/cairomm////
+D/cairomm16////
 D/cal3d////
 D/cfdg////
 D/chafa////
 D/clutter////
-D/colord////
-D/colord-gtk////
 D/colorexplorer////
 D/comix////
 D/cstitch////
@@ -54,6 +53,7 @@ D/feh////
 D/ffmpeg////
 D/ffmpegthumbnailer////
 D/flameshot////
+D/fna3d////
 D/fotowall////
 D/freeglut////
 D/freeimage////
@@ -62,6 +62,7 @@ D/ftgl////
 D/fyre////
 D/gd////
 D/gdcm////
+D/gdk-pixbuf-xlib////
 D/gdk-pixbuf2////
 D/geeqie////
 D/gegl04////
@@ -111,9 +112,9 @@ D/jhead////
 D/jpeg////
 D/jpeg2ps////
 D/jpegdump////
+D/jpeginfo////
 D/jpegoptim////
 D/jpegpixi////
-D/k3dsurf////
 D/kdiagram////
 D/krita////
 D/l2p////
@@ -177,7 +178,6 @@ D/opencv////
 D/openexr////
 D/openimageio////
 D/openjp2////
-D/openjpeg////
 D/openscenegraph////
 D/optipng////
 D/orthanc////
@@ -217,7 +217,6 @@ D/p5-SVG////
 D/p5-SVG-Graph////
 D/p5-Sane////
 D/pdf2djvu////
-D/pdfmod////
 D/pdfsandwich////
 D/pecl-imagick////
 D/pho////
@@ -245,6 +244,8 @@ D/py-pyx////
 D/py-qrcode////
 D/py-sane////
 D/py-seaborn////
+D/py2-Pillow////
+D/py2-cairo////
 D/pycha////
 D/qiv////
 D/quesoglc////

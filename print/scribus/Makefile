@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.71 2020/08/18 18:21:32 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.73 2020/11/24 16:44:16 sthen Exp $
 
 COMMENT=	desktop publishing program
 DISTNAME=	scribus-1.5.5
 CATEGORIES=	print
-REVISION=	0
+REVISION=	2
 
 HOMEPAGE=	https://www.scribus.net/
 
@@ -12,7 +12,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} Qt5Core Qt5Gui Qt5Network Qt5OpenGL
 WANTLIB += Qt5PrintSupport Qt5Widgets Qt5Xml c cairo cups execinfo
-WANTLIB += fontconfig freetype harfbuzz harfbuzz-icu hunspell-1.6
+WANTLIB += fontconfig freetype harfbuzz harfbuzz-icu hunspell-1.7
 WANTLIB += icudata icuuc jpeg lcms2 m podofo poppler ${MODPY_WANTLIB}
 WANTLIB += tiff util xml2 z
 
@@ -26,7 +26,7 @@ MODULES=	x11/qt5 \
 BUILD_DEPENDS=	devel/boost
 
 RUN_DEPENDS=	devel/desktop-file-utils \
-		graphics/py-Pillow \
+		graphics/py2-Pillow \
 		print/ghostscript/gnu \
 		textproc/antiword \
 		misc/shared-mime-info \

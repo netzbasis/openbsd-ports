@@ -1,17 +1,21 @@
-# $OpenBSD: Makefile,v 1.22 2020/07/11 22:54:38 sthen Exp $
+# $OpenBSD: Makefile,v 1.24 2020/10/21 00:24:41 sthen Exp $
 
-# built but not actually installed at present; patches are needed for the
-# build so it seems easier to keep the SHARED_LIBS infrastructure here.
+# shared lib is built but not actually installed at present; patches
+# are needed for the build so it seems easier to keep the SHARED_LIBS
+# infrastructure here.
 SHARED_LIBS=	ndpi 0.0
 
 COMMENT=	network traffic probe with web ui and deep packet inspection
 
 GH_ACCOUNT=	ntop
 GH_PROJECT=	ntopng
-GH_TAGNAME=	3.8.1
-NDPI_V=		3.0
-DISTFILES=	ntopng-${GH_TAGNAME}.tar.gz ndpi-${NDPI_V}.tar.gz:0
-REVISION=	0
+GH_COMMIT=	882b2551c1f845d9769894f4953a9495451848fc
+DISTNAME=	ntopng-4.0pl20202010
+DISTFILES=	ntopng-{}${GH_COMMIT}.tar.gz ndpi-${NDPI_V}.tar.gz:0
+# using newer commits from the 4.0-stable/3.2-stable branches; normally has
+#GH_TAGNAME=	4.0
+#DISTFILES=	ntopng-${GH_TAGNAME}.tar.gz ndpi-${NDPI_V}.tar.gz:0
+NDPI_V=		3.4
 
 CATEGORIES=	net
 
@@ -23,7 +27,7 @@ MAINTAINER=	Stuart Henderson <stu.ports@spacehopper.org>
 PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${COMPILER_LIBCXX}
-WANTLIB += c crypto curl hiredis json-c m mariadb maxminddb
+WANTLIB += c crypto curl gcrypt hiredis json-c m mariadb maxminddb
 WANTLIB += pcap radcli rrd sodium sqlite3 ssl z zmq zstd
 
 COMPILER =	base-clang ports-gcc
@@ -43,7 +47,8 @@ LIB_DEPENDS=	archivers/zstd \
 		net/libmaxminddb \
 		net/radcli \
 		net/rrdtool \
-		net/zeromq
+		net/zeromq \
+		security/libgcrypt
 
 MAKE_FLAGS=	CC="${CC}" CXX="${CXX}"
 MAKE_ENV=	LIBndpi_VERSION="${LIBndpi_VERSION}"
@@ -55,6 +60,7 @@ DEBUG_PACKAGES=	${BUILD_PACKAGES}
 CONFIGURE_STYLE= autoreconf
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib" \
 		CPPFLAGS="-I${LOCALBASE}/include" \
+		CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
 		ac_cv_lib_ldap_ldap_initialize=no
 
 AUTOCONF_VERSION=	2.69

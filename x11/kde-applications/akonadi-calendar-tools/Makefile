@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2020/09/07 14:49:11 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.6 2020/11/08 20:12:49 rsadowski Exp $
 
 COMMENT =	PIM Akonadi calendar tools
 DISTNAME =	akonadi-calendar-tools-${VERSION}
@@ -7,7 +7,7 @@ CATEGORIES =	devel
 WANTLIB += ${COMPILER_LIBCXX} KF5AkonadiCalendar KF5AkonadiCore
 WANTLIB += KF5CalendarCore KF5CalendarSupport KF5CalendarUtils
 WANTLIB += KF5ConfigCore KF5ConfigGui KF5CoreAddons KF5I18n KF5IdentityManagement
-WANTLIB += KF5ItemModels KF5Libkdepim KF5Mime KF5PimTextEdit KF5WidgetsAddons
+WANTLIB += KF5ItemModels KF5Mime KF5PimTextEdit KF5WidgetsAddons
 WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5PrintSupport Qt5Widgets Qt5Xml
 WANTLIB += c m
 
@@ -17,8 +17,6 @@ MODKDE5_DESKTOP_FILE = yes
 
 MODKF5_L10N_CONFLICT = yes
 MODKF5_I18N_CONFLICT = yes
-
-MODULES +=	x11/kde-applications
 
 BUILD_DEPENDS =	devel/boost
 

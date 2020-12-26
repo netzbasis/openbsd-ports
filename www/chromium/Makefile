@@ -1,4 +1,6 @@
-# $OpenBSD: Makefile,v 1.529 2020/09/22 11:47:39 robert Exp $
+# $OpenBSD: Makefile,v 1.540 2020/12/22 06:53:11 robert Exp $
+
+BROKEN-i386=   runtime fails, cannot execve the built binary, immediate ENOMEM even with high limits
 
 .include <bsd.port.arch.mk>
 
@@ -12,7 +14,8 @@ DPB_PROPERTIES=		lonesome
 
 COMMENT=		Chromium browser
 
-V=			85.0.4183.121
+V=			87.0.4280.88
+REVISION=		0
 
 DISTNAME=		chromium-${V}
 
@@ -72,7 +75,7 @@ WANTLIB += harfbuzz harfbuzz-subset
 WANTLIB += ffi png
 WANTLIB += iconv lzma
 WANTLIB += fido2 cbor usbhid crypto
-WANTLIB += gbm xcb-dri3
+WANTLIB += gbm xkbcommon
 
 RUN_DEPENDS=	devel/xdg-utils \
 		devel/desktop-file-utils \
@@ -96,6 +99,7 @@ LIB_DEPENDS=	devel/harfbuzz \
 		security/nss \
 		textproc/libxslt \
 		x11/gtk+3 \
+		x11/xkbcommon \
 		print/cups,-libs \
 		${MODGCC4_CPPLIBDEP}
 

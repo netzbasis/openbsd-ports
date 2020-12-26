@@ -1,7 +1,4 @@
-/patch-Setup_in/1.4/Sun Apr  1 09:27:43 2018//
-/patch-config_unix_py/1.6/Sun Apr  1 09:27:43 2018//
-/patch-examples_eventlist_py/1.2/Thu Apr  9 22:49:39 2009//
-/patch-examples_fastevents_py/1.2/Thu Apr  9 22:49:39 2009//
-/patch-src_camera_h/1.2/Sun Apr  1 09:27:43 2018//
-/patch-src_camera_v4l2_c/1.2/Sun Apr  1 09:27:43 2018//
+/patch-buildconfig_Setup_SDL1_in/1.2/Wed Dec  9 04:49:12 2020//
+/patch-src_c_camera_h/1.2/Wed Dec  9 04:49:12 2020//
+/patch-src_c_camera_v4l2_c/1.1/Sat Nov 21 01:05:22 2020//
 D

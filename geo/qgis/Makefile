@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.134 2020/09/14 07:25:27 landry Exp $
+# $OpenBSD: Makefile,v 1.139 2020/12/23 10:22:25 landry Exp $
 
 BROKEN-powerpc =	does not build: "operand out of range"
 BROKEN-sparc64 =	undefined reference to QOpenGLExtension_ARB_tessellation_shader::QOpenGLExtension_ARB_tessellation_shader() in libQt53DRender.so.2.0 when linking qgis_3drenderingtest
@@ -7,18 +7,18 @@ COMMENT =	desktop geographical information system
 
 DPB_PROPERTIES =	parallel
 
-DISTNAME =	qgis-3.14.16
+DISTNAME =	qgis-3.16.2
 EXTRACT_SUFX =	.tar.bz2
 CATEGORIES =	geo x11
 DEBUG_PACKAGES =${BUILD_PACKAGES}
 
-SHARED_LIBS =	qgis_core	44.0 \
-		qgis_app	30.0 \
-		qgis_gui	36.0 \
-		qgis_analysis	16.0 \
-		qgis_server	14.0 \
+SHARED_LIBS =	qgis_core	47.0 \
+		qgis_app	31.1 \
+		qgis_gui	38.0 \
+		qgis_analysis	17.0 \
+		qgis_server	15.0 \
 		qgispython	6.0 \
-		qgis_3d		7.0 \
+		qgis_3d		8.1 \
 		qgis_native	0.3
 
 HOMEPAGE =	http://www.qgis.org/
@@ -70,7 +70,7 @@ LIB_DEPENDS =	${MODPY_LIB_DEPENDS} \
 		www/fcgi \
 		x11/qt5/qtwebkit \
 		x11/qt5/qt3d \
-		qwt-*-qt5:x11/qwt,qt5 \
+		x11/qwt \
 		geo/gdal \
 		geo/mdal>=0.5 \
 		geo/geos \
@@ -84,7 +84,7 @@ WANTLIB += ${COMPILER_LIBCXX} Qt5Concurrent Qt5Core Qt5Gui Qt5Network
 WANTLIB += Qt5Positioning Qt5PrintSupport Qt5Sql Qt5Svg
 WANTLIB += Qt5Test Qt5WebKit Qt5WebKitWidgets Qt5Widgets Qt5Xml
 WANTLIB += c exiv2 expat fcgi gdal geos_c gsl gslcblas m mdal pq proj ${MODPY_WANTLIB}
-WANTLIB += qca-qt5 qscintilla2_qt5 qt5keychain qwt-qt5 spatialindex
+WANTLIB += qca-qt5 qscintilla2_qt5 qt5keychain qwt spatialindex
 WANTLIB += spatialite sqlite3 util zip hdf5 xml2 z GL
 WANTLIB += Qt53DCore Qt53DExtras Qt53DInput Qt53DLogic
 WANTLIB += Qt53DRender Qt5Gamepad protobuf-lite

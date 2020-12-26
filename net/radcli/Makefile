@@ -1,22 +1,21 @@
-# $OpenBSD: Makefile,v 1.12 2020/02/03 20:40:40 sthen Exp $
+# $OpenBSD: Makefile,v 1.14 2020/11/21 17:23:40 sthen Exp $
 
 COMMENT=	simple RADIUS client library
 
-SHARED_LIBS +=	radcli               0.3      # 6.0
+SHARED_LIBS +=	radcli               1.0      # 8.0
 
-V=		1.2.11
+V=		1.3.0
 DISTNAME=	radcli-$V
-REVISION=	0
 
 CATEGORIES=	net
 
-HOMEPAGE=	http://radcli.github.io/radcli/
+HOMEPAGE=	https://radcli.github.io/radcli/
 
 # recent code BSD, some old MERIT/Livingston
 PERMIT_PACKAGE=	Yes
 
-WANTLIB =  ffi gmp gnutls hogweed iconv idn2 intl nettle p11-kit pthread
-WANTLIB += tasn1 unistring z
+WANTLIB += ffi gmp gnutls hogweed iconv idn2 intl nettle p11-kit
+WANTLIB += pthread tasn1 unistring
 
 MASTER_SITES=	https://github.com/radcli/radcli/releases/download/$V/
 

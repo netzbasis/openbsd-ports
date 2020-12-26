@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2020/09/07 14:49:29 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.8 2020/11/08 20:12:59 rsadowski Exp $
 
 COMMENT =	printing management for KDE
 DISTNAME =	print-manager-${VERSION}
@@ -20,8 +20,6 @@ MODKDE5_DESKTOP_FILE = yes
 MODKDE5_TRANSLATIONS = yes
 MODKF5_I18N_CONFLICT = yes
 MODKF5_L10N_CONFLICT = yes
-
-MODULES +=	x11/kde-applications
 
 BUILD_DEPENDS =	x11/qt5/qtquickcontrols \
 		devel/kf5/plasma-framework
@@ -45,6 +43,7 @@ LIB_DEPENDS =	devel/kf5/kauth \
 		devel/kf5/kservice \
 		devel/kf5/kwidgetsaddons \
 		devel/kf5/kwindowsystem \
+		x11/qt5/qtdeclarative \
 		print/cups,-libs
 
 .include <bsd.port.mk>

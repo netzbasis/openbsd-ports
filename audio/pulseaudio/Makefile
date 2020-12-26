@@ -1,22 +1,18 @@
-# $OpenBSD: Makefile,v 1.107 2020/04/22 09:51:25 ratchov Exp $
+# $OpenBSD: Makefile,v 1.110 2020/11/24 13:42:58 ajacoutot Exp $
 
-# XXX
-# sndio: what to do with (channel) map
-# sndio: check sample format
-# sndio: support for recording
-
-PORTROACH=		skipv:13.99.1
+# XXX sndio: what to do with (channel) map
+# XXX sndio: check sample format
+# XXX sndio: support for recording
 
 COMMENT=		cross-platform networked sound server
 
-VERSION=		13.0
-REVISION=		0
+VERSION=		14.0
 DISTNAME=		pulseaudio-${VERSION}
 EXTRACT_SUFX=		.tar.xz
 
-SHARED_LIBS +=  pulse                7.0      # .21.1
-SHARED_LIBS +=  pulse-simple         1.1      # .1.1
-SHARED_LIBS +=  pulse-mainloop-glib  1.1      # .0.5
+SHARED_LIBS +=  pulse                7.1      # .23.0
+SHARED_LIBS +=  pulse-simple         1.2      # .1.1
+SHARED_LIBS +=  pulse-mainloop-glib  1.2      # .0.6
 
 CATEGORIES=		audio
 
@@ -55,6 +51,7 @@ BUILD_DEPENDS +=	textproc/p5-XML-Parser
 BUILD_DEPENDS +=	devel/check
 TEST_FLAGS=		HOME=${WRKDIST}
 
+# speex is a requirement for echo canceller (needs at least one)
 LIB_DEPENDS=		audio/libsndfile \
 			audio/speexdsp \
 			databases/tdb \
@@ -89,6 +86,7 @@ CONFIGURE_ARGS=		--disable-atomic-arm-linux-helpers \
 			--disable-gtk3 \
 			--disable-jack \
 			--disable-hal-compat \
+			--disable-gstreamer \
 			--disable-systemd-daemon \
 			--disable-systemd-login \
 			--disable-systemd-journal \
@@ -120,6 +118,7 @@ AUTOCONF_VERSION=	2.69
 AUTOMAKE_VERSION=	1.15
 post-extract:
 	cp ${FILESDIR}/module-sndio*.{c,h} ${WRKSRC}/src/modules/
+### END SNDIO ###
 
 pre-configure:
 	sed -i 's,/bin/bash,/usr/bin/env bash,' \

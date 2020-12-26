@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2020/09/07 14:49:28 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.7 2020/11/08 20:12:58 rsadowski Exp $
 
 COMMENT =	KMail mbox importer
 DISTNAME =	mbox-importer-${VERSION}
@@ -18,8 +18,7 @@ WANTLIB += Qt5Xml c gpgmepp m qgpgme
 
 MODKDE5_TRANSLATIONS = yes
 MODKF5_L10N_CONFLICT = yes
-
-MODULES =	x11/kde-applications
+MODKDE5_DESKTOP_FILE = yes
 
 BUILD_DEPENDS =	devel/boost \
 		devel/libinotify

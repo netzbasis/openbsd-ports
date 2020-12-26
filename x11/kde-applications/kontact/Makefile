@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.4 2020/09/07 14:49:23 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.10 2020/11/08 20:12:55 rsadowski Exp $
 
 COMMENT =	documentenal information management suite
 DISTNAME =	kontact-${VERSION}
@@ -17,18 +17,18 @@ WANTLIB += Qt5PrintSupport Qt5Qml Qt5Quick Qt5WebChannel Qt5WebEngine
 WANTLIB += Qt5WebEngineCore Qt5WebEngineWidgets Qt5Widgets Qt5Xml
 WANTLIB += c m
 
-MODKDE5_TRANSLATIONS = yes
 MODKDE5_ICON_CACHE = yes
 MODKDE5_TRANSLATIONS = yes
+MODKDE5_DESKTOP_FILE = yes
 MODKDE5_DOCS = yes
 
 MODKF5_L10N_CONFLICT = yes
 
-MODULES +=	x11/kde-applications
+BUILD_DEPENDS =	devel/boost \
+		devel/kf5/kitemmodels
 
-BUILD_DEPENDS =	devel/boost
-
-RUN_DEPENDS =	x11/kde-applications/kdepim-runtime
+RUN_DEPENDS =	x11/kde-applications/kdepim-runtime \
+		devel/kf5/kitemmodels
 
 LIB_DEPENDS =	devel/kf5/kauth \
 		devel/kf5/kcmutils \
@@ -41,7 +41,6 @@ LIB_DEPENDS =	devel/kf5/kauth \
 		devel/kf5/ki18n \
 		devel/kf5/kiconthemes \
 		devel/kf5/kio \
-		devel/kf5/kitemmodels \
 		devel/kf5/kjobwidgets \
 		devel/kf5/kparts \
 		devel/kf5/kservice \
@@ -50,11 +49,12 @@ LIB_DEPENDS =	devel/kf5/kauth \
 		devel/kf5/kwindowsystem \
 		devel/kf5/kxmlgui \
 		devel/kf5/sonnet \
-		x11/kde-applications/akonadi \
+		x11/kde-applications/akonadi-contacts \
 		x11/kde-applications/grantleetheme \
-		x11/kde-applications/kdepim-apps-libs \
+		x11/kde-applications/kpimtextedit  \
 		x11/kde-applications/kontactinterface \
 		x11/kde-applications/libkdepim \
+		x11/kde-applications/pimcommon \
 		x11/qt5/qtdeclarative \
 		x11/qt5/qtlocation \
 		x11/qt5/qtwebchannel \

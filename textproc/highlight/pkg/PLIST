@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.44 2020/09/21 13:48:01 benoit Exp $
+@comment $OpenBSD: PLIST,v 1.46 2020/12/22 09:50:00 benoit Exp $
 @bin bin/highlight
 @man man/man1/highlight.1
 share/doc/highlight/
@@ -165,6 +165,7 @@ share/highlight/langDefs/objc.lang
 share/highlight/langDefs/ocaml.lang
 share/highlight/langDefs/octave.lang
 share/highlight/langDefs/oorexx.lang
+share/highlight/langDefs/org.lang
 share/highlight/langDefs/os.lang
 share/highlight/langDefs/oz.lang
 share/highlight/langDefs/paradox.lang
@@ -196,11 +197,13 @@ share/highlight/langDefs/qml.lang
 share/highlight/langDefs/qu.lang
 share/highlight/langDefs/r.lang
 share/highlight/langDefs/rebol.lang
+share/highlight/langDefs/rego.lang
 share/highlight/langDefs/rexx.lang
 share/highlight/langDefs/rnc.lang
 share/highlight/langDefs/rpg.lang
 share/highlight/langDefs/rpl.lang
 share/highlight/langDefs/rs.lang
+share/highlight/langDefs/rst.lang
 share/highlight/langDefs/ruby.lang
 share/highlight/langDefs/s.lang
 share/highlight/langDefs/sam.lang

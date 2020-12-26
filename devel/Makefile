@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2019 2020/09/23 11:06:47 rpointel Exp $
+# $OpenBSD: Makefile,v 1.2044 2020/12/19 18:08:46 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += 64tass
@@ -32,6 +32,7 @@
      SUBDIR += atf
      SUBDIR += atk
      SUBDIR += atk2mm
+     SUBDIR += atkmm236
      SUBDIR += atlas
      SUBDIR += attinycore
      SUBDIR += autoconf
@@ -111,8 +112,6 @@
      SUBDIR += cvsutils
      SUBDIR += cvsweb
      SUBDIR += darcs
-     SUBDIR += dbus-sharp
-     SUBDIR += dbus-sharp-glib
      SUBDIR += dconf
      SUBDIR += ddd
      SUBDIR += dejagnu
@@ -170,6 +169,7 @@
      SUBDIR += glade
      SUBDIR += glib2
      SUBDIR += glib2mm
+     SUBDIR += glibmm268
      SUBDIR += glog
      SUBDIR += glpk
      SUBDIR += gmake
@@ -270,7 +270,6 @@
      SUBDIR += hs-void
      SUBDIR += http-parser
      SUBDIR += hub
-     SUBDIR += hyena
      SUBDIR += id-utils
      SUBDIR += imake
      SUBDIR += imake-cf
@@ -404,6 +403,9 @@
      SUBDIR += lpeg,lua52
      SUBDIR += lpeg,lua53
      SUBDIR += ltcltk
+     SUBDIR += luassert
+     SUBDIR += luassert,lua52
+     SUBDIR += luassert,lua53
      SUBDIR += lua-bit32
      SUBDIR += lua-bitop
      SUBDIR += lua-bitop,lua52
@@ -426,6 +428,9 @@
      SUBDIR += lua-penlight
      SUBDIR += lua-penlight,lua52
      SUBDIR += lua-penlight,lua53
+     SUBDIR += lua-say
+     SUBDIR += lua-say,lua52
+     SUBDIR += lua-say,lua53
      SUBDIR += lua-term
      SUBDIR += lua-term,lua52
      SUBDIR += lua-term,lua53
@@ -471,8 +476,6 @@
      SUBDIR += mm
      SUBDIR += mm-common
      SUBDIR += mono-addins
-     SUBDIR += mono-gdata
-     SUBDIR += mono-notify
      SUBDIR += monotone
      SUBDIR += mowgli
      SUBDIR += mpfr
@@ -562,6 +565,8 @@
      SUBDIR += p5-Carp-Assert-More
      SUBDIR += p5-Carp-Clan
      SUBDIR += p5-Carp-Datum
+     SUBDIR += p5-Carp-REPL
+     SUBDIR += p5-Catalyst-Manual
      SUBDIR += p5-Catalyst-Manual
      SUBDIR += p5-Catalyst-Plugin-C3
      SUBDIR += p5-Catalyst-Plugin-StackTrace
@@ -639,6 +644,7 @@
      SUBDIR += p5-Curses-Widgets
      SUBDIR += p5-Data-Alias
      SUBDIR += p5-Data-Buffer
+     SUBDIR += p5-Data-Clone
      SUBDIR += p5-Data-Compare
      SUBDIR += p5-Data-Dump
      SUBDIR += p5-Data-Dump-Streamer
@@ -657,6 +663,7 @@
      SUBDIR += p5-Data-OptList
      SUBDIR += p5-Data-Printer
      SUBDIR += p5-Data-Random
+     SUBDIR += p5-Data-Section-Simple
      SUBDIR += p5-Data-SExpression
      SUBDIR += p5-Data-ShowTable
      SUBDIR += p5-Data-Stag
@@ -712,9 +719,11 @@
      SUBDIR += p5-Devel-Hide
      SUBDIR += p5-Devel-Leak
      SUBDIR += p5-Devel-Leak-Object
+     SUBDIR += p5-Devel-LexAlias
      SUBDIR += p5-Devel-NYTProf
      SUBDIR += p5-Devel-OverloadInfo
      SUBDIR += p5-Devel-PartialDump
+     SUBDIR += p5-Devel-REPL
      SUBDIR += p5-Devel-Refcount
      SUBDIR += p5-Devel-SawAmpersand
      SUBDIR += p5-Devel-Size
@@ -722,6 +731,7 @@
      SUBDIR += p5-Devel-SmallProf
      SUBDIR += p5-Devel-StackTrace
      SUBDIR += p5-Devel-StackTrace-AsHTML
+     SUBDIR += p5-Devel-StackTrace-WithLexicals
      SUBDIR += p5-Devel-Symdump
      SUBDIR += p5-Devel-Trace
      SUBDIR += p5-Devel-TraceUse
@@ -830,6 +840,7 @@
      SUBDIR += p5-IO-Capture
      SUBDIR += p5-IO-CaptureOutput
      SUBDIR += p5-IO-Digest
+     SUBDIR += p5-IO-Interactive
      SUBDIR += p5-IO-KQueue
      SUBDIR += p5-IO-Lambda
      SUBDIR += p5-IO-LockedFile
@@ -857,6 +868,7 @@
      SUBDIR += p5-Iterator
      SUBDIR += p5-Iterator-Util
      SUBDIR += p5-Lchown
+     SUBDIR += p5-Lexical-Persistence
      SUBDIR += p5-List-AllUtils
      SUBDIR += p5-List-Compare
      SUBDIR += p5-List-Cycle
@@ -939,8 +951,10 @@
      SUBDIR += p5-MooseX-MethodAttributes
      SUBDIR += p5-MooseX-MultiInitArg
      SUBDIR += p5-MooseX-NonMoose
+     SUBDIR += p5-MooseX-Object-Pluggable
      SUBDIR += p5-MooseX-POE
      SUBDIR += p5-MooseX-Params-Validate
+     SUBDIR += p5-MooseX-RelatedClassRoles
      SUBDIR += p5-MooseX-Role-Parameterized
      SUBDIR += p5-MooseX-Role-WithOverloading
      SUBDIR += p5-MooseX-SemiAffordanceAccessor
@@ -1066,6 +1080,7 @@
      SUBDIR += p5-String-Interpolate-Named
      SUBDIR += p5-String-Scanf
      SUBDIR += p5-String-Truncate
+     SUBDIR += p5-Struct-Dumb
      SUBDIR += p5-Sub-Attribute
      SUBDIR += p5-Sub-Exporter
      SUBDIR += p5-Sub-Exporter-ForMethods
@@ -1261,6 +1276,7 @@
      SUBDIR += p5-boolean
      SUBDIR += p5-capitalization
      SUBDIR += p5-common-sense
+     SUBDIR += p5-curry
      SUBDIR += p5-enum
      SUBDIR += p5-forks
      SUBDIR += p5-indirect
@@ -1273,6 +1289,7 @@
      SUBDIR += p5-strictures
      SUBDIR += pango
      SUBDIR += pangomm
+     SUBDIR += pangomm248
      SUBDIR += pasmo
      SUBDIR += pccts
      SUBDIR += pcre
@@ -1396,7 +1413,6 @@
      SUBDIR += py-configparser
      SUBDIR += py-constantly
      SUBDIR += py-constantly,python3
-     SUBDIR += py-construct
      SUBDIR += py-construct,python3
      SUBDIR += py-contextlib2
      SUBDIR += py-contextlib2,python3
@@ -1410,6 +1426,7 @@
      SUBDIR += py-coveralls,python3
      SUBDIR += py-cparser
      SUBDIR += py-cparser,python3
+     SUBDIR += py-cppy,python3
      SUBDIR += py-crc32c,python3
      SUBDIR += py-cstruct
      SUBDIR += py-cstruct,python3
@@ -1433,7 +1450,6 @@
      SUBDIR += py-easyprocess,python3
      SUBDIR += py-editdist
      SUBDIR += py-efilter
-     SUBDIR += py-elftools
      SUBDIR += py-elftools,python3
      SUBDIR += py-entrypoints
      SUBDIR += py-entrypoints,python3
@@ -1521,7 +1537,6 @@
      SUBDIR += py-jupyter_client,python3
      SUBDIR += py-jupyter_core,python3
      SUBDIR += py-kitchen,python3
-     SUBDIR += py-kiwisolver
      SUBDIR += py-kiwisolver,python3
      SUBDIR += py-lazy-object-proxy
      SUBDIR += py-lazy-object-proxy,python3
@@ -1563,7 +1578,6 @@
      SUBDIR += py-nose-warnings-filters,python3
      SUBDIR += py-nosexcover
      SUBDIR += py-nosexcover,python3
-     SUBDIR += py-notify
      SUBDIR += py-objgraph
      SUBDIR += py-objgraph,python3
      SUBDIR += py-olefile
@@ -1608,6 +1622,7 @@
      SUBDIR += py-ptyprocess,python3
      SUBDIR += py-py
      SUBDIR += py-py,python3
+     SUBDIR += py-pybind11,python3
      SUBDIR += py-pyinotify
      SUBDIR += py-pyinotify,python3
      SUBDIR += py-pyprof2calltree
@@ -1674,6 +1689,7 @@
      SUBDIR += py-tabulate,python3
      SUBDIR += py-tempora
      SUBDIR += py-tempora,python3
+     SUBDIR += py-tenacity,python3
      SUBDIR += py-test
      SUBDIR += py-test,python3
      SUBDIR += py-test-benchmark
@@ -1712,10 +1728,8 @@
      SUBDIR += py-tqdm,python3
      SUBDIR += py-traceback2
      SUBDIR += py-traitlets,python3
-     SUBDIR += py-trollius
      SUBDIR += py-twisted
      SUBDIR += py-twisted,python3
-     SUBDIR += py-txaio
      SUBDIR += py-txaio,python3
      SUBDIR += py-typing
      SUBDIR += py-typing-extensions,python3
@@ -1787,6 +1801,7 @@
      SUBDIR += re2c
      SUBDIR += readline
      SUBDIR += rebar
+     SUBDIR += rebar3
      SUBDIR += remake
      SUBDIR += reposurgeon
      SUBDIR += rgbds
@@ -1852,6 +1867,7 @@
      SUBDIR += ruby-racc,ruby27
      SUBDIR += ruby-rake-compiler
      SUBDIR += ruby-rake-remote_task
+     SUBDIR += ruby-regexp_parser
      SUBDIR += ruby-rb-gsl,ruby26
      SUBDIR += ruby-rb-gsl,ruby27
      SUBDIR += ruby-ref
@@ -1916,7 +1932,7 @@
      SUBDIR += sparsehash
      SUBDIR += spe
      SUBDIR += spice-protocol
-     SUBDIR += spidermonkey68
+     SUBDIR += spidermonkey78
      SUBDIR += splint
      SUBDIR += spyder
      SUBDIR += sqlc
@@ -1957,7 +1973,6 @@
      SUBDIR += vim-taglist
      SUBDIR += vtags
      SUBDIR += vtcl
-     SUBDIR += vte
      SUBDIR += vte3
      SUBDIR += woboq_codebrowser
      SUBDIR += xa

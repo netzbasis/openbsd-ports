@@ -1,6 +1,5 @@
 /patch-gio_glib-compile-schemas_c/1.12/Fri Nov  1 19:33:14 2019//
-/patch-gio_gunixmount_c/1.19/Fri Nov  1 19:33:14 2019//
-/patch-glib_gfileutils_c/1.6/Fri Nov  1 19:33:14 2019//
-/patch-glib_gmacros_h/1.16/Sat Aug  1 19:06:20 2020//
-/patch-meson_build/1.16/Tue Aug 18 12:31:48 2020//
+/patch-gio_gunixmount_c/1.20/Sun Nov  1 08:21:04 2020//
+/patch-glib_gfileutils_c/1.7/Sun Nov  1 08:21:04 2020//
+/patch-meson_build/1.17/Sun Nov  1 08:21:04 2020//
 D

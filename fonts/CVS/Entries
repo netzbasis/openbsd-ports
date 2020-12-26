@@ -1,4 +1,4 @@
-/Makefile/1.71/Thu Aug  6 09:09:49 2020//
+/Makefile/1.72/Sat Nov 21 20:15:05 2020//
 D/abyssinica////
 D/adobe-fonts////
 D/alkalami////
@@ -89,6 +89,7 @@ D/taiwan-cns11643-fonts////
 D/tamsyn-font////
 D/taviraj////
 D/terminus-font////
+D/ttyp0-font////
 D/ubuntu-fonts////
 D/un-fonts////
 D/unifont////

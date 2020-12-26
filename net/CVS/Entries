@@ -1,4 +1,4 @@
-/Makefile/1.1222/Sat Sep 12 15:33:31 2020//
+/Makefile/1.1233/Sat Dec 12 14:22:39 2020//
 D/adns////
 D/adsuck////
 D/aggregate////
@@ -36,6 +36,7 @@ D/btpd////
 D/bwm-ng////
 D/cadaver////
 D/castget////
+D/catgirl////
 D/cftp////
 D/cgo////
 D/cgterm////
@@ -56,6 +57,7 @@ D/dbip////
 D/ddclient////
 D/deluge////
 D/deluge-ltconfig////
+D/dendrite////
 D/dhcdrop////
 D/dhcpcd////
 D/dhcpdump////
@@ -74,6 +76,7 @@ D/dnsreflector////
 D/dnstop////
 D/dnstracer////
 D/doc////
+D/dog////
 D/doh////
 D/dsocks////
 D/dsvpn////
@@ -112,6 +115,7 @@ D/go-net////
 D/gomuks////
 D/gopher////
 D/gophernicus////
+D/gortr////
 D/gotthard////
 D/gpodder////
 D/grake////
@@ -127,6 +131,7 @@ D/hping////
 D/hs-HTTP////
 D/hs-hostname////
 D/httptunnel////
+D/i2p////
 D/i2pd////
 D/icbd////
 D/icbirc////
@@ -175,9 +180,11 @@ D/kismet////
 D/kissd////
 D/knot////
 D/konversation////
+D/kristall////
 D/ktorrent////
 D/kurly////
 D/ladvd////
+D/lagrange////
 D/ldns////
 D/lftp////
 D/libbgpdump////
@@ -553,6 +560,7 @@ D/py-portend////
 D/py-ripe.atlas.cousteau////
 D/py-ripe.atlas.sagan////
 D/py-ripe.atlas.tools////
+D/py-rrdtool////
 D/py-s3transfer////
 D/py-simplesoap////
 D/py-siphon////
@@ -703,7 +711,6 @@ D/wget////
 D/whatweb////
 D/wide-dhcpv6////
 D/wifind////
-D/wireguard-go////
 D/wireguard-tools////
 D/wireshark////
 D/wmnetload////

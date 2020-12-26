@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2020/09/07 14:49:11 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.6 2020/11/08 20:12:49 rsadowski Exp $
 
 COMMENT =	PIM Akonadi contacts support library
 DISTNAME =	akonadi-contacts-${VERSION}
@@ -19,8 +19,6 @@ WANTLIB += Qt5Widgets Qt5Xml m
 MODKDE5_TRANSLATIONS = yes
 MODKF5_L10N_CONFLICT = yes
 
-MODULES +=	x11/kde-applications
-
 BUILD_DEPENDS =	devel/boost
 
 LIB_DEPENDS =	devel/kf5/kauth \
@@ -28,7 +26,6 @@ LIB_DEPENDS =	devel/kf5/kauth \
 		devel/kf5/kconfig \
 		devel/kf5/kconfigwidgets \
 		devel/kf5/kcontacts \
-		devel/kf5/kdbusaddons \
 		devel/kf5/ki18n \
 		devel/kf5/kio \
 		devel/kf5/kitemmodels \

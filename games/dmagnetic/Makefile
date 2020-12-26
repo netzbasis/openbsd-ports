@@ -1,6 +1,6 @@
-# $OpenBSD: Makefile,v 1.13 2020/07/26 16:47:51 sthen Exp $
+# $OpenBSD: Makefile,v 1.15 2020/11/28 11:29:54 solene Exp $
 
-V =		0.25
+V =		0.28
 COMMENT =	interpreter for Magnetic Scrolls games
 DISTNAME =	dMagnetic_${V}
 PKGNAME =	dmagnetic-${V}

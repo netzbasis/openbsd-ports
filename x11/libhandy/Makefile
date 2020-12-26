@@ -1,15 +1,13 @@
-# $OpenBSD: Makefile,v 1.6 2020/05/14 15:00:17 jasper Exp $
+# $OpenBSD: Makefile,v 1.10 2020/11/12 15:05:03 jasper Exp $
 
-COMMENT =		library to help in developing UIs for mobile devices
+COMMENT =		building blocks for modern adaptive GNOME apps
 
-V =			0.0.13
-DISTNAME =		libhandy-v$V
-PKGNAME =		libhandy-$V
+GNOME_PROJECT =		libhandy
+GNOME_VERSION =		1.0.2
 CATEGORIES =		x11
 
-SHARED_LIBS += handy-0.0                 2.0 # 0
-
-MASTER_SITES =		https://source.puri.sm/Librem5/libhandy/-/archive/v$V/
+API_V =			1
+SHARED_LIBS +=  handy-1                   0.0 # 3.0
 
 MAINTAINER =		Jasper Lievisse Adriaanse <jasper@openbsd.org>
 
@@ -19,19 +17,20 @@ PERMIT_PACKAGE =	Yes
 COMPILER =		base-clang ports-gcc
 COMPILER_LANGS =	c
 
-MODULES =		devel/meson
+MODULES =		devel/meson \
+			x11/gnome
+
+MODGNOME_TOOLS =	gobject-introspection vala
 
 WANTLIB += atk-1.0 cairo gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0
 WANTLIB += gobject-2.0 gtk-3 intl m pango-1.0
 
-BUILD_DEPENDS =		devel/gobject-introspection \
-			lang/vala
-RUN_DEPENDS =		devel/gobject-introspection
 LIB_DEPENDS =		x11/gtk+3
 
 CONFIGURE_ARGS +=	-Dglade_catalog=disabled \
 			-Dexamples=false
-CONFIGURE_ENV =		LDFLAGS=${LDFLAGS}
+
+DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
 .include <bsd.port.arch.mk>
 .if !${PROPERTIES:Mlld}
@@ -40,9 +39,6 @@ LDFLAGS =		-L${X11BASE}/lib
 
 TEST_IS_INTERACTIVE =	X11
 
-DEBUG_PACKAGES =	${BUILD_PACKAGES}
-
-pre-configure:
-	${SUBST_CMD} ${WRKSRC}/src/meson.build
+SUBST_VARS +=		API_V
 
 .include <bsd.port.mk>

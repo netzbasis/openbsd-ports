@@ -3,8 +3,12 @@
 /patch-tests_egl_CMakeLists_gl_txt/1.2/Tue Feb 12 02:26:40 2019//
 /patch-tests_egl_egl-configless-context_c/1.1/Wed Aug 26 03:23:40 2020//
 /patch-tests_egl_egl-context-priority_c/1.1/Wed Aug 26 03:23:40 2020//
+/patch-tests_egl_spec_egl_chromium_sync_control_egl_chromium_sync_control_c/1.1/Mon Nov 16 05:17:33 2020//
 /patch-tests_spec_oes_geometry_shader_sso_validation_user-defined-gs-input-in-block_shader_test/1.1.1.1/Sun Jan 14 21:49:14 2018//
 /patch-tests_spec_oes_geometry_shader_sso_validation_user-defined-gs-input-not-in-block_shader_test/1.1.1.1/Sun Jan 14 21:49:14 2018//
 /patch-tests_util_CMakeLists_txt/1.2/Tue Feb 12 02:26:40 2019//
+/patch-tests_util_piglit-framework-gl_c/1.1/Mon Nov 16 05:17:33 2020//
+/patch-tests_util_piglit-subprocess_c/1.1/Sun Nov 15 12:28:27 2020//
+/patch-tests_util_piglit-util_c/1.1/Mon Nov 16 05:17:33 2020//
 /patch-tests_util_piglit-util_h/1.1.1.1/Sun Jan 14 21:49:14 2018//
 D

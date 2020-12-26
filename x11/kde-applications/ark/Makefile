@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.8 2020/09/07 14:49:12 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.11 2020/11/08 20:12:49 rsadowski Exp $
 
 COMMENT =	archiving Tool
 DISTNAME =	ark-${VERSION}
@@ -21,8 +21,6 @@ MODKDE5_ICON_CACHE = yes
 MODKDE5_TRANSLATIONS = yes
 MODKF5_L10N_CONFLICT = yes
 MODKDE5_DOCS = yes
-
-MODULES +=	x11/kde-applications
 
 BUILD_DEPENDS =	archivers/bzip2 \
 		archivers/lzo2 \
@@ -52,7 +50,6 @@ LIB_DEPENDS =	archivers/libarchive \
 		devel/kf5/kcrash \
 		devel/kf5/kdbusaddons \
 		devel/kf5/ki18n \
-		devel/kf5/kiconthemes \
 		devel/kf5/kio \
 		devel/kf5/kitemmodels \
 		devel/kf5/kitemviews \

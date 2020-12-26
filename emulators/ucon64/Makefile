@@ -1,13 +1,14 @@
-# $OpenBSD: Makefile,v 1.6 2019/08/10 08:18:39 fcambus Exp $
+# $OpenBSD: Makefile,v 1.9 2020/12/18 15:32:58 fcambus Exp $
 
 COMMENT =	swiss army knife for video game console emulators
 
-DISTNAME =	ucon64-2.2.0-src
+DISTNAME =	ucon64-2.2.1-src
 PKGNAME =	${DISTNAME:S/-src//}
+REVISION =	0
 
 CATEGORIES =	emulators
 
-HOMEPAGE =	http://ucon64.sourceforge.net/
+HOMEPAGE =	https://ucon64.sourceforge.io/
 
 MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
 
@@ -22,7 +23,7 @@ WRKSRC =	${WRKDIST}/src
 
 CONFIGURE_STYLE = gnu
 
-CONFIGURE_ARGS = --disable-dload
+CONFIGURE_ARGS = --disable-dload --with-libdiscmage
 
 .if ${MACHINE_ARCH} != "amd64" && ${MACHINE_ARCH} != "i386"
 CONFIGURE_ARGS += --disable-parallel
@@ -31,6 +32,10 @@ CONFIGURE_ARGS += --disable-parallel
 USE_GMAKE =	Yes
 
 NO_TEST =	Yes
+
+pre-configure:
+	@sed -i 's,-O3,,' ${WRKSRC}/Makefile \
+		${WRKSRC}/libdiscmage/Makefile.in
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/ucon64 ${PREFIX}/bin

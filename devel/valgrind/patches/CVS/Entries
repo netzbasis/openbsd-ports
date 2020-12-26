@@ -8,7 +8,7 @@
 /patch-VEX_pub_libvex_ir_h/1.1/Wed Oct  2 17:19:29 2019//
 /patch-configure_ac/1.1/Thu Oct 12 08:07:11 2017//
 /patch-coregrind_launcher-openbsd_c/1.1/Mon Feb  4 23:34:10 2019//
-/patch-coregrind_link_tool_exe_openbsd_in/1.4/Wed Nov  6 05:25:13 2019//
+/patch-coregrind_link_tool_exe_openbsd_in/1.5/Mon Oct  5 01:45:58 2020//
 /patch-coregrind_m_aspacemgr_aspacemgr-common_c/1.1/Wed Oct  2 17:19:29 2019//
 /patch-coregrind_m_aspacemgr_aspacemgr-linux_c/1.2/Wed Nov  6 05:25:13 2019//
 /patch-coregrind_m_coredump_coredump-elf_c/1.1/Mon Feb  4 23:34:10 2019//

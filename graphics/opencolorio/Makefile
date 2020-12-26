@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.10 2019/07/12 20:47:04 sthen Exp $
+# $OpenBSD: Makefile,v 1.12 2020/12/14 15:28:14 rsadowski Exp $
 
 COMMENT =		color management library
 
 V =			20140911
 DISTNAME =		OpenColorIO-$V
 PKGNAME =		opencolorio-$V
-REVISION =		2
+REVISION =		4
 
 SHARED_LIBS +=  OpenColorIO               1.0 # 1.0
 
@@ -26,6 +26,8 @@ MASTER_SITES =		http://deftly.net/
 
 MODULES =		devel/cmake \
 			lang/python
+
+BUILD_DEPENDS =		devel/boost
 LIB_DEPENDS =		textproc/tinyxml \
 			devel/yaml-cpp
 

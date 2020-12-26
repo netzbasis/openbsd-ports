@@ -1,7 +1,8 @@
-$OpenBSD: patch-volk_lib_CMakeLists_txt,v 1.1.1.1 2018/09/10 06:58:22 bentley Exp $
---- volk/lib/CMakeLists.txt.orig	Tue Aug  9 17:53:06 2016
-+++ volk/lib/CMakeLists.txt	Tue Aug  9 17:54:40 2016
-@@ -264,15 +264,15 @@ endif()
+$OpenBSD: patch-volk_lib_CMakeLists_txt,v 1.3 2020/10/13 09:30:05 bentley Exp $
+Index: volk/lib/CMakeLists.txt
+--- volk/lib/CMakeLists.txt.orig
++++ volk/lib/CMakeLists.txt
+@@ -296,15 +296,15 @@ endif()
  if(NOT CROSSCOMPILE_MULTILIB AND CPU_IS_x86)
      include(CheckTypeSize)
      check_type_size("void*[8]" SIZEOF_CPU BUILTIN_TYPES_ONLY)
@@ -18,5 +19,5 @@ $OpenBSD: patch-volk_lib_CMakeLists_txt,v 1.1.1.1 2018/09/10 06:58:22 bentley Ex
 -    if (${SIZEOF_CPU} EQUAL 64 AND MSVC)
 +    if ("${SIZEOF_CPU}" EQUAL "64" AND MSVC)
          OVERRULE_ARCH(mmx "No MMX for Win64")
-     endif()
- 
+ 	if (MSVC_VERSION GREATER 1700)
+             OVERRULE_ARCH(sse "No SSE for Win64 Visual Studio 2013")

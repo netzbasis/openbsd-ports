@@ -1,14 +1,13 @@
-# $OpenBSD: Makefile,v 1.9 2020/05/17 09:29:01 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.14 2020/12/14 06:29:17 rsadowski Exp $
 
 COMMENT=	library for encoding and decoding .avif files
 
 GH_ACCOUNT=	AOMediaCodec
 GH_PROJECT=	libavif
-GH_TAGNAME=	v0.7.3
-REVISION=	0
+GH_TAGNAME=	v0.8.4
 CATEGORIES=	graphics
 
-SHARED_LIBS=	avif	1.1
+SHARED_LIBS=	avif	3.2
 
 HOMEPAGE=	https://github.com/AOMediaCodec/libavif
 
@@ -31,6 +30,7 @@ LIB_DEPENDS=	graphics/jpeg \
 CONFIGURE_ARGS+=-DAVIF_BUILD_APPS=ON \
 		-DAVIF_BUILD_TESTS=ON \
 		-DAVIF_CODEC_AOM=ON \
+		-DAVIF_CODEC_AOM_DECODE=OFF \
 		-DAVIF_CODEC_DAV1D=ON
 
 do-test:

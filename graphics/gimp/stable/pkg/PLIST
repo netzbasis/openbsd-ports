@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.47 2020/09/10 10:21:22 sthen Exp $
+@comment $OpenBSD: PLIST,v 1.49 2020/11/01 20:40:45 jca Exp $
 bin/gimp
 @bin bin/gimp-2.10
 bin/gimp-console

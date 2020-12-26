@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.676 2020/09/25 20:34:10 edd Exp $
+# $OpenBSD: Makefile,v 1.683 2020/12/20 15:15:21 ajacoutot Exp $
 
      SUBDIR =
      SUBDIR += 2bwm
@@ -16,6 +16,7 @@
      SUBDIR += asfiles
      SUBDIR += astime
      SUBDIR += autocutsel
+     SUBDIR += autorandr
      SUBDIR += awesome
      SUBDIR += bbdate
      SUBDIR += bbkeys
@@ -113,6 +114,7 @@
      SUBDIR += gtkglarea
      SUBDIR += gtkglext
      SUBDIR += gtkhotkey
+     SUBDIR += gtkmm40
      SUBDIR += gtksourceview
      SUBDIR += gtksourceview3
      SUBDIR += gtksourceview4
@@ -142,10 +144,7 @@
      SUBDIR += iwidgets
      SUBDIR += jgmenu
      SUBDIR += jwm
-     SUBDIR += kde
      SUBDIR += kde-applications
-     SUBDIR += kde-shared-data
-     SUBDIR += keybinder
      SUBDIR += keybinder3
      SUBDIR += keynav
      SUBDIR += kitty
@@ -251,14 +250,12 @@
      SUBDIR += py-xcbgen,python3
      SUBDIR += py-xlib
      SUBDIR += py-xlib,python3
-     SUBDIR += qt3
      SUBDIR += qt4
      SUBDIR += qt5
      SUBDIR += qt5ct
      SUBDIR += qt5styleplugins
      SUBDIR += qtfm
      SUBDIR += qwt
-     SUBDIR += qwt,qt5
      SUBDIR += qdirstat
      SUBDIR += ratmen
      SUBDIR += ratpoison
@@ -416,6 +413,7 @@
      SUBDIR += xscribble
      SUBDIR += xsel
      SUBDIR += xsettingsd
+     SUBDIR += xss-lock
      SUBDIR += xtacy
      SUBDIR += xtermset
      SUBDIR += xtestpicture

@@ -1,15 +1,18 @@
-# $OpenBSD: Makefile,v 1.96 2020/08/12 14:43:54 sthen Exp $
+# $OpenBSD: Makefile,v 1.104 2020/12/21 13:01:59 sthen Exp $
 
 COMMENT-main=	multithreaded SQL database (client)
 COMMENT-server=	multithreaded SQL database (server)
 COMMENT-tests=	multithreaded SQL database (regression test suite/benchmark)
 
-VERSION=	10.5.5
+VERSION=	10.5.8
 DISTNAME=	mariadb-${VERSION}
 PKGNAME-main=	mariadb-client-${VERSION}
 PKGNAME-server=	mariadb-server-${VERSION}
 PKGNAME-tests=	mariadb-tests-${VERSION}
 EPOCH=		1
+REVISION=	0
+# libiconv dep was removed post-6.8
+# keep REVISION in -current above -stable until 6.9
 
 CATEGORIES=	databases
 MASTER_SITES=	https://downloads.mariadb.com/MariaDB/${DISTNAME}/source/ \
@@ -27,7 +30,7 @@ MAINTAINER=	Brad Smith <brad@comstyle.com>
 # GPLv2 and LGPLv2.1
 PERMIT_PACKAGE=	Yes
 
-WANTLIB=	${COMPILER_LIBCXX} c crypto iconv m pthread ssl z
+WANTLIB=	${COMPILER_LIBCXX} c crypto m pthread ssl z
 WANTLIB-main=	${WANTLIB} curses readline
 WANTLIB-server=	${WANTLIB} bz2 curl lz4 lzma lzo2 pcre2-8 snappy xml2
 WANTLIB-tests=	${WANTLIB} pcre2-8 pcre2-posix
@@ -44,8 +47,7 @@ SUBST_VARS=	SOCKET_DIR
 MODULES=	devel/cmake
 BUILD_DEPENDS=	devel/bison
 
-LIB_DEPENDS-main=	${LIB_DEPENDS} \
-			converters/libiconv
+LIB_DEPENDS-main=	${LIB_DEPENDS}
 RUN_DEPENDS-server=	${BASE_PKGPATH},-main>=10.5v1,<10.6v1 \
 			databases/p5-DBD-MariaDB
 LIB_DEPENDS-server=	${LIB_DEPENDS} \
@@ -54,13 +56,11 @@ LIB_DEPENDS-server=	${LIB_DEPENDS} \
 			archivers/lzo2 \
 			archivers/snappy \
 			archivers/xz \
-			converters/libiconv \
 			devel/pcre2 \
 			net/curl \
 			textproc/libxml
 RUN_DEPENDS-tests=	${BASE_PKGPATH},-main>=10.5v1,<10.6v1
 LIB_DEPENDS-tests=	${LIB_DEPENDS} \
-			converters/libiconv \
 			devel/pcre2
 
 CONFIGURE_ARGS+=-DCMAKE_INSTALL_PREFIX="${PREFIX}" \
@@ -81,6 +81,7 @@ CONFIGURE_ARGS+=-DCMAKE_INSTALL_PREFIX="${PREFIX}" \
 		-DINSTALL_SUPPORTFILESDIR="share/examples/mysql" \
 		-DMYSQL_UNIX_ADDR="${SOCKET_DIR}/mysql.sock" \
 		-DCOMPILATION_COMMENT='OpenBSD port: ${FULLPKGNAME-server}' \
+		-DPLUGIN_OQGRAPH=NO \
 		-DWITH_EXTERNAL_ZLIB=On \
 		-DWITH_PCRE=system \
 		-DWITH_SSL=system \
@@ -99,9 +100,6 @@ CONFIGURE_ARGS+=-DHAVE_PAM_APPL_H=0
 # force disabling libexecinfo if it is installed
 CONFIGURE_ARGS+=-DHAVE_EXECINFO_H=0 \
 		-DHAVE_LIBEXECINFO=0
-
-# CMake test fails on OpenBSD
-CONFIGURE_ARGS+=-DHAVE_NETINET_TCP_H=1
 
 # The ColumnStore, Mroonga, RocksDB, and TokuDB storage engines are disabled.
 # ColumnStore is only buildable on X86.

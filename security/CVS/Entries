@@ -1,4 +1,4 @@
-/Makefile/1.592/Mon Sep 14 22:47:10 2020//
+/Makefile/1.597/Sun Dec  6 11:51:43 2020//
 D/ADMsnmp////
 D/ROPgadget////
 D/acme-client////
@@ -55,7 +55,6 @@ D/fwbuilder////
 D/fwknop////
 D/ghidra////
 D/gnupg////
-D/gnupg2////
 D/gnutls////
 D/go-crypto////
 D/go-ed25519////
@@ -65,6 +64,7 @@ D/gpa////
 D/gpgme////
 D/gringotts////
 D/hashdeep////
+D/hashid////
 D/hatchet////
 D/hcxtools////
 D/heimdal////
@@ -182,6 +182,7 @@ D/p5-Crypt-OpenSSL-Bignum////
 D/p5-Crypt-OpenSSL-DSA////
 D/p5-Crypt-OpenSSL-EC////
 D/p5-Crypt-OpenSSL-ECDSA////
+D/p5-Crypt-OpenSSL-Guess////
 D/p5-Crypt-OpenSSL-PKCS10////
 D/p5-Crypt-OpenSSL-RSA////
 D/p5-Crypt-OpenSSL-Random////
@@ -335,6 +336,7 @@ D/spiped////
 D/sqlmap////
 D/ssdeep////
 D/ssh-askpass-fullscreen////
+D/ssh-audit////
 D/ssh-ldap-helper////
 D/sshguard////
 D/sshlockout////
@@ -361,6 +363,7 @@ D/volatility////
 D/vpnc////
 D/wapiti////
 D/wesng////
+D/wfuzz////
 D/wpa_supplicant////
 D/wpscan////
 D/wycheproof-testvectors////

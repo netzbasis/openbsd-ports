@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.130 2020/09/13 10:10:07 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.132 2020/12/23 14:41:06 ajacoutot Exp $
 
 BROKEN-alpha=	gr_RenderInfo.cpp:426:1: internal compiler error: Segmentation fault
 
@@ -6,6 +6,7 @@ COMMENT=	free cross-platform WYSIWYG word processor
 
 VERSION=	3.0.4
 DISTNAME=	abiword-${VERSION}
+REVISION=	1
 
 CATEGORIES=	editors
 
@@ -81,6 +82,8 @@ CONFIGURE_ARGS += \
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
 		ac_cv_prog_VALGRIND=
+
+DEBUG_PACKAGES=	${BUILD_PACKAGES}
 
 post-install:
 	rm ${PREFIX}/lib/libabiword-${VERSION:R}*.{a,la}

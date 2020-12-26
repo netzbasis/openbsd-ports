@@ -1,18 +1,18 @@
-$OpenBSD: patch-components_crash_content_browser_BUILD_gn,v 1.8 2019/03/24 12:24:45 robert Exp $
+$OpenBSD: patch-components_crash_content_browser_BUILD_gn,v 1.10 2020/11/18 12:29:33 robert Exp $
 
 Index: components/crash/content/browser/BUILD.gn
 --- components/crash/content/browser/BUILD.gn.orig
 +++ components/crash/content/browser/BUILD.gn
-@@ -28,7 +28,7 @@ source_set("browser") {
+@@ -35,7 +35,7 @@ source_set("browser") {
      "//content/public/common",
    ]
  
--  if (is_linux || is_android) {
-+  if ((is_linux && !is_openbsd) || is_android) {
+-  if (is_linux || is_chromeos || is_android) {
++  if ((is_linux && !is_openbsd) || is_chromeos || is_android) {
      set_sources_assignment_filter([])
  
      # Want this file on both Linux and Android.
-@@ -42,13 +42,13 @@ source_set("browser") {
+@@ -49,13 +49,13 @@ source_set("browser") {
      deps += [ "//third_party/crashpad/crashpad/client" ]
    }
  

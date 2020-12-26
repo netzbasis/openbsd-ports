@@ -1,4 +1,4 @@
-/Makefile/1.436/Fri Sep 25 21:02:23 2020//
+/Makefile/1.443/Sat Nov 28 19:58:37 2020//
 D/abcde////
 D/adplay////
 D/adplug////
@@ -109,7 +109,6 @@ D/mikmod////
 D/milkytracker////
 D/mkplaylist////
 D/moc////
-D/mono-taglib////
 D/morseplayer////
 D/mp3applygain////
 D/mp3blaster////
@@ -199,7 +198,6 @@ D/py-ogg////
 D/py-tagpy////
 D/py-vorbis////
 D/pykaraoke////
-D/pympd////
 D/qsynth////
 D/quodlibet////
 D/rgain////
@@ -254,4 +252,3 @@ D/xmms2-scrobbler////
 D/xmp////
 D/ympd////
 D/yt-audio////
-D/zeya////

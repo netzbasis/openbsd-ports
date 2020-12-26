@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.28 2019/07/12 20:50:18 sthen Exp $
+# $OpenBSD: Makefile,v 1.30 2020/11/19 08:01:26 benoit Exp $
 
 COMMENT=	c++ compliant CGI applications libraries
 
-DISTNAME=	cgicc-3.2.16
-REVISION =	2
+DISTNAME =	cgicc-3.2.19
+REVISION =	0
 
 CATEGORIES=	www devel
 SHARED_LIBS=	cgicc	5.0
@@ -19,8 +19,9 @@ WANTLIB += m ${COMPILER_LIBCXX}
 
 COMPILER =		base-clang ports-gcc base-gcc
 
-CONFIGURE_STYLE= gnu
-CONFIGURE_ARGS=	--enable-static
+CONFIGURE_STYLE = 	autoconf
+AUTOCONF_VERSION = 	2.69
+CONFIGURE_ARGS =	--enable-static
 
 FAKE_FLAGS=	docdir=${PREFIX}/share/doc/cgicc
 

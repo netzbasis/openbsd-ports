@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.176 2020/09/22 22:23:05 kili Exp $
+# $OpenBSD: Makefile,v 1.178 2020/12/10 21:41:39 sthen Exp $
 
 COMMENT =		compiler for the functional language Haskell
 
@@ -12,7 +12,7 @@ COMMENT =		compiler for the functional language Haskell
 NO_CCACHE =		Yes
 
 DISTNAME =		ghc-${MODGHC_VER}
-REVISION =		6
+REVISION =		8
 CATEGORIES =		lang devel
 HOMEPAGE =		https://www.haskell.org/ghc/
 
@@ -40,7 +40,7 @@ LIB_DEPENDS =		converters/libiconv \
 
 BUILD_DEPENDS =		archivers/bzip2 \
 			archivers/gtar \
-			textproc/py-sphinx${MODPY_FLAVOR}
+			textproc/py-sphinx${MODPY_FLAVOR}>=1.5
 RUN_DEPENDS =
 
 # GHC build uses -Wl,-z,wxneeded on OpenBSD.

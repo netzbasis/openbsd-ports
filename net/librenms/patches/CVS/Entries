@@ -1,9 +1,9 @@
-/patch-LibreNMS_Config_php/1.10/Sat Aug  1 11:16:49 2020//
+/patch-LibreNMS_Config_php/1.11/Fri Oct  2 18:45:23 2020//
 /patch-_env_example/1.5/Sat Jul  4 19:51:43 2020//
 /patch-config_php_default/1.10/Sat Jul  4 19:51:43 2020//
-/patch-daily_sh/1.30/Sat Aug  1 11:16:49 2020//
+/patch-daily_sh/1.31/Thu Dec  3 18:04:02 2020//
 /patch-discovery-wrapper_py/1.5/Sat Jul  4 19:51:43 2020//
-/patch-misc_config_definitions_json/1.7/Sat Aug  1 11:16:49 2020//
+/patch-misc_config_definitions_json/1.10/Thu Dec  3 18:04:02 2020//
 /patch-poller-wrapper_py/1.16/Sat Jul  4 19:51:43 2020//
 /patch-services-wrapper_py/1.1/Sat Jul  4 19:51:43 2020//
 /patch-sql-schema_079_sql/1.1/Sun Jul 30 17:05:54 2017//

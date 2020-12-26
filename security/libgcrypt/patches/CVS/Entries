@@ -1,9 +1,9 @@
 /patch-cipher_camellia-aarch64_S/1.1/Tue Aug 11 10:50:55 2020//
-/patch-configure_ac/1.5/Tue Jul  7 07:08:29 2020//
+/patch-configure_ac/1.6/Sun Oct 25 08:53:25 2020//
 /patch-mpi_longlong_h/1.9/Thu Jul 20 06:16:00 2017//
 /patch-random_jitterentropy-base_c/1.3/Sat Sep  7 16:46:01 2019//
 /patch-random_rand-internal_h/1.1/Sun Dec  2 11:24:15 2018//
-/patch-random_random-csprng_c/1.2/Sun Dec  2 11:24:15 2018//
+/patch-random_random-csprng_c/1.3/Sun Oct 25 08:53:25 2020//
 /patch-random_random-drbg_c/1.1/Sun Dec  2 11:24:15 2018//
 /patch-random_random-system_c/1.1/Sun Dec  2 11:24:15 2018//
 /patch-random_rndarc4random_c/1.1/Sun Dec  2 11:24:15 2018//

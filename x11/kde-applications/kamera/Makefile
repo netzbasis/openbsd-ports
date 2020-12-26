@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.7 2020/09/07 14:49:15 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.9 2020/11/03 21:09:36 rsadowski Exp $
 
 COMMENT =	KDE digital camera support
 DISTNAME =	kamera-${VERSION}
@@ -14,10 +14,8 @@ MODKDE5_TRANSLATIONS = yes
 MODKF5_I18N_CONFLICT = yes
 MODKF5_L10N_CONFLICT = yes
 
-MODULES +=	x11/kde-applications
-
 # XXX fix with new libgphoto2; revisit at next update
-CXXFLAGS +=	-I/usr/local/include -DHAVE_GPHOTO2_5
+CXXFLAGS +=	-I${LOCALBASE}/include -DHAVE_GPHOTO2_5
 
 LIB_DEPENDS =	devel/kf5/kauth \
 		devel/kf5/kcodecs \

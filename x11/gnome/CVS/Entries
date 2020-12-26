@@ -1,4 +1,4 @@
-/Makefile/1.284/Sun Sep 13 08:48:57 2020//
+/Makefile/1.291/Sat Nov 14 11:05:43 2020//
 /Makefile.inc/1.15/Thu Apr 13 07:38:44 2017//
 /gnome.port.mk/1.117/Wed Jun 10 07:19:20 2020//
 D/accerciser////
@@ -19,7 +19,7 @@ D/caribou////
 D/characters////
 D/chrome-gnome-shell////
 D/clocks////
-D/color-manager////
+D/connections////
 D/contacts////
 D/control-center////
 D/dconf-editor////
@@ -38,7 +38,6 @@ D/gdl////
 D/gdm////
 D/gedit////
 D/gedit-plugins////
-D/getting-started-docs////
 D/gfbgraph////
 D/ghex////
 D/gjs////
@@ -68,6 +67,7 @@ D/librsvg////
 D/libsecret////
 D/libxklavier////
 D/libzapojit////
+D/mahjongg////
 D/maps////
 D/menus////
 D/mime-data////
@@ -98,13 +98,15 @@ D/themes-extra////
 D/todo////
 D/totem////
 D/totem-pl-parser////
+D/tour////
 D/tracker////
 D/tracker-miners////
+D/tracker3////
+D/tracker3-miners////
 D/tweaks////
 D/usage////
 D/user-docs////
 D/vfs2////
-D/vinagre////
 D/vino////
 D/weather////
 D/yelp////

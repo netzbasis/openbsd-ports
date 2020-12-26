@@ -1,25 +1,25 @@
-$OpenBSD: patch-sandbox_linux_BUILD_gn,v 1.15 2020/09/22 11:47:42 robert Exp $
+$OpenBSD: patch-sandbox_linux_BUILD_gn,v 1.17 2020/11/18 12:29:33 robert Exp $
 
 Index: sandbox/linux/BUILD.gn
 --- sandbox/linux/BUILD.gn.orig
 +++ sandbox/linux/BUILD.gn
-@@ -12,12 +12,12 @@ if (is_android) {
- }
+@@ -19,12 +19,12 @@ import("//build/config/deprecated_default_sources_assi
+ set_sources_assignment_filter(deprecated_default_sources_assignment_filter)
  
  declare_args() {
--  compile_suid_client = is_linux
-+  compile_suid_client = is_linux && !is_openbsd
+-  compile_suid_client = is_linux || is_chromeos
++  compile_suid_client = (is_linux || is_chromeos) && !is_openbsd
  
--  compile_credentials = is_linux
-+  compile_credentials = is_linux && !is_openbsd
+-  compile_credentials = is_linux || is_chromeos
++  compile_credentials = (is_linux || is_chromeos) && !is_openbsd
  
    # On Android, use plain GTest.
--  use_base_test_suite = is_linux
-+  use_base_test_suite = is_linux && !is_openbsd
+-  use_base_test_suite = is_linux || is_chromeos
++  use_base_test_suite = (is_linux || is_chromeos) && !is_openbsd
  }
  
  if (is_nacl_nonsfi) {
-@@ -251,7 +251,7 @@ component("seccomp_bpf") {
+@@ -262,7 +262,7 @@ component("seccomp_bpf") {
      "//sandbox:sandbox_buildflags",
    ]
  
@@ -28,7 +28,7 @@ Index: sandbox/linux/BUILD.gn
      cflags = [ "-fgnu-inline-asm" ]
      sources -= [
        "bpf_dsl/bpf_dsl_forward.h",
-@@ -324,30 +324,8 @@ component("sandbox_services") {
+@@ -335,34 +335,8 @@ component("sandbox_services") {
      "services/proc_util.h",
      "services/resource_limits.cc",
      "services/resource_limits.h",
@@ -56,13 +56,17 @@ Index: sandbox/linux/BUILD.gn
 -    "syscall_broker/broker_process.h",
 -    "syscall_broker/broker_simple_message.cc",
 -    "syscall_broker/broker_simple_message.h",
+-    "syscall_broker/remote_syscall_arg_handler.cc",
+-    "syscall_broker/remote_syscall_arg_handler.h",
+-    "syscall_broker/syscall_dispatcher.cc",
+-    "syscall_broker/syscall_dispatcher.h",
    ]
  
    defines = [ "SANDBOX_IMPLEMENTATION" ]
-@@ -397,6 +375,10 @@ component("sandbox_services") {
-       "syscall_broker/broker_process.h",
-       "syscall_broker/broker_simple_message.cc",
-       "syscall_broker/broker_simple_message.h",
+@@ -416,6 +390,10 @@ component("sandbox_services") {
+       "syscall_broker/remote_syscall_arg_handler.h",
+       "syscall_broker/syscall_dispatcher.cc",
+       "syscall_broker/syscall_dispatcher.h",
 +    ]
 +    sources += [
 +      "services/libc_interceptor.cc",

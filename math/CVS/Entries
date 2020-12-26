@@ -1,4 +1,4 @@
-/Makefile/1.193/Thu Aug 27 15:18:30 2020//
+/Makefile/1.198/Sun Dec  6 12:55:48 2020//
 D/4ti2////
 D/R////
 D/aamath////
@@ -112,7 +112,6 @@ D/pcalc////
 D/plplot////
 D/prover9////
 D/pspp////
-D/py-Numeric////
 D/py-PyWavelets////
 D/py-affine////
 D/py-bottleneck////
@@ -147,6 +146,7 @@ D/spread-sheet-widget////
 D/suitesparse////
 D/udunits////
 D/veusz////
+D/visidata////
 D/wcalc////
 D/wmcalc////
 D/wxMaxima////

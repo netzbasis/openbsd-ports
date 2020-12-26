@@ -1,4 +1,4 @@
-/Makefile/1.128/Thu Aug 20 18:00:14 2020//
+/Makefile/1.130/Fri Oct 30 20:42:00 2020//
 D/aom////
 D/assimp////
 D/atomicparsley////
@@ -20,6 +20,7 @@ D/handbrake////
 D/hdhomerun////
 D/imagination////
 D/kguitar////
+D/kid3////
 D/libaacs////
 D/libass////
 D/libbdplus////

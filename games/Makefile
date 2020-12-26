@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.426 2020/09/21 07:23:24 kmos Exp $
+# $OpenBSD: Makefile,v 1.432 2020/11/16 23:07:20 thfr Exp $
 
      SUBDIR =
      SUBDIR += 0ad
@@ -101,6 +101,7 @@
      SUBDIR += fire
      SUBDIR += flare
      SUBDIR += flightgear
+     SUBDIR += fna
      SUBDIR += fnaify
      SUBDIR += fnaify-extralibs
      SUBDIR += foobillard
@@ -155,7 +156,6 @@
      SUBDIR += hyperrogue
      SUBDIR += icebreaker
      SUBDIR += instead
-     SUBDIR += instead-launcher
      SUBDIR += ioquake3
      SUBDIR += irrlamb
      SUBDIR += ja2-stracciatella
@@ -205,6 +205,7 @@
      SUBDIR += nsnake
      SUBDIR += nudoku
      SUBDIR += numptyphysics
+     SUBDIR += odamex
      SUBDIR += oilwar
      SUBDIR += omega
      SUBDIR += oolite
@@ -261,6 +262,7 @@
      SUBDIR += sdlpop
      SUBDIR += sdlroids
      SUBDIR += sdlzombies
+     SUBDIR += shapezio
      SUBDIR += shockolate
      SUBDIR += singularity
      SUBDIR += ski
@@ -271,7 +273,6 @@
      SUBDIR += slash-em,no_x11
      SUBDIR += snipe2d
      SUBDIR += solarus
-     SUBDIR += spacehulk
      SUBDIR += spaceinvaders
      SUBDIR += spacetrader
      SUBDIR += spacezero
@@ -292,7 +293,6 @@
      SUBDIR += supertux
      SUBDIR += supertuxkart
      SUBDIR += taisei
-     SUBDIR += taxipilot
      SUBDIR += tbftss
      SUBDIR += teeworlds
      SUBDIR += tetrinetx

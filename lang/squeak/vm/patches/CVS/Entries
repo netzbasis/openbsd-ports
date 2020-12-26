@@ -2,15 +2,17 @@
 /patch-platforms_Cross_plugins_Mpeg3Plugin_libmpeg_video_getpicture_c/1.1/Sat May  6 17:15:20 2017//
 /patch-platforms_Cross_plugins_Mpeg3Plugin_libmpeg_video_idct_c/1.1/Sat May  6 17:15:20 2017//
 /patch-platforms_unix_config_Makefile/1.1/Tue Jan 14 22:20:29 2020//
-/patch-platforms_unix_config_acinclude_m4/1.1/Tue Jan 14 22:20:29 2020//
+/patch-platforms_unix_config_Makefile_in/1.1/Sun Dec 13 02:42:17 2020//
+/patch-platforms_unix_config_acinclude_m4/1.2/Sun Dec 13 02:42:17 2020//
 /patch-platforms_unix_config_configure_ac/1.1/Tue Jan 14 22:20:29 2020//
 /patch-platforms_unix_config_make_prg_in/1.1/Mon Dec 25 07:04:45 2017//
 /patch-platforms_unix_npsqueak_Makefile/1.2/Tue Jan 14 22:20:29 2020//
 /patch-platforms_unix_plugins_AsynchFilePlugin_sqUnixAsynchFile_c/1.1/Sat Sep 10 13:03:42 2016//
+/patch-platforms_unix_plugins_FloatMathPlugin_acinclude_m4/1.1/Sun Dec 13 02:42:17 2020//
 /patch-platforms_unix_plugins_LocalePlugin_sqUnixLocale_c/1.1/Wed Jul 23 11:17:22 2008//
 /patch-platforms_unix_src_vm_intplugins_SoundPlugin_SoundPlugin_c/1.1/Tue Jan 14 22:20:29 2020//
 /patch-platforms_unix_vm-sound-sndio_Makefile_inc/1.1/Tue Jan 14 22:20:29 2020//
 /patch-platforms_unix_vm-sound-sndio_acinclude_m4/1.1/Tue Jan 14 22:20:29 2020//
 /patch-platforms_unix_vm-sound-sndio_sqUnixSoundSndio_c/1.1/Tue Jan 14 22:20:29 2020//
-/patch-platforms_unix_vm_sqUnixMain_c/1.7/Tue Jan 14 22:20:29 2020//
+/patch-platforms_unix_vm_sqUnixMain_c/1.8/Sun Dec 13 02:42:17 2020//
 D

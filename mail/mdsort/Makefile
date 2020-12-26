@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.17 2020/09/14 17:27:27 anton Exp $
+# $OpenBSD: Makefile,v 1.20 2020/12/16 19:59:46 anton Exp $
 
 COMMENT =	maildir sort
 
-V =		6.0.1
+V =		8.0.0
 DISTNAME =	mdsort-${V}
 
 CATEGORIES =	mail
@@ -20,5 +20,7 @@ WANTLIB +=	c
 MASTER_SITES =	https://github.com/mptre/mdsort/releases/download/v${V}/
 
 CONFIGURE_STYLE =	simple
+
+TEST_ENV =		TESTFLAGS=-Tfdleak
 
 .include <bsd.port.mk>

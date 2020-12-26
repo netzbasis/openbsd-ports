@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.5 2020/09/07 14:49:29 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.9 2020/11/08 20:12:59 rsadowski Exp $
 
 COMMENT =	graph theory IDE for KDE
 DISTNAME =	rocs-${VERSION}
@@ -24,8 +24,6 @@ MODKDE5_TRANSLATIONS = yes
 MODKF5_I18N_CONFLICT = yes
 MODKF5_L10N_CONFLICT = yes
 MODKDE5_DOCS = yes
-
-MODULES +=	x11/kde-applications
 
 BUILD_DEPENDS =	devel/boost \
 		x11/qt5/qtquickcontrols \
@@ -56,7 +54,8 @@ LIB_DEPENDS =	devel/kf5/karchive \
 		devel/kf5/sonnet \
 		x11/grantlee-qt5 \
 		x11/qt5/qtdeclarative \
-		x11/qt5/qtwebkit \
+		x11/qt5/qtwebengine \
+		x11/qt5/qtwebchannel \
 		x11/qt5/qtscript \
 		x11/qt5/qtxmlpatterns
 

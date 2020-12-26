@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.3 2020/09/07 14:49:28 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.6 2020/11/08 20:12:58 rsadowski Exp $
 
 COMMENT =	KDE PIM mail importer library
 DISTNAME =	mailimporter-${VERSION}
@@ -18,8 +18,6 @@ MODKDE5_TRANSLATIONS = yes
 
 MODKF5_L10N_CONFLICT = yes
 
-MODULES =	x11/kde-applications
-
 BUILD_DEPENDS =	devel/boost
 
 LIB_DEPENDS =	devel/kf5/karchive \
@@ -27,7 +25,6 @@ LIB_DEPENDS =	devel/kf5/karchive \
 		devel/kf5/kcoreaddons \
 		devel/kf5/ki18n \
 		devel/kf5/kitemmodels \
-		x11/kde-applications/libkdepim \
 		x11/kde-applications/akonadi \
 		x11/kde-applications/kmime \
 		x11/kde-applications/pimcommon

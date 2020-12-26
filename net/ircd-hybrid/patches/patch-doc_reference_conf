@@ -1,4 +1,4 @@
-$OpenBSD: patch-doc_reference_conf,v 1.18 2020/05/15 06:34:13 ajacoutot Exp $
+$OpenBSD: patch-doc_reference_conf,v 1.21 2020/12/21 09:01:02 rsadowski Exp $
 
 Index: doc/reference.conf
 --- doc/reference.conf.orig
@@ -36,7 +36,7 @@ Index: doc/reference.conf
  };
  
  /*
-@@ -989,7 +989,7 @@ serverhide {
+@@ -990,7 +990,7 @@ serverhide {
  	/*
  	 * flatten_links_file: path to the flatten links cache file.
  	 */

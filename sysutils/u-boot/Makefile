@@ -1,4 +1,4 @@
-#	$OpenBSD: Makefile,v 1.73 2020/09/05 02:14:46 jsg Exp $
+#	$OpenBSD: Makefile,v 1.75 2020/12/25 12:18:05 dtucker Exp $
 
 BROKEN-sparc64=	Error: the specified option is not accepted in ISB at operand 1 -- isb sy
 BROKEN-arm=	lib/time.c:187:1: internal compiler error: Bus error
@@ -7,7 +7,7 @@ FLAVORS=	aarch64 arm
 FLAVOR?=	arm
 
 COMMENT=	U-Boot firmware
-VERSION=	2020.07
+VERSION=	2020.10
 REVISION=	0
 DISTNAME=	u-boot-${VERSION}
 PKGNAME=	u-boot-${FLAVOR}-${VERSION:S/-//}
@@ -63,6 +63,7 @@ SUNXI64=\
 	orangepi_pc2 \
 	orangepi_prime \
 	orangepi_win \
+	orangepi_zero_plus \
 	pine64-lts \
 	pine64_plus \
 	pinebook \

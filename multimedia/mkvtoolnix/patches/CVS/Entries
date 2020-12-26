@@ -1,8 +1,8 @@
-/patch-Rakefile/1.3/Sat Apr 18 14:17:57 2020//
-/patch-ac_qt5_m4/1.7/Fri Dec 14 10:00:57 2018//
+/patch-Rakefile/1.4/Wed Dec  2 06:44:11 2020//
+/patch-ac_qt5_m4/1.8/Wed Dec  2 06:44:11 2020//
 /patch-src_common_os_h/1.1/Sat Aug 18 06:47:58 2018//
-/patch-src_mkvtoolnix-gui_jobs_program_runner_cpp/1.1/Sat Aug 18 06:47:58 2018//
-/patch-src_mkvtoolnix-gui_jobs_program_runner_unix_program_runner_cpp/1.1/Sat Aug 18 06:47:58 2018//
-/patch-src_mkvtoolnix-gui_jobs_program_runner_unix_program_runner_h/1.2/Sun Apr 28 08:29:55 2019//
+/patch-src_mkvtoolnix-gui_jobs_program_runner_cpp/1.2/Wed Dec  2 06:44:11 2020//
+/patch-src_mkvtoolnix-gui_jobs_program_runner_unix_program_runner_cpp/1.2/Wed Dec  2 06:44:11 2020//
+/patch-src_mkvtoolnix-gui_jobs_program_runner_unix_program_runner_h/1.3/Wed Dec  2 06:44:11 2020//
 /patch-src_mkvtoolnix-gui_util_sleep_inhibitor_cpp/1.1/Fri Dec 14 10:00:57 2018//
 D

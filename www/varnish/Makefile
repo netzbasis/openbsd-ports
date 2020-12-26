@@ -1,12 +1,13 @@
-# $OpenBSD: Makefile,v 1.53 2020/03/24 16:22:15 kn Exp $
+# $OpenBSD: Makefile,v 1.55 2020/11/07 17:17:21 kn Exp $
 
 COMMENT =		high-performance HTTP accelerator
 
-DISTNAME =		varnish-6.4.0
+DISTNAME =		varnish-6.5.1
+REVISION =		0
 
 CATEGORIES =		www
 
-SHARED_LIBS =		varnishapi      2.1     # 2.4
+SHARED_LIBS =		varnishapi      3.0     # 2.5
 
 HOMEPAGE =		https://www.varnish-cache.org/
 
@@ -37,12 +38,13 @@ USE_GMAKE =		Yes
 SEPARATE_BUILD =	Yes
 CONFIGURE_STYLE =	autoreconf
 AUTOCONF_VERSION =	2.69
-AUTOMAKE_VERSION =	1.15
+AUTOMAKE_VERSION =	1.16
 AUTORECONF =		./autogen.sh
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib ${LDFLAGS}" \
 			PYTHON="${MODPY_BIN}"
-CONFIGURE_ARGS =	--with-rst2man=rst2man${MODPY_BIN_SUFFIX} \
+CONFIGURE_ARGS =	--docdir=${PREFIX}/share/examples/varnish \
+			--with-rst2man=rst2man${MODPY_BIN_SUFFIX} \
 			--with-sphinx-build=sphinx-build${MODPY_BIN_SUFFIX}
 
 TEST_TARGET =		check
@@ -51,12 +53,14 @@ TEST_TARGET =		check
 CONFIGURE_ARGS +=	--enable-debugging-symbols
 .endif
 
+# XXX ${WRKSRC}/doc/sphinx/Makefile.{am,in}
+pre-build:
+	echo 'readlink -f "$$@"' >| ${WRKDIR}/bin/realpath
+	chmod +x ${WRKDIR}/bin/realpath
+
 post-install:
 	${SUBST_PROGRAM} ${FILESDIR}/varnishreload ${PREFIX}/bin/varnishreload
 	${SUBST_MAN} ${FILESDIR}/varnishreload.1 ${PREFIX}/man/man1/varnishreload.1
-	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/varnish
-	${INSTALL_DATA} ${WRKDIST}${SYSCONFDIR}/{example,builtin}.vcl \
-	    ${PREFIX}/share/examples/varnish
 	rm -f ${PREFIX}/lib/varnish/{vmods,}/*.{a,la}
 
 .include <bsd.port.mk>

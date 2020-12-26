@@ -1,9 +1,9 @@
-# $OpenBSD: Makefile,v 1.172 2020/05/14 15:29:51 jasper Exp $
+# $OpenBSD: Makefile,v 1.174 2020/11/09 18:15:57 ajacoutot Exp $
 
 COMMENT=	GNOME terminal
 
 GNOME_PROJECT=	gnome-terminal
-GNOME_VERSION=	3.36.2
+GNOME_VERSION=	3.38.1
 
 # GPLv3+
 PERMIT_PACKAGE=	Yes
@@ -27,6 +27,7 @@ MODULES=	devel/dconf \
 		x11/gnome
 
 BUILD_DEPENDS=	devel/gsettings-desktop-schemas \
+		textproc/docbook-xsl \
 		x11/gnome/shell
 RUN_DEPENDS=	devel/gsettings-desktop-schemas
 

@@ -1,25 +1,27 @@
-# $OpenBSD: Makefile,v 1.31 2020/08/30 09:24:13 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.33 2020/11/25 21:45:06 daniel Exp $
 
 COMMENT=		statistical and novel interactive HTML plots for Python
 
-MODPY_EGG_VERSION=	2.2.0
+MODPY_EGG_VERSION=	2.2.3
 DISTNAME=		bokeh-${MODPY_EGG_VERSION}
 PKGNAME=		py-bokeh-${MODPY_EGG_VERSION}
 
 CATEGORIES=		www graphics
 
-HOMEPAGE=		http://bokeh.pydata.org/
+HOMEPAGE=		https://bokeh.org/
 
 # BSD
 PERMIT_PACKAGE=	Yes
 
 MODULES=		lang/python
 
+FLAVORS=		python3
+FLAVOR =		python3
+
 MODPY_PI=		Yes
+MODPY_SETUPTOOLS=	Yes
 MODPY_PYTEST=		Yes
 MODPY_PYTEST_ARGS=	bokeh
-MODPY_SETUPTOOLS=	Yes
-MODPY_VERSION=		${MODPY_DEFAULT_VERSION_3}
 
 RUN_DEPENDS=		devel/py-dateutil${MODPY_FLAVOR} \
 			devel/py-typing-extensions${MODPY_FLAVOR} \

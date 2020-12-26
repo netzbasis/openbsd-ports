@@ -1,16 +1,16 @@
-# $OpenBSD: Makefile,v 1.100 2020/03/10 21:23:06 sthen Exp $
+# $OpenBSD: Makefile,v 1.102 2020/12/16 21:25:36 sthen Exp $
 
 COMMENT-main =		obsolete version of Icinga network monitoring system
 COMMENT-cgi =		Nagios-style web UI for obsolete Icinga version
 COMMENT-ido =		store Icinga configuration and events in a database
 
-GH_ACCOUNT =		Icinga
 GH_PROJECT=		icinga-core
 GH_TAGNAME =		v1.14.2
 PKGNAME-main =		icinga-${GH_TAGNAME:S/v//}
 PKGNAME-cgi =		icinga-cgi-${GH_TAGNAME:S/v//}
 PKGNAME-ido =		icinga-idoutils-${GH_TAGNAME:S/v//}
 REVISION =		4
+REVISION-main =		5
 
 WANTLIB =		c crypto m pthread ssl z
 

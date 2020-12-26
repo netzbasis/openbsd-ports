@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.6 2020/09/07 14:49:11 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.9 2020/11/08 20:12:49 rsadowski Exp $
 
 COMMENT =	news feed reader
 DISTNAME =	akregator-${VERSION}
@@ -30,8 +30,6 @@ MODKDE5_DOCS = yes
 MODKF5_L10N_CONFLICT = yes
 MODKF5_I18N_CONFLICT = yes
 
-MODULES +=	x11/kde-applications
-
 BUILD_DEPENDS =	devel/boost \
 		devel/kf5/kitemviews \
 		devel/kf5/ktexteditor \
@@ -61,7 +59,6 @@ LIB_DEPENDS =	devel/kf5/kauth \
 		devel/kf5/kcoreaddons \
 		devel/kf5/kcrash \
 		devel/kf5/ki18n \
-		devel/kf5/kiconthemes \
 		devel/kf5/kio \
 		devel/kf5/kitemmodels \
 		devel/kf5/kjobwidgets \
@@ -73,7 +70,6 @@ LIB_DEPENDS =	devel/kf5/kauth \
 		devel/kf5/kxmlgui \
 		devel/kf5/sonnet \
 		devel/kf5/syndication \
-		devel/kf5/prison \
 		security/gpgme,-qt \
 		x11/grantlee-qt5 \
 		x11/kde-applications/akonadi \

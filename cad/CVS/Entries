@@ -1,5 +1,6 @@
-/Makefile/1.42/Fri Jul  3 13:55:27 2020//
+/Makefile/1.44/Mon Nov 30 15:10:46 2020//
 D/abc////
+D/dxf2gcode////
 D/fritzing////
 D/geda-gaf////
 D/gerbv////
@@ -17,6 +18,7 @@ D/oce////
 D/openscad////
 D/opensta////
 D/pcb////
+D/pcb2gcode////
 D/qcad////
 D/qelectrotech////
 D/qflow////

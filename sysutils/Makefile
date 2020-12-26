@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.576 2020/08/11 14:54:41 landry Exp $
+# $OpenBSD: Makefile,v 1.590 2020/12/05 20:44:15 solene Exp $
 
      SUBDIR =
      SUBDIR += accountsservice
@@ -22,6 +22,7 @@
      SUBDIR += bfs
      SUBDIR += binwalk
      SUBDIR += bitrot
+     SUBDIR += blackbox_exporter
      SUBDIR += boar
      SUBDIR += borgbackup
      SUBDIR += borgmatic
@@ -63,16 +64,19 @@
      SUBDIR += dfc
      SUBDIR += diffoscope
      SUBDIR += dinit
+     SUBDIR += direnv
      SUBDIR += direvent
      SUBDIR += diskrescue
      SUBDIR += dmassage
      SUBDIR += dmidecode
+     SUBDIR += docker-cli
      SUBDIR += dosfstools
      SUBDIR += downtimed
      SUBDIR += dsh
      SUBDIR += dtb
      SUBDIR += dtpstree
      SUBDIR += duplicity
+     SUBDIR += duf
      SUBDIR += dvd+rw-tools
      SUBDIR += dwdiff
      SUBDIR += e2fsprogs
@@ -106,6 +110,7 @@
      SUBDIR += ggrep
      SUBDIR += gitolite
      SUBDIR += gkrellm
+     SUBDIR += glances
      SUBDIR += glastree
      SUBDIR += glide
      SUBDIR += go-cs
@@ -196,8 +201,6 @@
      SUBDIR += multitime
      SUBDIR += ncal
      SUBDIR += ncdu
-     SUBDIR += ndesk-dbus
-     SUBDIR += ndesk-dbus-glib
      SUBDIR += neofetch
      SUBDIR += netshot
      SUBDIR += nnn
@@ -250,10 +253,8 @@
      SUBDIR += pstree
      SUBDIR += pv
      SUBDIR += py-analyzemft
-     SUBDIR += py-augeas
      SUBDIR += py-augeas,python3
      SUBDIR += py-consul,python3
-     SUBDIR += py-croniter
      SUBDIR += py-croniter,python3
      SUBDIR += py-daemon,python3
      SUBDIR += py-daemonize
@@ -266,9 +267,7 @@
      SUBDIR += py-ghmi,python3
      SUBDIR += py-hpilo,python3
      SUBDIR += py-joblib
-     SUBDIR += py-lockfile
      SUBDIR += py-lockfile,python3
-     SUBDIR += py-metlog
      SUBDIR += py-packaging
      SUBDIR += py-packaging,python3
      SUBDIR += py-parallel-ssh
@@ -283,8 +282,10 @@
      SUBDIR += py-schedule
      SUBDIR += py-statgrab
      SUBDIR += py-statgrab,python3
+     SUBDIR += py-threadpoolctl,python3
      SUBDIR += py-tsk,python3
      SUBDIR += py-vmomi,python3
+     SUBDIR += py-vsphere-automation,python3
      SUBDIR += radiusreport
      SUBDIR += radmind
      SUBDIR += rancid
@@ -293,6 +294,7 @@
      SUBDIR += ranval
      SUBDIR += raspberrypi-firmware
      SUBDIR += rclone
+     SUBDIR += rclone-browser
      SUBDIR += rcm
      SUBDIR += rdiff-backup
      SUBDIR += reed-alert
@@ -303,6 +305,7 @@
      SUBDIR += restic-rest-server
      SUBDIR += riemann
      SUBDIR += riemann-c-client
+     SUBDIR += riscv-pk
      SUBDIR += rofi
      SUBDIR += rpl
      SUBDIR += rsyslog

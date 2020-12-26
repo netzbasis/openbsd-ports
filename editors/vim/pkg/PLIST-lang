@@ -1,5 +1,5 @@
-@comment $OpenBSD: PLIST-lang,v 1.17 2020/06/02 20:09:55 sthen Exp $
-@conflict vim-<7.4
+@comment $OpenBSD: PLIST-lang,v 1.19 2020/11/23 10:49:41 sthen Exp $
+@conflict vim-<8.2.1805
 man/da/
 man/da.ISO8859-1/
 man/da.ISO8859-1/man1/
@@ -507,6 +507,12 @@ share/vim/${P}/lang/menu_sv.latin1.vim
 share/vim/${P}/lang/menu_sv.utf-8.vim
 share/vim/${P}/lang/menu_sv_se.latin1.vim
 share/vim/${P}/lang/menu_sv_se.utf-8.vim
+share/vim/${P}/lang/menu_tr.cp1254.vim
+share/vim/${P}/lang/menu_tr.iso_8859-9.vim
+share/vim/${P}/lang/menu_tr.utf-8.vim
+share/vim/${P}/lang/menu_tr_tr.cp1254.vim
+share/vim/${P}/lang/menu_tr_tr.iso_8859-9.vim
+share/vim/${P}/lang/menu_tr_tr.utf-8.vim
 share/vim/${P}/lang/menu_uk_ua.cp1251.vim
 share/vim/${P}/lang/menu_uk_ua.koi8-u.vim
 share/vim/${P}/lang/menu_vi_vn.vim
@@ -561,6 +567,9 @@ share/vim/${P}/lang/sr/LC_MESSAGES/vim.mo
 share/vim/${P}/lang/sv/
 share/vim/${P}/lang/sv/LC_MESSAGES/
 share/vim/${P}/lang/sv/LC_MESSAGES/vim.mo
+share/vim/${P}/lang/tr/
+share/vim/${P}/lang/tr/LC_MESSAGES/
+share/vim/${P}/lang/tr/LC_MESSAGES/vim.mo
 share/vim/${P}/lang/uk/
 share/vim/${P}/lang/uk.cp1251/
 share/vim/${P}/lang/uk.cp1251/LC_MESSAGES/
@@ -619,6 +628,7 @@ share/vim/${P}/tutor/tutor.it.utf-8
 share/vim/${P}/tutor/tutor.ja.euc
 share/vim/${P}/tutor/tutor.ja.sjis
 share/vim/${P}/tutor/tutor.ja.utf-8
+share/vim/${P}/tutor/tutor.ko
 share/vim/${P}/tutor/tutor.ko.euc
 share/vim/${P}/tutor/tutor.ko.utf-8
 share/vim/${P}/tutor/tutor.lv.utf-8

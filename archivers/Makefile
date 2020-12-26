@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.103 2020/09/12 20:39:31 kmos Exp $
+# $OpenBSD: Makefile,v 1.105 2020/11/21 16:30:25 sthen Exp $
 
      SUBDIR =
      SUBDIR += arc
@@ -37,6 +37,7 @@
      SUBDIR += lzop
      SUBDIR += macutil
      SUBDIR += makeself
+     SUBDIR += minizip
      SUBDIR += p5-Archive-Extract
      SUBDIR += p5-Archive-Zip
      SUBDIR += p5-Compress-Bzip2
@@ -50,7 +51,8 @@
      SUBDIR += pecl-lzf,php73
      SUBDIR += pecl-lzf,php74
      SUBDIR += pecl-rar,php72
-     #SUBDIR += pecl-rar,php73	# not supported yet
+     SUBDIR += pecl-rar,php73
+     SUBDIR += pecl-rar,php74
      SUBDIR += pigz
      SUBDIR += py-backports-lzma
      SUBDIR += py-brotli,python3

@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.193 2020/08/27 15:18:30 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.198 2020/12/06 12:55:48 sthen Exp $
 
      SUBDIR =
      SUBDIR += 4ti2
@@ -117,7 +117,6 @@
      SUBDIR += plplot
      SUBDIR += prover9
      SUBDIR += pspp
-     SUBDIR += py-Numeric
      SUBDIR += py-PyWavelets,python3
      SUBDIR += py-affine
      SUBDIR += py-affine,python3
@@ -131,20 +130,17 @@
      SUBDIR += py-h5py,python3
      SUBDIR += py-mpmath
      SUBDIR += py-mpmath,python3
-     SUBDIR += py-networkx
+     SUBDIR += py-networkx,python3
      SUBDIR += py-netcdf4
      SUBDIR += py-numexpr,python3
      SUBDIR += py-numpy
      SUBDIR += py-numpy,python3
      SUBDIR += py-osqp,python3
      SUBDIR += py-pandas,python3
-     SUBDIR += py-patsy
      SUBDIR += py-patsy,python3
      SUBDIR += py-scikit-image,python3
      SUBDIR += py-scikit-learn,python3
-     SUBDIR += py-scipy
      SUBDIR += py-scipy,python3
-     SUBDIR += py-scs
      SUBDIR += py-scs,python3
      SUBDIR += py-pysmt
      SUBDIR += py-pysmt,python3
@@ -160,6 +156,7 @@
      SUBDIR += suitesparse
      SUBDIR += udunits
      SUBDIR += veusz
+     SUBDIR += visidata
      SUBDIR += wcalc
      SUBDIR += wmcalc
      SUBDIR += wxMaxima

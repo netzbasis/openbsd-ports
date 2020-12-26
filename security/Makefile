@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.592 2020/09/14 22:47:10 abieber Exp $
+# $OpenBSD: Makefile,v 1.597 2020/12/06 11:51:43 pvk Exp $
 
      SUBDIR =
      SUBDIR += ADMsnmp
@@ -64,8 +64,6 @@
      SUBDIR += fwknop
      SUBDIR += ghidra
      SUBDIR += gnupg
-     SUBDIR += gnupg,card,ldap
-     SUBDIR += gnupg2
      SUBDIR += gnutls
      SUBDIR += go-crypto
      SUBDIR += go-siphash
@@ -75,6 +73,7 @@
      SUBDIR += gpgme
      SUBDIR += gringotts
      SUBDIR += hashdeep
+     SUBDIR += hashid
      SUBDIR += hatchet
      SUBDIR += hcxtools
      SUBDIR += heimdal
@@ -197,6 +196,7 @@
      SUBDIR += p5-Crypt-OpenSSL-DSA
      SUBDIR += p5-Crypt-OpenSSL-EC
      SUBDIR += p5-Crypt-OpenSSL-ECDSA
+     SUBDIR += p5-Crypt-OpenSSL-Guess
      SUBDIR += p5-Crypt-OpenSSL-PKCS10
      SUBDIR += p5-Crypt-OpenSSL-RSA
      SUBDIR += p5-Crypt-OpenSSL-Random
@@ -311,7 +311,6 @@
      SUBDIR += py-oauthlib,python3
      SUBDIR += py-paramiko
      SUBDIR += py-paramiko,python3
-     SUBDIR += py-passlib
      SUBDIR += py-passlib,python3
      SUBDIR += py-pbkdf2
      SUBDIR += py-pbkdf2,python3
@@ -382,6 +381,7 @@
      SUBDIR += sqlmap
      SUBDIR += ssdeep
      SUBDIR += ssh-askpass-fullscreen
+     SUBDIR += ssh-audit
      SUBDIR += ssh-ldap-helper
      SUBDIR += sshguard
      SUBDIR += sshlockout
@@ -410,6 +410,7 @@
      SUBDIR += vpnc
      SUBDIR += wapiti
      SUBDIR += wesng
+     SUBDIR += wfuzz
      SUBDIR += wpa_supplicant
      SUBDIR += wpscan
      SUBDIR += wycheproof-testvectors

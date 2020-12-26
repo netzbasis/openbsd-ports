@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-# $OpenBSD: pycharm,v 1.2 2019/04/25 19:33:06 rsadowski Exp $
+# $OpenBSD: pycharm,v 1.3 2020/12/05 11:23:04 rsadowski Exp $
 #
 # OpenBSD-specific startup script for PyCharm IDE
 
@@ -18,7 +18,7 @@ export JAVA_HOME=$(javaPathHelper -h pycharm)
 if [ ! -x "${JAVA_BIN}" ]; then
 	echo "Error: JAVA_HOME may not be defined correctly: ${JAVA_HOME}"
 	echo "       Unable to find Java binary ${JAVA_BIN}"
-        exit 1
+	exit 1
 fi
 
 # Check if 'pycharm' executable can be found

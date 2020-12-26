@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.22 2020/09/07 14:48:43 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.24 2020/12/19 16:25:03 rsadowski Exp $
 
 COMMENT-main =	KDE file search and metadata handling framework
 COMMENT-icons =	icons for baloo
@@ -9,7 +9,7 @@ EPOCH-main =	0
 
 SHARED_LIBS =   KF5Baloo                  4.0
 SHARED_LIBS +=  KF5BalooXapian            4.0
-SHARED_LIBS +=  KF5BalooEngine            2.0 # 5.46
+SHARED_LIBS +=  KF5BalooEngine            4.0 # 5.46
 
 WANTLIB-icons =
 

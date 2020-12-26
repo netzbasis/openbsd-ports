@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.7 2020/07/03 21:13:18 sthen Exp $
+# $OpenBSD: Makefile,v 1.9 2020/12/14 03:16:31 daniel Exp $
 
 COMMENT =		freezes a Flask application into a set of static files
 
 MODPY_EGG_VERSION =	0.12
 DISTNAME =		Frozen-Flask-${MODPY_EGG_VERSION}
 PKGNAME =		py-frozen-flask-${MODPY_EGG_VERSION}
-REVISION =		2
+REVISION =		4
 
 CATEGORIES =		www
 
@@ -19,9 +19,9 @@ MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
 
 FLAVORS =		python3
-FLAVOR ?=
+FLAVOR  =		python3
 
-BUILD_DEPENDS =		textproc/py-sphinx${MODPY_FLAVOR}
+BUILD_DEPENDS =		textproc/py-sphinx${MODPY_FLAVOR}>=1.5
 RUN_DEPENDS +=		www/py-flask${MODPY_FLAVOR}
 
 post-build:

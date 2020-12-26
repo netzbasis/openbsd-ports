@@ -1,34 +1,33 @@
-# $OpenBSD: Makefile,v 1.66 2019/07/12 20:51:25 sthen Exp $
+# $OpenBSD: Makefile,v 1.68 2020/11/23 00:49:15 jca Exp $
 
 COMMENT-main =	C++ cross-platform GUI toolkit
 COMMENT-media =	wxMediaCtrl class for wxWidgets
 
-V =		3.0.4
+V =		3.0.5.1
 DISTNAME =	wxWidgets-${V}
 PKGNAME-main =	wxWidgets-gtk3-${V}
 PKGNAME-media =	wxWidgets-media-${V}
-REVISION =	2
 
 CATEGORIES =	x11
 MASTER_SITES =	https://github.com/wxWidgets/wxWidgets/releases/download/v$V/
 EXTRACT_SUFX =	.tar.bz2
 
 # XXX always keep those in sync, see SO_VERSION
-SHARED_LIBS +=  wx_baseu-3.0              0.0 # 0.0
-SHARED_LIBS +=  wx_baseu_net-3.0          0.0 # 0.0
-SHARED_LIBS +=  wx_baseu_xml-3.0          0.0 # 0.0
-SHARED_LIBS +=  wx_gtk3u_adv-3.0          0.0 # 0.0
-SHARED_LIBS +=  wx_gtk3u_aui-3.0          0.0 # 0.0
-SHARED_LIBS +=  wx_gtk3u_core-3.0         0.0 # 0.0
-SHARED_LIBS +=  wx_gtk3u_gl-3.0           0.0 # 0.0
-SHARED_LIBS +=  wx_gtk3u_html-3.0         0.0 # 0.0
-SHARED_LIBS +=  wx_gtk3u_media-3.0        0.0 # 0.0
-SHARED_LIBS +=  wx_gtk3u_propgrid-3.0     0.0 # 0.0
-SHARED_LIBS +=  wx_gtk3u_qa-3.0           0.0 # 0.0
-SHARED_LIBS +=  wx_gtk3u_ribbon-3.0       0.0 # 0.0
-SHARED_LIBS +=  wx_gtk3u_richtext-3.0     0.0 # 0.0
-SHARED_LIBS +=  wx_gtk3u_stc-3.0          0.0 # 0.0
-SHARED_LIBS +=  wx_gtk3u_xrc-3.0          0.0 # 0.0
+SHARED_LIBS +=  wx_baseu-3.0              0.1
+SHARED_LIBS +=  wx_baseu_net-3.0          0.1
+SHARED_LIBS +=  wx_baseu_xml-3.0          0.1
+SHARED_LIBS +=  wx_gtk3u_adv-3.0          0.1
+SHARED_LIBS +=  wx_gtk3u_aui-3.0          0.1
+SHARED_LIBS +=  wx_gtk3u_core-3.0         0.1
+SHARED_LIBS +=  wx_gtk3u_gl-3.0           0.1
+SHARED_LIBS +=  wx_gtk3u_html-3.0         0.1
+SHARED_LIBS +=  wx_gtk3u_media-3.0        0.1
+SHARED_LIBS +=  wx_gtk3u_propgrid-3.0     0.1
+SHARED_LIBS +=  wx_gtk3u_qa-3.0           0.1
+SHARED_LIBS +=  wx_gtk3u_ribbon-3.0       0.1
+SHARED_LIBS +=  wx_gtk3u_richtext-3.0     0.1
+SHARED_LIBS +=  wx_gtk3u_stc-3.0          0.1
+SHARED_LIBS +=  wx_gtk3u_xrc-3.0          0.1
 
 HOMEPAGE =	https://www.wxwidgets.org/
 
@@ -41,6 +40,7 @@ MULTI_PACKAGES = -main -media
 COMPILER =		base-clang ports-gcc base-gcc
 
 MODULES	=		lang/python
+MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
 MODPY_RUNDEP =		No
 MODPY_ADJ_FILES =	src/stc/gen_iface.py
 
@@ -55,8 +55,8 @@ LIB_DEPENDS-main =	${LIB_DEPENDS} \
 
 WANTLIB-main += ${COMPILER_LIBCXX} GL GLU SDL2 SM X11 Xxf86vm atk-1.0
 WANTLIB-main += c cairo cairo-gobject expat gdk-3 gdk_pixbuf-2.0 gio-2.0
-WANTLIB-main += glib-2.0 gobject-2.0 gthread-2.0 gtk-3 iconv intl jpeg m
-WANTLIB-main += mspack notify pango-1.0 pangocairo-1.0 png tiff z
+WANTLIB-main += glib-2.0 gobject-2.0 gthread-2.0 gtk-3 harfbuzz iconv intl
+WANTLIB-main += jpeg m mspack notify pango-1.0 pangocairo-1.0 png tiff z
 
 LIB_DEPENDS-media =	${LIB_DEPENDS} \
 			multimedia/gstreamer1/plugins-base \
@@ -86,8 +86,7 @@ CONFIGURE_ARGS =--disable-backtrace \
 CONFIGURE_ENV =	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
 		WXCONFIG_CPPFLAGS="-I${X11BASE}/include" \
-		WXCONFIG_LDFLAGS_GUI="-L${X11BASE}/lib" \
-		ac_cv_lib_esd_esd_close=no
+		WXCONFIG_LDFLAGS_GUI="-L${X11BASE}/lib"
 
 # XXX: When used in conjunction with PIE, symbol versioning triggers
 # weird linking problems in dependent ports

@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.2 2020/09/16 08:04:43 sthen Exp $
+# $OpenBSD: Makefile,v 1.4 2020/11/24 16:28:32 kmos Exp $
 
 COMMENT =	lightweight compositor for X11
 
 GH_ACCOUNT =	yshui
 GH_PROJECT =	picom
-GH_TAGNAME =	v8.1
+GH_TAGNAME =	v8.2
 
 CATEGORIES =	x11
 
@@ -17,6 +17,10 @@ WANTLIB += xcb-randr xcb-render-util xcb-render xcb-shape xcb-sync
 WANTLIB += xcb-xfixes xcb-xinerama xcb
 
 MODULES =		devel/meson
+
+# C11
+COMPILER =		base-clang ports-gcc
+COMPILER_LANGS =	c
 
 BUILD_DEPENDS =		devel/uthash \
 			textproc/asciidoc

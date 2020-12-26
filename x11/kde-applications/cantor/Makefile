@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.15 2020/09/07 14:49:12 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.18 2020/11/08 20:12:50 rsadowski Exp $
 
 COMMENT =	KDE mathematical applications
 DISTNAME =	cantor-${VERSION}
@@ -22,8 +22,7 @@ WANTLIB += qalculate spectre ${MODPY_WANTLIB}
 
 MODULES +=	fortran \
 		lang/lua \
-		lang/python \
-		x11/kde-applications
+		lang/python
 
 MODPY_VERSION =	${MODPY_DEFAULT_VERSION_3}
 
@@ -53,7 +52,6 @@ LIB_DEPENDS =	devel/kf5/kconfig \
 		math/libqalculate \
 		print/libspectre \
 		print/poppler,-qt5 \
-		textproc/discount \
 		x11/kde-applications/analitza \
 		x11/qt5/qtsvg \
 		x11/qt5/qtxmlpatterns

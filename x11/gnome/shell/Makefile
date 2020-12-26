@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.193 2020/09/12 08:24:46 jasper Exp $
+# $OpenBSD: Makefile,v 1.200 2020/12/04 08:58:31 jasper Exp $
 
 USE_WXNEEDED=		Yes
 
 COMMENT=		next generation GNOME shell
 
 GNOME_PROJECT=		gnome-shell
-GNOME_VERSION=		3.36.6
+GNOME_VERSION=		3.38.2
 
 # GPLv2+
 PERMIT_PACKAGE=		Yes
@@ -13,13 +13,12 @@ PERMIT_PACKAGE=		Yes
 WANTLIB += X11 Xfixes atk-1.0 atk-bridge-2.0 c cairo ecal-2.0
 WANTLIB += edataserver-1.2 gcr-base-3 gdk-3 gdk_pixbuf-2.0 gio-2.0
 WANTLIB += girepository-1.0 gjs glib-2.0 gnome-autoar-0 gnome-desktop-3
-WANTLIB += gobject-2.0 graphene-1.0 gstbase-1.0 gstreamer-1.0
-WANTLIB += gtk-3 ical-glib intl json-glib-1.0 m mutter-6 pango-1.0
-WANTLIB += pangocairo-1.0 polkit-agent-1 polkit-gobject-1 pulse
-WANTLIB += pulse-mainloop-glib
-WANTLIB += lib/mutter-6/mutter-clutter-6
-WANTLIB += lib/mutter-6/mutter-cogl-6
-WANTLIB += lib/mutter-6/mutter-cogl-pango-6
+WANTLIB += gobject-2.0 graphene-1.0 gtk-3 ical-glib intl json-glib-1.0
+WANTLIB += m mutter-7 pango-1.0 pangocairo-1.0 polkit-agent-1
+WANTLIB += polkit-gobject-1 pulse pulse-mainloop-glib
+WANTLIB += lib/mutter-7/mutter-clutter-7
+WANTLIB += lib/mutter-7/mutter-cogl-7
+WANTLIB += lib/mutter-7/mutter-cogl-pango-7
 
 MODULES=		devel/dconf \
 			devel/meson \
@@ -43,12 +42,11 @@ RUN_DEPENDS +=		devel/gsettings-desktop-schemas
 
 LIB_DEPENDS=		audio/pulseaudio \
 			databases/evolution-data-server \
-			multimedia/gstreamer1/core \
 			sysutils/polkit \
 			x11/gnome/autoar \
 			x11/gnome/gcr \
 			x11/gnome/gjs \
-			x11/gnome/mutter>=3.36.0
+			x11/gnome/mutter>=3.38.0
 
 # configure looks for gnome-keybindings.pc;
 # system.js, backgroundMenu.js, network.js, remoteSearch.js
@@ -79,6 +77,9 @@ RUN_DEPENDS +=		x11/gnome/clocks
 
 # telepathyClient.js
 RUN_DEPENDS +=		net/telepathy/telepathy-logger
+
+# weather.js
+RUN_DEPENDS +=		x11/gnome/weather
 
 # yelp.desktop menu entry (from yelp: OnlyShowIn=GNOME;Unity;)
 # prevents => The URI "help:gnome-help/index" does not point to a valid page.

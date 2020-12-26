@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.8 2017/12/26 19:19:04 rsadowski Exp $
+@comment $OpenBSD: PLIST,v 1.10 2020/11/29 20:05:50 sthen Exp $
 @conflict idiff-*
 @bin bin/iconvert
 @bin bin/idiff
@@ -38,11 +38,9 @@ include/OpenImageIO/parallel.h
 include/OpenImageIO/paramlist.h
 include/OpenImageIO/platform.h
 include/OpenImageIO/plugin.h
-include/OpenImageIO/pugiconfig.hpp
-include/OpenImageIO/pugixml.cpp
-include/OpenImageIO/pugixml.hpp
 include/OpenImageIO/refcnt.h
 include/OpenImageIO/simd.h
+include/OpenImageIO/span.h
 include/OpenImageIO/strided_ptr.h
 include/OpenImageIO/string_view.h
 include/OpenImageIO/strutil.h
@@ -64,6 +62,7 @@ lib/python${MODPY_VERSION}/site-packages/OpenImageIO.so.${LIBOpenImageIO_VERSION
 @man man/man1/idiff.1
 @man man/man1/igrep.1
 @man man/man1/iinfo.1
+@man man/man1/iv.1
 @man man/man1/maketx.1
 @man man/man1/oiiotool.1
 share/doc/OpenImageIO/
@@ -71,7 +70,7 @@ share/doc/OpenImageIO/CHANGES.md
 share/doc/OpenImageIO/LICENSE
 share/doc/OpenImageIO/openimageio.pdf
 share/fonts/
-share/fonts/OpenImageIO/
+@fontdir share/fonts/OpenImageIO/
 share/fonts/OpenImageIO/DroidSans-Bold.ttf
 share/fonts/OpenImageIO/DroidSans.ttf
 share/fonts/OpenImageIO/DroidSansMono.ttf

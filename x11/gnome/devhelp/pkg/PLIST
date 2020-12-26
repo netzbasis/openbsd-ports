@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v 1.36 2020/05/14 15:22:48 ajacoutot Exp $
+@comment $OpenBSD: PLIST,v 1.38 2020/11/21 08:16:28 ajacoutot Exp $
 @bin bin/devhelp
 include/devhelp-3/
 include/devhelp-3/devhelp/
@@ -49,12 +49,25 @@ share/help/C/devhelp/index-file-format.page
 share/help/C/devhelp/index.page
 share/help/C/devhelp/installing-api-documentation.page
 share/help/C/devhelp/search.page
+share/help/ca/devhelp/
+share/help/ca/devhelp/book-format.page
+share/help/ca/devhelp/index-file-format.page
+share/help/ca/devhelp/index.page
+share/help/ca/devhelp/installing-api-documentation.page
+share/help/ca/devhelp/search.page
 share/help/cs/devhelp/
 share/help/cs/devhelp/book-format.page
 share/help/cs/devhelp/index-file-format.page
 share/help/cs/devhelp/index.page
 share/help/cs/devhelp/installing-api-documentation.page
 share/help/cs/devhelp/search.page
+share/help/da/
+share/help/da/devhelp/
+share/help/da/devhelp/book-format.page
+share/help/da/devhelp/index-file-format.page
+share/help/da/devhelp/index.page
+share/help/da/devhelp/installing-api-documentation.page
+share/help/da/devhelp/search.page
 share/help/de/devhelp/
 share/help/de/devhelp/book-format.page
 share/help/de/devhelp/index-file-format.page
@@ -112,6 +125,18 @@ share/help/sv/devhelp/index-file-format.page
 share/help/sv/devhelp/index.page
 share/help/sv/devhelp/installing-api-documentation.page
 share/help/sv/devhelp/search.page
+share/help/uk/devhelp/
+share/help/uk/devhelp/book-format.page
+share/help/uk/devhelp/index-file-format.page
+share/help/uk/devhelp/index.page
+share/help/uk/devhelp/installing-api-documentation.page
+share/help/uk/devhelp/search.page
+share/help/zh_CN/devhelp/
+share/help/zh_CN/devhelp/book-format.page
+share/help/zh_CN/devhelp/index-file-format.page
+share/help/zh_CN/devhelp/index.page
+share/help/zh_CN/devhelp/installing-api-documentation.page
+share/help/zh_CN/devhelp/search.page
 share/icons/hicolor/scalable/apps/org.gnome.Devhelp.svg
 share/icons/hicolor/symbolic/apps/org.gnome.Devhelp-symbolic.svg
 share/locale/am/LC_MESSAGES/devhelp.mo

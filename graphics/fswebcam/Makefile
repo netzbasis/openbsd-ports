@@ -1,24 +1,25 @@
-# $OpenBSD: Makefile,v 1.14 2019/07/12 20:46:58 sthen Exp $
+# $OpenBSD: Makefile,v 1.18 2020/10/19 17:07:26 sthen Exp $
 
 COMMENT=		fswebcam is a small and simple webcam app
 
-DISTNAME=		fswebcam-20140113
-CATEGORIES=		graphics
-MASTER_SITES=		http://www.firestorm.cx/fswebcam/files/
-REVISION=		0
+DISTNAME=		fswebcam-20200725
 
-HOMEPAGE=		http://www.firestorm.cx/fswebcam/
+CATEGORIES=		graphics
+
+HOMEPAGE=		https://www.sanslogic.co.uk/fswebcam/
+
+MASTER_SITES=		https://www.sanslogic.co.uk/fswebcam/files/
 
 # GPLv2 only
 PERMIT_PACKAGE=	Yes
 
-WANTLIB=		c gd pthread
+WANTLIB=		c gd
 
 LIB_DEPENDS=		graphics/gd
 
-CONFIGURE_STYLE=	simple
+CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--disable-v4l1
-CONFIGURE_ENV=		CFLAGS="-I${LOCALBASE}/include" \
+CONFIGURE_ENV=		CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 
 NO_TEST=		Yes

@@ -1,12 +1,13 @@
-# $OpenBSD: Makefile,v 1.14 2019/12/13 02:44:10 abieber Exp $
+# $OpenBSD: Makefile,v 1.16 2020/11/04 14:28:22 sthen Exp $
 
-BROKEN = fails with node update
+BROKEN =	fetches from internet during build
 
 COMMENT =	time series data visualization and graphing software
 
 GH_ACCOUNT =	facette
 GH_PROJECT =	facette
 GH_TAGNAME =	0.5.1
+REVISION =	0
 
 CATEGORIES =	sysutils
 

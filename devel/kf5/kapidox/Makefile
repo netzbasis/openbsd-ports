@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.11 2020/09/07 14:48:44 rsadowski Exp $
+# $OpenBSD: Makefile,v 1.13 2020/12/19 16:25:03 rsadowski Exp $
 
 COMMENT =	doxygen wrapper for KDE
 DISTNAME =	kapidox-${VERSION}
@@ -9,6 +9,8 @@ WANTLIB- =
 MODULES +=	lang/python
 
 MODPY_VERSION =		${MODPY_DEFAULT_VERSION_3}
+
+MODPY_SETUPTOOLS =	Yes
 
 CONFIGURE_ARGS +=	-DPYTHON_EXECUTABLE=${MODPY_BIN}
 

@@ -4,6 +4,7 @@
 /patch-audio_sndioaudio_c/1.4/Mon Mar 30 20:10:24 2020//
 /patch-configure/1.66/Mon Aug 17 09:58:44 2020//
 /patch-docs_conf_py/1.1/Fri May 15 07:26:41 2020//
+/patch-hw_hppa_lasi_c/1.1/Wed Oct  7 19:55:57 2020//
 /patch-qapi_audio_json/1.4/Mon Aug 17 09:58:44 2020//
 /patch-qemu-options_hx/1.7/Mon Aug 17 09:58:44 2020//
 /patch-tcg_ppc_tcg-target_inc_c/1.7/Fri May 15 07:26:41 2020//

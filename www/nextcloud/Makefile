@@ -1,8 +1,8 @@
-# $OpenBSD: Makefile,v 1.56 2020/09/14 06:34:26 gonzalo Exp $
+# $OpenBSD: Makefile,v 1.61 2020/12/22 13:21:01 gonzalo Exp $
 
 COMMENT=		easy and universal access to shared and/or personal files
 
-V=			19.0.3
+V=			20.0.4
 DISTNAME=		nextcloud-${V}
 EXTRACT_SUFX=		.tar.bz2
 
@@ -72,5 +72,7 @@ do-install:
 		${PREFIX}/conf/modules.sample/apache-nextcloud.conf.dist
 	${INSTALL_DATA} ${FILESDIR}/config.php.dist.in \
 		${INSTDIR}/config/config.php.dist
+
+	rm ${INSTDIR}/config/{CAN_INSTALL,.htaccess}
 
 .include <bsd.port.mk>

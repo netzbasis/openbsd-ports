@@ -21,8 +21,6 @@ WANTLIB += Qt5Network Qt5Qml Qt5Quick Qt5QuickControls2 Qt5QuickWidgets
 WANTLIB += Qt5Svg Qt5WebKit Qt5WebKitWidgets Qt5Widgets Qt5Xml
 WANTLIB += c m mlt mlt++ rttr_core
 
-MODULES +=	x11/kde-applications
-
 MODKDE5_DESKTOP_FILE = yes
 MODKDE5_ICON_CACHE = yes
 MODKDE5_TRANSLATIONS = yes
@@ -70,6 +68,7 @@ LIB_DEPENDS =	devel/kf5/attica \
 		devel/rttr \
 		multimedia/mlt,-main \
 		x11/qt5/qtdeclarative \
+		x11/qt5/qtquickcontrols2 \
 		x11/qt5/qtmultimedia \
 		x11/qt5/qtsvg \
 		x11/qt5/qtwebkit

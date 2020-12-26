@@ -1,4 +1,4 @@
-/Makefile/1.426/Mon Sep 21 07:23:24 2020//
+/Makefile/1.432/Mon Nov 16 23:07:20 2020//
 D/0ad////
 D/1oom////
 D/2048-cli////
@@ -95,6 +95,7 @@ D/fillets-ng////
 D/fire////
 D/flare////
 D/flightgear////
+D/fna////
 D/fnaify////
 D/fnaify-extralibs////
 D/foobillard////
@@ -149,7 +150,6 @@ D/hypatia////
 D/hyperrogue////
 D/icebreaker////
 D/instead////
-D/instead-launcher////
 D/ioquake3////
 D/irrlamb////
 D/ja2-stracciatella////
@@ -197,6 +197,7 @@ D/newvox////
 D/nsnake////
 D/nudoku////
 D/numptyphysics////
+D/odamex////
 D/oilwar////
 D/omega////
 D/oolite////
@@ -253,6 +254,7 @@ D/sdl-jstest////
 D/sdlpop////
 D/sdlroids////
 D/sdlzombies////
+D/shapezio////
 D/shockolate////
 D/singularity////
 D/ski////
@@ -261,7 +263,6 @@ D/slash////
 D/slash-em////
 D/snipe2d////
 D/solarus////
-D/spacehulk////
 D/spaceinvaders////
 D/spacetrader////
 D/spacezero////
@@ -281,7 +282,6 @@ D/sumwars////
 D/supertux////
 D/supertuxkart////
 D/taisei////
-D/taxipilot////
 D/tbftss////
 D/teeworlds////
 D/tetrinetx////
