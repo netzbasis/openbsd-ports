@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1130 2020/12/22 21:02:31 solene Exp $
+# $OpenBSD: Quirks.pm,v 1.1136 2021/01/07 07:02:24 daniel Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -523,6 +523,10 @@ my $stem_extensions = {
 	'py-frozen-flask' => 'py3-frozen-flask',
 	'glibmm26' => 'glibmm268',
 	'docker' => 'docker-cli',
+	'py-lazy-object-proxy' => 'py3-lazy-project-proxy',
+	'py3-scapy' => 'scapy',
+	'py-sqlobject' => 'py3-sqlobject',
+	'pyglet' => 'py-pyglet',
 };
 
 my $obsolete_reason = {
@@ -2018,6 +2022,9 @@ my $obsolete_reason = {
 	'qt3-sqlite2' => 3,
 	'gtk3mm-documentation' => 6,
 	'libxml++3' => 5,
+	'orage' => 3,
+	'xfce4-statusnotifier' => 3,
+	'pylint3-gui' => 3,
 };
 
 # reasons for obsolete packages

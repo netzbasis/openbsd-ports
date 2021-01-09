@@ -1,10 +1,11 @@
-# $OpenBSD: Makefile,v 1.22 2020/11/07 16:21:47 jasper Exp $
+# $OpenBSD: Makefile,v 1.24 2021/01/09 10:36:33 sthen Exp $
 
 COMMENT =	self-contained cryptographic library for Python
 
 MODPY_EGG_VERSION =	3.9.9
 DISTNAME =	pycryptodome-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME:S/py//}
+REVISION =	1
 
 CATEGORIES =	security
 
@@ -23,16 +24,14 @@ FLAVOR ?=
 
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
-SUBST_VARS +=		AESNI_COMMENT
 
 RUN_DEPENDS =		devel/gmp
 
 .include <bsd.port.arch.mk>
-
 .if ${MACHINE_ARCH:Mamd64} || ${MACHINE_ARCH:Mi386}
-AESNI_COMMENT =
+PKG_ARGS+= -Daesni=1
 .else
-AESNI_COMMENT = "@comment "
+PKG_ARGS+= -Daesni=0
 .endif
 
 .include <bsd.port.mk>

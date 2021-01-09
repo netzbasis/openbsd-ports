@@ -1,4 +1,4 @@
-# $OpenBSD: python.port.mk,v 1.122 2020/10/05 20:51:18 kmos Exp $
+# $OpenBSD: python.port.mk,v 1.124 2020/12/29 23:59:06 daniel Exp $
 #
 #	python.port.mk - Xavier Santolaria <xavier@santolaria.net>
 #	This file is in the public domain.
@@ -17,6 +17,7 @@ MODPY_DEFAULT_VERSION_3 = 3.8
 # - In the new version, @conflict on the old REVISION of the old version
 #   (3.6.8p1 was "default py3 is py3.6", 3.6.8p2 was after the switch to "default
 #   is py3.7", so the 3.7 ports had @conflict python-subpkg-<3.6.8p2)
+# - Keep xenocara/share/mk/bsd.xorg.mk PYTHON_VERSION in sync
 
 # If later *removing* an old version:
 # - *move* the numbered @conflict python-*->=3.2,<3.7 to the new version
@@ -49,7 +50,6 @@ MODPY_VERSION ?=	${MODPY_DEFAULT_VERSION_2}
 # verify if MODPY_VERSION forced is correct
 .else
 .  if ${MODPY_VERSION} != "2.7" && \
-      ${MODPY_VERSION} != "3.7" && \
       ${MODPY_VERSION} != "3.8" && \
       ${MODPY_VERSION} != "3.9"
 ERRORS += "Fatal: unknown or unsupported MODPY_VERSION: ${MODPY_VERSION}"
@@ -59,7 +59,6 @@ ERRORS += "Fatal: unknown or unsupported MODPY_VERSION: ${MODPY_VERSION}"
 MODPY_MAJOR_VERSION =	${MODPY_VERSION:R}
 
 .if ${MODPY_MAJOR_VERSION} == 2
-MODPY_LIB_SUFFIX =
 MODPY_FLAVOR =
 MODPY_BIN_SUFFIX =
 MODPY_PY_PREFIX =	py-
@@ -69,12 +68,6 @@ MODPY_COMMENT =	"@comment "
 MODPY_ABI3SO =
 MODPY_PYOEXTENSION =	pyo
 .elif ${MODPY_MAJOR_VERSION} == 3
-.  if ${MODPY_VERSION} == "3.7"
-MODPY_LIB_SUFFIX =	m
-.  else
-# 3.8 (and later) discard the m suffix on the library
-MODPY_LIB_SUFFIX =
-.  endif
 # replace py- prefix by py3-
 FULLPKGNAME ?=	${PKGNAME:S/^py-/py3-/}${FLAVOR_EXT:S/-python3//}
 MODPY_FLAVOR =	,python3
@@ -91,7 +84,7 @@ MODPY_PYOEXTENSION ?=	opt-1.pyc
 
 MODPY_PYTEST ?=		No
 
-MODPY_WANTLIB =		python${MODPY_VERSION}${MODPY_LIB_SUFFIX}
+MODPY_WANTLIB =		python${MODPY_VERSION}
 
 MODPY_RUN_DEPENDS =	lang/python/${MODPY_VERSION}
 MODPY_LIB_DEPENDS =	lang/python/${MODPY_VERSION}
@@ -167,7 +160,7 @@ HOMEPAGE ?=		https://pypi.python.org/pypi/${_MODPY_EGG_NAME}
 MODPY_TKINTER_DEPENDS =	lang/python/${MODPY_VERSION},-tkinter
 
 MODPY_BIN =		${LOCALBASE}/bin/python${MODPY_VERSION}
-MODPY_INCDIR =		${LOCALBASE}/include/python${MODPY_VERSION}${MODPY_LIB_SUFFIX}
+MODPY_INCDIR =		${LOCALBASE}/include/python${MODPY_VERSION}
 MODPY_LIBDIR =		${LOCALBASE}/lib/python${MODPY_VERSION}
 MODPY_SITEPKG =		${MODPY_LIBDIR}/site-packages
 

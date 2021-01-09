@@ -1,4 +1,4 @@
-/Makefile/1.534/Sun Dec 13 15:37:07 2020//
+/Makefile/1.535/Sat Jan  9 14:05:16 2021//
 D/DevIL////
 D/GraphicsMagick////
 D/ImageMagick////
@@ -133,6 +133,7 @@ D/libexif-gtk////
 D/libgexiv2////
 D/libgphoto2////
 D/libgxps////
+D/libimagequant////
 D/libiptcdata////
 D/liblqr////
 D/libmng////

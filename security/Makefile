@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.597 2020/12/06 11:51:43 pvk Exp $
+# $OpenBSD: Makefile,v 1.599 2021/01/01 14:06:30 sebastia Exp $
 
      SUBDIR =
      SUBDIR += ADMsnmp
@@ -120,6 +120,7 @@
      SUBDIR += libident
      SUBDIR += libksba
      SUBDIR += libmcrypt
+     SUBDIR += libmodsecurity
      SUBDIR += libnettle
      SUBDIR += libotr
      SUBDIR += libperseus
@@ -389,6 +390,7 @@
      SUBDIR += sslscan
      SUBDIR += sslsplit
      SUBDIR += ssss
+     SUBDIR += stegcracker
      SUBDIR += stegdetect
      SUBDIR += steghide
      SUBDIR += strobe

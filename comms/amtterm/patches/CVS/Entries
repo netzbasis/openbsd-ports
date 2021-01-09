@@ -1,5 +1,15 @@
+/patch-GNUmakefile/1.1/Fri Jan  8 13:32:57 2021//
+/patch-amtterm_c/1.1/Fri Jan  8 13:32:57 2021//
+/patch-amtterm_man/1.1/Fri Jan  8 13:32:57 2021//
 /patch-amttool/1.1.1.1/Sat Jun  2 12:09:35 2012//
+/patch-auth_c/1.1/Fri Jan  8 13:32:57 2021//
+/patch-auth_h/1.1/Fri Jan  8 13:32:57 2021//
+/patch-gamt_c/1.1/Fri Jan  8 13:32:57 2021//
 /patch-mk_Maintainer_mk/1.2/Mon Nov  2 16:10:23 2020//
-/patch-parseconfig_c/1.1/Mon Nov  2 16:10:23 2020//
+/patch-parseconfig_c/1.2/Fri Jan  8 13:32:57 2021//
+/patch-redir_c/1.1/Fri Jan  8 13:32:57 2021//
+/patch-redir_h/1.1/Fri Jan  8 13:32:57 2021//
+/patch-ssl_c/1.1/Fri Jan  8 13:32:57 2021//
+/patch-ssl_h/1.1/Fri Jan  8 13:32:57 2021//
 /patch-tcp_h/1.1.1.1/Sat Jun  2 12:09:35 2012//
 D

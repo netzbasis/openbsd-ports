@@ -1,4 +1,4 @@
-/Makefile/1.79/Mon Jul 27 16:46:11 2020//
+/Makefile/1.80/Sat Jan  2 14:51:45 2021//
 D/amtterm////
 D/birda////
 D/bottlerocket////
@@ -45,6 +45,7 @@ D/sigrok////
 D/smstools////
 D/spisniffer////
 D/sredird////
+D/syncterm////
 D/tkhylafax////
 D/tlf////
 D/wammu////

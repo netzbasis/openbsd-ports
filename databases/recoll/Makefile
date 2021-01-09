@@ -1,10 +1,10 @@
-# $OpenBSD: Makefile,v 1.3 2020/12/21 15:00:35 sthen Exp $
+# $OpenBSD: Makefile,v 1.5 2021/01/09 21:32:47 kmos Exp $
 
 COMMENT= 	full text search application
 
 V=		1.27.12
 DISTNAME= 	recoll-${V}
-REVISION=	0
+REVISION=	1
 
 SHARED_LIBS +=	recoll-${V}            0.0 # 0.0
 SHARED_LIBS +=  recoll                 0.0 # 0.0
@@ -17,6 +17,9 @@ HOMEPAGE= 	https://www.lesbonscomptes.com/recoll/
 PERMIT_PACKAGE=	Yes
 
 MASTER_SITES=		https://www.lesbonscomptes.com/recoll/
+
+# C++11
+COMPILER=	base-clang ports-gcc
 
 WANTLIB += ${COMPILER_LIBCXX} c iconv lzma m xapian xml2
 WANTLIB += xslt z

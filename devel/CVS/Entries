@@ -1,4 +1,4 @@
-/Makefile/1.2044/Sat Dec 19 18:08:46 2020//
+/Makefile/1.2050/Mon Jan  4 13:58:31 2021//
 D/64tass////
 D/ElectricFence////
 D/ORBit2////
@@ -138,8 +138,10 @@ D/expect-lite////
 D/fasm////
 D/ffcall////
 D/flake8////
+D/flatbuffers////
 D/flatzebra////
 D/flawfinder////
+D/fmt////
 D/fossil////
 D/fox////
 D/frama-c////
@@ -756,6 +758,7 @@ D/p5-File-ShareDir////
 D/p5-File-ShareDir-Install////
 D/p5-File-ShareDir-PathClass////
 D/p5-File-Slurp////
+D/p5-File-Slurp-Tiny////
 D/p5-File-Slurper////
 D/p5-File-Sync////
 D/p5-File-Tail////

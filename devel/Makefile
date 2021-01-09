@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2044 2020/12/19 18:08:46 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.2050 2021/01/04 13:58:31 sthen Exp $
 
      SUBDIR =
      SUBDIR += 64tass
@@ -141,8 +141,10 @@
      SUBDIR += fasm
      SUBDIR += ffcall
      SUBDIR += flake8
+     SUBDIR += flatbuffers
      SUBDIR += flatzebra
      SUBDIR += flawfinder
+     SUBDIR += fmt
      SUBDIR += fossil
      SUBDIR += fossil,static
      SUBDIR += fox
@@ -797,6 +799,7 @@
      SUBDIR += p5-File-ShareDir-Install
      SUBDIR += p5-File-ShareDir-PathClass
      SUBDIR += p5-File-Slurp
+     SUBDIR += p5-File-Slurp-Tiny
      SUBDIR += p5-File-Slurper
      SUBDIR += p5-File-Sync
      SUBDIR += p5-File-Tail
@@ -1494,7 +1497,6 @@
      SUBDIR += py-gitpython
      SUBDIR += py-gitpython,python3
      SUBDIR += py-gobject
-     SUBDIR += py-gobject3
      SUBDIR += py-gobject3,python3
      SUBDIR += py-greenlet
      SUBDIR += py-greenlet,python3
@@ -1538,7 +1540,6 @@
      SUBDIR += py-jupyter_core,python3
      SUBDIR += py-kitchen,python3
      SUBDIR += py-kiwisolver,python3
-     SUBDIR += py-lazy-object-proxy
      SUBDIR += py-lazy-object-proxy,python3
      SUBDIR += py-liblarch
      SUBDIR += py-linecache2
@@ -1943,7 +1944,6 @@
      SUBDIR += stm32loader
      SUBDIR += stp
      SUBDIR += subversion
-     SUBDIR += subversion,python3
      SUBDIR += swig
      SUBDIR += t1lib
      SUBDIR += tbb

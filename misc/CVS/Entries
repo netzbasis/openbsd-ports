@@ -1,4 +1,4 @@
-/Makefile/1.198/Sun Dec 20 15:19:27 2020//
+/Makefile/1.199/Tue Jan  5 13:01:46 2021//
 D/WordGenerator////
 D/astrolog////
 D/bible-kjv////
@@ -82,6 +82,7 @@ D/plan////
 D/portroach////
 D/posixtestsuite////
 D/py-imdb////
+D/py-jdcal////
 D/py-memcached////
 D/randtype////
 D/redshift////

@@ -1,9 +1,9 @@
-# $OpenBSD: xfce4.port.mk,v 1.32 2020/11/02 09:23:53 landry Exp $
+# $OpenBSD: xfce4.port.mk,v 1.34 2020/12/31 15:19:33 landry Exp $
 
 # Module for Xfce related ports, divided into five categories:
 # core, goodie, artwork, thunar plugins, panel plugins.
 
-XFCE_DESKTOP_VERSION=	4.14.0
+XFCE_DESKTOP_VERSION=	4.16.0
 CATEGORIES+=	x11/xfce4
 
 USE_GMAKE?=	Yes
@@ -87,6 +87,10 @@ AUTOCONF_VERSION =	2.69
 MODXFCE4_gen =	cd ${WRKSRC} && env NOCONFIGURE=yes \
 		AUTOCONF_VERSION=${AUTOCONF_VERSION} AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
 		./autogen.sh
+BUILD_DEPENDS +=	${MODGNU_AUTOCONF_DEPENDS} \
+			${MODGNU_AUTOMAKE_DEPENDS} \
+			x11/xfce4/xfce4-dev-tools
+
 .endif
 
 # remove useless .la file

@@ -1,4 +1,5 @@
-/patch-Makefile_in/1.11/Thu May 14 12:20:18 2020//
+/patch-Makefile_in/1.12/Sat Jan  9 10:29:44 2021//
+/patch-blowfish-bcrypt_c/1.1/Sat Jan  9 10:29:44 2021//
 /patch-ecc-point-mul-g_c/1.2/Thu May 14 12:20:18 2020//
 /patch-ecc-random_c/1.2/Thu May 14 12:20:18 2020//
 /patch-getopt_c/1.2/Thu May 14 12:20:18 2020//

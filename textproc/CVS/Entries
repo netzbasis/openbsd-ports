@@ -1,4 +1,4 @@
-/Makefile/1.655/Mon Dec 21 21:17:36 2020//
+/Makefile/1.656/Tue Jan  5 13:01:46 2021//
 D/TclXML////
 D/antiword////
 D/apertium////
@@ -366,6 +366,7 @@ D/py-docutils////
 D/py-elasticsearch////
 D/py-emoji////
 D/py-enchant////
+D/py-et_xmlfile////
 D/py-feedparser////
 D/py-humanize////
 D/py-iso8601////
@@ -379,6 +380,7 @@ D/py-nltk////
 D/py-numpydoc////
 D/py-odfpy////
 D/py-ofxparse////
+D/py-openpyxl////
 D/py-pandocfilters////
 D/py-patiencediff////
 D/py-pdf////

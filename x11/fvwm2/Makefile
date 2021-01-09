@@ -1,8 +1,9 @@
-# $OpenBSD: Makefile,v 1.68 2020/12/13 21:17:02 sthen Exp $
+# $OpenBSD: Makefile,v 1.70 2021/01/08 15:53:33 sthen Exp $
 
 COMMENT=	multiple virtual desktop window manager
 
-VERSION=	2.6.7
+VERSION=	2.6.9
+REVISION=	0
 DISTNAME=	fvwm-${VERSION}
 PKGNAME=	fvwm2-${VERSION}
 
@@ -39,7 +40,8 @@ SUBST_VARS=	VERSION
 
 SEPARATE_BUILD=		Yes
 CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS+=	--disable-bidi \
+CONFIGURE_ARGS+=	--enable-mandoc \
+			--disable-bidi \
 			--disable-gtk \
 			--without-gnome \
 			--without-rplay-library \

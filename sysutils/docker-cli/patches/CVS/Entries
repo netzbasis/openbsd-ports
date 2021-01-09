@@ -1,12 +1,10 @@
-/patch-vendor_github_com_containerd_containerd_content_local_store_unix_go/1.1.1.1/Sat Oct  3 20:38:46 2020//
-/patch-vendor_github_com_containerd_containerd_snapshotter_default_unix_go/1.1.1.1/Sat Oct  3 20:38:46 2020//
-/patch-vendor_github_com_containerd_containerd_sys_stat_unix_go/1.1.1.1/Sat Oct  3 20:38:46 2020//
-/patch-vendor_github_com_containerd_continuity_devices_devices_unix_go/1.1.1.1/Sat Oct  3 20:38:46 2020//
-/patch-vendor_github_com_containerd_continuity_driver_driver_unix_go/1.1.1.1/Sat Oct  3 20:38:46 2020//
-/patch-vendor_github_com_containerd_continuity_driver_lchmod_unix_go/1.1.1.1/Sat Oct  3 20:38:46 2020//
-/patch-vendor_github_com_containerd_continuity_fs_copy_unix_go/1.1.1.1/Sat Oct  3 20:38:46 2020//
-/patch-vendor_github_com_containerd_continuity_fs_stat_openbsd_go/1.1.1.1/Sat Oct  3 20:38:46 2020//
-/patch-vendor_github_com_containerd_continuity_hardlinks_unix_go/1.1.1.1/Sat Oct  3 20:38:46 2020//
-/patch-vendor_github_com_containerd_continuity_resource_unix_go/1.1.1.1/Sat Oct  3 20:38:46 2020//
-/patch-vendor_github_com_containerd_continuity_sysx_nodata_unix_go/1.1.1.1/Sat Oct  3 20:38:46 2020//
+/patch-vendor_github_com_containerd_containerd_content_local_store_unix_go/1.2/Mon Jan  4 14:15:20 2021//
+/patch-vendor_github_com_containerd_continuity_fs_stat_openbsd_go/1.2/Mon Jan  4 14:15:20 2021//
+/patch-vendor_github_com_moby_sys_mount_mounter_bsd_go/1.1/Mon Jan  4 14:15:21 2021//
+/patch-vendor_github_com_moby_sys_mount_mounter_openbsd_go/1.1/Mon Jan  4 14:15:21 2021//
+/patch-vendor_github_com_tonistiigi_fsutil_diskwriter_go/1.1/Mon Jan  4 14:15:21 2021//
+/patch-vendor_github_com_tonistiigi_fsutil_fs_go/1.1/Mon Jan  4 14:15:21 2021//
+/patch-vendor_github_com_tonistiigi_fsutil_hardlinks_go/1.1/Mon Jan  4 14:15:21 2021//
+/patch-vendor_github_com_tonistiigi_fsutil_send_go/1.1/Mon Jan  4 14:15:21 2021//
+/patch-vendor_github_com_tonistiigi_fsutil_tarwriter_go/1.1/Mon Jan  4 14:15:21 2021//
 D

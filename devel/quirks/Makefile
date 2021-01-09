@@ -1,11 +1,11 @@
-# $OpenBSD: Makefile,v 1.1113 2020/12/22 21:02:31 solene Exp $
+# $OpenBSD: Makefile,v 1.1120 2021/01/07 07:02:24 daniel Exp $
 
 COMMENT =	exceptions to pkg_add rules
 CATEGORIES =	devel databases
 DISTFILES =
 
 # API.rev
-PKGNAME =	quirks-3.502
+PKGNAME =	quirks-3.508
 PKG_ARCH =	*
 MAINTAINER =	Marc Espie <espie@openbsd.org>
 
@@ -15,7 +15,7 @@ PERMIT_PACKAGE =	Yes
 PERLDIR =	${PREFIX}/libdata/perl5/site_perl
 
 do-build:
-	@perl -c ${FILESDIR}/Quirks.pm
+	@find ${FILESDIR} -type f -name \*.pm -exec perl -c {} \;
 
 do-install:
 	${INSTALL_DATA_DIR} ${PERLDIR}/OpenBSD/Quirks

@@ -1,4 +1,4 @@
-/Makefile/1.412/Mon Dec 21 13:26:33 2020//
+/Makefile/1.414/Tue Jan  5 07:49:18 2021//
 D/architect////
 D/barman////
 D/citus////
@@ -110,6 +110,7 @@ D/p5-Rose-Object////
 D/p5-SQL-Abstract////
 D/p5-SQL-Abstract-Classic////
 D/p5-SQL-Abstract-Limit////
+D/p5-SQL-Abstract-More////
 D/p5-SQL-ReservedWords////
 D/p5-SQL-Statement////
 D/p5-SQL-Translator////

@@ -1,4 +1,4 @@
-/Makefile/1.432/Mon Nov 16 23:07:20 2020//
+/Makefile/1.433/Sun Jan  3 16:42:54 2021//
 D/0ad////
 D/1oom////
 D/2048-cli////
@@ -149,6 +149,7 @@ D/hex-a-hop////
 D/hypatia////
 D/hyperrogue////
 D/icebreaker////
+D/inform6////
 D/instead////
 D/ioquake3////
 D/irrlamb////
